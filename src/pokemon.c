@@ -5073,7 +5073,7 @@ void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerPicId, u8 battlerPosition
     if (battlerPosition == B_POSITION_PLAYER_LEFT || battlerPosition == B_POSITION_PLAYER_RIGHT)
     {
         gMultiuseSpriteTemplate = sTrainerBackSpriteTemplates[trainerPicId];
-        gMultiuseSpriteTemplate.anims = gTrainerBackAnimsPtrTable[trainerPicId];
+        gMultiuseSpriteTemplate.anims = gTrainerBacksprites[trainerPicId].animation;
     }
     else
     {
@@ -5081,7 +5081,7 @@ void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerPicId, u8 battlerPosition
             gMultiuseSpriteTemplate = gMonSpritesGfxPtr->templates[battlerPosition];
         else
             gMultiuseSpriteTemplate = gBattlerSpriteTemplates[battlerPosition];
-        gMultiuseSpriteTemplate.anims = gTrainerFrontAnimsPtrTable[trainerPicId];
+        gMultiuseSpriteTemplate.anims = gTrainerSprites[trainerPicId].animation;
     }
 }
 
@@ -5093,7 +5093,7 @@ void SetMultiuseSpriteTemplateToTrainerFront(u16 trainerPicId, u8 battlerPositio
         gMultiuseSpriteTemplate = gBattlerSpriteTemplates[battlerPosition];
 
     gMultiuseSpriteTemplate.paletteTag = trainerPicId;
-    gMultiuseSpriteTemplate.anims = gTrainerFrontAnimsPtrTable[trainerPicId];
+    gMultiuseSpriteTemplate.anims = gTrainerSprites[trainerPicId].animation;
 }
 
 static void EncryptBoxMon(struct BoxPokemon *boxMon)

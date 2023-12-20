@@ -73,9 +73,9 @@ static bool16 DecompressPic(u16 species, u32 personality, bool8 isFrontPic, u8 *
     else
     {
         if (isFrontPic)
-            DecompressPicFromTable(&gTrainerFrontPicTable[species], dest, species);
+            DecompressPicFromTable(&gTrainerSprites[species].frontPic, dest, species);
         else
-            DecompressPicFromTable(&gTrainerBackPicTable[species], dest, species);
+            DecompressPicFromTable(&gTrainerBacksprites[species].backPic, dest, species);
     }
     return FALSE;
 }
@@ -100,12 +100,12 @@ static void LoadPicPaletteByTagOrSlot(u16 species, u32 otId, u32 personality, u8
         if (paletteTag == TAG_NONE)
         {
             sCreatingSpriteTemplate.paletteTag = TAG_NONE;
-            LoadCompressedPalette(gTrainerFrontPicPaletteTable[species].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
+            LoadCompressedPalette(gTrainerSprites[species].palette.data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
         }
         else
         {
             sCreatingSpriteTemplate.paletteTag = paletteTag;
-            LoadCompressedSpritePalette(&gTrainerFrontPicPaletteTable[species]);
+            LoadCompressedSpritePalette(&gTrainerSprites[species].palette);
         }
     }
 }
@@ -115,7 +115,7 @@ static void LoadPicPaletteBySlot(u16 species, u32 otId, u32 personality, u8 pale
     if (!isTrainer)
         LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality), PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
     else
-        LoadCompressedPalette(gTrainerFrontPicPaletteTable[species].data, PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
+        LoadCompressedPalette(gTrainerSprites[species].palette.data, PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
 }
 
 static void AssignSpriteAnimsTable(bool8 isTrainer)
@@ -123,7 +123,7 @@ static void AssignSpriteAnimsTable(bool8 isTrainer)
     if (!isTrainer)
         sCreatingSpriteTemplate.anims = gAnims_MonPic;
     else
-        sCreatingSpriteTemplate.anims = gTrainerFrontAnimsPtrTable[0];
+        sCreatingSpriteTemplate.anims = gTrainerSprites[0].animation;
 }
 
 static u16 CreatePicSprite(u16 species, u32 otId, u32 personality, bool8 isFrontPic, s16 x, s16 y, u8 paletteSlot, u16 paletteTag, bool8 isTrainer)

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "day_night.h"
+#include "data.h"
 #include "decompress.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
@@ -256,8 +257,6 @@ static u8 sActiveList[32];
 
 // External declarations
 extern const struct CompressedSpritePalette gMonPaletteTable[];
-extern const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[];
-extern const struct CompressedSpriteSheet gTrainerFrontPicTable[];
 extern u8 *gFieldEffectScriptPointers[];
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
@@ -912,10 +911,10 @@ bool8 FieldEffectActiveListContains(u8 id)
 u8 CreateTrainerSprite(u8 trainerSpriteID, s16 x, s16 y, u8 subpriority, u8 *buffer)
 {
     struct SpriteTemplate spriteTemplate;
-    LoadCompressedSpritePaletteOverrideBuffer(&gTrainerFrontPicPaletteTable[trainerSpriteID], buffer);
-    LoadCompressedSpriteSheetOverrideBuffer(&gTrainerFrontPicTable[trainerSpriteID], buffer);
-    spriteTemplate.tileTag = gTrainerFrontPicTable[trainerSpriteID].tag;
-    spriteTemplate.paletteTag = gTrainerFrontPicPaletteTable[trainerSpriteID].tag;
+    LoadCompressedSpritePaletteOverrideBuffer(&gTrainerSprites[trainerSpriteID].palette, buffer);
+    LoadCompressedSpriteSheetOverrideBuffer(&gTrainerSprites[trainerSpriteID].frontPic, buffer);
+    spriteTemplate.tileTag = gTrainerSprites[trainerSpriteID].frontPic.tag;
+    spriteTemplate.paletteTag = gTrainerSprites[trainerSpriteID].palette.tag;
     spriteTemplate.oam = &sOam_64x64;
     spriteTemplate.anims = gDummySpriteAnimTable;
     spriteTemplate.images = NULL;
@@ -926,8 +925,8 @@ u8 CreateTrainerSprite(u8 trainerSpriteID, s16 x, s16 y, u8 subpriority, u8 *buf
 
 static void UNUSED LoadTrainerGfx_TrainerCard(u8 gender, u16 palOffset, u8 *dest)
 {
-    LZDecompressVram(gTrainerFrontPicTable[gender].data, dest);
-    LoadCompressedPalette(gTrainerFrontPicPaletteTable[gender].data, palOffset, PLTT_SIZE_4BPP);
+    LZDecompressVram(gTrainerSprites[gender].frontPic.data, dest);
+    LoadCompressedPalette(gTrainerSprites[gender].palette.data, palOffset, PLTT_SIZE_4BPP);
 }
 
 u8 AddNewGameBirchObject(s16 x, s16 y, u8 subpriority)
