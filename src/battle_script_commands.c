@@ -3236,8 +3236,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_FLINCH:
-                if (battlerAbility == ABILITY_INNER_FOCUS
-                    && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
+                if (battlerAbility == ABILITY_INNER_FOCUS)
                 {
                     if (primary == TRUE || certain == MOVE_EFFECT_CERTAIN)
                     {
@@ -3252,12 +3251,11 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     }
                 }
                 else if (GetBattlerTurnOrderNum(gEffectBattler) > gCurrentTurnActionNumber
-                         && !IsDynamaxed(gEffectBattler))
+                        && !IsDynamaxed(gEffectBattler))
                 {
                     gBattleMons[gEffectBattler].status2 |= sStatusFlagsForMoveEffects[gBattleScripting.moveEffect];
                     gBattlescriptCurrInstr++;
                 }
-                gBattlescriptCurrInstr++;
                 break;
             case MOVE_EFFECT_UPROAR:
                 if (!(gBattleMons[gEffectBattler].status2 & STATUS2_UPROAR))
