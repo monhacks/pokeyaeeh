@@ -15129,7 +15129,7 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = (B_LURE_BALL_MODIFIER >= GEN_7 ? 500 : 300);
                 break;
             case ITEM_MOON_BALL:
-                for (i = 0; i < EVOS_PER_MON; i++)
+                for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
                 {
                     if (gEvolutionTable[gBattleMons[gBattlerTarget].species][i].method == EVO_ITEM
                         && gEvolutionTable[gBattleMons[gBattlerTarget].species][i].param == ITEM_MOON_STONE)

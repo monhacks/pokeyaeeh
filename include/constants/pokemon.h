@@ -256,7 +256,8 @@
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
 
 // Evolution types
-#define EVO_NONE                          0xffff // Not an actual evolution, used to generate offspring that can't evolve into the specified species, like regional forms.
+#define EVOLUTIONS_END                    0xFFFF // Not an actual evolution, used to mark the end of an evolution array.
+#define EVO_NONE                          0xFFFE // Not an actual evolution, used to generate offspring that can't evolve into the specified species, like regional forms.
 #define EVO_FRIENDSHIP                    1      // Pokémon levels up with friendship ≥ 220
 #define EVO_FRIENDSHIP_DAY                2      // Pokémon levels up during the day with friendship ≥ 220
 #define EVO_FRIENDSHIP_NIGHT              3      // Pokémon levels up at night with friendship ≥ 220
@@ -309,16 +310,18 @@
 #define EVO_LEVEL_SPECIFIC_MAP            50     // Galarian Weezing
 #define EVO_MOVE_SPECIFIC_MAP             51     // Galarian Mr. Mime
 #define EVO_NIGHT_SPECIFIC_MAP            52     // Alolan Marowak
+#define EVO_LEVEL_ITEM_COUNT_999          53     // Pokémon levels up after trainer has collected 999 of a specific item
 
 #define EVOS_PER_MON 11
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0
-#define EVO_MODE_TRADE             1
-#define EVO_MODE_ITEM_USE          2
-#define EVO_MODE_ITEM_CHECK        3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokémon to evolve
-#define EVO_MODE_BATTLE_SPECIAL    4
-#define EVO_MODE_OVERWORLD_SPECIAL 5
+#define EVO_MODE_CANT_STOP         1
+#define EVO_MODE_TRADE             2
+#define EVO_MODE_ITEM_USE          3
+#define EVO_MODE_ITEM_CHECK        4 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokémon to evolve
+#define EVO_MODE_BATTLE_SPECIAL    5
+#define EVO_MODE_OVERWORLD_SPECIAL 6
 
 #define MON_PIC_WIDTH 64
 #define MON_PIC_HEIGHT 64

@@ -5866,13 +5866,21 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     if (cannotUseEffect)
     {
         u16 targetSpecies = SPECIES_NONE;
+        bool32 evoModeNormal = TRUE;
 
         // Resets values to 0 so other means of teaching moves doesn't overwrite levels
         sInitialLevel = 0;
         sFinalLevel = 0;
 
         if (holdEffectParam == 0 || holdEffectParam == 10)
+        {
             targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
+            if (targetSpecies == SPECIES_NONE)
+            {
+                targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
+                evoModeNormal = FALSE;
+            }
+        }
 
         if (targetSpecies != SPECIES_NONE)
         {
@@ -5880,7 +5888,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
                 RemoveBagItem(gSpecialVar_ItemId, 1);
             FreePartyPointers();
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
-            BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
+            BeginEvolutionScene(mon, targetSpecies, evoModeNormal, gPartyMenu.slotId);
             DestroyTask(taskId);
         }
         else
@@ -6058,11 +6066,19 @@ static void CB2_ReturnToPartyMenuUsingRareCandy(void)
 static void PartyMenuTryEvolution(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-#ifdef POKEMON_EXPANSION 
-    u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
-#else
-    u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE);
-#endif
+    u16 targetSpecies = SPECIES_NONE;
+    bool32 evoModeNormal = TRUE;
+
+    // Resets values to 0 so other means of teaching moves doesn't overwrite levels
+    sInitialLevel = 0;
+    sFinalLevel = 0;
+
+    targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
+    if (targetSpecies == SPECIES_NONE)
+    {
+        targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
+        evoModeNormal = FALSE;
+    }
 
     if (targetSpecies != SPECIES_NONE)
     {
@@ -6071,7 +6087,7 @@ static void PartyMenuTryEvolution(u8 taskId)
             gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
         else
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
-        BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
+        BeginEvolutionScene(mon, targetSpecies, evoModeNormal, gPartyMenu.slotId);
         DestroyTask(taskId);
     }
     else

@@ -254,6 +254,7 @@ static const u8 sText_EVO_ITEM_SPECIFIC_MAP[] = _("{STR_VAR_2} is used in {STR_V
 static const u8 sText_EVO_LEVEL_SPECIFIC_MAP[] =_("{LV}{UP_ARROW} to {STR_VAR_2} in {STR_VAR_3}");
 static const u8 sText_EVO_MOVE_SPECIFIC_MAP[] =_("Knows {STR_VAR_2}, in {STR_VAR_3}");
 static const u8 sText_EVO_NIGHT_SPECIFIC_MAP[] =_("{LV}{UP_ARROW} to {STR_VAR_2}, in {STR_VAR_3}, night");
+static const u8 sText_EVO_LEVEL_ITEM_COUNT_999[] = _("{LV}{UP_ARROW} with 999 {STR_VAR_2} in bag");
 static const u8 sText_EVO_UNKNOWN[] = _("Method unknown");
 static const u8 sText_EVO_NONE[] = _("{STR_VAR_1} has no evolution.");
 
@@ -6447,7 +6448,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
     StringCopy(gStringVar1, GetSpeciesName(species));
 
     //Calculate number of possible direct evolutions (e.g. Eevee has 5 but torchic has 1)
-    for (i = 0; i < EVOS_PER_MON; i++)
+    for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
     {
         if (gEvolutionTable[species][i].method != 0)
             times += 1;
@@ -6694,6 +6695,11 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
             mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param2 >> 8, gEvolutionTable[species][i].param2 & 0xFF);
             GetMapName(gStringVar3, mapHeader->regionMapSectionId, 0);
             StringExpandPlaceholders(gStringVar4, sText_EVO_NIGHT_SPECIFIC_MAP );
+            break;
+        case EVO_LEVEL_ITEM_COUNT_999:
+            item = gEvolutionTable[species][i].param;
+            CopyItemName(item, gStringVar2);
+            StringExpandPlaceholders(gStringVar4, sText_EVO_LEVEL_ITEM_COUNT_999);
             break;
         default:
             StringExpandPlaceholders(gStringVar4, sText_EVO_UNKNOWN );

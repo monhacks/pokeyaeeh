@@ -456,7 +456,7 @@ u16 GetEggSpecies(u16 species)
 
     // Working backwards up to 5 times seems arbitrary, since the maximum number
     // of times would only be 3 for 3-stage evolutions.
-    for (i = 0; i < EVOS_PER_MON; i++)
+    for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
     {
         found = FALSE;
         for (j = 1; j < NUM_SPECIES; j++)
