@@ -6728,6 +6728,7 @@ static const struct LevelUpMove sLugiaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(80, MOVE_FUTURE_SIGHT),
     LEVEL_UP_MOVE(85, MOVE_NATURAL_GIFT),
     LEVEL_UP_MOVE(92, MOVE_SKY_ATTACK),
+    LEVEL_UP_MOVE(99, MOVE_PSYCHO_BOOST),
     LEVEL_UP_END
 };
 

@@ -1543,8 +1543,15 @@ gCryTable::
     cry Cry_IronValiant
     cry Cry_Koraidon
     cry Cry_Miraidon
-    cry Cry_Unown //Cry_WalkingWake
-    cry Cry_Unown //Cry_IronLeaves
+    cry Cry_WalkingWake
+    cry Cry_IronLeaves
+	cry Cry_Dipplin
+	cry Cry_Poltchageist
+	cry Cry_Sinistcha
+	cry Cry_Okidogi
+	cry Cry_Munkidori
+	cry Cry_Fezandipiti
+	cry Cry_Ogerpon
 .else
     cry Cry_Unown
     cry Cry_Unown
@@ -2376,9 +2383,22 @@ gCryTable::
 	@ Gimmighoul
 	cry Cry_Unown
 .endif
-@ Tauros-Paldea
-cry Cry_Tauros
-cry Cry_Tauros
+    @ Tauros-Paldea
+    cry Cry_Tauros
+    cry Cry_Tauros
+    cry Cry_Ursaluna
+	@ Poltchageist
+	cry Cry_Poltchageist
+	@ Sinistcha
+	cry Cry_Sinistcha
+	@ Ogerpon forms
+	cry Cry_Ogerpon
+	cry Cry_Ogerpon
+	cry Cry_Ogerpon
+	cry Cry_Ogerpon
+	cry Cry_Ogerpon
+	cry Cry_Ogerpon
+	cry Cry_Ogerpon
 @ Gigantamax Forms
 	cry Cry_Venusaur
 	cry Cry_Charizard
@@ -3989,9 +4009,23 @@ gCryTable_Reverse::
     cry_reverse Cry_IronValiant
     cry_reverse Cry_Koraidon
     cry_reverse Cry_Miraidon
-    cry_reverse Cry_Unown
-    cry_reverse Cry_Unown
+    cry_reverse Cry_WalkingWake
+    cry_reverse Cry_IronLeaves
+	cry_reverse Cry_Dipplin
+	cry_reverse Cry_Poltchageist
+	cry_reverse Cry_Sinistcha
+	cry_reverse Cry_Okidogi
+	cry_reverse Cry_Munkidori
+	cry_reverse Cry_Fezandipiti
+	cry_reverse Cry_Ogerpon
 .else
+    cry_reverse Cry_Unown
+    cry_reverse Cry_Unown
+    cry_reverse Cry_Unown
+    cry_reverse Cry_Unown
+    cry_reverse Cry_Unown
+    cry_reverse Cry_Unown
+    cry_reverse Cry_Unown
     cry_reverse Cry_Unown
     cry_reverse Cry_Unown
     cry_reverse Cry_Unown
@@ -4768,9 +4802,23 @@ gCryTable_Reverse::
 	@ Gimmighoul
 	cry_reverse Cry_Unown
 .endif
-@ Tauros-Paldea
-cry_reverse Cry_Tauros
-cry_reverse Cry_Tauros
+    @ Tauros-Paldea
+    cry_reverse Cry_Tauros
+    cry_reverse Cry_Tauros
+	@ Ursaluna-Bloodmon
+	cry_reverse Cry_Ursaluna
+	@ Poltchageist
+	cry_reverse Cry_Poltchageist
+	@ Sinistcha
+	cry_reverse Cry_Sinistcha
+	@ Ogerpon forms
+	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Ogerpon
 	@ Gigantamax Forms
 	cry_reverse Cry_Venusaur
 	cry_reverse Cry_Charizard
