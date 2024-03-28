@@ -1476,7 +1476,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_5
             .power = 35,
-            .accuracy = 85,
+            .accuracy = 90,
         #else
             .power = 15,
             .accuracy = 70,
@@ -2269,14 +2269,14 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_CLAMP] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 85,
+            .accuracy = 95,
             .pp = 15,
         #else
             .accuracy = 75,
             .pp = 10,
         #endif
         .effect = EFFECT_TRAP,
-        .power = 35,
+        .power = 40,
         .type = TYPE_WATER,
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
@@ -4498,7 +4498,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_5
             .power = 35,
-            .accuracy = 85,
+            .accuracy = 90,
         #else
             .power = 15,
             .accuracy = 70,
@@ -8175,8 +8175,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_MAGMA_STORM] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 100,
-            .accuracy = 75,
+            .power = 120,
+            .accuracy = 80,
         #elif B_UPDATED_MOVE_DATA == GEN_5
             .power = 120,
             .accuracy = 75,
@@ -14803,6 +14803,29 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
         .sheerForceBoost = TRUE,
+    },
+
+    
+    [MOVE_MAELSTROM] =
+    {
+        #if B_UPDATED_MOVE_DATA >= GEN_6
+            .power = 120,
+            .accuracy = 80,
+        #elif B_UPDATED_MOVE_DATA == GEN_5
+            .power = 120,
+            .accuracy = 75,
+        #else
+            .power = 120,
+            .accuracy = 70,
+        #endif
+        .effect = EFFECT_TRAP,
+        .type = TYPE_WATER,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 
     // Z-Moves

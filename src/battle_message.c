@@ -850,9 +850,11 @@ static const u8 sText_ElectroShockCharging[] = _("{B_ATK_NAME_WITH_PREFIX} absor
 static const u8 sText_ShedItsTail[] = _("{B_ATK_NAME_WITH_PREFIX} shed its tail\nto create a decoy!");
 static const u8 sText_FogIsDeep[] = _("Fog is deep…");
 static const u8 sText_FogWasBlownAway[] = _("The fog was blown away\nby Defog!");
+static const u8 sText_AtkTrappedDefInAHarshWhirlpool[] = _("{B_ATK_NAME_WITH_PREFIX} trapped the\n{B_DEF_NAME_WITH_PREFIX} in a harsh whirlpool!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_PKMNTRAPPEDINAHARSHWHIRLPOOL - BATTLESTRINGS_TABLE_START] = sText_AtkTrappedDefInAHarshWhirlpool,
     [STRINGID_FOGBLOWNAWAY - BATTLESTRINGS_TABLE_START] = sText_FogWasBlownAway,
     [STRINGID_FOGISDEEP - BATTLESTRINGS_TABLE_START] = sText_FogIsDeep,
     [STRINGID_SHEDITSTAIL - BATTLESTRINGS_TABLE_START] = sText_ShedItsTail,
@@ -1825,6 +1827,7 @@ const u16 gWrappedStringIds[NUM_TRAPPING_MOVES] =
     [B_MSG_WRAPPED_INFESTATION] = STRINGID_INFESTATION,            // MOVE_INFESTATION
     [B_MSG_WRAPPED_SNAP_TRAP]   = STRINGID_PKMNINSNAPTRAP,         // MOVE_SNAP_TRAP
     [B_MSG_WRAPPED_THUNDER_CAGE]= STRINGID_THUNDERCAGETRAPPED,     // MOVE_THUNDER_CAGE
+    [B_MSG_WRAPPED_MAELSTROM]   = STRINGID_PKMNTRAPPEDINAHARSHWHIRLPOOL, // MOVE_MAELSTROM
 };
 
 const u16 gMistUsedStringIds[] =

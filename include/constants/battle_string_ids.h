@@ -713,8 +713,9 @@
 #define STRINGID_SHEDITSTAIL                          711
 #define STRINGID_FOGISDEEP                            712
 #define STRINGID_FOGBLOWNAWAY                         713
+#define STRINGID_PKMNTRAPPEDINAHARSHWHIRLPOOL         714
 
-#define BATTLESTRINGS_COUNT                           714
+#define BATTLESTRINGS_COUNT                           715
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -1016,7 +1017,8 @@
 #define B_MSG_WRAPPED_INFESTATION  7
 #define B_MSG_WRAPPED_SNAP_TRAP    8
 #define B_MSG_WRAPPED_THUNDER_CAGE 9
-#define NUM_TRAPPING_MOVES         10
+#define B_MSG_WRAPPED_MAELSTROM    10
+#define NUM_TRAPPING_MOVES         11
 
 // z effects
 #define B_MSG_Z_RESET_STATS   0

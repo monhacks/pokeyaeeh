@@ -883,6 +883,7 @@ gBattleAnims_Moves::
 	.4byte Move_ROUSED_FANGS
 	.4byte Move_AQUA_FANGS
 	.4byte Move_GLACIAL_SLAM
+	.4byte Move_MAELSTROM
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -17460,6 +17461,29 @@ Move_GLACIAL_SLAM:
 	waitbgfadein
 	clearmonbg ANIM_TARGET
 	blendoff
+	end
+
+Move_MAELSTROM:
+	loadspritegfx ANIM_TAG_WATER_ORB
+	fadetobg BG_WATER_PULSE
+	waitbgfadeout
+	monbg ANIM_DEF_PARTNER
+	splitbgprio ANIM_TARGET
+	setalpha 12, 8
+	delay 0
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, F_PAL_TARGET, 2, 0, 7, RGB(0, 13, 23)
+	playsewithpan SE_M_WHIRLPOOL, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 2, 50, 1
+	call WhirlpoolEffect
+	call WhirlpoolEffect
+	call WhirlpoolEffect
+	call WhirlpoolEffect
+	delay 12
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, F_PAL_TARGET, 2, 7, 0, RGB(0, 13, 23)
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	restorebg
+	waitbgfadeout
 	end
 
 Move_TERA_BLAST::

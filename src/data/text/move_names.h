@@ -857,6 +857,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ROUSED_FANGS] = _("Roused Fangs"),
     [MOVE_AQUA_FANGS] = _("Aqua Fangs"),
     [MOVE_GLACIAL_SLAM] = _("Glacial Slam"),
+    [MOVE_MAELSTROM] = _("Maelstrom"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
     [MOVE_MAX_STRIKE] = _("Max Strike"),
@@ -1771,6 +1772,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ROUSED_FANGS] = _("Roused Fangs"),
     [MOVE_AQUA_FANGS] = _("Aqua Fangs"),
     [MOVE_GLACIAL_SLAM] = _("Glacial Slam"),
+    [MOVE_MAELSTROM] = _("Maelstrom"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),
