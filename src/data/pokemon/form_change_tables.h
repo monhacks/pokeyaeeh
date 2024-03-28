@@ -684,6 +684,14 @@ static const struct FormChange sPalafinFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 
+static const struct FormChange sOgerponFormChangeTable[] = {
+    {FORM_CHANGE_ITEM_HOLD, SPECIES_OGERPON_TEAL_MASK,        ITEM_NONE},
+    {FORM_CHANGE_ITEM_HOLD, SPECIES_OGERPON_WELLSPRING_MASK,  ITEM_WELLSPRING_MASK},
+    {FORM_CHANGE_ITEM_HOLD, SPECIES_OGERPON_HEARTHFLAME_MASK, ITEM_HEARTHFLAME_MASK},
+    {FORM_CHANGE_ITEM_HOLD, SPECIES_OGERPON_CORNERSTONE_MASK, ITEM_CORNERSTONE_MASK},
+    {FORM_CHANGE_TERMINATOR},
+};
+
 #endif
 
 static const struct FormChange sButterfreeFormChangeTable[] =

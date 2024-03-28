@@ -1021,6 +1021,23 @@ const u8 gSpeciesNames[NUM_SPECIES][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_MIRAIDON] = _("Miraidon"),
     [SPECIES_WALKING_WAKE] = _("WalkngWake"),
     [SPECIES_IRON_LEAVES] = _("IronLeaves"),
+    [SPECIES_URSALUNA_BLOODMOON] = _("Ursaluna"),
+    [SPECIES_DIPPLIN] = _("Dipplin"),
+    [SPECIES_POLTCHAGEIST_COUNTERFEIT] = _("Poltchagei"),
+    [SPECIES_POLTCHAGEIST_ARTISAN] = _("Poltchagei"),
+    [SPECIES_SINISTCHA_UNREMARKABLE] = _("Sinistcha"),
+    [SPECIES_SINISTCHA_MASTERPIECE] = _("Sinistcha"),
+    [SPECIES_OKIDOGI] = _("Okidogi"),
+    [SPECIES_MUNKIDORI] = _("Munkidori"),
+    [SPECIES_FEZANDIPITI] = _("Fezandipit"),
+    [SPECIES_OGERPON_TEAL_MASK] = _("Ogerpon"),
+    [SPECIES_OGERPON_WELLSPRING_MASK] = _("Ogerpon"),
+    [SPECIES_OGERPON_HEARTHFLAME_MASK] = _("Ogerpon"),
+    [SPECIES_OGERPON_CORNERSTONE_MASK] = _("Ogerpon"),
+    [SPECIES_OGERPON_TEAL_MASK_TERA] = _("Ogerpon"),
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = _("Ogerpon"),
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = _("Ogerpon"),
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = _("Ogerpon"),
 #endif
 
     // Megas
