@@ -699,15 +699,23 @@
 #define STRINGID_PKMNDROPPEDITEM                      697
 #define STRINGID_BAGISFULL                            698
 #define STRINGID_TAILSTREAMACTIVATED                  699
-#define STRINGID_PKMNGAINED1EXP                       700
-#define STRINGID_OMINOUSAIRCURRENT                    701
-#define STRINGID_GHOSTLYWINDSDISSIPATED               702
-#define STRINGID_OMINOUSAIRCURRENTBLOWSON             703
-#define STRINGID_ATTACKWEAKENEDBGHOSTLYWINDS          704
-#define STRINGID_PKMNALREADYHASFROSTBITE              705
-#define STRINGID_HOSPITALITYRESTORATION               706
+#define STRINGID_OMINOUSAIRCURRENT                    700
+#define STRINGID_GHOSTLYWINDSDISSIPATED               701
+#define STRINGID_OMINOUSAIRCURRENTBLOWSON             702
+#define STRINGID_ATTACKWEAKENEDBGHOSTLYWINDS          703
+#define STRINGID_PKMNALREADYHASFROSTBITE              704
+#define STRINGID_HOSPITALITYRESTORATION               705
+#define STRINGID_POKEMONDEALTAMOUNTDAMAGE             706
+#define STRINGID_ELECTROSHOCKCHARGING                 707
+#define STRINGID_DIMENSIONSWERETWISTED                708
+#define STRINGID_BIZARREARENACREATED                  709
+#define STRINGID_BIZARREAREACREATED                   710
+#define STRINGID_SHEDITSTAIL                          711
+#define STRINGID_FOGISDEEP                            712
+#define STRINGID_FOGBLOWNAWAY                         713
+#define STRINGID_PKMNTRAPPEDINAHARSHWHIRLPOOL         714
 
-#define BATTLESTRINGS_COUNT                           707
+#define BATTLESTRINGS_COUNT                           715
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -765,6 +773,7 @@
 #define B_MSG_TURN1_FREEZE_SHOCK   10
 #define B_MSG_TURN1_SKY_DROP       11
 #define B_MSG_TURN1_METEOR_BEAM    12
+#define B_MSG_TURN1_ELECTRO_SHOCK  13
 
 // gMoveWeatherChangeStringIds
 #define B_MSG_STARTED_RAIN      0
@@ -985,6 +994,18 @@
 #define B_MSG_TERRAIN_END_GRASSY    7
 #define B_MSG_TERRAIN_COUNT         8
 
+// gStartingStatusStringIds
+#define B_MSG_TERRAIN_SET_MISTY     0
+#define B_MSG_TERRAIN_SET_ELECTRIC  1
+#define B_MSG_TERRAIN_SET_PSYCHIC   2
+#define B_MSG_TERRAIN_SET_GRASSY    3
+#define B_MSG_SET_TRICK_ROOM        4
+#define B_MSG_SET_MAGIC_ROOM        5
+#define B_MSG_SET_WONDER_ROOM       6
+#define B_MSG_SET_TAILWIND_PLAYER   7
+#define B_MSG_SET_TAILWIND_OPPONENT 8
+#define B_MSG_STARTING_STATUS_COUNT 9
+
 // gWrappedStringIds
 #define B_MSG_WRAPPED_BIND         0
 #define B_MSG_WRAPPED_WRAP         1
@@ -996,7 +1017,8 @@
 #define B_MSG_WRAPPED_INFESTATION  7
 #define B_MSG_WRAPPED_SNAP_TRAP    8
 #define B_MSG_WRAPPED_THUNDER_CAGE 9
-#define NUM_TRAPPING_MOVES         10
+#define B_MSG_WRAPPED_MAELSTROM    10
+#define NUM_TRAPPING_MOVES         11
 
 // z effects
 #define B_MSG_Z_RESET_STATS   0

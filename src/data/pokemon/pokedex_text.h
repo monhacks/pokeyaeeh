@@ -6045,9 +6045,30 @@ const u8 gMiraidonPokedexText[] = _(
     "land to ash with its lightning.");
 
 const u8 gWalkingWakePokedexText[] = _(
-    "");
+    "Ecology under research.");
 
 const u8 gIronLeavesPokedexText[] = _(
-    "");
+    "Ecology under research.");
+
+const u8 gDipplinPokedexText[] = _(
+    "Ecology under research.");
+
+const u8 gPoltchageistPokedexText[] = _(
+    "Ecology under research.");
+
+const u8 gSinistchaPokedexText[] = _(
+    "Ecology under research.");
+
+const u8 gOkidogiPokedexText[] = _(
+    "Ecology under research.");
+
+const u8 gMunkidoriPokedexText[] = _(
+    "Ecology under research.");
+
+const u8 gFezandipitiPokedexText[] = _(
+    "Ecology under research.");
+
+const u8 gOgerponPokedexText[] = _(
+    "Ecology under research.");
 
 #endif

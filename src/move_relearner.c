@@ -503,14 +503,6 @@ static void DoMoveRelearnerMain(void)
     case MENU_STATE_IDLE_BATTLE_MODE:
         HandleInput(FALSE);
         break;
-    case MENU_STATE_SETUP_CONTEST_MODE:
-        ShowTeachMoveText(FALSE);
-        sMoveRelearnerStruct->state++;
-        AddScrollArrows();
-        break;
-    case MENU_STATE_IDLE_CONTEST_MODE:
-        HandleInput(TRUE);
-        break;
     case MENU_STATE_PRINT_TEACH_MOVE_PROMPT:
         if (!MoveRelearnerRunTextPrinters())
         {
@@ -538,14 +530,7 @@ static void DoMoveRelearnerMain(void)
             }
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
-                if (sMoveRelearnerMenuSate.showContestInfo == FALSE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-                }
-                else if (sMoveRelearnerMenuSate.showContestInfo == TRUE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-                }
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
             }
         }
         break;
@@ -568,14 +553,7 @@ static void DoMoveRelearnerMain(void)
             }
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
-                if (sMoveRelearnerMenuSate.showContestInfo == FALSE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-                }
-                else if (sMoveRelearnerMenuSate.showContestInfo == TRUE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-                }
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
             }
         }
         break;
@@ -628,14 +606,7 @@ static void DoMoveRelearnerMain(void)
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
                 // What's the point? It gets set to MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT, anyway.
-                if (sMoveRelearnerMenuSate.showContestInfo == FALSE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-                }
-                else if (sMoveRelearnerMenuSate.showContestInfo == TRUE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-                }
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
                 sMoveRelearnerStruct->state = MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT;
             }
         }
@@ -644,14 +615,7 @@ static void DoMoveRelearnerMain(void)
         if (!MoveRelearnerRunTextPrinters())
         {
             FillWindowPixelBuffer(RELEARNERWIN_MSG, 0x11);
-            if (sMoveRelearnerMenuSate.showContestInfo == FALSE)
-            {
-                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-            }
-            else if (sMoveRelearnerMenuSate.showContestInfo == TRUE)
-            {
-                sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-            }
+            sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
         }
         break;
     case MENU_STATE_PRINT_WHICH_MOVE_PROMPT:
@@ -682,11 +646,10 @@ static void DoMoveRelearnerMain(void)
 		break;
     case MENU_STATE_FADE_AND_RETURN:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-        if(FlagGet(FLAG_MOVE_RELEARNER) == TRUE){
+        if(FlagGet(FLAG_MOVE_RELEARNER) == TRUE)
             sMoveRelearnerStruct->state++;
-        } else {
+        else
             sMoveRelearnerStruct->state = MENU_STATE_RETURN_TO_PARTY_MENU;
-        }
         break;
     case MENU_STATE_RETURN_TO_FIELD:
         if (!gPaletteFade.active)
@@ -736,13 +699,13 @@ static void DoMoveRelearnerMain(void)
         {
             PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnForgotMoveAndLearnedNew);
             sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEXT_THEN_FANFARE;
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
         }
         break;
     case MENU_STATE_PRINT_TEXT_THEN_FANFARE:
         if (!MoveRelearnerRunTextPrinters())
         {
-            PlayFanfare(MUS_LEVEL_UP);
+            PlayFanfare(MUS_DP_LEVEL_UP);
             sMoveRelearnerStruct->state = MENU_STATE_WAIT_FOR_FANFARE;
         }
         break;
@@ -756,11 +719,10 @@ static void DoMoveRelearnerMain(void)
         if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
-            if(FlagGet(FLAG_MOVE_RELEARNER) == TRUE){
+            if(FlagGet(FLAG_MOVE_RELEARNER) == TRUE)
                 sMoveRelearnerStruct->state = MENU_STATE_FADE_AND_RETURN;
-            } else {
-                sMoveRelearnerStruct->state = MENU_STATE_CHOOSE_AGAIN;
-            }
+            else
+                sMoveRelearnerStruct->state = MENU_STATE_RETURN_TO_PARTY_MENU;
         }
         break;
     }
@@ -806,18 +768,9 @@ static void HandleInput(bool8 showContest)
 
         PlaySE(SE_SELECT);
 
-        if (showContest == FALSE)
-        {
-            PutWindowTilemap(RELEARNERWIN_DESC_CONTEST);
-            sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-            sMoveRelearnerMenuSate.showContestInfo = TRUE;
-        }
-        else
-        {
-            PutWindowTilemap(RELEARNERWIN_DESC_BATTLE);
-            sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-            sMoveRelearnerMenuSate.showContestInfo = FALSE;
-        }
+        PutWindowTilemap(RELEARNERWIN_DESC_BATTLE);
+        sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+        sMoveRelearnerMenuSate.showContestInfo = FALSE;
 
         ScheduleBgCopyTilemapToVram(1);
         MoveRelearnerShowHideHearts(GetCurrentSelectedMove());

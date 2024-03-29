@@ -297,6 +297,10 @@ static const u8 sBrutalLegsDescription[] = _("Boosts kicking moves.");
 static const u8 sHardSpinnerDescription[] = _("Boosts spinning moves.");
 static const u8 sTailstreamDescription[] = _("Sets up tailwind.");
 static const u8 sPhantomGaleDescription[] = _("Sets up ominous airs.");
+static const u8 sHerbivateDescription[] = _("Normal moves become Grass.");
+static const u8 sScorchateDescription[] = _("Normal moves become Fire.");
+static const u8 sOceanateDescription[] = _("Normal moves become Water.");
+static const u8 sRampageDescription[] = _("No recharge after a KO.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -612,6 +616,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_HARD_SPINNER] = _("Hard Spinner"),
     [ABILITY_TAILSTREAM] = _("Tailstream"),
     [ABILITY_PHANTOM_GALE] = _("Phantom Gale"),
+    [ABILITY_HERBIVATE] = _("Herbivate"),
+    [ABILITY_SCORCHATE] = _("Scorchate"),
+    [ABILITY_OCEANATE] = _("Oceanate"),
+    [ABILITY_RAMPAGE] = _("Rampage"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -927,6 +935,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_HARD_SPINNER] = _("Hard Spinner"),
     [ABILITY_TAILSTREAM] = _("Tailstream"),
     [ABILITY_PHANTOM_GALE] = _("Phantom Gale"),
+    [ABILITY_HERBIVATE] = _("Herbivate"),
+    [ABILITY_SCORCHATE] = _("Scorchate"),
+    [ABILITY_OCEANATE] = _("Oceanate"),
+    [ABILITY_RAMPAGE] = _("Rampage"),
 };
 #endif
 
@@ -1243,4 +1255,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_HARD_SPINNER] = sHardSpinnerDescription,
     [ABILITY_TAILSTREAM] = sTailstreamDescription,
     [ABILITY_PHANTOM_GALE] = sPhantomGaleDescription,
+    [ABILITY_HERBIVATE] = sHerbivateDescription,
+    [ABILITY_SCORCHATE] = sScorchateDescription,
+    [ABILITY_OCEANATE] = sOceanateDescription,
+    [ABILITY_RAMPAGE] = sRampageDescription,
 };

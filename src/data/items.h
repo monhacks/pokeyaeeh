@@ -8275,7 +8275,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_STOMPING_TANTRUM,
     },
 
-    [ITEM_TM_SHADOW_CLAW] =
+    [ITEM_TM_TEMPER_FLARE] =
     {
         .name = _("TM93"),
         .price = 3000,
@@ -8284,7 +8284,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_SHADOW_CLAW,
+        .secondaryId = MOVE_TEMPER_FLARE,
     },
 
     [ITEM_TM_SKILL_SWAP] =
@@ -8299,7 +8299,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_SKILL_SWAP,
     },
 
-    [ITEM_TM_OVERHEAT] =
+    [ITEM_TM_SHADOW_CLAW] =
     {
         .name = _("TM95"),
         .price = 3000,
@@ -8308,7 +8308,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_OVERHEAT,
+        .secondaryId = MOVE_SHADOW_CLAW,
     },
 
     [ITEM_TM_WORK_UP] =
@@ -8466,7 +8466,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_HEX,
     },
 
-    [ITEM_TM_ROUND] =
+    [ITEM_TM_SUPERCELL_SLAM] =
     {
         .name = _("TM109"),
         .price = 3000,
@@ -8475,7 +8475,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_ROUND,
+        .secondaryId = MOVE_SUPERCELL_SLAM,
     },
 
     [ITEM_TM_ELECTROWEB] =
@@ -9383,8 +9383,8 @@ const struct Item gItems[] =
         .description = sPokemonBoxLinkDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PokemonBoxLink,
     },
 
     [ITEM_COIN_CASE] =
@@ -10440,6 +10440,26 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
+    [ITEM_METAL_ALLOY] =
+    {
+        .name = _("Metal Alloy"),
+        .price = 6000,
+        .description = sMetalAlloyDesc,
+        .pocket = POCKET_POWER_UP,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+    },
+
+    [ITEM_STELLAR_TERA_SHARD] =
+    {
+        .name = _("StllrTeraShrd"),
+        .price = 0,
+        .description = sTeraShardDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
     // Hidden Power crystals
     [ITEM_FIRE_CRYSTAL] =
     {
@@ -10617,14 +10637,16 @@ const struct Item gItems[] =
         .secondaryId = TYPE_STEEL,
     },
 
-    [ITEM_CANDY_BOX] =
+    [ITEM_STEEL_ARMOR] =
     {
-        .name = _("Candy Box"),
-        .price = 0,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
-        .importance = 1,
+        .name = _("Steel Armor"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_STEEL_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
+        .description = sSteelArmorDesc,
+        .pocket = POCKET_POWER_UP,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .flingPower = 30,
     },
 };

@@ -18,8 +18,7 @@ enum {
     FONT_NARROW,
     FONT_SMALL_NARROW, // Very similar to FONT_SMALL, some glyphs are narrower
     FONT_BOLD, // JP glyph set only
-    FONT_TINY, // tiny_font
-    FONT_TINY_NARROW, // tiny_font
+    FONT_NARROWER,
 };
 
 // Return values for font functions
@@ -121,7 +120,6 @@ typedef struct {
     bool8 canABSpeedUpPrint:1;
     bool8 useAlternateDownArrow:1;
     bool8 autoScroll:1;
-    bool8 forceMidTextSpeed:1;
 } TextFlags;
 
 struct TextGlyph

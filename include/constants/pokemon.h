@@ -95,7 +95,7 @@
 #define MAX_STAT_STAGE    12
 
 // Shiny odds
-#define SHINY_ODDS 64 // Actual probability is SHINY_ODDS/65536 (Current shiny odds are 1/1024 / 0.0009765625)
+#define SHINY_ODDS 16 // Actual probability is SHINY_ODDS/65536 (Current shiny odds are 1/4096 / 0.000244140625)
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0
@@ -168,7 +168,7 @@
 #define LEVEL_UP_MOVE_LV   0xFE00
 #define LEVEL_UP_MOVE_END  0xFFFF
 
-#define MAX_LEVEL_UP_MOVES       20
+#define MAX_LEVEL_UP_MOVES       45
 
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE

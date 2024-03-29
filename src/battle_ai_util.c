@@ -295,6 +295,10 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_WANDERING_SPIRIT] = 2,
     [ABILITY_GORILLA_TACTICS] = 4,
     [ABILITY_BRUTAL_LEGS] = 6,
+    [ABILITY_PHANTOM_GALE] = 10,
+    [ABILITY_HERBIVATE] = 8,
+    [ABILITY_SCORCHATE] = 8,
+    [ABILITY_OCEANATE] = 8,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -363,6 +367,7 @@ static const u16 sEncouragedEncoreEffects[] =
     EFFECT_DRAGON_DANCE,
     EFFECT_CAMOUFLAGE,
     EFFECT_FROST_GLARE,
+    EFFECT_FILLET_AWAY,
 };
 
 // Functions
@@ -599,6 +604,8 @@ bool32 IsBattlerTrapped(u32 battler, bool32 checkSwitch)
     u32 holdEffect = AI_DATA->holdEffects[battler];
 
     if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+        return FALSE;
+    if (GetBattlerAbility(battler) == ABILITY_RUN_AWAY)
         return FALSE;
     if (checkSwitch && holdEffect == HOLD_EFFECT_SHED_SHELL)
         return FALSE;
@@ -2188,6 +2195,7 @@ bool32 IsAttackBoostMoveEffect(u32 effect)
     case EFFECT_BELLY_DRUM:
     case EFFECT_BULK_UP:
     case EFFECT_GROWTH:
+    case EFFECT_FILLET_AWAY:
         return TRUE;
     default:
         return FALSE;

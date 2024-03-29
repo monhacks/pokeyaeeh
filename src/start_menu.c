@@ -672,11 +672,7 @@ static bool8 HandleStartMenuInput(void)
         {
             if (GetNationalPokedexCount(FLAG_GET_SEEN) == 0)
                 return FALSE;
-        }
-        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
-          && MapHasNoEncounterData())
-            return FALSE;
-        
+        }        
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
         if (gMenuCallback != StartMenuSaveCallback
@@ -1530,30 +1526,12 @@ static bool8 StartMenuDexNavCallback(void)
 }
 
 // Start Menu clock
-static const u8 gText_CurrentTime[] = _(" {STR_VAR_3}  {STR_VAR_1}:{STR_VAR_2}");
-static const u8 gText_CurrentTimeOff[] = _(" {STR_VAR_3}  {STR_VAR_1} {STR_VAR_2}");
-static const u8 gText_CurrentTimeAM[] = _(" {STR_VAR_3}  {STR_VAR_1}:{STR_VAR_2} AM");
-static const u8 gText_CurrentTimeAMOff[] = _(" {STR_VAR_3}  {STR_VAR_1} {STR_VAR_2} AM");
-static const u8 gText_CurrentTimePM[] = _(" {STR_VAR_3}  {STR_VAR_1}:{STR_VAR_2} PM");
-static const u8 gText_CurrentTimePMOff[] = _(" {STR_VAR_3}  {STR_VAR_1} {STR_VAR_2} PM");
-
-static const u8 gText_Sunday[] = _("SUN");
-static const u8 gText_Monday[] = _("MON");
-static const u8 gText_Tuesday[] = _("TUE");
-static const u8 gText_Wednesday[] = _("WED,");
-static const u8 gText_Thursday[] = _("THU");
-static const u8 gText_Friday[] = _("FRI");
-static const u8 gText_Saturday[] = _("SAT");
-
-static const u8 *const gDayNamesStringsTable[7] = {
-    gText_Sunday,
-    gText_Monday,
-    gText_Tuesday,
-    gText_Wednesday,
-    gText_Thursday,
-    gText_Friday,
-    gText_Saturday,
-};
+static const u8 gText_CurrentTime[] = _("Time: {STR_VAR_1}:{STR_VAR_2}");
+static const u8 gText_CurrentTimeOff[] = _("Time: {STR_VAR_1} {STR_VAR_2}");
+static const u8 gText_CurrentTimeAM[] = _("Time: {STR_VAR_1}:{STR_VAR_2} AM");
+static const u8 gText_CurrentTimeAMOff[] = _("Time: {STR_VAR_1} {STR_VAR_2} AM");
+static const u8 gText_CurrentTimePM[] = _("Time: {STR_VAR_1}:{STR_VAR_2} PM");
+static const u8 gText_CurrentTimePMOff[] = _("Time: {STR_VAR_1} {STR_VAR_2} PM");
 
 static void ShowCurrentTimeWindow(void)
 {
@@ -1570,8 +1548,7 @@ static void ShowCurrentTimeWindow(void)
 
     analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
 
-	StringExpandPlaceholders(gStringVar3, gDayNamesStringsTable[(gLocalTime.days % 7)]);
-    ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
@@ -1598,8 +1575,7 @@ void UpdateClockDisplay(void)
 	RtcCalcLocalTime();
     analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
     
-	StringExpandPlaceholders(gStringVar3, gDayNamesStringsTable[(gLocalTime.days % 7)]);
-    ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);

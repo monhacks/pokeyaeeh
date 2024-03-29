@@ -2101,7 +2101,7 @@ MatchCall_Text_Brawly4::
 	.string "I'll ever get bored of battling you!$"
 
 MatchCall_Text_Wattson1::
-	.string "Wattson: Oh, it's you!\p"
+	.string "Tan: Oh, it's you!\p"
 	.string "After you left, I've been redoing\n"
 	.string "my training from scratch.\p"
 	.string "I'd say I could use a wee bit more\n"
@@ -2110,7 +2110,7 @@ MatchCall_Text_Wattson1::
 	.string "Wahahahaha!$"
 
 MatchCall_Text_Wattson2::
-	.string "Wattson: Wahahahaha!\p"
+	.string "Tan: Wahahahaha!\p"
 	.string "You've really done it, haven't you?\n"
 	.string "I've been getting word about you!\p"
 	.string "It seems I need to retrain some\n"
@@ -2121,18 +2121,18 @@ MatchCall_Text_Wattson2::
 	.string "Wahahahaha!$"
 
 MatchCall_Text_Wattson3::
-	.string "Wattson: Oh, it's you!\n"
+	.string "Tan: Oh, it's you!\n"
 	.string "My Gym's ready!\p"
 	.string "Visit Mauville anytime!\n"
 	.string "Wahahahaha!$"
 
 MatchCall_Text_Wattson4::
-	.string "Wattson: Wahahaha!\p"
+	.string "Tan: Wahahaha!\p"
 	.string "A battle with you is always charged\n"
 	.string "with shocking power!$"
 
 MatchCall_Text_Flannery1::
-	.string "Flannery: {PLAYER}…\p"
+	.string "Qanak: {PLAYER}…\p"
 	.string "When we battled, I learned exactly\n"
 	.string "how immature I was.\p"
 	.string "But I'm not done yet!\p"
@@ -2142,7 +2142,7 @@ MatchCall_Text_Flannery1::
 	.string "please challenge us again.$"
 
 MatchCall_Text_Flannery2::
-	.string "Flannery: Hello, {PLAYER}?\n"
+	.string "Qanak: Hello, {PLAYER}?\n"
 	.string "Congratulations!\p"
 	.string "Word of your success has reached\n"
 	.string "us like the heat of a volcano!\p"
@@ -2153,13 +2153,13 @@ MatchCall_Text_Flannery2::
 	.string "Match Call list.$"
 
 MatchCall_Text_Flannery3::
-	.string "Flannery: Oh, {PLAYER}?\n"
+	.string "Qanak: Oh, {PLAYER}?\n"
 	.string "Our Gym's ready!\p"
 	.string "Come to Lavaridge for a soak\n"
 	.string "in the hot spring and a challenge!$"
 
 MatchCall_Text_Flannery4::
-	.string "Flannery: {PLAYER}…\n"
+	.string "Qanak: {PLAYER}…\n"
 	.string "I'm positive that you keep getting\l"
 	.string "better at training every time.$"
 

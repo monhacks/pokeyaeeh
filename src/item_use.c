@@ -56,6 +56,7 @@ static u8 GetDirectionToHiddenItem(s16, s16);
 static void PlayerFaceHiddenItem(u8);
 static void CheckForHiddenItemsInMapConnection(u8);
 static void Task_OpenRegisteredPokeblockCase(u8);
+static void Task_AccessPokemonBoxLink(u8);
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
@@ -678,6 +679,29 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessPokemonBoxLink;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+static void Task_AccessPokemonBoxLink(u8 taskId)
+{
+    u16 currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+    if ((currentMap == MAP_RUSTBORO_CITY_GYM) || (currentMap == MAP_DEWFORD_TOWN_GYM) || (currentMap == MAP_MAUVILLE_CITY_GYM) || (currentMap == MAP_LAVARIDGE_TOWN_GYM_1F)
+    || (currentMap == MAP_PETALBURG_CITY_GYM) || (currentMap == MAP_FORTREE_CITY_GYM) || (currentMap == MAP_MOSSDEEP_CITY_GYM) || (currentMap == MAP_SOOTOPOLIS_CITY_GYM_1F)
+    || (currentMap == MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_PHOEBES_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_GLACIAS_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_DRAKES_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM)
+    || (currentMap == MAP_EVER_GRANDE_CITY_HALL1) || (currentMap == MAP_EVER_GRANDE_CITY_HALL2) || (currentMap == MAP_EVER_GRANDE_CITY_HALL3) || (currentMap == MAP_EVER_GRANDE_CITY_HALL4) || (currentMap == MAP_EVER_GRANDE_CITY_HALL5))
+    {
+        ItemUseOutOfBattle_CannotUse(taskId);
+    }
+    else
+    {
+        ScriptContext_SetupScript(EventScript_AccessPokemonBoxLink);
+        DestroyTask(taskId);
+    }
+}
+
 void ItemUseOutOfBattle_CoinCase(u8 taskId)
 {
     ConvertIntToDecimalStringN(gStringVar1, GetCoins(), STR_CONV_MODE_LEFT_ALIGN, 4);
@@ -852,22 +876,6 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
 {
     gItemUseCB = ItemUseCB_RareCandy;
     SetUpItemUseCallback(taskId);
-}
-
-void ItemUseOutOfBattle_CandyBox(u8 taskId)
-{
-    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
-    {
-        gItemUseCB = ItemUseCB_CandyBox2;
-        SetUpItemUseCallback(taskId);
-    }
-    else
-    {
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-        /*gFieldCallback = FieldCB_ReturnToFieldNoScript;
-        FadeScreen(FADE_TO_BLACK, 0);
-        gTasks[taskId].func = Task_InitCandyBoxFromField;*/
-    }
 }
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)
@@ -1196,7 +1204,7 @@ static bool32 CannotUseBagBattleItem(u16 itemId)
     }
     // Dire Hit
     if (battleUsage == EFFECT_ITEM_SET_FOCUS_ENERGY
-        && (gBattleMons[gBattlerInMenuId].status2 & STATUS2_FOCUS_ENERGY))
+        && (gBattleMons[gBattlerInMenuId].status2 & STATUS2_FOCUS_ENERGY_ANY))
     {
         cannotUse++;
     }

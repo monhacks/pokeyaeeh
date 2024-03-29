@@ -3023,7 +3023,7 @@ Route120_Text_JeffreyPostBattle:
 Route120_Text_JeffreyRegister:
 	.string "… … … … … …\n"
 	.string "… … … … … …\l"
-	.string "Do you have a Pokénav…?$"
+	.string "Do you have a PokéNav…?$"
 
 Route120_Text_JeffreyRematchIntro:
 	.string "… … … … … …\n"

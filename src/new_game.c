@@ -97,6 +97,9 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
+    gSaveBlock2Ptr->optionsUnitSystem = FALSE; // default Metric
+    gSaveBlock2Ptr->optionsDamageDoneOff = TRUE;
+    gSaveBlock2Ptr->optionsQuickBattleRun = FALSE; // default B->A
 }
 
 static void ClearPokedexFlags(void)
@@ -206,6 +209,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    FlagSet(FLAG_SYS_B_DASH);
     
     memset(&gSaveBlock2Ptr->itemFlags, 0, sizeof(gSaveBlock2Ptr->itemFlags));
     gSaveBlock2Ptr->autoRun = FALSE;

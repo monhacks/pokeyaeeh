@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
+#include "battle_ai_util.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_message.h"
@@ -59,15 +60,6 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
-
-#define DAY_EVO_HOUR_BEGIN       12
-#define DAY_EVO_HOUR_END         HOURS_PER_DAY
-
-#define DUSK_EVO_HOUR_BEGIN      17
-#define DUSK_EVO_HOUR_END        18
-
-#define NIGHT_EVO_HOUR_BEGIN     0
-#define NIGHT_EVO_HOUR_END       12
 
 #if P_FRIENDSHIP_EVO_THRESHOLD >= GEN_9
 #define FRIENDSHIP_EVO_THRESHOLD 160
@@ -1381,6 +1373,13 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(MIRAIDON),
     SPECIES_TO_NATIONAL(WALKING_WAKE),
     SPECIES_TO_NATIONAL(IRON_LEAVES),
+    SPECIES_TO_NATIONAL(DIPPLIN),
+    SPECIES_TO_NATIONAL(POLTCHAGEIST),
+    SPECIES_TO_NATIONAL(SINISTCHA),
+    SPECIES_TO_NATIONAL(OKIDOGI),
+    SPECIES_TO_NATIONAL(MUNKIDORI),
+    SPECIES_TO_NATIONAL(FEZANDIPITI),
+    SPECIES_TO_NATIONAL(OGERPON),
 #endif
 
     // Megas
@@ -1801,8 +1800,22 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_CALYREX_ICE_RIDER - 1] = NATIONAL_DEX_CALYREX,
     [SPECIES_CALYREX_SHADOW_RIDER - 1] = NATIONAL_DEX_CALYREX,
     [SPECIES_ENAMORUS_THERIAN - 1] = NATIONAL_DEX_ENAMORUS,
+    // Ursaluna
+    [SPECIES_URSALUNA_BLOODMOON - 1] = NATIONAL_DEX_URSALUNA,
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE - 1] = NATIONAL_DEX_BASCULEGION,
+    // Poltchageist
+    [SPECIES_POLTCHAGEIST_ARTISAN - 1] = NATIONAL_DEX_POLTCHAGEIST,
+    // Sinistcha
+    [SPECIES_SINISTCHA_MASTERPIECE - 1] = NATIONAL_DEX_POLTCHAGEIST,
+    // Ogerpon
+    [SPECIES_OGERPON_WELLSPRING_MASK - 1] = NATIONAL_DEX_OGERPON,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK - 1] = NATIONAL_DEX_OGERPON,
+    [SPECIES_OGERPON_CORNERSTONE_MASK - 1] = NATIONAL_DEX_OGERPON,
+    [SPECIES_OGERPON_TEAL_MASK_TERA - 1] = NATIONAL_DEX_OGERPON,
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA - 1] = NATIONAL_DEX_OGERPON,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA - 1] = NATIONAL_DEX_OGERPON,
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA - 1] = NATIONAL_DEX_OGERPON,
     // Gigantamax Forms
     [SPECIES_VENUSAUR_GIGANTAMAX - 1] = NATIONAL_DEX_VENUSAUR,
     [SPECIES_CHARIZARD_GIGANTAMAX - 1] = NATIONAL_DEX_CHARIZARD,
@@ -3176,6 +3189,22 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_MIRAIDON - 1]                     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_WALKING_WAKE - 1]                 = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_IRON_LEAVES - 1]                  = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_URSALUNA_BLOODMOON - 1]           = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_DIPPLIN - 1]                      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_POLTCHAGEIST_COUNTERFEIT - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SINISTCHA_UNREMARKABLE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SINISTCHA_MASTERPIECE - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OKIDOGI - 1]                      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MUNKIDORI - 1]                    = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_FEZANDIPITI - 1]                  = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_TEAL_MASK - 1]            = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_WELLSPRING_MASK - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_CORNERSTONE_MASK - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_TEAL_MASK_TERA - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA - 1] = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA - 1] = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA - 1] = ANIM_V_SQUISH_AND_BOUNCE,
 
     // Gen 3 Forms
     [SPECIES_CASTFORM_SUNNY - 1]               = ANIM_GROW_VIBRATE,
@@ -4499,6 +4528,41 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
     SetMonData(mon, field, &n);                                 \
 }
 
+bool8 IsSpeciesAffectedByScalemons(u16 species)
+{
+	if (species == SPECIES_SHEDINJA) // Shedinja would get OP stats because of its low HP and BST
+		return FALSE;
+
+    else
+        return TRUE;
+}
+
+u32 GetBaseStatsTotal(const u16 species)
+{
+    u32 total = 0;
+    u32 i;
+    u8 const *ptr;
+    ptr = &gSpeciesInfo[species].baseHP;
+
+    for (i = 0; i < NUM_STATS; i++)
+        total += ptr[i];
+
+    return total;
+}
+
+u8 GetVisualBaseStat(u8 statId, u16 species)
+{
+	u16 base = ((u8*) (&gSpeciesInfo[species].baseHP))[statId];
+
+	if (statId != STAT_HP && (FlagGet(FLAG_SCALEMONS)) && IsSpeciesAffectedByScalemons(species))
+	{
+		u8 baseHP = gSpeciesInfo[species].baseHP;
+		base = ((base * (600 - baseHP)) / (GetBaseStatsTotal(species) - baseHP), 255); //Max 255
+	}
+
+	return base;
+}
+
 void CalculateMonStats(struct Pokemon *mon)
 {
     s32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
@@ -4522,7 +4586,8 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
-    if(B_PERFECT_IVS == TRUE){
+    if(B_PERFECT_IVS == TRUE)
+    {
         hpIV 		= 31;
 		attackIV 	= 31;
 		defenseIV 	= 31;
@@ -4552,6 +4617,26 @@ void CalculateMonStats(struct Pokemon *mon)
     CALC_STAT(baseSpeed, speedIV, speedEV, STAT_SPEED, MON_DATA_SPEED)
     CALC_STAT(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
     CALC_STAT(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
+
+    if (FlagGet(FLAG_SCALEMONS) && IsSpeciesAffectedByScalemons(species))
+	{
+        u32 i;
+        u16 base;
+        u16 baseStatTotal;
+        u16 HP;
+        u16 baseAtk;
+        u32 evs[i];
+
+		for (i = STAT_ATK; i < NUM_STATS; i++) // HP doesn't change in Scalemons
+		{
+			base = ((u8*) (&gSpeciesInfo[species].baseHP))[i];
+            baseStatTotal = GetBaseStatsTotal(species);
+            HP = gSpeciesInfo[species].baseHP;
+            baseAtk = ((u8*) (&gSpeciesInfo[species].baseAttack))[i];
+			base = ((base * (600 - HP)) / (baseStatTotal - HP), 255); // Max 255
+			CALC_STAT(baseAttack + (i - 1), 31, evs[i], i, MON_DATA_ATK + (i - 1));
+		}
+	}
 
     if (species == SPECIES_SHEDINJA)
     {
@@ -6180,12 +6265,9 @@ const u32 sExpCandyExperienceTable[] = {
     [EXP_30000 - 1] = 30000,
 };
 
-#define CANDY_BOX_LEVELS 5
-
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
 bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
 {
-
     u32 dataUnsigned;
     s32 dataSigned, evCap;
     s32 friendship;
@@ -6202,8 +6284,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     u8 effectFlags;
     s8 evChange;
     u16 evCount;
-    u8 levelUp;
-    u16 species;
 
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
@@ -6240,42 +6320,20 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
         // Handle ITEM3 effects (Guard Spec, Rare Candy, cure status)
         case 3:
-            // Candy Box
-            if ((itemEffect[i] & ITEM3_LEVEL_UP) && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetLevelCap() && FlagGet(FLAG_USED_CANDY_BOX))
-            {
-                if(VarGet(VAR_CANDY_BOX_LEVEL) == (VarGet(VAR_CANDY_BOX_NUM_LEVELS) - 1))
-                {
-                    levelUp = GetLevelCap() - GetMonData(mon, MON_DATA_LEVEL, NULL);
-                }
-                else
-                {
-                    levelUp = VarGet(VAR_CANDY_BOX_LEVEL);
-                    if(levelUp > CANDY_BOX_LEVELS)
-                        levelUp = CANDY_BOX_LEVELS;
-                }
-
-                if((GetMonData(mon, MON_DATA_LEVEL, NULL) + levelUp) >= MAX_LEVEL)
-                    levelUp = MAX_LEVEL - GetMonData(mon, MON_DATA_LEVEL, NULL);
-
-                dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + levelUp];
-                SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
-                CalculateMonStats(mon);
-                retVal = FALSE;
-            }
             // Rare Candy / EXP Candy
-            if ((itemEffect[i] & ITEM3_LEVEL_UP) && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetLevelCap())
+            if ((itemEffect[i] & ITEM3_LEVEL_UP)
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL)
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;
 
                 if (param == 0) // Rare Candy
                 {
-                    levelUp = 1;
-                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + levelUp];
+                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
                 }
                 else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
                 {
-                    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+                    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
                     dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP, NULL);
                     if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
                         dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
@@ -6913,28 +6971,23 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_DAY:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= DAY_EVO_HOUR_BEGIN && gLocalTime.hours < DAY_EVO_HOUR_END && friendship >= FRIENDSHIP_EVO_THRESHOLD)
+                if (GetTimeOfDay() != TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_DAY:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= DAY_EVO_HOUR_BEGIN && gLocalTime.hours < DAY_EVO_HOUR_END && gEvolutionTable[species][i].param <= level)
+                if (GetTimeOfDay() != TIME_NIGHT && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= NIGHT_EVO_HOUR_BEGIN && gLocalTime.hours < NIGHT_EVO_HOUR_END && friendship >= FRIENDSHIP_EVO_THRESHOLD)
+                if (GetTimeOfDay() == TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_NIGHT:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= NIGHT_EVO_HOUR_BEGIN && gLocalTime.hours < NIGHT_EVO_HOUR_END && gEvolutionTable[species][i].param <= level)
+                if (GetTimeOfDay() == TIME_NIGHT && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_HOLD_NIGHT:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= NIGHT_EVO_HOUR_BEGIN && gLocalTime.hours < NIGHT_EVO_HOUR_END && heldItem == gEvolutionTable[species][i].param)
+                if (GetTimeOfDay() == TIME_NIGHT && heldItem == gEvolutionTable[species][i].param)
                 {
                     heldItem = ITEM_NONE;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
@@ -6942,8 +6995,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 }
                 break;
             case EVO_ITEM_HOLD_DAY:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= DAY_EVO_HOUR_BEGIN && gLocalTime.hours < DAY_EVO_HOUR_END && heldItem == gEvolutionTable[species][i].param)
+                if (GetTimeOfDay() != TIME_NIGHT && heldItem == gEvolutionTable[species][i].param)
                 {
                     heldItem = ITEM_NONE;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
@@ -6951,8 +7003,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 }
                 break;
             case EVO_LEVEL_DUSK:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= DUSK_EVO_HOUR_BEGIN && gLocalTime.hours < DUSK_EVO_HOUR_END && gEvolutionTable[species][i].param <= level)
+                if (GetTimeOfDay() == TIME_DUSK && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL:
@@ -7151,9 +7202,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 }
                 break;
             case EVO_NIGHT_SPECIFIC_MAP:
-                RtcCalcLocalTime();
                 currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
-                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours < DAY_START) && gEvolutionTable[species][i].param <= level && gEvolutionTable[species][i].param2 == currentMap)
+                if (GetTimeOfDay() == TIME_NIGHT && gEvolutionTable[species][i].param <= level && gEvolutionTable[species][i].param2 == currentMap)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }
@@ -7201,13 +7251,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_NIGHT:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= NIGHT_EVO_HOUR_BEGIN && gLocalTime.hours < NIGHT_EVO_HOUR_END && gEvolutionTable[species][i].param == evolutionItem)
+                if (GetTimeOfDay() == TIME_NIGHT && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_DAY:
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= DAY_EVO_HOUR_BEGIN && gLocalTime.hours < DAY_EVO_HOUR_END && gEvolutionTable[species][i].param == evolutionItem)
+                if (GetTimeOfDay() != TIME_NIGHT && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_SPECIFIC_MAP:
@@ -8067,7 +8115,8 @@ u8 GetNumberOfEggMoves(struct Pokemon *mon)
     {
         hasMonMove = FALSE;
         
-        for (j = 0; j < MAX_MON_MOVES; j++){
+        for (j = 0; j < MAX_MON_MOVES; j++)
+        {
             if(learnedMoves[j] == eggMoveBuffer[i])
                 hasMonMove = TRUE;
         }
@@ -8098,7 +8147,8 @@ u8 GetEggMoveTutorMoves(struct Pokemon *mon, u16 *moves)
     {
         hasMonMove = FALSE;
 
-        for (j = 0; j < MAX_MON_MOVES; j++){
+        for (j = 0; j < MAX_MON_MOVES; j++)
+        {
             if(learnedMoves[j] == eggMoveBuffer[i])
                 hasMonMove = TRUE;
         }
@@ -8179,18 +8229,20 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
+        case TRAINER_CLASS_ROUTE_BOSS:
+            return MUS_HG_VS_GYM_LEADER;
         case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
+            return MUS_DP_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION;
+            return MUS_DP_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-                return MUS_VS_RIVAL;
+                return MUS_DP_VS_RIVAL;
             if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
-                return MUS_VS_TRAINER;
-            return MUS_VS_RIVAL;
+                return MUS_HG_VS_RIVAL;
+            return MUS_DP_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
-            return MUS_VS_ELITE_FOUR;
+            return MUS_DP_VS_ELITE_FOUR;
         case TRAINER_CLASS_SALON_MAIDEN:
         case TRAINER_CLASS_DOME_ACE:
         case TRAINER_CLASS_PALACE_MAVEN:
@@ -8198,9 +8250,9 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_FACTORY_HEAD:
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
-            return MUS_VS_FRONTIER_BRAIN;
+            return MUS_PL_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return MUS_DP_VS_TRAINER;
         }
     }
     else
@@ -8317,7 +8369,7 @@ u16 GetBattleBGM(void)
             return MUS_DP_VS_ARCEUS;
         #endif
         default:
-            return MUS_VS_WILD;
+            return MUS_DP_VS_WILD;
         }
     }
 }
@@ -9147,13 +9199,11 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                         switch (formChanges[i].param2)
                         {
                         case DAY:
-                            RtcCalcLocalTime();
-                            if (gLocalTime.hours >= DAY_EVO_HOUR_BEGIN && gLocalTime.hours < DAY_EVO_HOUR_END)
+                            if (GetTimeOfDay() != TIME_NIGHT)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         case NIGHT:
-                            RtcCalcLocalTime();
-                            if (gLocalTime.hours >= NIGHT_EVO_HOUR_BEGIN && gLocalTime.hours < NIGHT_EVO_HOUR_END)
+                            if (GetTimeOfDay() == TIME_NIGHT)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         default:

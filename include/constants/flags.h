@@ -104,7 +104,7 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
+#define FLAG_RECEIVED_PALAFIN                0x54  // Gift mon, Mossdeep City
 #define FLAG_UNUSED_0x055                    0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
@@ -522,7 +522,7 @@
 #define FLAG_SYS_MOVE_INFO                   0x1DE // Battle interface
 #define FLAG_MOVE_RELEARNER                  0x1DF // Move relearner
 #define FLAG_UNLOCK_CHEAT_MENU               0x1E0 // Cheat Scripts Menu
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
+#define FLAG_SYS_DISABLE_DAMAGE_DONE         0x1E1 // Damage Done display
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
@@ -659,11 +659,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_PERMANENT_TRICK_ROOM       0x264 // Sets permanent Trick Room
-#define FLAG_PERMANENT_TAILWIND         0x265 // Sets permanent Tailwind (for the enemy)
-#define FLAG_PERMANENT_SCREENS          0x266 // Sets permanent Reflect and Light Screen (for the enemy)
-#define FLAG_PERMANENT_AURORA_VEIL      0x267 // Sets permanent Aurora Veil (for the enemy)
-#define FLAG_TOXIC_POISON_TEAM          0x268 // Toxic Poisons player party when the battle starts
+#define FLAG_TOXIC_POISON_TEAM      0x264 // Toxic Poisons player party when the battle starts
+#define FLAG_UNUSED_0x265  0x265 // Unused Flag
+#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+#define FLAG_UNUSED_0x267  0x267 // Unused Flag
+#define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
@@ -1329,7 +1329,7 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
+#define FLAG_SCALEMONS                                              0x4F9 // Unused Flag
 #define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
@@ -1392,7 +1392,7 @@
 
 #define FLAG_SYS_DEXNAV_SEARCH                      (SYSTEM_FLAGS + 0x21)
 #define FLAG_SHINY_CREATION                         (SYSTEM_FLAGS + 0x22)   // force creation of a shiny mon
-#define FLAG_USED_CANDY_BOX                         (SYSTEM_FLAGS + 0x23) // Candy Box flag
+#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag

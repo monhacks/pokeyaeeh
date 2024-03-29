@@ -491,7 +491,7 @@ bool8 ScrCmd_additem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = AddBagItem(itemId, (u8)quantity);
+    gSpecialVar_Result = AddBagItem(itemId, quantity);
     return FALSE;
 }
 
@@ -500,7 +500,7 @@ bool8 ScrCmd_removeitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = RemoveBagItem(itemId, (u8)quantity);
+    gSpecialVar_Result = RemoveBagItem(itemId, quantity);
     return FALSE;
 }
 
@@ -509,7 +509,7 @@ bool8 ScrCmd_checkitemspace(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = CheckBagHasSpace(itemId, (u8)quantity);
+    gSpecialVar_Result = CheckBagHasSpace(itemId, quantity);
     return FALSE;
 }
 
@@ -518,7 +518,7 @@ bool8 ScrCmd_checkitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = CheckBagHasItem(itemId, (u8)quantity);
+    gSpecialVar_Result = CheckBagHasItem(itemId, quantity);
     return FALSE;
 }
 
@@ -1292,7 +1292,6 @@ bool8 ScrCmd_messageautoscroll(struct ScriptContext *ctx)
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     gTextFlags.autoScroll = TRUE;
-    gTextFlags.forceMidTextSpeed = TRUE;
     ShowFieldAutoScrollMessage(msg);
     return FALSE;
 }
@@ -1729,10 +1728,11 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
             gSpecialVar_0x8004 = species;
             break;
         }
-        if (gSpecialVar_Result == PARTY_SIZE && PlayerHasMove(moveId)){  // If no mon have the move, but the player has the HM in bag, use the first mon
+        if (gSpecialVar_Result == PARTY_SIZE && PlayerHasMove(moveId))  // If no mon have the move, but the player has the HM in bag, use the first mon
+        {
             gSpecialVar_Result = 0;
             gSpecialVar_0x8004 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
-         }
+        }
     }    
     return FALSE;
 }
@@ -2387,8 +2387,11 @@ bool8 ScrCmd_giveformchangeitems(struct ScriptContext *ctx)
     AddBagItem(ITEM_RED_ORB, 1);
     AddBagItem(ITEM_BLUE_ORB, 1);
     AddBagItem(ITEM_ADAMANT_ORB, 1);
+    AddBagItem(ITEM_ADAMANT_CRYSTAL, 1);
     AddBagItem(ITEM_LUSTROUS_ORB, 1);
+    AddBagItem(ITEM_LUSTROUS_GLOBE, 1);
     AddBagItem(ITEM_GRISEOUS_ORB, 1);
+    AddBagItem(ITEM_GRISEOUS_CORE, 1);
     AddBagItem(ITEM_GRACIDEA, 1);
     AddBagItem(ITEM_REVEAL_GLASS, 1);
     AddBagItem(ITEM_DNA_SPLICERS, 1);

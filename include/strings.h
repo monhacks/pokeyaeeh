@@ -221,6 +221,7 @@ extern const u8 gMenuText_Confirm[];
 extern const u8 gMenuText_Show[];
 extern const u8 gMenuText_Give2[];
 extern const u8 gText_FieldMoves[];
+extern const u8 gText_StatEditor[];
 
 extern const u8 gText_WithdrawPokemon[];
 extern const u8 gText_WithdrawMonDescription[];
@@ -325,6 +326,13 @@ extern const u8 gText_Frame[];
 extern const u8 gText_ClockMode[];
 extern const u8 gText_ClockOption1[];
 extern const u8 gText_ClockOption2[];
+extern const u8 gText_UnitSystem[];
+extern const u8 gText_Imperial[];
+extern const u8 gText_Metric[];
+extern const u8 gText_DamageDone[];
+extern const u8 gText_QuickBattleRun[];
+extern const u8 gText_QuickBattleRunR[];
+extern const u8 gText_QuickBattleRunBA[];
 extern const u8 gText_OptionMenuCancel[];
 extern const u8 gText_ButtonMode[];
 
@@ -543,7 +551,9 @@ extern const u8 gText_PokedexRegistration[];
 extern const u8 gText_NumberClear01[];
 extern const u8 gText_5MarksPokemon[];
 extern const u8 gText_UnkHeight[];
+extern const u8 gText_UnkHeightMetric[];
 extern const u8 gText_UnkWeight[];
+extern const u8 gText_UnkWeightMetric[];
 extern const u8 gText_HTHeight[];
 extern const u8 gText_WTWeight[];
 extern const u8 gText_SearchingPleaseWait[];
@@ -924,7 +934,8 @@ extern const u8 gText_MoveRelearnerPkmnForgotMoveAndLearnedNew[];
 extern const u8 gText_TeachWhichMoveToPkmn[];
 extern const u8 gText_MoveRelearnerGiveUp[];
 extern const u8 gText_MoveRelearnerTeachMoveConfirm[];
-extern const u8 gText_MoveRelearnerBattleMoves[];
+extern const u8 gText_MoveRelearnerLevelUpMoves[];
+extern const u8 gText_MoveRelearnerEggMoves[];
 extern const u8 gText_MoveRelearnerPP[];
 extern const u8 gText_MoveRelearnerPower[];
 extern const u8 gText_MoveRelearnerAccuracy[];
@@ -3105,7 +3116,5 @@ extern const u8 gText_Paldea[];
 // Move tutors
 extern const u8 gText_Moves[];
 extern const u8 gText_Egg_Moves[];
-
-extern const u8 gText_WhatLevel[];
 
 #endif // GUARD_STRINGS_H

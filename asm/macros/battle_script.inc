@@ -985,7 +985,7 @@
 	.byte 0xbb
 	.endm
 
-	.macro maxattackhalvehp failInstr:req
+	.macro halvehp failInstr:req
 	.byte 0xbc
 	.4byte \failInstr
 	.endm
@@ -1696,6 +1696,10 @@
 
 	.macro tryactivatemoxie battler:req
 	various \battler, VARIOUS_TRY_ACTIVATE_MOXIE
+	.endm
+
+	.macro tryactivaterampage battler:req
+	various \battler, VARIOUS_TRY_ACTIVATE_RAMPAGE
 	.endm
 
 	.macro tryactivatebeastboost battler:req

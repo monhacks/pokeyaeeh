@@ -399,6 +399,7 @@ struct BattleMove
     u32 kickingMove:1;
     u32 spinningMove:1;
     u32 skyBattleBanned:1;
+    u32 sketchBanned:1;
 };
 
 #define SPINDA_SPOT_WIDTH 16
@@ -658,8 +659,8 @@ bool32 IsSpeciesEnabled(u16 species);
 u8 GetNumberOfEggMoves(struct Pokemon *mon);
 u8 GetEggMoveTutorMoves(struct Pokemon *mon, u16 *moves);
 u8 GetLevelCap(void);
-
-#define DAY_START 4
-#define NIGHT_START 18
+bool8 IsSpeciesAffectedByScalemons(u16 species);
+u32 GetBaseStatsTotal(const u16 species);
+u8 GetVisualBaseStat(u8 statId, u16 species);
 
 #endif // GUARD_POKEMON_H

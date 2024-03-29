@@ -65,8 +65,8 @@ static const u8 sSwordsDanceDescription[] = _(
     "sharply raises Attack.");
 
 static const u8 sCutDescription[] = _(
-    "Cuts the foe with sharp\n"
-    "scythes, claws, etc.");
+    "A slicing attack with a\n"
+    "high critical-hit ratio.");
 
 static const u8 sGustDescription[] = _(
     "Strikes the foe with a gust\n"
@@ -1633,8 +1633,8 @@ static const u8 sAirSlashDescription[] = _(
     "air. May cause flinching.");
 
 static const u8 sXScissorDescription[] = _(
-    "Slashes the foe with crossed\n"
-    "scythes, claws, etc.");
+    "A slicing attack with a\n"
+    "high critical-hit ratio.");
 
 static const u8 sBugBuzzDescription[] = _(
     "A damaging sound wave that\n"
@@ -3268,6 +3268,54 @@ static const u8 sIvyCudgelDescription[] = _(
     "Type changes with held mask.\n"
     "High critical-hit ratio.");
 
+static const u8 sElectroShotDescription[] = _(
+    "Absorbs electricity in one turn,\n"
+    "then attacks next turn.");
+
+static const u8 sTeraStarstormDescription[] = _(
+    "Damages all opponents if user is\n"
+    "Stellar form Terapagos.");
+
+static const u8 sFickleBeamDescription[] = _(
+    "Shoots a beam of light. Sometimes\n"
+    "twice as strong.");
+
+static const u8 sBurningBulwarkDescription[] = _(
+    "Evades attack, and burns\n"
+    "the foe if struck.");
+
+static const u8 sTachyonCutterDescription[] = _(
+    "Launches particle blades at\n"
+    "the target. Strikes twice.");
+
+static const u8 sDragonCheerDescription[] = _(
+    "Increases allies' critical hit\n"
+    "ration, especially if Dragons.");
+
+static const u8 sAlluringVoiceDescription[] = _(
+    "Confuses the target if their\n"
+    "stats were boosted this turn.");
+
+static const u8 sTemperFlareDescription[] = _(
+    "A desperation attack. Power\n"
+    "doubles if last move failed.");
+
+static const u8 sSupercellSlamDescription[] = _(
+    "An electrified slam. If it\n"
+    "misses, the user is hurt.");
+
+static const u8 sPsychicNoiseDescription[] = _(
+    "Unpleasant sound waves that\n"
+    "damage and prevent healing.");
+
+static const u8 sUpperHandDescription[] = _(
+    "Makes the target flinch if\n"
+    "readying a priority move.");
+
+static const u8 sMalignantChainDescription[] = _(
+    "A corrosive chain attack\n"
+    "that may badly poison.");
+
 static const u8 sJetstreamDescription[] = _(
     "Shoots a stream of air.\n"
     "May cause confusion.");
@@ -3280,13 +3328,25 @@ static const u8 sKnucklePunchDescription[] = _(
     "A full force punch that may\n"
     "cause the foe to flinch.");
 
+static const u8 sStunningBlowDescription[] = _(
+    "A stunning blow that will\n"
+    "cause the foe to flinch.");
+
 static const u8 sRousedFangsDescription[] = _(
     "An electrifying bite.\n"
     "Raises Speed.");
 
-static const u8 sStunningBlowDescription[] = _(
-    "A stunning blow that will\n"
-    "cause the foe to flinch.");
+static const u8 sAquaFangsDescription[] = _(
+    "A hydro-powered bite that\n"
+    "may lower the foe's Defense.");
+
+static const u8 sGlacialSlamDescription[] = _(
+    "A charge that may cause\n"
+    "frostbite. Also hurts the user.");
+
+static const u8 sMaelstromDescription[] = _(
+    "Traps and hurts the foe in\n"
+    "a whirlpool for "BINDING_TURNS" turns.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
@@ -4132,11 +4192,29 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MATCHA_GOTCHA - 1] = sMatchaGotchaDescription,
     [MOVE_SYRUP_BOMB - 1] = sSyrupBombDescription,
     [MOVE_IVY_CUDGEL - 1] = sIvyCudgelDescription,
+    [MOVE_ELECTRO_SHOT - 1] = sElectroShotDescription,
+    [MOVE_TERA_STARSTORM - 1] = sTeraStarstormDescription,
+    [MOVE_FICKLE_BEAM - 1] = sFickleBeamDescription,
+    [MOVE_BURNING_BULWARK - 1] = sBurningBulwarkDescription,
+    [MOVE_THUNDERCLAP - 1] = sSuckerPunchDescription,
+    [MOVE_MIGHTY_CLEAVE - 1] = sFeintDescription,
+    [MOVE_TACHYON_CUTTER - 1] = sTachyonCutterDescription,
+    [MOVE_HARD_PRESS - 1] = sWringOutDescription,
+    [MOVE_DRAGON_CHEER - 1] = sDragonCheerDescription,
+    [MOVE_ALLURING_VOICE - 1] = sAlluringVoiceDescription,
+    [MOVE_TEMPER_FLARE - 1] = sTemperFlareDescription,
+    [MOVE_SUPERCELL_SLAM - 1] = sSupercellSlamDescription,
+    [MOVE_PSYCHIC_NOISE - 1] = sPsychicNoiseDescription,
+    [MOVE_UPPER_HAND - 1] = sUpperHandDescription,
+    [MOVE_MALIGNANT_CHAIN - 1] = sMalignantChainDescription,
     [MOVE_JETSTREAM - 1] = sJetstreamDescription,
     [MOVE_FROST_GLARE - 1] = sFrostGlareDescription,
     [MOVE_KNUCKLE_PUNCH - 1] = sKnucklePunchDescription,
-    [MOVE_ROUSED_FANGS - 1] = sRousedFangsDescription,
     [MOVE_STUNNING_BLOW - 1] = sStunningBlowDescription,
+    [MOVE_ROUSED_FANGS - 1] = sRousedFangsDescription,
+    [MOVE_AQUA_FANGS - 1] = sAquaFangsDescription,
+    [MOVE_GLACIAL_SLAM - 1] = sGlacialSlamDescription,
+    [MOVE_MAELSTROM - 1] = sMaelstromDescription,
 };
 
 static const u8 sMoveFourLineDescription_Pound[] = _("A physical attack\ndelivered with a\nlong tail or a\nforeleg, etc.");
@@ -4156,7 +4234,7 @@ static const u8 sMoveFourLineDescription_RazorWind[] = _("Blades of wind hit\nth
 #if CONFIG_DECAPITALIZE_MOVE_DESCRIPTION_STRINGS
 
 static const u8 sMoveFourLineDescription_SwordsDance[] = _("A frenetic dance of\nfighting. It sharply\nraises the Attack\nstat.");
-static const u8 sMoveFourLineDescription_Cut[] = _("A basic attack.\nIt can be used to\ncut down thin trees\nand grass.");
+static const u8 sMoveFourLineDescription_Cut[] = _("The user slashes\nthe foe with sharp,\ncrossed limbs. High\ncritical-hit ratio.");
 static const u8 sMoveFourLineDescription_Gust[] = _("Strikes the foe\nwith a gust of wind\nwhipped up by\nwings.");
 static const u8 sMoveFourLineDescription_WingAttack[] = _("The foe is struck\nwith large, imposing\nwings spread wide.");
 static const u8 sMoveFourLineDescription_Whirlwind[] = _("The foe is made to\nswitch out with an\nally. In the wild,\nthe battle ends.");
@@ -4941,7 +5019,7 @@ static const u8 sMoveFourLineDescription_NightSlash[] = _("The user waits to\nst
 static const u8 sMoveFourLineDescription_AquaTail[] = _("The user attacks\nby swinging its\ntail as if it were\na vicious wave.");
 static const u8 sMoveFourLineDescription_SeedBomb[] = _("A barrage of hard-\nshelled seeds is\nslammed on the\nfoe from above.");
 static const u8 sMoveFourLineDescription_AirSlash[] = _("A blade of air\nslices the foe,\nwith a chance to\nmake them flinch.");
-static const u8 sMoveFourLineDescription_XScissor[] = _("The user slashes\nthe foe with\ncrossed scythes,\nclaws, etc.");
+static const u8 sMoveFourLineDescription_XScissor[] = _("The user slashes\nthe foe with sharp,\ncrossed limbs. High\ncritical-hit ratio.");
 static const u8 sMoveFourLineDescription_BugBuzz[] = _("A harsh sound wave\nis generated by the\nuser. This may drop\nthe foe's Sp. Def. ");
 static const u8 sMoveFourLineDescription_DragonPulse[] = _("The user's gaping\nmouth generates a\nshock wave attack\nat its target.");
 static const u8 sMoveFourLineDescription_DragonRush[] = _("A tackle exhibiting\ndevastating menace.\nThis may also make\nthe target flinch.");
@@ -5378,11 +5456,29 @@ static const u8 sMoveFourLineDescription_BloodMoon[] = _("The user channels\nthe
 static const u8 sMoveFourLineDescription_MatchaGotcha[] = _("The user fires a\nblast of tea which\nheals it for half HP.\nMay burn the foe.");
 static const u8 sMoveFourLineDescription_SyrupBomb[] = _("The user sets off an\nexplosion of candy\nsyrup which slows\nthe foe for 3 turns.");
 static const u8 sMoveFourLineDescription_IvyCudgel[] = _("This move's type\nchanges depending\non the mask. It has a\nhigh crit hit ratio.");
+static const u8 sMoveFourLineDescription_ElectroShot[] = _(" ");
+static const u8 sMoveFourLineDescription_TeraStarstorm[] = _(" ");
+static const u8 sMoveFourLineDescription_Ficklebeam[] = _(" ");
+static const u8 sMoveFourLineDescription_BurningBulwark[] = _(" ");
+static const u8 sMoveFourLineDescription_Thunderclap[] = _(" ");
+static const u8 sMoveFourLineDescription_MightyCleave[] = _(" ");
+static const u8 sMoveFourLineDescription_TachyonCutter[] = _(" ");
+static const u8 sMoveFourLineDescription_HardPress[] = _(" ");
+static const u8 sMoveFourLineDescription_DragonCheer[] = _(" ");
+static const u8 sMoveFourLineDescription_AlluringVoice[] = _(" ");
+static const u8 sMoveFourLineDescription_TemperFlare[] = _("A frustrated strike\nthat deals twice\nthe damage if the\nlast move failed.");
+static const u8 sMoveFourLineDescription_SupercellSlam[] = _("the user electrifies\nits body and drops\nonto the foe. Causes\nrecoil if missed.");
+static const u8 sMoveFourLineDescription_PsychicNoise[] = _(" ");
+static const u8 sMoveFourLineDescription_UpperHand[] = _(" ");
+static const u8 sMoveFourLineDescription_MalignantChain[] = _(" ");
 static const u8 sMoveFourLineDescription_Jetstream[] = _("The user shoots a\nfast ray of wind at\nfoe. It may cause\nconfusion.");
 static const u8 sMoveFourLineDescription_FrostGlare[] = _("The user chillingly\nstares at the foe.\nThe foe is now\nfrostbitten.");
 static const u8 sMoveFourLineDescription_KnucklePunch[] = _("The user punches\nthe foe with great\nforce. This may\ncause flinching.");
-static const u8 sMoveFourLineDescription_RousedFangs[] = _("The user's electric\nfangs jab into the\nthe foe. Raises the\nuser's Speed.");
 static const u8 sMoveFourLineDescription_StunningBlow[] = _("The user excitedly\nslams the foe to\nstun it. This may\ncause flinching.");
+static const u8 sMoveFourLineDescription_RousedFangs[] = _("The user's electric\nfangs jab into the\nthe foe. Raises the\nuser's Speed.");
+static const u8 sMoveFourLineDescription_AquaFangs[] = _("The user's hydro-\npowered fangs bite\ninto the foe. This\nmay lower Defense.");
+static const u8 sMoveFourLineDescription_GlacialSlam[] = _("A cold, freezing\ncharge which harms\nthe user. It may\ncause a frostbite.");
+static const u8 sMoveFourLineDescription_Maelstrom[] = _("The foe is trapped\nin a fast, harsh\nwhirlpool for two\nto five turns.");
 
 
 #endif
@@ -6241,10 +6337,28 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_MATCHA_GOTCHA     - 1] = sMoveFourLineDescription_MatchaGotcha,
     [MOVE_SYRUP_BOMB        - 1] = sMoveFourLineDescription_SyrupBomb,
     [MOVE_IVY_CUDGEL        - 1] = sMoveFourLineDescription_IvyCudgel,
+    [MOVE_ELECTRO_SHOT      - 1] = sMoveFourLineDescription_ElectroShot,
+    [MOVE_TERA_STARSTORM    - 1] = sMoveFourLineDescription_TeraStarstorm,
+    [MOVE_FICKLE_BEAM       - 1] = sMoveFourLineDescription_Ficklebeam,
+    [MOVE_BURNING_BULWARK   - 1] = sMoveFourLineDescription_BurningBulwark,
+    [MOVE_THUNDERCLAP       - 1] = sMoveFourLineDescription_Thunderclap,
+    [MOVE_MIGHTY_CLEAVE     - 1] = sMoveFourLineDescription_MightyCleave,
+    [MOVE_TACHYON_CUTTER    - 1] = sMoveFourLineDescription_TachyonCutter,
+    [MOVE_HARD_PRESS        - 1] = sMoveFourLineDescription_HardPress,
+    [MOVE_DRAGON_CHEER      - 1] = sMoveFourLineDescription_DragonCheer,
+    [MOVE_ALLURING_VOICE    - 1] = sMoveFourLineDescription_AlluringVoice,
+    [MOVE_TEMPER_FLARE      - 1] = sMoveFourLineDescription_TemperFlare,
+    [MOVE_SUPERCELL_SLAM    - 1] = sMoveFourLineDescription_SupercellSlam,
+    [MOVE_PSYCHIC_NOISE     - 1] = sMoveFourLineDescription_PsychicNoise,
+    [MOVE_UPPER_HAND        - 1] = sMoveFourLineDescription_UpperHand,
+    [MOVE_MALIGNANT_CHAIN   - 1] = sMoveFourLineDescription_MalignantChain,
     [MOVE_JETSTREAM         - 1] = sMoveFourLineDescription_Jetstream,
     [MOVE_FROST_GLARE       - 1] = sMoveFourLineDescription_FrostGlare,
     [MOVE_KNUCKLE_PUNCH     - 1] = sMoveFourLineDescription_KnucklePunch,
+    [MOVE_STUNNING_BLOW     - 1] = sMoveFourLineDescription_StunningBlow,
     [MOVE_ROUSED_FANGS      - 1] = sMoveFourLineDescription_RousedFangs,
-    [MOVE_STUNNING_BLOW      - 1] = sMoveFourLineDescription_StunningBlow,
+    [MOVE_AQUA_FANGS        - 1] = sMoveFourLineDescription_AquaFangs,
+    [MOVE_GLACIAL_SLAM      - 1] = sMoveFourLineDescription_GlacialSlam,
+    [MOVE_MAELSTROM         - 1] = sMoveFourLineDescription_Maelstrom,
 #endif
 };
