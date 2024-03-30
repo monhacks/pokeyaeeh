@@ -162,7 +162,7 @@ static const u8 sFlowerVeilDescription[] = _("Protects Grass-types.");
 static const u8 sCheekPouchDescription[] = _("Eating Berries restores HP.");
 static const u8 sProteanDescription[] = _("Changes type to used move.");
 static const u8 sFurCoatDescription[] = _("Raises Defense.");
-static const u8 sBulletproofDescription[] = _("Avoids some projectiles.");
+static const u8 sBulletproofDescription[] = _("Avoids ballistic moves.");
 static const u8 sCompetitiveDescription[] = _("Lowered stats up Sp. Atk.");
 static const u8 sStrongJawDescription[] = _("Boosts biting moves.");
 static const u8 sRefrigerateDescription[] = _("Normal moves become Ice.");
@@ -301,6 +301,7 @@ static const u8 sHerbivateDescription[] = _("Normal moves become Grass.");
 static const u8 sScorchateDescription[] = _("Normal moves become Fire.");
 static const u8 sOceanateDescription[] = _("Normal moves become Water.");
 static const u8 sRampageDescription[] = _("No recharge after a KO.");
+static const u8 sBombasticDescription[] = _("Boosts ballistic moves.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -620,6 +621,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SCORCHATE] = _("Scorchate"),
     [ABILITY_OCEANATE] = _("Oceanate"),
     [ABILITY_RAMPAGE] = _("Rampage"),
+    [ABILITY_BOMBASTIC] = _("Bombastic"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -939,6 +941,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SCORCHATE] = _("Scorchate"),
     [ABILITY_OCEANATE] = _("Oceanate"),
     [ABILITY_RAMPAGE] = _("Rampage"),
+    [ABILITY_BOMBASTIC] = _("Bombastic"),
 };
 #endif
 
@@ -1259,4 +1262,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SCORCHATE] = sScorchateDescription,
     [ABILITY_OCEANATE] = sOceanateDescription,
     [ABILITY_RAMPAGE] = sRampageDescription,
+    [ABILITY_BOMBASTIC] = sBombasticDescription,
 };

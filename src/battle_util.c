@@ -9327,6 +9327,10 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (gBattleMoves[move].kickingMove)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_BOMBASTIC:
+        if (gBattleMoves[move].ballisticMove)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_SHEER_FORCE:
         if (gBattleMoves[move].sheerForceBoost)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.33));
