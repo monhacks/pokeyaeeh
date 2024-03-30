@@ -17340,6 +17340,7 @@ Move_ROUSED_FANGS:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_LIGHTNING
 	loadspritegfx ANIM_TAG_SHARP_TEETH
+	monbg ANIM_TARGET
 	fadetobg BG_THUNDER
 	waitbgfadeout
 	createvisualtask AnimTask_StartSlidingBg, 5, -256, 0, 1, -1
@@ -17378,6 +17379,7 @@ Move_ROUSED_FANGS:
 	waitbgfadeout
 	setarg 7, 0xFFFF
 	waitbgfadein
+	clearmonbg ANIM_TARGET
 	end
 
 Move_AQUA_FANGS:

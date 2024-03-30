@@ -2336,6 +2336,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
+        .megaLauncherBoost = TRUE,
     },
 
     [MOVE_CONSTRICT] =
@@ -3463,7 +3464,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
         .ballisticMove = TRUE,
-        .megaLauncherBoost = TRUE,
     },
 
     [MOVE_FORESIGHT] =
