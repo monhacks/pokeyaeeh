@@ -1983,6 +1983,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
     u32 contactMove = IsMoveMakingContact(move, battlerAtk);
     u32 attackingMove = !(gBattleMoves[move].split == SPLIT_STATUS); // or gBattleMoves[move].power > 0;
     u32 moldBreaker = IsMoldBreakerTypeAbility(atkAbility);
+    u16 moveTarget = GetBattlerMoveTargetType(battler, move);
 
     struct ChooseMoveStruct *moveInfo;
     u32 mod1 = sTypeEffectivenessTable[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[battler]]].type][gBattleMons[targetId].type1];
@@ -2058,6 +2059,16 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 return COLOR_IMMUNE;
         }
         break;
+        case TYPE_ICE:
+        {
+            // Target Ability
+            if ((defAbility == ABILITY_THICK_FAT) && (!(moldBreaker) && attackingMove))
+                {
+                    tempMod = UQ_4_12(0.5);
+                    MulModifier(&modifier, tempMod);
+                }
+        }
+        break;
         case TYPE_GROUND:
         {
             // Target Ability
@@ -2085,75 +2096,80 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
         case EFFECT_SLEEP:
         case EFFECT_DARK_VOID:
         {    
-            if (!CanSleep(targetId))
+            if ((!CanSleep(targetId)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_TOXIC:
         case EFFECT_POISON:
         {
-            if (!CanBePoisoned(battlerAtk, targetId))
+            if ((!CanBePoisoned(battlerAtk, targetId)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_WILL_O_WISP:
         {   
-            if (!CanBeBurned(targetId))
+            if ((!CanBeBurned(targetId)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_PARALYZE:
         {
-            if (!CanBeParalyzed(targetId))
+            if ((!CanBeParalyzed(targetId)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
+        case EFFECT_FROST_GLARE:
+        {
+            if ((!CanBeFrozen(targetId)) && (!moldBreaker))
+                return COLOR_IMMUNE;
+        }
         case EFFECT_CONFUSE:
         {
-            if (!CanBeConfused(targetId))
+            if ((!CanBeConfused(targetId)) && (!moldBreaker))
                     return COLOR_IMMUNE;
         }
         break;
         case EFFECT_LEECH_SEED:
         {
-            if (IS_BATTLER_OF_TYPE(targetId, TYPE_GRASS))
+            if ((IS_BATTLER_OF_TYPE(targetId, TYPE_GRASS)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_SKILL_SWAP:
         {
-            if (IsSkillSwapBannedAbility(defAbility))
+            if ((IsSkillSwapBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_ROLE_PLAY:
         case EFFECT_DOODLE:
         {
-            if (IsRolePlayDoodleBannedAbility(defAbility))
+            if ((IsRolePlayDoodleBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_WORRY_SEED:
         {
-            if (IsWorrySeedBannedAbility(defAbility))
+            if ((IsWorrySeedBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_GASTRO_ACID:
         {
-            if (IsGastroAcidBannedAbility(defAbility))
+            if ((IsGastroAcidBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_ENTRAINMENT:
         {
-            if (IsEntrainmentBannedAbility(defAbility))
+            if ((IsEntrainmentBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
         case EFFECT_SIMPLE_BEAM:
         {
-            if (IsSimpleBeamBannedAbility(defAbility))
+            if ((IsSimpleBeamBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
@@ -2187,25 +2203,34 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 return COLOR_IMMUNE;
         }
         break;
+        case ABILITY_GOOD_AS_GOLD:
+        {
+            if (IS_MOVE_STATUS(move)
+                && !(moveTarget & MOVE_TARGET_USER)
+                && !(moveTarget & MOVE_TARGET_OPPONENTS_FIELD)
+                && !(moveTarget & MOVE_TARGET_ALL_BATTLERS) && (!moldBreaker))
+                return COLOR_IMMUNE;
+        }
+        break;
     }
 
     // I don't know how to keep these inside the switch case lol
-    if ((gBattleMons[targetId].ability == ABILITY_QUEENLY_MAJESTY) ||
-        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_QUEENLY_MAJESTY) && (IsBattlerAlive(BATTLE_PARTNER(targetId)))))
+    if (((gBattleMons[targetId].ability == ABILITY_QUEENLY_MAJESTY) ||
+        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_QUEENLY_MAJESTY) && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
     {
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
     }
 
-    if ((gBattleMons[targetId].ability == ABILITY_DAZZLING) ||
-        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_DAZZLING) && (IsBattlerAlive(BATTLE_PARTNER(targetId)))))
+    if (((gBattleMons[targetId].ability == ABILITY_DAZZLING) ||
+        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_DAZZLING) && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
     {
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
     }
 
-    if ((gBattleMons[targetId].ability == ABILITY_ARMOR_TAIL) ||
-        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_ARMOR_TAIL) && (IsBattlerAlive(BATTLE_PARTNER(targetId)))))
+    if (((gBattleMons[targetId].ability == ABILITY_ARMOR_TAIL) ||
+        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_ARMOR_TAIL) && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
     {
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
