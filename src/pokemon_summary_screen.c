@@ -1194,19 +1194,16 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     case SUMMARY_MODE_NORMAL:
     case SUMMARY_MODE_BOX:
         sMonSummaryScreen->trueMinPageIndex = PSS_PAGE_INFO;
-        sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_CONTEST_MOVES;
+        sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_BATTLE_MOVES;
         break;
     case SUMMARY_MODE_LOCK_MOVES:
         sMonSummaryScreen->trueMinPageIndex = PSS_PAGE_INFO;
-        sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_BATTLE_MOVES;
+        sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_COUNT - 3;
         sMonSummaryScreen->lockMovesFlag = TRUE;
         break;
     case SUMMARY_MODE_SELECT_MOVE:    // Index limiters aren't actually used in this case, but we'll keep them for clarity
         sMonSummaryScreen->trueMinPageIndex = PSS_PAGE_BATTLE_MOVES;
-        if (CONFIG_CAN_SWITCH_PAGES_WHILE_DETAILS_ARE_UP)
-            sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_CONTEST_MOVES;
-        else
-            sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_BATTLE_MOVES;
+        sMonSummaryScreen->trueMaxPageIndex = PSS_PAGE_COUNT - 3;
         sMonSummaryScreen->lockMonFlag = TRUE;
         break;
     }
