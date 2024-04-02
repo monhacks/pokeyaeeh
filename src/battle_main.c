@@ -2024,7 +2024,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
                 personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
             if (partyData[i].nature != 0)
-                ModifyPersonalityForNature(&personalityValue, partyData[i].nature - 1);
+                ModifyPersonalityForNature(&personalityValue, partyData[i].nature);
             if (partyData[i].isShiny)
             {
                 otIdType = OT_ID_PRESET;
@@ -5066,6 +5066,8 @@ static void TurnValuesCleanUp(bool8 var0)
             gProtectStructs[i].banefulBunkered = FALSE;
             gProtectStructs[i].quash = FALSE;
             gProtectStructs[i].usedCustapBerry = FALSE;
+            gProtectStructs[i].quickDraw = FALSE;
+            memset(&gQueuedStatBoosts[i], 0, sizeof(struct QueuedStatBoost));
         }
         else
         {
@@ -5092,6 +5094,8 @@ static void TurnValuesCleanUp(bool8 var0)
     gSideStatuses[B_SIDE_OPPONENT] &= ~(SIDE_STATUS_QUICK_GUARD | SIDE_STATUS_WIDE_GUARD | SIDE_STATUS_CRAFTY_SHIELD | SIDE_STATUS_MAT_BLOCK);
     gSideTimers[B_SIDE_PLAYER].followmeTimer = 0;
     gSideTimers[B_SIDE_OPPONENT].followmeTimer = 0;
+
+    gBattleStruct->pledgeMove = FALSE; // combined pledge move may not have been used due to a canceller
 }
 
 void SpecialStatusesClear(void)
