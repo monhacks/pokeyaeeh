@@ -58,6 +58,7 @@ void DoWhiteOut(void);
 void Overworld_ResetStateAfterFly(void);
 void Overworld_ResetStateAfterTeleport(void);
 void Overworld_ResetStateAfterDigEscRope(void);
+void Overworld_ResetStateAfterWhiteOut(void);
 void ResetGameStats(void);
 void IncrementGameStat(u8 index);
 u32 GetGameStat(u8 index);
