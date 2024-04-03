@@ -7,6 +7,10 @@ PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
 	setvar VAR_LITTLEROOT_INTRO_STATE, 5
 	return
 
+LittlerootTown_PlayersHouse_2F_EventScript_Vars::
+	setvar VAR_LITTLEROOT_INTRO_STATE, 6
+	return
+
 PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	applymovement VAR_0x8004, Common_Movement_FacePlayer
