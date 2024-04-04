@@ -623,7 +623,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_OCEANATE] = _("Oceanate"),
     [ABILITY_RAMPAGE] = _("Rampage"),
     [ABILITY_BOMBASTIC] = _("Bombastic"),
-    [ABILITY_GROUNDSHOCK] = _("Ground shock"),
+    [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -944,7 +944,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_OCEANATE] = _("Oceanate"),
     [ABILITY_RAMPAGE] = _("Rampage"),
     [ABILITY_BOMBASTIC] = _("Bombastic"),
-    [ABILITY_GROUNDSHOCK] = _("Ground shock"),
+    [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
 };
 #endif
 
