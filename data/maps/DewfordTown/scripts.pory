@@ -640,6 +640,21 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
+DewfordTown_EventScript_GymGuy::
+	lock
+	faceplayer
+	msgbox DewfordTwon_Text_GymLeaderIsNotHere, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTwon_Text_GymLeaderIsNotHere:
+	.string "Sorry, little guy.\p"
+	.string "But, Scep, the Gym Leader is not here,\n"
+	.string "at the moment.\p"
+	.string "You gotta wait til he's back!\p"
+	.string "Til then, why not explore the\n"
+	.string "Granite Cave?$"
+
 DewfordTown_Text_TinyIslandCommunity:
 	.string "Dewford is a tiny island community.\n"
 	.string "If something gets trendy here,\l"
