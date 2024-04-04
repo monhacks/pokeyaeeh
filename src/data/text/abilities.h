@@ -111,7 +111,7 @@ static const u8 sUnawareDescription[] = _("Ignores stat changes.");
 static const u8 sTintedLensDescription[] = _("Ups “not very effective”.");
 static const u8 sFilterDescription[] = _("Weakens “supereffective”.");
 static const u8 sSlowStartDescription[] = _("Takes a while to get going.");
-static const u8 sScrappyDescription[] = _("Hits Ghost-type Pokémon.");
+static const u8 sScrappyDescription[] = _("Normal & Fight hit Ghost.");
 static const u8 sStormDrainDescription[] = _("Draws in Water moves.");
 static const u8 sIceBodyDescription[] = _("HP recovery in Snow.");
 static const u8 sSnowWarningDescription[] = _("Summons a Snowstorm.");
@@ -286,7 +286,7 @@ static const u8 sArmorTailDescription[] = _("Protects from priority.");
 static const u8 sEarthEaterDescription[] = _("Eats ground to heal HP.");
 static const u8 sMyceliumMightDescription[] = _("Status moves never fail.");
 static const u8 sHospitalityDescription[] = _("Restores ally's HP.");
-static const u8 sMindsEyeDescription[] = _("Keen Eye and Scrappy.");
+static const u8 sMindsEyeDescription[] = _("{FONT_NARROWER}Ignores evasiveness and hits Ghosts.");
 static const u8 sEmbodyAspectTealDescription[] = _("Raises Speed.");
 static const u8 sEmbodyAspectHearthflameDescription[] = _("Raises Attack.");
 static const u8 sEmbodyAspectWellspringDescription[] = _("Raises Sp. Def.");
@@ -302,6 +302,7 @@ static const u8 sScorchateDescription[] = _("Normal moves become Fire.");
 static const u8 sOceanateDescription[] = _("Normal moves become Water.");
 static const u8 sRampageDescription[] = _("No recharge after a KO.");
 static const u8 sBombasticDescription[] = _("Boosts ballistic moves.");
+static const u8 sGroundShockDescription[] = _("Electric hits Ground-types.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -622,6 +623,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_OCEANATE] = _("Oceanate"),
     [ABILITY_RAMPAGE] = _("Rampage"),
     [ABILITY_BOMBASTIC] = _("Bombastic"),
+    [ABILITY_GROUNDSHOCK] = _("Ground shock"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -942,6 +944,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_OCEANATE] = _("Oceanate"),
     [ABILITY_RAMPAGE] = _("Rampage"),
     [ABILITY_BOMBASTIC] = _("Bombastic"),
+    [ABILITY_GROUNDSHOCK] = _("Ground shock"),
 };
 #endif
 
@@ -1263,4 +1266,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_OCEANATE] = sOceanateDescription,
     [ABILITY_RAMPAGE] = sRampageDescription,
     [ABILITY_BOMBASTIC] = sBombasticDescription,
+    [ABILITY_GROUNDSHOCK] = sGroundShockDescription,
 };
