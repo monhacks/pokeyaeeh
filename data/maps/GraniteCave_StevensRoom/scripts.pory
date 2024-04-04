@@ -12,10 +12,10 @@ GraniteCave_StevensRoom_EventScript_StevenBattle::
 
 GraniteCave_StevensRoom_EventScript_Steven:
 	msgbox GraniteCave_StevensRoom_Text_ImStevenLetterForMe, MSGBOX_DEFAULT
-	givemon SPECIES_BELDUM, 20
 	playfanfare MUS_OBTAIN_ITEM
+	givecustommon SPECIES_BELDUM, 23, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_ADAMANT, 0, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 0, 31, MOVE_TAKE_DOWN, MOVE_ZEN_HEADBUTT, MOVE_IRON_HEAD, MOVE_NONE, TRUE
+	waitmessage
 	waitfanfare
-	closemessage
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_SMART_STRIKE
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
@@ -98,8 +98,8 @@ GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
 	.string "I have lost.\p"
 	.string "You can have this as a gift from me!\p"
 
-GraniteCave_StevensRoom_Text_ObtainedBeldum:
-	.string "{PLAYER} obtained a Beldum.$"
+GraniteCave_StevensRoom_Text_ReceivedBeldum:
+	.string "{PLAYER} received a Beldum!$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 	.string "Also, take this as a kind gesture.$"
