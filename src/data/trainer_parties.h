@@ -3956,6 +3956,8 @@ static const struct TrainerMon sParty_Juan1[] = {
         .species = SPECIES_LOKIX,
         .heldItem = ITEM_CHOICE_SCARF,
         .ability = ABILITY_TINTED_LENS,
+        .ev = TRAINER_PARTY_EVS(0,252,0,252,0,4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_AXE_KICK,MOVE_X_SCISSOR,MOVE_BRICK_BREAK,MOVE_SUCKER_PUNCH}
     }
 };
