@@ -676,7 +676,7 @@ Route104_Text_LandedInDewfordDeliverLetter:
 	.string "Mr. Briney: Ahoy!\n"
 	.string "We've hit land in Dewford.\p"
 	.string "I suppose you're off to deliver that\n"
-	.string "Letter to, who was it now, Steven!$"
+	.string "Letter to, who was it now, Mystic!$"
 
 DewfordTown_Text_SetSailBackToPetalburg:
 	.string "Mr. Briney: Have you delivered your\n"

@@ -245,8 +245,8 @@ Route118_EventScript_Deandre::
 	end
 
 Route118_Text_StevenQuestions:
-	.string "Steven: Hi, {PLAYER}{KUN}!\p"
-	.string "It's me, Steven!\n"
+	.string "Mystic: Hi, {PLAYER}{KUN}!\p"
+	.string "It's me, Mystic!\n"
 	.string "We met in the cave near Dewford.\p"
 	.string "Have you met many kinds of Pokémon\n"
 	.string "since I last saw you?\p"

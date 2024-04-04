@@ -209,7 +209,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
 	.string "Well, on the way, could you stop off in\n"
 	.string "Dewford Town?\p"
 	.string "I was hoping that you'd deliver a\n"
-	.string "Letter to Steven in Dewford.$"
+	.string "Letter to Mystic in Dewford.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
 	.string "Mr. Stone: Now, you should know that\n"

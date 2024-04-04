@@ -13420,3 +13420,16 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     },
 
 };
+
+static const struct TrainerMon sParty_Steven_GraniteCave[] = {
+    {
+        .lvl = 20,
+        .species = SPECIES_MAGIKARP,
+        .moves {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+        .lvl = 20,
+        .species = SPECIES_MAGIKARP,
+        .moves {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+};

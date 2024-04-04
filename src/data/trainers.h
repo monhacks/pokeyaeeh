@@ -8850,7 +8850,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_STEVEN,
-        .trainerName = _("Steven"),
+        .trainerName = _("Mystic"),
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Steven),
@@ -9406,5 +9406,16 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MayLinkPlaceholder),
         .hasCustomTransition = TRUE,
         .transition = B_TRANSITION_MUGSHOT,
+    },
+
+    [TRAINER_STEVEN_GRANITE_CAVE] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_STEVEN,
+        .trainerName = _("Mystic"),
+        .doubleBattle = TRUE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_Steven_GraniteCave),
     },
 };

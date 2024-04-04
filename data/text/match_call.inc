@@ -2294,7 +2294,7 @@ MatchCall_Text_Drake::
 
 MatchCall_Text_Wallace::
 	.string "Wallace: Hello, {PLAYER}{KUN}.\n"
-	.string "Have you met Steven?\p"
+	.string "Have you met Mystic?\p"
 	.string "He is…\n"
 	.string "Actually incredibly skilled.\p"
 	.string "However, he's an odd soul who\n"
@@ -2774,7 +2774,7 @@ MatchCall_Text_Norman9:: @ 82B5B5E
 	.string "How much higher will you soar?$"
 
 MatchCall_Text_Steven1:: @ 82B5B95
-	.string "Steven: Hi, {PLAYER}{KUN}!\p"
+	.string "Mystic: Hi, {PLAYER}{KUN}!\p"
 	.string "Have you been to Mauville\n"
 	.string "already?\p"
 	.string "You should visit the Bike Shop\n"
@@ -2785,14 +2785,14 @@ MatchCall_Text_Steven1:: @ 82B5B95
 	.string "there.$"
 
 MatchCall_Text_Steven2:: @ 82B5C53
-	.string "Steven: Hi, {PLAYER}{KUN}!\p"
+	.string "Mystic: Hi, {PLAYER}{KUN}!\p"
 	.string "I've met a lot of different\n"
 	.string "Trainers so far.\p"
 	.string "But you're one of a kind.\n"
 	.string "You're not like anyone else.$"
 
 MatchCall_Text_Steven3:: @ 82B5CC9
-	.string "Steven: Hi, {PLAYER}{KUN}!\p"
+	.string "Mystic: Hi, {PLAYER}{KUN}!\p"
 	.string "When you're on an adventure with\n"
 	.string "your Pokémon, what do you think?\p"
 	.string "Do you consider them to be strong\n"
@@ -2803,7 +2803,7 @@ MatchCall_Text_Steven3:: @ 82B5CC9
 	.string "adventure's significance changes.$"
 
 MatchCall_Text_Steven4:: @ 82B5DB4
-	.string "Steven: Hello?\n"
+	.string "Mystic: Hello?\n"
 	.string "{PLAYER}{KUN}?\p"
 	.string "I'm involved in a spot of trouble\n"
 	.string "at the Space Center.\p"
@@ -2811,7 +2811,7 @@ MatchCall_Text_Steven4:: @ 82B5DB4
 	.string "Bye!$"
 
 MatchCall_Text_Steven5:: @ 82B5E26
-	.string "Steven: Oh!\n"
+	.string "Mystic: Oh!\n"
 	.string "{PLAYER}{KUN}!\p"
 	.string "There's no need to talk.\n"
 	.string "It's past time for talking.\p"
@@ -2820,11 +2820,11 @@ MatchCall_Text_Steven5:: @ 82B5E26
 
 MatchCall_Text_Steven6::
 	.string "… … … … … …\p"
-	.string "Steven appears not to be getting\n"
+	.string "Mystic appears not to be getting\n"
 	.string "the call…$"
 
 MatchCall_Text_Steven7:: @ 82B5ED9
-	.string "Steven: {PLAYER}{KUN}… Congratulations\n"
+	.string "Mystic: {PLAYER}{KUN}… Congratulations\n"
 	.string "for entering the Hall of Fame.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
@@ -2871,7 +2871,7 @@ MatchCall_Text_MrStone2:: @ 82B61E6
 	.string "What's wrong? Have you forgotten\n"
 	.string "about that little errand of mine?\p"
 	.string "I need you to deliver my letter\n"
-	.string "to Steven in Dewford.\p"
+	.string "to Mystic in Dewford.\p"
 	.string "After that, deliver our parcel to\n"
 	.string "Capt. Stern in Slateport.\p"
 	.string "You remember, don't you?\p"
@@ -2880,7 +2880,7 @@ MatchCall_Text_MrStone2:: @ 82B61E6
 
 MatchCall_Text_MrStone3:: @ 82B6302
 	.string "Mr. Stone: Oh! {PLAYER}{KUN}!\p"
-	.string "Ah, so you've met Steven!\n"
+	.string "Ah, so you've met Mystic!\n"
 	.string "I'd better reward you, then!\p"
 	.string "When you visit Rustboro again,\n"
 	.string "come see me at my office.\p"

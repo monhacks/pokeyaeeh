@@ -1634,7 +1634,7 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "to Pokémon…$"
 
 SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
-	.string "Steven: Those Pokémon fighting…\n"
+	.string "Mystic: Those Pokémon fighting…\n"
 	.string "Groudon… And Kyogre…\p"
 	.string "The two super-ancient Pokémon\n"
 	.string "were awakened from a long sleep…\p"
@@ -1649,7 +1649,7 @@ SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
 	.string "Come with me, please.$"
 
 SootopolisCity_Text_DoesThisMakeYourFearPokemon:
-	.string "Steven: Listen, {PLAYER}{KUN}.\p"
+	.string "Mystic: Listen, {PLAYER}{KUN}.\p"
 	.string "Does seeing Groudon and Kyogre make\n"
 	.string "you think Pokémon are to be feared?\p"
 	.string "But that's not true.\n"
@@ -1658,28 +1658,28 @@ SootopolisCity_Text_DoesThisMakeYourFearPokemon:
 	.string "You already know.$"
 
 SootopolisCity_Text_HereWereAreHelpWallace:
-	.string "Steven: Okay, here we are!\p"
+	.string "Mystic: Okay, here we are!\p"
 	.string "Inside here you'll find someone named\n"
 	.string "Wallace.\p"
 	.string "I think you have what's needed to\n"
 	.string "help him…$"
 
 SootopolisCity_Text_KnowWhatsNeededToHelpHim:
-	.string "Steven: I think you have what's\n"
+	.string "Mystic: I think you have what's\n"
 	.string "needed to help him…$"
 
 SootopolisCity_Text_NeverBeenToSkyPillar:
-	.string "Steven: The Sky Pillar…\p"
+	.string "Mystic: The Sky Pillar…\p"
 	.string "I've never been there.\n"
 	.string "I wonder where it could be?$"
 
 SootopolisCity_Text_SoThatsRayquaza:
-	.string "Steven: So that's Rayquaza…\p"
+	.string "Mystic: So that's Rayquaza…\p"
 	.string "It's incredible how the two rampaging\n"
 	.string "Pokémon would flee from it in fear…$"
 
 SootopolisCity_Text_MaxieArchieLeft:
-	.string "Steven: It looks like both Maxie and\n"
+	.string "Mystic: It looks like both Maxie and\n"
 	.string "Archie have gone away somewhere.\p"
 	.string "Perhaps they've gone to Mt. Pyre to\n"
 	.string "return those Orbs…$"

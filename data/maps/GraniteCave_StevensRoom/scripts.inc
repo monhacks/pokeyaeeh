@@ -3,16 +3,20 @@
 GraniteCave_StevensRoom_MapScripts::
 	.byte 0
 
-GraniteCave_StevensRoom_EventScript_Steven::
+GraniteCave_StevensRoom_EventScript_StevenBattle::
 	lock
 	faceplayer
+	trainerbattle_single TRAINER_STEVEN_GRANITE_CAVE, GraniteCave_StevensRoom_Text_MysticIntro, GraniteCave_StevensRoom_Text_MysticOutro, GraniteCave_StevensRoom_EventScript_Steven, NO_MUSIC
+	end
+
+GraniteCave_StevensRoom_EventScript_Steven:
 	msgbox GraniteCave_StevensRoom_Text_ImStevenLetterForMe, MSGBOX_DEFAULT
-	setvar VAR_0x8004, ITEM_LETTER
-	call Common_EventScript_PlayerHandedOverTheItem
-	setflag FLAG_DELIVERED_STEVEN_LETTER
+	givemon SPECIES_BELDUM, 20
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	closemessage
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_SMART_STRIKE
-	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -21,7 +25,6 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	waitfanfare
 	closemessage
 	delay 30
-	setflag FLAG_REGISTERED_STEVEN_POKENAV
 	msgbox GraniteCave_StevensRoom_Text_IveGotToHurryAlong, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, GraniteCave_StevensRoom_EventScript_StevenExitNorth
@@ -30,6 +33,8 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	call_if_eq VAR_FACING, DIR_EAST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
 	playse SE_EXIT
 	removeobject LOCALID_STEVEN
+	setflag FLAG_DELIVERED_STEVEN_LETTER
+	setflag FLAG_REGISTERED_STEVEN_POKENAV
 	release
 	end
 
@@ -81,35 +86,30 @@ GraniteCave_StevensRoom_Movement_StevenExitSouth:
 	delay_8
 	step_end
 
+GraniteCave_StevensRoom_Text_MysticIntro:
+	.string "Mystic: HIYAAA!$" 
+
+GraniteCave_StevensRoom_Text_MysticOutro:
+	.string "Aww. I'm dead beat!$"
+
 GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
-	.string "My name is Steven.\p"
-	.string "I'm interested in rare stones,\n"
-	.string "so I travel here and there.\p"
-	.string "Oh?\n"
-	.string "A Letter for me?$"
+	.string "Mystic: Oh, well…\p"
+	.string "I have lost.\p"
+	.string "You can have this as a gift from me!\p"
+
+GraniteCave_StevensRoom_Text_ObtainedBeldum:
+	.string "{PLAYER} obtained a Beldum.$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
-	.string "Steven: Okay, thank you.\p"
-	.string "You went through all this trouble to\n"
-	.string "deliver that. I need to thank you.\p"
-	.string "Let me see…\n"
-	.string "I'll give you this TM.\p"
-	.string "It contains my favorite move,\n"
-	.string "Steel Wing.$"
+	.string "Also, take this as a kind gesture.$"
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
-	.string "Steven: Your Pokémon appear quite\n"
-	.string "capable.\p"
-	.string "If you keep training, you could even\n"
-	.string "become the Champion of the Pokémon\l"
-	.string "League one day. That's what I think.\p"
-	.string "I know, since we've gotten to know each\n"
-	.string "other, let's register one another in\l"
-	.string "our PokéNavs.\p"
+	.string "Mystic: You look strong.\p"
+	.string "Give me your PokéNav.\p"
 	.string "… … … … … …$"
 
 GraniteCave_StevensRoom_Text_RegisteredSteven:
-	.string "Registered Steven\n"
+	.string "Registered Mystic\n"
 	.string "in the PokéNav.$"
 
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
