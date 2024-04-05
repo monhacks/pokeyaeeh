@@ -300,6 +300,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SCORCHATE] = 8,
     [ABILITY_OCEANATE] = 8,
     [ABILITY_BOMBASTIC] = 6,
+    [ABILITY_CRYPTIC_POWER] = 10,
 };
 
 static const u16 sEncouragedEncoreEffects[] =

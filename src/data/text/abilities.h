@@ -35,7 +35,7 @@ static const u8 sSwiftSwimDescription[] = _("Raises Speed in rain.");
 static const u8 sChlorophyllDescription[] = _("Raises Speed in sunshine.");
 static const u8 sIlluminateDescription[] = _("Encounter rate increases.");
 static const u8 sTraceDescription[] = _("Copies special ability.");
-static const u8 sHugePowerDescription[] = _("Raises Attack.");
+static const u8 sHugePowerDescription[] = _("Doubles Attack.");
 static const u8 sPoisonPointDescription[] = _("Poisons foe on contact.");
 static const u8 sInnerFocusDescription[] = _("Prevents flinching.");
 static const u8 sMagmaArmorDescription[] = _("Prevents freezing.");
@@ -72,7 +72,6 @@ static const u8 sDroughtDescription[] = _("Summons sunlight in battle.");
 static const u8 sArenaTrapDescription[] = _("Prevents fleeing.");
 static const u8 sVitalSpiritDescription[] = _("Prevents sleep.");
 static const u8 sWhiteSmokeDescription[] = _("Prevents ability reduction.");
-static const u8 sPurePowerDescription[] = _("Raises Attack.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
 static const u8 sTangledFeetDescription[] = _("Ups evasion if confused.");
@@ -286,7 +285,7 @@ static const u8 sArmorTailDescription[] = _("Protects from priority.");
 static const u8 sEarthEaterDescription[] = _("Eats ground to heal HP.");
 static const u8 sMyceliumMightDescription[] = _("Status moves never fail.");
 static const u8 sHospitalityDescription[] = _("Restores ally's HP.");
-static const u8 sMindsEyeDescription[] = _("{FONT_NARROWER}Ignores evasiveness and hits Ghosts.");
+static const u8 sMindsEyeDescription[] = _("Scrappy & Keen Eye.");
 static const u8 sEmbodyAspectTealDescription[] = _("Raises Speed.");
 static const u8 sEmbodyAspectHearthflameDescription[] = _("Raises Attack.");
 static const u8 sEmbodyAspectWellspringDescription[] = _("Raises Sp. Def.");
@@ -303,6 +302,7 @@ static const u8 sOceanateDescription[] = _("Normal moves become Water.");
 static const u8 sRampageDescription[] = _("No recharge after a KO.");
 static const u8 sBombasticDescription[] = _("Boosts ballistic moves.");
 static const u8 sGroundShockDescription[] = _("Electric hits Ground-types.");
+static const u8 sCrypticPowerDescription[] = _("Doubles Special Attack.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -624,6 +624,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_RAMPAGE] = _("Rampage"),
     [ABILITY_BOMBASTIC] = _("Bombastic"),
     [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
+    [ABILITY_CRYPTIC_POWER] = _("Cryptic Power"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -945,6 +946,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_RAMPAGE] = _("Rampage"),
     [ABILITY_BOMBASTIC] = _("Bombastic"),
     [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
+    [ABILITY_CRYPTIC_POWER] = _("Cryptic Power"),
 };
 #endif
 
@@ -1024,7 +1026,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_ARENA_TRAP] = sArenaTrapDescription,
     [ABILITY_VITAL_SPIRIT] = sVitalSpiritDescription,
     [ABILITY_WHITE_SMOKE] = sWhiteSmokeDescription,
-    [ABILITY_PURE_POWER] = sPurePowerDescription,
+    [ABILITY_PURE_POWER] = sHugePowerDescription,
     [ABILITY_SHELL_ARMOR] = sShellArmorDescription,
     [ABILITY_AIR_LOCK] = sAirLockDescription,
     [ABILITY_TANGLED_FEET] = sTangledFeetDescription,
@@ -1267,4 +1269,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_RAMPAGE] = sRampageDescription,
     [ABILITY_BOMBASTIC] = sBombasticDescription,
     [ABILITY_GROUNDSHOCK] = sGroundShockDescription,
+    [ABILITY_CRYPTIC_POWER] = sCrypticPowerDescription,
 };

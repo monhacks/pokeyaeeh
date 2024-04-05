@@ -9927,7 +9927,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 30,
         .baseDefense   = 55,
         .baseSpeed     = 97,
-        .baseSpAttack  = 80, // Laugh at this user
+        .baseSpAttack  = 70,
         .baseSpDefense = 65,
         .types = { TYPE_WATER, TYPE_WATER},
         .catchRate = 225,
@@ -9939,7 +9939,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
-        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_SOUL_HEART}, //Lord have mercy
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_CRYPTIC_POWER}, // This gonna hurt now. A LOT.
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
