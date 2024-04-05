@@ -9482,7 +9482,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_PSYSTRIKE] =
     {
         .effect = EFFECT_PSYSHOCK,
-        .power = 100,
+        .power = 120,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 10,
