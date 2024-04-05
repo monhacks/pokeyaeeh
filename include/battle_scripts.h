@@ -500,6 +500,7 @@ extern const u8 BattleScript_TheRainbowDisappeared[];
 extern const u8 BattleScript_HurtByTheSeaOfFire[];
 extern const u8 BattleScript_TheSeaOfFireDisappeared[];
 extern const u8 BattleScript_TheSwampDisappeared[];
+extern const u8 BattleScript_BoosterEnergyEnd2[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];
