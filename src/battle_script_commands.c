@@ -1765,18 +1765,12 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS)
         calc = (calc * 90) / 100;
 
-    if (gBattleWeather & B_WEATHER_FOG) 
+    if (WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_FOG) 
 	{
-        if (((atkAbility != ABILITY_AIR_LOCK) && (atkAbility != ABILITY_CLOUD_NINE))
-        && ((atkAllyAbility != ABILITY_AIR_LOCK) && (atkAllyAbility != ABILITY_CLOUD_NINE))
-        && ((defAbility != ABILITY_AIR_LOCK) && (defAbility != ABILITY_CLOUD_NINE))
-        && ((defAllyAbility != ABILITY_AIR_LOCK) && (defAllyAbility != ABILITY_CLOUD_NINE)))
+        if ((atkAbility != ABILITY_KEEN_EYE) && (atkAbility != ABILITY_ILLUMINATE)
+        && (atkAbility != ABILITY_INFILTRATOR) && (atkAbility != ABILITY_MINDS_EYE))
         {
-		    if ((atkAbility != ABILITY_KEEN_EYE) && (atkAbility != ABILITY_ILLUMINATE)
-            && (atkAbility != ABILITY_INFILTRATOR) && (atkAbility != ABILITY_MINDS_EYE))
-            {
-		        calc = (calc * 60) / 100; // 1.4 fog loss
-            }
+		    calc = (calc * 60) / 100; // 1.4 fog loss
         }
 	}
 
