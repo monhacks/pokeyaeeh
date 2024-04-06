@@ -150,22 +150,67 @@ bool8 DoesPartyHaveEnigmaBerry(void)
     return hasItem;
 }
 
-void CreateScriptedWildMon(u16 species, u8 level, u16 item)
+void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny)
 {
     u8 heldItem[2];
+    u8 i;
+    u8 evTotal = 0;
 
     ZeroEnemyPartyMons();
-    if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+    
+    if (nature == NUM_NATURES || nature == 0xFF)
+        nature = Random() % NUM_NATURES;
+    
+    if (isShiny)
+        CreateShinyMonWithNature(&gEnemyParty[0], species, level, nature);
     else
-        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        CreateMonWithNature(&gEnemyParty[0], species, level, 32, nature);
+    
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        // ev
+        if (evs[i] != 0xFF && evTotal < 510)
+        {
+            // only up to 510 evs
+            if ((evTotal + evs[i]) > 510)
+                evs[i] = (510 - evTotal);
+            
+            evTotal += evs[i];
+            SetMonData(&gEnemyParty[0], MON_DATA_HP_EV + i, &evs[i]);
+        }
+        
+        // iv
+        if (ivs[i] != 32 && ivs[i] != 0xFF)
+            SetMonData(&gEnemyParty[0], MON_DATA_HP_IV + i, &ivs[i]);
+    }
+    CalculateMonStats(&gEnemyParty[0]);
+    
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves[i] == 0 || moves[i] == 0xFF || moves[i] > MOVES_COUNT)
+            continue;
+        
+        SetMonMoveSlot(&gEnemyParty[0], moves[i], i);
+    }
+
     if (item)
     {
         heldItem[0] = item;
         heldItem[1] = item >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
+    
+    //ability
+    if (abilityNum == 0xFF || GetAbilityBySpecies(species, abilityNum) == 0)
+    {
+        do {
+            abilityNum = Random() % 3;  // includes hidden abilities
+        } while (GetAbilityBySpecies(species, abilityNum) == 0);
+    }
+    
+    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
 }
+
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {
     u8 heldItem1[2];
