@@ -1436,7 +1436,7 @@
 	@ that is also against 'species2' at 'level2' holding 'item2'.
 	@ Running this command will not affect normal wild battles. You start the prepared battle with dowildbattle.
 	@ If the player only has one Pokemon, a scripted double battle will be buggy.
-	.macro setwildbattle species:req, level:req, item=ITEM_NONE, nature, abilityNum, hpEv, atkEv, defEv, spAtkEv, spDefEv, speedEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE, nature2, abilityNum2, hpEv2, atkEv2, defEv2, spAtkEv2, spDefEv2, speedEv2, hpIv2, atkIv2, defIv2, speedIv2, spAtkIv2, spDefIv2, move1_2, move2_2, move3_2, move4_2, isShiny2
+	.macro setwildbattle species:req, level:req, item=ITEM_NONE, nature, abilityNum, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE, nature2, abilityNum2, hpEv2, atkEv2, defEv2, speedEv2, spAtkEv2, spDefEv2, hpIv2, atkIv2, defIv2, speedIv2, spAtkIv2, spDefIv2, move1_2, move2_2, move3_2, move4_2, isShiny2
 	.byte 0xb6
 	.2byte \species
 	.byte \level

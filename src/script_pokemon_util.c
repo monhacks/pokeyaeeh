@@ -224,13 +224,6 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
     if (nature1 == NUM_NATURES || nature1 == 0xFF)
         nature1 = Random() % NUM_NATURES;
 
-    if (item1)
-    {
-        heldItem1[0] = item1;
-        heldItem1[1] = item1 >> 8;
-        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem1);
-    }
-
     if (isShiny1)
         CreateShinyMonWithNature(&gEnemyParty[0], species1, level1, nature1);
     else
@@ -254,7 +247,7 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
             SetMonData(&gEnemyParty[0], MON_DATA_HP_IV + i, &ivs1[i]);
     }
     CalculateMonStats(&gEnemyParty[0]);
-    
+
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves1[i] == 0 || moves1[i] == 0xFF || moves1[i] > MOVES_COUNT)
@@ -262,7 +255,14 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
         
         SetMonMoveSlot(&gEnemyParty[0], moves1[i], i);
     }
-    
+
+    if (item1)
+    {
+        heldItem1[0] = item1;
+        heldItem1[1] = item1 >> 8;
+        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem1);
+    }
+
     if (abilityNum1 == 0xFF || GetAbilityBySpecies(species1, abilityNum1) == 0)
     {
         do {
@@ -276,13 +276,6 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
     if (nature2 == NUM_NATURES || nature2 == 0xFF)
         nature2 = Random() % NUM_NATURES;
 
-    if (item2)
-    {
-        heldItem2[0] = item2;
-        heldItem2[1] = item2 >> 8;
-        SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
-    }
-    
     if (isShiny2)
         CreateShinyMonWithNature(&gEnemyParty[1], species2, level2, nature2);
     else
@@ -306,7 +299,7 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
             SetMonData(&gEnemyParty[1], MON_DATA_HP_IV + i, &ivs2[i]);
     }
     CalculateMonStats(&gEnemyParty[1]);
-    
+
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves2[i] == 0 || moves2[i] == 0xFF || moves2[i] > MOVES_COUNT)
@@ -314,14 +307,21 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
         
         SetMonMoveSlot(&gEnemyParty[1], moves2[i], i);
     }
-    
+
+    if (item2)
+    {
+        heldItem2[0] = item2;
+        heldItem2[1] = item2 >> 8;
+        SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
+    }
+
     if (abilityNum2 == 0xFF || GetAbilityBySpecies(species2, abilityNum2) == 0)
     {
         do {
             abilityNum2 = Random() % 3;  // includes hidden abilities
         } while (GetAbilityBySpecies(species2, abilityNum2) == 0);
     }
-    
+
     SetMonData(&gEnemyParty[1], MON_DATA_ABILITY_NUM, &abilityNum2);
 }
 
