@@ -1898,13 +1898,36 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     u16 move4 = ScriptReadHalfword(ctx);
     bool8 isShiny = ScriptReadByte(ctx);
 
-    u16 species2 = ScriptReadHalfword(ctx);
-    u8 level2 = ScriptReadByte(ctx);
-    u16 item2 = ScriptReadHalfword(ctx);
-
     u8 evs[NUM_STATS] = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
     u8 ivs[NUM_STATS] = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
     u16 moves[4] = {move1, move2, move3, move4};
+
+    u16 species2 = ScriptReadHalfword(ctx);
+    u8 level2 = ScriptReadByte(ctx);
+    u16 item2 = ScriptReadHalfword(ctx);
+    u8 nature2 = ScriptReadByte(ctx);
+    u8 abilityNum2 = ScriptReadByte(ctx);
+    u8 hpEv2 = ScriptReadByte(ctx);
+    u8 atkEv2 = ScriptReadByte(ctx);
+    u8 defEv2 = ScriptReadByte(ctx);
+    u8 speedEv2 = ScriptReadByte(ctx);
+    u8 spAtkEv2 = ScriptReadByte(ctx);
+    u8 spDefEv2 = ScriptReadByte(ctx);
+    u8 hpIv2 = ScriptReadByte(ctx);
+    u8 atkIv2 = ScriptReadByte(ctx);
+    u8 defIv2 = ScriptReadByte(ctx);
+    u8 speedIv2 = ScriptReadByte(ctx);
+    u8 spAtkIv2 = ScriptReadByte(ctx);
+    u8 spDefIv2 = ScriptReadByte(ctx);
+    u16 move1_2 = ScriptReadHalfword(ctx);
+    u16 move2_2 = ScriptReadHalfword(ctx);
+    u16 move3_2 = ScriptReadHalfword(ctx);
+    u16 move4_2 = ScriptReadHalfword(ctx);
+    bool8 isShiny2 = ScriptReadByte(ctx);
+
+    u8 evs2[NUM_STATS] = {hpEv2, atkEv2, defEv2, speedEv2, spAtkEv2, spDefEv2};
+    u8 ivs2[NUM_STATS] = {hpIv2, atkIv2, defIv2, speedIv2, spAtkIv2, spDefIv2};
+    u16 moves2[4] = {move1_2, move2_2, move3_2, move4_2};
 
     if(species2 == SPECIES_NONE)
     {
@@ -1913,7 +1936,7 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     }
     else
     {
-        CreateScriptedDoubleWildMon(species, level, item, species2, level2, item2);
+        CreateScriptedDoubleWildMon(species, level, item, nature, abilityNum, evs, ivs, moves, isShiny, species2, level2, item2, nature2, abilityNum2, evs2, ivs2, moves2, isShiny2);
         gIsScriptedWildDouble = TRUE;
     }
 

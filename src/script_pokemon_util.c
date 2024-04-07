@@ -211,17 +211,19 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 nature, u8 abilit
     SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
 }
 
-void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
+void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1, u8 abilityNum1, u8 *evs1, u8 *ivs1, u16 *moves1, bool8 isShiny1, u16 species2, u8 level2, u16 item2, u8 nature2, u8 abilityNum2, u8 *evs2, u8 *ivs2, u16 *moves2, bool8 isShiny2)
 {
     u8 heldItem1[2];
     u8 heldItem2[2];
+    u8 i;
+    u8 evTotal1 = 0;
+    u8 evTotal2 = 0;
 
     ZeroEnemyPartyMons();
 
-    if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species1, level1, 32, PickWildMonNature());
-    else
-        CreateMon(&gEnemyParty[0], species1, level1, 32, 0, 0, OT_ID_PLAYER_ID, 0);
+    if (nature1 == NUM_NATURES || nature1 == 0xFF)
+        nature1 = Random() % NUM_NATURES;
+
     if (item1)
     {
         heldItem1[0] = item1;
@@ -229,16 +231,98 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem1);
     }
 
-    if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[1], species2, level2, 32, PickWildMonNature());
+    if (isShiny1)
+        CreateShinyMonWithNature(&gEnemyParty[0], species1, level1, nature1);
     else
-        CreateMon(&gEnemyParty[1], species2, level2, 32, 0, 0, OT_ID_PLAYER_ID, 0);
+        CreateMonWithNature(&gEnemyParty[0], species1, level1, 32, nature1);
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        // ev
+        if (evs1[i] != 0xFF && evTotal1 < 510)
+        {
+            // only up to 510 evs
+            if ((evTotal1 + evs1[i]) > 510)
+                evs1[i] = (510 - evTotal1);
+            
+            evTotal1 += evs1[i];
+            SetMonData(&gEnemyParty[0], MON_DATA_HP_EV + i, &evs1[i]);
+        }
+        
+        // iv
+        if (ivs1[i] != 32 && ivs1[i] != 0xFF)
+            SetMonData(&gEnemyParty[0], MON_DATA_HP_IV + i, &ivs1[i]);
+    }
+    CalculateMonStats(&gEnemyParty[0]);
+    
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves1[i] == 0 || moves1[i] == 0xFF || moves1[i] > MOVES_COUNT)
+            continue;
+        
+        SetMonMoveSlot(&gEnemyParty[0], moves1[i], i);
+    }
+    
+    if (abilityNum1 == 0xFF || GetAbilityBySpecies(species1, abilityNum1) == 0)
+    {
+        do {
+            abilityNum1 = Random() % 3;  // includes hidden abilities
+        } while (GetAbilityBySpecies(species1, abilityNum1) == 0);
+    }
+    
+    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum1);
+
+    // mon 2
+    if (nature2 == NUM_NATURES || nature2 == 0xFF)
+        nature2 = Random() % NUM_NATURES;
+
     if (item2)
     {
         heldItem2[0] = item2;
         heldItem2[1] = item2 >> 8;
         SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
     }
+    
+    if (isShiny2)
+        CreateShinyMonWithNature(&gEnemyParty[1], species2, level2, nature2);
+    else
+        CreateMonWithNature(&gEnemyParty[1], species2, level2, 32, nature2);
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        // ev
+        if (evs2[i] != 0xFF && evTotal2 < 510)
+        {
+            // only up to 510 evs
+            if ((evTotal2 + evs2[i]) > 510)
+                evs2[i] = (510 - evTotal2);
+            
+            evTotal2 += evs2[i];
+            SetMonData(&gEnemyParty[1], MON_DATA_HP_EV + i, &evs2[i]);
+        }
+        
+        // iv
+        if (ivs2[i] != 32 && ivs2[i] != 0xFF)
+            SetMonData(&gEnemyParty[1], MON_DATA_HP_IV + i, &ivs2[i]);
+    }
+    CalculateMonStats(&gEnemyParty[1]);
+    
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves2[i] == 0 || moves2[i] == 0xFF || moves2[i] > MOVES_COUNT)
+            continue;
+        
+        SetMonMoveSlot(&gEnemyParty[1], moves2[i], i);
+    }
+    
+    if (abilityNum2 == 0xFF || GetAbilityBySpecies(species2, abilityNum2) == 0)
+    {
+        do {
+            abilityNum2 = Random() % 3;  // includes hidden abilities
+        } while (GetAbilityBySpecies(species2, abilityNum2) == 0);
+    }
+    
+    SetMonData(&gEnemyParty[1], MON_DATA_ABILITY_NUM, &abilityNum2);
 }
 
 void ScriptSetMonMoveSlot(u8 monIndex, u16 move, u8 slot)
