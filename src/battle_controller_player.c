@@ -2948,12 +2948,13 @@ static void ChangeMoveDisplayMode(u32 battler)
     u32 battlerAtk = battler;
     u32 battlerDef = BATTLE_OPPOSITE(battlerAtk);
     u32 moveType = GetTypeBeforeUsingMove(move, battlerAtk);
+    u32 type = gBattleMoves[move].type;
     u32 atkAbility = GetBattlerAbility(battlerAtk);
     u32 defAbility = GetBattlerAbility(battlerDef);
     u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
     u32 holdEffectDef = GetBattlerHoldEffect(battlerDef, TRUE);
     u32 weather = gBattleWeather;
-    bool32 updateFlags = TRUE;
+    bool32 updateFlags = FALSE;
     u32 power = CalcMoveBasePowerAfterModifiers(move, battlerAtk, battlerDef, moveType, updateFlags, atkAbility, defAbility, holdEffectAtk, weather);
     u32 accuracy = GetTotalAccuracy(battlerAtk, battlerDef, move, atkAbility, defAbility, holdEffectAtk, holdEffectDef);
 
@@ -2969,6 +2970,28 @@ static void ChangeMoveDisplayMode(u32 battler)
         StringExpandPlaceholders(gStringVar1, gPower0Text);
     else
         ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 4);
+
+    if ((type == TYPE_NORMAL)
+        && effect != EFFECT_HIDDEN_POWER
+        && effect != EFFECT_WEATHER_BALL
+        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
+        && effect != EFFECT_NATURAL_GIFT
+        && ((atkAbility == ABILITY_PIXILATE) || (atkAbility == ABILITY_REFRIGERATE) || (atkAbility == ABILITY_AERILATE) || (atkAbility == ABILITY_GALVANIZE)
+        || (atkAbility == ABILITY_HERBIVATE) || (atkAbility == ABILITY_SCORCHATE) || (atkAbility == ABILITY_OCEANATE)))
+        {
+            ConvertIntToDecimalStringN(gStringVar1, power*(1.2), STR_CONV_MODE_RIGHT_ALIGN, 4);
+        }
+    
+    if (effect != EFFECT_HIDDEN_POWER
+        && effect != EFFECT_WEATHER_BALL
+        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
+        && effect != EFFECT_NATURAL_GIFT
+        && effect != EFFECT_TERRAIN_PULSE
+        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
+        && (atkAbility == ABILITY_NORMALIZE))
+        {
+            ConvertIntToDecimalStringN(gStringVar1, power*(1.3), STR_CONV_MODE_RIGHT_ALIGN, 4);
+        }
 
 	StringExpandPlaceholders(gStringVar4, gPowerText);
     BattlePutTextOnWindow(gStringVar4, B_WIN_MOVE_NAME_3);
