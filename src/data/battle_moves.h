@@ -8495,7 +8495,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FLAME_BURST] =
     {
         .effect = EFFECT_FLAME_BURST,
-        .power = 70,
+        .power = 80,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 15,
@@ -8504,6 +8504,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
+        .megaLauncherBoost = TRUE,
     },
 
     [MOVE_SLUDGE_WAVE] =
@@ -9574,6 +9575,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
         .ballisticMove = TRUE,
+        .megaLauncherBoost = TRUE,
     },
 
     [MOVE_TECHNO_BLAST] =
@@ -11730,6 +11732,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .metronomeBanned = TRUE,
+        .ballisticMove = TRUE,
+        .megaLauncherBoost = TRUE,
     },
 
     [MOVE_PLASMA_FISTS] =
