@@ -7512,7 +7512,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 65,
         .baseSpDefense = 50,
         #if P_UPDATED_STATS >= GEN_6
-            .baseSpAttack  = 100,
+            .baseSpAttack  = 110,
         #else
             .baseSpAttack  = 90,
         #endif
@@ -9927,7 +9927,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 30,
         .baseDefense   = 55,
         .baseSpeed     = 97,
-        .baseSpAttack  = 70,
+        .baseSpAttack  = 60,
         .baseSpDefense = 65,
         .types = { TYPE_WATER, TYPE_WATER},
         .catchRate = 225,
