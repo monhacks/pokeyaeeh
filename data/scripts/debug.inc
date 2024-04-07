@@ -115,7 +115,7 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 Debug_EventScript_Script_1::
 	message Text_ReceivedCharizard
 	playfanfare MUS_OBTAIN_ITEM
-    giveformchangeitems
+    givemon SPECIES_CHARIZARD, 100, ITEM_CHARIZARDITE_Y, ITEM_CHERISH_BALL, 10, 2, MON_MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_HEAT_WAVE, MOVE_JETSTREAM, MOVE_FOCUS_BLAST, MOVE_SOLAR_BEAM, 1
 	waitfanfare
 	closemessage
     end

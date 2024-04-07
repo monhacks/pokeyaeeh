@@ -10714,7 +10714,12 @@ bool32 CanMegaEvolve(u32 battler)
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
      && IsPartnerMonFromSameTrainer(battler)
      && (mega->alreadyEvolved[partnerPosition] || (mega->toEvolve & gBitTable[BATTLE_PARTNER(battler)])))
-        return FALSE;
+    {
+        if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
+            return TRUE;
+        else
+            return FALSE;
+    }
 
     // Check if mon is currently held by Sky Drop
     if (gStatuses3[battler] & STATUS3_SKY_DROPPED)
