@@ -1169,7 +1169,7 @@ Route104_Text_BrendanPostBattle:
 `
 script Route104_EventScript_Ivan2{
 	msgbox(format("Ok, fine! I lost! You can have my prized possesion…"))
-	givecustommon(SPECIES_MAGIKARP, 15, ITEM_MYSTIC_WATER, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, 0, 252, 4, 0, 0, 252, 31, 31, 31, 31, 0, 31, MOVE_SPLASH, MOVE_BOUNCE, MOVE_NONE, MOVE_NONE, TRUE)
+	givemon(SPECIES_MAGIKARP, 15, ITEM_MYSTIC_WATER, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 4, 0, 0, 252, 31, 31, 31, 31, 0, 31, MOVE_SPLASH, MOVE_BOUNCE, MOVE_NONE, MOVE_NONE, TRUE)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} received Magikarp!")
 	waitmessage

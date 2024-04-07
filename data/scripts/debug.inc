@@ -113,9 +113,15 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 	.string "'include/config/battle.h'!$"
 
 Debug_EventScript_Script_1::
-    goto_if_set FLAG_UNLOCK_CHEAT_MENU, Debug_EventScript_UnsetTestFlag
-    goto Debug_EventScript_SetTestFlag
+	message Text_ReceivedCharizard
+	playfanfare MUS_OBTAIN_ITEM
+    giveformchangeitems
+	waitfanfare
+	closemessage
     end
+
+Text_ReceivedCharizard:
+	.string "{PLAYER} received a Charizard!$"
 
 Debug_EventScript_Script_2:: @ one Mega Evolution
     cleartrainerflag TRAINER_ERIC

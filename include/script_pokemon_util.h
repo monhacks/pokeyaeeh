@@ -9,7 +9,6 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u8 nature1,
 void ScriptSetMonMoveSlot(u8, u16, u8);
 void ReducePlayerPartyToSelectedMons(void);
 void HealPlayerParty(void);
-u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny);
 void Script_GetChosenMonOffensiveEV(void);
 void Script_GetChosenMonDefensiveEV(void);
 void Script_GetChosenMonOffensiveIV(void);
