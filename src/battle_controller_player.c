@@ -2937,8 +2937,6 @@ static void ChangeMoveDisplayMode(u32 battler)
 {
     static const u8 gPowerText[] =  _("Power: {STR_VAR_1}");
     static const u8 gPower0Text[] =  _("   0");
-    static const u8 gPower30Text[] =  _("  30");
-    static const u8 gPower45Text[] =  _("  45");
     static const u8 gAccuracyText[] =  _("Acc: {STR_VAR_1}");
     static const u8 gNoMissText[] = _("  No Miss");
     static const u8 gContactText[] =  _("Contact");
@@ -2949,16 +2947,15 @@ static void ChangeMoveDisplayMode(u32 battler)
     u32 effect = gBattleMoves[move].effect;
     u32 battlerAtk = battler;
     u32 battlerDef = BATTLE_OPPOSITE(battlerAtk);
-    u32 moveType = gBattleMoves[move].type;
+    u32 moveType = GetTypeBeforeUsingMove(move, battlerAtk);
     u32 atkAbility = GetBattlerAbility(battlerAtk);
     u32 defAbility = GetBattlerAbility(battlerDef);
     u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
     u32 holdEffectDef = GetBattlerHoldEffect(battlerDef, TRUE);
     u32 weather = gBattleWeather;
-    bool32 updateFlags = FALSE;
+    bool32 updateFlags = TRUE;
     u32 power = CalcMoveBasePowerAfterModifiers(move, battlerAtk, battlerDef, moveType, updateFlags, atkAbility, defAbility, holdEffectAtk, weather);
     u32 accuracy = GetTotalAccuracy(battlerAtk, battlerDef, move, atkAbility, defAbility, holdEffectAtk, holdEffectDef);
-    u32 ateAbility = atkAbility;
 
     //Move Name
     StringCopy(gDisplayedStringBattle, gMoveNames[move]);
@@ -2969,40 +2966,10 @@ static void ChangeMoveDisplayMode(u32 battler)
 
     //Move Power
     if (gBattleMoves[move].power == 0)
-    {
         StringExpandPlaceholders(gStringVar1, gPower0Text);
-    }
     else
-    {
         ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 4);
-    }
-    if (effect == EFFECT_ROLLOUT)
-    {
-        StringExpandPlaceholders(gStringVar1, gPower30Text);
-    }
-    if (effect == EFFECT_ROLLOUT && atkAbility == ABILITY_HARD_SPINNER)
-    {
-        StringExpandPlaceholders(gStringVar1, gPower45Text);
-    }
-    if ((moveType == TYPE_NORMAL)
-        && effect != EFFECT_HIDDEN_POWER
-        && effect != EFFECT_WEATHER_BALL
-        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && effect != EFFECT_NATURAL_GIFT
-        && ((ateAbility == ABILITY_PIXILATE) || (ateAbility == ABILITY_REFRIGERATE) || (ateAbility == ABILITY_AERILATE) || (ateAbility == ABILITY_GALVANIZE) || (ateAbility == ABILITY_HERBIVATE) || (ateAbility == ABILITY_SCORCHATE) || (ateAbility == ABILITY_OCEANATE)))
-    {
-        ConvertIntToDecimalStringN(gStringVar1, power*(1.2), STR_CONV_MODE_RIGHT_ALIGN, 4);
-    }
-    if (effect != EFFECT_HIDDEN_POWER
-        && effect != EFFECT_WEATHER_BALL
-        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && effect != EFFECT_NATURAL_GIFT
-        && effect != EFFECT_TERRAIN_PULSE
-        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && (ateAbility == ABILITY_NORMALIZE))
-    {
-        ConvertIntToDecimalStringN(gStringVar1, power*(1.3), STR_CONV_MODE_RIGHT_ALIGN, 4);
-    }
+
 	StringExpandPlaceholders(gStringVar4, gPowerText);
     BattlePutTextOnWindow(gStringVar4, B_WIN_MOVE_NAME_3);
     PutWindowTilemap(B_WIN_MOVE_NAME_3 );
@@ -3010,13 +2977,10 @@ static void ChangeMoveDisplayMode(u32 battler)
 
     //Move Accuracy
     if (accuracy == 0)
-    {
         StringExpandPlaceholders(gStringVar1, gNoMissText);
-    }
     else
-    {
         ConvertIntToDecimalStringN(gStringVar1, accuracy, STR_CONV_MODE_RIGHT_ALIGN, 4);
-    }
+
 	StringExpandPlaceholders(gStringVar4, gAccuracyText);
     BattlePutTextOnWindow(gStringVar4, B_WIN_MOVE_NAME_4);
     PutWindowTilemap(B_WIN_MOVE_NAME_4 );
