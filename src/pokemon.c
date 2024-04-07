@@ -7386,6 +7386,7 @@ u16 NationalToHoennOrder(u16 nationalNum)
 
 u16 SpeciesToNationalPokedexNum(u16 species)
 {
+    species = SanitizeSpeciesId(species);
     if (!species)
         return 0;
 
