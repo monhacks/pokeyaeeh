@@ -58,6 +58,7 @@ bool32 DoSwitchInAbilitiesItems(u32 battlerId);
 u8 GetFirstFaintedPartyIndex(u8 battlerId);
 bool32 IsMoveAffectedByParentalBond(u32 move, u32 battler);
 bool32 DoSwitchInAbilities(u32 battlerId);
+bool8 CanAbilityPreventAnyStatLoss(u32 battler, u16 abilityDef);
 
 extern void (* const gBattleScriptingCommandsTable[])(void);
 extern const u8 gBattlePalaceNatureToMoveGroupLikelihood[NUM_NATURES][4];

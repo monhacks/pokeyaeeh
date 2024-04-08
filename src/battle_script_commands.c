@@ -15817,6 +15817,44 @@ static bool8 CanAbilityPreventStatLoss(u16 abilityDef, bool8 byIntimidate)
     return FALSE;
 }
 
+bool8 CanAbilityPreventAnyStatLoss(u32 battler, u16 abilityDef) 
+{
+    u32 move = gBattleMons[battler].moves[gMoveSelectionCursor[battler]];
+
+    if (GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_CLEAR_AMULET)
+        return TRUE;
+
+    switch (abilityDef)
+    {
+        case ABILITY_CLEAR_BODY:
+        case ABILITY_WHITE_SMOKE:
+            return TRUE;
+        break;
+        case ABILITY_BIG_PECKS:
+        {
+            if ((gBattleMoves[move].effect == EFFECT_DEFENSE_DOWN) || (gBattleMoves[move].effect == EFFECT_DEFENSE_DOWN_2))
+                return TRUE;
+        }
+        break;
+        case ABILITY_HYPER_CUTTER:
+        {
+            if ((gBattleMoves[move].effect == EFFECT_ATTACK_DOWN) || (gBattleMoves[move].effect == EFFECT_ATTACK_DOWN_2))
+                return TRUE;
+        }
+        break;
+        case ABILITY_KEEN_EYE:
+        case ABILITY_ILLUMINATE:
+        case ABILITY_MINDS_EYE:
+        {
+            if ((gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN) || (gBattleMoves[move].effect == EFFECT_DEFENSE_DOWN_2))
+                return TRUE;
+        }
+        break;
+    }
+
+    return FALSE;
+}
+
 void BS_CheckParentalBondCounter(void)
 {
     NATIVE_ARGS(u8 counter, const u8 *jumpInstr);

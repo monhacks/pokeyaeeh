@@ -7,6 +7,7 @@
 #include "battle_interface.h"
 #include "battle_message.h"
 #include "battle_setup.h"
+#include "battle_script_commands.h"
 #include "battle_tv.h"
 #include"battle_util.h"
 #include "battle_z_move.h"
@@ -2172,6 +2173,26 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
             if ((IsSimpleBeamBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
+        // long list lmao
+        case EFFECT_ATTACK_DOWN:
+        case EFFECT_ATTACK_DOWN_2:
+        case EFFECT_DEFENSE_DOWN:
+        case EFFECT_DEFENSE_DOWN_2:
+        case EFFECT_SPEED_DOWN:
+        case EFFECT_SPEED_DOWN_2:
+        case EFFECT_SPECIAL_ATTACK_DOWN:
+        case EFFECT_SPECIAL_ATTACK_DOWN_2:
+        case EFFECT_SPECIAL_DEFENSE_DOWN:
+        case EFFECT_SPECIAL_DEFENSE_DOWN_2:
+        case EFFECT_ACCURACY_DOWN:
+        case EFFECT_ACCURACY_DOWN_2:
+        case EFFECT_EVASION_DOWN:
+        case EFFECT_EVASION_DOWN_2:
+        case EFFECT_MEMENTO:
+        {
+            if (CanAbilityPreventAnyStatLoss(battler, defAbility) && (!moldBreaker))
+                return COLOR_IMMUNE;
+        }
         break;
     }
 
@@ -2948,7 +2969,6 @@ static void ChangeMoveDisplayMode(u32 battler)
     u32 battlerAtk = battler;
     u32 battlerDef = BATTLE_OPPOSITE(battlerAtk);
     u32 moveType = GetTypeBeforeUsingMove(move, battlerAtk);
-    u32 type = gBattleMoves[move].type;
     u32 atkAbility = GetBattlerAbility(battlerAtk);
     u32 defAbility = GetBattlerAbility(battlerDef);
     u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
@@ -2970,28 +2990,6 @@ static void ChangeMoveDisplayMode(u32 battler)
         StringExpandPlaceholders(gStringVar1, gPower0Text);
     else
         ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 4);
-
-    if ((type == TYPE_NORMAL)
-        && effect != EFFECT_HIDDEN_POWER
-        && effect != EFFECT_WEATHER_BALL
-        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && effect != EFFECT_NATURAL_GIFT
-        && ((atkAbility == ABILITY_PIXILATE) || (atkAbility == ABILITY_REFRIGERATE) || (atkAbility == ABILITY_AERILATE) || (atkAbility == ABILITY_GALVANIZE)
-        || (atkAbility == ABILITY_HERBIVATE) || (atkAbility == ABILITY_SCORCHATE) || (atkAbility == ABILITY_OCEANATE)))
-        {
-            ConvertIntToDecimalStringN(gStringVar1, power*(1.2), STR_CONV_MODE_RIGHT_ALIGN, 4);
-        }
-    
-    if (effect != EFFECT_HIDDEN_POWER
-        && effect != EFFECT_WEATHER_BALL
-        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && effect != EFFECT_NATURAL_GIFT
-        && effect != EFFECT_TERRAIN_PULSE
-        && effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && (atkAbility == ABILITY_NORMALIZE))
-        {
-            ConvertIntToDecimalStringN(gStringVar1, power*(1.3), STR_CONV_MODE_RIGHT_ALIGN, 4);
-        }
 
 	StringExpandPlaceholders(gStringVar4, gPowerText);
     BattlePutTextOnWindow(gStringVar4, B_WIN_MOVE_NAME_3);
