@@ -849,8 +849,8 @@ static const u8 sText_HospitalityRestoration[] = _("The {B_ATK_PARTNER_NAME} dra
 static const u8 sText_PkmnDealtAmountDamage[] = _("{B_ATK_NAME_WITH_PREFIX} dealt {B_BUFF4} damage!");
 static const u8 sText_ElectroShockCharging[] = _("{B_ATK_NAME_WITH_PREFIX} absorbed\nelectricity!");
 static const u8 sText_ShedItsTail[] = _("{B_ATK_NAME_WITH_PREFIX} shed its tail\nto create a decoy!");
-static const u8 sText_FogIsDeep[] = _("Fog is deep…");
-static const u8 sText_PkmnBlewAwayFog[] = _("{B_ATK_NAME_WITH_PREFIX} blew away\nthe deep fog!");
+static const u8 sText_FogIsDeep[] = _("The fog is deep…");
+static const u8 sText_FogBlownAway[] = _("The fog was blown away!");
 static const u8 sText_AtkTrappedDefInAHarshWhirlpool[] = _("{B_ATK_NAME_WITH_PREFIX} trapped the\n{B_DEF_NAME_WITH_PREFIX} in a harsh whirlpool!");
 static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting from\nthe syrup covering {B_ATK_NAME_WITH_PREFIX}!");
 
@@ -858,7 +858,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
     [STRINGID_SUPERSWEETAROMAWAFTS - BATTLESTRINGS_TABLE_START] = sText_SupersweetAromaWafts,
     [STRINGID_PKMNTRAPPEDINAHARSHWHIRLPOOL - BATTLESTRINGS_TABLE_START] = sText_AtkTrappedDefInAHarshWhirlpool,
-    [STRINGID_FOGBLOWNAWAY - BATTLESTRINGS_TABLE_START] = sText_PkmnBlewAwayFog,
+    [STRINGID_FOGBLOWNAWAY - BATTLESTRINGS_TABLE_START] = sText_FogBlownAway,
     [STRINGID_FOGISDEEP - BATTLESTRINGS_TABLE_START] = sText_FogIsDeep,
     [STRINGID_SHEDITSTAIL - BATTLESTRINGS_TABLE_START] = sText_ShedItsTail,
     [STRINGID_ELECTROSHOCKCHARGING - BATTLESTRINGS_TABLE_START] = sText_ElectroShockCharging,
@@ -1689,6 +1689,7 @@ const u16 gMoveWeatherChangeStringIds[] =
     [B_MSG_STARTED_SUNLIGHT]  = STRINGID_SUNLIGHTGOTBRIGHT,
     [B_MSG_STARTED_HAIL]      = STRINGID_STARTEDHAIL,
     [B_MSG_STARTED_SNOW]      = STRINGID_STARTEDSNOW,
+    [B_MSG_STARTED_FOG]       = STRINGID_FOGISDEEP, // Unused, can use for custom moves that set fog
 };
 
 const u16 gSandStormHailSnowContinuesStringIds[] =

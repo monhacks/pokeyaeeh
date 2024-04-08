@@ -785,6 +785,7 @@
 #define B_MSG_STARTED_SUNLIGHT  4
 #define B_MSG_STARTED_HAIL      5
 #define B_MSG_STARTED_SNOW      6
+#define B_MSG_STARTED_FOG       7
 
 // gRainContinuesStringIds
 #define B_MSG_RAIN_CONTINUES     0

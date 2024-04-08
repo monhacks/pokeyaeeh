@@ -6978,10 +6978,15 @@ BattleScript_FogContinues::
 	call BattleScript_ActivateWeatherAbilities
 	end2
 
-BattleScript_FogEnded::
+
+BattleScript_FogEnded_Ret::
 	printstring STRINGID_FOGBLOWNAWAY
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_ActivateWeatherAbilities
+	return
+
+BattleScript_FogEnded::
+	call BattleScript_FogEnded_Ret
 	end2
 
 BattleScript_OverworldStatusStarts::

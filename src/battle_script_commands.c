@@ -8301,7 +8301,7 @@ static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
         {
             gBattleWeather &= ~B_WEATHER_FOG;
             BattleScriptPushCursor();
-            gBattlescriptCurrInstr = BattleScript_FogEnded;
+            gBattlescriptCurrInstr = BattleScript_FogEnded_Ret;
             return TRUE;
         }
 
