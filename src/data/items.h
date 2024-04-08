@@ -8862,11 +8862,35 @@ const struct Item gItems[] =
         .secondaryId = MOVE_SOLAR_BLADE,
     },
 
-    [ITEM_TM_IRON_DEFENSE] =
+    [ITEM_TM_GUNK_SHOT] =
     {
         .name = _("TM142"),
         .price = 3000,
         .description = sTM142Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_GUNK_SHOT,
+    },
+
+    [ITEM_TM_HIGH_HORSEPOWER] =
+    {
+        .name = _("TM143"),
+        .price = 3000,
+        .description = sTM143Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HIGH_HORSEPOWER,
+    },
+
+    [ITEM_TM_IRON_DEFENSE] =
+    {
+        .name = _("TM144"),
+        .price = 3000,
+        .description = sTM144Desc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -8876,30 +8900,6 @@ const struct Item gItems[] =
 
     [ITEM_TM_AMNESIA] =
     {
-        .name = _("TM143"),
-        .price = 3000,
-        .description = sTM143Desc,
-        .importance = I_REUSABLE_TMS,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_AMNESIA,
-    },
-
-    [ITEM_TM_SCREECH] =
-    {
-        .name = _("TM144"),
-        .price = 3000,
-        .description = sTM144Desc,
-        .importance = I_REUSABLE_TMS,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_SCREECH,
-    },
-
-    [ITEM_TM_METAL_SOUND] =
-    {
         .name = _("TM145"),
         .price = 3000,
         .description = sTM145Desc,
@@ -8907,7 +8907,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_METAL_SOUND,
+        .secondaryId = MOVE_AMNESIA,
     },
 
     [ITEM_TM_CHARM] =

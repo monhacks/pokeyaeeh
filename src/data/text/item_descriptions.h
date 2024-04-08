@@ -3737,24 +3737,24 @@ static const u8 sTM141Desc[] = _(
     "strikes next turn.");
 
 static const u8 sTM142Desc[] = _(
+    "Shoots filth that\n"
+    "may poison the\n"
+    "target.");
+
+static const u8 sTM143Desc[] = _(
+    "Fiercely attacks\n"
+    "the target using\n"
+    "its entire body.");
+
+static const u8 sTM144Desc[] = _(
     "Hardens its body\n"
     "like iron. Sharply\n"
     "raising Def.");
 
-static const u8 sTM143Desc[] = _(
+static const u8 sTM145Desc[] = _(
     "Forgets about some\n"
     "thing and sharply\n"
     "raises Sp. Def.");
-
-static const u8 sTM144Desc[] = _(
-    "Emits a screech to\n"
-    "harshly lower the\n"
-    "foe's Def.");
-
-static const u8 sTM145Desc[] = _(
-    "Emits a screech to\n"
-    "harshly lower the\n"
-    "foe's Sp. Def.");
 
 static const u8 sTM146Desc[] = _(
     "Charms the foe to\n"

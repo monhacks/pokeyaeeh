@@ -1022,6 +1022,11 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_MIRAIDON] = sMiraidonTeachableLearnset,
     [SPECIES_WALKING_WAKE] = sWalkingWakeTeachableLearnset,
     [SPECIES_IRON_LEAVES] = sIronLeavesTeachableLearnset,
+    [SPECIES_DIPPLIN] = sDipplinTeachableLearnset,
+    [SPECIES_OKIDOGI] = sOkidogiTeachableLearnset,
+    [SPECIES_MUNKIDORI] = sMunkidoriTeachableLearnset,
+    [SPECIES_FEZANDIPITI] = sFezandipitiTeachableLearnset,
+    [SPECIES_OGERPON_TEAL_MASK] = sOgerponTeachableLearnset,
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,
@@ -1503,4 +1508,22 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     // Tauros-Paldea
     [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosPaldeanBlazeBreedTeachableLearnset,
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosPaldeanAquaBreedTeachableLearnset,
+
+    // Ursaluna    
+    [SPECIES_URSALUNA_BLOODMOON] = sUrsalunaBloodmoonTeachableLearnset,
+
+    // Poltchageist
+    [SPECIES_POLTCHAGEIST_COUNTERFEIT] = sPoltchageistTeachableLearnset,
+
+    // Sinistcha
+    [SPECIES_SINISTCHA_UNREMARKABLE] = sSinistchaTeachableLearnset,
+
+    // Ogerpon
+    [SPECIES_OGERPON_TEAL_MASK_TERA] = sOgerponTeachableLearnset,
+    [SPECIES_OGERPON_CORNERSTONE_MASK] = sOgerponTeachableLearnset,
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponTeachableLearnset,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK] = sOgerponTeachableLearnset,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponTeachableLearnset,
+    [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponTeachableLearnset,
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponTeachableLearnset,
 };
