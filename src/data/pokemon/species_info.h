@@ -345,7 +345,7 @@
         .noFlip = flip,                               \
     }
 
-#define CASTFORM_SPECIES_INFO(type, attack, speed, spattack, color)            \
+#define CASTFORM_SPECIES_INFO(type1, type2, attack, speed, spattack, color)            \
     {                                                 \
         .baseHP        = 70,                          \
         .baseAttack    = attack,                      \
@@ -353,7 +353,7 @@
         .baseSpeed     = speed,                       \
         .baseSpAttack  = spattack,                    \
         .baseSpDefense = 70,                          \
-        .types = { type, type },                      \
+        .types = { type1, type2 },                    \
         .catchRate = 45,                              \
         .expYield = 147,                              \
         .evYield_HP        = 1,                       \
@@ -9502,7 +9502,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_CASTFORM_NORMAL] = CASTFORM_SPECIES_INFO(TYPE_NORMAL, 70, 70, 70, BODY_COLOR_GRAY),
+    [SPECIES_CASTFORM_NORMAL] = CASTFORM_SPECIES_INFO(TYPE_NORMAL, TYPE_NORMAL, 70, 70, 70, BODY_COLOR_GRAY),
 
     [SPECIES_KECLEON] =
     {
@@ -23747,9 +23747,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_UNOWN_EMARK] = UNOWN_SPECIES_INFO(FLIP),
     [SPECIES_UNOWN_QMARK] = UNOWN_SPECIES_INFO(NO_FLIP),
 
-    [SPECIES_CASTFORM_SUNNY] = CASTFORM_SPECIES_INFO(TYPE_FIRE, 100, 100, 100, BODY_COLOR_RED),
-    [SPECIES_CASTFORM_RAINY] = CASTFORM_SPECIES_INFO(TYPE_WATER, 100, 100, 100, BODY_COLOR_BLUE),
-    [SPECIES_CASTFORM_SNOWY] = CASTFORM_SPECIES_INFO(TYPE_ICE, 100, 100, 100, BODY_COLOR_WHITE),
+    [SPECIES_CASTFORM_SUNNY] = CASTFORM_SPECIES_INFO(TYPE_FIRE, TYPE_FIRE, 100, 100, 100, BODY_COLOR_RED),
+    [SPECIES_CASTFORM_RAINY] = CASTFORM_SPECIES_INFO(TYPE_WATER, TYPE_WATER, 100, 100, 100, BODY_COLOR_BLUE),
+    [SPECIES_CASTFORM_SNOWY] = CASTFORM_SPECIES_INFO(TYPE_ICE, TYPE_ICE, 100, 100, 100, BODY_COLOR_WHITE),
 
     [SPECIES_DEOXYS_ATTACK] =
     {
