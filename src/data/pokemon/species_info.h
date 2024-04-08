@@ -345,13 +345,13 @@
         .noFlip = flip,                               \
     }
 
-#define CASTFORM_SPECIES_INFO(type1, type2, attack, speed, spattack, color)            \
+#define CASTFORM_SPECIES_INFO(type1, type2, attack, speed, spAttack, color)            \
     {                                                 \
         .baseHP        = 70,                          \
         .baseAttack    = attack,                      \
         .baseDefense   = 70,                          \
         .baseSpeed     = speed,                       \
-        .baseSpAttack  = spattack,                    \
+        .baseSpAttack  = spAttack,                    \
         .baseSpDefense = 70,                          \
         .types = { type1, type2 },                    \
         .catchRate = 45,                              \
@@ -391,13 +391,13 @@
         .noFlip = FALSE,                                                 \
     }
 
-#define CHERRIM_SPECIES_INFO(attack, speed, spattack, color)                      \
+#define CHERRIM_SPECIES_INFO(attack, speed, spAttack, color)                      \
     {                                                    \
         .baseHP        = 70,                             \
         .baseAttack    = attack,                         \
         .baseDefense   = 70,                             \
         .baseSpeed     = speed,                          \
-        .baseSpAttack  = spattack,                       \
+        .baseSpAttack  = spAttack,                       \
         .baseSpDefense = 78,                             \
         .types = { TYPE_GRASS, TYPE_GRASS},              \
         .catchRate = 75,                                 \
