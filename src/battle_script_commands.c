@@ -15821,7 +15821,7 @@ bool8 CanAbilityPreventAnyStatLoss(u32 battler, u16 abilityDef)
 {
     u32 move = gBattleMons[battler].moves[gMoveSelectionCursor[battler]];
 
-    if (GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_CLEAR_AMULET)
+    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
 
     switch (abilityDef)

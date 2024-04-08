@@ -2173,6 +2173,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
             if ((IsSimpleBeamBannedAbility(defAbility)) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
+        break;
         // long list lmao
         case EFFECT_ATTACK_DOWN:
         case EFFECT_ATTACK_DOWN_2:
@@ -2256,6 +2257,10 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
     }
+
+    if ((IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_PSYCHIC_TERRAIN))
+    && (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER))
+        return COLOR_IMMUNE;
 
     // Type specific cases
     if (IS_BATTLER_OF_TYPE(targetId, TYPE_GRASS))
