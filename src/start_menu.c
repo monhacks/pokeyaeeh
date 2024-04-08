@@ -1508,23 +1508,23 @@ static bool8 StartMenuDexNavCallback(void)
 
 // Start Menu clock
 
-static const u8 gText_DayNameFRI[] = _("FRI");
-static const u8 gText_DayNameSAT[] = _("SAT");
-static const u8 gText_DayNameSUN[] = _("SUN");
-static const u8 gText_DayNameMON[] = _("MON");
-static const u8 gText_DayNameTUE[] = _("TUE");
-static const u8 gText_DayNameWED[] = _("WED");
-static const u8 gText_DayNameTHU[] = _("THU");
+static const u8 gText_DayNameFri[] = _("Fri,");
+static const u8 gText_DayNameSat[] = _("Sat,");
+static const u8 gText_DayNameSun[] = _("Sun,");
+static const u8 gText_DayNameMon[] = _("Mon,");
+static const u8 gText_DayNameTue[] = _("Tue,");
+static const u8 gText_DayNameWed[] = _("Wed,");
+static const u8 gText_DayNameThu[] = _("Thu,");
 
 static const u8 *const gDayNamesStringsTable[] =
 {
-    gText_DayNameFRI,
-    gText_DayNameSAT,
-    gText_DayNameSUN,
-    gText_DayNameMON,
-    gText_DayNameTUE,
-    gText_DayNameWED,
-    gText_DayNameTHU,
+    gText_DayNameFri,
+    gText_DayNameSat,
+    gText_DayNameSun,
+    gText_DayNameMon,
+    gText_DayNameTue,
+    gText_DayNameWed,
+    gText_DayNameThu
 };
 
 const u8 gText_CurrentTime[] = _(" {STR_VAR_3}  {STR_VAR_1}:{STR_VAR_2}");
