@@ -159,25 +159,25 @@ MoveTutor_EventScript_SubstituteTaught::
 	release
 	end
 
-MossdeepCity_EventScript_DynamicPunchTutor::
+MossdeepCity_EventScript_CloseCombatTutor::
 	lock
 	faceplayer
-	msgbox MoveTutor_Text_DynamicPunchTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DynamicPunchDeclined
-	msgbox MoveTutor_Text_DynamicPunchWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_DYNAMIC_PUNCH
+	msgbox MoveTutor_Text_CloseCombatTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_CloseCombatDeclined
+	msgbox MoveTutor_Text_CloseCombatWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_CLOSE_COMBAT
 	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DynamicPunchDeclined
-	goto MoveTutor_EventScript_DynamicPunchTaught
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_CloseCombatDeclined
+	goto MoveTutor_EventScript_CloseCombatTaught
 	end
 
-MoveTutor_EventScript_DynamicPunchDeclined::
-	msgbox MoveTutor_Text_DynamicPunchDeclined, MSGBOX_DEFAULT
+MoveTutor_EventScript_CloseCombatDeclined::
+	msgbox MoveTutor_Text_CloseCombatDeclined, MSGBOX_DEFAULT
 	release
 	end
 
-MoveTutor_EventScript_DynamicPunchTaught::
-	msgbox MoveTutor_Text_DynamicPunchTaught, MSGBOX_DEFAULT
+MoveTutor_EventScript_CloseCombatTaught::
+	msgbox MoveTutor_Text_CloseCombatTaught, MSGBOX_DEFAULT
 	release
 	end
 
@@ -332,6 +332,72 @@ MoveTutor_EventScript_ExpandingForceDeclined::
 
 MoveTutor_EventScript_ExpandingForceTaught::
 	msgbox MoveTutor_Text_ExpandingForceTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route109_EventScript_BraveBirdTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_BraveBirdTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_BraveBirdDeclined
+	msgbox MoveTutor_Text_BraveBirdWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_BraveBirdDeclined
+	goto MoveTutor_EventScript_BraveBirdTaught
+	end
+
+MoveTutor_EventScript_BraveBirdDeclined::
+	msgbox MoveTutor_Text_BraveBirdDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_BraveBirdTaught::
+	msgbox MoveTutor_Text_BraveBirdTaught, MSGBOX_DEFAULT
+	release
+	end
+
+RusturfTunnel_EventScript_FlareBlitzTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_FlareBlitzTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FlareBlitzDeclined
+	msgbox MoveTutor_Text_FlareBlitzWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FLARE_BLITZ
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FlareBlitzDeclined
+	goto MoveTutor_EventScript_FlareBlitzTaught
+	end
+
+MoveTutor_EventScript_FlareBlitzDeclined::
+	msgbox MoveTutor_Text_FlareBlitzDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FlareBlitzTaught::
+	msgbox MoveTutor_Text_FlareBlitzTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route125_EventScript_WildChargeTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_WildChargeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_WildChargeDeclined
+	msgbox MoveTutor_Text_WildChargeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_WILD_CHARGE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_WildChargeDeclined
+	goto MoveTutor_EventScript_WildChargeTaught
+	end
+
+MoveTutor_EventScript_WildChargeDeclined::
+	msgbox MoveTutor_Text_WildChargeDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_WildChargeTaught::
+	msgbox MoveTutor_Text_WildChargeTaught, MSGBOX_DEFAULT
 	release
 	end
 

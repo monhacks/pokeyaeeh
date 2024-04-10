@@ -3552,9 +3552,9 @@ static const u8 sTM104Desc[] = _(
     "inflict damage.");
 
 static const u8 sTM105Desc[] = _(
-    "Tears the foe with\n"
-    "psychic blades.\n"
-    "High crit-hit ratio.");
+    "The user slams the\n"
+    "foe with its wings\n"
+    "twice in a row.");
 
 static const u8 sTM106Desc[] = _(
     "Slashes the foe, m-\n"
@@ -3652,9 +3652,9 @@ static const u8 sTM124Desc[] = _(
     "cause poisoning.");
 
 static const u8 sTM125Desc[] = _(
-    "An electric tackle\n"
-    "that hurts the user\n"
-    "a little.");
+    "Fierece winds attack\n"
+    "the foe. Might cause\n"
+    "confusion.");
 
 static const u8 sTM126Desc[] = _(
     "Spins body like a\n"

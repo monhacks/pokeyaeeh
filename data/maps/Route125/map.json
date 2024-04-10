@@ -159,6 +159,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route125_EventScript_ItemBigPearl",
       "flag": "FLAG_ITEM_ROUTE_125_BIG_PEARL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 54,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route125_EventScript_WildChargeTutor",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -170,22 +183,10 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
-    {
-      "type": "secret_base",
-      "x": 53,
-      "y": 10,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_RED_CAVE1_2"
-    },
-    {
-      "type": "secret_base",
-      "x": 55,
-      "y": 11,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_RED_CAVE4_2"
-    },
     {
       "type": "secret_base",
       "x": 7,

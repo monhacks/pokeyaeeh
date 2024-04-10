@@ -8418,7 +8418,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_HYPER_VOICE,
     },
 
-    [ITEM_TM_PSYCHO_CUT] =
+    [ITEM_TM_DUAL_WINGBEAT] =
     {
         .name = _("TM105"),
         .price = 3000,
@@ -8427,7 +8427,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_PSYCHO_CUT,
+        .secondaryId = MOVE_DUAL_WINGBEAT,
     },
 
     [ITEM_TM_CROSS_POISON] =
@@ -8658,7 +8658,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_SLUDGE_WAVE,
     },
 
-    [ITEM_TM_WILD_CHARGE] =
+    [ITEM_TM_HURRICANE] =
     {
         .name = _("TM125"),
         .price = 3000,
@@ -8667,7 +8667,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_WILD_CHARGE,
+        .secondaryId = MOVE_HURRICANE,
     },
 
     [ITEM_TM_DRILL_RUN] =

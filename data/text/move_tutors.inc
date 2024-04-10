@@ -159,7 +159,7 @@ MoveTutor_Text_SubstituteTaught:
 	.string "own lives to the utmost!\p"
 	.string "I hope you'll get that way, too!$"
 
-MoveTutor_Text_DynamicPunchTeach:
+MoveTutor_Text_CloseCombatTeach:
 	.string "I can't do this anymore!\p"
 	.string "It's utterly hopeless!\p"
 	.string "I'm a Fighting-type Trainer,\n"
@@ -168,21 +168,22 @@ MoveTutor_Text_DynamicPunchTeach:
 	.string "Argh! Punch! Punch! Punch!\n"
 	.string "Punch! Punch! Punch!\p"
 	.string "What, don't look at me that way!\n"
-	.string "I'm only hitting the ground!\p"
+	.string "I'm only letting my guard down!\p"
 	.string "Or do you want me to teach your\n"
-	.string "Pokémon DynamicPunch?$"
+	.string "Pokémon Close Combat?$"
 
-MoveTutor_Text_DynamicPunchDeclined:
+MoveTutor_Text_CloseCombatDeclined:
 	.string "Darn! You're even making fun of me?\n"
-	.string "Punch! Punch! Punch!$"
+	.string "Hiyaaaa!$"
 
-MoveTutor_Text_DynamicPunchWhichMon:
+MoveTutor_Text_CloseCombatWhichMon:
 	.string "What? You do? You're a good person!\n"
 	.string "Which Pokémon should I teach?$"
 
-MoveTutor_Text_DynamicPunchTaught:
+MoveTutor_Text_CloseCombatTaught:
 	.string "I want you to win at the Mossdeep Gym\n"
-	.string "using that DynamicPunch!$"
+	.string "using that Close Combat!\p"
+	.string "Hiyaaaa!$"
 
 MoveTutor_Text_DoubleEdgeTeach:
 	.string "Sigh…\p"
@@ -342,3 +343,60 @@ MoveTutor_Text_RisingVoltageTaught:
 	.string "When used wisely, it can deal lots\n"
 	.string "of damage.\p"
 	.string "You can make good use of this move!$"
+
+MoveTutor_Text_BraveBirdTeach:
+	.string "I am Bo, the Brave!\p"
+	.string "As a bird keeper it is my solem duty\n"
+	.string "to teach birds how to be brave!\p"
+	.string "So, do you want me to teach your birds,\n"
+	.string "Brave Bird?$"
+
+MoveTutor_Text_BraveBirdDeclined:
+	.string "…!\p"
+	.string "If you change your mind, you know!\n"
+	.string "where to find me.$"
+
+MoveTutor_Text_BraveBirdWhichMon:
+	.string "Huzzah!\n"
+	.string "Who will it be?$"
+
+MoveTutor_Text_BraveBirdTaught:
+	.string "Its been done!\p"
+	.string "Now your Pokémon can majestically take\n"
+	.string "down its prey- I mean foe!$"
+
+MoveTutor_Text_FlareBlitzTeach:
+	.string "Hi there, Trainer!\p"
+	.string "I teach the art of cloaking in flames\n"
+	.string "and charging at your foe!\p"
+	.string "Would you be interested in learning the\n"
+	.string "move, Flare Blitz?$"
+
+MoveTutor_Text_FlareBlitzDeclined:
+	.string "Ow, that's a burn!\p"
+	.string "I'll be waiting here, if you do.$"
+
+MoveTutor_Text_FlareBlitzWhichMon:
+	.string "Furious!\n"
+	.string "Choose your warrior!$"
+
+MoveTutor_Text_FlareBlitzTaught:
+	.string "Done!\p"
+	.string "The fire lives within!$"
+
+MoveTutor_Text_WildChargeTeach:
+	.string "Bzzt!\p"
+	.string "I know a very powerful Electric-type\n"
+	.string "attack!\p"
+	.string "Are you interested in learning it?$"
+
+MoveTutor_Text_WildChargeDeclined:
+	.string "Big missed opportunity…$"
+
+MoveTutor_Text_WildChargeWhichMon:
+	.string "Awesome!\n"
+	.string "Wild Charge!$"
+
+MoveTutor_Text_WildChargeTaught:
+	.string "Aaand done!\p"
+	.string "Have fun Ko'ing your enemies!$"
