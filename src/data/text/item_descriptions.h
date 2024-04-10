@@ -3077,9 +3077,9 @@ static const u8 sTM09Desc[] = _(
     "of Rock types.");
 
 static const u8 sTM10Desc[] = _(
-    "Poisons the foe\n"
-    "with a toxin that\n"
-    "gradually worsens.");
+    "Power and type\n"
+    "vary based on the\n"
+    "weather.");
 
 static const u8 sTM11Desc[] = _(
     "Looses a stream of\n"
@@ -3347,14 +3347,14 @@ static const u8 sTM63Desc[] = _(
     "with a frostbite.");
 
 static const u8 sTM64Desc[] = _(
-    "Power and type\n"
-    "vary based on the\n"
-    "weather.");
-
-static const u8 sTM65Desc[] = _(
     "Focuses for a turn\n"
     "and launches punch.\n"
     "Flinches if hit.");
+
+static const u8 sTM65Desc[] = _(
+    "Poisons the foe\n"
+    "with a toxin that\n"
+    "gradually worsens.");
 
 static const u8 sTM66Desc[] = _(
     "Chillingly stares\n"

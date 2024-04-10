@@ -7279,7 +7279,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_SANDSTORM,
     },
 
-    [ITEM_TM_TOXIC] =
+    [ITEM_TM_WEATHER_BALL] =
     {
         .name = _("TM10"),
         .price = 3000,
@@ -7288,7 +7288,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_TOXIC,
+        .secondaryId = MOVE_WEATHER_BALL,
     },
 
     [ITEM_TM_FLAMETHROWER] =
@@ -7471,7 +7471,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_EARTH_POWER,
     },
 
-    [ITEM_TM_JETSTREAM] =
+    [ITEM_TM_JETSTREAM] = // Custom move
     {
         .name = _("TM26"),
         .price = 3000,
@@ -7927,7 +7927,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_ICE_PUNCH,
     },
 
-    [ITEM_TM_WEATHER_BALL] =
+    [ITEM_TM_FOCUS_PUNCH] =
     {
         .name = _("TM64"),
         .price = 3000,
@@ -7936,10 +7936,10 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_WEATHER_BALL,
+        .secondaryId = MOVE_FOCUS_PUNCH,
     },
 
-    [ITEM_TM_FOCUS_PUNCH] =
+    [ITEM_TM_TOXIC] =
     {
         .name = _("TM65"),
         .price = 3000,
@@ -7948,10 +7948,10 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FOCUS_PUNCH,
+        .secondaryId = MOVE_TOXIC,
     },
 
-    [ITEM_TM_FROST_GLARE] =
+    [ITEM_TM_FROST_GLARE] = // Custom move
     {
         .name = _("TM66"),
         .price = 3000,
