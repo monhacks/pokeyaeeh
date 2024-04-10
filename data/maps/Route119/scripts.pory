@@ -480,6 +480,10 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 	releaseall
 	end
 
+Route119_EventScript_BAndDPadToJumpOnRails::
+	msgbox Route119_Text_BAndDPadToJumpOnRails, MSGBOX_SIGN
+	end
+
 Route119_Text_MayIntro:
 	.string "May: {PLAYER}{KUN}!\n"
 	.string "Where were you? I was looking for you!\p"
@@ -613,4 +617,11 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own Secret Base exactly the\l"
 	.string "way you want.$"
+
+Route119_Text_BAndDPadToJumpOnRails:
+	.string "Trainer Tips\p"
+	.string "To jump on the rails, set the bicycle to\n"
+	.string "Acro mode, and press {B_BUTTON} and the\l"
+	.string "direction you want to go to, at once!$"
+
 `

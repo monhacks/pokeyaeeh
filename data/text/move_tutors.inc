@@ -1,7 +1,3 @@
-MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce:
-	.string "This move can be learned only\n"
-	.string "once. Is that okay?$"
-
 MoveTutor_Text_SwaggerTeach:
 	.string "Heh! My Pokémon totally rules!\n"
 	.string "It's cooler than any Pokémon!\p"
@@ -235,3 +231,114 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own Explosion…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_GrassyGlideTeach:
+	.string "Glide! Glide! Glide!\p"
+	.string "What am I doing?\p"
+	.string "I'm just yelling my favorite word,\n"
+	.string "glide!\p"
+	.string "Gliding on grass!\p"
+	.string "Do you want me to teach your Pokémon\n"
+	.string "to glide on grass?$"
+
+MoveTutor_Text_GrassyGlideDeclined:
+	.string "I hope you change your mind about\n"
+	.string "about this!$"
+
+MoveTutor_Text_GrassyGlideWhichMon:
+	.string "Woo-hoo!\p"
+	.string "So which Pokémon should learn\n"
+	.string "Grassy Glide?$"
+
+MoveTutor_Text_GrassyGlideTaught:
+	.string "Grassy Glide has a cool effect!\p"
+	.string "This move always goes first when\n"
+	.string "the field is grassy!$"
+
+MoveTutor_Text_ScorchingSandsTeach:
+	.string "There's a volcano behind us.\p"
+	.string "Its scorching, and its filled with\n"
+	.string "mud and rocks… and lava.\p"
+	.string "How about I teach one of your\n"
+	.string "Pokémon the move to remember this\l"
+	.string "occasion?\p"
+	.string "Scorching Sands!\p"
+	.string "Want me to teach it to a Pokémon?$"
+
+MoveTutor_Text_ScorchingSandsDeclined:
+	.string "You burnt my soul!$"
+
+MoveTutor_Text_ScorchingSandsWhichMon:
+	.string "Hot sands!\n"
+	.string "Show me which Pokémon I should teach.$"
+
+MoveTutor_Text_ScorchingSandsTaught:
+	.string "Scorching Sands is a really cool move!\p"
+	.string "It's a Ground-type move that can\n"
+	.string "burn!$"
+
+MoveTutor_Text_SkitterSmackTeach:
+	.string "Bugs! Bugs everywhere!\p"
+	.string "I love them skittering and buzzing\n"
+	.string "around me!\p"
+	.string "Hm… You're a Trainer.\p"
+	.string "How about I teach Skitter Smack to\n"
+	.string "one of your Pokémon?\p"
+	.string "Trust me, it's a good attack!$"
+
+MoveTutor_Text_SkitterSmackDeclined:
+	.string "Then skitter-scram, nerd!$"
+
+MoveTutor_Text_SkitterSmackWhichMon:
+	.string "Wowzers!\n"
+	.string "Which bugger's it gonna be?$"
+
+MoveTutor_Text_SkitterSmackTaught:
+	.string "Skitter Smack lowers the foe's Sp.\n"
+	.string "Attack while also dealing a lot of\l"
+	.string "damage!\p"
+	.string "Cool, eh?$"
+
+MoveTutor_Text_ExpandingForceTeach:
+	.string "Domain Expansion!\p"
+	.string "I have mastered the art of expanding\n"
+	.string "my domain!\l"
+	.string "With the Force\p"
+	.string "You're here because you want me to\n"
+	.string "teach you this technique?$"
+
+MoveTutor_Text_ExpandingForceDeclined:
+	.string "Fair enough…\p"
+	.string "I was just guessing.$"
+
+MoveTutor_Text_ExpandingForceWhichMon:
+	.string "I knew it!\n"
+	.string "So who's gonna weild the\l"
+	.string "Expanding Force?$"
+
+MoveTutor_Text_ExpandingForceTaught:
+	.string "Expanding Force is a strong move.\p"
+	.string "And it only gets stronger and stronger\n"
+	.string "in Psychic Terrain!\p"
+	.string "Cool, eh?$"
+
+MoveTutor_Text_RisingVoltageTeach:
+	.string "Thank you for saving the plant!\p"
+	.string "As a reward, I can teach your\n"
+	.string "Pokémon, Rising Voltage!\p"
+	.string "So, do you want me to teach it?$"
+
+MoveTutor_Text_RisingVoltageDeclined:
+	.string "Oh, it's okay!\p"
+	.string "Let me know if you change your mind!$"
+
+MoveTutor_Text_RisingVoltageWhichMon:
+	.string "Bazinga!\n"
+	.string "Whom should I teach it?$"
+
+MoveTutor_Text_RisingVoltageTaught:
+	.string "The power of Rising Voltage doubles\n"
+	.string "when the field is electrified!\p"
+	.string "When used wisely, it can deal lots\n"
+	.string "of damage.\p"
+	.string "You can make good use of this move!$"

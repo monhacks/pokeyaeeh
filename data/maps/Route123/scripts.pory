@@ -11,18 +11,11 @@ Route123_EventScript_GigaDrainGirl::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM_GIGA_DRAIN, Route123_EventScript_ReceivedGigaDrain
-	msgbox Route123_Text_LoveGrassMonsHaveAny, MSGBOX_DEFAULT
-	special IsGrassTypeInParty
-	goto_if_eq VAR_RESULT, FALSE, Route123_EventScript_NoGrassMons
-	msgbox Route123_Text_YouLikeGrassMonsTooHaveThis, MSGBOX_DEFAULT
+	msgbox Route123_Text_LoveGrassMonsHaveThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_GIGA_DRAIN
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_GIGA_DRAIN
 	msgbox Route123_Text_CheckTreesWithMyGrassMon, MSGBOX_DEFAULT
-	release
-	end
-
-Route123_EventScript_NoGrassMons::
 	release
 	end
 
@@ -171,16 +164,9 @@ Route123_EventScript_RematchFernando::
 	msgbox Route123_Text_FernandoPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-Route123_Text_LoveGrassMonsHaveAny:
+Route123_Text_LoveGrassMonsHaveThis:
 	.string "I love Grass-type Pokémon!\p"
-	.string "Do you have any Grass-type Pokémon?$"
-
-Route123_Text_YouLikeGrassMonsTooHaveThis:
-	.string "Oh?\p"
-	.string "You like Grass-type Pokémon, too,\n"
-	.string "don't you?\p"
-	.string "I'm so happy, you can have this!\n"
-	.string "It's a token of our friendship.$"
+	.string "Here, you can have this!$"
 
 Route123_Text_CheckTreesWithMyGrassMon:
 	.string "I check trees with my Grass-type\n"
