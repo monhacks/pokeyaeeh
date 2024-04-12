@@ -409,8 +409,9 @@ u32 ScriptGiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 natu
     // moves
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (moves[i] == MOVE_NONE || moves[i] >= MOVES_COUNT)
-            continue;
+        if (moves[0] == MOVE_NONE)
+            break;
+        if (moves[i] >= MOVES_COUNT)
         SetMonMoveSlot(&mon, moves[i], i);
     }
 

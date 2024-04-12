@@ -3734,7 +3734,7 @@ static const struct TrainerMon sParty_Flannery1[] = { // Qanak
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4), 
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_GIGA_IMPACT, MOVE_RETURN}
+        .moves = {MOVE_GIGA_IMPACT, MOVE_RETURN, MOVE_NONE, MOVE_NONE}
     },
     {
         .species = SPECIES_DITTO,
@@ -3744,7 +3744,7 @@ static const struct TrainerMon sParty_Flannery1[] = { // Qanak
         .ev = TRAINER_PARTY_EVS(248, 8, 252, 0, 0, 0), 
         .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
         .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 31), 
-        .moves = {MOVE_TRANSFORM}
+        .moves = {MOVE_TRANSFORM, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
@@ -3875,7 +3875,7 @@ static const struct TrainerMon sParty_Winona1[] = { // Tiger Bro
 };
 
 
-static const struct TrainerMon sParty_TateAndLiza1[] = {
+static const struct TrainerMon sParty_TateAndLiza1[] = { // light
     {
         .species = SPECIES_OVERQWIL,
         .heldItem = ITEM_LIFE_ORB,
@@ -3937,7 +3937,7 @@ static const struct TrainerMon sParty_TateAndLiza1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Juan1[] = {
+static const struct TrainerMon sParty_Juan1[] = { // Chal
     {
         .species = SPECIES_GRENINJA,
         .heldItem = ITEM_FLYING_GEM,
