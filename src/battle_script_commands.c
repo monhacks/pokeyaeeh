@@ -15844,6 +15844,7 @@ bool8 CanAbilityPreventAnyStatLoss(u32 battler, u16 abilityDef)
     {
         case ABILITY_CLEAR_BODY:
         case ABILITY_WHITE_SMOKE:
+        case ABILITY_MIRROR_ARMOR:
             return TRUE;
         break;
         case ABILITY_BIG_PECKS:

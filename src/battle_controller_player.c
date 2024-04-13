@@ -1800,7 +1800,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
     u32 defAbility = GetBattlerAbility(targetId);
     u32 contactMove = IsMoveMakingContact(move, battlerAtk);
     u32 attackingMove = !(gBattleMoves[move].split == SPLIT_STATUS); // or gBattleMoves[move].power > 0;
-    u32 moldBreaker = IsMoldBreakerTypeAbility(atkAbility);
+    u32 moldBreaker = IsMoldBreakerTypeAbilityEff(battlerAtk);
     u16 moveTarget = GetBattlerMoveTargetType(battler, move);
 
     struct ChooseMoveStruct *moveInfo;
@@ -2006,6 +2006,9 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
         case EFFECT_ACCURACY_DOWN_2:
         case EFFECT_EVASION_DOWN:
         case EFFECT_EVASION_DOWN_2:
+        case EFFECT_TICKLE:
+        case EFFECT_CAPTIVATE:
+        case EFFECT_NOBLE_ROAR:
         case EFFECT_MEMENTO:
         {
             if (CanAbilityPreventAnyStatLoss(battler, defAbility) && (!moldBreaker))
@@ -2808,8 +2811,27 @@ static void ChangeMoveDisplayMode(u32 battler)
     CopyWindowToVram(B_WIN_MOVE_NAME_1 , 3);
 
     //Move Power
+    if ((moveType == TYPE_NORMAL)
+     && effect != EFFECT_HIDDEN_POWER
+     && effect != EFFECT_WEATHER_BALL
+     && effect != EFFECT_CHANGE_TYPE_ON_ITEM
+     && effect != EFFECT_NATURAL_GIFT
+     && ((atkAbility == ABILITY_PIXILATE) || (atkAbility == ABILITY_REFRIGERATE) || (atkAbility == ABILITY_AERILATE) || (atkAbility == ABILITY_GALVANIZE)
+     || (atkAbility == ABILITY_HERBIVATE) || (atkAbility == ABILITY_SCORCHATE) || (atkAbility == ABILITY_OCEANATE)))
+        ConvertIntToDecimalStringN(gStringVar1, power*(1.2), STR_CONV_MODE_RIGHT_ALIGN, 4);
+
+    else if (effect != EFFECT_HIDDEN_POWER
+     && effect != EFFECT_WEATHER_BALL
+     && effect != EFFECT_CHANGE_TYPE_ON_ITEM
+     && effect != EFFECT_NATURAL_GIFT
+     && effect != EFFECT_TERRAIN_PULSE
+     && effect != EFFECT_CHANGE_TYPE_ON_ITEM
+     && (atkAbility == ABILITY_NORMALIZE))
+        ConvertIntToDecimalStringN(gStringVar1, power*(1.3), STR_CONV_MODE_RIGHT_ALIGN, 4);
+
     if (gBattleMoves[move].power == 0)
         StringExpandPlaceholders(gStringVar1, gPower0Text);
+
     else
         ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 4);
 

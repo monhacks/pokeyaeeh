@@ -6623,6 +6623,13 @@ u32 GetBattlerAbility(u32 battler)
     return gBattleMons[battler].ability;
 }
 
+bool32 IsMoldBreakerTypeAbilityEff(u32 battler)
+{
+    u32 ability = GetBattlerAbility(battler);
+
+    return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE);
+}
+
 u32 IsAbilityOnSide(u32 battler, u32 ability)
 {
     if (IsBattlerAlive(battler) && GetBattlerAbility(battler) == ability)
