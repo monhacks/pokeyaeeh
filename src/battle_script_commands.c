@@ -15834,11 +15834,12 @@ static bool8 CanAbilityPreventStatLoss(u16 abilityDef, bool8 byIntimidate)
     return FALSE;
 }
 
-bool8 CanAbilityPreventAnyStatLoss(u32 battler, u16 abilityDef) 
+bool8 CanPreventAnyStatLoss(u32 battler, u32 move, u16 abilityDef)
 {
-    u32 move = gBattleMons[battler].moves[gMoveSelectionCursor[battler]];
-
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_CLEAR_AMULET)
+        return TRUE;
+
+    if ((IS_BATTLER_OF_TYPE(battler, TYPE_GRASS)) && IsAbilityOnSide(battler, ABILITY_FLOWER_VEIL))
         return TRUE;
 
     switch (abilityDef)

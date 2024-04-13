@@ -2011,7 +2011,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
         case EFFECT_NOBLE_ROAR:
         case EFFECT_MEMENTO:
         {
-            if (CanAbilityPreventAnyStatLoss(battler, defAbility) && (!moldBreaker))
+            if (CanPreventAnyStatLoss(battler, move, defAbility) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
         break;
