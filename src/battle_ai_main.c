@@ -3664,6 +3664,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_FOCUS_ENERGY:
     case EFFECT_LASER_FOCUS:
         if (aiData->abilities[battlerAtk] == ABILITY_SUPER_LUCK
+          || aiData->abilities[battlerAtk] == ABILITY_HYPER_CUTTER
           || aiData->abilities[battlerAtk] == ABILITY_SNIPER
           || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
           || HasHighCritRatioMove(battlerAtk))
