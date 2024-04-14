@@ -1802,6 +1802,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
     u32 attackingMove = !(gBattleMoves[move].split == SPLIT_STATUS); // or gBattleMoves[move].power > 0;
     u32 moldBreaker = IsMoldBreakerTypeAbilityEff(battlerAtk);
     u16 moveTarget = GetBattlerMoveTargetType(battler, move);
+    bool8 isInverse = (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE)) ? TRUE : FALSE;
 
     struct ChooseMoveStruct *moveInfo;
     u32 mod1 = sTypeEffectivenessTable[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[battler]]].type][gBattleMons[targetId].type1];
@@ -2053,6 +2054,10 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 && !(moveTarget & MOVE_TARGET_ALL_BATTLERS) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
+        case ABILITY_ILLUSION:
+        {
+            // Nothing for now.
+        }
         break;
     }
 
@@ -2089,15 +2094,46 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
             return COLOR_IMMUNE;
     }
     
-    if (modifier == UQ_4_12(0.0))
-	    return COLOR_IMMUNE;
+    if (IS_BATTLER_OF_TYPE(targetId, TYPE_GROUND))
+    {
+        if (move == MOVE_THUNDER_WAVE)
+            return COLOR_IMMUNE;
+    }
 
-    else if (modifier <= UQ_4_12(0.5))
-        return COLOR_NOT_VERY_EFFECTIVE;
-
-    else if (modifier >= UQ_4_12(2.0))
-        return COLOR_SUPER_EFFECTIVE;
-
+    if (attackingMove && !(isInverse))
+    {
+        if(modifier == UQ_4_12(0.0))
+        {
+	        return COLOR_IMMUNE;
+        }
+        else if (modifier <= UQ_4_12(0.5))
+        {
+            return COLOR_NOT_VERY_EFFECTIVE;
+        }
+        else if (modifier >= UQ_4_12(2.0))
+        {
+            return COLOR_SUPER_EFFECTIVE;
+        }
+        else
+            return COLOR_EFFECTIVE;
+    }
+    else if (attackingMove && isInverse) // Don't ask
+    {
+        if (modifier == UQ_4_12(0.0))
+        {
+	        return COLOR_NOT_VERY_EFFECTIVE;
+        }
+        else if (modifier <= UQ_4_12(0.5))
+        {
+            return COLOR_NOT_VERY_EFFECTIVE;
+        }
+        else if (modifier >= UQ_4_12(2.0))
+        {
+            return COLOR_SUPER_EFFECTIVE;
+        }
+        else
+            return COLOR_EFFECTIVE;
+    }
     else
         return COLOR_EFFECTIVE;
 }
