@@ -2,11 +2,6 @@ raw `
 Route108_MapScripts::
 	.byte 0
 
-Route108_EventScript_Jerome::
-	trainerbattle_single TRAINER_JEROME, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated
-	msgbox Route108_Text_JeromePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route108_EventScript_Matthew::
 	trainerbattle_single TRAINER_MATTHEW, Route108_Text_MatthewIntro, Route108_Text_MatthewDefeated
 	msgbox Route108_Text_MatthewPostBattle, MSGBOX_AUTOCLOSE
@@ -49,3 +44,37 @@ Route108_EventScript_CoryRematch::
 	end
 
 `
+script Route108_EventScript_Jerome2{
+	msgbox(format("Ah yes!\pPeak battle!\pHere, I have an extra!"))
+	giveitem(ITEM_BLASTOISINITE, 1)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitmessage
+	waitfanfare
+	msgbox(format("And this, too!"))
+	giveitem(ITEM_TM_BUBBLE_BEAM, 1)
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox("Bubble Beam is an excellent move!\pIt can also lower the foe's speed.")
+	return
+}
+
+script Route108_EventScript_Jerome{
+    lock
+    faceplayer
+	if(defeated(TRAINER_MISSY) &&
+	   defeated(TRAINER_MATTHEW) &&
+	   defeated(TRAINER_TARA) &&
+	   defeated(TRAINER_CAROLINA) &&
+	   defeated(TRAINER_CORY_1)){
+		setflag(FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_FOSTER, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated, Route108_EventScript_Jerome2)
+		clearflag(FLAG_NO_BAG_USE)
+		setflag(FLAG_ROUTE_108_BOSS_DEFEATED)
+		msgbox(Route108_Text_JeromePostBattle)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox(format("I'm gonna swim the entire region!\p… …\pShoo! Meet me when you are strong!"))
+	}
+    release
+    end
+}
