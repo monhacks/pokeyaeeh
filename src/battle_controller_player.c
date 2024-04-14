@@ -2057,22 +2057,22 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
     }
 
     // I don't know how to keep these inside the switch case lol
-    if (((gBattleMons[targetId].ability == ABILITY_QUEENLY_MAJESTY) ||
-        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_QUEENLY_MAJESTY) && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
+    if (((gBattleMons[targetId].ability == ABILITY_QUEENLY_MAJESTY) || ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_QUEENLY_MAJESTY)
+    && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
     {
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
     }
 
-    if (((gBattleMons[targetId].ability == ABILITY_DAZZLING) ||
-        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_DAZZLING) && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
+    if (((gBattleMons[targetId].ability == ABILITY_DAZZLING) || ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_DAZZLING)
+        && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
     {
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
     }
 
-    if (((gBattleMons[targetId].ability == ABILITY_ARMOR_TAIL) ||
-        ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_ARMOR_TAIL) && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
+    if (((gBattleMons[targetId].ability == ABILITY_ARMOR_TAIL) || ((gBattleMons[BATTLE_PARTNER(targetId)].ability == ABILITY_ARMOR_TAIL)
+        && (IsBattlerAlive(BATTLE_PARTNER(targetId))))) && (!moldBreaker))
     {
         if (GetMovePriority(battlerAtk, move) > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
             return COLOR_IMMUNE;
@@ -2088,30 +2088,16 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
         if (gBattleMoves[move].powderMove == TRUE)
             return COLOR_IMMUNE;
     }
-
-    if (IS_BATTLER_OF_TYPE(targetId, TYPE_GROUND))
-    {
-        if (move == MOVE_THUNDER_WAVE)
-            return COLOR_IMMUNE;
-    }
     
-    if (attackingMove)
-    {
-        if(modifier == UQ_4_12(0.0))
-        {
-	        return COLOR_IMMUNE;
-        }
-        else if (modifier <= UQ_4_12(0.5))
-        {
-            return COLOR_NOT_VERY_EFFECTIVE;
-        }
-        else if (modifier >= UQ_4_12(2.0))
-        {
-            return COLOR_SUPER_EFFECTIVE;
-        }
-        else
-            return COLOR_EFFECTIVE;
-    }
+    if (modifier == UQ_4_12(0.0))
+	    return COLOR_IMMUNE;
+
+    else if (modifier <= UQ_4_12(0.5))
+        return COLOR_NOT_VERY_EFFECTIVE;
+
+    else if (modifier >= UQ_4_12(2.0))
+        return COLOR_SUPER_EFFECTIVE;
+
     else
         return COLOR_EFFECTIVE;
 }
