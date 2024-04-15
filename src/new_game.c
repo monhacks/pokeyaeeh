@@ -245,6 +245,7 @@ void NewGameInitData(void)
     }
 
     FlagSet(FLAG_VISITED_LITTLEROOT_TOWN);
+    FlagSet(FLAG_SYS_CLOCK_SET);
 }
 
 static void ResetMiniGamesRecords(void)
