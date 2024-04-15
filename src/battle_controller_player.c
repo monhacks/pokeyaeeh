@@ -2096,7 +2096,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
     
     if (IS_BATTLER_OF_TYPE(targetId, TYPE_GROUND))
     {
-        if (move == MOVE_THUNDER_WAVE)
+        if (move == MOVE_THUNDER_WAVE && !(isInverse))
             return COLOR_IMMUNE;
     }
 
