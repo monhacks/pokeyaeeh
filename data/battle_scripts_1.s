@@ -7993,10 +7993,6 @@ BattleScript_FocusPunchSetUp::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
-BattleScript_MegaEvolution::
-	flushtextbox
-	trytrainerslidemegaevolutionmsg
-	printstring STRINGID_MEGAEVOREACTING
 BattleScript_MegaEvolutionAfterString:
 	waitmessage B_WAIT_TIME_LONG
 	setbyte gIsCriticalHit, 0
@@ -8008,6 +8004,18 @@ BattleScript_MegaEvolutionAfterString:
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
 	end3
+
+BattleScript_MegaEvolution::
+	flushtextbox
+	trytrainerslidemegaevolutionmsg
+	printstring STRINGID_MEGAEVOREACTING
+	goto BattleScript_MegaEvolutionAfterString
+
+BattleScript_WildMegaEvolution::
+	flushtextbox
+	trytrainerslidemegaevolutionmsg
+	printstring STRINGID_WILDMEGAEVO
+	goto BattleScript_MegaEvolutionAfterString
 
 BattleScript_WishMegaEvolution::
 	flushtextbox

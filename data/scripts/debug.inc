@@ -113,9 +113,9 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 	.string "'include/config/battle.h'!$"
 
 Debug_EventScript_Script_1::
-	setwildbattle SPECIES_KYOGRE, 10, ITEM_NONE
+	setwildbattle SPECIES_LATIOS, 10, ITEM_LATIOSITE
 	msgbox Text_TextBattle, MSGBOX_AUTOCLOSE
-	special BattleSetup_StartLegendaryBattle
+	special BattleSetup_StartLatiBattle
     end
 
 Text_TextBattle:

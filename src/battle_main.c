@@ -5126,7 +5126,13 @@ static bool32 TryDoGimmicksBeforeMoves(void)
                 if (GetBattleFormChangeTargetSpecies(gBattlerAttacker, FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE) != SPECIES_NONE)
                     BattleScriptExecute(BattleScript_WishMegaEvolution);
                 else
-                    BattleScriptExecute(BattleScript_MegaEvolution);
+                    {
+                        battler = 1;
+                        if ((gBattleTypeFlags & BATTLE_TYPE_LEGENDARY) && (GetBattlerSide(battler) == B_SIDE_OPPONENT))
+                            BattleScriptExecute(BattleScript_WildMegaEvolution);
+                        else
+                            BattleScriptExecute(BattleScript_MegaEvolution);
+                    }
                 return TRUE;
             }
             // Ultra Burst Check

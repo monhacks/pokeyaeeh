@@ -308,6 +308,7 @@ extern const u8 BattleScript_ToxicSpikesDefog[];
 extern const u8 BattleScript_StickyWebDefog[];
 extern const u8 BattleScript_StealthRockDefog[];
 extern const u8 BattleScript_MegaEvolution[];
+extern const u8 BattleScript_WildMegaEvolution[];
 extern const u8 BattleScript_WishMegaEvolution[];
 extern const u8 BattleScript_MoveEffectRecoilWithStatus[];
 extern const u8 BattleScript_EffectWithChance[];
