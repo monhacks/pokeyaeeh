@@ -302,14 +302,16 @@ static void CreateHealthboxSprite(u8 battler)
         else
             DummyBattleInterfaceFunc(gHealthboxSpriteIds[battler], FALSE);
 
+        if (gBattleStruct->victoryCatchState)
+        {
+            SetHealthboxSpriteInvisible(healthboxSpriteId);
+            return;
+        }
+
         if (GetBattlerSide(battler) != B_SIDE_PLAYER)
         {
             if (GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_HP) == 0)
                 SetHealthboxSpriteInvisible(healthboxSpriteId);
-        }
-        else if (gBattleStruct->victoryCatchState)
-        {
-            SetHealthboxSpriteInvisible(healthboxSpriteId);
         }
         else if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))
         {
