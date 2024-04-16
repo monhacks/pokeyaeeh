@@ -63,6 +63,7 @@
 #include "battle_util.h"
 #include "constants/pokemon.h"
 #include "config/battle.h"
+#include "item_menu.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -3864,6 +3865,15 @@ static void Cmd_tryfaintmon(void)
         if (!(gAbsentBattlerFlags & gBitTable[battler])
          && gBattleMons[battler].hp == 0)
         {
+            // Check to start a victory catch sequence.
+            if ((gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY)) && GetBattlerSide(battler) == B_SIDE_OPPONENT)
+            {
+                u8 hp = 1;
+                SetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_HP, &hp);
+                gBattlescriptCurrInstr = BattleScript_WildBattleVictory;
+                return;
+            }
+            // Otherwise proceed as usual.
             gHitMarker |= HITMARKER_FAINTED(battler);
             BattleScriptPush(cmd->nextInstr);
             gBattlescriptCurrInstr = faintScript;
@@ -10779,6 +10789,65 @@ static void Cmd_various(void)
         }
         break;
     }
+    case VARIOUS_JUMP_IF_NO_BALLS:
+    {
+        VARIOUS_ARGS(const u8 *jumpInstr);
+        if (IsBagPocketNonEmpty(POCKET_POKE_BALLS))
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        else
+            gBattlescriptCurrInstr = cmd->jumpInstr;
+        return;
+    }
+    case VARIOUS_CATCH_AFTER_VICTORY:
+    {
+        VARIOUS_ARGS();
+        if (!(gBattleStruct->victoryCatchState)) // open bag if end sequence just began
+        {
+            gBattleStruct->victoryCatchState = 1;
+            gSpecialVar_ItemId = ITEM_NONE;
+            battler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+            RecalcBattlerStats(battler, &gEnemyParty[0]);
+            BtlController_EmitChooseItem(battler, BUFFER_A, gBattleStruct->battlerPartyOrders[battler]);
+            MarkBattlerForControllerExec(battler);
+        }
+        else if (gSpecialVar_ItemId != ITEM_NONE) // do catch sequence if ball selected
+        {
+            gBattleStruct->throwingPokeBall = TRUE;
+            gLastUsedItem = gSpecialVar_ItemId; // selected ball
+            gBattleSpritesDataPtr->animationData->isCriticalCapture = 0;
+            gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = 0;
+            battler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+            gBattlerTarget = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+
+            BtlController_EmitBallThrowAnim(battler, BUFFER_A, BALL_3_SHAKES_SUCCESS);
+            MarkBattlerForControllerExec(battler);
+            // UndoFormChange(gBattlerPartyIndexes[gBattlerTarget], GET_BATTLER_SIDE(gBattlerTarget), FALSE);
+            gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
+            SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL, &gLastUsedItem);
+
+            if (CalculatePlayerPartyCount() == PARTY_SIZE)
+                gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+            else
+                gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+
+            MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
+            HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], gBattlerPartyIndexes[gBattlerTarget], STATUS1_ANY, gBattlerTarget);
+            RecalcBattlerStats(gBattlerTarget, &gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
+            gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
+            SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
+        }
+        else // no item selected
+        {
+            gBattlescriptCurrInstr = BattleScript_FaintWildMon;
+        }
+        return;
+    }
+    case VARIOUS_HIDE_HEALTHBOXES:
+    {
+        VARIOUS_ARGS();
+        UpdateOamPriorityInAllHealthboxes(1, TRUE);
+        break;
+    }
     } // End of switch (cmd->id)
 
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -12739,6 +12808,8 @@ static void Cmd_painsplitdmgcalc(void)
         storeLoc[3] = (painSplitHp & 0xFF000000) >> 24;
 
         gBattleMoveDamage = gBattleMons[gBattlerAttacker].hp - hpDiff;
+        if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY && GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
+            gBattleMoveDamage = 1 + gBattleMoveDamage / 6;
         gSpecialStatuses[gBattlerTarget].dmg = 0xFFFF;
 
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -14958,6 +15029,12 @@ static void Cmd_handleballthrow(void)
         BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_3_SHAKES_SUCCESS);
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_WallyBallThrow;
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    {
+        BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_TRAINER_BLOCK);
+        MarkBattlerForControllerExec(gBattlerAttacker);
+        gBattlescriptCurrInstr = BattleScript_LegendaryBallBlock;
     }
     else
     {

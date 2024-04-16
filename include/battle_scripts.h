@@ -248,6 +248,7 @@ extern const u8 BattleScript_SuccessBallThrow[];
 extern const u8 BattleScript_WallyBallThrow[];
 extern const u8 BattleScript_ShakeBallThrow[];
 extern const u8 BattleScript_TrainerBallBlock[];
+extern const u8 BattleScript_LegendaryBallBlock[];
 extern const u8 BattleScript_RunByUsingItem[];
 extern const u8 BattleScript_ActionWatchesCarefully[];
 extern const u8 BattleScript_ActionGetNear[];
@@ -536,6 +537,8 @@ extern const u8 BattleScript_EffectRaiseCritAlliesAnim[];
 extern const u8 BattleScript_EffectHealOneSixthAllies[];
 extern const u8 BattleScript_EffectCureStatusAllies[];
 extern const u8 BattleScript_EffectRecycleBerriesAllies[];
+extern const u8 BattleScript_WildBattleVictory[];
+extern const u8 BattleScript_FaintWildMon[];
 
 // dynamax and max raids
 extern const u8 BattleScript_DynamaxBegins[];

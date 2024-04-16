@@ -246,6 +246,9 @@
 #define VARIOUS_TRY_REVIVAL_BLESSING                 155
 #define VARIOUS_GIVE_DROPPED_ITEMS                   156
 #define VARIOUS_TRY_ACTIVATE_RAMPAGE                 157
+#define VARIOUS_JUMP_IF_NO_BALLS                     158
+#define VARIOUS_CATCH_AFTER_VICTORY                  159
+#define VARIOUS_HIDE_HEALTHBOXES                     160
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

@@ -17,6 +17,7 @@ enum {
     ITEMMENULOCATION_APPRENTICE,
     ITEMMENULOCATION_WALLY,
     ITEMMENULOCATION_PCBOX,
+    ITEMMENULOCATION_RAIDEND,
     ITEMMENULOCATION_LAST,
 };
 
@@ -109,5 +110,6 @@ void DisplayItemMessageOnField(u8 taskId, const u8 *src, TaskFunc callback);
 void CloseItemMessage(u8 taskId);
 s32 RegisteredItemIndex(u16 item);
 void ItemMenu_RotomCatalog(u8 taskId);
+void CB2_ChooseBall(void);
 
 #endif //GUARD_ITEM_MENU_H

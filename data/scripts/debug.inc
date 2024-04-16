@@ -113,15 +113,13 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 	.string "'include/config/battle.h'!$"
 
 Debug_EventScript_Script_1::
-	message Text_ReceivedCharizard
-	playfanfare MUS_OBTAIN_ITEM
-    givemon SPECIES_CHARIZARD, 100, ITEM_CHARIZARDITE_Y, ITEM_CHERISH_BALL, 10, 2, MON_MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_HEAT_WAVE, MOVE_JETSTREAM, MOVE_FOCUS_BLAST, MOVE_SOLAR_BEAM, 1
-	waitfanfare
-	closemessage
+	setwildbattle SPECIES_KYOGRE, 10, ITEM_NONE
+	msgbox Text_TextBattle, MSGBOX_AUTOCLOSE
+	special BattleSetup_StartLegendaryBattle
     end
 
-Text_ReceivedCharizard:
-	.string "{PLAYER} received a Charizard!$"
+Text_TextBattle:
+	.string "Test battle!$"
 
 Debug_EventScript_Script_2:: @ one Mega Evolution
     cleartrainerflag TRAINER_ERIC
