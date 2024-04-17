@@ -883,6 +883,13 @@ static const struct FormChange sPalafinZeroFormChangeTable[] =
     {FORM_CHANGE_TERMINATOR},
 };
 
+static const struct FormChange sTerapagosFormChangeTable[] = {
+    {FORM_CHANGE_BEGIN_BATTLE, SPECIES_TERAPAGOS_TERASTAL}, //needs to be tied to the ability
+    //{FORM_CHANGE_TERASTALLIZATION, SPECIES_TERAPAGOS_STELLAR},
+    {FORM_CHANGE_END_BATTLE,   SPECIES_TERAPAGOS_NORMAL},
+    {FORM_CHANGE_TERMINATOR},
+};
+
 #endif
 
 #undef WHEN_LEARNED

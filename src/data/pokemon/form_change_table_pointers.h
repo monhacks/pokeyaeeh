@@ -315,6 +315,9 @@ const struct FormChange *const gFormChangeTablePointers[NUM_SPECIES] =
     [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponFormChangeTable,
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponFormChangeTable,
     [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponFormChangeTable, 
+    [SPECIES_TERAPAGOS_NORMAL] = sTerapagosFormChangeTable,
+    [SPECIES_TERAPAGOS_TERASTAL] = sTerapagosFormChangeTable,
+    [SPECIES_TERAPAGOS_STELLAR] = sTerapagosFormChangeTable,
 #endif
 };
 

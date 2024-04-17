@@ -6045,30 +6045,101 @@ const u8 gMiraidonPokedexText[] = _(
     "land to ash with its lightning.");
 
 const u8 gWalkingWakePokedexText[] = _(
-    "Ecology under research.");
+    "This ferocious creature is shrouded in\n"
+    "mystery. It's named after an aquatic\n"
+    "monster mentioned in an old journal.");
 
 const u8 gIronLeavesPokedexText[] = _(
-    "Ecology under research.");
+    "According to the few eyewitness accounts\n"
+    "that exist, it used its shining blades\n"
+    "to julienne large trees and boulders.");
 
 const u8 gDipplinPokedexText[] = _(
-    "Ecology under research.");
+    "Dipplin is two creatures in one Pokémon.\n"
+    "Its evolution was triggered by a special\n"
+    "apple grown only in one place.");
 
 const u8 gPoltchageistPokedexText[] = _(
-    "Ecology under research.");
+    "Supposedly, the regrets of a tea\n"
+    "ceremony master who died before\n"
+    "perfecting his craft lingered in some\n"
+    "matcha and became a Pokémon.");
 
 const u8 gSinistchaPokedexText[] = _(
-    "Ecology under research.");
+    "It has taken up residence in a very\n"
+    "expensive tea caddy. It takes an\n"
+    "expert to distinguish the expensive\n"
+    "tea caddies from the cheap ones.");
 
 const u8 gOkidogiPokedexText[] = _(
-    "Ecology under research.");
+    "After all its muscles were stimulated\n"
+    "by the toxic chain around its neck,\n"
+    "Okidogi transformed and gained\n"
+    "a powerful physique.");
 
 const u8 gMunkidoriPokedexText[] = _(
-    "Ecology under research.");
+    "The chain is made from toxins that\n"
+    "enhance capabilities. It stimulated\n"
+    "Munkidori's brain and caused the\n"
+    "Pokémon's psychic powers to bloom.");
 
 const u8 gFezandipitiPokedexText[] = _(
-    "Ecology under research.");
+    "Fezandipiti owes its beautiful looks and\n"
+    "lovely voice to the toxic stimulants\n"
+    "emanating from the chain wrapped around\n"
+    "its body.");
 
 const u8 gOgerponPokedexText[] = _(
-    "Ecology under research.");
+    "This Pokémon's type changes based on\n"
+    "which mask it's wearing. It confounds\n"
+    "its enemies with nimble movements\n"
+    "and kicks.");
+
+const u8 gArchaludonPokedexText[] = _(
+    "The hardness of its cells is\n"
+    "exceptional, even among Steel types. It\n"
+    "also has a body structure that's\n"
+    "resistant to earthquakes.");
+
+const u8 gHydrapplePokedexText[] = _(
+    "These capricious syrpents have\n"
+    "banded together. On the rare\n"
+    "occasion that their moods align,\n"
+    "their true power is unleashed.");
+
+const u8 gGougingFirePokedexText[] = _(
+    "There are scant few reports of\n"
+    "this creature being sighted.\n"
+    "One short video shows it rampaging,\n"
+    "and spouting pillars of flame.");
+
+const u8 gRagingBoltPokedexText[] = _(
+    "It bears resemblance to a Pokémon\n"
+    "that became a hot topic for a short\n"
+    "while after a paranomal magazine\n"
+    "touted it as Raikou's ancestor.");
+
+const u8 gIronBoulderPokedexText[] = _(
+    "It was named after a mysterious\n"
+    "object recorded in an old book.\n"
+    "Its body seems to be metallic.");
+
+const u8 gIronCrownPokedexText[] = _(
+    "It resembles a mysterious object\n"
+    "introduced in a paranormal magazine\n"
+    "as a cutting-edge weapon\n"
+    "shaped like Cobalion.");
+
+const u8 gTerapagosPokedexText[] = _(
+    "Terapagos protects itself using its\n"
+    "power to transform energy into hard\n"
+    "crystals. This Pokémon is the source\n"
+    "of the Terastal phenomenon.");
+
+const u8 gPecharuntPokedexText[] = _(
+    "It feeds others toxic mochi that\n"
+    "draw out desires and capabilities.\n"
+    "Those who eat the mochi fall under\n"
+    "Pecharunt's control, chained to its will.");
 
 #endif

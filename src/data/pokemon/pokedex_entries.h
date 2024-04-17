@@ -12226,5 +12226,102 @@ const struct PokedexEntry gPokedexEntries[] =
         .height = 12,
         .weight = 398,
     },
+
+    // not done yet
+    [NATIONAL_DEX_ARCHALUDON] =
+    {
+        .description = gArchaludonPokedexText,
+        .categoryName = _("Alloy"),
+        .pokemonScale = 267,
+        .pokemonOffset = 2,
+        .trainerScale = 286,
+        .trainerOffset = 1,
+        .height = 20,
+        .weight = 600,
+    },
+
+    [NATIONAL_DEX_HYDRAPPLE] =
+    {
+        .description = gHydrapplePokedexText,
+        .categoryName = _("Apple Hydra"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .height = 18,
+        .weight = 930,
+    },
+
+    [NATIONAL_DEX_GOUGING_FIRE] =
+    {
+        .description = gGougingFirePokedexText,
+        .categoryName = _("Paradox"),
+        .pokemonScale = 259,
+        .pokemonOffset = 0,
+        .trainerScale = 345,
+        .trainerOffset = 7,
+        .height = 35,
+        .weight = 5900,
+    },
+
+    [NATIONAL_DEX_RAGING_BOLT] =
+    {
+        .description = gRagingBoltPokedexText,
+        .categoryName = _("Paradox"),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 345,
+        .trainerOffset = 7,
+        .height = 52,
+        .weight = 4800,
+    },
+
+    [NATIONAL_DEX_IRON_BOULDER] =
+    {
+        .description = gIronBoulderPokedexText,
+        .categoryName = _("Paradox"),
+        .pokemonScale = 256,
+        .pokemonOffset = 1,
+        .trainerScale = 336,
+        .trainerOffset = 4,
+        .height = 15,
+        .weight = 1625,
+    },
+
+    [NATIONAL_DEX_IRON_CROWN] =
+    {
+        .description = gIronCrownPokedexText,
+        .categoryName = _("Paradox"),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+        .height = 16,
+        .weight = 1560,
+    },
+
+    [NATIONAL_DEX_TERAPAGOS] =
+    {
+        .description = gTerapagosPokedexText,
+        .categoryName = _("Tera"),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+        .height = 2,
+        .weight = 65,
+    },
+
+    [NATIONAL_DEX_PECHARUNT] =
+    {
+        .description = gPecharuntPokedexText,
+        .categoryName = _("Mask"),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+        .height = 3,
+        .weight = 3,
+    },
 #endif
 };

@@ -183,6 +183,9 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_TATSUGIRI_CURLY] = sTatsugiriFormSpeciesIdTable,
     [SPECIES_DUDUNSPARCE_TWO_SEGMENT] = sDudunsparceFormSpeciesIdTable,
     [SPECIES_GIMMIGHOUL_CHEST] = sGimmighoulFormSpeciesIdTable,
+    [SPECIES_POLTCHAGEIST_COUNTERFEIT] = sPoltchageistFormSpeciesIdTable,
+    [SPECIES_SINISTCHA_UNREMARKABLE] = sSinistchaFormSpeciesIdTable,
+    [SPECIES_OGERPON_TEAL_MASK]= sOgerponFormSpeciesIdTable,
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurFormSpeciesIdTable,
@@ -308,6 +311,8 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
 #endif
     [SPECIES_WOOPER_PALDEAN] = sWooperFormSpeciesIdTable,
     [SPECIES_TAUROS_PALDEAN] = sTaurosFormSpeciesIdTable,
+    [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosFormSpeciesIdTable,
+    [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosFormSpeciesIdTable,
     // Misc Forms
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] = sPikachuFormSpeciesIdTable,
@@ -660,8 +665,17 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceFormSpeciesIdTable,
     // Gimmighoul
     [SPECIES_GIMMIGHOUL_ROAMING] = sGimmighoulFormSpeciesIdTable,
+    // Poltchageist
+    [SPECIES_POLTCHAGEIST_ARTISAN] = sPoltchageistFormSpeciesIdTable,
+    // Sinitscha
+    [SPECIES_SINISTCHA_MASTERPIECE] = sSinistchaFormSpeciesIdTable,
+    // Ogerpon
+    [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponFormSpeciesIdTable,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK] = sOgerponFormSpeciesIdTable,
+    [SPECIES_OGERPON_CORNERSTONE_MASK] = sOgerponFormSpeciesIdTable,
+    [SPECIES_OGERPON_TEAL_MASK_TERA] = sOgerponFormSpeciesIdTable,
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponFormSpeciesIdTable,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponFormSpeciesIdTable,
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponFormSpeciesIdTable,
 #endif
-    // Tauros-Paldea
-    [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosFormSpeciesIdTable,
-    [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosFormSpeciesIdTable,
 };

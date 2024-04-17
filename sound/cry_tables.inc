@@ -1552,6 +1552,14 @@ gCryTable::
 	cry Cry_Munkidori
 	cry Cry_Fezandipiti
 	cry Cry_Ogerpon
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
 .else
     cry Cry_Unown
     cry Cry_Unown
@@ -2399,6 +2407,9 @@ gCryTable::
 	cry Cry_Ogerpon
 	cry Cry_Ogerpon
 	cry Cry_Ogerpon
+	@ Terapagos forms
+	cry Cry_Unown
+	cry Cry_Unown
 @ Gigantamax Forms
 	cry Cry_Venusaur
 	cry Cry_Charizard
@@ -4018,6 +4029,14 @@ gCryTable_Reverse::
 	cry_reverse Cry_Munkidori
 	cry_reverse Cry_Fezandipiti
 	cry_reverse Cry_Ogerpon
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
 .else
     cry_reverse Cry_Unown
     cry_reverse Cry_Unown
@@ -4819,6 +4838,9 @@ gCryTable_Reverse::
 	cry_reverse Cry_Ogerpon
 	cry_reverse Cry_Ogerpon
 	cry_reverse Cry_Ogerpon
+	@ Terapagos forms
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
 	@ Gigantamax Forms
 	cry_reverse Cry_Venusaur
 	cry_reverse Cry_Charizard

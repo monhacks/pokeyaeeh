@@ -1506,6 +1506,16 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
     // SPECIES_SHINY_PAL(OGERPON_WELLSPRING_MASK_TERA, gMonShinyPalette_OgerponWellspringTera),
     // SPECIES_SHINY_PAL(OGERPON_HEARTHFLAME_MASK_TERA, gMonShinyPalette_OgerponHearthflameTera),
     // SPECIES_SHINY_PAL(OGERPON_CORNERSTONE_MASK_TERA, gMonShinyPalette_OgerponCornerstoneTera),
+    // SPECIES_SHINY_PAL(ARCHALUDON, gMonShinyPalette_Archaludon),
+    // SPECIES_SHINY_PAL(HYDRAPPLE, gMonShinyPalette_Hydrapple),
+    // SPECIES_SHINY_PAL(GOUGING_FIRE, gMonShinyPalette_GougingFire),
+    // SPECIES_SHINY_PAL(RAGING_BOLT, gMonShinyPalette_RagingBolt),
+    // SPECIES_SHINY_PAL(IRON_BOULDER, gMonShinyPalette_IronBoulder),
+    // SPECIES_SHINY_PAL(IRON_CROWN, gMonShinyPalette_IronCrown),
+    // SPECIES_SHINY_PAL(TERAPAGOS, gMonShinyPalette_Terapagos),
+    // SPECIES_SHINY_PAL(TERAPAGOS_TERASTAL, gMonShinyPalette_TerapagosTerastal),
+    // SPECIES_SHINY_PAL(TERAPAGOS_STELLAR, gMonShinyPalette_TerapagosStellar),
+    // SPECIES_SHINY_PAL(PECHARUNT, gMonShinyPalette_Pecharunt),
 #endif
     SPECIES_SHINY_PAL(EGG, gMonPalette_Egg),
 };

@@ -1038,6 +1038,16 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponLevelUpLearnset,
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponLevelUpLearnset,
     [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponLevelUpLearnset,
+    [SPECIES_ARCHALUDON] = sArchaludonLevelUpLearnset,
+    [SPECIES_HYDRAPPLE] = sHydrappleLevelUpLearnset,
+    [SPECIES_GOUGING_FIRE] = sGougingFireLevelUpLearnset,
+    [SPECIES_RAGING_BOLT] = sRagingBoltLevelUpLearnset,
+    [SPECIES_IRON_BOULDER] = sIronBoulderLevelUpLearnset,
+    [SPECIES_IRON_CROWN] = sIronCrownLevelUpLearnset,
+    [SPECIES_TERAPAGOS_NORMAL] = sTerapagosLevelUpLearnset,
+    [SPECIES_TERAPAGOS_TERASTAL] = sTerapagosLevelUpLearnset,
+    [SPECIES_TERAPAGOS_STELLAR] = sTerapagosLevelUpLearnset,
+    [SPECIES_PECHARUNT] = sPecharuntLevelUpLearnset,
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurLevelUpLearnset,

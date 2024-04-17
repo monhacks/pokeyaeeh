@@ -1507,6 +1507,16 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     // SPECIES_SPRITE(OGERPON_WELLSPRING_MASK_TERA, gMonFrontPic_OgerponWellspringTera),
     // SPECIES_SPRITE(OGERPON_HEARTHFLAME_MASK_TERA, gMonFrontPic_OgerponHearthflameTera),
     // SPECIES_SPRITE(OGERPON_CORNERSTONE_MASK_TERA, gMonFrontPic_OgerponCornerstoneTera),
+    // SPECIES_SPRITE(ARCHALUDON, gMonFrontPic_Archaludon),
+    // SPECIES_SPRITE(HYDRAPPLE, gMonFrontPic_Hydrapple),
+    // SPECIES_SPRITE(GOUGING_FIRE, gMonFrontPic_GougingFire),
+    // SPECIES_SPRITE(RAGING_BOLT, gMonFrontPic_RagingBolt),
+    // SPECIES_SPRITE(IRON_BOULDER, gMonFrontPic_IronBoulder),
+    // SPECIES_SPRITE(IRON_CROWN, gMonFrontPic_IronCrown),
+    // SPECIES_SPRITE(TERAPAGOS, gMonFrontPic_Terapagos),
+    // SPECIES_SPRITE(TERAPAGOS_TERASTAL, gMonFrontPic_TerapagosTerastal),
+    // SPECIES_SPRITE(TERAPAGOS_STELLAR, gMonFrontPic_TerapagosStellar),
+    // SPECIES_SPRITE(PECHARUNT, gMonFrontPic_Pecharunt),
 #endif
     SPECIES_SPRITE(EGG, gMonFrontPic_Egg),
 };

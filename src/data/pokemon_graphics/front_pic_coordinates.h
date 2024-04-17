@@ -1037,7 +1037,7 @@ const struct MonCoords gMonFrontPicCoords[NUM_SPECIES + 1] =
     [SPECIES_MIRAIDON]                          = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_WALKING_WAKE]                      = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_IRON_LEAVES]                       = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
-    /* [SPECIES_DIPPLIN]                           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  5 },
+    [SPECIES_DIPPLIN]                           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  5 },
     [SPECIES_POLTCHAGEIST_COUNTERFEIT]          = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  7 },
     [SPECIES_POLTCHAGEIST_ARTISAN]              = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  7 },
     [SPECIES_SINISTCHA_UNREMARKABLE]            = { .size = MON_COORDS_SIZE(64, 64), .y_offset = 10 },
@@ -1052,7 +1052,17 @@ const struct MonCoords gMonFrontPicCoords[NUM_SPECIES + 1] =
     [SPECIES_OGERPON_TEAL_MASK_TERA]            = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_OGERPON_WELLSPRING_MASK_TERA]      = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
-    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 }, */
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_ARCHALUDON]                        = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_HYDRAPPLE]                         = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_GOUGING_FIRE]                      = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_RAGING_BOLT]                       = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_IRON_BOULDER]                      = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_IRON_CROWN]                        = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_TERAPAGOS_NORMAL]                  = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_TERAPAGOS_TERASTAL]                = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_TERAPAGOS_STELLAR]                 = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_PECHARUNT]                         = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA]                = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },

@@ -1466,6 +1466,16 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     //[SPECIES_OGERPON_WELLSPRING_TERA] = gMonIcon_OgerponWellspring, TODO
     //[SPECIES_OGERPON_HEARTHFLAME_TERA] = gMonIcon_OgerponHearthflame, TODO
     //[SPECIES_OGERPON_CORNERSTONE_TERA] = gMonIcon_OgerponCornerstone, TODO
+    //[SPECIES_ARCHALUDON] = gMonIcon_Archaludon, TODO
+    //[SPECIES_HYDRAPPLE] = gMonIcon_Hydrapple, TODO
+    //[SPECIES_GOUGING_FIRE] = gMonIcon_GougingFire, TODO
+    //[SPECIES_RAGING_BOLT] = gMonIcon_RagingBolt, TODO
+    //[SPECIES_IRON_BOULDER] = gMonIcon_IronBoulder, TODO
+    //[SPECIES_IRON_CROWN] = gMonIcon_IronCrown, TODO
+    //[SPECIES_TERAPAGOS_NORMAL] = gMonIcon_TerapagosNormal, TODO
+    //[SPECIES_TERAPAGOS_TERASTAL] = gMonIcon_TerapagosTerastal, TODO
+    //[SPECIES_TERAPAGOS_STELLAR] = gMonIcon_TerapagosStellar, TODO
+    //[SPECIES_PECHARUNT] = gMonIcon_Pecharunt, TODO
 #endif
     [SPECIES_EGG] = gMonIcon_Egg,
 };
@@ -2869,6 +2879,16 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = 0,
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = 0,
     [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = 0,
+    [SPECIES_ARCHALUDON] = 0,
+    [SPECIES_HYDRAPPLE] = 0,
+    [SPECIES_GOUGING_FIRE] = 0,
+    [SPECIES_RAGING_BOLT] = 0,
+    [SPECIES_IRON_BOULDER] = 0,
+    [SPECIES_IRON_CROWN] = 0,
+    [SPECIES_TERAPAGOS_NORMAL] = 0,
+    [SPECIES_TERAPAGOS_TERASTAL] = 0,
+    [SPECIES_TERAPAGOS_STELLAR] = 0,
+    [SPECIES_PECHARUNT] = 0,
 #endif
     [SPECIES_EGG] = 1,
 };
