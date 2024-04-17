@@ -8568,7 +8568,7 @@ u8 IsMonDisobedient(void)
         if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
             obedienceLevel = 70;
         if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge
-            obedienceLevel = 85;
+            obedienceLevel = 100;
     }
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
