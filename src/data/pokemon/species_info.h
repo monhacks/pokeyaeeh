@@ -27889,4 +27889,25 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_MYTHICAL,
     },
 #endif
+    [SPECIES_NIDOQUEEN_MEGA] =
+    {
+        .baseHP        = 90,
+        .baseDefense   = 97,
+        .baseSpeed     = 116,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 95,
+        .baseAttack    = 102,
+        .types = { TYPE_POISON, TYPE_GROUND},
+        .catchRate = 45,
+        .expYield = 227,
+        .evYield_HP        = 3,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
+        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = FALSE,
+    },
 };

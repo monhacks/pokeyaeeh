@@ -1529,4 +1529,6 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     // Tauros-Paldea
     [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosPaldeanBlazeBreedLevelUpLearnset,
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosPaldeanAquaBreedLevelUpLearnset,
+
+    [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenLevelUpLearnset,
 };

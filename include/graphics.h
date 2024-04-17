@@ -8190,6 +8190,12 @@ extern const u32 gMonShinyPalette_OgerponCornerstoneTera[];
 extern const u8 gMonFootprint_Ogerpon[];
 #endif
 
+extern const u32 gMonFrontPic_NidoqueenMega[];
+extern const u32 gMonBackPic_NidoqueenMega[];
+extern const u8 gMonIcon_NidoqueenMega[];
+extern const u32 gMonPalette_NidoqueenMega[];
+extern const u32 gMonShinyPalette_NidoqueenMega[];
+
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];
 extern const u32 gTrainerFrontPic_AquaGruntM[];

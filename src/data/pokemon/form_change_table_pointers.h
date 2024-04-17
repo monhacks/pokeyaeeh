@@ -319,6 +319,8 @@ const struct FormChange *const gFormChangeTablePointers[NUM_SPECIES] =
     [SPECIES_TERAPAGOS_TERASTAL] = sTerapagosFormChangeTable,
     [SPECIES_TERAPAGOS_STELLAR] = sTerapagosFormChangeTable,
 #endif
+    [SPECIES_NIDOQUEEN] = sNidoqueenFormChangeTable,
+    [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenFormChangeTable,
 };
 
 const struct Fusion *const gFusionTablePointers[NUM_SPECIES] =

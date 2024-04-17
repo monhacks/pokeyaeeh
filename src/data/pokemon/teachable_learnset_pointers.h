@@ -1526,4 +1526,6 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponTeachableLearnset,
     [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponTeachableLearnset,
     [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponTeachableLearnset,
+
+    [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenTeachableLearnset,
 };

@@ -1532,4 +1532,6 @@ const u8 gSpeciesNames[NUM_SPECIES][POKEMON_NAME_LENGTH + 1] = {
     // Tauros-Paldea
     [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = _("Tauros"),
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = _("Tauros"),
+    
+    [SPECIES_NIDOQUEEN_MEGA] = _("Nidoqueen"),
 };

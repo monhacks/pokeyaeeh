@@ -4433,3 +4433,8 @@ static const u8 sSteelArmorDesc[] =_(
     "Shelmet's armor. It\n"
     "is loved by a\n"
     "certain Pokémon.");
+
+static const u8 sNidoqueeniteDesc[] = _(
+    "This stone enables\n"
+    "Nidoqueen to Mega\n"
+    "Evolve in battle.");

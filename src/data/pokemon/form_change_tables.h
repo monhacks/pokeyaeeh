@@ -892,5 +892,10 @@ static const struct FormChange sTerapagosFormChangeTable[] = {
 
 #endif
 
+static const struct FormChange sNidoqueenFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_NIDOQUEEN_MEGA, ITEM_NIDOQUEENITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

@@ -1477,6 +1477,7 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     //[SPECIES_TERAPAGOS_STELLAR] = gMonIcon_TerapagosStellar, TODO
     //[SPECIES_PECHARUNT] = gMonIcon_Pecharunt, TODO
 #endif
+    [SPECIES_NIDOQUEEN_MEGA] = gMonIcon_NidoqueenMega,
     [SPECIES_EGG] = gMonIcon_Egg,
 };
 
@@ -2890,6 +2891,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_TERAPAGOS_STELLAR] = 0,
     [SPECIES_PECHARUNT] = 0,
 #endif
+    [SPECIES_NIDOQUEEN_MEGA] = 2,
     [SPECIES_EGG] = 1,
 };
 

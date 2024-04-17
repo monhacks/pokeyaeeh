@@ -1176,7 +1176,10 @@
 
 #define ITEM_STEEL_ARMOR 882
 
-#define ITEMS_COUNT 883
+// New Mega stones
+#define ITEM_NIDOQUEENITE 883
+
+#define ITEMS_COUNT 884
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

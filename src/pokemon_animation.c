@@ -1435,6 +1435,7 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_RAYQUAZA_MEGA]                = BACK_ANIM_SHAKE_GLOW_GREEN,
     [SPECIES_KYOGRE_PRIMAL]                = BACK_ANIM_SHAKE_GLOW_BLUE,
     [SPECIES_GROUDON_PRIMAL]               = BACK_ANIM_SHAKE_GLOW_RED,
+    [SPECIES_NIDOQUEEN_MEGA]               = BACK_ANIM_H_VIBRATE,
 
     // Other Forms
     [SPECIES_PIKACHU_COSPLAY]              = BACK_ANIM_H_VIBRATE,

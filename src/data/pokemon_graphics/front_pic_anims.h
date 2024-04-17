@@ -10413,6 +10413,12 @@ static const union AnimCmd sAnim_UrshifuRapidStrikeStyleGigantamax_1[] =
 };
 #endif
 
+static const union AnimCmd sAnim_NidoqueenMega_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_PikachuCosplay_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -12163,6 +12169,7 @@ SINGLE_ANIMATION(DuraludonGigantamax);
 SINGLE_ANIMATION(UrshifuSingleStrikeStyleGigantamax);
 SINGLE_ANIMATION(UrshifuRapidStrikeStyleGigantamax);
 #endif
+SINGLE_ANIMATION(NidoqueenMega);
 
 const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
 {   // Gen 1
@@ -13609,5 +13616,6 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
     [SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GIGANTAMAX] = sAnims_UrshifuSingleStrikeStyleGigantamax,
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX] = sAnims_UrshifuRapidStrikeStyleGigantamax,
 #endif
+    [SPECIES_NIDOQUEEN_MEGA]                 = sAnims_NidoqueenMega,
     [SPECIES_EGG]                            = sAnims_Egg,
 };

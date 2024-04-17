@@ -112,20 +112,21 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 	.string "usable flag and a usable var in:\l"
 	.string "'include/config/battle.h'!$"
 
-Debug_EventScript_Script_1::
-	setwildbattle SPECIES_LATIOS, 10, ITEM_LATIOSITE
-	msgbox Text_TextBattle, MSGBOX_AUTOCLOSE
-	special BattleSetup_StartLatiBattle
-    end
 
-Text_TextBattle:
+Text_TestTrainerBattle:
 	.string "Test battle!$"
+
+Text_TestTrainerBattleDefeat:
+    .string "Damn.$"
+
+Debug_EventScript_Script_1::
+	cleartrainerflag TRAINER_MAY_PLACEHOLDER
+	trainerbattle_single TRAINER_MAY_PLACEHOLDER, Text_TestTrainerBattle, Text_TestTrainerBattleDefeat
+    end
 
 Debug_EventScript_Script_2:: @ one Mega Evolution
     cleartrainerflag TRAINER_ERIC
-    setflag B_FLAG_INVERSE_BATTLE
 	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
-    clearflag B_FLAG_INVERSE_BATTLE
 	end
 
 Debug_EventScript_Script_3:: @ both have Mega Evolution

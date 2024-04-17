@@ -8257,3 +8257,9 @@ const u32 gMonShinyPalette_OgerponCornerstone[] = INCBIN_U32("graphics/pokemon/o
 
 // const u8 gMonFootprint_Ogerpon[] = INCBIN_U8("graphics/pokemon/ogerpon/footprint.1bpp");
 #endif
+
+const u32 gMonFrontPic_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/front.4bpp.lz");
+const u32 gMonBackPic_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/back.4bpp.lz");
+const u8 gMonIcon_NidoqueenMega[] = INCBIN_U8("graphics/pokemon/nidoqueen/mega/icon.4bpp");
+const u32 gMonPalette_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/normal.gbapal.lz");
+const u32 gMonShinyPalette_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/shiny.gbapal.lz");

@@ -1385,3 +1385,9 @@ static const u16 sOgerponFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif
+
+static const u16 sNidoqueenFormSpeciesIdTable[] = {
+    SPECIES_NIDOQUEEN,
+    SPECIES_NIDOQUEEN_MEGA,
+    FORM_SPECIES_END,
+};

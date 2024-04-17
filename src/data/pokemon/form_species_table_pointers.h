@@ -678,4 +678,6 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponFormSpeciesIdTable,
     [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponFormSpeciesIdTable,
 #endif
+    [SPECIES_NIDOQUEEN] = sNidoqueenFormSpeciesIdTable,
+    [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenFormSpeciesIdTable,
 };
