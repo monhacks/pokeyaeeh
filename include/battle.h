@@ -749,7 +749,7 @@ struct BattleStruct
     u8 quickDrawRandom[MAX_BATTLERS_COUNT];
     u8 supremeOverlordCounter[MAX_BATTLERS_COUNT];
     u8 boosterEnergyActivates;
-    bool8 victoryCatchState:1;
+    bool8 victoryCatchState:2;
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,

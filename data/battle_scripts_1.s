@@ -11102,9 +11102,8 @@ BattleScript_AlreadyHasFrostbite::
 	goto BattleScript_MoveEnd
 
 BattleScript_WildBattleVictory::
-	@hidehealthboxes @cant get hp bar hiding to work :(
-	playfaintcry BS_TARGET
-	waitcry BS_TARGET
+	playfaintcry BS_SCRIPTING
+	waitcry BS_SCRIPTING
 	jumpifnoballs BattleScript_FaintWildMon
 	printstring STRINGID_VICTORYCATCH
 	setbyte gBattleCommunication, 0
@@ -11115,9 +11114,10 @@ BattleScript_WildBattleVictory::
 
 BattleScript_FaintWildMon::
 	pause B_WAIT_TIME_SHORT
-	dofaintanimation BS_TARGET
+	dofaintanimation BS_SCRIPTING
 	printstring STRINGID_TARGETFAINTED
 	setbyte sGIVEEXP_STATE, 0
-	getexp BS_TARGET
+	getexp BS_SCRIPTING
+	cleareffectsonfaint BS_SCRIPTING
 	setbyte gBattleOutcome, B_OUTCOME_WON
 	finishturn

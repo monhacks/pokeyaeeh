@@ -113,18 +113,19 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 	.string "'include/config/battle.h'!$"
 
 
-Text_TestTrainerBattle:
+Text_TestIntro:
 	.string "Test battle!$"
 
-Text_TestTrainerBattleDefeat:
+Text_TestDefeat:
     .string "Damn.$"
 
 Debug_EventScript_Script_1::
-	cleartrainerflag TRAINER_MAY_PLACEHOLDER
-	trainerbattle_single TRAINER_MAY_PLACEHOLDER, Text_TestTrainerBattle, Text_TestTrainerBattleDefeat
-    end
+	setwildbattle SPECIES_KYOGRE, 10, ITEM_NONE
+	msgbox Text_TestIntro, MSGBOX_AUTOCLOSE
+	special BattleSetup_StartLegendaryBattle
+	end
 
-Debug_EventScript_Script_2:: @ one Mega Evolution
+Debug_EventScript_Script_2::
     cleartrainerflag TRAINER_ERIC
 	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
 	end
