@@ -305,7 +305,7 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
-static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, u8 area)
+u8 ChooseWildMonLevel(void)
 {
     u8 min;
     u8 max;
@@ -313,18 +313,6 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
     u8 rand;
     u8 level = GetHighestLevelInPlayerParty();
     u8 curveAmount;
-
-    // Make sure minimum level is less than maximum level
-    if (wildPokemon[wildMonIndex].maxLevel >= wildPokemon[wildMonIndex].minLevel)
-    {
-        min = wildPokemon[wildMonIndex].minLevel;
-        max = wildPokemon[wildMonIndex].maxLevel;
-    }
-    else
-    {
-        min = wildPokemon[wildMonIndex].maxLevel;
-        max = wildPokemon[wildMonIndex].minLevel;
-    }
 
     // In postgame, all wild encounters will be more than 60
     if ((FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE) && (level < 60))
@@ -544,7 +532,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
         break;
     }
 
-    level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
+    level = ChooseWildMonLevel();
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
@@ -557,7 +545,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
 {
     u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
-    u8 level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
+    u8 level = ChooseWildMonLevel();
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return wildMonInfo->wildPokemon[wildMonIndex].species;
@@ -913,7 +901,7 @@ void FishingWildEncounter(u8 rod)
 
     if (CheckFeebas() == TRUE)
     {
-        u8 level = ChooseWildMonLevel(&sWildFeebas, 0, WILD_AREA_FISHING);
+        u8 level = ChooseWildMonLevel();
 
         species = sWildFeebas.species;
         CreateWildMon(species, level);

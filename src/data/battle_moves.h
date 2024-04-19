@@ -8196,14 +8196,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_DARK_VOID] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 50,
-        #else
-            .accuracy = 80,
-        #endif
         .effect = EFFECT_DARK_VOID,
         .power = 0,
         .type = TYPE_DARK,
+        .accuracy = 80,
         .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,

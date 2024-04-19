@@ -47,5 +47,6 @@ u16 GetCurrentMapWildMonHeaderId(void);
 u8 ChooseWildMonIndex_Land(void);
 u8 ChooseWildMonIndex_WaterRock(void);
 u8 ChooseHiddenMonIndex(void);
+u8 ChooseWildMonLevel(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H
