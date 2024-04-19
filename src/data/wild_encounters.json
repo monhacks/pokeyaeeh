@@ -2645,7 +2645,7 @@
               {
                 "min_level": 23,
                 "max_level": 35,
-                "species": "SPECIES_BASCULIN_WHITE_STRIPED"
+                "species": "SPECIES_BASCULIN_RED_STRIPED"
               },
               {
                 "min_level": 23,
@@ -2799,7 +2799,7 @@
               {
                 "min_level": 23,
                 "max_level": 35,
-                "species": "SPECIES_BASCULIN_WHITE_STRIPED"
+                "species": "SPECIES_BASCULIN_RED_STRIPED"
               },
               {
                 "min_level": 23,
@@ -2953,7 +2953,7 @@
               {
                 "min_level": 23,
                 "max_level": 35,
-                "species": "SPECIES_BASCULIN_WHITE_STRIPED"
+                "species": "SPECIES_BASCULIN_BLUE_STRIPED"
               },
               {
                 "min_level": 23,
@@ -3107,7 +3107,7 @@
               {
                 "min_level": 23,
                 "max_level": 35,
-                "species": "SPECIES_BASCULIN_WHITE_STRIPED"
+                "species": "SPECIES_BASCULIN_BLUE_STRIPED"
               },
               {
                 "min_level": 23,

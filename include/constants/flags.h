@@ -1228,7 +1228,7 @@
 #define FLAG_ROUTE_102_BOSS_DEFEATED                                0x493 // Route 102 Boss Lass Tiana
 #define FLAG_ROUTE_104_BOSS_DEFEATED                                0x494 // Route 104 Boss Fisherman Ivan
 #define FLAG_ROUTE_116_BOSS_DEFEATED                                0x495 // Route 116 Boss Rich Boy Dawson
-#define FLAG_ROUTE_105_BOSS_DEFEATED                                0x496 // Route 116 Boss Maniac Foster
+#define FLAG_ROUTE_105_BOSS_DEFEATED                                0x496 // Route 105 Boss Maniac Foster
 #define FLAG_ROUTE_108_BOSS_DEFEATED                                0x497 // Route 108 Boss Swimmer Jerome
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
