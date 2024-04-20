@@ -8288,17 +8288,13 @@ u16 GetBattleBGM(void)
         case SPECIES_ARTICUNO:
         case SPECIES_ZAPDOS:
         case SPECIES_MOLTRES:
-        #ifdef POKEMON_EXPANSION
         case SPECIES_ARTICUNO_GALARIAN:
         case SPECIES_ZAPDOS_GALARIAN:
         case SPECIES_MOLTRES_GALARIAN:
-        #endif
             return MUS_RG_VS_LEGEND;
         case SPECIES_MEWTWO:
-        #ifdef POKEMON_EXPANSION
         case SPECIES_MEWTWO_MEGA_X:
         case SPECIES_MEWTWO_MEGA_Y:
-        #endif
             return MUS_RG_VS_MEWTWO;
         case SPECIES_MEW:
             return MUS_VS_MEW;
@@ -8317,44 +8313,37 @@ u16 GetBattleBGM(void)
         case SPECIES_REGIROCK:
         case SPECIES_REGICE:
         case SPECIES_REGISTEEL:
-        #ifdef POKEMON_EXPANSION
         case SPECIES_REGIGIGAS:
         case SPECIES_REGIELEKI:
         case SPECIES_REGIDRAGO:
-        #endif
             return MUS_VS_REGI;
         case SPECIES_LATIAS:
         case SPECIES_LATIOS:
-        #ifdef POKEMON_EXPANSION
         case SPECIES_LATIAS_MEGA:
         case SPECIES_LATIOS_MEGA:
-        #endif
             return MUS_VS_WILD;
         case SPECIES_GROUDON:
         case SPECIES_KYOGRE:
         case SPECIES_RAYQUAZA:
-        #ifdef POKEMON_EXPANSION
         case SPECIES_RAYQUAZA_MEGA:
         case SPECIES_KYOGRE_PRIMAL:
         case SPECIES_GROUDON_PRIMAL:
-        #endif
             return MUS_VS_KYOGRE_GROUDON;
         case SPECIES_JIRACHI:
             return MUS_VS_WILD;
         case SPECIES_DEOXYS:
-        #ifdef POKEMON_EXPANSION
         case SPECIES_DEOXYS_ATTACK:
         case SPECIES_DEOXYS_DEFENSE:
         case SPECIES_DEOXYS_SPEED:
-        #endif
             return MUS_RG_VS_DEOXYS;
-        #ifdef POKEMON_EXPANSION
         case SPECIES_UXIE:
         case SPECIES_MESPRIT:
         case SPECIES_AZELF:
             return MUS_DP_VS_UXIE_MESPRIT_AZELF;
         case SPECIES_DIALGA:
         case SPECIES_PALKIA:
+        case SPECIES_DIALGA_ORIGIN:
+        case SPECIES_PALKIA_ORIGIN:
             return MUS_DP_VS_DIALGA_PALKIA;
         case SPECIES_ROTOM:
         case SPECIES_ROTOM_HEAT:
@@ -8393,7 +8382,6 @@ u16 GetBattleBGM(void)
         case SPECIES_ARCEUS_DARK:
         case SPECIES_ARCEUS_FAIRY:
             return MUS_DP_VS_ARCEUS;
-        #endif
         default:
             return MUS_DP_VS_WILD;
         }
