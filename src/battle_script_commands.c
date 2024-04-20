@@ -3129,7 +3129,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
             }
 
             // for synchronize
-
             if (gBattleScripting.moveEffect == MOVE_EFFECT_POISON
              || gBattleScripting.moveEffect == MOVE_EFFECT_TOXIC
              || gBattleScripting.moveEffect == MOVE_EFFECT_PARALYSIS
@@ -3138,6 +3137,10 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 gBattleStruct->synchronizeMoveEffect = gBattleScripting.moveEffect;
                 gHitMarker |= HITMARKER_SYNCHRONISE_EFFECT;
              }
+
+            if (gBattleScripting.moveEffect == MOVE_EFFECT_POISON || gBattleScripting.moveEffect == MOVE_EFFECT_TOXIC)
+                gBattleStruct->poisonPuppeteerConfusion = TRUE;
+
             return;
         }
         else if (statusChanged == FALSE)
@@ -6210,6 +6213,7 @@ static void Cmd_moveend(void)
             gBattleStruct->isAtkCancelerForCalledMove = FALSE;
             gBattleStruct->swapDamageCategory = FALSE;
             gBattleStruct->enduredDamage = 0;
+            gBattleStruct->poisonPuppeteerConfusion = FALSE;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_COUNT:
