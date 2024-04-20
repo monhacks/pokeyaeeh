@@ -55,10 +55,10 @@
 
 #define CHARIZARD_MISC_INFO                                             \
         .baseHP        = 78,                                            \
-        .baseAttack    = 79,                                            \
+        .baseAttack    = 78,                                            \
         .baseDefense   = 80,                                            \
         .baseSpeed     = 102,                                           \
-        .baseSpAttack  = 111,                                           \
+        .baseSpAttack  = 112,                                           \
         .baseSpDefense = 85,                                            \
         .types = {TYPE_FIRE, TYPE_FLYING},                              \
         .catchRate = 45,                                                \
@@ -20465,7 +20465,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_STEADFAST, ABILITY_NONE, ABILITY_SCRAPPY},
+        .abilities = {ABILITY_STEADFAST, ABILITY_RAMPAGE, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -21300,10 +21300,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_CHARIZARD_MEGA_X] =
     {
         .baseHP        = 78,
-        .baseAttack    = 138,
+        .baseAttack    = 148,
         .baseDefense   = 111,
         .baseSpeed     = 102,
-        .baseSpAttack  = 122,
+        .baseSpAttack  = 112,
         .baseSpDefense = 84,
         .types = { TYPE_FIRE, TYPE_DRAGON},
         .catchRate = 45,
@@ -21323,11 +21323,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_CHARIZARD_MEGA_Y] =
     {
         .baseHP        = 78,
-        .baseAttack    = 101,
+        .baseAttack    = 100,
         .baseDefense   = 80,
         .baseSpeed     = 102,
         .baseSpAttack  = 159,
-        .baseSpDefense = 115,
+        .baseSpDefense = 116,
         .types = { TYPE_FIRE, TYPE_FLYING},
         .catchRate = 45,
         .expYield = 285,
@@ -21351,7 +21351,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 78,
         .baseSpAttack  = 135,
         .baseSpDefense = 120,
-        .types = { TYPE_WATER, TYPE_WATER},
+        .types = { TYPE_WATER, TYPE_STEEL},
         .catchRate = 45,
         .expYield = 284,
         .evYield_SpDefense = 3,
@@ -23014,7 +23014,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_STEADFAST, ABILITY_NONE, ABILITY_SCRAPPY},
+        .abilities = {ABILITY_STEADFAST, ABILITY_RAMPAGE, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GALARIAN_FORM,
