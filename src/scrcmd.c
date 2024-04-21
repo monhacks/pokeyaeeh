@@ -47,6 +47,7 @@
 #include "text_window.h"
 #include "trainer_see.h"
 #include "tv.h"
+#include "wild_encounter.h"
 #include "window.h"
 #include "constants/event_objects.h"
 #include "day_night.h"
@@ -1915,6 +1916,10 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     u8 evs2[NUM_STATS] = {hpEv2, atkEv2, defEv2, speedEv2, spAtkEv2, spDefEv2};
     u8 ivs2[NUM_STATS] = {hpIv2, atkIv2, defIv2, speedIv2, spAtkIv2, spDefIv2};
     u16 moves2[4] = {move1_2, move2_2, move3_2, move4_2};
+
+    if (level == 0)
+        level = ChooseStaticMonLevel();
+        level2 = ChooseStaticMonLevel();
 
     if(species2 == SPECIES_NONE)
     {

@@ -120,7 +120,7 @@ Text_TestDefeat:
     .string "Damn.$"
 
 Debug_EventScript_Script_1::
-	setwildbattle SPECIES_KYOGRE, 40
+	setwildbattle SPECIES_KYOGRE, 0 @ Gets value from ChooseStaticMonLevel
 	msgbox Text_TestIntro, MSGBOX_AUTOCLOSE
 	special StartGroudonKyogreBattle
 	end

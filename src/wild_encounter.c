@@ -314,17 +314,21 @@ u8 ChooseWildMonLevel(void)
     u8 level = GetHighestLevelInPlayerParty();
     u8 curveAmount;
 
-    // In postgame, all wild encounters will be more than 60
-    if ((FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE) && (level < 60))
-        level = 60;
-    else if ((FlagGet(FLAG_BADGE08_GET) == TRUE) && (level < 55))
-        level = 55;
-    else if ((FlagGet(FLAG_BADGE07_GET) == TRUE) && (level < 50))
-        level = 50;
-    else if ((FlagGet(FLAG_BADGE06_GET) == TRUE) && (level < 45))
-        level = 45;
-    else if ((FlagGet(FLAG_BADGE05_GET) == TRUE) && (level < 40))
+    // In case the player tries to cheese by taking low level Pokémon
+    if ((FlagGet(FLAG_BADGE03_GET) == TRUE) && (level < 30)) // All wild encounters will be around Lv 30, after Gym 3
+        level = 30;
+    if ((FlagGet(FLAG_BADGE04_GET) == TRUE) && (level < 35)) // All wild encounters will be around Lv 35, after Gym 4
+        level = 35;
+    if ((FlagGet(FLAG_BADGE05_GET) == TRUE) && (level < 40)) // All wild encounters will be around Lv 40, after Gym 5
         level = 40;
+    if ((FlagGet(FLAG_BADGE06_GET) == TRUE) && (level < 45)) // All wild encounters will be around Lv 45, after Gym 6
+        level = 45;
+    if ((FlagGet(FLAG_BADGE07_GET) == TRUE) && (level < 5)) // All wild encounters will be around Lv 50, after Gym 7
+        level = 50;
+    if ((FlagGet(FLAG_BADGE08_GET) == TRUE) && (level < 55)) // All wild encounters will be around Lv 55, after Gym 8
+        level = 55;
+    if ((FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE) && (level < 60)) // All wild encounters will be around Lv 60, after beating the League
+        level = 60;
 
     if (max < level)
         curveAmount = (((2 * level) + max) / 3) - max;
@@ -349,6 +353,32 @@ u8 ChooseWildMonLevel(void)
         }
     }
     return min + rand + curveAmount;
+}
+
+u8 ChooseStaticMonLevel(void)
+{
+    u8 level = 15;
+
+    if (FlagGet(FLAG_BADGE01_GET) == TRUE)
+        level = 20;
+    if (FlagGet(FLAG_BADGE02_GET) == TRUE)
+        level = 35;
+    if (FlagGet(FLAG_BADGE03_GET) == TRUE)
+        level = 40;
+    if (FlagGet(FLAG_BADGE04_GET) == TRUE)
+        level = 45;
+    if (FlagGet(FLAG_BADGE05_GET) == TRUE)
+        level = 50;
+    if (FlagGet(FLAG_BADGE06_GET) == TRUE)
+        level = 55;
+    if (FlagGet(FLAG_BADGE07_GET) == TRUE)
+        level = 60;
+    if (FlagGet(FLAG_BADGE08_GET) == TRUE)
+        level = 65;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE)
+        level = 70;
+    
+    return level;
 }
 
 u16 GetCurrentMapWildMonHeaderId(void)
