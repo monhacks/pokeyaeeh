@@ -295,6 +295,7 @@ static const u8 sSupersweetSyrupDescription[] = _("Lowers the foe's Speed.");
 static const u8 sTeraShiftDescription[] = _("Terasteralizes upon entry.");
 static const u8 sTeraShellDescription[] = _("Resistant to types at full HP.");
 static const u8 sTeraformZeroDescription[] = _("Removes weather and terrain.");
+static const u8 sPoisonPuppeteerDescription[] = _("Confuses the foes it poisons.");
 static const u8 sBrutalLegsDescription[] = _("Boosts kicking moves. (50%)");
 static const u8 sHardSpinnerDescription[] = _("Boosts spinning moves. (50%)");
 static const u8 sTailstreamDescription[] = _("Sets up tailwind for 2 turns.");
@@ -306,7 +307,7 @@ static const u8 sRampageDescription[] = _("No recharge after a KO.");
 static const u8 sBombasticDescription[] = _("Boosts ballistic moves. (50%)");
 static const u8 sGroundShockDescription[] = _("Electric hits Ground-types.");
 static const u8 sCrypticPowerDescription[] = _("Doubles Special Attack.");
-static const u8 sPoisonPuppeteerDescription[] = _("Confuses the foes it poisons.");
+static const u8 sImpenetrableDescription[] = _("Only damaged by direct attacks.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -633,6 +634,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_BOMBASTIC] = _("Bombastic"),
     [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
     [ABILITY_CRYPTIC_POWER] = _("Cryptic Power"),
+    [ABILITY_IMPENETRABLE] = _("Impenetrable"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -959,6 +961,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_BOMBASTIC] = _("Bombastic"),
     [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
     [ABILITY_CRYPTIC_POWER] = _("Cryptic Power"),
+    [ABILITY_IMPENETRABLE] = _("Impenetrable"),
 };
 #endif
 
@@ -1286,4 +1289,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_BOMBASTIC] = sBombasticDescription,
     [ABILITY_GROUNDSHOCK] = sGroundShockDescription,
     [ABILITY_CRYPTIC_POWER] = sCrypticPowerDescription,
+    [ABILITY_IMPENETRABLE] = sImpenetrableDescription,
 };
