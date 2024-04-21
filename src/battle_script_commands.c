@@ -4276,6 +4276,21 @@ static void Cmd_getexp(void)
                 gBattleMoveDamage = 1;
                 MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
                 gBattleScripting.getexpState++;
+
+                PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleStruct->expGetterBattlerId, *expMonId);
+                // buffer 'gained' or 'gained a boosted'
+                PREPARE_STRING_BUFFER(gBattleTextBuff2, i);
+
+                if (wasSentOut || holdEffect == HOLD_EFFECT_EXP_SHARE)
+                {
+                    PrepareStringBattle(STRINGID_PKMNGAINED1EXP, gBattleStruct->expGetterBattlerId); // prints "1 Exp. Point" instead "1 Exp. Points"
+                }
+                else if (IsGen6ExpShareEnabled() && !gBattleStruct->teamGotExpMsgPrinted) // Print 'the rest of your team got exp' message once, when all of the sent-in mons were given experience
+                {
+                    gLastUsedItem = ITEM_EXP_SHARE;
+                    PrepareStringBattle(STRINGID_TEAMGAINEDEXP, gBattleStruct->expGetterBattlerId);
+                    gBattleStruct->teamGotExpMsgPrinted = TRUE;
+                }
             }
             else
             {

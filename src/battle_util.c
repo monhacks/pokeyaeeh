@@ -8574,8 +8574,11 @@ u8 IsMonDisobedient(void)
         if (FlagGet(FLAG_SYS_GAME_CLEAR)) // Game beaten, ignore obedience altogether
             return 0;
 
-        obedienceLevel = 16;
+        obedienceLevel = 8;
 
+        
+        if (FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103)) // After beating Rival
+            obedienceLevel = 16;
         if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
             obedienceLevel = 23;
         if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
@@ -8589,9 +8592,9 @@ u8 IsMonDisobedient(void)
         if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
             obedienceLevel = 65;
         if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-            obedienceLevel = 70;
+            obedienceLevel = 75;
         if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge
-            obedienceLevel = 100;
+            obedienceLevel = 101;
     }
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
