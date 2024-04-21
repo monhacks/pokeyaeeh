@@ -326,8 +326,8 @@ MossdeepCity_EventScript_ItemNetBall::
 	finditem ITEM_NET_BALL
 	end
 
-PetalburgWoods_EventScript_ItemXAttack::
-	finditem ITEM_X_ATTACK
+PetalburgWoods_EventScript_ItemLifeOrb::
+	finditem ITEM_LIFE_ORB
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::
@@ -514,8 +514,8 @@ AquaHideout_B1F_EventScript_ItemMasterBall::
 	finditem ITEM_MASTER_BALL
 	end
 
-AquaHideout_B1F_EventScript_ItemNugget::
-	finditem ITEM_NUGGET
+AquaHideout_B1F_EventScript_ItemBigNugget::
+	finditem ITEM_BIG_NUGGET
 	end
 
 AquaHideout_B1F_EventScript_ItemMaxElixir::
@@ -566,40 +566,40 @@ SeafloorCavern_Room9_EventScript_ItemTMEarthquake::
 	finditem ITEM_TM_EARTHQUAKE
 	end
 
-Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail::
-	finditem ITEM_ORANGE_MAIL
+Route110_TrickHousePuzzle1_EventScript_ItemFireGem::
+	finditem ITEM_FIRE_GEM
 	end
 
-Route110_TrickHousePuzzle2_EventScript_ItemHarborMail::
-	finditem ITEM_HARBOR_MAIL
+Route110_TrickHousePuzzle2_EventScript_ItemIceGem::
+	finditem ITEM_ICE_GEM
 	end
 
-Route110_TrickHousePuzzle2_EventScript_ItemWaveMail::
-	finditem ITEM_WAVE_MAIL
+Route110_TrickHousePuzzle2_EventScript_ItemWaterGem::
+	finditem ITEM_WATER_GEM
 	end
 
-Route110_TrickHousePuzzle3_EventScript_ItemShadowMail::
-	finditem ITEM_SHADOW_MAIL
+Route110_TrickHousePuzzle3_EventScript_ItemGhostGem::
+	finditem ITEM_GHOST_GEM
 	end
 
-Route110_TrickHousePuzzle3_EventScript_ItemWoodMail::
-	finditem ITEM_WOOD_MAIL
+Route110_TrickHousePuzzle3_EventScript_ItemGrassGem::
+	finditem ITEM_GRASS_GEM
 	end
 
-Route110_TrickHousePuzzle4_EventScript_ItemMechMail::
-	finditem ITEM_MECH_MAIL
+Route110_TrickHousePuzzle4_EventScript_ItemSteelGem::
+	finditem ITEM_STEEL_GEM
 	end
 
-Route110_TrickHousePuzzle6_EventScript_ItemGlitterMail::
-	finditem ITEM_GLITTER_MAIL
+Route110_TrickHousePuzzle6_EventScript_ItemFairyGem::
+	finditem ITEM_FAIRY_GEM
 	end
 
-Route110_TrickHousePuzzle7_EventScript_ItemTropicMail::
-	finditem ITEM_TROPIC_MAIL
+Route110_TrickHousePuzzle7_EventScript_ItemElectricGem::
+	finditem ITEM_ELECTRIC_GEM
 	end
 
-Route110_TrickHousePuzzle8_EventScript_ItemBeadMail::
-	finditem ITEM_BEAD_MAIL
+Route110_TrickHousePuzzle8_EventScript_ItemDragonGem::
+	finditem ITEM_DRAGON_GEM
 	end
 
 VictoryRoad_1F_EventScript_ItemMaxElixir::
@@ -642,8 +642,8 @@ MagmaHideout_2F_2R_EventScript_ItemFullRestore::
 	finditem ITEM_FULL_RESTORE
 	end
 
-MagmaHideout_3F_1R_EventScript_ItemNugget::
-	finditem ITEM_NUGGET
+MagmaHideout_3F_1R_EventScript_ItemBigNugget::
+	finditem ITEM_BIG_NUGGET
 	end
 
 MagmaHideout_3F_2R_EventScript_ItemPPMax::
@@ -654,8 +654,8 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
-	finditem ITEM_MAX_REPEL
+MagmaHideout_3F_3R_EventScript_ItemUltraBall::
+	finditem ITEM_ULTRA_BALL
 	end
 
 Common_EventScript_FindItem::

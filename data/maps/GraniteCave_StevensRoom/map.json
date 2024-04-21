@@ -41,6 +41,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 10,
+      "elevation": 0,
+      "item": "ITEM_METAL_COAT",
+      "flag": "FLAG_HIDDEN_ITEM_GRANITE_CAVE_STEVENS_ROOM_METAL_COAT"
+    }
   ]
 }
