@@ -1045,7 +1045,8 @@ void BS_DamageNonTypes(void)
     if (gSideTimers[side].damageNonTypesTimer
         && !IS_BATTLER_OF_TYPE(gBattlerAttacker, gSideTimers[side].damageNonTypesType)
         && IsBattlerAlive(gBattlerAttacker)
-        && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+        && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
     {
         gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 6;
         if (gBattleMoveDamage == 0)

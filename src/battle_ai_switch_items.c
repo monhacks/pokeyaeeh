@@ -517,7 +517,8 @@ static bool8 ShouldSwitchIfGameStatePrompt(u32 battler)
         }
 
         //Secondary Damage
-        if (monAbility != ABILITY_MAGIC_GUARD
+        if ((monAbility != ABILITY_MAGIC_GUARD
+            || monAbility != ABILITY_IMPENETRABLE)
             && !AiExpectsToFaintPlayer(battler))
         {
             //Toxic
@@ -1263,7 +1264,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
     u32 hazardFlags = gSideStatuses[GetBattlerSide(battler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES | SIDE_STATUS_SAFEGUARD);
 
     // Check ways mon might avoid all hazards
-    if (ability != ABILITY_MAGIC_GUARD || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if ((ability != ABILITY_MAGIC_GUARD || ability != ABILITY_IMPENETRABLE) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
     {
         // Stealth Rock
@@ -1411,7 +1412,7 @@ static u32 GetSwitchinRecurringDamage(void)
     u16 item = AI_DATA->switchinCandidate.battleMon.item;
 
     // Items
-    if (ability != ABILITY_MAGIC_GUARD && ability != ABILITY_KLUTZ)
+    if ((ability != ABILITY_MAGIC_GUARD || ability != ABILITY_IMPENETRABLE) && ability != ABILITY_KLUTZ)
     {
         if (item == ITEM_BLACK_SLUDGE && AI_DATA->switchinCandidate.battleMon.type1 != TYPE_POISON && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_POISON)
         {
@@ -1445,7 +1446,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     u32 statusDamage = 0;
 
     // Status condition damage
-    if ((status != 0) && AI_DATA->switchinCandidate.battleMon.ability != ABILITY_MAGIC_GUARD) 
+    if ((status != 0) && (AI_DATA->switchinCandidate.battleMon.ability != ABILITY_MAGIC_GUARD || AI_DATA->switchinCandidate.battleMon.ability != ABILITY_IMPENETRABLE)) 
     {
         if (status & STATUS1_BURN) 
         {

@@ -2707,6 +2707,14 @@ if (ability == ABILITY_MAGIC_GUARD) \
             break;\
 }
 
+#define IMPENETRABLE_CHECK \
+if (ability == ABILITY_IMPENETRABLE) \
+{\
+    RecordAbilityBattle(battler, ability);\
+    gBattleStruct->turnEffectsTracker++;\
+            break;\
+}
+
 #define TOXIC_BOOST_CHECK \
 if (ability == ABILITY_TOXIC_BOOST) \
 {\
@@ -2791,6 +2799,7 @@ u8 DoBattlerEndTurnEffects(void)
              && gBattleMons[battler].hp != 0)
             {
                 MAGIC_GUARD_CHECK;
+                IMPENETRABLE_CHECK;
 
                 gBattlerTarget = gStatuses3[battler] & STATUS3_LEECHSEED_BATTLER; // Notice gBattlerTarget is actually the HP receiver.
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 8;
@@ -2809,6 +2818,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 TOXIC_BOOST_CHECK;
+                IMPENETRABLE_CHECK;
 
                 if (ability == ABILITY_POISON_HEAL)
                 {
@@ -2839,6 +2849,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 TOXIC_BOOST_CHECK;
+                IMPENETRABLE_CHECK;
 
                 if (ability == ABILITY_POISON_HEAL)
                 {
@@ -2872,6 +2883,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 FLARE_BOOST_CHECK;
+                IMPENETRABLE_CHECK;
 
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
                 if (ability == ABILITY_HEATPROOF)
@@ -2892,6 +2904,8 @@ u8 DoBattlerEndTurnEffects(void)
                 && gBattleMons[battler].hp != 0)
             {
                 MAGIC_GUARD_CHECK;
+                IMPENETRABLE_CHECK;
+
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
                 if (gBattleMoveDamage == 0)
                     gBattleMoveDamage = 1;
@@ -2905,6 +2919,8 @@ u8 DoBattlerEndTurnEffects(void)
                 && gBattleMons[battler].hp != 0)
             {
                 MAGIC_GUARD_CHECK;
+                IMPENETRABLE_CHECK;
+
                 // R/S does not perform this sleep check, which causes the nightmare effect to
                 // persist even after the affected Pokemon has been awakened by Shed Skin.
                 if (gBattleMons[battler].status1 & STATUS1_SLEEP)
@@ -2927,6 +2943,8 @@ u8 DoBattlerEndTurnEffects(void)
                 && gBattleMons[battler].hp != 0)
             {
                 MAGIC_GUARD_CHECK;
+                IMPENETRABLE_CHECK;
+
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 4;
                 if (gBattleMoveDamage == 0)
                     gBattleMoveDamage = 1;
@@ -2941,6 +2959,7 @@ u8 DoBattlerEndTurnEffects(void)
                 if (--gDisableStructs[battler].wrapTurns != 0)  // damaged by wrap
                 {
                     MAGIC_GUARD_CHECK;
+                    IMPENETRABLE_CHECK;
 
                     gBattleScripting.animArg1 = gBattleStruct->wrappedMove[battler];
                     gBattleScripting.animArg2 = gBattleStruct->wrappedMove[battler] >> 8;
@@ -6025,7 +6044,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (gBattleMons[gBattlerTarget].species == SPECIES_CRAMORANT_GORGING)
                 {
                     gBattleMons[gBattlerTarget].species = SPECIES_CRAMORANT;
-                    if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                    if ((GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE))
                     {
                         gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
                         if (gBattleMoveDamage == 0)
@@ -6038,7 +6057,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 else if (gBattleMons[gBattlerTarget].species == SPECIES_CRAMORANT_GULPING)
                 {
                     gBattleMons[gBattlerTarget].species = SPECIES_CRAMORANT;
-                    if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                    if ((GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE))
                     {
                         gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
                         if (gBattleMoveDamage == 0)
@@ -7830,7 +7849,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 {
                     goto LEFTOVERS;
                 }
-                else if (GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD && !moveTurn)
+                else if ((GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD || GetBattlerAbility(battler) != ABILITY_IMPENETRABLE) && !moveTurn)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 8;
                     if (gBattleMoveDamage == 0)
@@ -8166,6 +8185,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             if (IsBattlerAlive(gBattlerAttacker)
                 && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE
                 && gSpecialStatuses[gBattlerAttacker].damagedMons)
             {
                 gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 10;
@@ -8213,7 +8233,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
                     && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)
                     && IsBattlerAlive(gBattlerAttacker)
-                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 6;
                     if (gBattleMoveDamage == 0)
@@ -8287,7 +8308,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                  && TARGET_TURN_DAMAGED
                  && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
                  && IS_MOVE_PHYSICAL(gCurrentMove)
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleMoveDamage == 0)
@@ -8307,7 +8329,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                  && TARGET_TURN_DAMAGED
                  && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
                  && IS_MOVE_SPECIAL(gCurrentMove)
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleMoveDamage == 0)
