@@ -9523,7 +9523,7 @@ u8 GetLevelCap(void)
         currentLevelCap = 75;
     else if (FlagGet(FLAG_BADGE06_GET)) // Gym 7: 65
         currentLevelCap = 65;
-    else if (FlagGet(FLAG_BADGE05_GET)) // Gym 6: 5
+    else if (FlagGet(FLAG_BADGE05_GET)) // Gym 6: 55
         currentLevelCap = 55;
     else if (FlagGet(FLAG_BADGE04_GET)) // Gym 5: 50
         currentLevelCap = 50;
@@ -9536,7 +9536,7 @@ u8 GetLevelCap(void)
     else if (FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103)) // Gym 1: 16
         currentLevelCap = 16;
     else
-        currentLevelCap = 8; // Starting level cap
+        currentLevelCap = 10; // Starting level cap
 
     return currentLevelCap;
 }

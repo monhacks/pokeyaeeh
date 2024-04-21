@@ -317,6 +317,14 @@ u8 ChooseWildMonLevel(void)
     // In postgame, all wild encounters will be more than 60
     if ((FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE) && (level < 60))
         level = 60;
+    else if ((FlagGet(FLAG_BADGE08_GET) == TRUE) && (level < 55))
+        level = 55;
+    else if ((FlagGet(FLAG_BADGE07_GET) == TRUE) && (level < 50))
+        level = 50;
+    else if ((FlagGet(FLAG_BADGE06_GET) == TRUE) && (level < 45))
+        level = 45;
+    else if ((FlagGet(FLAG_BADGE05_GET) == TRUE) && (level < 40))
+        level = 40;
 
     if (max < level)
         curveAmount = (((2 * level) + max) / 3) - max;
