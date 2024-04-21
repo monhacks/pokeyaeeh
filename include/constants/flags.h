@@ -676,6 +676,7 @@
 #define FLAG_HIDDEN_ITEM_UNUSED_0x271                        (FLAG_HIDDEN_ITEMS_START + 0x7D)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x272                        (FLAG_HIDDEN_ITEMS_START + 0x7E)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x273                        (FLAG_HIDDEN_ITEMS_START + 0x7F)
+#define FLAG_HIDDEN_ITEMS_END                                   FLAG_HIDDEN_ITEM_UNUSED_0x273
 
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
