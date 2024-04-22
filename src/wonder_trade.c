@@ -299,7 +299,6 @@ static const u16 sIsValidSpecies[] =
     SPECIES_BAGON,
     SPECIES_BELDUM,
     SPECIES_CHIMECHO,
-#ifdef POKEMON_EXPANSION
     SPECIES_TURTWIG,
     SPECIES_CHIMCHAR,
     SPECIES_PIPLUP,
@@ -502,12 +501,43 @@ static const u16 sIsValidSpecies[] =
     SPECIES_INDEEDEE,
     SPECIES_MORPEKO,
     SPECIES_CUFANT,
-    SPECIES_DRACOZOLT,
-    SPECIES_ARCTOZOLT,
-    SPECIES_DRACOVISH,
-    SPECIES_ARCTOVISH,
     SPECIES_DURALUDON,
     SPECIES_DREEPY,
+    SPECIES_SPRIGATITO,
+    SPECIES_FUECOCO,
+    SPECIES_QUAXLY,
+    SPECIES_LECHONK,
+    SPECIES_TAROUNTULA,
+    SPECIES_NYMBLE,
+    SPECIES_PAWMI,
+    SPECIES_TANDEMAUS,
+    SPECIES_FIDOUGH,
+    SPECIES_SMOLIV,
+    SPECIES_SQUAWKABILLY,
+    SPECIES_NACLI,
+    SPECIES_CHARCADET,
+    SPECIES_TADBULB,
+    SPECIES_WATTREL,
+    SPECIES_MASCHIFF,
+    SPECIES_SHROODLE,
+    SPECIES_BRAMBLIN,
+    SPECIES_TOEDSCOOL,
+    SPECIES_KLAWF,
+    SPECIES_CAPSAKID,
+    SPECIES_RELLOR,
+    SPECIES_FLITTLE,
+    SPECIES_TINKATINK,
+    SPECIES_WIGLETT,
+    SPECIES_FINIZEN,
+    SPECIES_VAROOM,
+    SPECIES_ORTHWORM,
+    SPECIES_GLIMMET,
+    SPECIES_GREAVARD,
+    SPECIES_FLAMIGO,
+    SPECIES_CETODDLE,
+    SPECIES_VELUZA,
+    SPECIES_TATSUGIRI,
+    SPECIES_POLTCHAGEIST,
     SPECIES_RATTATA_ALOLAN,
     SPECIES_SANDSHREW_ALOLAN,
     SPECIES_VULPIX_ALOLAN,
@@ -530,6 +560,10 @@ static const u16 sIsValidSpecies[] =
     SPECIES_QWILFISH_HISUIAN,
     SPECIES_SNEASEL_HISUIAN,
     SPECIES_ZORUA_HISUIAN,
+    SPECIES_TAUROS_PALDEAN,
+    SPECIES_TAUROS_PALDEAN_AQUA_BREED,
+    SPECIES_TAUROS_PALDEAN_BLAZE_BREED,
+    SPECIES_WOOPER_PALDEAN,
     SPECIES_BURMY_SANDY_CLOAK,
     SPECIES_BURMY_TRASH_CLOAK,
     SPECIES_SHELLOS_EAST_SEA,
@@ -558,7 +592,12 @@ static const u16 sIsValidSpecies[] =
     SPECIES_MINIOR_METEOR_VIOLET,
     SPECIES_SINISTEA_ANTIQUE,
     SPECIES_INDEEDEE_FEMALE,
-#endif
+    SPECIES_SQUAWKABILLY_BLUE_PLUMAGE,
+    SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE,
+    SPECIES_SQUAWKABILLY_WHITE_PLUMAGE,
+    SPECIES_TATSUGIRI_DROOPY,
+    SPECIES_TATSUGIRI_STRETCHY,
+    SPECIES_POLTCHAGEIST_ARTISAN,
 };
 
 static u16 PickRandomSpecies(void);
@@ -652,8 +691,8 @@ void CreateWonderTradePokemon(u8 whichPlayerMon)
 
     StringCopy(name, GetSpeciesName(species));
 
-    // 10% chance of having the generated Wonder Traded 'mon carry an item.
-    if ((Random() % 99) < 10)
+    // 50% chance of having the generated Wonder Traded 'mon carry an item.
+    if ((Random() % 99) < 50)
         heldItem = GetValidWonderTradeItem(heldItem);
 
     if (currHeldItem == ITEM_NONE)
@@ -682,20 +721,12 @@ void CreateWonderTradePokemon(u8 whichPlayerMon)
     }
 
 #ifdef POKEMON_EXPANSION
-    // 10% chance of giving the in coming Pokémon their HA, if they have one
-    // Uncomment if your copy of the pokemon_expansion is up-to-date.
-    //if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE && (Random() % 99) < 10)
-    //{
-    //    abilityNum = 2;
-    //    SetMonData(pokemon, MON_DATA_ABILITY_NUM, &abilityNum);
-    //}
-
-    // Uncomment if your copy of the pokemon_expansion is not up-to-date.
-    //if (gSpeciesInfo[species].abilityHidden != ABILITY_NONE && (Random() % 99) < 10)
-    //{
-    //    abilityNum = 2;
-    //    SetMonData(pokemon, MON_DATA_ABILITY_NUM, &abilityNum);
-    //}
+    // 25% chance of giving the in coming Pokémon their HA, if they have one
+    if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE && (Random() % 99) < 25)
+    {
+        abilityNum = 2;
+        SetMonData(pokemon, MON_DATA_ABILITY_NUM, &abilityNum);
+    }
 #endif
 
     SetMonData(pokemon, MON_DATA_HELD_ITEM, &heldItem);

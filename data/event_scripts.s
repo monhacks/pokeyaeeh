@@ -980,7 +980,7 @@ EventScript_CableClub_SetVarResult0::
 	return
 
 Common_EventScript_UnionRoomAttendant::
-	call CableClub_EventScript_UnionRoomAttendant
+	call EventScript_DoWonderTrade
 	end
 
 Common_EventScript_WirelessClubAttendant::
@@ -1008,32 +1008,60 @@ Common_EventScript_LegendaryFlewAway::
 	end
 
 EventScript_DoWonderTrade::
+	lock
+	goto_if_unset FLAG_BADGE05_GET, EventScript_WonderTradeCurrentlyUnavailable
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, EventScript_PleaseVisitAgain
+	msgbox Text_HiWouldYouLikeToDoAWonderTrade, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_PleaseVisitAgain
+	goto EventScript_StartWonderTrade
+EventScript_End:
+	end
+
+EventScript_StartWonderTrade:
+	msgbox Text_PleaseChooseAPokemon, MSGBOX_NPC
 	special ChoosePartyMon
 	waitstate
-	compare VAR_0x8004, PARTY_SIZE
-	goto_if_ge EventScript_End
+	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_End
 	copyvar VAR_0x8005, VAR_0x8004
 	special CreateWonderTradePokemon
 	special DoInGameTradeScene
 	waitstate
-	lockall
-	faceplayer
-	msgbox EventScript_DoWonderTrade_Text_WannaDoAnotherWonderTrade, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	lockall
-	faceplayer
-	goto_if_eq EventScript_DoWonderTrade
-	msgbox EventScript_DoWonderTrade_Text_Done, MSGBOX_DEFAULT
+	msgbox Text_WouldYouLikeAnotherWonderTrade, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_PleaseVisitAgain
+	goto EventScript_StartWonderTrade
+	return
 
-EventScript_End:
-    msgbox EventScript_DoWonderTrade_Text_Done, MSGBOX_DEFAULT
-	releaseall
+EventScript_WonderTradeCurrentlyUnavailable:
+    msgbox Text_WonderTradeCurrentlyUnavailable, MSGBOX_NPC
+	release
 	end
 
-EventScript_DoWonderTrade_Text_WannaDoAnotherWonderTrade:
-	.string "Do you want to do\nanother Wonder Trade?$"
+EventScript_PleaseVisitAgain:
+	msgbox Text_PleaseVisitAgain, MSGBOX_NPC
+	release
+	end
 
-EventScript_DoWonderTrade_Text_Done:
+Text_WonderTradeCurrentlyUnavailable:
+	.string "I'm sorry, but the Wonder Trade System\n"
+	.string "is currently unavailable.\p"
+	.string "Please try again later.\p"
+	.string "Thank you!$"
+
+Text_HiWouldYouLikeToDoAWonderTrade:
+	.string "Hello, {PLAYER}!\p"
+	.string "Welcome to the Wonder Trade System!\p"
+	.string "Would you like to participate in a\n"
+	.string "Wonder Trade?$"
+
+Text_PleaseChooseAPokemon:
+	.string "Please choose a Pokémon.$"
+
+Text_WouldYouLikeAnotherWonderTrade:
+	.string "Would you like to participate in\n"
+	.string "another Wonder Trade?$"
+
+Text_PleaseVisitAgain:
 	.string "Please visit again.$"
 
 	.include "data/scripts/pc_transfer.inc"
