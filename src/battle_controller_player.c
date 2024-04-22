@@ -2019,6 +2019,12 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 return COLOR_IMMUNE;
         }
         break;
+        case EFFECT_ROAR:
+        {
+            if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+                return COLOR_IMMUNE;
+        }
+        break;
     }
 
     // Ability cases
