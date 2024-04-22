@@ -56,7 +56,7 @@ LavaridgeTown_HerbShop_Text_WelcomeToHerbShop:
 
 LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
 	.string "Nature mints have different tastes.\p"
-	.string "They can make your Pokemon stronger, or\n"
+	.string "They can make your Pokémon stronger, or\n"
 	.string "faster, or even bulkier, but they could\l"
 	.string "also become slower, weaker or frailer.$"
 
