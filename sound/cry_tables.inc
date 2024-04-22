@@ -2445,6 +2445,7 @@ gCryTable::
 	cry Cry_Appletun
 	cry Cry_Sandaconda
 	cry Cry_Toxtricity
+	cry Cry_ToxtricityLowKey
 	cry Cry_Centiskorch
 	cry Cry_Hatterene
 	cry Cry_Grimmsnarl
@@ -2452,8 +2453,9 @@ gCryTable::
 	cry Cry_Copperajah
 	cry Cry_Duraludon
 	cry Cry_Urshifu
-	cry Cry_Urshifu
+	cry Cry_UrshifuRapidStrikeStyle
 .else
+	cry Cry_Unown
 	cry Cry_Unown
 	cry Cry_Unown
 	cry Cry_Unown
@@ -4877,6 +4879,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Appletun
 	cry_reverse Cry_Sandaconda
 	cry_reverse Cry_Toxtricity
+	cry_reverse Cry_ToxtricityLowKey
 	cry_reverse Cry_Centiskorch
 	cry_reverse Cry_Hatterene
 	cry_reverse Cry_Grimmsnarl
@@ -4884,8 +4887,9 @@ gCryTable_Reverse::
 	cry_reverse Cry_Copperajah
 	cry_reverse Cry_Duraludon
 	cry_reverse Cry_Urshifu
-	cry_reverse Cry_Urshifu
+	cry_reverse Cry_UrshifuRapidStrikeStyle
 .else
+	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
