@@ -505,8 +505,8 @@
       "x": 23,
       "y": 10,
       "elevation": 3,
-      "item": "ITEM_HP_UP",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP"
+      "item": "ITEM_FIGHTING_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_FIGHTING_CRYSTAL"
     },
     {
       "type": "hidden_item",

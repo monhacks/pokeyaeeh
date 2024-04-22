@@ -588,24 +588,24 @@
       "x": 7,
       "y": 6,
       "elevation": 3,
-      "item": "ITEM_SUPER_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_SUPER_POTION"
+      "item": "ITEM_FLYING_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_FLYING_CRYSTAL"
     },
     {
       "type": "hidden_item",
       "x": 3,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_POKE_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_POKE_BALL"
+      "item": "ITEM_ROCK_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_ROCK_CRYSTAL"
     },
     {
       "type": "hidden_item",
       "x": 14,
       "y": 55,
       "elevation": 3,
-      "item": "ITEM_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_POTION"
+      "item": "ITEM_ICE_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_ICE_CRYSTAL"
     },
     {
       "type": "hidden_item",

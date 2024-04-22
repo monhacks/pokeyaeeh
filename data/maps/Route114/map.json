@@ -489,8 +489,8 @@
       "x": 20,
       "y": 57,
       "elevation": 3,
-      "item": "ITEM_CARBOS",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS"
+      "item": "ITEM_FIRE_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_114_FIRE_CRYSTAL"
     },
     {
       "type": "secret_base",

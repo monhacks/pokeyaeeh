@@ -33,16 +33,16 @@
       "x": 42,
       "y": 51,
       "elevation": 0,
-      "item": "ITEM_CARBOS",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS"
+      "item": "ITEM_WATER_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_WATER_CRYSTAL"
     },
     {
       "type": "hidden_item",
       "x": 14,
       "y": 40,
       "elevation": 0,
-      "item": "ITEM_GREEN_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD"
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE"
     },
     {
       "type": "hidden_item",

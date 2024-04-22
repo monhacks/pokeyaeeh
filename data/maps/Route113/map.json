@@ -442,24 +442,24 @@
       "x": 66,
       "y": 3,
       "elevation": 3,
-      "item": "ITEM_ETHER",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER"
+      "item": "ITEM_PP_MAX",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_PP_MAX"
     },
     {
       "type": "hidden_item",
       "x": 22,
       "y": 5,
       "elevation": 3,
-      "item": "ITEM_TM_EARTHQUAKE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM"
+      "item": "ITEM_TM_IRON_DEFENSE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM_IRON_DEFENSE"
     },
     {
       "type": "hidden_item",
       "x": 73,
       "y": 3,
       "elevation": 3,
-      "item": "ITEM_NUGGET",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET"
+      "item": "ITEM_DARK_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_DARK_CRYSTAL"
     }
   ]
 }

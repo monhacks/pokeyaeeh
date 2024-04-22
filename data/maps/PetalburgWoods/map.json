@@ -299,8 +299,8 @@
       "x": 4,
       "y": 19,
       "elevation": 3,
-      "item": "ITEM_POKE_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POKE_BALL"
+      "item": "ITEM_BUG_CRYSTAL",
+      "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_BUG_CRYSTAL"
     },
     {
       "type": "sign",
@@ -309,6 +309,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PetalburgWoods_EventScript_Sign2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 15,
+      "y": 22,
+      "elevation": 0,
+      "item": "ITEM_BUG_CRYSTAL",
+      "flag": "FLAG_TEMP_1"
     }
   ]
 }

@@ -406,8 +406,8 @@
       "x": 31,
       "y": 13,
       "elevation": 3,
-      "item": "ITEM_IRON",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_118_IRON"
+      "item": "ITEM_LEFTOVERS",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_118_LEFTOVERS"
     },
     {
       "type": "hidden_item",

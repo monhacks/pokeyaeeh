@@ -14,10 +14,27 @@ LavaridgeTown_HerbShop_EventScript_Clerk::
 
 	.align 2
 LavaridgeTown_HerbShop_Pokemart:
-	.2byte ITEM_ENERGY_POWDER
-	.2byte ITEM_ENERGY_ROOT
-	.2byte ITEM_HEAL_POWDER
-	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_LONELY_MINT
+	.2byte ITEM_ADAMANT_MINT 
+	.2byte ITEM_NAUGHTY_MINT 
+	.2byte ITEM_BRAVE_MINT
+	.2byte ITEM_BOLD_MINT
+	.2byte ITEM_IMPISH_MINT
+	.2byte ITEM_LAX_MINT
+	.2byte ITEM_RELAXED_MINT
+	.2byte ITEM_MODEST_MINT
+	.2byte ITEM_MILD_MINT
+	.2byte ITEM_RASH_MINT
+	.2byte ITEM_QUIET_MINT
+	.2byte ITEM_CALM_MINT
+	.2byte ITEM_GENTLE_MINT
+	.2byte ITEM_CAREFUL_MINT
+	.2byte ITEM_SASSY_MINT
+	.2byte ITEM_TIMID_MINT
+	.2byte ITEM_HASTY_MINT
+	.2byte ITEM_JOLLY_MINT
+	.2byte ITEM_NAIVE_MINT
+	.2byte ITEM_SERIOUS_MINT
 	.2byte ITEM_NONE
 	release
 	end
@@ -29,40 +46,23 @@ LavaridgeTown_HerbShop_EventScript_ExpertM::
 LavaridgeTown_HerbShop_EventScript_OldMan::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_CHARCOAL, LavaridgeTown_HerbShop_EventScript_ExplainCharcoal
 	msgbox LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine, MSGBOX_DEFAULT
-	giveitem ITEM_CHARCOAL
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_CHARCOAL
-	release
-	end
-
-LavaridgeTown_HerbShop_EventScript_ExplainCharcoal::
-	msgbox LavaridgeTown_HerbShop_Text_ExplainCharcoal, MSGBOX_DEFAULT
 	release
 	end
 
 LavaridgeTown_HerbShop_Text_WelcomeToHerbShop:
-	.string "Welcome to the Herb Shop, home of\n"
-	.string "effective and inexpensive medicine!$"
+	.string "Welcome to the Mint Shop, home of\n"
+	.string "nature mints, in Hoenn!$"
 
 LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
-	.string "You've come to look at herbal medicine\n"
-	.string "in Lavaridge?\p"
-	.string "That's rather commendable.\p"
-	.string "I like you! Take this!$"
-
-LavaridgeTown_HerbShop_Text_ExplainCharcoal:
-	.string "That Charcoal I gave you, it's used\n"
-	.string "for making herbal medicine.\p"
-	.string "It also does wonders when held by\n"
-	.string "a Pokémon.\p"
-	.string "It intensifies the power of Fire-type\n"
-	.string "moves.$"
+	.string "Nature mints have different tastes.\p"
+	.string "They can make your Pokemon stronger, or\n"
+	.string "faster, or even bulkier, but they could\l"
+	.string "also become slower, weaker or frailer.$"
 
 LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike:
-	.string "Herbal medicine works impressively well.\n"
-	.string "But your Pokémon will dislike you for it.\l"
-	.string "It must be horribly bitter!$"
+	.string "These mints are really bitter!\p"
+	.string "Yes, I ate one.\n"
+	.string "Any problem, kid?$"
 
 `
