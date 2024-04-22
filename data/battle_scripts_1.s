@@ -2370,6 +2370,7 @@ BattleScript_EffectHitSwitchTarget:
 	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOut
 	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_PrintMonIsRooted
 	jumpiftargetdynamaxed BattleScript_HitSwitchTargetDynamaxed
+	jumpifbattletype BATTLE_TYPE_LEGENDARY, BattleScript_MoveEnd
 	tryhitswitchtarget BattleScript_MoveEnd
 	forcerandomswitch BattleScript_HitSwitchTargetForceRandomSwitchFailed
 	goto BattleScript_MoveEnd
@@ -3954,6 +3955,7 @@ BattleScript_EffectRoar::
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
+	jumpifbattletype BATTLE_TYPE_LEGENDARY, BattleScript_ButItFailed
 	forcerandomswitch BattleScript_ButItFailed
 
 BattleScript_RoarBlockedByDynamax:
@@ -6793,6 +6795,10 @@ BattleScript_WildMonFled::
 	end2
 
 BattleScript_PrintCantRunFromTrainer::
+	printstring STRINGID_NORUNNINGFROMTRAINERS
+	end2
+
+BattleScript_PrintCantRunFromLegendary::
 	printstring STRINGID_NORUNNINGFROMTRAINERS
 	end2
 

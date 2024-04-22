@@ -773,7 +773,7 @@ void HandleAction_Run(void)
             if (!TryRunFromBattle(gBattlerAttacker)) // failed to run away
             {
                 ClearVariousBattlerFlags(gBattlerAttacker);
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE_2;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
                 gBattlescriptCurrInstr = BattleScript_PrintFailedToRunString;
                 gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
             }
