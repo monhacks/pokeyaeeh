@@ -29278,6 +29278,7 @@ static const u16 sMagmortarTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TAUNT,
     MOVE_TEMPER_FLARE,
+    MOVE_TERRAIN_PULSE,
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDERBOLT,
