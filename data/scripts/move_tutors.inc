@@ -402,6 +402,72 @@ MoveTutor_EventScript_WildChargeTaught::
 	end
 
 
+LilycoveCity_DepartmentStore_4F_EventScript_AlreadyMetLeftTutor::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_TutorWelcome, MSGBOX_DEFAULT
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove::
+	message LilycoveCity_DepartmentStore_4F_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
+	setvar VAR_0x8004, SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, LilycoveCity_DepartmentStore_4F_EventScript_FireFangTutor
+	case 1, LilycoveCity_DepartmentStore_4F_EventScript_ThunderFangTutor
+	case 2, LilycoveCity_DepartmentStore_4F_EventScript_IceFangTutor
+	case 3, LilycoveCity_DepartmentStore_4F_EventScript_AuraSphereTutor
+	case 4, LilycoveCity_DepartmentStore_4F_EventScript_HeatCrashTutor
+	case 5, LilycoveCity_DepartmentStore_4F_EventScript_RazorShellTutor
+	case 6, LilycoveCity_DepartmentStore_4F_EventScript_InfestationTutor
+	case 7, LilycoveCity_DepartmentStore_4F_EventScript_FireSpinTutor
+	case 8, LilycoveCity_DepartmentStore_4F_EventScript_WhirlpoolTutor
+	case 9, LilycoveCity_DepartmentStore_4F_EventScript_AquaTailTutor
+	case 10, LilycoveCity_DepartmentStore_4F_EventScript_TailwindTutor
+	case 11, LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	special CloseBattleFrontierTutorWindow
+	special ChooseMonForMoveTutor
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon
+	msgbox LilycoveCity_DepartmentStore_4F_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
+	copyvar VAR_0x8004, VAR_0x8008
+	release
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection::
+	special BufferBattleFrontierTutorMoveName
+	buffernumberstring STR_VAR_2, VAR_0x8008
+	msgbox LilycoveCity_DepartmentStore_4F_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove
+	goto_if_ge VAR_TEMP_1, VAR_0x8008, LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove::
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect::
+	special CloseBattleFrontierTutorWindow
+	msgbox LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
 LilycoveCity_DepartmentStore_4F_EventScript_FireFangTutor::
 	setvar VAR_0x8005, MOVE_FIRE_FANG
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
