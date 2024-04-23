@@ -7,6 +7,8 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/pokemon.h"
+#include "constants/species.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"
 

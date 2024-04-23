@@ -4441,7 +4441,7 @@ static const struct TrainerMon sParty_Victor[] = {
         .moves = {MOVE_RISING_VOLTAGE, MOVE_FLAMETHROWER, MOVE_HIDDEN_POWER, MOVE_NASTY_PLOT}
     },
     {
-        .species = SPECIES_TOXTRICITY,
+        .species = SPECIES_TOXTRICITY_AMPED,
         .heldItem = ITEM_THROAT_SPRAY,
         .gender = TRAINER_MON_MALE,
         .ability = ABILITY_PLUS,
@@ -4575,7 +4575,7 @@ static const struct TrainerMon sParty_Miguel5[] = {
 
 static const struct TrainerMon sParty_Victoria[] = {
     {
-        .species = SPECIES_INDEEDEE,
+        .species = SPECIES_INDEEDEE_FEMALE,
         .heldItem = ITEM_CHOICE_SCARF,
         .ability = ABILITY_PSYCHIC_SURGE,
         .lvl = 40,
@@ -4822,7 +4822,7 @@ static const struct TrainerMon sParty_Vicky[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_TRIPLE_AXEL, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_ICE_SHARD},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 100
+        .lvl = 40
     },
     {
         .species = SPECIES_MAGMORTAR,
@@ -11224,7 +11224,7 @@ static const struct TrainerMon sParty_Josue[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
     },
     {
-        .species = SPECIES_PINSIR,
+        .species = SPECIES_ARAQUANID,
         .ability = ABILITY_WATER_BUBBLE,
         .friendship = 200,
         .gender = TRAINER_MON_MALE,
