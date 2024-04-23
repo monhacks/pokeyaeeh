@@ -1904,3 +1904,15 @@ const u8 gText_Kalos[] =    _("Kalos");
 const u8 gText_Alola[] =    _("Alola");
 const u8 gText_Galar[] =    _("Galar");
 const u8 gText_Paldea[] =   _("Paldea");
+
+const u8 gText_FireFang[] = _("Fire Fang");
+const u8 gText_ThunderFang[] = _("Thunder Fang");
+const u8 gText_IceFang[] = _("Ice Fang");
+const u8 gText_AuraSphere[] = _("Aura Sphere");
+const u8 gText_HeatCrash[] = _("Heat Crash");
+const u8 gText_RazorShell[] = _("Razor Shell");
+const u8 gText_Infestation[] = _("Infestation");
+const u8 gText_FireSpin[] = _("Fire Spin");
+const u8 gText_Whirlpool[] = _("Whirlpool");
+const u8 gText_AquaTail[] = _("Aqua Tail");
+const u8 gText_Tailwind[] = _("Tailwind");

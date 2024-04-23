@@ -3117,4 +3117,28 @@ extern const u8 gText_Paldea[];
 extern const u8 gText_Moves[];
 extern const u8 gText_Egg_Moves[];
 
+extern const u8 gText_FireFang[];
+extern const u8 gText_ThunderFang[];
+extern const u8 gText_IceFang[];
+extern const u8 gText_AuraSphere[];
+extern const u8 gText_HeatCrash[];
+extern const u8 gText_RazorShell[];
+extern const u8 gText_Infestation[];
+extern const u8 gText_FireSpin[];
+extern const u8 gText_Whirlpool[];
+extern const u8 gText_AquaTail[];
+extern const u8 gText_Tailwind[];
+
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_FireFangDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_ThunderFangDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_IceFangDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_AuraSphereDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_RazorShellDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_InfestationDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_FireSpinDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_WhirlpoolDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_AquaTailDesc[];
+extern const u8 LilycoveCity_DepartmentStore_4F_Text_TailwindDesc[];
+
 #endif // GUARD_STRINGS_H

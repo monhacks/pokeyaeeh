@@ -31624,7 +31624,6 @@ static const u16 sEmboarTeachableLearnset[] = {
     MOVE_GIGA_IMPACT,
     MOVE_GRASS_KNOT,
     MOVE_GYRO_BALL,
-    MOVE_HEAT_CRASH,
     MOVE_HEAT_WAVE,
     MOVE_HELPING_HAND,
     MOVE_HIDDEN_POWER,

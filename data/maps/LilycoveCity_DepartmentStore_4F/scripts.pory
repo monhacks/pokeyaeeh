@@ -70,6 +70,127 @@ LilycoveCity_DepartmentStore_4F_Pokemart_StatusTMs:
 	release
 	end
 
+LilycoveCity_DepartmentStore_4F_EventScript_AlreadyMetLeftTutor::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_TutorWelcome, MSGBOX_DEFAULT
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove::
+	message LilycoveCity_DepartmentStore_4F_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
+	setvar VAR_0x8004, SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, LilycoveCity_DepartmentStore_4F_EventScript_FireFang
+	case 1, LilycoveCity_DepartmentStore_4F_EventScript_ThunderFang
+	case 2, LilycoveCity_DepartmentStore_4F_EventScript_IceFang
+	case 3, LilycoveCity_DepartmentStore_4F_EventScript_AuraSphere
+	case 4, LilycoveCity_DepartmentStore_4F_EventScript_HeatCrash
+	case 5, LilycoveCity_DepartmentStore_4F_EventScript_RazorShell
+	case 6, LilycoveCity_DepartmentStore_4F_EventScript_Infestation
+	case 7, LilycoveCity_DepartmentStore_4F_EventScript_FireSpin
+	case 8, LilycoveCity_DepartmentStore_4F_EventScript_Whirlpool
+	case 9, LilycoveCity_DepartmentStore_4F_EventScript_AquaTail
+	case 10, LilycoveCity_DepartmentStore_4F_EventScript_Tailwind
+	case 11, LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	special CloseBattleFrontierTutorWindow
+	special ChooseMonForMoveTutor
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon
+	msgbox LilycoveCity_DepartmentStore_4F_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
+	copyvar VAR_0x8004, VAR_0x8008
+	release
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_FireFang::
+	setvar VAR_0x8005, MOVE_FIRE_FANG
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ThunderFang::
+	setvar VAR_0x8005, MOVE_THUNDER_FANG
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_IceFang::
+	setvar VAR_0x8005, MOVE_ICE_FANG
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_AuraSphere::
+	setvar VAR_0x8005, MOVE_AURA_SPHERE
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_HeatCrash::
+	setvar VAR_0x8005, MOVE_HEAT_CRASH
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_RazorShell::
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_Infestation::
+	setvar VAR_0x8005, MOVE_INFESTATION
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_FireSpin::
+	setvar VAR_0x8005, MOVE_FIRE_SPIN
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_Whirlpool::
+	setvar VAR_0x8005, MOVE_WHIRLPOOL
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_AquaTail::
+	setvar VAR_0x8005, MOVE_AQUA_TAIL
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_Tailwind::
+	setvar VAR_0x8005, MOVE_TAILWIND
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection::
+	special BufferBattleFrontierTutorMoveName
+	buffernumberstring STR_VAR_2, VAR_0x8008
+	msgbox LilycoveCity_DepartmentStore_4F_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove
+	goto_if_ge VAR_TEMP_1, VAR_0x8008, LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove::
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect::
+	special CloseBattleFrontierTutorWindow
+	msgbox LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo, MSGBOX_DEFAULT
+	release
+	end
+
 LilycoveCity_DepartmentStore_4F_Text_AttackOrStatusTM:
 	.string "Hmm…\p"
 	.string "An attacking move…\n"
@@ -86,5 +207,83 @@ LilycoveCity_DepartmentStore_4F_Text_OneFiftyDifferentTMs:
 LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 	.string "I'd like to get all the different TMs,\n"
 	.string "but a Pokémon learns only four moves.$"
+
+LilycoveCity_DepartmentStore_4F_Text_TutorWelcome:
+	.string "Welcome!\p"
+	.string "Would you like to teach new moves to\n"
+	.string "your Pokémon?$"
+
+LilycoveCity_DepartmentStore_4F_Text_TeachWhichMove:
+	.string "Which move should I teach?$"
+
+LilycoveCity_DepartmentStore_4F_Text_MoveWillBeXBattlePoints:
+	.string "The move {STR_VAR_1}, is it?$"
+
+LilycoveCity_DepartmentStore_4F_Text_TeachMoveToWhichMon:
+	.string "Okay! Please choose your Pokémon.$"
+
+LilycoveCity_DepartmentStore_4F_Text_IllTakeBattlePoints:
+	.string "Aaand done!\p"
+	.string "Please let me know if you need anything\n"
+	.string "else!$"
+
+LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo:
+	.string "Please let me know if you need anything\n"
+	.string "else!$"
+
+LilycoveCity_DepartmentStore_4F_Text_FireFangDesc::
+	.string "A bite that may\n"
+	.string "burn or cause\n"
+	.string "flinching.$"
+
+LilycoveCity_DepartmentStore_4F_Text_ThunderFangDesc::
+	.string "A bite that may\n"
+	.string "paralyze or cause\n"
+	.string "flinching.$"
+
+LilycoveCity_DepartmentStore_4F_Text_IceFangDesc::
+	.string "A bite that may\n"
+	.string "frostbite or\n"
+	.string "cause flinching.$"
+
+LilycoveCity_DepartmentStore_4F_Text_AuraSphereDesc::
+	.string "An aura burst\n"
+	.string "that cannot be\n"
+	.string "evaded by the foe.$"
+
+LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc::
+	.string "Deals more damage\n"
+	.string "if user is heavier\n"
+	.string "than the foe.$"
+
+LilycoveCity_DepartmentStore_4F_Text_RazorShellDesc::
+	.string "Shell slashing\n"
+	.string "attack which may\n"
+	.string "lower foe's Def.$"
+
+LilycoveCity_DepartmentStore_4F_Text_InfestationDesc::
+	.string "Traps the foe\n"
+	.string "for 3-5 turns in\n"
+	.string "an infestation.$"
+
+LilycoveCity_DepartmentStore_4F_Text_FireSpinDesc::
+	.string "Traps the foe\n"
+	.string "for 3-5 turns in\n"
+	.string "a fire storm.$"
+
+LilycoveCity_DepartmentStore_4F_Text_WhirlpoolDesc::
+	.string "Traps the foe\n"
+	.string "for 3-5 turns in\n"
+	.string "a whirlpool.$"
+
+LilycoveCity_DepartmentStore_4F_Text_AquaTailDesc::
+	.string "Swings its tail\n"
+	.string "as if a vicious\n"
+	.string "wave to attack.$"
+
+LilycoveCity_DepartmentStore_4F_Text_TailwindDesc::
+	.string "Doubles ally's\n"
+	.string "speed stat for\n"
+	.string "4 turns.$"
 
 `
