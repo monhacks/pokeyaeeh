@@ -3639,7 +3639,7 @@ static const struct TrainerMon sParty_Roxanne1[] = { // Dor
         .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
     },
     {
-        .species = SPECIES_FLOETTE,
+        .species = SPECIES_FLOETTE_ORANGE_FLOWER,
         .ability = ABILITY_SYMBIOSIS,
         .friendship = 200,
         .gender = TRAINER_MON_FEMALE,
