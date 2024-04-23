@@ -26452,7 +26452,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .bodyColor = BODY_COLOR_BLUE,                       \
         .noFlip = FALSE
 
-    [SPECIES_PALAFIN] =
+    [SPECIES_PALAFIN_ZERO] =
     {
         .baseAttack    = 70,
         .baseDefense   = 72,

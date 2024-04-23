@@ -269,9 +269,15 @@ Route111_EventScript_Victor::
 	lock
 	faceplayer
 	setflag FLAG_LANDMARK_WINSTRATE_FAMILY
+	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_CannotBattleOurFamilyYet
 	msgbox Route111_Text_BattleOurFamily, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route111_EventScript_BattleWinstrates
 	msgbox Route111_Text_IsThatSo, MSGBOX_DEFAULT
+	release
+	end
+
+Route111_EventScript_CannotBattleOurFamilyYet:
+	msgbox Route111_Text_CannotBattleOurFamilyYet, MSGBOX_NPC
 	release
 	end
 
@@ -575,7 +581,6 @@ Route111_EventScript_TrainerHillSign::
 	end
 
 Route111_Text_BattleOurFamily:
-	.string "Hello! I take it you're a traveler.\p"
 	.string "How's this? What do you say to taking\n"
 	.string "on our family of four in a series of\l"
 	.string "Pokémon battles?$"
@@ -583,6 +588,17 @@ Route111_Text_BattleOurFamily:
 Route111_Text_IsThatSo:
 	.string "Is that so?\n"
 	.string "Drop in, if you change your mind!$"
+
+Route111_Text_CannotBattleOurFamilyYet:
+	.string "How's this? What do you say to taking\n"
+	.string "on our family of four in a series of\l"
+	.string "Pokémon battles?\p"
+	.string "… … …\p"
+	.string "Nevermind!\p"
+	.string "How about this?\n"
+	.string "You beat the Mauville City Gym Leader\l"
+	.string "and then come back?\p"
+	.string "Surely then you'll be much of a challenge!$"
 
 Route111_Text_VictorIntro:
 	.string "That's the spirit! I like you!$"

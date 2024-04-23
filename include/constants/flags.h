@@ -472,10 +472,10 @@
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 #define FLAG_HIDE_NEW_MAUVILLE_SCIENTISTS    0x1B1
-#define FLAG_UNUSED_0x1B2                    0x1B2 // Unused Flag
-#define FLAG_UNUSED_0x1B3                    0x1B3 // Unused Flag
-#define FLAG_UNUSED_0x1B4                    0x1B4 // Unused Flag
-#define FLAG_UNUSED_0x1B5                    0x1B5 // Unused Flag
+#define FLAG_REMATCH_VICTOR                  0x1B2
+#define FLAG_REMATCH_VICTORIA                0x1B3
+#define FLAG_REMATCH_VIVI                    0x1B4
+#define FLAG_REMATCH_VICKY                   0x1B5
 #define FLAG_UNUSED_0x1B6                    0x1B6 // Unused Flag
 #define FLAG_UNUSED_0x1B7                    0x1B7 // Unused Flag
 #define FLAG_UNUSED_0x1B8                    0x1B8 // Unused Flag

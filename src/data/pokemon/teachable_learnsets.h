@@ -3877,6 +3877,7 @@ static const u16 sAbraTeachableLearnset[] = {
     MOVE_EMBARGO,
     MOVE_ENCORE,
     MOVE_ENERGY_BALL,
+    MOVE_EXPANDING_FORCE,
     MOVE_FACADE,
     MOVE_FIRE_PUNCH,
     MOVE_FLASH,
@@ -29219,11 +29220,13 @@ static const u16 sElectivireTeachableLearnset[] = {
 
 static const u16 sMagmortarTeachableLearnset[] = {
     MOVE_ATTRACT,
+    MOVE_AURA_SPHERE,
     MOVE_BODY_SLAM,
     MOVE_BRICK_BREAK,
     MOVE_BULLDOZE,
     MOVE_BURNING_JEALOUSY,
     MOVE_COVET,
+    MOVE_DARK_PULSE,
     MOVE_DOUBLE_TEAM,
     MOVE_DUAL_CHOP,
     MOVE_EARTHQUAKE,

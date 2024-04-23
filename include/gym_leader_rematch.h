@@ -66,6 +66,10 @@ enum {
     REMATCH_TRENT,
     REMATCH_SAWYER,
     REMATCH_KIRA_AND_DAN,
+    REMATCH_VICTOR,
+    REMATCH_VICTORIA,
+    REMATCH_VIVI,
+    REMATCH_VICKY,
     REMATCH_WALLY_VR,  // Entries above WALLY are considered normal trainers, from Wally below are special trainers
     REMATCH_ROXANNE,
     REMATCH_BRAWLY,
