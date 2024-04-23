@@ -253,7 +253,24 @@ MossdeepCity_EventScript_DeclineKingsRock::
 	end
 
 MossdeepCity_EventScript_BlackBelt::
-	msgbox MossdeepCity_Text_SootopolisNewGymLeader, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_BULK_UP, MossdeepCity_EventScript_ExplainBulkUp
+	msgbox MossdeepCity_Text_SootopolisNewGymLeader, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, FALSE, MossdeepCity_EventScript_TooBad
+	msgbox MossdeepCity_Text_ThatsAwesome, MSGBOX_DEFAULT
+	giveitem ITEM_TM_BULK_UP
+	msgbox MossdeepCity_Text_ExplainBulkUp, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_BULK_UP
+	end
+
+MossdeepCity_EventScript_TooBad:
+	msgbox MossdeepCity_Text_TooBad, MSGBOX_DEFAULT
+	release
+
+MossdeepCity_EventScript_ExplainBulkUp:
+	msgbox MossdeepCity_Text_ExplainBulkUp, MSGBOX_DEFAULT
+	release
 	end
 
 MossdeepCity_EventScript_Scott::
@@ -425,13 +442,21 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "way, though.$"
 
 MossdeepCity_Text_SootopolisNewGymLeader:
-	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…\p"
-	.string "Speaking of the waves, you know that\n"
-	.string "island city Sootopolis?\p"
-	.string "I think the Gym there had a new\n"
-	.string "Leader come in.\p"
-	.string "People tell me the new Leader once\n"
-	.string "mentored Wallace.$"
+	.string "Ahh…\p"
+	.string "It's bulking season, baby!\p"
+	.string "You wanna bulk with me?$"
+
+MossdeepCity_Text_TooBad:
+	.string "Oh… That's too sad.\p"
+	.string "Bulk Up!$"
+
+MossdeepCity_Text_ThatsAwesome:
+	.string "That's awesome, champ!\p"
+	.string "Here you go!$"
+
+MossdeepCity_Text_ExplainBulkUp:
+	.string "Bulk Up raises your Attack and\n"
+	.string "Defense.\p"
+	.string "Keep bulking, lil chad!"
 
 `
