@@ -401,3 +401,58 @@ MoveTutor_EventScript_WildChargeTaught::
 	release
 	end
 
+
+LilycoveCity_DepartmentStore_4F_EventScript_FireFangTutor::
+	setvar VAR_0x8005, MOVE_FIRE_FANG
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_ThunderFangTutor::
+	setvar VAR_0x8005, MOVE_THUNDER_FANG
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_IceFangTutor::
+	setvar VAR_0x8005, MOVE_ICE_FANG
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_AuraSphereTutor::
+	setvar VAR_0x8005, MOVE_AURA_SPHERE
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_HeatCrashTutor::
+	setvar VAR_0x8005, MOVE_HEAT_CRASH
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_RazorShellTutor::
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_InfestationTutor::
+	setvar VAR_0x8005, MOVE_INFESTATION
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_FireSpinTutor::
+	setvar VAR_0x8005, MOVE_FIRE_SPIN
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_WhirlpoolTutor::
+	setvar VAR_0x8005, MOVE_WHIRLPOOL
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_AquaTailTutor::
+	setvar VAR_0x8005, MOVE_AQUA_TAIL
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_TailwindTutor::
+	setvar VAR_0x8005, MOVE_TAILWIND
+	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
