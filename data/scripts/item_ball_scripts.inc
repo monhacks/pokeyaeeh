@@ -374,8 +374,8 @@ FieryPath_EventScript_ItemFireStone::
 	finditem ITEM_FIRE_STONE
 	end
 
-FieryPath_EventScript_ItemTMToxic::
-	finditem ITEM_TM_TOXIC
+FieryPath_EventScript_ItemTMWillOWisp::
+	finditem ITEM_TM_WILL_O_WISP
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemTMIronTail::
@@ -462,8 +462,8 @@ ScorchedSlab_EventScript_ItemTMSunnyDay::
 	finditem ITEM_TM_SUNNY_DAY
 	end
 
-SafariZone_Northwest_EventScript_ItemTMSolarBeam::
-	finditem ITEM_TM_SOLAR_BEAM
+SafariZone_Northwest_EventScript_ItemTMSolarBlade::
+	finditem ITEM_TM_SOLAR_BLADE
 	end
 
 SafariZone_North_EventScript_ItemCalcium::
