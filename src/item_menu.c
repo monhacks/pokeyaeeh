@@ -68,7 +68,7 @@
                             max(BAG_ITEMS_COUNT,             \
                             max(BAG_BATTLEITEMS_COUNT,       \
                             max(BAG_MEGASTONES_COUNT,        \
-                            max(BAG_ZCRYSTALS_COUNT,         \
+                            max(BAG_TREASURES_COUNT,         \
                             max(BAG_POWERUP_COUNT,           \
                             max(BAG_MEDICINE_COUNT,          \
                             max(BAG_KEYITEMS_COUNT,          \
@@ -1893,7 +1893,7 @@ static void OpenContextMenu(u8 taskId)
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_ItemsPocket;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_ItemsPocket);
                 break;
-            case ZCRYSTALS_POCKET:
+            case TREASURES_POCKET:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_ItemsPocket;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_ItemsPocket);
                 break;
@@ -3629,7 +3629,7 @@ static void AddBagSortSubMenu(void)
             break;
         case POCKET_POKE_BALLS:
         case POCKET_MEGA_STONES:
-        case POCKET_Z_CRYSTALS:
+        case POCKET_TREASURES:
             gBagMenu->contextMenuItemsPtr = sBagMenuSortPokeBalls;
             memcpy(&gBagMenu->contextMenuItemsBuffer, &sBagMenuSortPokeBalls, NELEMS(sBagMenuSortPokeBalls));
             gBagMenu->contextMenuNumItems = NELEMS(sBagMenuSortPokeBalls);
@@ -3766,9 +3766,9 @@ static void SortItemsInBag(u8 pocket, u8 type)
         itemMem = gSaveBlock1Ptr->bagPocket_MegaStones;
         itemAmount = BAG_MEGASTONES_COUNT;
         break;
-    case ZCRYSTALS_POCKET:
-        itemMem = gSaveBlock1Ptr->bagPocket_ZCrystals;
-        itemAmount = BAG_ZCRYSTALS_COUNT;
+    case TREASURES_POCKET:
+        itemMem = gSaveBlock1Ptr->bagPocket_Treasures;
+        itemAmount = BAG_TREASURES_COUNT;
         break;
     default:
         return;
