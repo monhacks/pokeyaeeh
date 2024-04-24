@@ -1992,14 +1992,8 @@ const struct Item gItems[] =
     {
         .name = _("Helix Fossil"),
         .description = sHelixFossilDesc,
-        #if I_KEY_FOSSILS >= GEN_4
-            .price = 7000,
-            .pocket = POCKET_TREASURES,
-        #else
-            .price = 0,
-            .importance = 1,
-            .pocket = POCKET_KEY_ITEMS,
-        #endif
+        .price = 7000,
+        .pocket = POCKET_TREASURES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 100,
@@ -2009,14 +2003,8 @@ const struct Item gItems[] =
     {
         .name = _("Dome Fossil"),
         .description = sDomeFossilDesc,
-        #if I_KEY_FOSSILS >= GEN_4
-            .price = 7000,
-            .pocket = POCKET_TREASURES,
-        #else
-            .price = 0,
-            .importance = 1,
-            .pocket = POCKET_KEY_ITEMS,
-        #endif
+        .price = 7000,
+        .pocket = POCKET_TREASURES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 100,
@@ -2027,14 +2015,8 @@ const struct Item gItems[] =
 
         .name = _("Old Amber"),
         .description = sOldAmberDesc,
-        #if I_KEY_FOSSILS >= GEN_4
-            .price = 10000,
-            .pocket = POCKET_TREASURES,
-        #else
-            .price = 0,
-            .importance = 1,
-            .pocket = POCKET_KEY_ITEMS,
-        #endif
+        .price = 10000,
+        .pocket = POCKET_TREASURES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 100,
@@ -2044,14 +2026,8 @@ const struct Item gItems[] =
     {
         .name = _("Root Fossil"),
         .description = sRootFossilDesc,
-        #if I_KEY_FOSSILS >= GEN_4
-            .price = 7000,
-            .pocket = POCKET_TREASURES,
-        #else
-            .price = 0,
-            .importance = 1,
-            .pocket = POCKET_KEY_ITEMS,
-        #endif
+        .price = 7000,
+        .pocket = POCKET_TREASURES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 100,
@@ -2061,14 +2037,8 @@ const struct Item gItems[] =
     {
         .name = _("Claw Fossil"),
         .description = sClawFossilDesc,
-        #if I_KEY_FOSSILS >= GEN_4
-            .price = 7000,
-            .pocket = POCKET_TREASURES,
-        #else
-            .price = 0,
-            .importance = 1,
-            .pocket = POCKET_KEY_ITEMS,
-        #endif
+        .price = 7000,
+        .pocket = POCKET_TREASURES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 100,
