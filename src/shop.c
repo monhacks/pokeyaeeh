@@ -180,7 +180,6 @@ static const u16 sPokeMartItems_OneBadge[] = {
     ITEM_PARALYZE_HEAL,
     ITEM_REVIVE,
     ITEM_REPEL,
-    ITEM_LURE,
     ITEM_NONE
 };
 
@@ -197,8 +196,6 @@ static const u16 sPokeMartItems_TwoBadges[] = {
     ITEM_REVIVE,
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };
@@ -216,8 +213,6 @@ static const u16 sPokeMartItems_ThreeBadges[] = {
     ITEM_REVIVE,
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };
@@ -236,8 +231,6 @@ static const u16 sPokeMartItems_FourBadges[] = {
     ITEM_REVIVE,
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };
@@ -259,9 +252,6 @@ static const u16 sPokeMartItems_FiveBadges[] = {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
     ITEM_MAX_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
-    ITEM_MAX_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };
@@ -284,9 +274,6 @@ static const u16 sPokeMartItems_SixBadges[] = {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
     ITEM_MAX_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
-    ITEM_MAX_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };
@@ -310,9 +297,6 @@ static const u16 sPokeMartItems_SevenBadges[] = {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
     ITEM_MAX_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
-    ITEM_MAX_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };
@@ -338,9 +322,6 @@ static const u16 sPokeMartItems_EightBadges[] = {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
     ITEM_MAX_REPEL,
-    ITEM_LURE,
-    ITEM_SUPER_LURE,
-    ITEM_MAX_LURE,
     ITEM_POKE_DOLL,
     ITEM_NONE
 };

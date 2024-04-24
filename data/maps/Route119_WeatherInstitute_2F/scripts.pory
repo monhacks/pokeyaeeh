@@ -99,11 +99,10 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty::
 	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_ExplainCastform2
+	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_ExplainCastform
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	goto Route119_WeatherInstitute_2F_EventScript_ExplainCastform
-	release
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC::
@@ -117,7 +116,6 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC::
 Route119_WeatherInstitute_2F_EventScript_SendCastformToPC::
 	call Common_EventScript_TransferredToPC
 	goto Route119_WeatherInstitute_2F_EventScript_ExplainCastform
-	release
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare::
@@ -128,22 +126,11 @@ Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM_NORMAL
 	return
 
-Route119_WeatherInstitute_2F_EventScript_ExplainCastform2::
-	msgbox Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_CASTFORM
-	msgbox Route119_WeatherInstitute_2F_Text_PleaseHaveThisAsWell, MSGBOX_DEFAULT
-	giveitem ITEM_TM_WEATHER_BALL
-	msgbox Route119_WeatherInstitute_2F_Text_ExplainWeatherBall, MSGBOX_DEFAULT
-	release
-	end
-
 Route119_WeatherInstitute_2F_EventScript_ExplainCastform::
 	msgbox Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_CASTFORM
-	msgbox Route119_WeatherInstitute_2F_Text_PleaseHaveThisAsWell, MSGBOX_DEFAULT
-	giveitem ITEM_TM_WEATHER_BALL
-	msgbox Route119_WeatherInstitute_2F_Text_ExplainWeatherBall, MSGBOX_DEFAULT
-	return
+	release
+	end
 
 Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather::
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather
@@ -304,14 +291,6 @@ Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
 	.string "It might be an odd way of thanking you,\n"
 	.string "but take this Pokémon.$"
 
-Route119_WeatherInstitute_2F_Text_PleaseHaveThisAsWell:
-	.string "Oh!\n"
-	.string "Please have this as well!$"
-
-Route119_WeatherInstitute_2F_Text_ExplainWeatherBall:
-	.string "Like Castform, this move also changes\n"
-	.string "its type based on the weather.\p"
-	.string "Pretty cool, right?$"
 @ Unused
 Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
 	.string "Hm? You don't seem to have any room\n"

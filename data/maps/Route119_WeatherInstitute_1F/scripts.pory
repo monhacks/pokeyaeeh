@@ -71,6 +71,73 @@ Route119_WeatherInstitute_1F_EventScript_Grunt4::
 	msgbox Route119_WeatherInstitute_1F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route119_WeatherInstitute_1F_EventScript_Scientist::
+	lock
+	faceplayer
+	goto_if_set FLAG_MET_WEATHER_INSTITUTE_SCIENTIST, Route119_WeatherInstitute_1F_EventScript_Pokemart
+	msgbox Route119_WeatherInstitute_1F_Text_ThankYouForSavingUs, MSGBOX_DEFAULT
+	giveitem ITEM_HEAT_ROCK, 1
+	giveitem ITEM_DAMP_ROCK, 1
+	giveitem ITEM_SMOOTH_ROCK, 1
+	giveitem ITEM_ICY_ROCK, 1
+	msgbox Route119_WeatherInstitute_1F_Text_GiveWeatherRocks, MSGBOX_DEFAULT
+	setflag FLAG_MET_WEATHER_INSTITUTE_SCIENTIST
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_Pokemart:
+	message Route119_WeatherInstitute_1F_Text_WouldYouLikeToBuyProducts
+	waitmessage
+	pokemart WeatherInstitute_1F__Pokemart_TMsItems
+	msgbox Route119_WeatherInstitute_1F_Text_PleaseVisitAnytime, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+WeatherInstitute_1F__Pokemart_TMsItems:
+	.2byte ITEM_TM_SUNNY_DAY
+	.2byte ITEM_TM_RAIN_DANCE
+	.2byte ITEM_TM_SNOWSCAPE
+	.2byte ITEM_TM_SANDSTORM
+	.2byte ITEM_TM_WEATHER_BALL
+	.2byte ITEM_TM_GRASSY_TERRAIN
+	.2byte ITEM_TM_MISTY_TERRAIN
+	.2byte ITEM_TM_ELECTRIC_TERRAIN
+	.2byte ITEM_TM_PSYCHIC_TERRAIN
+	.2byte ITEM_TM_TERRAIN_PULSE
+	.2byte ITEM_HEAT_ROCK
+	.2byte ITEM_DAMP_ROCK
+	.2byte ITEM_SMOOTH_ROCK
+	.2byte ITEM_ICY_ROCK
+	.2byte ITEM_TERRAIN_EXTENDER
+	.2byte ITEM_NONE
+	release
+	end
+
+Route119_WeatherInstitute_1F_Text_ThankYouForSavingUs:
+	.string "Th-thank you for saving us!\p"
+	.string "… … …\p"
+	.string "Oh! Nice meeting you {PLAYER}!\p"
+	.string "Here's a small reward from me for\n"
+	.string "saving us.$"
+
+Route119_WeatherInstitute_1F_Text_GiveWeatherRocks:
+	.string "These rocks keep weather up for longer\n"
+	.string "periods.\p"
+	.string "Since you're a Trainer, you might find\n"
+	.string "more use for them!\p"
+	.string "If you'd like to buy more, we also sell\n"
+	.string "these items here.$"
+
+
+Route119_WeatherInstitute_1F_Text_WouldYouLikeToBuyProducts:
+	.string "Hello, {PLAYER}.\n"
+	.string "Would you like to buy our latest\l"
+	.string "products?$"
+
+Route119_WeatherInstitute_1F_Text_PleaseVisitAnytime:
+	.string "Please visit anytime!$"
+
 Route119_WeatherInstitute_1F_Text_Grunt1Intro:
 	.string "The Boss got interested in\n"
 	.string "the research they have going here,\l"

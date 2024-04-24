@@ -58,8 +58,8 @@ Route110_EventScript_ItemElixir::
 	finditem ITEM_ELIXIR
 	end
 
-Route111_EventScript_ItemTMSandstorm::
-	finditem ITEM_TM_SANDSTORM
+Route111_EventScript_ItemTMStompingTantrum::
+	finditem ITEM_TM_STOMPING_TANTRUM
 	end
 
 Route111_EventScript_ItemStardust::
@@ -454,12 +454,12 @@ AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone::
 	finditem ITEM_WATER_STONE
 	end
 
-AbandonedShip_HiddenFloorRooms_EventScript_ItemTMRainDance::
-	finditem ITEM_TM_RAIN_DANCE
+AbandonedShip_HiddenFloorRooms_EventScript_ItemTMBubbleBeam::
+	finditem ITEM_TM_BUBBLE_BEAM
 	end
 
-ScorchedSlab_EventScript_ItemTMSunnyDay::
-	finditem ITEM_TM_SUNNY_DAY
+ScorchedSlab_EventScript_ItemTMTemperFlare::
+	finditem ITEM_TM_TEMPER_FLARE
 	end
 
 SafariZone_Northwest_EventScript_ItemTMSolarBlade::
@@ -554,8 +554,8 @@ ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal::
 	finditem ITEM_ICE_HEAL
 	end
 
-ShoalCave_LowTideIceRoom_EventScript_ItemTMHail::
-	finditem ITEM_TM_SNOWSCAPE
+ShoalCave_LowTideIceRoom_EventScript_ItemTMIcyWind::
+	finditem ITEM_TM_ICY_WIND
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::
