@@ -518,6 +518,9 @@ void ScrCmd_givemon(struct ScriptContext *ctx)
     u8 evs[NUM_STATS]        = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
     u8 ivs[NUM_STATS]        = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
     u16 moves[MAX_MON_MOVES] = {move1, move2, move3, move4};
+    
+    if (level == 0)
+        level = ChooseGiveMonLevel();
 
     gSpecialVar_Result = ScriptGiveMonParameterized(species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny);
 }

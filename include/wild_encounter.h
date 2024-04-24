@@ -49,5 +49,6 @@ u8 ChooseWildMonIndex_WaterRock(void);
 u8 ChooseHiddenMonIndex(void);
 u8 ChooseWildMonLevel(void);
 u8 ChooseStaticMonLevel(void);
+u8 ChooseGiveMonLevel(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H

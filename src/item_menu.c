@@ -782,6 +782,16 @@ void CB2_ChooseBerry(void)
     GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, BERRIES_POCKET, CB2_ReturnToFieldContinueScript);
 }
 
+void CB2_ChooseFossil(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_APPRENTICE, TREASURES_POCKET, CB2_ReturnToFieldContinueScript);
+}
+
+void Bag_ChooseFossil(void)
+{
+    SetMainCallback2(CB2_ChooseFossil);
+}
+
 // Choosing berry for Berry Blender or Berry Crush
 void ChooseBerryForMachine(void (*exitCallback)(void))
 {

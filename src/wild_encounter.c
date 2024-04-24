@@ -359,24 +359,48 @@ u8 ChooseStaticMonLevel(void)
 {
     u8 level = 15;
 
-    if (FlagGet(FLAG_BADGE01_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE01_GET))
         level = 20;
-    if (FlagGet(FLAG_BADGE02_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE02_GET))
         level = 35;
-    if (FlagGet(FLAG_BADGE03_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE03_GET))
         level = 40;
-    if (FlagGet(FLAG_BADGE04_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE04_GET))
         level = 45;
-    if (FlagGet(FLAG_BADGE05_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE05_GET))
         level = 50;
-    if (FlagGet(FLAG_BADGE06_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE06_GET))
         level = 55;
-    if (FlagGet(FLAG_BADGE07_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE07_GET))
         level = 60;
-    if (FlagGet(FLAG_BADGE08_GET) == TRUE)
+    if (FlagGet(FLAG_BADGE08_GET))
         level = 65;
-    if (FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE)
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
         level = 70;
+    
+    return level;
+}
+
+u8 ChooseGiveMonLevel(void)
+{
+    u8 level = 15;
+
+    if (FlagGet(FLAG_BADGE01_GET))
+        level = 20;
+    if (FlagGet(FLAG_BADGE02_GET))
+        level = 35;
+    if (FlagGet(FLAG_BADGE03_GET))
+        level = 45;
+    if (FlagGet(FLAG_BADGE04_GET))
+        level = 50;
+    if (FlagGet(FLAG_BADGE05_GET))
+        level = 55;
+    if (FlagGet(FLAG_BADGE06_GET))
+        level = 60;
+    if (FlagGet(FLAG_BADGE07_GET))
+        level = 65;
+    if (FlagGet(FLAG_BADGE08_GET))
+        level = 75;
     
     return level;
 }
