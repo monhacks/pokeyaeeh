@@ -13831,24 +13831,19 @@ static const struct TrainerMon sParty_Leaf[] = {
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
     .lvl = 100,
-    .species = SPECIES_SHARPEDO,
-    .ability = ABILITY_SPEED_BOOST,
-    .heldItem = ITEM_SHARPEDONITE,
-    .moves = {MOVE_PROTECT, MOVE_CRUNCH, MOVE_FAKE_OUT, MOVE_LIQUIDATION}
+    .species = SPECIES_GROVYLE,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_BULLET_SEED, MOVE_SCALE_SHOT, MOVE_NONE, MOVE_NONE}
     }
 };
 
 static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     {
-        .species = SPECIES_NIDOQUEEN,
-        .heldItem = ITEM_NIDOQUEENITE,
-        .ability = ABILITY_SHEER_FORCE,
-        .lvl = 100,
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
-        .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
-        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_ICE_BEAM, MOVE_EARTH_POWER, MOVE_THUNDERBOLT}
-    },
+    .lvl = 100,
+    .species = SPECIES_COMBUSKEN,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_FLAME_WHEEL, MOVE_DOUBLE_KICK, MOVE_NONE, MOVE_NONE}
+    }
 };
 
 static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suck ass ngl

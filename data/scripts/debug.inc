@@ -120,10 +120,7 @@ Text_TestDefeat:
     .string "Damn.$"
 
 Debug_EventScript_Script_1::
-	setwildbattle SPECIES_KYOGRE, 0 @ Gets value from ChooseStaticMonLevel
-	msgbox Text_TestIntro, MSGBOX_AUTOCLOSE
-	special StartGroudonKyogreBattle
-	end
+	givemon SPECIES_PALAFIN_ZERO, 60, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 4, 0, 0, 252, 31, 31, 31, 31, 0, 31, MOVE_JET_PUNCH, MOVE_FLIP_TURN, MOVE_WAVE_CRASH, MOVE_CLOSE_COMBAT, TRUE
 
 Debug_EventScript_Script_2::
     cleartrainerflag TRAINER_ERIC

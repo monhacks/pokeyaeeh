@@ -362,8 +362,8 @@ GraniteCave_B2F_EventScript_ItemRepel::
 	finditem ITEM_REPEL
 	end
 
-GraniteCave_B2F_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+GraniteCave_B2F_EventScript_ItemAggronite::
+	finditem ITEM_AGGRONITE
 	end
 
 JaggedPass_EventScript_ItemBurnHeal::

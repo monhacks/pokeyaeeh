@@ -122,7 +122,7 @@ static void SpriteCB_UnusedBattleInit_Main(struct Sprite *sprite);
 static void TrySpecialEvolution(void);
 static u32 Crc32B (const u8 *data, u32 size);
 static u32 GeneratePartyHash(const struct Trainer *trainer, u32 i);
-u16 HasLevelEvolution(u16 species, u8 level);
+u16 HasLevelEvolution(u16 species, u8 level, u16 item);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -2030,11 +2030,12 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            if(HasLevelEvolution(partyData[i].species, level))
-                CreateMon(&party[i], HasLevelEvolution(partyData[i].species, level), level, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+
+            if(HasLevelEvolution(partyData[i].species, level, partyData[i].heldItem))
+                CreateMon(&party[i], HasLevelEvolution(partyData[i].species, level, partyData[i].heldItem), level, 0, TRUE, personalityValue, otIdType, fixedOtId);
             else
                 CreateMon(&party[i], partyData[i].species, level, 0, TRUE, personalityValue, otIdType, fixedOtId);
-            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[i].iv));
@@ -6150,14 +6151,17 @@ bool32 IsWildMonSmart(void)
 #endif
 }
 
-u16 HasLevelEvolution(u16 species, u8 level)
+u16 HasLevelEvolution(u16 species, u8 level, u16 item)
 {
-	if(gEvolutionTable[species][0].param && gEvolutionTable[species][0].param <= level)
+    if (item != ITEM_EVIOLITE)
 	{
-		if(HasLevelEvolution(gEvolutionTable[species][0].targetSpecies, level))
-			return HasLevelEvolution(gEvolutionTable[species][0].targetSpecies, level);
-		else
-			return gEvolutionTable[species][0].targetSpecies;
-	}
+        if (gEvolutionTable[species][0].param && gEvolutionTable[species][0].param <= level)
+		{
+			if(HasLevelEvolution(gEvolutionTable[species][0].targetSpecies, level, item))
+				return HasLevelEvolution(gEvolutionTable[species][0].targetSpecies, level, item);
+			else
+				return gEvolutionTable[species][0].targetSpecies;
+		}
+    }
 	return 0;
 }
