@@ -72,6 +72,9 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_RayquazaSpotlight         @ FLDEFF_RAYQUAZA_SPOTLIGHT
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
+	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
+	.4byte gFieldEffectScript_RockClimbDust             @ FLDEFF_ROCK_CLIMB_DUST
+	.4byte gFieldEffectScript_CaveDust                  @ FLDEFF_CAVE_DUST
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_loadfadedpaldaynight_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_ExclamationMarkIcon
@@ -343,3 +346,16 @@ gFieldEffectScript_DestroyDeoxysRock::
 gFieldEffectScript_MoveDeoxysRock::
 	field_eff_callnative FldEff_MoveDeoxysRock
 	field_eff_end
+
+@ NEW
+gFieldEffectScript_UseRockClimb::
+	field_eff_callnative FldEff_UseRockClimb
+	field_eff_end
+
+gFieldEffectScript_RockClimbDust::
+	field_eff_loadfadedpal_callnative gSpritePalette_BigDust, FldEff_RockClimbDust
+	field_eff_end
+
+gFieldEffectScript_CaveDust::
+    field_eff_loadfadedpal_callnative gSpritePalette_CaveDust, FldEff_CaveDust
+    field_eff_end
