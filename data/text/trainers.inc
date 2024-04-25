@@ -923,7 +923,7 @@ Route109_Text_GwenPostBattle:
 
 Route109_Text_CarterIntro:
 	.string "Wahahah! This dude's going to catch\n"
-	.string "himself a big one!$"
+	.string "himself on fiyaa!$"
 
 Route109_Text_CarterDefeated:
 	.string "This dude just lost one…$"

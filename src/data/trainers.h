@@ -508,7 +508,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_FOSTER] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .trainerName = _("Foster"),
@@ -1718,7 +1718,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_JEROME] =
     {
-        .trainerClass = TRAINER_CLASS_SWIMMER_M,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
         .trainerName = _("Jerome"),
@@ -3707,7 +3707,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Andrew),
     },
 
-    [TRAINER_IVAN] =
+    [TRAINER_IVAN] = //Route Boss
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -3788,7 +3788,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerPic = TRAINER_PIC_KINDLER,
         .trainerName = _("Wade"),
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
@@ -3797,7 +3797,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CARTER] =
     {
-        .trainerClass = TRAINER_CLASS_FISHERMAN,
+        .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .trainerName = _("Carter"),
@@ -5390,9 +5390,9 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_AmyAndLiv6),
     },
 
-    [TRAINER_HUEY] =
+    [TRAINER_HUEY] = //Route Boss
     {
-        .trainerClass = TRAINER_CLASS_SAILOR,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
         .trainerName = _("Huey"),
@@ -7634,7 +7634,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Chris),
     },
 
-    [TRAINER_DAWSON] =
+    [TRAINER_DAWSON] = //Route Boss
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,

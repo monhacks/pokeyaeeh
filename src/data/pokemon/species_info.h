@@ -5715,10 +5715,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_JUMPLUFF] =
     {
         .baseHP        = 75,
-        .baseAttack    = 65,
+        .baseAttack    = 85,
         .baseDefense   = 70,
         .baseSpeed     = 110,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 75,
         #if P_UPDATED_STATS >= GEN_6
             .baseSpDefense = 95,
         #else
@@ -10928,8 +10928,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseHP        = 70,
         .baseAttack    = 94,
         .baseDefense   = 50,
-        .baseSpeed     = 66,
-        .baseSpAttack  = 94,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 104,
         .baseSpDefense = 50,
         .types = { TYPE_BUG, TYPE_FLYING},
         .catchRate = 45,
@@ -12834,11 +12834,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_EMBOAR] =
     {
-        .baseHP        = 110,
+        .baseHP        = 125,
         .baseAttack    = 123,
         .baseDefense   = 65,
         .baseSpeed     = 65,
-        .baseSpAttack  = 100,
+        .baseSpAttack  = 85,
         .baseSpDefense = 65,
         .types = { TYPE_FIRE, TYPE_FIGHTING},
         .catchRate = 45,
