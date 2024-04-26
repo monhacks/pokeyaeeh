@@ -4182,6 +4182,7 @@ const u16 gEggMoves[] = {
               MOVE_AMNESIA,
               MOVE_AQUA_RING,
               MOVE_AROMATIC_MIST,
+              MOVE_BOOMBURST,
               MOVE_CHARM,
               MOVE_LIFE_DEW,
               MOVE_PERISH_SONG,

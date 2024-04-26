@@ -804,10 +804,34 @@ static const struct TrainerMon sParty_Lola5[] = {
 
 static const struct TrainerMon sParty_Ricky1[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 13,
-    .species = SPECIES_ZIGZAGOON,
-    .moves = {MOVE_SAND_ATTACK, MOVE_HEADBUTT, MOVE_TAIL_WHIP, MOVE_SURF}
+        .species = SPECIES_SWAMPERT,
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = ABILITY_DAMP,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_EARTHQUAKE, MOVE_BULK_UP, MOVE_WATERFALL, MOVE_ICE_PUNCH},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_BARBARACLE,
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = ABILITY_TOUGH_CLAWS,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(248, 248, 0, 0, 0, 12),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE, MOVE_POISON_JAB, MOVE_ROCK_SLIDE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_ARAQUANID,
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = ABILITY_WATER_BUBBLE,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(248, 252, 0, 0, 0, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_LEECH_LIFE, MOVE_LIQUIDATION, MOVE_POISON_JAB, MOVE_TRAILBLAZE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
 
