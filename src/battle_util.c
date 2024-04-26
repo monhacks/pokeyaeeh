@@ -10825,7 +10825,7 @@ bool32 CanUltraBurst(u32 battler)
 
     // Check if Player has a Z Ring
     if ((GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT))
-     && !CheckBagHasItem(ITEM_Z_POWER_RING, 1))
+     && !CheckBagHasItem(ITEM_MEGA_RING, 1))
         return FALSE;
 
     // Check if trainer already ultra bursted a pokemon.
@@ -10856,13 +10856,8 @@ bool32 CanUltraBurst(u32 battler)
     // Check if there is an entry in the evolution table for Ultra Burst.
     if (GetBattleFormChangeTargetSpecies(battler, FORM_CHANGE_BATTLE_ULTRA_BURST) != SPECIES_NONE)
     {
-        if (itemId == ITEM_ENIGMA_BERRY_E_READER)
-            holdEffect = gEnigmaBerries[battler].holdEffect;
-        else
-            holdEffect = ItemId_GetHoldEffect(itemId);
-
         // Can Ultra Burst via Z Crystal.
-        if (holdEffect == HOLD_EFFECT_Z_CRYSTAL)
+        if (itemId == ITEM_ULTRANECROZIUM_Z)
             return TRUE;
     }
 

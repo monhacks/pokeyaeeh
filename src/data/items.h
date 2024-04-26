@@ -4757,12 +4757,12 @@ const struct Item gItems[] =
     {
         .name = _("U-Necrozium Z"),
         .price = 0,
-        .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sUltranecroziumZDesc,
         .pocket = POCKET_MEGA_STONES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 255  //signature z move
+        .flingPower = 80, // Z Crystal, but we don't use Z moves in the hack, so its basically a Mega.
     },
 
 // Species-specific Held Items
