@@ -4281,11 +4281,7 @@ static void Cmd_getexp(void)
                 // buffer 'gained' or 'gained a boosted'
                 PREPARE_STRING_BUFFER(gBattleTextBuff2, i);
 
-                if (wasSentOut || holdEffect == HOLD_EFFECT_EXP_SHARE)
-                {
-                    PrepareStringBattle(STRINGID_PKMNGAINED1EXP, gBattleStruct->expGetterBattlerId); // prints "1 Exp. Point" instead "1 Exp. Points"
-                }
-                else if (IsGen6ExpShareEnabled() && !gBattleStruct->teamGotExpMsgPrinted) // Print 'the rest of your team got exp' message once, when all of the sent-in mons were given experience
+                if (IsGen6ExpShareEnabled() && !gBattleStruct->teamGotExpMsgPrinted) // Print 'the rest of your team got exp' message once, when all of the sent-in mons were given experience
                 {
                     gLastUsedItem = ITEM_EXP_SHARE;
                     PrepareStringBattle(STRINGID_TEAMGAINEDEXP, gBattleStruct->expGetterBattlerId);
