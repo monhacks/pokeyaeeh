@@ -7567,8 +7567,34 @@ static const struct TrainerMon sParty_Huey[] = { // Route boss
 
 static const struct TrainerMon sParty_Edmond[] = {
     {
-    .lvl = 13,
-    .species = SPECIES_WINGULL,
+        .species = SPECIES_SINISTCHA,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = ABILITY_HEATPROOF,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(108, 0, 60, 0, 252, 88),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_MATCHA_GOTCHA, MOVE_SCALD, MOVE_STRENGTH_SAP, MOVE_RAGE_POWDER}
+    },
+    {
+        .species = SPECIES_CLODSIRE,
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = ABILITY_WATER_ABSORB,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(116, 64, 164, 0, 0, 164),
+        .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
+        .moves = {MOVE_HIGH_HORSEPOWER, MOVE_LIQUIDATION, MOVE_GUNK_SHOT, MOVE_IRON_HEAD},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_BRUXISH,
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ability = ABILITY_STRONG_JAW,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_PSYCHIC_FANGS, MOVE_AQUA_TAIL, MOVE_CRUNCH, MOVE_ICE_FANG},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
 
@@ -11075,8 +11101,34 @@ static const struct TrainerMon sParty_Darian[] = {
 
 static const struct TrainerMon sParty_Hailey[] = {
     {
-    .lvl = 13,
-    .species = SPECIES_MARILL,
+        .species = SPECIES_CLOYSTER,
+        .heldItem = ITEM_WHITE_HERB,
+        .ability = ABILITY_SKILL_LINK,
+        .lvl = 37,
+        .ev = TRAINER_PARTY_EVS(0, 176, 0, 176, 156, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
+        .moves = {MOVE_ICICLE_CRASH, MOVE_ROCK_BLAST, MOVE_BUBBLE_BEAM, MOVE_SHELL_SMASH},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_GOREBYSS,
+        .heldItem = ITEM_WHITE_HERB,
+        .ability = ABILITY_SWIFT_SWIM,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_BUBBLE_BEAM, MOVE_DAZZLING_GLEAM, MOVE_SIGNAL_BEAM, MOVE_TOXIC}
+    },
+    {
+        .species = SPECIES_DUGTRIO,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = ABILITY_ARENA_TRAP,
+        .lvl = 36,
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_ROCK_SLIDE, MOVE_HIGH_HORSEPOWER, MOVE_STEALTH_ROCK, MOVE_AERIAL_ACE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
 
