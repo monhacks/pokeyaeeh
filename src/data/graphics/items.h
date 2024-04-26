@@ -261,6 +261,9 @@ const u32 gItemIcon_ExpCandyL[] = INCBIN_U32("graphics/items/icons/exp_candy_l.4
 const u32 gItemIcon_ExpCandyXL[] = INCBIN_U32("graphics/items/icons/exp_candy_xl.4bpp.lz");
 const u32 gItemIconPalette_ExpCandies[] = INCBIN_U32("graphics/items/icon_palettes/exp_candies.gbapal.lz");
 
+const u32 gItemIcon_CandyBox[] = INCBIN_U32("graphics/items/icons/candy_box.4bpp.lz");
+const u32 gItemIconPalette_CandyBox[] = INCBIN_U32("graphics/items/icon_palettes/candy_box.gbapal.lz");
+
 const u32 gItemIcon_DynamaxCandy[] = INCBIN_U32("graphics/items/icons/dynamax_candy.4bpp.lz");
 const u32 gItemIconPalette_DynamaxCandy[] = INCBIN_U32("graphics/items/icon_palettes/dynamax_candy.gbapal.lz");
 

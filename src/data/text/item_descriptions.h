@@ -4438,3 +4438,8 @@ static const u8 sNidoqueeniteDesc[] = _(
     "This stone enables\n"
     "Nidoqueen to Mega\n"
     "Evolve in battle.");
+
+static const u8 sCandyBoxDesc[] = _(
+    "A candy box filled\n"
+    "with treats! Maxes\n"
+    "out a Pokémon's lvl.");

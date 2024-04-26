@@ -1156,6 +1156,8 @@
 #define ITEM_METAL_ALLOY 864
 #define ITEM_STELLAR_TERA_SHARD 865
 
+// Custom items
+
 // Hidden Power Crystals
 #define ITEM_FIRE_CRYSTAL 866
 #define ITEM_WATER_CRYSTAL 867
@@ -1179,7 +1181,9 @@
 // New Mega stones
 #define ITEM_NIDOQUEENITE 883
 
-#define ITEMS_COUNT 884
+#define ITEM_CANDY_BOX 884
+
+#define ITEMS_COUNT 885
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
