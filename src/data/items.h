@@ -1275,7 +1275,7 @@ const struct Item gItems[] =
     {
         .name = _("Exp. Candy XS"),
         .price = 20,
-        .holdEffectParam = EXP_100,
+        .holdEffectParam = EXP_500,
         .description = sExpCandyXSDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -1287,7 +1287,7 @@ const struct Item gItems[] =
     {
         .name = _("Exp. Candy S"),
         .price = 240,
-        .holdEffectParam = EXP_800,
+        .holdEffectParam = EXP_1000,
         .description = sExpCandySDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -1299,7 +1299,7 @@ const struct Item gItems[] =
     {
         .name = _("Exp. Candy M"),
         .price = 1000,
-        .holdEffectParam = EXP_3000,
+        .holdEffectParam = EXP_5000,
         .description = sExpCandyMDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -1311,7 +1311,7 @@ const struct Item gItems[] =
     {
         .name = _("Exp. Candy L"),
         .price = 3000,
-        .holdEffectParam = EXP_10000,
+        .holdEffectParam = EXP_25000,
         .description = sExpCandyLDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -1323,7 +1323,7 @@ const struct Item gItems[] =
     {
         .name = _("Exp. Candy XL"),
         .price = 10000,
-        .holdEffectParam = EXP_30000,
+        .holdEffectParam = EXP_50000,
         .description = sExpCandyXLDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
