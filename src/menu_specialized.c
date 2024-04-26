@@ -770,7 +770,7 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
 		break;
 	}
     x = GetStringCenterAlignXOffset(FONT_NORMAL, str, 128);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_SHORT_NARROW, str, x, 1, TEXT_SKIP_DRAW, NULL);
 
     str = gText_MoveRelearnerPP;
     AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NARROWER, str, 4, 41, TEXT_SKIP_DRAW, NULL);
@@ -823,7 +823,7 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
     else
         str = gNotDoneYetDescription;
 
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NARROW, str, 0, 65, 0, NULL);
+    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_SHORT_NARROW, str, 0, 65, 0, NULL);
 }
 
 static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)

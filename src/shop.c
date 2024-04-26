@@ -850,8 +850,8 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         if (ItemId_GetImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
         {
             StringCopy(gStringVar4, gText_SoldOut);
-            x = GetStringRightAlignXOffset(FONT_NARROWER, gStringVar4, 120);
-           AddTextPrinterParameterized4(windowId, FONT_NARROWER, x, y, 0, 0, sShopBuyMenuTextColors[COLORID_ITEM_LIST], TEXT_SKIP_DRAW, gStringVar4);
+            x = GetStringRightAlignXOffset(FONT_SMALL_NARROWER, gStringVar4, 120);
+           AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, x, y, 0, 0, sShopBuyMenuTextColors[COLORID_ITEM_LIST], TEXT_SKIP_DRAW, gStringVar4);
         }
         else
         {
