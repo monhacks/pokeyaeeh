@@ -162,9 +162,20 @@ Debug_EventScript_Script_8::
 	end
 
 Debug_EventScript_CHEAT_Script_1::
-    giveitem ITEM_RARE_CANDY, 999
+	message Text_Candies
+	playfanfare MUS_OBTAIN_ITEM
+    additem ITEM_RARE_CANDY, 999
+	additem ITEM_EXP_CANDY_XS, 999
+	additem ITEM_EXP_CANDY_S, 999
+	additem ITEM_EXP_CANDY_M, 999
+	additem ITEM_EXP_CANDY_L, 999
+	additem ITEM_EXP_CANDY_XL, 999
+	waitfanfare
 	closemessage
 	end
+
+Text_Candies:
+	.string "Here's your candies!$"
 
 Debug_EventScript_CHEAT_Script_2::
 Debug_EventScript_CHEAT_Script_3::

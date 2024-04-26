@@ -1259,7 +1259,8 @@ static u8 Debug_CheckToggleFlags(u8 id)
                 FlagGet(FLAG_BADGE05_GET) &&
                 FlagGet(FLAG_BADGE06_GET) &&
                 FlagGet(FLAG_BADGE07_GET) &&
-                FlagGet(FLAG_BADGE08_GET);
+                FlagGet(FLAG_BADGE08_GET) &&
+                FlagGet(FLAG_SYS_GAME_CLEAR);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS:
             result = FlagGet(FLAG_SYS_FRONTIER_PASS);
@@ -2779,7 +2780,7 @@ static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
 
 static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
 {
-    if (FlagGet(FLAG_BADGE08_GET))
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         PlaySE(SE_PC_OFF);
         FlagClear(FLAG_BADGE01_GET);
@@ -2790,6 +2791,7 @@ static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
         FlagClear(FLAG_BADGE06_GET);
         FlagClear(FLAG_BADGE07_GET);
         FlagClear(FLAG_BADGE08_GET);
+        FlagClear(FLAG_SYS_GAME_CLEAR);
     }
     else
     {
@@ -2802,6 +2804,7 @@ static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
         FlagSet(FLAG_BADGE06_GET);
         FlagSet(FLAG_BADGE07_GET);
         FlagSet(FLAG_BADGE08_GET);
+        FlagSet(FLAG_SYS_GAME_CLEAR);
     }
 }
 

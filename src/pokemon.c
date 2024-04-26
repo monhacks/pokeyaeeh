@@ -9524,8 +9524,10 @@ u8 GetLevelCap(void)
 {
     u8 currentLevelCap;
 
-    if (FlagGet(FLAG_BADGE08_GET)) // Elite Four: 100
-        currentLevelCap = 101;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR)) // Postgame: 100
+        currentLevelCap = 100;
+    else if (FlagGet(FLAG_BADGE08_GET)) // Elite Four: 85
+        currentLevelCap = 85;
     else if (FlagGet(FLAG_BADGE07_GET)) // Gym 8: 75
         currentLevelCap = 75;
     else if (FlagGet(FLAG_BADGE06_GET)) // Gym 7: 65
