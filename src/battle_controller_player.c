@@ -2025,6 +2025,15 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 return COLOR_IMMUNE;
         }
         break;
+        case EFFECT_LEVEL_DAMAGE:
+        case EFFECT_SUPER_FANG:
+        case EFFECT_COUNTER:
+        case EFFECT_MIRROR_COAT:
+        {
+            if (modifier != 0)
+                return COLOR_EFFECTIVE;
+        }
+        break;
     }
 
     // Ability cases
