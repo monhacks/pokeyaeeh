@@ -2090,7 +2090,7 @@ static const u8 sWildChargeDescription[] = _(
 
 static const u8 sDrillRunDescription[] = _(
     "Spins its body like a drill.\n"
-    "High critical-hit ratio.");
+    "may lower Defense.");
 
 static const u8 sDualChopDescription[] = _(
     "Attacks with brutal hits\n"
@@ -5144,7 +5144,7 @@ static const u8 sMoveFourLineDescription_DragonTail[] = _("The foe is knocked\na
 static const u8 sMoveFourLineDescription_WorkUp[] = _("The user is roused,\nand its Attack and\nSp. Atk stats\nincrease.");
 static const u8 sMoveFourLineDescription_Electroweb[] = _("The foe is caught\nin an electric net.\nThis lowers their\nSpeed stat.");
 static const u8 sMoveFourLineDescription_WildCharge[] = _("A reckless electric\ncharge which harms\nthe user. It may\n paralyze the foe.");
-static const u8 sMoveFourLineDescription_DrillRun[] = _("Rotating its body\nlike a drill, the\nuser crashes into\nthe foe.");
+static const u8 sMoveFourLineDescription_DrillRun[] = _("The user spins and\naims its body at the\nfoe. May lower the\nfoe's Defense.");
 static const u8 sMoveFourLineDescription_DualChop[] = _("The foe is hit with\nbrutal strikes\ntwice in a row.");
 static const u8 sMoveFourLineDescription_HeartStamp[] = _("The foe's guard\ndrops, and the user\nstrikes. This may\ncause flinching.");
 static const u8 sMoveFourLineDescription_HornLeech[] = _("A horn attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.");

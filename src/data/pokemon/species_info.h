@@ -25445,9 +25445,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_LOKIX] =
     {
         .baseHP        = 71,
-        .baseAttack    = 102,
+        .baseAttack    = 112,
         .baseDefense   = 78,
-        .baseSpeed     = 92,
+        .baseSpeed     = 102,
         .baseSpAttack  = 52,
         .baseSpDefense = 55,
         .types = { TYPE_BUG, TYPE_DARK },
@@ -25459,7 +25459,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 0,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
-        .abilities = {ABILITY_SWARM, ABILITY_NONE, ABILITY_TINTED_LENS},
+        .abilities = {ABILITY_SWARM, ABILITY_TINTED_LENS, ABILITY_SPEED_BOOST},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
     },

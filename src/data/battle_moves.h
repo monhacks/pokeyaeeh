@@ -7158,7 +7158,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SEED_BOMB] =
     {
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 90,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 15,
@@ -9287,12 +9287,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_DRILL_RUN] =
     {
-        .effect = EFFECT_HIT,
-        .power = 80,
+        .effect = EFFECT_DEFENSE_DOWN_HIT,
+        .power = 90,
         .type = TYPE_GROUND,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 10,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
@@ -11013,7 +11013,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_HIT,
         .power = 95,
         .type = TYPE_GROUND,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
