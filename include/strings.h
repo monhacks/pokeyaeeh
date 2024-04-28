@@ -3142,6 +3142,7 @@ extern const u8 LilycoveCity_DepartmentStore_4F_Text_AquaTailDesc[];
 extern const u8 LilycoveCity_DepartmentStore_4F_Text_TailwindDesc[];
 
 extern const u8 gText_PokeVial_Success[];
+extern const u8 gText_PokeVial_HealthFull[];
 extern const u8 gText_PokeVial_Failure[];
 
 #endif // GUARD_STRINGS_H

@@ -1917,5 +1917,6 @@ const u8 gText_Whirlpool[] = _("Whirlpool");
 const u8 gText_AquaTail[] = _("Aqua Tail");
 const u8 gText_Tailwind[] = _("Tailwind");
 
-const u8 gText_PokeVial_Success[] = _("PokéVial successfully healed party.\nUses left: {STR_VAR_1}.{PAUSE_UNTIL_PRESS}");
-const u8 gText_PokeVial_Failure[] = _("PokéVial is drained.\nHeal at a Pokémon Center to replenish.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PokeVial_Success[] = _("PokéVial successfully healed party!\nUses left: {STR_VAR_1}.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PokeVial_HealthFull[] = _("Party is already at full health!{PAUSE_UNTIL_PRESS}");
+const u8 gText_PokeVial_Failure[] = _("PokéVial is drained!\nHeal at a Pokémon Center to replenish.{PAUSE_UNTIL_PRESS}");

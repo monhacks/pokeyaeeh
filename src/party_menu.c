@@ -8462,6 +8462,32 @@ void ItemUseCB_Mints(u8 taskId, TaskFunc task)
     gTasks[taskId].func = Task_Mints;
 }
 
+bool32 IsPlayerPartyHealed(void)
+{
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_HP) != GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP))
+            return FALSE;
+
+        if (GetMonData(&gPlayerParty[i], MON_DATA_STATUS) == STATUS1_ANY)
+            return FALSE;
+
+        if (GetMonData(&gPlayerParty[i], MON_DATA_PP1) != gBattleMoves[GetMonData(&gPlayerParty[i], MON_DATA_MOVE1)].pp)
+                return FALSE;
+        if (GetMonData(&gPlayerParty[i], MON_DATA_PP2) != gBattleMoves[GetMonData(&gPlayerParty[i], MON_DATA_MOVE2)].pp)
+                return FALSE;
+        if (GetMonData(&gPlayerParty[i], MON_DATA_PP3) != gBattleMoves[GetMonData(&gPlayerParty[i], MON_DATA_MOVE3)].pp)
+                return FALSE;
+        if (GetMonData(&gPlayerParty[i], MON_DATA_PP4) != gBattleMoves[GetMonData(&gPlayerParty[i], MON_DATA_MOVE4)].pp)
+                return FALSE;
+
+    }
+
+    return TRUE;
+}
+
 #undef tState
 #undef tMonId
 #undef tnewHPIV

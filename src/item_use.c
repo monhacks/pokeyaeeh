@@ -1454,18 +1454,30 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
 
     }
     else
-    {
-        PlaySE(SE_RG_POKE_JUMP_SUCCESS);
-        HealPlayerParty();
-        vialUsages++;
-        VarSet(VAR_POKEVIAL_USAGES, vialUsages);
-        ConvertIntToDecimalStringN(gStringVar1, vialUsagesMax - vialUsages, STR_CONV_MODE_LEFT_ALIGN, 2);
-        if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
-            DisplayItemMessageOnField(taskId, gText_PokeVial_Success, Task_CloseCantUseKeyItemMessage);
-        else if (!InBattlePyramid())
-            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVial_Success, CloseItemMessage);
+    {   
+        if (IsPlayerPartyHealed() == TRUE)
+        {
+            if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+                DisplayItemMessageOnField(taskId, gText_PokeVial_HealthFull, Task_CloseCantUseKeyItemMessage);
+            else if (!InBattlePyramid())
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVial_HealthFull, CloseItemMessage);
+            else
+                DisplayItemMessageInBattlePyramid(taskId, gText_PokeVial_HealthFull, Task_CloseBattlePyramidBagMessage);
+        }
         else
-            DisplayItemMessageInBattlePyramid(taskId, gText_PokeVial_Success, Task_CloseBattlePyramidBagMessage);
+        {
+            PlaySE(SE_RG_POKE_JUMP_SUCCESS);
+            HealPlayerParty();
+            vialUsages++;
+            VarSet(VAR_POKEVIAL_USAGES, vialUsages);
+            ConvertIntToDecimalStringN(gStringVar1, vialUsagesMax - vialUsages, STR_CONV_MODE_LEFT_ALIGN, 2);
+            if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+                DisplayItemMessageOnField(taskId, gText_PokeVial_Success, Task_CloseCantUseKeyItemMessage);
+            else if (!InBattlePyramid())
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVial_Success, CloseItemMessage);
+            else
+                DisplayItemMessageInBattlePyramid(taskId, gText_PokeVial_Success, Task_CloseBattlePyramidBagMessage);
+        }
     }
 }
 

@@ -111,5 +111,6 @@ void ItemUseCB_HiddenPowerCrystals(u8 taskId, TaskFunc task);
 u16 GetTMHMMoves(u16 position);
 void ItemUseCB_Mints(u8 taskId, TaskFunc task);
 void CB2_ReturnToPartyMenuFromSummaryScreen(void);
+bool32 IsPlayerPartyHealed(void);
 
 #endif // GUARD_PARTY_MENU_H

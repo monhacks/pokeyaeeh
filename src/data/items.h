@@ -896,8 +896,8 @@ const struct Item gItems[] =
         .price = 10000,
         .description = sPPUpDesc,
         .pocket = POCKET_POWER_UP,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_PPUp,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 
@@ -907,8 +907,8 @@ const struct Item gItems[] =
         .price = 10000,
         .description = sPPMaxDesc,
         .pocket = POCKET_POWER_UP,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_PPUp,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 
