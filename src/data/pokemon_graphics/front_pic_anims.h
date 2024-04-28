@@ -10874,6 +10874,21 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Koraidon);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Miraidon);
 PLACEHOLDER_ANIM_SINGLE_FRAME(WalkingWake);
 PLACEHOLDER_ANIM_SINGLE_FRAME(IronLeaves);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Dipplin);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Poltchagiest);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Sinistcha);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Okidogi);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Munkidori);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Fezandipiti);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Ogerpon);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Archaludon);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Hydrapple);
+PLACEHOLDER_ANIM_SINGLE_FRAME(GougingFire);
+PLACEHOLDER_ANIM_SINGLE_FRAME(RagingBolt);
+PLACEHOLDER_ANIM_SINGLE_FRAME(IronBoulder);
+PLACEHOLDER_ANIM_SINGLE_FRAME(IronCrown);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Terapagos);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Pecharunt);
 #endif
 
 #define SINGLE_ANIMATION(name)                      \
@@ -11958,6 +11973,21 @@ SINGLE_ANIMATION(Koraidon);
 SINGLE_ANIMATION(Miraidon);
 SINGLE_ANIMATION(WalkingWake);
 SINGLE_ANIMATION(IronLeaves);
+SINGLE_ANIMATION(Dipplin);
+SINGLE_ANIMATION(Poltchagiest);
+SINGLE_ANIMATION(Sinistcha);
+SINGLE_ANIMATION(Okidogi);
+SINGLE_ANIMATION(Munkidori);
+SINGLE_ANIMATION(Fezandipiti);
+SINGLE_ANIMATION(Ogerpon);
+SINGLE_ANIMATION(Archaludon);
+SINGLE_ANIMATION(Hydrapple);
+SINGLE_ANIMATION(GougingFire);
+SINGLE_ANIMATION(RagingBolt);
+SINGLE_ANIMATION(IronBoulder);
+SINGLE_ANIMATION(IronCrown);
+SINGLE_ANIMATION(Terapagos);
+SINGLE_ANIMATION(Pecharunt);
 #endif
 SINGLE_ANIMATION(VenusaurMega);
 SINGLE_ANIMATION(CHARIZARD_MEGA_X);
@@ -13197,6 +13227,21 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
     [SPECIES_MIRAIDON]                          = sAnims_Miraidon,
     [SPECIES_WALKING_WAKE]                      = sAnims_WalkingWake,
     [SPECIES_IRON_LEAVES]                       = sAnims_IronLeaves,
+    [SPECIES_DIPPLIN]                           = sAnims_Dipplin,
+    [SPECIES_POLTCHAGEIST_COUNTERFEIT]          = sAnims_Poltchagiest,
+    [SPECIES_SINISTCHA_UNREMARKABLE]            = sAnims_Sinistcha,   
+    [SPECIES_OKIDOGI]                           = sAnims_Okidogi,
+    [SPECIES_MUNKIDORI]                         = sAnims_Munkidori,
+    [SPECIES_FEZANDIPITI]                       = sAnims_Fezandipiti,
+    [SPECIES_OGERPON_TEAL_MASK]                 = sAnims_Ogerpon,
+    [SPECIES_ARCHALUDON]                        = sAnims_Archaludon,
+    [SPECIES_HYDRAPPLE]                         = sAnims_Hydrapple,
+    [SPECIES_GOUGING_FIRE]                      = sAnims_GougingFire,
+    [SPECIES_RAGING_BOLT]                       = sAnims_RagingBolt,
+    [SPECIES_IRON_BOULDER]                      = sAnims_IronBoulder,
+    [SPECIES_IRON_CROWN]                        = sAnims_IronCrown,
+    [SPECIES_TERAPAGOS_NORMAL]                  = sAnims_Terapagos,
+    [SPECIES_PECHARUNT]                         = sAnims_Pecharunt,
 #endif
     // Mega/Primal Forms
     [SPECIES_VENUSAUR_MEGA]                  = sAnims_VenusaurMega,
@@ -13571,6 +13616,16 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
     [SPECIES_TATSUGIRI_STRETCHY]             = sAnims_Tatsugiri,
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT]      = sAnims_Dudunsparce,
     [SPECIES_GIMMIGHOUL_ROAMING]             = sAnims_Gimmighoul,
+    [SPECIES_POLTCHAGEIST_ARTISAN]           = sAnims_Poltchagiest,
+    [SPECIES_SINISTCHA_MASTERPIECE]          = sAnims_Sinistcha,
+    [SPECIES_OGERPON_WELLSPRING_MASK]        = sAnims_Ogerpon,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK]       = sAnims_Ogerpon,
+    [SPECIES_OGERPON_CORNERSTONE_MASK]       = sAnims_Ogerpon,
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA]   = sAnims_Ogerpon,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA]  = sAnims_Ogerpon,
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA]  = sAnims_Ogerpon,
+    [SPECIES_TERAPAGOS_TERASTAL]             = sAnims_Terapagos,
+    [SPECIES_TERAPAGOS_STELLAR]              = sAnims_Terapagos,
 #endif
     [SPECIES_TAUROS_PALDEAN_BLAZE_BREED]     = sAnims_TaurosPaldean,
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED]      = sAnims_TaurosPaldean,
