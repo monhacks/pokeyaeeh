@@ -1182,8 +1182,9 @@
 #define ITEM_NIDOQUEENITE 883
 
 #define ITEM_CANDY_BOX 884
+#define ITEM_POKEVIAL 885
 
-#define ITEMS_COUNT 885
+#define ITEMS_COUNT 886
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

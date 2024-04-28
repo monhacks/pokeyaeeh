@@ -33,6 +33,7 @@
 #include "pokeblock.h"
 #include "pokemon.h"
 #include "script.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "strings.h"
 #include "string_util.h"
@@ -1436,6 +1437,36 @@ void ItemUseOutOfBattle_PokeBall(u8 taskId)
     gItemUseCB = ItemUseCB_PokeBall;
     gBagMenu->newScreenCallback = CB2_ShowPartyMenuForItemUse;
     Task_FadeAndCloseBagMenu(taskId);
+}
+
+void ItemUseOutOfBattle_PokeVial(u8 taskId)
+{
+    u16 vialUsages = VarGet(VAR_POKEVIAL_USAGES);
+    u16 vialUsagesMax = ItemId_GetHoldEffectParam(ITEM_POKEVIAL);
+    if (vialUsages >= vialUsagesMax)
+    {
+        if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PokeVial_Failure, Task_CloseCantUseKeyItemMessage);
+        else if (!InBattlePyramid())
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVial_Failure, CloseItemMessage);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gText_PokeVial_Failure, Task_CloseBattlePyramidBagMessage);
+
+    }
+    else
+    {
+        PlaySE(SE_RG_POKE_JUMP_SUCCESS);
+        HealPlayerParty();
+        vialUsages++;
+        VarSet(VAR_POKEVIAL_USAGES, vialUsages);
+        ConvertIntToDecimalStringN(gStringVar1, vialUsagesMax - vialUsages, STR_CONV_MODE_LEFT_ALIGN, 2);
+        if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PokeVial_Success, Task_CloseCantUseKeyItemMessage);
+        else if (!InBattlePyramid())
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVial_Success, CloseItemMessage);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gText_PokeVial_Success, Task_CloseBattlePyramidBagMessage);
+    }
 }
 
 #undef tUsingRegisteredKeyItem

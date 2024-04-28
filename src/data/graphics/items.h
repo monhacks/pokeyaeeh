@@ -2028,6 +2028,23 @@ const u32 gItemIconPalette_DragonTeraShard[] = INCBIN_U32("graphics/items/icon_p
 const u32 gItemIconPalette_SteelTeraShard[] = INCBIN_U32("graphics/items/icon_palettes/steel_tera_shard.gbapal.lz");
 const u32 gItemIconPalette_FairyTeraShard[] = INCBIN_U32("graphics/items/icon_palettes/fairy_tera_shard.gbapal.lz");
 
+// Misc. Items
+
+const u32 gItemIcon_AdamantCrystal[] = INCBIN_U32("graphics/items/icons/adamant_crystal.4bpp.lz");
+const u32 gItemIconPalette_AdamantCrystal[] = INCBIN_U32("graphics/items/icon_palettes/adamant_crystal.gbapal.lz");
+
+const u32 gItemIcon_GriseousCore[] = INCBIN_U32("graphics/items/icons/griseous_core.4bpp.lz");
+const u32 gItemIconPalette_GriseousCore[] = INCBIN_U32("graphics/items/icon_palettes/griseous_core.gbapal.lz");
+
+const u32 gItemIcon_LustrousGlobe[] = INCBIN_U32("graphics/items/icons/lustrous_globe.4bpp.lz");
+const u32 gItemIconPalette_LustrousGlobe[] = INCBIN_U32("graphics/items/icon_palettes/lustrous_globe.gbapal.lz");
+
+const u32 gItemIcon_BerserkGene[] = INCBIN_U32("graphics/items/icons/berserk_gene.4bpp.lz");
+const u32 gItemIconPalette_BerserkGene[] = INCBIN_U32("graphics/items/icon_palettes/berserk_gene.gbapal.lz");
+
+const u32 gItemIcon_FairyFeather[] = INCBIN_U32("graphics/items/icons/fairy_feather.4bpp.lz");
+const u32 gItemIconPalette_FairyFeather[] = INCBIN_U32("graphics/items/icon_palettes/fairy_feather.gbapal.lz");
+
 // Mochi
 
 const u32 gItemIcon_Mochi[] = INCBIN_U32("graphics/items/icons/mochi.4bpp.lz");
@@ -2048,22 +2065,8 @@ const u32 gItemIconPalette_HearthflameMask[] = INCBIN_U32("graphics/items/icon_p
 const u32 gItemIcon_CornerstoneMask[] = INCBIN_U32("graphics/items/icons/cornerstone_mask.4bpp.lz");
 const u32 gItemIconPalette_CornerstoneMask[] = INCBIN_U32("graphics/items/icon_palettes/cornerstone_mask.gbapal.lz");
 
-// Misc. Items
-
-const u32 gItemIcon_AdamantCrystal[] = INCBIN_U32("graphics/items/icons/adamant_crystal.4bpp.lz");
-const u32 gItemIconPalette_AdamantCrystal[] = INCBIN_U32("graphics/items/icon_palettes/adamant_crystal.gbapal.lz");
-
-const u32 gItemIcon_GriseousCore[] = INCBIN_U32("graphics/items/icons/griseous_core.4bpp.lz");
-const u32 gItemIconPalette_GriseousCore[] = INCBIN_U32("graphics/items/icon_palettes/griseous_core.gbapal.lz");
-
-const u32 gItemIcon_LustrousGlobe[] = INCBIN_U32("graphics/items/icons/lustrous_globe.4bpp.lz");
-const u32 gItemIconPalette_LustrousGlobe[] = INCBIN_U32("graphics/items/icon_palettes/lustrous_globe.gbapal.lz");
-
-const u32 gItemIcon_BerserkGene[] = INCBIN_U32("graphics/items/icons/berserk_gene.4bpp.lz");
-const u32 gItemIconPalette_BerserkGene[] = INCBIN_U32("graphics/items/icon_palettes/berserk_gene.gbapal.lz");
-
-const u32 gItemIcon_FairyFeather[] = INCBIN_U32("graphics/items/icons/fairy_feather.4bpp.lz");
-const u32 gItemIconPalette_FairyFeather[] = INCBIN_U32("graphics/items/icon_palettes/fairy_feather.gbapal.lz");
+const u32 gItemIcon_PokeVial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
+const u32 gItemIconPalette_PokeVial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal.lz");
 
 // Poké Ball Summary Icons
 const u32 gBallIcon_Poke[] = INCBIN_U32("graphics/summary_screen/ball_icons/poke.4bpp.lz");

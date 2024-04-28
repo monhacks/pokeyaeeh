@@ -4443,3 +4443,8 @@ static const u8 sCandyBoxDesc[] = _(
     "A candy box filled\n"
     "with treats! Maxes\n"
     "out a Pokémon's lvl.");
+
+static const u8 sPokeVialDesc[] = _(
+    "Use to heal party.\n"
+    "Replenishes at\n"
+    "Pokémon Centers.");
