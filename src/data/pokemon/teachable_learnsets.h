@@ -31850,6 +31850,7 @@ static const u16 sSamurottTeachableLearnset[] = {
     MOVE_JETSTREAM,
     MOVE_KNOCK_OFF,
     MOVE_LIQUIDATION,
+    MOVE_NASTY_PLOT,
     MOVE_PROTECT,
     MOVE_RAIN_DANCE,
     MOVE_REST,

@@ -3153,7 +3153,6 @@ const u16 gEggMoves[] = {
               MOVE_DETECT,
               MOVE_KNOCK_OFF,
               MOVE_NIGHT_SLASH,
-              MOVE_SACRED_SWORD,
               MOVE_SCREECH,
               MOVE_TRUMP_CARD),
 
