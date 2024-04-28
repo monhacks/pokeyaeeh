@@ -840,10 +840,12 @@ LittlerootTown_EventScript_SetReceivedRunningShoes::
 	end
 
 LittlerootTown_EventScript_GiveRunningShoes::
-	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_PlayerGetOldRod, MSGBOX_DEFAULT
 	giveitem ITEM_OLD_ROD
-	setflag FLAG_RECEIVED_OLD_ROD
+	msgbox LittlerootTown_Text_PlayerGetCandyBox, MSGBOX_DEFAULT
+	giveitem ITEM_CANDY_BOX
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_OLD_ROD
 	closemessage
 	delay 30
 	return
@@ -863,7 +865,7 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 LittlerootTown_Text_WaitPlayer:
 	.string "Mom: Wait, {PLAYER}!$"
 
-LittlerootTown_Text_WearTheseRunningShoes:
+LittlerootTown_Text_PlayerGetOldRod:
 	.string "Mom: {PLAYER}! {PLAYER}! Did you\n"
 	.string "introduce yourself to Prof. Birch?\p"
 	.string "Oh! What an adorable Pokémon!\n"
@@ -873,6 +875,15 @@ LittlerootTown_Text_WearTheseRunningShoes:
 	.string "Here, honey! If you're going out on an\n"
 	.string "adventure, take this fishing rod, too!\p"
 	.string "It's your dad's old rod.$"
+
+LittlerootTown_Text_PlayerGetCandyBox:
+	.string "Mom: You can fish anywhere near a body\n"
+	.string "of water.\p"
+	.string "Just use the rod and press {A_BUTTON} when a\n"
+	.string "Pokémon is reeled in!\p"
+	.string "Oh! Also here's some candy for you!\p"
+	.string "In case you or your Pokémon are hungry\n"
+	.string "grab a treat!$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
