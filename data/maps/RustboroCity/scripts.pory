@@ -57,7 +57,6 @@ RustboroCity_EventScript_ScientistAddMatchCall::
 	waitmovement 0
 	msgbox RustboroCity_Text_DevelopedNewPokenavFeature, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_HAS_MATCH_CALL
 	applymovement LOCALID_SCIENTIST, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	playse SE_CLICK
@@ -73,15 +72,8 @@ RustboroCity_EventScript_ScientistAddMatchCall::
 	msgbox RustboroCity_Text_AddedMatchCallPleaseCallMrStone, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	goto RustboroCity_EventScript_MatchCallTutorial
-
-RustboroCity_EventScript_PleaseSelectPokenav::
-	msgbox RustboroCity_Text_PleaseSelectPokenav, MSGBOX_DEFAULT
-	closemessage
-	delay 10
-	goto RustboroCity_EventScript_MatchCallTutorial
-
-RustboroCity_EventScript_MatchCallTutorial::
+	setflag FLAG_HAS_MATCH_CALL
+	setflag FLAG_RECEIVED_STAT_EDITOR
 	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
 	msgbox RustboroCity_Text_IdBetterGetBackToWork, MSGBOX_DEFAULT
 	closemessage
@@ -1219,30 +1211,30 @@ RustboroCity_Text_CuttersHouse:
 	.string "Cutter's House$"
 
 RustboroCity_Text_DevelopedNewPokenavFeature:
-	.string "I've been developing an added feature\n"
-	.string "for the PokéNav…\p"
-	.string "And it turned out great!\p"
-	.string "{PLAYER}, may I see that PokéNav?\n"
-	.string "The one our President gave you?$"
+	.string "Wait a moment, {PLAYER}.\p"
+	.string "We've been working on a new tool,\n"
+	.string "and since you're a Trainer,\l"
+	.string "I think you'llreally like it!\p"
+	.string "Please, wait.$"
 
 RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
 	.string "There you go, {PLAYER}!\p"
-	.string "I added a new feature named\n"
-	.string "Match Call to your PokéNav.\p"
-	.string "Using the Match Call feature,\n"
-	.string "you can chat with people who have\l"
-	.string "been registered in your PokéNav.\p"
-	.string "{PLAYER}, our President Stone should\n"
-	.string "be registered in your PokéNav.\p"
-	.string "Test it out.\n"
-	.string "Please give our President a call.$"
+	.string "Now you can edit your Pokémon's\n"
+	.string "freely!\p"
+	.string "It does seem a little unethical, but\n"
+	.string "don't worry, it doesn't hurt the\l"
+	.string "Pokémon at all!\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "Don't ask too many questions.\p"
+	.string "I'm not paid enough to answer them!$"
 
 RustboroCity_Text_PleaseSelectPokenav:
 	.string "Please select the PokéNav.$"
 
 RustboroCity_Text_IdBetterGetBackToWork:
 	.string "Okay, I'd better get back to work.\n"
-	.string "Please take care, {PLAYER}!$"
+	.string "Take care, {PLAYER}!$"
 
 RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Did you know this?\p"

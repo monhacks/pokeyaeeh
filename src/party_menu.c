@@ -2885,9 +2885,10 @@ static u8 DisplaySelectionWindow(u8 windowType)
         u8 fontColorsId = 3;
         if ((sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) || (sPartyMenuInternal->actions[i] == MENU_SUB_FIELD_MOVES))
             fontColorsId = 4;
-        if (sPartyMenuInternal->actions[i] == MENU_MOVES     ||
-            sPartyMenuInternal->actions[i] == MENU_EGG_MOVES)
+        if (sPartyMenuInternal->actions[i] == MENU_MOVES || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES)
             fontColorsId = 6;
+        if (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT)
+            fontColorsId = 7;
         AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, sCursorOptions[sPartyMenuInternal->actions[i]].text);
     }
 
@@ -2990,7 +2991,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
 
 
-        if (FlagGet(FLAG_ADVENTURE_STARTED))
+        if (FlagGet(FLAG_RECEIVED_STAT_EDITOR))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
