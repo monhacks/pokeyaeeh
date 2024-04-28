@@ -42,7 +42,6 @@
 #include "roamer.h"
 #include "safari_zone.h"
 #include "scanline_effect.h"
-#include "script_pokemon_util.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -628,6 +627,7 @@ static void CB2_InitBattleInternal(void)
     {
 
         AdjustFriendship(&gPlayerParty[i], FRIENDSHIP_EVENT_LEAGUE_BATTLE);
+
         if (FlagGet(FLAG_TOXIC_POISON_TEAM))
         {
             u32 value = STATUS1_TOXIC_POISON;
@@ -891,7 +891,6 @@ static void CB2_HandleStartBattle(void)
     RunTasks();
     AnimateSprites();
     BuildOamBuffer();
-    HealPlayerParty();
 
     playerMultiplayerId = GetMultiplayerId();
     gBattleScripting.multiplayerId = playerMultiplayerId;
