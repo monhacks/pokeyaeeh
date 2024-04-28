@@ -4505,7 +4505,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
         name = gSpeciesNames[species];
     else
         name = sText_TenDashes;
-    PrintInfoScreenTextWhite(name, 157, 17);
+    PrintInfoScreenTextWhite(name, 161, 17);
     if (owned)
     {
         CopyMonCategoryText(num, str2);
