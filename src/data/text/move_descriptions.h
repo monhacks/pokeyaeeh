@@ -3333,8 +3333,8 @@ static const u8 sStunningBlowDescription[] = _(
     "cause the foe to flinch.");
 
 static const u8 sRousedFangsDescription[] = _(
-    "An electrifying bite.\n"
-    "Raises Speed.");
+    "Double power if the user\n"
+    "moves before the target.");
 
 static const u8 sAquaFangsDescription[] = _(
     "A hydro-powered bite that\n"
@@ -5475,7 +5475,6 @@ static const u8 sMoveFourLineDescription_Jetstream[] = _("The user shoots a\nfas
 static const u8 sMoveFourLineDescription_FrostGlare[] = _("The user chillingly\nstares at the foe.\nThe foe is now\nfrostbitten.");
 static const u8 sMoveFourLineDescription_KnucklePunch[] = _("The user punches\nthe foe with great\nforce. This may\ncause flinching.");
 static const u8 sMoveFourLineDescription_StunningBlow[] = _("The user excitedly\nslams the foe to\nstun it. This may\ncause flinching.");
-static const u8 sMoveFourLineDescription_RousedFangs[] = _("The user's electric\nfangs jab into the\nthe foe. Raises the\nuser's Speed.");
 static const u8 sMoveFourLineDescription_AquaFangs[] = _("The user's hydro-\npowered fangs bite\ninto the foe. This\nmay lower Defense.");
 static const u8 sMoveFourLineDescription_GlacialSlam[] = _("A cold, freezing\ncharge which harms\nthe user. It may\ncause a frostbite.");
 static const u8 sMoveFourLineDescription_Maelstrom[] = _("The foe is trapped\nin a fast, harsh\nwhirlpool for two\nto five turns.");
@@ -6356,7 +6355,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_FROST_GLARE       - 1] = sMoveFourLineDescription_FrostGlare,
     [MOVE_KNUCKLE_PUNCH     - 1] = sMoveFourLineDescription_KnucklePunch,
     [MOVE_STUNNING_BLOW     - 1] = sMoveFourLineDescription_StunningBlow,
-    [MOVE_ROUSED_FANGS      - 1] = sMoveFourLineDescription_RousedFangs,
+    [MOVE_ROUSED_FANGS      - 1] = sMoveFourLineDescription_BoltBeak,
     [MOVE_AQUA_FANGS        - 1] = sMoveFourLineDescription_AquaFangs,
     [MOVE_GLACIAL_SLAM      - 1] = sMoveFourLineDescription_GlacialSlam,
     [MOVE_MAELSTROM         - 1] = sMoveFourLineDescription_Maelstrom,
