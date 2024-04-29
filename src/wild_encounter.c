@@ -405,6 +405,45 @@ u8 ChooseGiveMonLevel(void)
     return level;
 }
 
+u8 ChooseDexNavMonLevel(void)
+{
+    u8 max = 0;
+    u8 range;
+    u8 rand;
+    u8 curveAmount;
+    u8 level = 15;
+
+    if (FlagGet(FLAG_BADGE01_GET))
+        level = 20;
+    if (FlagGet(FLAG_BADGE02_GET))
+        level = 35;
+    if (FlagGet(FLAG_BADGE03_GET))
+        level = 40;
+    if (FlagGet(FLAG_BADGE04_GET))
+        level = 45;
+    if (FlagGet(FLAG_BADGE05_GET))
+        level = 50;
+    if (FlagGet(FLAG_BADGE06_GET))
+        level = 55;
+    if (FlagGet(FLAG_BADGE07_GET))
+        level = 60;
+    if (FlagGet(FLAG_BADGE08_GET))
+        level = 65;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        level = 70;
+    
+    if (max < level)
+        curveAmount = (((3 * level) + max) / 4) - max;
+    range = max + 1;
+        
+    if (range < (curveAmount * 4) && (range != 0))
+        range = curveAmount / 4;
+
+    rand = Random() % range;
+
+    return rand + curveAmount;
+}
+
 u16 GetCurrentMapWildMonHeaderId(void)
 {
     u16 i;

@@ -50,5 +50,6 @@ u8 ChooseHiddenMonIndex(void);
 u8 ChooseWildMonLevel(void);
 u8 ChooseStaticMonLevel(void);
 u8 ChooseGiveMonLevel(void);
+u8 ChooseDexNavMonLevel(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H
