@@ -137,66 +137,87 @@ SlateportCity_Movement_ScottExit:
 	walk_left
 	step_end
 
-SlateportCity_EventScript_EnergyGuru::
+SlateportCity_EventScript_CompGuy1::
 	lock
 	faceplayer
-	message SlateportCity_Text_EnergyGuruSellWhatYouNeed
+	message SlateportCity_Text_CompGuy1SellWhatYouNeed
 	waitmessage
-	pokemart SlateportCity_Pokemart_EnergyGuru
+	pokemart SlateportCity_Pokemart_CompGuy1
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_Pokemart_EnergyGuru:
-	.2byte ITEM_PROTEIN
-	.2byte ITEM_IRON
-	.2byte ITEM_CARBOS
-	.2byte ITEM_ZINC
-	.2byte ITEM_CALCIUM
-	.2byte ITEM_HP_UP
-	.2byte ITEM_NONE
+SlateportCity_Pokemart_CompGuy1: @ Offensivve items
+	.2byte ITEM_CHOICE_BAND
+	.2byte ITEM_CHOICE_SPECS
+	.2byte ITEM_CHOICE_SCARF
+	.2byte ITEM_LIFE_ORB
+	.2byte ITEM_FLAME_ORB
+	.2byte ITEM_TOXIC_ORB
+	.2byte ITEM_THROAT_SPRAY
+	.2byte ITEM_LOADED_DICE
+	.2byte ITEM_QUICK_CLAW
+	.2byte ITEM_POWER_HERB
+	.2byte ITEM_WHITE_HERB
+	.2byte ITEM_MENTAL_HERB
+	.2byte ITEM_MIRROR_HERB
+	.2byte ITEM_ROOM_SERVICE
+	.2byte ITEM_BLUNDER_POLICY
+	.2byte ITEM_IRON_BALL
 	release
 	end
 
-SlateportCity_EventScript_EffortRibbonWoman::
+SlateportCity_EventScript_CompGuy2::
 	lock
 	faceplayer
-	bufferleadmonspeciesname STR_VAR_1
-	msgbox SlateportCity_Text_OhYourPokemon, MSGBOX_DEFAULT
-	specialvar VAR_RESULT, LeadMonHasEffortRibbon
-	call_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_MonHasEffortRibbon
-	specialvar VAR_RESULT, Special_AreLeadMonEVsMaxedOut
-	call_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_MonEVsNotMaxed
-	msgbox SlateportCity_Text_PleaseGiveItThisEffortRibbon, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message SlateportCity_Text_ReceivedEffortRibbon
-	waitfanfare
-	msgbox SlateportCity_Text_PutEffortRibbonOnMon, MSGBOX_DEFAULT
-	special GiveLeadMonEffortRibbon
+	message SlateportCity_Text_CompGuy2SellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_CompGuy2
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-SlateportCity_EventScript_MonEVsNotMaxed::
-	msgbox SlateportCity_Text_GoForItLittleHarder, MSGBOX_DEFAULT
-	release
-	end
-
-SlateportCity_EventScript_MonHasEffortRibbon::
-	msgbox SlateportCity_Text_EffortRibbonLooksGoodOnIt, MSGBOX_DEFAULT
+	.align 2
+SlateportCity_Pokemart_CompGuy2: @ Defensive items
+	.2byte ITEM_HEAVY_DUTY_BOOTS
+	.2byte ITEM_ASSAULT_VEST
+	.2byte ITEM_EVIOLITE
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_ROCKY_HELMET
+	.2byte ITEM_FOCUS_SASH
+	.2byte ITEM_FOCUS_BAND
+	.2byte ITEM_AIR_BALLOON
+	.2byte ITEM_WEAKNESS_POLICY
+	.2byte ITEM_BRIGHT_POWDER
+	.2byte ITEM_PROTECTIVE_PADS
+	.2byte ITEM_PUNCHING_GLOVE
+	.2byte ITEM_ABILITY_SHIELD
+	.2byte ITEM_CLEAR_AMULET
+	.2byte ITEM_COVERT_CLOAK
 	release
 	end
 
 SlateportCity_EventScript_Cook::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_CookSternInterview
-	msgbox SlateportCity_Text_SeaweedFullOfLife, MSGBOX_DEFAULT
+	message SlateportCity_Text_NoveltiesAroundTheWorld
+	waitmessage
+	pokemart SlateportCity_Pokemart_Cook
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-SlateportCity_EventScript_CookSternInterview::
-	msgbox SlateportCity_Text_CaptainComeBackWithBigFish, MSGBOX_DEFAULT
+	.align 2
+SlateportCity_Pokemart_Cook:
+	.2byte ITEM_PEWTER_CRUNCHIES
+	.2byte ITEM_RAGE_CANDY_BAR
+	.2byte ITEM_LAVA_COOKIE
+	.2byte ITEM_OLD_GATEAU
+	.2byte ITEM_CASTELIACONE
+	.2byte ITEM_LUMIOSE_GALETTE
+	.2byte ITEM_SHALOUR_SABLE
+	.2byte ITEM_BIG_MALASADA
 	release
 	end
 
@@ -567,6 +588,7 @@ SlateportCity_EventScript_PowerTMClerk::
 
 	.align 2
 SlateportCity_Pokemart_PowerTMs:
+	.2byte ITEM_TM_PROTECT
 	.2byte ITEM_TM_SECRET_POWER
 	.2byte ITEM_TM_NATURE_POWER
 	.2byte ITEM_NONE
@@ -951,25 +973,17 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	releaseall
 	end
 
-SlateportCity_Text_EnergyGuruSellWhatYouNeed:
-	.string "I'm the Energy Guru! I'll go for it and\n"
-	.string "sell you what you need!$"
+SlateportCity_Text_CompGuy1SellWhatYouNeed:
+	.string "Hello! I'm Wolfey!\n"
+	.string "The competitive guy!\p"
+	.string "You in need of any items?$"
 
-SlateportCity_Text_OhYourPokemon:
-	.string "Oh?\n"
-	.string "Your {STR_VAR_1}…$"
-
-SlateportCity_Text_PleaseGiveItThisEffortRibbon:
-	.string "Went for it stupendously!\p"
-	.string "As its reward, please give it this\n"
-	.string "Effort Ribbon.$"
-
-SlateportCity_Text_ReceivedEffortRibbon:
-	.string "{PLAYER} received the Effort Ribbon.$"
-
-SlateportCity_Text_PutEffortRibbonOnMon:
-	.string "{PLAYER} put the Effort Ribbon\n"
-	.string "on {STR_VAR_1}.$"
+SlateportCity_Text_CompGuy2SellWhatYouNeed:
+	.string "Hi, I'm Ray!\n"
+	.string "The older, and wiser, comepetitive\l"
+	.string "guru!\p"
+	.string "I've got some great items you'd be\n"
+	.string "interested in.$"
 
 SlateportCity_Text_GoForItLittleHarder:
 	.string "You have to go for it a little harder.\p"
@@ -1156,10 +1170,12 @@ SlateportCity_Text_SternSaysDiscoveredSomething:
 	.string "I wonder what it is?\n"
 	.string "What could it be?$"
 
-SlateportCity_Text_CaptainComeBackWithBigFish:
-	.string "What's going on here?\p"
-	.string "Did the good Captain come back with\n"
-	.string "a big fish from the ocean floor?$"
+SlateportCity_Text_NoveltiesAroundTheWorld:
+	.string "Ho ho ho!\p"
+	.string "I bring forth novelties from across\n"
+	.string "the globe!\p"
+	.string "Might I entice you with the prospect\n"
+	.string "of procuring any?$"
 
 SlateportCity_Text_AmIOnTV:
 	.string "Hey! Are you watching?\n"

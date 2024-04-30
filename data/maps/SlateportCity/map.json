@@ -317,7 +317,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 4,
       "y": 47,
       "elevation": 3,
@@ -326,7 +326,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_EffortRibbonWoman",
+      "script": "SlateportCity_EventScript_CompGuy1",
       "flag": "0"
     },
     {
@@ -343,7 +343,7 @@
       "flag": "FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 5,
       "y": 47,
       "elevation": 3,
@@ -352,7 +352,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_EnergyGuru",
+      "script": "SlateportCity_EventScript_CompGuy1",
       "flag": "0"
     },
     {
