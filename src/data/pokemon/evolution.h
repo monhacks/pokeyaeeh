@@ -1,7 +1,7 @@
 const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
 {
     [SPECIES_BULBASAUR]             = {{EVO_LEVEL, 16, SPECIES_IVYSAUR}},
-    [SPECIES_IVYSAUR]               = {{EVO_LEVEL, 32, SPECIES_VENUSAUR}},
+    [SPECIES_IVYSAUR]               = {{EVO_LEVEL, 36, SPECIES_VENUSAUR}},
     [SPECIES_CHARMANDER]            = {{EVO_LEVEL, 16, SPECIES_CHARMELEON}},
     [SPECIES_CHARMELEON]            = {{EVO_LEVEL, 36, SPECIES_CHARIZARD}},
     [SPECIES_SQUIRTLE]              = {{EVO_LEVEL, 16, SPECIES_WARTORTLE}},
@@ -120,12 +120,12 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_DRATINI]               = {{EVO_LEVEL, 30, SPECIES_DRAGONAIR}},
     [SPECIES_DRAGONAIR]             = {{EVO_LEVEL, 55, SPECIES_DRAGONITE}},
     [SPECIES_CHIKORITA]             = {{EVO_LEVEL, 16, SPECIES_BAYLEEF}},
-    [SPECIES_BAYLEEF]               = {{EVO_LEVEL, 32, SPECIES_MEGANIUM}},
-    [SPECIES_CYNDAQUIL]             = {{EVO_LEVEL, 14, SPECIES_QUILAVA}},
+    [SPECIES_BAYLEEF]               = {{EVO_LEVEL, 36, SPECIES_MEGANIUM}},
+    [SPECIES_CYNDAQUIL]             = {{EVO_LEVEL, 16, SPECIES_QUILAVA}},
     [SPECIES_QUILAVA]               = {{EVO_LEVEL, 36, SPECIES_TYPHLOSION},
                                        {EVO_LEVEL_SPECIFIC_MAP, 36, SPECIES_TYPHLOSION_HISUIAN, MAP_FIERY_PATH}}, // hisui
-    [SPECIES_TOTODILE]              = {{EVO_LEVEL, 18, SPECIES_CROCONAW}},
-    [SPECIES_CROCONAW]              = {{EVO_LEVEL, 30, SPECIES_FERALIGATR}},
+    [SPECIES_TOTODILE]              = {{EVO_LEVEL, 16, SPECIES_CROCONAW}},
+    [SPECIES_CROCONAW]              = {{EVO_LEVEL, 36, SPECIES_FERALIGATR}},
     [SPECIES_SENTRET]               = {{EVO_LEVEL, 15, SPECIES_FURRET}},
     [SPECIES_HOOTHOOT]              = {{EVO_LEVEL, 20, SPECIES_NOCTOWL}},
     [SPECIES_LEDYBA]                = {{EVO_LEVEL, 18, SPECIES_LEDIAN}},
@@ -275,9 +275,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_METANG]                = {{EVO_LEVEL, 45, SPECIES_METAGROSS}},
 #if P_GEN_4_POKEMON == TRUE
     // Gens 4-7
-    [SPECIES_TURTWIG]               = {{EVO_LEVEL, 18, SPECIES_GROTLE}},
-    [SPECIES_GROTLE]                = {{EVO_LEVEL, 32, SPECIES_TORTERRA}},
-    [SPECIES_CHIMCHAR]              = {{EVO_LEVEL, 14, SPECIES_MONFERNO}},
+    [SPECIES_TURTWIG]               = {{EVO_LEVEL, 16, SPECIES_GROTLE}},
+    [SPECIES_GROTLE]                = {{EVO_LEVEL, 36, SPECIES_TORTERRA}},
+    [SPECIES_CHIMCHAR]              = {{EVO_LEVEL, 16, SPECIES_MONFERNO}},
     [SPECIES_MONFERNO]              = {{EVO_LEVEL, 36, SPECIES_INFERNAPE}},
     [SPECIES_PIPLUP]                = {{EVO_LEVEL, 16, SPECIES_PRINPLUP}},
     [SPECIES_PRINPLUP]              = {{EVO_LEVEL, 36, SPECIES_EMPOLEON}},
@@ -319,11 +319,11 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_SNOVER]                = {{EVO_LEVEL, 40, SPECIES_ABOMASNOW}},
 #endif
 #if P_GEN_5_POKEMON == TRUE
-    [SPECIES_SNIVY]                 = {{EVO_LEVEL, 17, SPECIES_SERVINE}},
+    [SPECIES_SNIVY]                 = {{EVO_LEVEL, 16, SPECIES_SERVINE}},
     [SPECIES_SERVINE]               = {{EVO_LEVEL, 36, SPECIES_SERPERIOR}},
-    [SPECIES_TEPIG]                 = {{EVO_LEVEL, 17, SPECIES_PIGNITE}},
+    [SPECIES_TEPIG]                 = {{EVO_LEVEL, 16, SPECIES_PIGNITE}},
     [SPECIES_PIGNITE]               = {{EVO_LEVEL, 36, SPECIES_EMBOAR}},
-    [SPECIES_OSHAWOTT]              = {{EVO_LEVEL, 17, SPECIES_DEWOTT}},
+    [SPECIES_OSHAWOTT]              = {{EVO_LEVEL, 16, SPECIES_DEWOTT}},
     [SPECIES_DEWOTT]                = {{EVO_LEVEL, 36, SPECIES_SAMUROTT},
                                        {EVO_LEVEL_SPECIFIC_MAP, 36, SPECIES_SAMUROTT_HISUIAN, MAP_FIERY_PATH}}, // hisui
     [SPECIES_PATRAT]                = {{EVO_LEVEL, 20, SPECIES_WATCHOG}},
@@ -442,13 +442,13 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_NOIBAT]                = {{EVO_LEVEL, 48, SPECIES_NOIVERN}},
 #endif
 #if P_GEN_7_POKEMON == TRUE
-    [SPECIES_ROWLET]                = {{EVO_LEVEL, 17, SPECIES_DARTRIX}},
-    [SPECIES_DARTRIX]               = {{EVO_LEVEL, 34, SPECIES_DECIDUEYE},
+    [SPECIES_ROWLET]                = {{EVO_LEVEL, 16, SPECIES_DARTRIX}},
+    [SPECIES_DARTRIX]               = {{EVO_LEVEL, 36, SPECIES_DECIDUEYE},
                                        {EVO_LEVEL_SPECIFIC_MAP, 34, SPECIES_DECIDUEYE_HISUIAN, MAP_FIERY_PATH}}, // hisui
-    [SPECIES_LITTEN]                = {{EVO_LEVEL, 17, SPECIES_TORRACAT}},
-    [SPECIES_TORRACAT]              = {{EVO_LEVEL, 34, SPECIES_INCINEROAR}},
-    [SPECIES_POPPLIO]               = {{EVO_LEVEL, 17, SPECIES_BRIONNE}},
-    [SPECIES_BRIONNE]               = {{EVO_LEVEL, 34, SPECIES_PRIMARINA}},
+    [SPECIES_LITTEN]                = {{EVO_LEVEL, 16, SPECIES_TORRACAT}},
+    [SPECIES_TORRACAT]              = {{EVO_LEVEL, 36, SPECIES_INCINEROAR}},
+    [SPECIES_POPPLIO]               = {{EVO_LEVEL, 16, SPECIES_BRIONNE}},
+    [SPECIES_BRIONNE]               = {{EVO_LEVEL, 36, SPECIES_PRIMARINA}},
     [SPECIES_PIKIPEK]               = {{EVO_LEVEL, 14, SPECIES_TRUMBEAK}},
     [SPECIES_TRUMBEAK]              = {{EVO_LEVEL, 28, SPECIES_TOUCANNON}},
     [SPECIES_YUNGOOS]               = {{EVO_LEVEL_DAY, 20, SPECIES_GUMSHOOS}},
@@ -480,11 +480,11 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
 #endif
 #if P_GEN_8_POKEMON == TRUE
     [SPECIES_GROOKEY]               = {{EVO_LEVEL, 16, SPECIES_THWACKEY}},
-    [SPECIES_THWACKEY]              = {{EVO_LEVEL, 35, SPECIES_RILLABOOM}},
+    [SPECIES_THWACKEY]              = {{EVO_LEVEL, 36, SPECIES_RILLABOOM}},
     [SPECIES_SCORBUNNY]             = {{EVO_LEVEL, 16, SPECIES_RABOOT}},
-    [SPECIES_RABOOT]                = {{EVO_LEVEL, 35, SPECIES_CINDERACE}},
+    [SPECIES_RABOOT]                = {{EVO_LEVEL, 36, SPECIES_CINDERACE}},
     [SPECIES_SOBBLE]                = {{EVO_LEVEL, 16, SPECIES_DRIZZILE}},
-    [SPECIES_DRIZZILE]              = {{EVO_LEVEL, 35, SPECIES_INTELEON}},
+    [SPECIES_DRIZZILE]              = {{EVO_LEVEL, 36, SPECIES_INTELEON}},
     [SPECIES_SKWOVET]               = {{EVO_LEVEL, 24, SPECIES_GREEDENT}},
     [SPECIES_ROOKIDEE]              = {{EVO_LEVEL, 18, SPECIES_CORVISQUIRE}},
     [SPECIES_CORVISQUIRE]           = {{EVO_LEVEL, 38, SPECIES_CORVIKNIGHT}},
