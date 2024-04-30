@@ -3910,16 +3910,6 @@ static const u8 sBicycleDesc[] = _(
     "that is faster than\n"
     "the Running Shoes.");
 
-static const u8 sMachBikeDesc[] = _(
-    "A folding bicycle\n"
-    "that doubles your\n"
-    "speed or better.");
-
-static const u8 sAcroBikeDesc[] = _(
-    "A folding bicycle\n"
-    "capable of jumps\n"
-    "and wheelies.");
-
 static const u8 sOldRodDesc[] = _(
     "Use by any body of\n"
     "water to fish for\n"

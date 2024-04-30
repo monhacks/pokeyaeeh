@@ -9274,7 +9274,7 @@ const struct Item gItems[] =
     {
         .name = _("Bicycle"),
         .price = 0,
-        .description = sAcroBikeDesc,
+        .description = sBicycleDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
