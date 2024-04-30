@@ -400,3 +400,81 @@ MoveTutor_Text_WildChargeWhichMon:
 MoveTutor_Text_WildChargeTaught:
 	.string "Aaand done!\p"
 	.string "Have fun Ko'ing your enemies!$"
+
+LilycoveCity_DepartmentStore_4F_Text_TutorWelcome:
+	.string "Welcome!\p"
+	.string "Would you like to teach new moves to\n"
+	.string "your Pokémon?$"
+
+LilycoveCity_DepartmentStore_4F_Text_WhichMoveTeach:
+	.string "Which move should I teach?$"
+
+LilycoveCity_DepartmentStore_4F_Text_TheMoveIsIt:
+	.string "The move {STR_VAR_1}, is it?$"
+
+LilycoveCity_DepartmentStore_4F_Text_PleaseChoosePkmn:
+	.string "Okay! Please choose your Pokémon.$"
+
+LilycoveCity_DepartmentStore_4F_Text_AndDone:
+	.string "Aaand done!\p"
+	.string "Please let me know if you need anything\n"
+	.string "else!$"
+
+LilycoveCity_DepartmentStore_4F_Text_PleaseVisitAgain:
+	.string "Please let me know if you need anything\n"
+	.string "else!$"
+
+LilycoveCity_DepartmentStore_4F_Text_FireFangDesc::
+	.string "A bite that may\n"
+	.string "burn or cause\n"
+	.string "flinching.$"
+
+LilycoveCity_DepartmentStore_4F_Text_ThunderFangDesc::
+	.string "A bite that may\n"
+	.string "paralyze or cause\n"
+	.string "flinching.$"
+
+LilycoveCity_DepartmentStore_4F_Text_IceFangDesc::
+	.string "A bite that may\n"
+	.string "frostbite or\n"
+	.string "cause flinching.$"
+
+LilycoveCity_DepartmentStore_4F_Text_AuraSphereDesc::
+	.string "An aura burst\n"
+	.string "that cannot be\n"
+	.string "evaded by the foe.$"
+
+LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc::
+	.string "Deals more damage\n"
+	.string "if user is heavier\n"
+	.string "than the foe.$"
+
+LilycoveCity_DepartmentStore_4F_Text_RazorShellDesc::
+	.string "Shell slashing\n"
+	.string "attack which may\n"
+	.string "lower foe's Def.$"
+
+LilycoveCity_DepartmentStore_4F_Text_InfestationDesc::
+	.string "Traps the foe\n"
+	.string "for 3-5 turns in\n"
+	.string "an infestation.$"
+
+LilycoveCity_DepartmentStore_4F_Text_FireSpinDesc::
+	.string "Traps the foe\n"
+	.string "for 3-5 turns in\n"
+	.string "a fire storm.$"
+
+LilycoveCity_DepartmentStore_4F_Text_WhirlpoolDesc::
+	.string "Traps the foe\n"
+	.string "for 3-5 turns in\n"
+	.string "a whirlpool.$"
+
+LilycoveCity_DepartmentStore_4F_Text_AquaTailDesc::
+	.string "Swings its tail\n"
+	.string "as if a vicious\n"
+	.string "wave to attack.$"
+
+LilycoveCity_DepartmentStore_4F_Text_TailwindDesc::
+	.string "Doubles ally's\n"
+	.string "speed stat for\n"
+	.string "4 turns.$"

@@ -1636,9 +1636,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     u32 atkParam = GetBattlerHoldEffectParam(battlerAtk);
     u32 defParam = GetBattlerHoldEffectParam(battlerDef);
     u32 atkAlly = BATTLE_PARTNER(battlerAtk);
-    u32 defAlly = BATTLE_PARTNER(battlerDef);
     u32 atkAllyAbility = GetBattlerAbility(atkAlly);
-    u32 defAllyAbility = GetBattlerAbility(defAlly);
     u32 atkSide = GetBattlerSide(battlerAtk);
 
     gPotentialItemEffectBattler = battlerDef;
@@ -1695,6 +1693,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     {
     case ABILITY_COMPOUND_EYES:
         calc = (calc * 130) / 100; // 1.3 compound eyes boost
+        break;
+    case ABILITY_ILLUMINATE:
+    case ABILITY_KEEN_EYE:
+        calc = (calc * 120) / 100; // 1.2 illuminate/keen eye boost
         break;
     case ABILITY_VICTORY_STAR:
         calc = (calc * 110) / 100; // 1.1 victory star boost
@@ -1771,7 +1773,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         if ((atkAbility != ABILITY_KEEN_EYE) && (atkAbility != ABILITY_ILLUMINATE)
         && (atkAbility != ABILITY_INFILTRATOR) && (atkAbility != ABILITY_MINDS_EYE))
         {
-		    calc = (calc * 60) / 100; // 1.4 fog loss
+		    calc = (calc * 70) / 100; // 1.3 fog loss
         }
 	}
 
@@ -15965,7 +15967,7 @@ bool8 CanPreventAnyStatLoss(u32 battler, u32 move, u16 abilityDef)
         case ABILITY_ILLUMINATE:
         case ABILITY_MINDS_EYE:
         {
-            if ((gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN) || (gBattleMoves[move].effect == EFFECT_DEFENSE_DOWN_2))
+            if ((gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN) || (gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN))
                 return TRUE;
         }
         break;

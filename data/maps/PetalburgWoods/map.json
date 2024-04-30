@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 45,
-      "y": 7,
+      "x": 43,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -312,8 +312,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 15,
-      "y": 22,
+      "x": 14,
+      "y": 14,
       "elevation": 0,
       "item": "ITEM_BUG_CRYSTAL",
       "flag": "FLAG_TEMP_1"

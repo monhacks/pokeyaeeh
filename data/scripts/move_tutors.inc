@@ -401,14 +401,13 @@ MoveTutor_EventScript_WildChargeTaught::
 	release
 	end
 
-
-LilycoveCity_DepartmentStore_4F_EventScript_AlreadyMetLeftTutor::
+LilycoveCity_DepartmentStore_4F_EventScript_MoveTutor::
 	msgbox LilycoveCity_DepartmentStore_4F_Text_TutorWelcome, MSGBOX_DEFAULT
-	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove
+	goto LilycoveCity_DepartmentStore_4F_EventScript_TutorMove
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove::
-	message LilycoveCity_DepartmentStore_4F_Text_TeachWhichMove
+LilycoveCity_DepartmentStore_4F_EventScript_TutorMove::
+	message LilycoveCity_DepartmentStore_4F_Text_WhichMoveTeach
 	waitmessage
 	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
 	setvar VAR_0x8004, SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1
@@ -433,13 +432,13 @@ LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove::
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove::
-	msgbox LilycoveCity_DepartmentStore_4F_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStore_4F_Text_PleaseChoosePkmn, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special CloseBattleFrontierTutorWindow
 	special ChooseMonForMoveTutor
 	waitstate
 	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon
-	msgbox LilycoveCity_DepartmentStore_4F_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStore_4F_Text_AndDone, MSGBOX_DEFAULT
 	copyvar VAR_0x8004, VAR_0x8008
 	release
 	end
@@ -447,24 +446,24 @@ LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove::
 LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection::
 	special BufferBattleFrontierTutorMoveName
 	buffernumberstring STR_VAR_2, VAR_0x8008
-	msgbox LilycoveCity_DepartmentStore_4F_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO
+	msgbox LilycoveCity_DepartmentStore_4F_Text_TheMoveIsIt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove
 	goto_if_ge VAR_TEMP_1, VAR_0x8008, LilycoveCity_DepartmentStore_4F_EventScript_TeachTutorMove
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_ChooseNewMove::
-	goto LilycoveCity_DepartmentStore_4F_EventScript_ChooseLeftTutorMove
+	goto LilycoveCity_DepartmentStore_4F_EventScript_TutorMove
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect::
 	special CloseBattleFrontierTutorWindow
-	msgbox LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStore_4F_Text_PleaseVisitAgain, MSGBOX_DEFAULT
 	release
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon::
-	msgbox LilycoveCity_DepartmentStore_4F_Text_YouDontWantTo, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStore_4F_Text_PleaseVisitAgain, MSGBOX_DEFAULT
 	release
 	end
 
