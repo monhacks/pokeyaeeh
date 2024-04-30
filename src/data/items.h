@@ -9260,7 +9260,7 @@ const struct Item gItems[] =
 
     [ITEM_MACH_BIKE] =
     {
-        .name = _("Bicycle"),
+        .name = _("Bike"),
         .price = 0,
         .description = sBicycleDesc,
         .importance = 1,
