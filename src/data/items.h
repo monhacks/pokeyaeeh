@@ -9260,9 +9260,9 @@ const struct Item gItems[] =
 
     [ITEM_MACH_BIKE] =
     {
-        .name = _("Mach Bike"),
+        .name = _("Bicycle"),
         .price = 0,
-        .description = sMachBikeDesc,
+        .description = sBicycleDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -9272,7 +9272,7 @@ const struct Item gItems[] =
 
     [ITEM_ACRO_BIKE] =
     {
-        .name = _("Acro Bike"),
+        .name = _("Bicycle"),
         .price = 0,
         .description = sAcroBikeDesc,
         .importance = 1,

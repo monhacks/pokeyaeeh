@@ -120,8 +120,9 @@ Text_TestDefeat:
     .string "Damn.$"
 
 Debug_EventScript_Script_1::
-	msgbox Text_TestIntro, MSGBOX_DEFAULT
-	trainerbattle_two_trainers TRAINER_CARTER, Route109_Text_CarterDefeated, TRAINER_CHANDLER, Route109_Text_ChandlerDefeated
+	goto_if_set FLAG_TOXIC_POISON_TEAM, Debug_EventScript_UnsetTestFlag
+	goto Debug_EventScript_SetTestFlag
+	end
 
 Debug_EventScript_Script_2::
     cleartrainerflag TRAINER_ERIC
@@ -275,12 +276,12 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_UNLOCK_CHEAT_MENU
+    setflag FLAG_TOXIC_POISON_TEAM
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_UNLOCK_CHEAT_MENU
+    clearflag FLAG_TOXIC_POISON_TEAM
 	end
 
 Debug_Text_SetTestFlag::
