@@ -944,7 +944,7 @@ static void HandleEditingStatInput(u32 input)
         return;
     }
 
-    #define INCREASE_DECREASE_AMOUNT 4
+    #define INCREASE_DECREASE_AMOUNT 1
 
     switch(input)
     {
@@ -1009,11 +1009,11 @@ static void Task_MenuEditingStat(u8 taskId)
     }
     if (JOY_NEW(DPAD_LEFT))
         HandleEditingStatInput(EDIT_INPUT_DECREASE_STATE);
-    if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_NEW(DPAD_RIGHT))
         HandleEditingStatInput(EDIT_INPUT_INCREASE_STATE);
-    if (JOY_NEW(R_BUTTON))
+    else if (JOY_NEW(R_BUTTON))
         HandleEditingStatInput(EDIT_INPUT_MAX_INCREASE_STATE);
-    if (JOY_NEW(L_BUTTON))
+    else if (JOY_NEW(L_BUTTON))
         HandleEditingStatInput(EDIT_INPUT_MAX_DECREASE_STATE);
 
 }
