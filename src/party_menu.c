@@ -133,15 +133,13 @@ enum {
     ACTIONS_ZYGARDE_CUBE,
 };
 
-// In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
-// Badge flag names are commented here for people searching for references to remove the badge requirement.
 enum {
-    FIELD_MOVE_CUT,         // FLAG_BADGE01_GET
-    FIELD_MOVE_FLASH,       // FLAG_BADGE02_GET
+    FIELD_MOVE_CUT,
+    FIELD_MOVE_FLASH,
     FIELD_MOVE_ROCK_SMASH,  // FLAG_BADGE03_GET
     FIELD_MOVE_STRENGTH,    // FLAG_BADGE04_GET
     FIELD_MOVE_SURF,        // FLAG_BADGE05_GET
-    FIELD_MOVE_FLY,         // FLAG_BADGE06_GET
+    FIELD_MOVE_FLY,
     FIELD_MOVE_DIVE,        // FLAG_BADGE07_GET
     FIELD_MOVE_WATERFALL,   // FLAG_BADGE08_GET
     FIELD_MOVE_TELEPORT,
@@ -4145,8 +4143,11 @@ static void CursorCb_FieldMove(u8 taskId)
     }
     else
     {
-        // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
+        if ((fieldMove == FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE08_GET) != TRUE)
+        || (fieldMove == FIELD_MOVE_DIVE && FlagGet(FLAG_BADGE07_GET) != TRUE)
+        || (fieldMove == FIELD_MOVE_SURF && FlagGet(FLAG_BADGE05_GET) != TRUE)
+        || (fieldMove == FIELD_MOVE_STRENGTH && FlagGet(FLAG_BADGE04_GET) != TRUE)
+        || (fieldMove == FIELD_MOVE_ROCK_SMASH && FlagGet(FLAG_BADGE03_GET) != TRUE))
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
