@@ -8011,14 +8011,14 @@ static const struct TrainerMon sParty_Huey[] = { // Route boss
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
-        .species = SPECIES_GASTRODON_WEST_SEA,
-        .heldItem = ITEM_LEFTOVERS,
-        .ability = ABILITY_STORM_DRAIN,
+        .species = SPECIES_KILOWATTREL,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_WIND_POWER,
         .lvl = 52,
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_EARTH_POWER, MOVE_RECOVER, MOVE_ICE_BEAM, MOVE_SURF}
+        .moves = {MOVE_THUNDERBOLT, MOVE_JETSTREAM, MOVE_AIR_SLASH, MOVE_THUNDER_WAVE}
     },
     {
         .species = SPECIES_ABSOL,

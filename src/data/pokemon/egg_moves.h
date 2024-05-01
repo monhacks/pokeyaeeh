@@ -2511,6 +2511,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(ABSOL,
               MOVE_ASSURANCE,
+              MOVE_AQUA_CUTTER,
               MOVE_BATON_PASS,
               MOVE_BITE,
               MOVE_CURSE,
@@ -2518,6 +2519,7 @@ const u16 gEggMoves[] = {
               MOVE_FEINT_ATTACK,
               MOVE_FEINT,
               MOVE_HEX,
+              MOVE_LEAF_BLADE,
               MOVE_MAGIC_COAT,
               MOVE_ME_FIRST,
               MOVE_MEAN_LOOK,

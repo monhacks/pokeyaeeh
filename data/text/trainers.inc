@@ -823,11 +823,13 @@ Route109_Text_AlicePostBattle:
 	.string "Cheeks are the most prone to burning!$"
 
 Route109_Text_HueyIntro:
-	.string "I've laid anchor in ports around\n"
-	.string "the world, but Slateport's the best.$"
+	.string "Alright then, kid!\n"
+	.string "Let's sea what you got!$"
 
 Route109_Text_HueyDefeated:
-	.string "You're the best!$"
+	.string "Ha ha!\p"
+	.string "Hadn't had such a battle since that\n"
+	.string "red cap boy in SS. Anne!$" @ yes im referring to red
 
 Route109_Text_HueyPostBattle:
 	.string "In the best port was the best\n"
