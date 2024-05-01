@@ -165,6 +165,7 @@ SlateportCity_Pokemart_CompGuy1: @ Offensivve items
 	.2byte ITEM_ROOM_SERVICE
 	.2byte ITEM_BLUNDER_POLICY
 	.2byte ITEM_IRON_BALL
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -195,6 +196,7 @@ SlateportCity_Pokemart_CompGuy2: @ Defensive items
 	.2byte ITEM_ABILITY_SHIELD
 	.2byte ITEM_CLEAR_AMULET
 	.2byte ITEM_COVERT_CLOAK
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -218,6 +220,7 @@ SlateportCity_Pokemart_Cook:
 	.2byte ITEM_LUMIOSE_GALETTE
 	.2byte ITEM_SHALOUR_SABLE
 	.2byte ITEM_BIG_MALASADA
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -370,7 +373,19 @@ SlateportCity_EventScript_ManiacSternInterview::
 	end
 
 SlateportCity_EventScript_Woman2::
-	msgbox SlateportCity_Text_CantChangeTradeMonName, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_MET_SLATEPORT_WOMAN, SlateportCity_EventScriptWelcomeToSlateport
+	msgbox SlateportCity_Text_WelcomeToSlateportMarket, MSGBOX_NPC
+	giveitem ITEM_HARBOR_MAIL
+	msgbox SlateportCity_Text_EnjoyYourStay, MSGBOX_NPC
+	setflag FLAG_MET_SLATEPORT_WOMAN
+	release
+	end
+
+SlateportCity_EventScriptWelcomeToSlateport:
+	msgbox SlateportCity_Text_WelcomeToSlateportMarket2, MSGBOX_NPC
+	release
 	end
 
 SlateportCity_EventScript_Sailor1::
@@ -521,22 +536,43 @@ SlateportCity_EventScript_AquaGrunt11::
 	release
 	end
 
-SlateportCity_EventScript_DollClerk::
+SlateportCity_EventScript_EvoStonesClerk::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemartdecoration SlateportCity_PokemartDecor_Dolls
+	pokemart SlateportCity_Pokemart_EvoStones
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_PokemartDecor_Dolls:
-	.2byte DECOR_AZURILL_DOLL
-	.2byte DECOR_MARILL_DOLL
-	.2byte DECOR_SKITTY_DOLL
-	.2byte DECOR_NONE
+SlateportCity_Pokemart_EvoStones:
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_ICE_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_MOON_STONE
+	.2byte ITEM_SHINY_STONE
+	.2byte ITEM_DUSK_STONE
+	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_OVAL_STONE
+	.2byte ITEM_UPGRADE
+	.2byte ITEM_DUBIOUS_DISC
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_PROTECTOR
+	.2byte ITEM_ELECTIRIZER
+	.2byte ITEM_MAGMARIZER
+	.2byte ITEM_RAZOR_CLAW
+	.2byte ITEM_RAZOR_FANG
+	.2byte ITEM_REAPER_CLOTH
+	.2byte ITEM_DEEP_SEA_TOOTH
+	.2byte ITEM_DEEP_SEA_SCALE
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -1138,11 +1174,18 @@ SlateportCity_Text_GetNameRaterToHelpYou:
 	.string "nickname, you'll have to get the Name\l"
 	.string "Rater to help you.$"
 
-SlateportCity_Text_CantChangeTradeMonName:
-	.string "Any Pokémon you get in a trade,\n"
-	.string "you can't change its nickname.\p"
-	.string "The original Trainer's love for that\n"
-	.string "Pokémon is in the nickname.$"
+SlateportCity_Text_WelcomeToSlateportMarket:
+	.string "Welcome to the Slateport Market\n"
+	.string "The novelty place of Hoenn!\p"
+	.string "Please take this as a welcoming gift!$"
+
+SlateportCity_Text_EnjoyYourStay:
+	.string "We hope you enjoy your stay here!$"
+
+SlateportCity_Text_WelcomeToSlateportMarket2:
+	.string "Welcome to the Slateport Market\n"
+	.string "The novelty place of Hoenn!\p"
+	.string "We hope you enjoy your stay here!$"
 
 SlateportCity_Text_BattleTentBuiltRecently:
 	.string "Recently, a Battle Tent was built\n"

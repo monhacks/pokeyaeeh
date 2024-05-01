@@ -122,7 +122,7 @@ Text_TestDefeat:
 
 Debug_EventScript_Script_1::
 	goto_if_set FLAG_TOXIC_POISON_TEAM, Debug_EventScript_UnsetTestFlag
-	goto Debug_EventScript_SetTestFlag
+	@ goto Debug_EventScript_SetTestFlag
 	end
 
 Debug_EventScript_Script_2::
