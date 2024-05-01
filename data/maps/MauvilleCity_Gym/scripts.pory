@@ -29,8 +29,6 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	setvar VAR_0x8008, 3
 	call Common_EventScript_SetGymTrainers
-	special MauvilleGymDeactivatePuzzle
-	special DrawWholeMapView
 	playse SE_UNLOCK
 	call MauvilleCity_Gym_EventScript_GiveShockWave
 	closemessage
@@ -251,9 +249,9 @@ MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "You should take this, too!$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM84 there contains Heat Wave.\p"
-	.string "It's a trustworthy move that never\n"
-	.string "misses…… in harsh sunlight! Hehe\p"
+	.string "That TM74 there contains Fire Blast.\p"
+	.string "It's a trustworthy move that can\n"
+	.string "sometimes leave a burn!\p"
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
