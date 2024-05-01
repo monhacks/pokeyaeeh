@@ -8,14 +8,14 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
 	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_set FLAG_SYS_ENABLE_MOVE_RELEARNERS, FallarborTown_MoveRelearnersHouse_EventScript_KitExplain
+	goto_if_set FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER, FallarborTown_MoveRelearnersHouse_EventScript_KitExplain
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message FallarborTown_MoveRelearnersHouse_Text_PlayerReceivedMoveKit
 	waitmessage
 	waitfanfare
 	msgbox FallarborTown_MoveRelearnersHouse_Text_KitExplain, MSGBOX_NPC
-	setflag FLAG_SYS_ENABLE_MOVE_RELEARNERS
+	setflag FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER
 	end
 
 FallarborTown_MoveRelearnersHouse_EventScript_ImTheMoveTutor::
@@ -46,8 +46,7 @@ FallarborTown_MoveRelearnersHouse_Text_PlayerReceivedMoveKit:
 FallarborTown_MoveRelearnersHouse_Text_KitExplain:
     .string "My kit will help you to teach\n"
 	.string "moves your Pokémon would normally\l"
-	.string "only learn via breeding or\l"
-	.string "by reminding.$"
+	.string "only learn via breeding.$"
 
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon, MSGBOX_DEFAULT

@@ -216,8 +216,24 @@ Route101_EventScript_Boy::
 	end
 
 Route101_EventScript_RouteSign::
-	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
+	msgbox Route101_Text_RouteSign, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route101_EventScript_RouteSignJoke
+	msgbox Text_Dumbass MSGBOX_AUTOCLOSE
+	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
 	end
+
+Route101_EventScript_RouteSignJoke::
+    msgbox Text_YouShould, MSGBOX_DEFAULT
+    msgbox Text_space, MSGBOX_DEFAULT
+    setweather WEATHER_RAIN_THUNDERSTORM
+    doweather
+    msgbox Text_FaintYourself, MSGBOX_DEFAULT
+    msgbox Text_NOW, MSGBOX_AUTOCLOSE
+    setweather WEATHER_SUNNY
+    doweather
+	waitmessage
+	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
+    end
 
 Route101_EventScript_BirchsBag::
 	lock
@@ -300,6 +316,23 @@ Route101_Text_WildPokemonInTallGrass:
 
 Route101_Text_RouteSign:
 	.string "Route 101\n"
-	.string "{UP_ARROW} Oldale Town$"
+	.string "{UP_ARROW} Oldale Town\p"
+	.string "It says something else too!\n"
+	.string "Read it?$"
+
+Text_Dumbass:
+	.string "Dumbass…$"
+
+Text_YouShould:
+    .string "You should…$"
+
+Text_space:
+    .string " $"
+
+Text_FaintYourself:
+    .string "FAINT YOURSELF…$"
+
+Text_NOW:
+    .string "NOW!$"
 
 `

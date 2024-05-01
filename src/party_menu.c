@@ -2996,10 +2996,13 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
         // LevelUp and Egg move tutor (TODO: add Teachable Moves tutor)
-        if (FlagGet(FLAG_SYS_ENABLE_MOVE_RELEARNERS))
+        if (FlagGet(FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER))
         {
             if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfRelearnableMoves(&mons[slotId]) > 0)
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MOVES);
+        }
+        if (FlagGet(FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER))
+        {
 		    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfEggMoves(&mons[slotId]) > 0)
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EGG_MOVES);
         }

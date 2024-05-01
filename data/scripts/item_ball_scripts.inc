@@ -346,6 +346,10 @@ RusturfTunnel_EventScript_ItemPokeBall::
 	finditem ITEM_POKE_BALL
 	end
 
+RusturfTunnel_EventScript_ItemTMDefog::
+	finditem ITEM_TM_DEFOG
+	end
+
 RusturfTunnel_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
