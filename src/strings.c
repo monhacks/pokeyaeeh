@@ -694,8 +694,8 @@ const u8 gText_GlassDesk[] = _("Glass Desk");
 const u8 gText_TreeckoDollAndPrice[] = _("Treecko Doll 1,000 Coins");
 const u8 gText_TorchicDollAndPrice[] = _("Torchic Doll 1,000 Coins");
 const u8 gText_MudkipDollAndPrice[] = _("Mudkip Doll   1,000 Coins");
-const u8 gText_50CoinsAndPrice[] = _("  50 coins    ¥1,000");
-const u8 gText_500CoinsAndPrice[] = _("500 coins  ¥10,000");
+const u8 gText_50CoinsAndPrice[] = _("  50 coins    ¥500");
+const u8 gText_500CoinsAndPrice[] = _("500 coins  ¥5,000");
 const u8 gText_Excellent2[] = _("Excellent");
 const u8 gText_NotSoGood[] = _("Not so good");
 const u8 gText_RedShard[] = _("Red Shard");
@@ -1920,3 +1920,48 @@ const u8 gText_Tailwind[] = _("Tailwind");
 const u8 gText_PokeVial_Success[] = _("PokéVial successfully healed party!\nUses left: {STR_VAR_1}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_PokeVial_HealthFull[] = _("Party is already at full health!{PAUSE_UNTIL_PRESS}");
 const u8 gText_PokeVial_Failure[] = _("PokéVial is drained!\nHeal at a Pokémon Center to replenish.{PAUSE_UNTIL_PRESS}");
+
+// Rare Pokemon
+const u8 gText_GameCornerPorygon[] = 	_("Porygon{CLEAR_TO 0x48}5000 Coins");
+const u8 gText_GameCornerMunchlax[] = 	_("Munchlax{CLEAR_TO 0x48}4000 Coins");
+const u8 gText_GameCornerEevee[] = 	    _("Eevee{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerFarfetchd[] = 	_("Farfetch'd{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerHonedge[] = 	_("Honedge{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerHawlucha[] = 	_("Grimer{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerMimikyu[] = 	_("Mimikyu{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerToxel[] = 	    _("Toxel{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerGimmighoul[] = _("Gimmighoul{CLEAR_TO 0x48}10000 Coins");
+// Grass Starters
+const u8 gText_GameCornerBulbasaur[] = 	_("Bulbasaur{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerChikorita[] = 	_("Chikorita{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerTreecko[] = 	_("Treecko{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerTurtwig[] = 	_("Turtwig{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerSnivy[] = 		_("Snivy{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerChespin[] = 	_("Chespin{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerRowlet[] = 	_("Rowlet{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerGrookey[] = 	_("Grookey{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerSprigatito[] = _("Sprigatito{CLEAR_TO 0x48}500 Coins");
+// Fire Starters
+const u8 gText_GameCornerCharmander[] = _("Charmander{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerCyndaquil[] = 	_("Cyndaquil{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerTorchic[] = 	_("Torchic{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerChimchar[] = 	_("Chimchar{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerTepig[] = 		_("Tepig{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerFennekin[] = 	_("Fennekin{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerLitten[] = 	_("Litten{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerScorbunny[] = 	_("Scorbunny{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerFuecoco[] = 	_("Fuecoco{CLEAR_TO 0x48}500 Coins");
+// Water Starters
+const u8 gText_GameCornerSquirtle[] = 	_("Squirtle{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerTotodile[] = 	_("Totodile{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerMudkip[] = 	_("Mudkip{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerPiplup[] = 	_("Piplup{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerOshawott[] = 	_("Oshawott{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerFroakie[] = 	_("Froakie{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerPopplio[] = 	_("Popplio{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerSobble[] = 	_("Sobble{CLEAR_TO 0x48}500 Coins");
+const u8 gText_GameCornerQuaxly[] = 	_("Quaxly{CLEAR_TO 0x48}500 Coins");
+// Starter type selection
+const u8 gText_GrassType[] = _("Grass-type");
+const u8 gText_FireType[] = _("Fire-type");
+const u8 gText_WaterType[] = _("Water-type");

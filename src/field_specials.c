@@ -2411,6 +2411,28 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_GAMECORNER_POKEMON:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 19;
+        task->tTop = 1;
+        task->tWidth = 12;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GAMECORNER_GRASS_STARTERS:
+    case SCROLL_MULTI_GAMECORNER_FIRE_STARTERS:
+    case SCROLL_MULTI_GAMECORNER_WATER_STARTERS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 19;
+        task->tTop = 1;
+        task->tWidth = 12;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2597,6 +2619,58 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Whirlpool,
         gText_AquaTail,
         gText_Tailwind,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAMECORNER_POKEMON] =
+    {
+        gText_GameCornerPorygon,
+        gText_GameCornerMunchlax,
+        gText_GameCornerEevee,
+        gText_GameCornerFarfetchd,
+        gText_GameCornerHonedge,
+        gText_GameCornerHawlucha,
+        gText_GameCornerMimikyu,
+        gText_GameCornerToxel,
+        gText_GameCornerGimmighoul,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAMECORNER_GRASS_STARTERS] =
+    {
+        gText_GameCornerBulbasaur,
+        gText_GameCornerChikorita,
+        gText_GameCornerTreecko,
+        gText_GameCornerTurtwig,
+        gText_GameCornerSnivy,
+        gText_GameCornerChespin,
+        gText_GameCornerRowlet,
+        gText_GameCornerGrookey,
+        gText_GameCornerSprigatito,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAMECORNER_FIRE_STARTERS] =
+    {
+        gText_GameCornerCharmander,
+        gText_GameCornerCyndaquil,
+        gText_GameCornerTorchic,
+        gText_GameCornerChimchar,
+        gText_GameCornerTepig,
+        gText_GameCornerFennekin,
+        gText_GameCornerLitten,
+        gText_GameCornerScorbunny,
+        gText_GameCornerFuecoco,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAMECORNER_WATER_STARTERS] =
+    {
+        gText_GameCornerSquirtle,
+        gText_GameCornerTotodile,
+        gText_GameCornerMudkip,
+        gText_GameCornerPiplup,
+        gText_GameCornerOshawott,
+        gText_GameCornerFroakie,
+        gText_GameCornerPopplio,
+        gText_GameCornerSobble,
+        gText_GameCornerQuaxly,
         gText_Exit
     },
 };

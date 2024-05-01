@@ -3145,4 +3145,49 @@ extern const u8 gText_PokeVial_Success[];
 extern const u8 gText_PokeVial_HealthFull[];
 extern const u8 gText_PokeVial_Failure[];
 
+// Mauville Game Corner prizes
+extern const u8 gText_GameCornerPorygon[];
+extern const u8 gText_GameCornerMunchlax[];
+extern const u8 gText_GameCornerEevee[];
+extern const u8 gText_GameCornerFarfetchd[];
+extern const u8 gText_GameCornerHonedge[];
+extern const u8 gText_GameCornerHawlucha[];
+extern const u8 gText_GameCornerMimikyu[];
+extern const u8 gText_GameCornerToxel[];
+extern const u8 gText_GameCornerGimmighoul[];
+
+extern const u8 gText_GameCornerBulbasaur[];
+extern const u8 gText_GameCornerChikorita[];
+extern const u8 gText_GameCornerTreecko[];
+extern const u8 gText_GameCornerTurtwig[];
+extern const u8 gText_GameCornerSnivy[];
+extern const u8 gText_GameCornerChespin[];
+extern const u8 gText_GameCornerRowlet[];
+extern const u8 gText_GameCornerGrookey[];
+extern const u8 gText_GameCornerSprigatito[];
+
+extern const u8 gText_GameCornerCharmander[];
+extern const u8 gText_GameCornerCyndaquil[];
+extern const u8 gText_GameCornerTorchic[];
+extern const u8 gText_GameCornerChimchar[];
+extern const u8 gText_GameCornerTepig[];
+extern const u8 gText_GameCornerFennekin[];
+extern const u8 gText_GameCornerLitten[];
+extern const u8 gText_GameCornerScorbunny[];
+extern const u8 gText_GameCornerFuecoco[];
+
+extern const u8 gText_GameCornerSquirtle[];
+extern const u8 gText_GameCornerTotodile[];
+extern const u8 gText_GameCornerMudkip[];
+extern const u8 gText_GameCornerPiplup[];
+extern const u8 gText_GameCornerOshawott[];
+extern const u8 gText_GameCornerFroakie[];
+extern const u8 gText_GameCornerPopplio[];
+extern const u8 gText_GameCornerSobble[];
+extern const u8 gText_GameCornerQuaxly[];
+
+extern const u8 gText_GrassType[];
+extern const u8 gText_FireType[];
+extern const u8 gText_WaterType[];
+
 #endif // GUARD_STRINGS_H
