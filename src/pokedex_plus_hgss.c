@@ -599,6 +599,7 @@ static void PrintStatsScreen_Left(u8 taskId);
 static void PrintStatsScreen_Abilities(u8 taskId);
 static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top);
 static void PrintInfoScreenTextSmall(const u8* str, u8 left, u8 top);
+static void PrintInfoScreenTextNarrower(const u8* str, u8 left, u8 top);
 static void PrintInfoScreenTextSmallWhite(const u8* str, u8 left, u8 top);
 static void Task_LoadEvolutionScreen(u8 taskId);
 static void Task_HandleEvolutionScreenInput(u8 taskId);
@@ -4353,6 +4354,15 @@ static void PrintInfoScreenTextSmall(const u8* str, u8 left, u8 top)
 
     AddTextPrinterParameterized4(0, 0, left, top, 0, 0, color, 0, str);
 }
+static void PrintInfoScreenTextNarrower(const u8* str, u8 left, u8 top)
+{
+    u8 color[3];
+    color[0] = TEXT_COLOR_TRANSPARENT;
+    color[1] = TEXT_DYNAMIC_COLOR_6;
+    color[2] = TEXT_COLOR_LIGHT_GRAY;
+
+    AddTextPrinterParameterized4(0, FONT_NARROWER, left, top, 0, 0, color, 0, str);
+}
 static void UNUSED PrintInfoScreenTextSmallWhite(const u8* str, u8 left, u8 top)
 {
     u8 color[3];
@@ -6658,26 +6668,26 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
             break;
         case EVO_ITEM_SPECIFIC_MAP:
             item = gEvolutionTable[species][i].param;
-            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param >> 8, gEvolutionTable[species][i].param & 0xFF);
+            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param2 >> 8, gEvolutionTable[species][i].param2 & 0xFF);
             CopyItemName(item, gStringVar2);
             GetMapName(gStringVar3, mapHeader->regionMapSectionId, 0);
             StringExpandPlaceholders(gStringVar4, sText_EVO_ITEM_SPECIFIC_MAP );
             break;
         case EVO_LEVEL_SPECIFIC_MAP:
             ConvertIntToDecimalStringN(gStringVar2, gEvolutionTable[species][i].param, STR_CONV_MODE_LEADING_ZEROS, EVO_SCREEN_LVL_DIGITS); //level
-            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param >> 8, gEvolutionTable[species][i].param & 0xFF);
+            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param2 >> 8, gEvolutionTable[species][i].param2 & 0xFF);
             GetMapName(gStringVar3, mapHeader->regionMapSectionId, 0);
             StringExpandPlaceholders(gStringVar4, sText_EVO_LEVEL_SPECIFIC_MAP );
             break;
         case EVO_MOVE_SPECIFIC_MAP:
             StringCopy(gStringVar2, gMoveNames[gEvolutionTable[species][i].param]);
-            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param >> 8, gEvolutionTable[species][i].param & 0xFF);
+            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param2 >> 8, gEvolutionTable[species][i].param2 & 0xFF);
             GetMapName(gStringVar3, mapHeader->regionMapSectionId, 0);
             StringExpandPlaceholders(gStringVar4, sText_EVO_MOVE_SPECIFIC_MAP );
             break;
         case EVO_NIGHT_SPECIFIC_MAP:
             ConvertIntToDecimalStringN(gStringVar2, gEvolutionTable[species][i].param, STR_CONV_MODE_LEADING_ZEROS, EVO_SCREEN_LVL_DIGITS); //level
-            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param >> 8, gEvolutionTable[species][i].param & 0xFF);
+            mapHeader = Overworld_GetMapHeaderByGroupAndId(gEvolutionTable[species][i].param2 >> 8, gEvolutionTable[species][i].param2 & 0xFF);
             GetMapName(gStringVar3, mapHeader->regionMapSectionId, 0);
             StringExpandPlaceholders(gStringVar4, sText_EVO_NIGHT_SPECIFIC_MAP );
             break;
@@ -6685,7 +6695,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
             StringExpandPlaceholders(gStringVar4, sText_EVO_UNKNOWN );
             break;
         }//Switch end
-        PrintInfoScreenTextSmall(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i); //Print actual instructions
+        PrintInfoScreenTextNarrower(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i); //Print actual instructions
 
         depth_i += PrintEvolutionTargetSpeciesAndMethod(taskId, targetSpecies, depth+1, base_i+1);
     }//For loop end
