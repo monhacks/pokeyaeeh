@@ -627,6 +627,7 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_BLACK_AUGURITE]     = gItemEffect_EvoItem,
     [ITEM_LINKING_CORD]       = gItemEffect_EvoItem,
     [ITEM_PEAT_BLOCK]         = gItemEffect_EvoItem,
+    [ITEM_GIMMIGHOUL_COIN]    = gItemEffect_EvoItem,
     [ITEM_LEADERS_CREST]      = gItemEffect_EvoItem,
     [ITEM_SYRUPY_APPLE]       = gItemEffect_EvoItem,
     [ITEM_UNREMARKABLE_TEACUP] = gItemEffect_EvoItem,

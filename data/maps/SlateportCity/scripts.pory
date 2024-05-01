@@ -536,18 +536,18 @@ SlateportCity_EventScript_AquaGrunt11::
 	release
 	end
 
-SlateportCity_EventScript_EvoStonesClerk::
+SlateportCity_EventScript_EvoStonesClerk1::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart SlateportCity_Pokemart_EvoStones
+	pokemart SlateportCity_Pokemart_EvoStones1
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_Pokemart_EvoStones:
+SlateportCity_Pokemart_EvoStones1:
 	.2byte ITEM_FIRE_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_THUNDER_STONE
@@ -558,6 +558,24 @@ SlateportCity_Pokemart_EvoStones:
 	.2byte ITEM_SHINY_STONE
 	.2byte ITEM_DUSK_STONE
 	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_EvoStonesClerk2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Pokemart_EvoStones2
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_EvoStones2:
 	.2byte ITEM_OVAL_STONE
 	.2byte ITEM_UPGRADE
 	.2byte ITEM_DUBIOUS_DISC
@@ -571,7 +589,28 @@ SlateportCity_Pokemart_EvoStones:
 	.2byte ITEM_REAPER_CLOTH
 	.2byte ITEM_DEEP_SEA_TOOTH
 	.2byte ITEM_DEEP_SEA_SCALE
-	.2byte ITEM_EVERSTONE
+	.2byte ITEM_SACHET
+	.2byte ITEM_WHIPPED_DREAM
+	.2byte ITEM_SWEET_APPLE
+	.2byte ITEM_TART_APPLE
+	.2byte ITEM_CRACKED_POT
+	.2byte ITEM_CHIPPED_POT
+	.2byte ITEM_GALARICA_CUFF
+	.2byte ITEM_GALARICA_WREATH
+	.2byte ITEM_AUSPICIOUS_ARMOR
+	.2byte ITEM_MALICIOUS_ARMOR
+	.2byte ITEM_SCROLL_OF_DARKNESS
+	.2byte ITEM_SCROLL_OF_WATERS
+	.2byte ITEM_BLACK_AUGURITE
+	.2byte ITEM_PEAT_BLOCK
+	.2byte ITEM_LEADERS_CREST
+	.2byte ITEM_SYRUPY_APPLE
+	.2byte ITEM_UNREMARKABLE_TEACUP
+	.2byte ITEM_MASTERPIECE_TEACUP
+	.2byte ITEM_METAL_ALLOY
+	.2byte ITEM_STEEL_ARMOR
+	.2byte ITEM_GIMMIGHOUL_COIN
+	.2byte ITEM_SYRUPY_APPLE
 	.2byte ITEM_NONE
 	release
 	end

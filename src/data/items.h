@@ -2636,7 +2636,7 @@ const struct Item gItems[] =
     [ITEM_SWEET_APPLE] =
     {
         .name = _("Sweet Apple"),
-        .price = 2200,
+        .price = 2000,
         .description = sSweetAppleDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -2647,7 +2647,7 @@ const struct Item gItems[] =
     [ITEM_TART_APPLE] =
     {
         .name = _("Tart Apple"),
-        .price = 2200,
+        .price = 2000,
         .description = sTartAppleDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -2658,7 +2658,7 @@ const struct Item gItems[] =
     [ITEM_CRACKED_POT] =
     {
         .name = _("Cracked Pot"),
-        .price = 1600,
+        .price = 1500,
         .description = sCrackedPotDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -2669,7 +2669,7 @@ const struct Item gItems[] =
     [ITEM_CHIPPED_POT] =
     {
         .name = _("Chipped Pot"),
-        .price = 38000,
+        .price = 2000,
         .description = sChippedPotDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -2680,7 +2680,7 @@ const struct Item gItems[] =
     [ITEM_GALARICA_CUFF] =
     {
         .name = _("Galarica Cuff"),
-        .price = 6000,
+        .price = 2000,
         .description = sGalaricaCuffDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -2691,7 +2691,7 @@ const struct Item gItems[] =
     [ITEM_GALARICA_WREATH] =
     {
         .name = _("Galarica Wreath"),
-        .price = 6000,
+        .price = 2000,
         .description = sGalaricaWreathDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -9925,17 +9925,17 @@ const struct Item gItems[] =
     [ITEM_GIMMIGHOUL_COIN] =
     {
         .name = _("Gimmighoul Coin"),
-        .price = 400,
+        .price = 500,
         .description = sGimmighoulCoinDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_LEADERS_CREST] =
     {
         .name = _("Leader's Crest"),
-        .price = 3000,
+        .price = 2000,
         .description = sLeadersCrestDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -9945,7 +9945,7 @@ const struct Item gItems[] =
     [ITEM_MALICIOUS_ARMOR] =
     {
         .name = _("Malicious Armor"),
-        .price = 3000,
+        .price = 2000,
         .description = sMaliciousArmorDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -9968,7 +9968,7 @@ const struct Item gItems[] =
     [ITEM_SCROLL_OF_DARKNESS] =
     {
         .name = _("Scroll Of Darks"),
-        .price = 0,
+        .price = 10000,
         .description = sScrollOfDarknessDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -9979,7 +9979,7 @@ const struct Item gItems[] =
     [ITEM_SCROLL_OF_WATERS] =
     {
         .name = _("Scroll Of Waters"),
-        .price = 0,
+        .price = 10000,
         .description = sScrollOfWatersDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -10225,7 +10225,7 @@ const struct Item gItems[] =
     [ITEM_BLACK_AUGURITE] =
     {
         .name = _("BlackAugurite"),
-        .price = 8000,
+        .price = 2000,
         .description = sBlackAuguriteDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -10236,7 +10236,7 @@ const struct Item gItems[] =
     [ITEM_LINKING_CORD] =
     {
         .name = _("Linking Cord"),
-        .price = 8000,
+        .price = 2000,
         .description = sLinkingCordDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -10247,7 +10247,7 @@ const struct Item gItems[] =
     [ITEM_PEAT_BLOCK] =
     {
         .name = _("Peat Block"),
-        .price = 10000,
+        .price = 2000,
         .description = sPeatBlockDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
@@ -10283,7 +10283,7 @@ const struct Item gItems[] =
     [ITEM_SYRUPY_APPLE] =
     {
         .name = _("Syrupy Apple"),
-        .price = 2200,
+        .price = 2000,
         .description = sSyrupyAppleDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10294,7 +10294,7 @@ const struct Item gItems[] =
     [ITEM_UNREMARKABLE_TEACUP] =
     {
         .name = _("UnrmkblTeacup"),
-        .price = 1600,
+        .price = 1500,
         .description = sUnremarkableTeacupDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10305,7 +10305,7 @@ const struct Item gItems[] =
     [ITEM_MASTERPIECE_TEACUP] =
     {
         .name = _("MstrpceTeacup"),
-        .price = 38000,
+        .price = 2000,
         .description = sMasterpieceTeacupDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10440,7 +10440,7 @@ const struct Item gItems[] =
     [ITEM_METAL_ALLOY] =
     {
         .name = _("Metal Alloy"),
-        .price = 6000,
+        .price = 2000,
         .description = sMetalAlloyDesc,
         .pocket = POCKET_POWER_UP,
         .type = ITEM_USE_PARTY_MENU,
