@@ -11046,8 +11046,8 @@ BattleScript_TailstreamActivated::
     printstring STRINGID_EMPTYSTRING3
 	waitmessage B_WAIT_TIME_LONG
 	printstring STRINGID_EMPTYSTRING3
-	playanimation BS_ABILITY_BATTLER, B_ANIM_TAILWIND
 	printstring STRINGID_TAILSTREAMACTIVATED
+	playanimation BS_ABILITY_BATTLER, B_ANIM_TAILWIND
 	waitmessage B_WAIT_TIME_LONG
 	sethword sABILITY_OVERWRITE, 0
 	call BattleScript_TryTailwindAbilitiesLoop

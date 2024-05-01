@@ -123,6 +123,7 @@ Text_TestDefeat:
 Debug_EventScript_Script_1::
 	goto_if_set FLAG_TOXIC_POISON_TEAM, Debug_EventScript_UnsetTestFlag
 	@ goto Debug_EventScript_SetTestFlag
+	goto Debug_EventScript_ThePoisonIsDisabled
 	end
 
 Debug_EventScript_Script_2::
@@ -154,12 +155,7 @@ Debug_EventScript_Script_6:: @ Sky Battle
     release
     end
 
-Debug_EventScript_Script_7:: @ Mugshots
-	cleartrainerflag TRAINER_MAY_PLACEHOLDER
-	setvar VAR_MUGSHOT_ID, MUGSHOT_MAY
-	trainerbattle_single TRAINER_MAY_PLACEHOLDER, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
-	end
-
+Debug_EventScript_Script_7::
 Debug_EventScript_Script_8::
 	end
 
@@ -285,11 +281,18 @@ Debug_EventScript_UnsetTestFlag::
     clearflag FLAG_TOXIC_POISON_TEAM
 	end
 
+Debug_EventScript_ThePoisonIsDisabled::
+    msgbox Debug_Text_PoisonDisabled, MSGBOX_AUTOCLOSE
+	end
+
 Debug_Text_SetTestFlag::
-    .string "Test flag set.$"
+    .string "Poison flag set.$"
 
 Debug_Text_UnsetTestFlag::
-    .string "Test flag unset.$"
+    .string "Poison flag unset.$"
+
+Debug_Text_PoisonDisabled::
+	.string "The poison is disabled, lol.$"
 
 Route123_EventScript_Alberto_Battle_Event_Script::
     msgbox Route123_EventScript_Alberto_Text_AskSkyBattle, MSGBOX_YESNO

@@ -2949,9 +2949,9 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     u32 i,j, move;
 
     // Adds field moves to the Pokémon's field moves list without knowing them
-    if ((FlagGet(FLAG_BADGE06_GET)) && (CheckBagHasItem(ITEM_HM02, 1)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE))
+    if ((CheckBagHasItem(ITEM_HM02, 1)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
-    if ((FlagGet(FLAG_BADGE01_GET)) && (CheckBagHasItem(ITEM_TM85, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
+    if ((FlagGet(FLAG_BADGE02_GET)) && (CheckBagHasItem(ITEM_TM85, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
     if (CanUseDigOrEscapeRopeOnCurMap() == TRUE)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_DIG + MENU_FIELD_MOVES);
