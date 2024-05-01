@@ -79,7 +79,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_LICKITUNG]             = {{EVO_MOVE, MOVE_ROLLOUT, SPECIES_LICKILICKY}},
 #endif
     [SPECIES_KOFFING]               = {{EVO_LEVEL, 35, SPECIES_WEEZING},
-                                       {EVO_LEVEL_SPECIFIC_MAP, 35, SPECIES_WEEZING_GALARIAN, MAP_BATTLE_FRONTIER_OUTSIDE_WEST}}, // galar
+                                       {EVO_LEVEL_SPECIFIC_MAP, 35, SPECIES_WEEZING_GALARIAN, MAP_SLATEPORT_CITY}}, // galar
     [SPECIES_RHYHORN]               = {{EVO_LEVEL, 42, SPECIES_RHYDON}},
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_RHYDON]                = {{EVO_ITEM, ITEM_PROTECTOR, SPECIES_RHYPERIOR}},
@@ -304,7 +304,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_BRONZOR]               = {{EVO_LEVEL, 33, SPECIES_BRONZONG}},
     [SPECIES_BONSLY]                = {{EVO_MOVE, MOVE_MIMIC, SPECIES_SUDOWOODO}},
     [SPECIES_MIME_JR]               = {{EVO_MOVE, MOVE_MIMIC, SPECIES_MR_MIME},
-                                       {EVO_MOVE_SPECIFIC_MAP, MOVE_MIMIC, SPECIES_MR_MIME_GALARIAN, MAP_BATTLE_FRONTIER_OUTSIDE_WEST}},  // galar
+                                       {EVO_MOVE_SPECIFIC_MAP, MOVE_MIMIC, SPECIES_MR_MIME_GALARIAN, MAP_SLATEPORT_CITY}},  // galar
     [SPECIES_HAPPINY]               = {{EVO_ITEM_HOLD_DAY, ITEM_OVAL_STONE, SPECIES_CHANSEY},
                                        {EVO_ITEM_DAY, ITEM_OVAL_STONE, SPECIES_CHANSEY}},
     [SPECIES_GIBLE]                 = {{EVO_LEVEL, 24, SPECIES_GABITE}},
