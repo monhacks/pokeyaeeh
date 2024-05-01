@@ -190,8 +190,58 @@ static const struct TrainerMon sParty_Declan[] = {
 
 static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
     {
-    .lvl = 11,
-    .species = SPECIES_POOCHYENA,
+        .species = SPECIES_GHOLDENGO,
+        .ability = ABILITY_GOOD_AS_GOLD,
+        .heldItem = ITEM_LEFTOVERS,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 200, 252, 0),
+        .lvl = 19,
+        .moves = {MOVE_FLASH_CANNON, MOVE_SHADOW_BALL, MOVE_NASTY_PLOT, MOVE_PROTECT},
+        .nature = TRAINER_PARTY_NATURE(NATURE_BOLD)
+    },
+    {
+        .species = SPECIES_YUNGOOS,
+        .ability = ABILITY_STRONG_JAW,
+        .friendship = 200,
+        .heldItem = ITEM_CHOICE_BAND,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(0, 100, 0, 110, 0, 100),
+        .lvl = 19,
+        .moves = {MOVE_HYPER_FANG, MOVE_CRUNCH, MOVE_THUNDER_FANG, MOVE_ICE_FANG},
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT)
+    },
+    {
+        .species = SPECIES_GRAPPLOCT,
+        .ability = ABILITY_TECHNICIAN,
+        .friendship = 200,
+        .heldItem = ITEM_LIFE_ORB,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
+        .lvl = 19,
+        .moves = {MOVE_CIRCLE_THROW, MOVE_WATERFALL, MOVE_SUCKER_PUNCH, MOVE_POWER_UP_PUNCH},
+        .nature = TRAINER_PARTY_NATURE(NATURE_HASTY)
+    },
+    {
+        .species = SPECIES_VELUZA,
+        .ability = ABILITY_SHARPNESS,
+        .friendship = 200,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(100, 252, 0, 156, 0, 0),
+        .lvl = 19,
+        .moves = {MOVE_FILLET_AWAY, MOVE_AQUA_CUTTER, MOVE_PSYCHO_CUT, MOVE_NIGHT_SLASH},
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY)
+    },
+    {
+        .species = SPECIES_TATSUGIRI_DROOPY,
+        .ability = ABILITY_STORM_DRAIN,
+        .friendship = 200,
+        .heldItem = ITEM_CHOICE_SPECS,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 200, 252, 0),
+        .lvl = 19,
+        .moves = {MOVE_DRACO_METEOR, MOVE_HYDRO_PUMP, MOVE_FLIP_TURN, MOVE_NONE},
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID)
     }
 };
 
