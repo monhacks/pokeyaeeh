@@ -220,6 +220,7 @@ Route101_EventScript_RouteSign::
 	goto_if_eq VAR_RESULT, YES, Route101_EventScript_RouteSignJoke
 	msgbox Text_Dumbass MSGBOX_AUTOCLOSE
 	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
+	additem ITEM_HM_FLY
 	end
 
 Route101_EventScript_RouteSignJoke::
@@ -233,6 +234,7 @@ Route101_EventScript_RouteSignJoke::
     doweather
 	waitmessage
 	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
+	additem ITEM_HM_FLY
     end
 
 Route101_EventScript_BirchsBag::
