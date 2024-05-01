@@ -106,7 +106,7 @@ Route102_Text_RouteSignPetalburg:
 `
 script Route102_EventScript_Tiana2{
 	msgbox("Ok, fine! I lost!\pHere, take these, they'll help you in\nyour journey.")
-	givemon(ITEM_BERRY_JUICE, 2)
+	giveitem(ITEM_BERRY_JUICE, 2)
 	playfanfare(MUS_OBTAIN_ITEM)
 	giveitem(ITEM_TM_HONE_CLAWS, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
