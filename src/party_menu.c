@@ -101,6 +101,7 @@ enum {
     MENU_MOVES,
 	MENU_EGG_MOVES,
     MENU_TM_MOVES,
+	MENU_SUB_MOVES,
     MENU_SUB_FIELD_MOVES,
     MENU_CATALOG_BULB,
     MENU_CATALOG_OVEN,
@@ -129,6 +130,7 @@ enum {
     ACTIONS_TRADE,
     ACTIONS_SPIN_TRADE,
     ACTIONS_TAKEITEM_TOSS,
+    ACTIONS_MOVES_SUB,
     ACTIONS_FIELDMOVE_SUB,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
@@ -351,6 +353,7 @@ static void Task_CancelParticipationYesNo(u8);
 static void Task_HandleCancelParticipationYesNoInput(u8);
 static bool8 ShouldUseChooseMonText(void);
 static void SetPartyMonFieldSelectionActions(struct Pokemon *, u8);
+static void SetPartyMonLearnMoveSelectionActions(struct Pokemon*, u8);
 static void SetPartyMonFieldMoveSelectionActions(struct Pokemon*, u8);
 static u8 GetPartyMenuActionsTypeInBattle(struct Pokemon *);
 static u8 GetPartySlotEntryStatus(s8);
@@ -498,6 +501,7 @@ static void CursorCb_StatEdit(u8);
 static void CursorCb_ChangeMoves(u8);
 static void CursorCb_ChangeEggMoves(u8);
 static void CursorCb_ChangeTMMoves(u8);
+static void CursorCb_LearnMovesSubMenu(u8);
 static void CursorCb_FieldMovesSubMenu(u8);
 static void CursorCb_FieldMove(u8);
 static void CursorCb_CatalogBulb(u8);
@@ -2885,7 +2889,8 @@ static u8 DisplaySelectionWindow(u8 windowType)
         u8 fontColorsId = 3;
         if ((sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) || (sPartyMenuInternal->actions[i] == MENU_SUB_FIELD_MOVES))
             fontColorsId = 4;
-        if (sPartyMenuInternal->actions[i] == MENU_MOVES || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES || sPartyMenuInternal->actions[i] == MENU_TM_MOVES)
+        if (sPartyMenuInternal->actions[i] == MENU_MOVES || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES
+            || sPartyMenuInternal->actions[i] == MENU_TM_MOVES || sPartyMenuInternal->actions[i] == MENU_SUB_MOVES)
             fontColorsId = 6;
         if (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT)
             fontColorsId = 7;
@@ -2936,12 +2941,41 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
         sPartyMenuInternal->numActions = 0;
         SetPartyMonFieldMoveSelectionActions(mons, slotId);
     }
+    else if (action == ACTIONS_MOVES_SUB)
+    {
+        sPartyMenuInternal->numActions = 0;
+        SetPartyMonLearnMoveSelectionActions(mons, slotId);
+    }
     else
     {
         sPartyMenuInternal->numActions = sPartyMenuActionCounts[action];
         for (i = 0; i < sPartyMenuInternal->numActions; i++)
             sPartyMenuInternal->actions[i] = sPartyMenuActions[action][i];
     }
+}
+
+static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId)
+{
+    u32 i,j, targetspecies;
+    u32 species = GetMonData(&mons[slotId], MON_DATA_SPECIES, NULL);
+
+    if (FlagGet(FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER))
+    {
+        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfRelearnableMoves(&mons[slotId]) > 0)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MOVES);
+    }
+    if (FlagGet(FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER))
+    {
+	    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfEggMoves(&mons[slotId]) > 0)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EGG_MOVES);
+    }
+    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_MEW)
+    {
+        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfTMMoves(&mons[slotId]) > 0)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TM_MOVES);
+    }
+
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
 
 static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId)
@@ -2990,29 +3024,18 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
 
-
         if (FlagGet(FLAG_RECEIVED_STAT_EDITOR))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
-        // LevelUp and Egg move tutor (TODO: add Teachable Moves tutor)
-        if (FlagGet(FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER))
-        {
-            if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfRelearnableMoves(&mons[slotId]) > 0)
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MOVES);
-        }
-        if (FlagGet(FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER))
-        {
-		    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfEggMoves(&mons[slotId]) > 0)
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EGG_MOVES);
-        }
-        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_MEW)
-        {
-            if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfTMMoves(&mons[slotId]) > 0)
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TM_MOVES);
-        }
+
+        if(GetMonData(&mons[slotId], MON_DATA_SPECIES) &&
+          (GetNumberOfRelearnableMoves(&mons[slotId]) || GetNumberOfEggMoves(&mons[slotId]) || GetNumberOfTMMoves(&mons[slotId])))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
+
         if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
+
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
     }
@@ -3901,6 +3924,18 @@ static void CursorCb_ChangeTMMoves(u8 taskId)
     VarSet(VAR_0x8004, gPartyMenu.slotId);
     TeachMoveRelearnerMove();
     Task_ClosePartyMenu(taskId);
+}
+
+static void CursorCb_LearnMovesSubMenu(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_MOVES_SUB);
+    DisplaySelectionWindow(SELECTWINDOW_ACTIONS);
+    DisplayPartyMenuStdMessage(PARTY_MSG_DO_WHAT_WITH_MON);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
 static void CursorCb_FieldMovesSubMenu(u8 taskId)

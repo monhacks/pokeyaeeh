@@ -219,7 +219,7 @@ extern const u8 gMenuText_Deselect[];
 extern const u8 gMenuText_CheckTag[];
 extern const u8 gMenuText_Confirm[];
 extern const u8 gMenuText_Show[];
-extern const u8 gMenuText_Give2[];
+extern const u8 gText_LearnMoves[];
 extern const u8 gText_FieldMoves[];
 extern const u8 gText_StatEditor[];
 

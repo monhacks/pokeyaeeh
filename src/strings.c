@@ -182,6 +182,7 @@ const u8 gText_Pokemon4[] = _("Pokémon"); // Unused
 const u8 gText_FlyToWhere[] = _("Fly to where?");
 const u8 gMenuText_Use[] = _("Use");
 const u8 gMenuText_Toss[] = _("Toss");
+const u8 gText_LearnMoves[] = _("Learn Moves");
 const u8 gText_FieldMoves[] = _("Field Moves");
 const u8 gText_StatEditor[] = _("Stat Editor");
 const u8 gMenuText_Register[] = _("Register");
