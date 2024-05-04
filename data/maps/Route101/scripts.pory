@@ -219,12 +219,11 @@ Route101_EventScript_RouteSign::
 	msgbox Route101_Text_RouteSign, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route101_EventScript_RouteSignJoke
 	msgbox Text_Dumbass MSGBOX_AUTOCLOSE
-	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
-	additem ITEM_HM_FLY
 	end
 
 Route101_EventScript_RouteSignJoke::
-    msgbox Text_YouShould, MSGBOX_DEFAULT
+    lock
+	msgbox Text_YouShould, MSGBOX_DEFAULT
     msgbox Text_space, MSGBOX_DEFAULT
     setweather WEATHER_RAIN_THUNDERSTORM
     doweather
@@ -233,8 +232,7 @@ Route101_EventScript_RouteSignJoke::
     setweather WEATHER_SUNNY
     doweather
 	waitmessage
-	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
-	additem ITEM_HM_FLY
+	release
     end
 
 Route101_EventScript_BirchsBag::

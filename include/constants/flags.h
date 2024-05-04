@@ -523,7 +523,7 @@
 #define FLAG_MOVE_RELEARNER                  0x1DF // Move relearner
 #define FLAG_UNLOCK_CHEAT_MENU               0x1E0 // Cheat Scripts Menu
 #define FLAG_SYS_DISABLE_DAMAGE_DONE         0x1E1 // Damage Done display
-#define FLAG_TOXIC_POISON_TEAM               0x2E2 // Toxic Poisons player party when the battle starts
+#define FLAG_TOXIC_POISON_TEAM               0x1E2 // Toxic Poisons player party when the battle starts
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
@@ -1513,7 +1513,7 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 #define FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER          (SYSTEM_FLAGS + 0x85) // Enables egg move relearner options in the party menu
-#define FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER        (SYSTEM_FLAGS + 0x86) // Enables level up move move relearner options in the party menu
+#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag

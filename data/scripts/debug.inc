@@ -24,7 +24,6 @@ Debug_CheatStart::
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
 	setflag FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER
-	setflag FLAG_SYS_ENABLE_LEVEL_MOVE_RELEARNER
     setflag FLAG_SYS_POKENAV_GET
     setflag FLAG_SYS_DEXNAV_GET
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
@@ -115,15 +114,19 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 
 
 Text_TestIntro:
-	.string "Test battle!$"
+	.string "Legendary battle!$"
 
 Text_TestDefeat:
-    .string "Damn.$"
+    .string "Victorious!$"
 
 Debug_EventScript_Script_1::
-	goto_if_set FLAG_TOXIC_POISON_TEAM, Debug_EventScript_UnsetTestFlag
-	@ goto Debug_EventScript_SetTestFlag
-	goto Debug_EventScript_ThePoisonIsDisabled
+	lock
+	msgbox Text_TestIntro, MSGBOX_AUTOCLOSE
+	setwildbattle SPECIES_KYOGRE, 0, ITEM_BLUE_ORB, NATURE_MODEST, 0, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_ORIGIN_PULSE, MOVE_THUNDER, MOVE_ICE_BEAM, MOVE_PROTECT, TRUE, SPECIES_GROUDON, 0, ITEM_RED_ORB, NATURE_ADAMANT, 0, 252, 252, 4, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PRECIPICE_BLADES, MOVE_SOLAR_BLADE, MOVE_HEAT_CRASH, MOVE_PROTECT, TRUE
+	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN
+	dowildbattle
+	msgbox Text_TestDefeat, MSGBOX_AUTOCLOSE
+	release
 	end
 
 Debug_EventScript_Script_2::
