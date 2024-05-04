@@ -3116,8 +3116,8 @@ extern const u8 gText_Paldea[];
 
 // Move tutors
 extern const u8 gText_Moves[];
-extern const u8 gText_Egg_Moves[];
-extern const u8 gText_TM_Moves[];
+extern const u8 gText_EggMoves[];
+extern const u8 gText_TMMoves[];
 
 extern const u8 gText_FireFang[];
 extern const u8 gText_ThunderFang[];
