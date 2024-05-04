@@ -97,8 +97,8 @@ Route119_EventScript_BattleMayMudkip::
 
 Route119_EventScript_DefeatedMay::
 	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
-	call Route119_EventScript_GiveFlyHM
-	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
+	call Route119_EventScript_GiveAcrobaticsTM
+	msgbox Route119_Text_MayExplainAcrobatics, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
 	end
 
@@ -127,14 +127,14 @@ Route119_EventScript_BattleBrendanMudkip::
 
 Route119_EventScript_DefeatedBrendan::
 	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
-	call Route119_EventScript_GiveFlyHM
-	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT
+	call Route119_EventScript_GiveAcrobaticsTM
+	msgbox Route119_Text_BrendanExplainAcrobatics, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
 	end
 
-Route119_EventScript_GiveFlyHM::
-	giveitem ITEM_HM_FLY
-	setflag FLAG_RECEIVED_HM_FLY
+Route119_EventScript_GiveAcrobaticsTM::
+	giveitem ITEM_TM_ACROBATICS
+	setflag FLAG_RECEIVED_TM_ACROBATICS
 	return
 
 Route119_EventScript_RivalExitScottArrive::
@@ -503,17 +503,10 @@ Route119_Text_MayPresentForYou:
 	.string "worry about! Keep it up!\p"
 	.string "And, here! I have a present for you.$"
 
-Route119_Text_MayExplainFly:
-	.string "May: Use Fly, and your Pokémon will\n"
-	.string "instantly carry you to any town you've\l"
-	.string "already visited.\p"
-	.string "But, to use Fly, you have to get\n"
-	.string "the Gym Badge from Fortree City.\l"
-	.string "That's important, so don't forget.\p"
-	.string "You should Fly home and visit\n"
-	.string "Littleroot for a change.\p"
-	.string "I bet your mom's worried about you,\n"
-	.string "{PLAYER}{KUN}.\p"
+Route119_Text_MayExplainAcrobatics:
+	.string "May: Acrobatics is a pretty fun move!\n"
+	.string "It doubles in power if you're not\l"
+	.string "holding any item!\p"
 	.string "Well, let's meet again somewhere!$"
 
 Route119_Text_BrendanIntro:
@@ -534,12 +527,11 @@ Route119_Text_BrendanIllGiveYouThis:
 	.string "Here, I'll give you this.\n"
 	.string "Try it out.$"
 
-Route119_Text_BrendanExplainFly:
-	.string "Brendan: Use Fly, and your Pokémon\n"
-	.string "instantly carries you to any town\l"
-	.string "you've already visited.\p"
-	.string "But you need the Fortree Gym Badge \n"
-	.string "to do that.\p"
+Route119_Text_BrendanExplainAcrobatics:
+	.string "Brendan: Acrobatics is an awesome move!\n"
+	.string "It doubles in power if you're not\l"
+	.string "holding any item!\p"
+	.string "Pretty rad, eh?\p"
 	.string "Anyway, I have to move along.$"
 
 Route119_Text_ScottWayToGoBeSeeingYou:

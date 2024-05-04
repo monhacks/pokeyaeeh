@@ -4195,11 +4195,11 @@ static void CursorCb_FieldMove(u8 taskId)
     }
     else
     {
-        if ((fieldMove == FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE08_GET) != TRUE)
-        || (fieldMove == FIELD_MOVE_DIVE && FlagGet(FLAG_BADGE07_GET) != TRUE)
-        || (fieldMove == FIELD_MOVE_SURF && FlagGet(FLAG_BADGE05_GET) != TRUE)
-        || (fieldMove == FIELD_MOVE_STRENGTH && FlagGet(FLAG_BADGE04_GET) != TRUE)
-        || (fieldMove == FIELD_MOVE_ROCK_SMASH && FlagGet(FLAG_BADGE03_GET) != TRUE))
+        if ((fieldMove == FIELD_MOVE_WATERFALL && !(FlagGet(FLAG_BADGE08_GET)))
+        || (fieldMove == FIELD_MOVE_DIVE && !(FlagGet(FLAG_BADGE07_GET)))
+        || (fieldMove == FIELD_MOVE_SURF && !(FlagGet(FLAG_BADGE05_GET)))
+        || (fieldMove == FIELD_MOVE_STRENGTH && !(FlagGet(FLAG_BADGE04_GET)))
+        || (fieldMove == FIELD_MOVE_ROCK_SMASH && !(FlagGet(FLAG_BADGE03_GET))))
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
