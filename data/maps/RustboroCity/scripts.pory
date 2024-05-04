@@ -1214,7 +1214,7 @@ RustboroCity_Text_DevelopedNewPokenavFeature:
 	.string "Wait a moment, {PLAYER}.\p"
 	.string "We've been working on a new tool,\n"
 	.string "and since you're a Trainer,\l"
-	.string "I think you'llreally like it!\p"
+	.string "I think you'll really like it!\p"
 	.string "Please, wait.$"
 
 RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
