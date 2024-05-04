@@ -161,7 +161,7 @@ enum {
 #define GFXTAG_UI       5525
 #define PALTAG_UI       5526
 
-#define MAX_RELEARNER_MOVES max(MAX_LEVEL_UP_MOVES, 25)
+#define MAX_RELEARNER_MOVES 151
 
 static EWRAM_DATA struct
 {
@@ -878,6 +878,9 @@ static void CreateLearnableMovesList(void)
 		break;
 		case MOVE_TUTOR_EGG_MOVES:
 			sMoveRelearnerStruct->numMenuChoices = GetEggMoveTutorMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+        break;
+        case MOVE_TUTOR_TM_MOVES:
+			sMoveRelearnerStruct->numMenuChoices = GetTMTutorMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
 		break;
 	}
 

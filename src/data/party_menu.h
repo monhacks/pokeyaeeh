@@ -862,6 +862,7 @@ struct
     [MENU_TRADE2] = {gText_Trade4, CursorCb_Trade2},
     [MENU_MOVES] = {gText_Moves, CursorCb_ChangeMoves},
 	[MENU_EGG_MOVES] = {gText_Egg_Moves, CursorCb_ChangeEggMoves},
+	[MENU_TM_MOVES] = {gText_TM_Moves, CursorCb_ChangeTMMoves},
     [MENU_TOSS] = {gMenuText_Toss, CursorCb_Toss},
     [MENU_STAT_EDIT] = {gText_StatEditor, CursorCb_StatEdit},
     [MENU_SUB_FIELD_MOVES] = {gText_FieldMoves, CursorCb_FieldMovesSubMenu},

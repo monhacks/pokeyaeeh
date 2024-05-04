@@ -100,6 +100,7 @@ enum {
     MENU_STAT_EDIT,
     MENU_MOVES,
 	MENU_EGG_MOVES,
+    MENU_TM_MOVES,
     MENU_SUB_FIELD_MOVES,
     MENU_CATALOG_BULB,
     MENU_CATALOG_OVEN,
@@ -496,6 +497,7 @@ static void CursorCb_Toss(u8);
 static void CursorCb_StatEdit(u8);
 static void CursorCb_ChangeMoves(u8);
 static void CursorCb_ChangeEggMoves(u8);
+static void CursorCb_ChangeTMMoves(u8);
 static void CursorCb_FieldMovesSubMenu(u8);
 static void CursorCb_FieldMove(u8);
 static void CursorCb_CatalogBulb(u8);
@@ -2883,7 +2885,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
         u8 fontColorsId = 3;
         if ((sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) || (sPartyMenuInternal->actions[i] == MENU_SUB_FIELD_MOVES))
             fontColorsId = 4;
-        if (sPartyMenuInternal->actions[i] == MENU_MOVES || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES)
+        if (sPartyMenuInternal->actions[i] == MENU_MOVES || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES || sPartyMenuInternal->actions[i] == MENU_TM_MOVES)
             fontColorsId = 6;
         if (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT)
             fontColorsId = 7;
@@ -3004,6 +3006,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 		    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfEggMoves(&mons[slotId]) > 0)
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EGG_MOVES);
         }
+        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfTMTutorMoves(&mons[slotId]) > 0)
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TM_MOVES);
         if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
@@ -3880,6 +3884,16 @@ static void CursorCb_ChangeEggMoves(u8 taskId)
 {
     PlaySE(SE_SELECT);
 	VarSet(VAR_PARTY_MENU_TUTOR_STATE, MOVE_TUTOR_EGG_MOVES);
+    gLastViewedMonIndex =  gPartyMenu.slotId;
+    VarSet(VAR_0x8004, gPartyMenu.slotId);
+    TeachMoveRelearnerMove();
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CursorCb_ChangeTMMoves(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+	VarSet(VAR_PARTY_MENU_TUTOR_STATE, MOVE_TUTOR_TM_MOVES);
     gLastViewedMonIndex =  gPartyMenu.slotId;
     VarSet(VAR_0x8004, gPartyMenu.slotId);
     TeachMoveRelearnerMove();
