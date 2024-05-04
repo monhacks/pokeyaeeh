@@ -492,11 +492,11 @@ static const u8 sDebugText_Sound[] =            _("Sound…{CLEAR_TO 110}{RIGHT_
 static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
 static const u8 sDebugText_Util_Script_1[] =               _("Disable Poison team");
-static const u8 sDebugText_Util_Script_2[] =               _("T: Single");
-static const u8 sDebugText_Util_Script_3[] =               _("T: Double");
-static const u8 sDebugText_Util_Script_4[] =               _("T: Terrain Double");
-static const u8 sDebugText_Util_Script_5[] =               _("T: Tailwind Double");
-static const u8 sDebugText_Util_Script_6[] =               _("T: Sky");
+static const u8 sDebugText_Util_Script_2[] =               _("T: Single (Lv 50)");
+static const u8 sDebugText_Util_Script_3[] =               _("T: Double (Lv 50)");
+static const u8 sDebugText_Util_Script_4[] =               _("T: Terrain Double (Lv 50)");
+static const u8 sDebugText_Util_Script_5[] =               _("T: Tailwind Double (Lv 50)");
+static const u8 sDebugText_Util_Script_6[] =               _("T: Sky (Lv 30)");
 static const u8 sDebugText_Util_Script_7[] =               _("Script 7");
 static const u8 sDebugText_Util_Script_8[] =               _("Script 8");
 

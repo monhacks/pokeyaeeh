@@ -11827,7 +11827,7 @@ static const struct TrainerMon sParty_JohnAndJay3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
-    .lvl = 46,
+    .lvl = 50,
     .species = SPECIES_HONCHKROW,
     .ability = ABILITY_TAILSTREAM,
     .gender = TRAINER_MON_FEMALE,
@@ -11837,7 +11837,7 @@ static const struct TrainerMon sParty_JohnAndJay3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(0, 252, 62, 126, 0, 62),
-    .lvl = 46,
+    .lvl = 50,
     .species = SPECIES_SHIFTRY,
     .heldItem = ITEM_FLYING_GEM,
     .ability = ABILITY_WIND_RIDER,
@@ -11851,8 +11851,8 @@ static const struct TrainerMon sParty_JohnAndJay4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(56, 252, 0, 200, 0, 0),
-    .lvl = 46,
-   .species = SPECIES_SHARPEDO,
+    .lvl = 50,
+    .species = SPECIES_SHARPEDO,
     .heldItem = ITEM_SHARPEDONITE,
     .ability = ABILITY_SPEED_BOOST,
     .gender = TRAINER_MON_MALE,
@@ -11862,8 +11862,8 @@ static const struct TrainerMon sParty_JohnAndJay4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(252, 0, 120, 0, 18, 120),
-    .lvl = 46,
-   .species = SPECIES_CAMERUPT,
+    .lvl = 50,
+    .species = SPECIES_CAMERUPT,
     .heldItem = ITEM_CAMERUPTITE,
     .ability = ABILITY_SOLID_ROCK,
     .gender = TRAINER_MON_MALE,

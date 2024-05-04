@@ -133,26 +133,24 @@ Debug_EventScript_Script_2::
 
 Debug_EventScript_Script_3:: @ both have Mega Evolution
 	cleartrainerflag TRAINER_JOHN_AND_JAY_4
-	trainerbattle_double TRAINER_JOHN_AND_JAY_4, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
+	trainerbattle_single TRAINER_JOHN_AND_JAY_4, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat
     end
 
 Debug_EventScript_Script_4:: @ Rillaboom sets Grassy Terrain
 	cleartrainerflag TRAINER_JOHN_AND_JAY_2
-	trainerbattle_double TRAINER_JOHN_AND_JAY_2, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
+	trainerbattle_single TRAINER_JOHN_AND_JAY_2, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat
 	end
 
 Debug_EventScript_Script_5:: @ Honchkrow sets Tailwind
 	cleartrainerflag TRAINER_JOHN_AND_JAY_3
-	trainerbattle_double TRAINER_JOHN_AND_JAY_3, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
+	trainerbattle_single TRAINER_JOHN_AND_JAY_3, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat
     end
 
 Debug_EventScript_Script_6:: @ Sky Battle
 	lock
-    faceplayer
-    checktrainerflag TRAINER_ALBERTO
-    goto_if 0, Route123_EventScript_Alberto_Battle_Event_Script
-    msgbox Route123_Text_AlbertoPostBattle, MSGBOX_AUTOCLOSE
-    release
+	cleartrainerflag TRAINER_JOHN_AND_JAY_3
+    goto Route123_EventScript_Alberto_Battle_Event_Script
+	release
     end
 
 Debug_EventScript_Script_7::
