@@ -4264,7 +4264,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HIDDEN_POWER] =
     {
-        .power = B_HIDDEN_POWER_DMG >= GEN_6 ? 60 : 1,
+        .power = 60,
         .effect = EFFECT_HIDDEN_POWER,
         .type = TYPE_NORMAL,
         .accuracy = 100,
