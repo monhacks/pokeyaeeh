@@ -1,10 +1,4 @@
 
-#if B_BINDING_TURNS >= GEN_5
-#define BINDING_TURNS "4 or 5"
-#else
-#define BINDING_TURNS "2 to 5"
-#endif
-
 static const u8 sNullDescription[] = _(
     "");
 
@@ -86,7 +80,7 @@ static const u8 sFlyDescription[] = _(
 
 static const u8 sBindDescription[] = _(
     "Binds and squeezes the foe\n"
-    "for "BINDING_TURNS" turns.");
+    "for 4 or 5 turns.");
 
 static const u8 sSlamDescription[] = _(
     "Slams the foe with a long\n"
@@ -342,7 +336,7 @@ static const u8 sDragonRageDescription[] = _(
 
 static const u8 sFireSpinDescription[] = _(
     "Traps the foe in a ring of\n"
-    "fire for "BINDING_TURNS" turns.");
+    "fire for 4 or 5 turns.");
 
 static const u8 sThunderShockDescription[] = _(
     "An electrical attack that\n"
@@ -522,7 +516,7 @@ static const u8 sWaterfallDescription[] = _(
 
 static const u8 sClampDescription[] = _(
     "Traps and squeezes the\n"
-    "foe for "BINDING_TURNS" turns.");
+    "foe for 4 or 5 turns.");
 
 static const u8 sSwiftDescription[] = _(
     "Sprays star-shaped rays\n"
@@ -1014,7 +1008,7 @@ static const u8 sRockSmashDescription[] = _(
 
 static const u8 sWhirlpoolDescription[] = _(
     "Traps and hurts the foe in\n"
-    "a whirlpool for "BINDING_TURNS" turns.");
+    "a whirlpool for 4 or 5 turns.");
 
 static const u8 sBeatUpDescription[] = _(
     "Summons party Pokémon to\n"
@@ -1330,7 +1324,7 @@ static const u8 sSkyUppercutDescription[] = _(
 
 static const u8 sSandTombDescription[] = _(
     "Traps and hurts the foe in\n"
-    "quicksand for "BINDING_TURNS" turns.");
+    "quicksand for 4 or 5 turns.");
 
 static const u8 sSheerColdDescription[] = _(
     "Allows a full-power attack,\n"
@@ -1834,7 +1828,7 @@ static const u8 sSpacialRendDescription[] = _(
 
 static const u8 sMagmaStormDescription[] = _(
     "Traps the foe in a vortex\n"
-    "of fire for "BINDING_TURNS" turns.");
+    "of fire for 4 or 5 turns.");
 
 static const u8 sDarkVoidDescription[] = _(
     "Drags the foe into total\n"
@@ -2386,7 +2380,7 @@ static const u8 sNuzzleDescription[] = _(
 
 static const u8 sInfestationDescription[] = _(
     "The foe is infested and\n"
-    "attacked for "BINDING_TURNS" turns.");
+    "attacked for 4 or 5 turns.");
 
 static const u8 sPowerUpPunchDescription[] = _(
     "A hard punch that raises\n"
@@ -2931,7 +2925,7 @@ static const u8 sSurgingStrikesDescription[] = _(
 
 static const u8 sThunderCageDescription[] = _(
     "Traps the foe in a cage of\n"
-    "electricity for "BINDING_TURNS" turns.");
+    "electricity for 4 or 5 turns.");
 
 static const u8 sDragonEnergyDescription[] = _(
     "The higher the user's HP\n"
@@ -3346,7 +3340,7 @@ static const u8 sGlacialSlamDescription[] = _(
 
 static const u8 sMaelstromDescription[] = _(
     "Traps and hurts the foe in\n"
-    "a whirlpool for "BINDING_TURNS" turns.");
+    "a whirlpool for 4 or 5 turns.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
@@ -5074,11 +5068,7 @@ static const u8 sMoveFourLineDescription_DoubleHit[] = _("The user slams the\nfo
 static const u8 sMoveFourLineDescription_RoarOfTime[] = _("A blast which\ndistorts even time.\nThe user must rest\non the next turn.");
 static const u8 sMoveFourLineDescription_SpacialRend[] = _("The foe, and the\nspace around it, is\ntorn. Critical hits\nland more easily.");
 static const u8 sMoveFourLineDescription_CrushGrip[] = _("The user crushes\nthe foe. The more\nHP the foe has, the\nstronger this move.");
-#if B_BINDING_TURNS >= GEN_5
 static const u8 sMoveFourLineDescription_MagmaStorm[] = _("The foe becomes\ntrapped within a\nmaelstrom of fire\nfor 4 or 5 turns.");
-#else
-static const u8 sMoveFourLineDescription_MagmaStorm[] = _("The foe becomes\ntrapped within a\nmaelstrom of fire\nfor 2 to 5 turns.");
-#endif
 static const u8 sMoveFourLineDescription_DarkVoid[] = _("The foe is dragged\ninto a world of\ntotal darkness that\nputs it to sleep.");
 static const u8 sMoveFourLineDescription_SeedFlare[] = _("A shock wave is\nloosed at the foe.\nThis may lower the\nfoe's Sp. Def.");
 static const u8 sMoveFourLineDescription_OminousWind[] = _("A gust of repulsive\nwind is blasted at\nthe foe. This may\nup the user's stats.");
@@ -5222,11 +5212,7 @@ static const u8 sMoveFourLineDescription_Celebrate[] = _("The Pokémon\ncongratu
 static const u8 sMoveFourLineDescription_HoldHands[] = _("The user and ally\nhold hands. This\nmakes them very\nhappy.");
 static const u8 sMoveFourLineDescription_BabyDollEyes[] = _("Before it can move,\nthe foe's Attack\nstat is lowered by\nan adorable stare.");
 static const u8 sMoveFourLineDescription_Nuzzle[] = _("The user's\nelectrified cheeks\nnuzzle the foe,\nparalyzing the foe.");
-#if B_BINDING_TURNS >= GEN_5
 static const u8 sMoveFourLineDescription_Infestation[] = _("The foe is infested\nfor 4 or 5 turns.\nThe foe cannot flee\nduring this time.");
-#else
-static const u8 sMoveFourLineDescription_Infestation[] = _("The foe is infested\nfor 2 to 5 turns.\nThe foe cannot flee\nduring this time.");
-#endif
 static const u8 sMoveFourLineDescription_PowerUpPunch[] = _("The user strikes,\nstrengthening its\nfists. This raises\ntheir Attack stat.");
 static const u8 sMoveFourLineDescription_OblivionWing[] = _("The user absorbs\nover half of the\ndamage taken by its\ntarget.");
 static const u8 sMoveFourLineDescription_ThousandArrows[] = _("This move also hits\nfoes that are in\nthe air, and knocks\nthem down.");
@@ -5365,11 +5351,8 @@ static const u8 sMoveFourLineDescription_ScorchingSands[] = _("Throws scorching\
 static const u8 sMoveFourLineDescription_JungleHealing[] = _("Becomes one with\nthe jungle, healing\nHP and status of\nitself and allies.");
 static const u8 sMoveFourLineDescription_WickedBlow[] = _("Having mastered the\nDark style, strikes\na critical hit with\na fierce blow.");
 static const u8 sMoveFourLineDescription_SurgingStrikes[] = _("Having mastered the\nWater style, strikes\n3 critical hits with\na flowing motion.");
-#if B_BINDING_TURNS >= GEN_5
 static const u8 sMoveFourLineDescription_ThunderCage[] = _("The user traps the\nfoe in a cage of\nelectricity for\nfour or five turns.");
-#else
 static const u8 sMoveFourLineDescription_ThunderCage[] = _("The user traps the\nfoe in a cage of\nelectricity for\ntwo to five turns.");
-#endif
 static const u8 sMoveFourLineDescription_DragonEnergy[] = _("The higher the\nuser's HP, the more\npowerful this\nattack becomes.");
 static const u8 sMoveFourLineDescription_FreezingGlare[] = _("The user shoots\npsychic power from\nits eyes to attack.\nMay cause frostbite.");
 static const u8 sMoveFourLineDescription_FieryWrath[] = _("It uses its wrath to\nfuel a fire-like aura\nattack. May cause\nthe foe to flinch.");
