@@ -704,6 +704,91 @@ static inline s32 LowestRollDmg(s32 dmg)
     return dmg;
 }
 
+bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
+{
+    s32 moveType;
+    struct AiLogicData *aiData = AI_DATA;
+    u32 battlerDefAbility;
+
+    if (DoesBattlerIgnoreAbilityChecks(aiData->abilities[battlerAtk], move))
+        battlerDefAbility = ABILITY_NONE;
+    else
+        battlerDefAbility = aiData->abilities[battlerDef];
+
+    SetTypeBeforeUsingMove(move, battlerAtk);
+    GET_MOVE_TYPE(move, moveType);
+
+    switch (battlerDefAbility)
+    {
+    case ABILITY_VOLT_ABSORB:
+    case ABILITY_MOTOR_DRIVE:
+    case ABILITY_LIGHTNING_ROD:
+        if (moveType == TYPE_ELECTRIC)
+            return TRUE;
+        break;
+    case ABILITY_WATER_ABSORB:
+    case ABILITY_DRY_SKIN:
+    case ABILITY_STORM_DRAIN:
+        if (moveType == TYPE_WATER)
+            return TRUE;
+        break;
+    case ABILITY_FLASH_FIRE:
+        if (moveType == TYPE_FIRE)
+            return TRUE;
+        break;
+    case ABILITY_SOUNDPROOF:
+        if (gBattleMoves[move].soundMove)
+            return TRUE;
+        break;
+    case ABILITY_BULLETPROOF:
+        if (gBattleMoves[move].ballisticMove)
+            return TRUE;
+        break;
+    case ABILITY_SAP_SIPPER:
+        if (moveType == TYPE_GRASS)
+            return TRUE;
+        break;
+    case ABILITY_EARTH_EATER:
+        if (moveType == TYPE_GROUND)
+            return TRUE;
+        break;
+    }
+
+    switch (gBattleMoves[move].effect)
+    {
+    case EFFECT_DREAM_EATER:
+        if (!AI_IsBattlerAsleepOrComatose(battlerDef))
+            return TRUE;
+        break;
+    case EFFECT_BELCH:
+        if (ItemId_GetPocket(GetUsedHeldItem(battlerAtk)) != POCKET_BERRIES)
+            return TRUE;
+        break;
+    case EFFECT_LAST_RESORT:
+        if (!CanUseLastResort(battlerAtk))
+            return TRUE;
+        break;
+    case EFFECT_LOW_KICK:
+        if (IsDynamaxed(battlerDef))
+            return TRUE;
+        break;
+    case EFFECT_BURN_UP:
+        if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_FIRE))
+            return TRUE;
+        break;
+    case EFFECT_DOUBLE_SHOCK:
+        if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_ELECTRIC))
+            return TRUE;
+        break;
+    case EFFECT_HIT_SET_REMOVE_TERRAIN:
+        if (!(gFieldStatuses & STATUS_FIELD_TERRAIN_ANY) && gBattleMoves[move].argument == ARG_TRY_REMOVE_TERRAIN_FAIL)
+            return TRUE;
+        break;
+    }
+
+    return FALSE;
+}
+
 s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectiveness, bool32 considerZPower, u32 weather)
 {
     s32 dmg, moveType;
