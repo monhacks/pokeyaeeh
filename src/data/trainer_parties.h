@@ -2298,15 +2298,15 @@ static const struct TrainerMon sParty_Tony1[] = {
 
 static const struct TrainerMon sParty_Jerome[] = {
     {
-        .species = SPECIES_BLASTOISE,
-        .ability = ABILITY_TORRENT,
+        .species = SPECIES_GYARADOS,
+        .ability = ABILITY_INTIMIDATE,
         .friendship = 200,
-        .heldItem = ITEM_BLASTOISINITE,
+        .heldItem = ITEM_GYARADOSITE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .ev = TRAINER_PARTY_EVS(248, 0, 0, 8, 252, 0),
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
         .lvl = 59,
-        .moves = {MOVE_BUBBLE_BEAM, MOVE_ICE_BEAM, MOVE_DARK_PULSE, MOVE_FLASH_CANNON},
-        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST)
+        .moves = {MOVE_AQUA_FANGS, MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_POISON_FANG},
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY)
     },
     {
         .species = SPECIES_PELIPPER,
@@ -4285,7 +4285,7 @@ static const struct TrainerMon sParty_TateAndLiza1[] = { // light
         .moves = {MOVE_SWORDS_DANCE, MOVE_BARB_BARRAGE, MOVE_AQUA_JET, MOVE_CRUNCH}
     },
     {
-        .species = SPECIES_GENGAR_MEGA,
+        .species = SPECIES_GENGAR,
         .heldItem = ITEM_GENGARITE,
         .ability = ABILITY_SHADOW_TAG,
         .lvl = 65,

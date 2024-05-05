@@ -8213,6 +8213,7 @@ static const u16 sGyaradosTeachableLearnset[] = {
     MOVE_LASH_OUT,
     MOVE_OUTRAGE,
     MOVE_PAYBACK,
+    MOVE_POISON_JAB,
     MOVE_POWER_WHIP,
     MOVE_PROTECT,
     MOVE_RAIN_DANCE,
