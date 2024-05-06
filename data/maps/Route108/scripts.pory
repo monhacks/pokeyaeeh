@@ -46,7 +46,7 @@ Route108_EventScript_CoryRematch::
 `
 script Route108_EventScript_Jerome2{
 	msgbox(format("Ah yes!\pPeak battle!\pHere, I have an extra!"))
-	giveitem(ITEM_BLASTOISINITE, 1)
+	giveitem(ITEM_GYARADOSITE, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
 	waitmessage
 	waitfanfare

@@ -242,6 +242,10 @@ Route123_EventScript_ItemRevivalHerb::
 	finditem ITEM_REVIVAL_HERB
 	end
 
+Route123_EventScript_ItemAltarianite::
+	finditem ITEM_ALTARIANITE
+	end
+
 Route124_EventScript_ItemRedShard::
 	finditem ITEM_RED_SHARD
 	end
@@ -320,6 +324,10 @@ RustboroCity_EventScript_ItemXDefend::
 
 LilycoveCity_EventScript_ItemMaxRepel::
 	finditem ITEM_MAX_REPEL
+	end
+
+LilycoveCity_EventScript_ItemAmpharosite::
+	finditem ITEM_AMPHAROSITE
 	end
 
 MossdeepCity_EventScript_ItemNetBall::
@@ -402,6 +410,10 @@ MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
 	finditem ITEM_TM_DRAGON_CLAW
 	end
 
+MeteorFalls_B1F_2R_EventScript_ItemSalamencite::
+	finditem ITEM_SALAMENCITE
+	end
+
 NewMauville_Inside_EventScript_ItemUltraBall::
 	finditem ITEM_ULTRA_BALL
 	end
@@ -448,6 +460,10 @@ AbandonedShip_CaptainsOffice_EventScript_ItemStorageKey::
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemLuxuryBall::
 	finditem ITEM_LUXURY_BALL
+	end
+
+AbandonedShip_HiddenFloorRooms_EventScript_ItemSlowbronite::
+	finditem ITEM_SLOWBRONITE
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemScanner::
@@ -506,6 +522,10 @@ MtPyre_6F_EventScript_ItemTMShadowBall::
 	finditem ITEM_TM_SHADOW_BALL
 	end
 
+MtPyre_6F_EventScript_ItemBanettite::
+	finditem ITEM_BANETTITE
+	end
+
 MtPyre_Exterior_EventScript_ItemMaxPotion::
 	finditem ITEM_MAX_POTION
 	end
@@ -518,8 +538,8 @@ AquaHideout_B1F_EventScript_ItemMasterBall::
 	finditem ITEM_MASTER_BALL
 	end
 
-AquaHideout_B1F_EventScript_ItemBigNugget::
-	finditem ITEM_BIG_NUGGET
+AquaHideout_B1F_EventScript_ItemSharpedonite::
+	finditem ITEM_SHARPEDONITE
 	end
 
 AquaHideout_B1F_EventScript_ItemMaxElixir::
@@ -564,6 +584,10 @@ ShoalCave_LowTideIceRoom_EventScript_ItemTMIcyWind::
 
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::
 	finditem ITEM_NEVER_MELT_ICE
+	end
+
+ShoalCave_LowTideIceRoom_EventScript_ItemGlalitite::
+	finditem ITEM_GLALITITE
 	end
 
 SeafloorCavern_Room9_EventScript_ItemTMEarthquake::
@@ -658,8 +682,20 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
+MagmaHideout_4F_EventScript_ItemCameruptite::
+	finditem ITEM_CAMERUPTITE
+	end
+
 MagmaHideout_3F_3R_EventScript_ItemUltraBall::
 	finditem ITEM_ULTRA_BALL
+	end
+
+EverGradeCity_EventScript_ItemAudinite::
+	finditem ITEM_AUDINITE
+	end
+
+CaveOfOrigin_1F_EventScript_ItemSablenite::
+	finditem ITEM_SABLENITE
 	end
 
 Common_EventScript_FindItem::

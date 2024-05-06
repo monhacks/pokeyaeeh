@@ -1,4 +1,6 @@
 raw `
+.set LOCALID_NPC, 1
+
 VerdanturfTown_FriendshipRatersHouse_MapScripts::
 	.byte 0
 
@@ -49,7 +51,22 @@ VerdanturfTown_FriendshipRatersHouse_EventScript_VeryHappy::
 	end
 
 VerdanturfTown_FriendshipRatersHouse_EventScript_AdoresYou::
+	goto_if_unset FLAG_RECEIVED_LUCARIONITE, VerdanturfTown_FriendshipRatersHouse_EventScript_LeadMonLucario
 	msgbox VerdanturfTown_FriendshipRatersHouse_Text_AdoresYou, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_LeadMonLucario::
+	special GetLeadMonSpecies
+	goto_if_eq VAR_RESULT, SPECIES_LUCARIO, VerdanturfTown_FriendshipRatersHouse_EventScript_GiveLucarionite
+	return
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_GiveLucarionite::
+	applymovement LOCALID_NPC, Common_Movement_ExclamationMark
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_ItsLucario, MSGBOX_AUTOCLOSE
+	giveitem ITEM_LUCARIONITE
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_ExplainLucarionite, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_LUCARIONITE
 	release
 	end
 
@@ -102,5 +119,19 @@ VerdanturfTown_FriendshipRatersHouse_Text_DetestsYou:
 
 VerdanturfTown_FriendshipRatersHouse_Text_Pikachu:
 	.string "Pikachu: Pika pika!$"
+
+VerdanturfTown_FriendshipRatersHouse_Text_ItsLucario:
+	.string "It's…\n"
+	.string "It's a Lucario…\p"
+	.string "You both seem to have bonded really\n"
+	.string "well!\p"
+	.string "Here's a gift from me to your Lucario!$"
+
+VerdanturfTown_FriendshipRatersHouse_Text_ExplainLucarionite:
+	.string "That's a Lucarionite…\p"
+	.string "Only the Trainers who have bonded with\n"
+	.string "their Lucario be worthy of wielding\l"
+	.string "one.\p"
+	.string "You're worthy of it!$"
 
 `

@@ -136,6 +136,12 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 script RustboroCity_DevonCorp_2F_EventScript_FossilScientist{
 	lock
 	faceplayer
+	goto_if_set(FLAG_BADGE05_GET,RustboroCity_DevonCorp_2F_EventScript_FossilScientist2)
+	msgbox(RustboroCity_DevonCorp_2F_Text_FossilRessurectionDevice, MSGBOX_NPC)
+	end
+}
+
+script RustboroCity_DevonCorp_2F_EventScript_FossilScientist2{
 	goto_if_eq(VAR_FOSSIL_RESURRECTION_STATE, 2, Devon_FossilMonReady)
 	goto_if_eq(VAR_FOSSIL_RESURRECTION_STATE, 1, Devon_FossilStillRegenerating)
 	msgbox(RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils, MSGBOX_DEFAULT)
@@ -394,7 +400,7 @@ script AerodactylReady{
     bufferspeciesname(STR_VAR_2, SPECIES_AERODACTYL)
     msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
     setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL)
-    givemon(SPECIES_AERODACTYL, 0)
+    givemon(SPECIES_AERODACTYL, 0, ITEM_AERODACTYLITE)
 	bufferspeciesname(STR_VAR_1, SPECIES_AERODACTYL)
 	call(ReceivedFossilMonFanfare)
     if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
@@ -648,6 +654,12 @@ script ReceivedFossilMonFanfare{
 ///////////////////////////////////////////////////////////////////////////
 
 
+text RustboroCity_DevonCorp_2F_Text_FossilRessurectionDevice{
+	"I've been trying to develop a device\n"
+	"that resurrects Pokémon from fossils…\p"
+	"I feel like I've got some ways to go!"
+}
+
 text RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils{
 	"I've been trying to develop a device\n"
 	"that resurrects Pokémon from fossils…\p"
@@ -699,10 +711,4 @@ text ThatsNotAFossil{
 	"Um… I'm not sure why you're\n"
 	"showing me that.\l"
 	"That's not a Pokémon fossil…"
-}
-
-text FossilResearchAMess{
-	"All of my fossil research is\n"
-	"in shambles.\l"
-	"How am I meant to sort this out…"
 }

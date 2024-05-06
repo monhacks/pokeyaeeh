@@ -94,7 +94,7 @@ Route104_Text_RegisteredDadInPokenav:
 `
 script Route105_EventScript_Foster2{
 	msgbox(format("Now that's what I call an awesome\nbattle!\pHere!\nYou can have this!"))
-	giveitem(ITEM_GARCHOMPITE, 1)
+	giveitem(ITEM_STEELIXITE, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
 	waitmessage
 	waitfanfare

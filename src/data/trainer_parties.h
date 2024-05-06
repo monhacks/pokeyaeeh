@@ -650,15 +650,15 @@ static const struct TrainerMon sParty_Foster[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL)
     },
     {
-        .species = SPECIES_GARCHOMP,
-        .ability = ABILITY_ROUGH_SKIN,
+        .species = SPECIES_STEELIX,
+        .ability = ABILITY_STURDY,
         .friendship = 200,
-        .heldItem = ITEM_GARCHOMPITE,
+        .heldItem = ITEM_STEELIXITE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .ev = TRAINER_PARTY_EVS(114, 144, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(56, 200, 100, 0, 152, 0),
         .lvl = 60,
-        .moves = {MOVE_DRACO_METEOR, MOVE_FIRE_BLAST, MOVE_ROCK_SLIDE, MOVE_STOMPING_TANTRUM},
-        .nature = TRAINER_PARTY_NATURE(NATURE_HARDY)
+        .moves = {MOVE_BODY_PRESS, MOVE_IRON_HEAD, MOVE_ROCK_SLIDE, MOVE_STOMPING_TANTRUM},
+        .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL)
     },
     {
         .species = SPECIES_SANDSLASH,
@@ -700,7 +700,7 @@ static const struct TrainerMon sParty_Foster[] = {
         .species = SPECIES_GOLURK,
         .ability = ABILITY_NO_GUARD,
         .friendship = 200,
-        .heldItem = ITEM_GARCHOMPITE,
+        .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
         .lvl = 60,
@@ -7350,7 +7350,7 @@ static const struct TrainerMon sParty_Beth[] = {
         .ability = ABILITY_TORRENT,
         .friendship = 200,
         .gender = TRAINER_MON_FEMALE,
-        .heldItem = ITEM_BLASTOISINITE,
+        .heldItem = ITEM_LIFE_ORB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
         .lvl = 59,

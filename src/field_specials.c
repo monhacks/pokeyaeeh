@@ -955,6 +955,19 @@ u8 GetLeadMonFriendshipScore(void)
     return GetMonFriendshipScore(&gPlayerParty[GetLeadMonIndex()]);
 }
 
+bool8 GetLeadMonSpecies(void)
+{
+    u32 species = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES);
+
+    if (species)
+    {
+        gSpecialVar_Result = species;
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 static void CB2_FieldShowRegionMap(void)
 {
     FieldInitRegionMap(CB2_ReturnToFieldContinueScriptPlayMapMusic);
