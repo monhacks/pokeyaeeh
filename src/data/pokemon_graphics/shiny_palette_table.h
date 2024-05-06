@@ -498,7 +498,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
     SPECIES_SHINY_PAL(MANAPHY, gMonShinyPalette_Manaphy),
     SPECIES_SHINY_PAL(DARKRAI, gMonShinyPalette_Darkrai),
     SPECIES_SHINY_PAL(SHAYMIN_LAND, gMonShinyPalette_ShayminLand),
-    SPECIES_SHINY_PAL(ARCEUS, gMonShinyPalette_Arceus),
+    SPECIES_SHINY_PAL(ARCEUS_NORMAL, gMonShinyPalette_Arceus),
 #endif
 #if P_GEN_5_POKEMON == TRUE
     SPECIES_SHINY_PAL(VICTINI, gMonShinyPalette_Victini),
@@ -557,7 +557,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
     SPECIES_SHINY_PAL(WHIMSICOTT, gMonShinyPalette_Whimsicott),
     SPECIES_SHINY_PAL(PETILIL, gMonShinyPalette_Petilil),
     SPECIES_SHINY_PAL(LILLIGANT, gMonShinyPalette_Lilligant),
-    SPECIES_SHINY_PAL(BASCULIN, gMonShinyPalette_BasculinRedStriped),
+    SPECIES_SHINY_PAL(BASCULIN_RED_STRIPED, gMonShinyPalette_BasculinRedStriped),
     SPECIES_SHINY_PAL(SANDILE, gMonShinyPalette_Sandile),
     SPECIES_SHINY_PAL(KROKOROK, gMonShinyPalette_Krokorok),
     SPECIES_SHINY_PAL(KROOKODILE, gMonShinyPalette_Krookodile),
@@ -655,7 +655,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
     SPECIES_SHINY_PAL(LANDORUS_INCARNATE, gMonShinyPalette_LandorusIncarnate),
     SPECIES_SHINY_PAL(KYUREM, gMonShinyPalette_Kyurem),
     SPECIES_SHINY_PAL(KELDEO_ORDINARY, gMonShinyPalette_KeldeoOrdinary),
-    SPECIES_SHINY_PAL(MELOETTA, gMonShinyPalette_MeloettaAria),
+    SPECIES_SHINY_PAL(MELOETTA_ARIA, gMonShinyPalette_MeloettaAria),
     SPECIES_SHINY_PAL(GENESECT, gMonShinyPalette_Genesect),
 #endif
 #if P_GEN_6_POKEMON == TRUE
@@ -882,7 +882,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
     SPECIES_SHINY_PAL(MR_RIME, gMonShinyPalette_MrRime),
     SPECIES_SHINY_PAL(RUNERIGUS, gMonShinyPalette_Runerigus),
     SPECIES_SHINY_PAL(MILCERY, gMonShinyPalette_Milcery),
-    SPECIES_SHINY_PAL(ALCREMIE, gMonShinyPalette_Alcremie),
+    SPECIES_SHINY_PAL(ALCREMIE_STRAWBERRY_VANILLA_CREAM, gMonShinyPalette_Alcremie),
     SPECIES_SHINY_PAL(FALINKS, gMonShinyPalette_Falinks),
     SPECIES_SHINY_PAL(PINCURCHIN, gMonShinyPalette_Pincurchin),
     SPECIES_SHINY_PAL(SNOM, gMonShinyPalette_Snom),
@@ -1235,7 +1235,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
 
     SPECIES_SHINY_PAL(XERNEAS_ACTIVE, gMonShinyPalette_XerneasActive),
 
-    SPECIES_SHINY_PAL(ZYGARDE_10, gMonShinyPalette_Zygarde10),
+    SPECIES_SHINY_PAL(ZYGARDE_10_AURA_BREAK, gMonShinyPalette_Zygarde10),
     SPECIES_SHINY_PAL(ZYGARDE_10_POWER_CONSTRUCT, gMonShinyPalette_Zygarde10),
     SPECIES_SHINY_PAL(ZYGARDE_50_POWER_CONSTRUCT, gMonShinyPalette_Zygarde50),
     SPECIES_SHINY_PAL(ZYGARDE_COMPLETE, gMonShinyPalette_ZygardeComplete),

@@ -498,7 +498,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(MANAPHY, gMonFrontPic_Manaphy),
     SPECIES_SPRITE(DARKRAI, gMonFrontPic_Darkrai),
     SPECIES_SPRITE(SHAYMIN_LAND, gMonFrontPic_ShayminLand),
-    SPECIES_SPRITE(ARCEUS, gMonFrontPic_Arceus),
+    SPECIES_SPRITE(ARCEUS_NORMAL, gMonFrontPic_Arceus),
 #endif
 #if P_GEN_5_POKEMON == TRUE
     SPECIES_SPRITE(VICTINI, gMonFrontPic_Victini),
@@ -557,7 +557,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(WHIMSICOTT, gMonFrontPic_Whimsicott),
     SPECIES_SPRITE(PETILIL, gMonFrontPic_Petilil),
     SPECIES_SPRITE(LILLIGANT, gMonFrontPic_Lilligant),
-    SPECIES_SPRITE(BASCULIN, gMonFrontPic_BasculinRedStriped),
+    SPECIES_SPRITE(BASCULIN_RED_STRIPED, gMonFrontPic_BasculinRedStriped),
     SPECIES_SPRITE(SANDILE, gMonFrontPic_Sandile),
     SPECIES_SPRITE(KROKOROK, gMonFrontPic_Krokorok),
     SPECIES_SPRITE(KROOKODILE, gMonFrontPic_Krookodile),
@@ -655,7 +655,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(LANDORUS_INCARNATE, gMonFrontPic_LandorusIncarnate),
     SPECIES_SPRITE(KYUREM, gMonFrontPic_Kyurem),
     SPECIES_SPRITE(KELDEO_ORDINARY, gMonFrontPic_KeldeoOrdinary),
-    SPECIES_SPRITE(MELOETTA, gMonFrontPic_MeloettaAria),
+    SPECIES_SPRITE(MELOETTA_ARIA, gMonFrontPic_MeloettaAria),
     SPECIES_SPRITE(GENESECT, gMonFrontPic_Genesect),
 #endif
 #if P_GEN_6_POKEMON == TRUE
@@ -784,7 +784,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(PALOSSAND, gMonFrontPic_Palossand),
     SPECIES_SPRITE(PYUKUMUKU, gMonFrontPic_Pyukumuku),
     SPECIES_SPRITE(TYPE_NULL, gMonFrontPic_TypeNull),
-    SPECIES_SPRITE(SILVALLY, gMonFrontPic_Silvally),
+    SPECIES_SPRITE(SILVALLY_NORMAL, gMonFrontPic_Silvally),
     SPECIES_SPRITE(MINIOR_METEOR_RED, gMonFrontPic_MiniorMeteor),
     SPECIES_SPRITE(KOMALA, gMonFrontPic_Komala),
     SPECIES_SPRITE(TURTONATOR, gMonFrontPic_Turtonator),
@@ -882,7 +882,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(MR_RIME, gMonFrontPic_MrRime),
     SPECIES_SPRITE(RUNERIGUS, gMonFrontPic_Runerigus),
     SPECIES_SPRITE(MILCERY, gMonFrontPic_Milcery),
-    SPECIES_SPRITE(ALCREMIE, gMonFrontPic_Alcremie),
+    SPECIES_SPRITE(ALCREMIE_STRAWBERRY_VANILLA_CREAM, gMonFrontPic_Alcremie),
     SPECIES_SPRITE(FALINKS, gMonFrontPic_Falinks),
     SPECIES_SPRITE(PINCURCHIN, gMonFrontPic_Pincurchin),
     SPECIES_SPRITE(SNOM, gMonFrontPic_Snom),
@@ -1236,7 +1236,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
 
     SPECIES_SPRITE(XERNEAS_ACTIVE, gMonFrontPic_XerneasActive),
 
-    SPECIES_SPRITE(ZYGARDE_10, gMonFrontPic_Zygarde10),
+    SPECIES_SPRITE(ZYGARDE_10_AURA_BREAK, gMonFrontPic_Zygarde10),
     SPECIES_SPRITE(ZYGARDE_10_POWER_CONSTRUCT, gMonFrontPic_Zygarde10),
     SPECIES_SPRITE(ZYGARDE_50_POWER_CONSTRUCT, gMonFrontPic_Zygarde50),
     SPECIES_SPRITE(ZYGARDE_COMPLETE, gMonFrontPic_ZygardeComplete),
@@ -1439,7 +1439,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(WUGTRIO, gMonFrontPic_Wugtrio),
     SPECIES_SPRITE(BOMBIRDIER, gMonFrontPic_Bombirdier),
     SPECIES_SPRITE(FINIZEN, gMonFrontPic_Finizen),
-    SPECIES_SPRITE(PALAFIN, gMonFrontPic_Palafin),
+    SPECIES_SPRITE(PALAFIN_ZERO, gMonFrontPic_Palafin),
     SPECIES_SPRITE(PALAFIN_HERO, gMonFrontPic_PalafinHero),
     SPECIES_SPRITE(VAROOM, gMonFrontPic_Varoom),
     SPECIES_SPRITE(REVAVROOM, gMonFrontPic_Revavroom),

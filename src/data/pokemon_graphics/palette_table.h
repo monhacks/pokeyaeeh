@@ -498,7 +498,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(MANAPHY, gMonPalette_Manaphy),
     SPECIES_PAL(DARKRAI, gMonPalette_Darkrai),
     SPECIES_PAL(SHAYMIN_LAND, gMonPalette_ShayminLand),
-    SPECIES_PAL(ARCEUS, gMonPalette_Arceus),
+    SPECIES_PAL(ARCEUS_NORMAL, gMonPalette_Arceus),
 #endif
 #if P_GEN_5_POKEMON == TRUE
     SPECIES_PAL(VICTINI, gMonPalette_Victini),
@@ -557,7 +557,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(WHIMSICOTT, gMonPalette_Whimsicott),
     SPECIES_PAL(PETILIL, gMonPalette_Petilil),
     SPECIES_PAL(LILLIGANT, gMonPalette_Lilligant),
-    SPECIES_PAL(BASCULIN, gMonPalette_BasculinRedStriped),
+    SPECIES_PAL(BASCULIN_RED_STRIPED, gMonPalette_BasculinRedStriped),
     SPECIES_PAL(SANDILE, gMonPalette_Sandile),
     SPECIES_PAL(KROKOROK, gMonPalette_Krokorok),
     SPECIES_PAL(KROOKODILE, gMonPalette_Krookodile),
@@ -655,7 +655,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(LANDORUS_INCARNATE, gMonPalette_LandorusIncarnate),
     SPECIES_PAL(KYUREM, gMonPalette_Kyurem),
     SPECIES_PAL(KELDEO_ORDINARY, gMonPalette_KeldeoOrdinary),
-    SPECIES_PAL(MELOETTA, gMonPalette_MeloettaAria),
+    SPECIES_PAL(MELOETTA_ARIA, gMonPalette_MeloettaAria),
     SPECIES_PAL(GENESECT, gMonPalette_Genesect),
 #endif
 #if P_GEN_6_POKEMON == TRUE
@@ -882,7 +882,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(MR_RIME, gMonPalette_MrRime),
     SPECIES_PAL(RUNERIGUS, gMonPalette_Runerigus),
     SPECIES_PAL(MILCERY, gMonPalette_Milcery),
-    SPECIES_PAL(ALCREMIE, gMonPalette_Alcremie),
+    SPECIES_PAL(ALCREMIE_STRAWBERRY_VANILLA_CREAM, gMonPalette_Alcremie),
     SPECIES_PAL(FALINKS, gMonPalette_Falinks),
     SPECIES_PAL(PINCURCHIN, gMonPalette_Pincurchin),
     SPECIES_PAL(SNOM, gMonPalette_Snom),
@@ -1237,7 +1237,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
 
     SPECIES_PAL(XERNEAS_ACTIVE, gMonPalette_XerneasActive),
 
-    SPECIES_PAL(ZYGARDE_10, gMonPalette_Zygarde10),
+    SPECIES_PAL(ZYGARDE_10_AURA_BREAK, gMonPalette_Zygarde10),
     SPECIES_PAL(ZYGARDE_10_POWER_CONSTRUCT, gMonPalette_Zygarde10),
     SPECIES_PAL(ZYGARDE_50_POWER_CONSTRUCT, gMonPalette_Zygarde50),
     SPECIES_PAL(ZYGARDE_COMPLETE, gMonPalette_ZygardeComplete),

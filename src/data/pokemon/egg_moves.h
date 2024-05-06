@@ -3403,8 +3403,9 @@ const u16 gEggMoves[] = {
               MOVE_SWEET_SCENT,
               MOVE_WORRY_SEED),
 
-    egg_moves(BASCULIN,
+    egg_moves(BASCULIN_RED_STRIPED,
               MOVE_AGILITY,
+              MOVE_AQUA_FANGS,
               MOVE_BRINE,
               MOVE_BUBBLE_BEAM,
               MOVE_ENDEAVOR,
@@ -3418,6 +3419,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(BASCULIN_BLUE_STRIPED,
               MOVE_AGILITY,
+              MOVE_AQUA_FANGS,
               MOVE_BRINE,
               MOVE_BUBBLE_BEAM,
               MOVE_ENDEAVOR,
@@ -4860,6 +4862,7 @@ const u16 gEggMoves[] = {
               MOVE_PSYCHO_SHIFT),
 
     egg_moves(BASCULIN_WHITE_STRIPED,
+              MOVE_AQUA_FANGS,
               MOVE_ENDEAVOR,
               MOVE_LAST_RESPECTS),
 
