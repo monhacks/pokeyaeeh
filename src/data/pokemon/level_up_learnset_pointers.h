@@ -1024,20 +1024,11 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_IRON_LEAVES] = sIronLeavesLevelUpLearnset,
     [SPECIES_DIPPLIN] = sDipplinLevelUpLearnset,
     [SPECIES_POLTCHAGEIST_COUNTERFEIT] = sPoltchageistLevelUpLearnset,
-    [SPECIES_POLTCHAGEIST_ARTISAN] = sPoltchageistLevelUpLearnset,
     [SPECIES_SINISTCHA_UNREMARKABLE] = sSinistchaLevelUpLearnset,
-    [SPECIES_SINISTCHA_MASTERPIECE] = sSinistchaLevelUpLearnset,
     [SPECIES_OKIDOGI] = sOkidogiLevelUpLearnset,
     [SPECIES_MUNKIDORI] = sMunkidoriLevelUpLearnset,
     [SPECIES_FEZANDIPITI] = sFezandipitiLevelUpLearnset,
     [SPECIES_OGERPON_TEAL_MASK] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_HEARTHFLAME_MASK] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_CORNERSTONE_MASK] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_TEAL_MASK_TERA] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponLevelUpLearnset,
-    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponLevelUpLearnset,
     [SPECIES_ARCHALUDON] = sArchaludonLevelUpLearnset,
     [SPECIES_HYDRAPPLE] = sHydrappleLevelUpLearnset,
     [SPECIES_GOUGING_FIRE] = sGougingFireLevelUpLearnset,
@@ -1469,6 +1460,8 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderLevelUpLearnset,
     // Enamorus
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusLevelUpLearnset,
+    // Ursaluna
+    [SPECIES_URSALUNA_BLOODMOON] = sUrsalunaBloodmoonLevelUpLearnset,
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE] = sBasculegionLevelUpLearnset,
     // Gigantamax Forms
@@ -1509,7 +1502,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
 #endif
 #if P_GEN_9_POKEMON == TRUE
     // Oinkologne
-    [SPECIES_OINKOLOGNE_FEMALE] = sOinkologneFemaleLevelUpLearnset,
+    [SPECIES_OINKOLOGNE_FEMALE] = sOinkologneLevelUpLearnset,
     // Maushold
     [SPECIES_MAUSHOLD_FAMILY_OF_THREE] = sMausholdLevelUpLearnset,
     // Squawkabilly
@@ -1525,6 +1518,18 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset,
     // Gimmighoul
     [SPECIES_GIMMIGHOUL_ROAMING] = sGimmighoulLevelUpLearnset,
+    // Poltchageist
+    [SPECIES_POLTCHAGEIST_ARTISAN] = sPoltchageistLevelUpLearnset,
+    // Sinistcha
+    [SPECIES_SINISTCHA_MASTERPIECE] = sSinistchaLevelUpLearnset,
+    // Ogerpon
+    [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponLevelUpLearnset,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK] = sOgerponLevelUpLearnset,
+    [SPECIES_OGERPON_CORNERSTONE_MASK] = sOgerponLevelUpLearnset,
+    [SPECIES_OGERPON_TEAL_MASK_TERA] = sOgerponLevelUpLearnset,
+    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponLevelUpLearnset,
+    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponLevelUpLearnset,
+    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponLevelUpLearnset,
 #endif
     // Tauros-Paldea
     [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosPaldeanBlazeBreedLevelUpLearnset,

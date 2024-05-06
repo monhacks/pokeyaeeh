@@ -1505,9 +1505,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     // Gimmighoul
     [SPECIES_GIMMIGHOUL_ROAMING] = sGimmighoulTeachableLearnset,
 #endif
-    // Tauros-Paldea
-    [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosPaldeanBlazeBreedTeachableLearnset,
-    [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosPaldeanAquaBreedTeachableLearnset,
+#if P_GEN_9_POKEMON == TRUE
 
     // Ursaluna    
     [SPECIES_URSALUNA_BLOODMOON] = sUrsalunaBloodmoonTeachableLearnset,
@@ -1526,6 +1524,10 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponTeachableLearnset,
     [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponTeachableLearnset,
     [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponTeachableLearnset,
+#endif
+    // Tauros-Paldea
+    [SPECIES_TAUROS_PALDEAN_BLAZE_BREED] = sTaurosPaldeanBlazeBreedTeachableLearnset,
+    [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosPaldeanAquaBreedTeachableLearnset,
 
     [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenTeachableLearnset,
 };
