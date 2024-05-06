@@ -3,7 +3,6 @@ ShoalCave_LowTideLowerRoom_MapScripts::
 	.byte 0
 
 ShoalCave_LowTideLowerRoom_OnLoad:
-	call ShoalCave_LowTideLowerRoom_EventScript_SetShoalItemMetatiles
 	end
 
 ShoalCave_LowTideLowerRoom_EventScript_SetShoalItemMetatiles::
