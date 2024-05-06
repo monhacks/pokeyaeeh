@@ -11767,7 +11767,7 @@ static const struct TrainerMon sParty_MelAndPaul[] = {
         .iv = TRAINER_PARTY_IVS(30, 2, 30, 31, 30, 31)
     },
     {
-        .species = SPECIES_OINKOLOGNE,
+        .species = SPECIES_OINKOLOGNE_FEMALE,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_THICK_FAT,
         .lvl = 52,
