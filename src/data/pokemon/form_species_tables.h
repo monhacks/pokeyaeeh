@@ -1308,6 +1308,12 @@ static const u16 sEnamorusFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sUrsalunaFormSpeciesIdTable[] = {
+    SPECIES_URSALUNA,
+    SPECIES_URSALUNA_BLOODMOON,
+    FORM_SPECIES_END,
+};
+
 static const u16 sBasculegionFormSpeciesIdTable[] = {
     SPECIES_BASCULEGION_MALE,
     SPECIES_BASCULEGION_FEMALE,

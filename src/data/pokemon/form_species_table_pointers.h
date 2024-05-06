@@ -173,6 +173,7 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_ZARUDE] = sZarudeFormSpeciesIdTable,
     [SPECIES_CALYREX] = sCalyrexFormSpeciesIdTable,
     [SPECIES_ENAMORUS_INCARNATE] = sEnamorusFormSpeciesIdTable,
+    [SPECIES_URSALUNA] = sUrsalunaFormSpeciesIdTable,
     [SPECIES_BASCULEGION_MALE] = sBasculegionFormSpeciesIdTable,
 #endif
 #if P_GEN_9_POKEMON == TRUE
@@ -609,6 +610,8 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexFormSpeciesIdTable,
     // Enamorus
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusFormSpeciesIdTable,
+    // Ursaluna
+    [SPECIES_URSALUNA_BLOODMOON] = sUrsalunaFormSpeciesIdTable,
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE] = sBasculegionFormSpeciesIdTable,
     // Gigantamax Forms
