@@ -73,6 +73,7 @@ static void HeatStartMenu_LoadSprites(void);
 static void HeatStartMenu_CreateSprites(void);
 static void HeatStartMenu_LoadBgGfx(void);
 static void HeatStartMenu_ShowTimeWindow(void);
+static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
 static u8 RunSaveCallback(void);
 static u8 SaveDoSaveCallback(void);
@@ -136,6 +137,7 @@ static EWRAM_DATA u8 menuSelected = 255;
 static EWRAM_DATA u8 (*sSaveDialogCallback)(void) = NULL;
 static EWRAM_DATA u8 sSaveDialogTimer = 0;
 static EWRAM_DATA u8 sSaveInfoWindowId = 0;
+EWRAM_DATA u8 gClockMode = TWELVE_HOUR_MODE;
 
 // --BG-GFX--
 static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/heat_start_menu/bg.4bpp.lz");
@@ -495,23 +497,31 @@ static void SpriteCB_IconOptions(struct Sprite* sprite) {
 // If you want to shorten the dates to Sat., Sun., etc., change this to 70
 #define CLOCK_WINDOW_WIDTH 100
 
-const u8 gText_Saturday[] = _("Sat.");
-const u8 gText_Sunday[] = _("Sun.");
-const u8 gText_Monday[] = _("Mon.");
-const u8 gText_Tuesday[] = _("Tue.");
-const u8 gText_Wednesday[] = _("Wed.");
-const u8 gText_Thursday[] = _("Thu.");
-const u8 gText_Friday[] = _("Fri.");
+static const u8 gText_Friday[]    = _("Fri,");
+static const u8 gText_Saturday[]  = _("Sat,");
+static const u8 gText_Sunday[]    = _("Sun,");
+static const u8 gText_Monday[]    = _("Mon,");
+static const u8 gText_Tuesday[]   = _("Tue,");
+static const u8 gText_Wednesday[] = _("Wed,");
+static const u8 gText_Thursday[]  = _("Thu,");
 
-const u8 *const gDayNameStringsTable[7] = {
+static const u8 *const gDayNameStringsTable[] =
+{
+    gText_Friday,
     gText_Saturday,
     gText_Sunday,
     gText_Monday,
     gText_Tuesday,
     gText_Wednesday,
-    gText_Thursday,
-    gText_Friday,
+    gText_Thursday
 };
+
+static const u8 gText_CurrentTime[]      = _("  {STR_VAR_3} {CLEAR_TO 64}{STR_VAR_1}:{STR_VAR_2}");
+static const u8 gText_CurrentTimeOff[]   = _("  {STR_VAR_3} {CLEAR_TO 64}{STR_VAR_1} {STR_VAR_2}");
+static const u8 gText_CurrentTimeAM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} AM");
+static const u8 gText_CurrentTimeAMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} AM");
+static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} PM");
+static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
 static void SetSelectedMenu(void) {
   if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
@@ -622,53 +632,84 @@ static void HeatStartMenu_LoadBgGfx(void) {
 
 static void HeatStartMenu_ShowTimeWindow(void)
 {
-    const u8 *suffix;
-    u8* ptr;
-    u8 convertedHours;
+    u8 analogHour;
+
+	RtcCalcLocalTime();
+      // print window
+  sHeatStartMenu->sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
+  FillWindowPixelBuffer(sHeatStartMenu->sStartClockWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
+  PutWindowTilemap(sHeatStartMenu->sStartClockWindowId);
+	FlagSet(FLAG_TEMP_5);
+
+    analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
+
+	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
+    ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gClockMode == TWELVE_HOUR_MODE)
+	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
     
-    // print window
-    sHeatStartMenu->sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
-    FillWindowPixelBuffer(sHeatStartMenu->sStartClockWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
-    PutWindowTilemap(sHeatStartMenu->sStartClockWindowId);
-    //DrawStdWindowFrame(sHeatStartMenu->sStartClockWindowId, FALSE);
-
-    if (gLocalTime.hours < 12)
+	StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
+    if (gClockMode == TWELVE_HOUR_MODE)
     {
-        if (gLocalTime.hours == 0)
-            convertedHours = 12;
+        if (gLocalTime.hours >= 13 && gLocalTime.hours <= 24)
+            StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
         else
-            convertedHours = gLocalTime.hours;
-        suffix = gText_AM;
+            StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
     }
-    else if (gLocalTime.hours == 12)
-    {
-        convertedHours = 12;
-        if (suffix == gText_AM);
-            suffix = gText_PM;
+    
+	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
+}
+
+static void HeatStartMenu_UpdateClockDisplay(void)
+{
+    u8 analogHour;
+
+	if (!FlagGet(FLAG_TEMP_5))
+		return;
+	RtcCalcLocalTime();
+    analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
+    
+	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
+    ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gClockMode == TWELVE_HOUR_MODE)
+	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gLocalTime.hours == 0)
+		ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gLocalTime.hours == 12)
+		ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
+
+	if (gLocalTime.seconds % 2)
+	{
+        StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
+        if (gClockMode == TWELVE_HOUR_MODE)
+        {
+            if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
+                StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
+            else
+                StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
+        } 
     }
-    else
-    {
-        convertedHours = gLocalTime.hours - 12;
-        suffix = gText_PM;
+	else
+	{
+        StringExpandPlaceholders(gStringVar4, gText_CurrentTimeOff);
+        if (gClockMode == TWELVE_HOUR_MODE)
+        {
+            if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
+                StringExpandPlaceholders(gStringVar4, gText_CurrentTimePMOff); 
+            else
+                StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAMOff);  
+        } 
     }
-
-    StringExpandPlaceholders(gStringVar4, gDayNameStringsTable[(gLocalTime.days % 7)]);
-    // StringExpandPlaceholders(gStringVar4, gText_ContinueMenuTime); // prints "time" word, from version before weekday was added and leaving it here in case anyone would prefer to use it
-    AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 4, 1, 0xFF, NULL); 
-
-    ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
-    *ptr = 0xF0;
-
-    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 5)-8, 1, 0xFF, NULL); // print time
-
-    AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH)-8, 1, 0xFF, NULL); // print am/pm
-
-    CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
+    
+	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
 static const u8 gText_Poketch[] = _("  PokeNav");
-static const u8 gText_Pokedex[] = _("  PokeDex");
+static const u8 gText_Pokedex[] = _("  Pokédex");
 static const u8 gText_Party[]   = _("    Party ");
 static const u8 gText_Bag[]     = _("      Bag  ");
 static const u8 gText_Trainer[] = _("   Trainer");
@@ -1172,13 +1213,13 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
   }
 }
 
-static void HeatStartMenu_HandleInput_DPADUP(void) {
+static void HeatStartMenu_HandleInput_DPADUP(void)
+{
+  
   switch (menuSelected) {
     case MENU_POKETCH:
       break;
     default:
-      
-      
       PlaySE(SE_SELECT);
       if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) {
         break;
@@ -1196,6 +1237,7 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
 }
 
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
+  HeatStartMenu_UpdateClockDisplay();
   if (JOY_NEW(A_BUTTON)) {
     if (sHeatStartMenu->loadState == 0) {
       if (menuSelected != MENU_SAVE) {

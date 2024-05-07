@@ -1898,7 +1898,7 @@ const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all 
 // Multi option menu
 const u8 gText_SmallDot[] = _("·");
 const u8 gText_LargeDot[] = _("{EMOJI_CIRCLE}");
-const u8 gText_PageNav[] = _("{L_BUTTON}{R_BUTTON} PAGE");
+const u8 gText_PageNav[] = _("{L_BUTTON}{R_BUTTON} Page");
 
 // Region names
 const u8 gText_Kanto[] =    _("Kanto");
