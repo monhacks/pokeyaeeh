@@ -114,19 +114,17 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 
 
 Text_TestIntro:
-	.string "Legendary battle!$"
+	.string "Random wild battle!$"
 
 Text_TestDefeat:
     .string "Victorious!$"
 
 Debug_EventScript_Script_1::
-	lock
 	msgbox Text_TestIntro, MSGBOX_AUTOCLOSE
-	setwildbattle SPECIES_KYOGRE, 0, ITEM_BLUE_ORB, NATURE_MODEST, 0, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_ORIGIN_PULSE, MOVE_THUNDER, MOVE_ICE_BEAM, MOVE_PROTECT, TRUE, SPECIES_GROUDON, 0, ITEM_RED_ORB, NATURE_ADAMANT, 0, 252, 252, 4, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PRECIPICE_BLADES, MOVE_SOLAR_BLADE, MOVE_HEAT_CRASH, MOVE_PROTECT, TRUE
-	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN
+	randomelement SPECIES_BULBASAUR, SPECIES_CHARMANDER, SPECIES_SQUIRTLE, SPECIES_TREECKO, SPECIES_TORCHIC, SPECIES_MUDKIP
+	setwildbattle VAR_RESULT, 5
 	dowildbattle
-	msgbox Text_TestDefeat, MSGBOX_AUTOCLOSE
-	release
+	msgbox Text_TestDefeat, MSGBOX_DEFAULT
 	end
 
 Debug_EventScript_Script_2::
