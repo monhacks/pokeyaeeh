@@ -355,7 +355,7 @@ Route103_EventScript_Daisy2::
 	msgbox Route103_EventScript_Daisy2_Text_1
 	waitmessage
 	msgbox Route103_EventScript_Daisy2_Text_2, MSGBOX_NPC
-	giveitem ITEM_TM_BULLET_SEED, 1
+	giveitem ITEM_TM_ENERGY_BALL, 1
 	msgbox Route103_EventScript_Daisy2_Text_3, MSGBOX_NPC
 	return
 
@@ -420,7 +420,7 @@ Route103_EventScript_Daisy2_Text_2:
 	.string "That Voltorb…\pIt's one of a kind…\pPlease take good care of it.$"
 
 Route103_EventScript_Daisy2_Text_3:
-	.string "Bullet Seed is a move which can\n hit the enemy around 5 times.\pIt can be a really good move under\ncertain situations.$"
+	.string "Energy Ball is a strong Grass-type\nattack that might lower the foe's\lSpecial Defense.\pIt's a really reliable move that'll\nnever let you down.$"
 
 Route103_EventScript_Daisy_Text_0:
 	.string "The soul soothing fragrance…\p"

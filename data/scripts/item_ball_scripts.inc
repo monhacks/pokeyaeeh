@@ -2,6 +2,10 @@ Route102_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end
 
+Route102_EventScript_ItemTMPsyshock::
+	finditem ITEM_TM_PSYSHOCK
+	end
+
 Route103_EventScript_ItemGuardSpec::
 	finditem ITEM_GUARD_SPEC
 	end
@@ -38,6 +42,14 @@ Route106_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
+Route107_EventScript_ItemTMStealthRock::
+	finditem ITEM_TM_STEALTH_ROCK
+	end
+
+Route108_EventScript_ItemTMCrunch::
+	finditem ITEM_TM_CRUNCH
+	end
+
 Route108_EventScript_ItemStarPiece::
 	finditem ITEM_STAR_PIECE
 	end
@@ -62,6 +74,10 @@ Route110_EventScript_ItemDireHit::
 
 Route110_EventScript_ItemElixir::
 	finditem ITEM_ELIXIR
+	end
+
+Route110_EventScript_ItemTMHyperVoice::
+	finditem ITEM_TM_HYPER_VOICE
 	end
 
 Route111_EventScript_ItemTMStompingTantrum::
@@ -95,6 +111,10 @@ Route113_EventScript_ItemSuperRepel::
 
 Route113_EventScript_ItemHyperPotion::
 	finditem ITEM_HYPER_POTION
+	end
+
+Route113_EventScript_ItemTMIronDefense::
+	finditem ITEM_TM_IRON_DEFENSE
 	end
 
 Route114_EventScript_ItemGimmighoulCoins_1::
@@ -309,6 +329,10 @@ Route132_EventScript_ItemGimmighoulCoins_2::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
+Route132_EventScript_ItemTMSpikes::
+	finditem ITEM_TM_SPIKES
+	end
+
 Route133_EventScript_ItemBigPearl::
 	finditem ITEM_BIG_PEARL
 	end
@@ -319,6 +343,10 @@ Route133_EventScript_ItemStarPiece::
 
 Route133_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
+	end
+
+Route133_EventScript_ItemTMMoonblast::
+	finditem ITEM_TM_MOONBLAST
 	end
 
 Route134_EventScript_ItemGimmighoulCoins::
@@ -338,8 +366,8 @@ PetalburgCity_EventScript_ItemEther::
 	finditem ITEM_ETHER
 	end
 
-MauvilleCity_EventScript_ItemXSpeed::
-	finditem ITEM_X_SPEED
+MauvilleCity_EventScript_ItemTMLiquidation::
+	finditem ITEM_TM_LIQUIDATION
 	end
 
 RustboroCity_EventScript_ItemXDefend::
@@ -356,6 +384,10 @@ LilycoveCity_EventScript_ItemAmpharosite::
 
 MossdeepCity_EventScript_ItemNetBall::
 	finditem ITEM_NET_BALL
+	end
+
+MossdeepCity_EventScript_ItemTMPlayRough::
+	finditem ITEM_TM_PLAY_ROUGH
 	end
 
 PetalburgWoods_EventScript_ItemLifeOrb::
@@ -402,8 +434,8 @@ GraniteCave_B2F_EventScript_ItemAggronite::
 	finditem ITEM_AGGRONITE
 	end
 
-JaggedPass_EventScript_ItemBurnHeal::
-	finditem ITEM_BURN_HEAL
+JaggedPass_EventScript_ItemTMFlamethrower::
+	finditem ITEM_TM_FLAMETHROWER
 	end
 
 FieryPath_EventScript_ItemFireStone::
@@ -499,8 +531,8 @@ AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone::
 	finditem ITEM_WATER_STONE
 	end
 
-AbandonedShip_HiddenFloorRooms_EventScript_ItemTMBubbleBeam::
-	finditem ITEM_TM_BUBBLE_BEAM
+AbandonedShip_HiddenFloorRooms_EventScript_ItemTMEerieImpulse::
+	finditem ITEM_TM_EERIE_IMPULSE
 	end
 
 ScorchedSlab_EventScript_ItemTMTemperFlare::
