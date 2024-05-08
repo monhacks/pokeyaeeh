@@ -242,6 +242,7 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_TMHM_BALL                  239
 #define OBJ_EVENT_GFX_MEGA_STONE                 240
+#define OBJ_EVENT_GFX_GIMMIGHOUL_COIN            241
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

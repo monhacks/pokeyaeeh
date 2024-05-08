@@ -2117,6 +2117,11 @@ const struct SpriteFrameImage sPicTable_TmHmBall[] = {
     obj_frame_tiles(gObjectEventPic_TmHmBall),
 };
 
+const struct SpriteFrameImage sPicTable_GimmighoulCoin[] = {
+    obj_frame_tiles(gObjectEventPic_GimmighoulCoin),
+};
+
+
 const struct SpriteFrameImage sPicTable_MegaStone[] = {
     overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
     overworld_frame(gObjectEventPic_MegaStone, 2, 2, 1),
