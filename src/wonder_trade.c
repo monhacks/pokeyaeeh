@@ -697,7 +697,7 @@ void CreateWonderTradePokemon(u8 whichPlayerMon)
 
     if (currHeldItem == ITEM_NONE)
     {
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             if (gEvolutionTable[species][i].method == EVO_TRADE)
             {
@@ -1212,7 +1212,7 @@ bool32 IsMegaPreEvolution(u16 species, u16 heldStone, bool32 found)
 {
     u8 i;
 
-    for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+    for (i = 0; i < EVOS_PER_MON; i++)
     {
         if (gEvolutionTable[species][i].targetSpecies != SPECIES_NONE)
         {

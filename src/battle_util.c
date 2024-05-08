@@ -9909,7 +9909,7 @@ static bool32 CanEvolve(u32 species)
 {
     u32 i;
 
-    for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+    for (i = 0; i < EVOS_PER_MON; i++)
     {
         if (gEvolutionTable[species][i].method)
             return TRUE;

@@ -6998,7 +6998,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         level = GetMonData(mon, MON_DATA_LEVEL, 0);
         friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, 0);
 
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
@@ -7249,7 +7249,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         level = GetMonData(mon, MON_DATA_LEVEL, 0);
         friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, 0);
 
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             if (SanitizeSpeciesId(gEvolutionTable[species][i].targetSpecies) == SPECIES_NONE)
                 continue;
@@ -7267,7 +7267,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         }
         break;
     case EVO_MODE_TRADE:
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
@@ -7291,7 +7291,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         break;
     case EVO_MODE_ITEM_USE:
     case EVO_MODE_ITEM_CHECK:
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
@@ -7325,7 +7325,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         break;
     // Battle evolution without leveling; party slot is being passed into the evolutionItem arg.
     case EVO_MODE_BATTLE_SPECIAL:
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
@@ -7338,7 +7338,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         break;
     // Overworld evolution without leveling; evolution method is being passed into the evolutionItem arg.
     case EVO_MODE_OVERWORLD_SPECIAL:
-        for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+        for (i = 0; i < EVOS_PER_MON; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
@@ -7373,7 +7373,7 @@ bool8 IsMonPastEvolutionLevel(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
     u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
 
-    for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+    for (i = 0; i < EVOS_PER_MON; i++)
     {
         switch (gEvolutionTable[species][i].method)
         {

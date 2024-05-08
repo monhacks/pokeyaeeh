@@ -6448,7 +6448,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
     StringCopy(gStringVar1, GetSpeciesName(species));
 
     //Calculate number of possible direct evolutions (e.g. Eevee has 5 but torchic has 1)
-    for (i = 0; gEvolutionTable[species][i].method != EVOLUTIONS_END; i++)
+    for (i = 0; i < EVOS_PER_MON; i++)
     {
         if (gEvolutionTable[species][i].method != 0)
             times += 1;
