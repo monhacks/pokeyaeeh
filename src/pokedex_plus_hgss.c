@@ -605,7 +605,7 @@ static void Task_LoadEvolutionScreen(u8 taskId);
 static void Task_HandleEvolutionScreenInput(u8 taskId);
 static void Task_SwitchScreensFromEvolutionScreen(u8 taskId);
 static void Task_ExitEvolutionScreen(u8 taskId);
-static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u8 depth_i);
+static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u8 base_i_offset, u32 alreadyPrintedIcons[], u32 *base_icon_i_offSet);
 static u8 PrintPreEvolutions(u8 taskId, u16 species);
 //Stat bars on scrolling screens
 static void TryDestroyStatBars(void);
@@ -6109,14 +6109,19 @@ static void Task_LoadEvolutionScreen(u8 taskId)
         break;
     case 4:
         //Print evo info and icons
+        {
+        u32 alreadyPrintedIcons[9] = {0};
+        u32 iconOffset = sPokedexView->numPreEvolutions;
+
         gTasks[taskId].data[3] = 0;
-        PrintEvolutionTargetSpeciesAndMethod(taskId, NationalPokedexNumToSpeciesHGSS(sPokedexListItem->dexNum), 0, sPokedexView->numPreEvolutions);
+        PrintEvolutionTargetSpeciesAndMethod(taskId, NationalPokedexNumToSpeciesHGSS(sPokedexListItem->dexNum), 0, sPokedexView->numPreEvolutions, alreadyPrintedIcons, &iconOffset);
         LoadSpritePalette(&gSpritePalette_Arrow);
         GetSeenFlagTargetSpecies();
         if (sPokedexView->sEvoScreenData.numAllEvolutions != 0 && sPokedexView->sEvoScreenData.numSeen != 0)
         {
             sPokedexView->sEvoScreenData.arrowSpriteId = CreateSprite(&gSpriteTemplate_Arrow, 7, 58, 0);
             gSprites[sPokedexView->sEvoScreenData.arrowSpriteId].animNum = 2;
+        }
         }
         gMain.state++;
         break;
@@ -6257,7 +6262,8 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
     }
 }
 
-static void HandleTargetSpeciesPrint(u8 taskId, u16 targetSpecies, u16 previousTargetSpecies, u8 base_x, u8 base_y, u8 base_y_offset, u8 base_i, bool8 isEevee)
+
+static void HandleTargetSpeciesPrintText(u16 targetSpecies, u8 base_x, u8 base_y, u8 base_y_offset, u8 base_i)
 {
     u8 iterations = 6;
     bool8 seen = GetSetPokedexFlag(SpeciesToNationalPokedexNum(targetSpecies), FLAG_GET_SEEN);
@@ -6269,27 +6275,17 @@ static void HandleTargetSpeciesPrint(u8 taskId, u16 targetSpecies, u16 previousT
     StringExpandPlaceholders(gStringVar3, sText_EVO_Name); //evolution mon name
     PrintInfoScreenTextSmall(gStringVar3, base_x, base_y + base_y_offset*base_i); //evolution mon name
 
-    //Print mon icon in the top row
-    if (isEevee)
-    {
-        iterations = 9;
-        if (targetSpecies == previousTargetSpecies)
-            return;
-            else if (targetSpecies == SPECIES_GLACEON)
-                base_i -= 1;
-            else if (targetSpecies == SPECIES_SYLVEON)
-                base_i -= 2;
-    }
+}
 
-    if (base_i < iterations)
-    {
-        LoadMonIconPalette(targetSpecies); //Loads pallete for current mon
-            if (isEevee)
-                gTasks[taskId].data[4+base_i] = CreateMonIcon(targetSpecies, SpriteCB_MonIcon, 45 + 26*base_i, 31, 4, 0); //Create pokemon sprite
-            else
-                gTasks[taskId].data[4+base_i] = CreateMonIcon(targetSpecies, SpriteCB_MonIcon, 50 + 32*base_i, 31, 4, 0); //Create pokemon sprite
-        gSprites[gTasks[taskId].data[4+base_i]].oam.priority = 0;
-    }
+static void HandleTargetSpeciesPrintIcon(u8 taskId, u16 targetSpecies, u8 base_i, u8 times)
+{
+    u32 personality = GetPokedexMonPersonality(targetSpecies);
+    LoadMonIconPalettePersonality(targetSpecies, personality); //Loads pallete for current mon
+    if (times > 6)
+        gTasks[taskId].data[4+base_i] = CreateMonIcon(targetSpecies, SpriteCB_MonIcon, 45 + 26*base_i, 31, 4, personality); //Create pokemon sprite
+    else
+        gTasks[taskId].data[4+base_i] = CreateMonIcon(targetSpecies, SpriteCB_MonIcon, 50 + 32*base_i, 31, 4, personality); //Create pokemon sprite
+    gSprites[gTasks[taskId].data[4+base_i]].oam.priority = 0;
 }
 
 static void CreateCaughtBallEvolutionScreen(u16 targetSpecies, u8 x, u8 y, u16 unused)
@@ -6429,12 +6425,11 @@ static u8 PrintPreEvolutions(u8 taskId, u16 species)
 #define EVO_SCREEN_CRITS_DIGITS 1
 #define EVO_SCREEN_DMG_DIGITS 2
 
-static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u8 depth_i)
+static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u8 base_i_offset, u32 alreadyPrintedIcons[], u32 *base_icon_i_offSet)
 {
-    u16 i;
+    int i;
     const struct MapHeader *mapHeader;
-    u16 targetSpecies = 0;
-    u16 previousTargetSpecies = 0;
+    u16 targetSpecies;
 
     u16 item;
 
@@ -6446,15 +6441,10 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
     u8 base_i = 0;
     u8 times = 0;
     u8 depth_x = 16;
-    bool8 isEevee = FALSE;
 
     if (sPokedexView->sEvoScreenData.isMega)
         return 0;
-
-    StringCopy(gStringVar1, gSpeciesNames[species]);
-
-    if (species == SPECIES_EEVEE)
-        isEevee = TRUE;
+    StringCopy(gStringVar1, GetSpeciesName(species));
 
     //Calculate number of possible direct evolutions (e.g. Eevee has 5 but torchic has 1)
     for (i = 0; i < EVOS_PER_MON; i++)
@@ -6469,20 +6459,34 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
     if (times == 0 && depth == 0)
     {
         StringExpandPlaceholders(gStringVar4, sText_EVO_NONE);
-        PrintInfoScreenTextSmall(gStringVar4, base_x-7-7, base_y + base_y_offset*depth_i);
+        PrintInfoScreenTextSmall(gStringVar4, base_x-7-7, base_y + base_y_offset*base_i_offset);
     }
 
     //If there are evolutions find out which and print them 1 by 1
     for (i = 0; i < times; i++)
     {
-        base_i = i + depth_i;
+        int j;
+
+        base_i = i + base_i_offset;
         left = !left;
 
-        previousTargetSpecies = targetSpecies;
         targetSpecies = gEvolutionTable[species][i].targetSpecies;
         sPokedexView->sEvoScreenData.targetSpecies[base_i] = targetSpecies;
         CreateCaughtBallEvolutionScreen(targetSpecies, base_x + depth_x*depth-9, base_y + base_y_offset*base_i, 0);
-        HandleTargetSpeciesPrint(taskId, targetSpecies, previousTargetSpecies, base_x + depth_x*depth, base_y, base_y_offset, base_i, isEevee); //evolution mon name
+        HandleTargetSpeciesPrintText(targetSpecies, base_x + depth_x*depth, base_y, base_y_offset, base_i);
+
+        for (j = 0; j < 9; j++)
+        {
+            if (alreadyPrintedIcons[j] == targetSpecies)
+                break;
+            if (alreadyPrintedIcons[j] == SPECIES_NONE)
+            {
+                HandleTargetSpeciesPrintIcon(taskId, targetSpecies, *base_icon_i_offSet, times);
+                alreadyPrintedIcons[j] = targetSpecies;
+                (*base_icon_i_offSet)++;
+                break;
+            }
+        }
 
         switch (gEvolutionTable[species][i].method)
         {
@@ -6697,7 +6701,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
         }//Switch end
         PrintInfoScreenTextNarrower(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i); //Print actual instructions
 
-        depth_i += PrintEvolutionTargetSpeciesAndMethod(taskId, targetSpecies, depth+1, base_i+1);
+        base_i_offset += PrintEvolutionTargetSpeciesAndMethod(taskId, targetSpecies, depth+1, base_i+1, alreadyPrintedIcons, base_icon_i_offSet);
     }//For loop end
 
     return times;
