@@ -6,12 +6,14 @@ Route103_EventScript_ItemGuardSpec::
 	finditem ITEM_GUARD_SPEC
 	end
 
-Route103_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+Route103_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route104_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+Route104_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route104_EventScript_ItemPokeBall::
@@ -26,28 +28,32 @@ Route104_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end
 
-Route105_EventScript_ItemIron::
-	finditem ITEM_IRON
+Route105_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route106_EventScript_ItemProtein::
-	finditem ITEM_PROTEIN
+Route106_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route108_EventScript_ItemStarPiece::
 	finditem ITEM_STAR_PIECE
 	end
 
-Route109_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+Route109_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route109_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end
 
-Route110_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+Route110_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route110_EventScript_ItemDireHit::
@@ -66,8 +72,9 @@ Route111_EventScript_ItemStardust::
 	finditem ITEM_STARDUST
 	end
 
-Route111_EventScript_ItemHPUp::
-	finditem ITEM_HP_UP
+Route111_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route111_EventScript_ItemElixir::
@@ -90,12 +97,14 @@ Route113_EventScript_ItemHyperPotion::
 	finditem ITEM_HYPER_POTION
 	end
 
-Route114_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+Route114_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route114_EventScript_ItemProtein::
-	finditem ITEM_PROTEIN
+Route114_EventScript_ItemGimmighoulCoins_2::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route114_EventScript_ItemEnergyPowder::
@@ -110,8 +119,9 @@ Route115_EventScript_ItemTMFocusPunch::
 	finditem ITEM_TM_FOCUS_PUNCH
 	end
 
-Route115_EventScript_ItemIron::
-	finditem ITEM_IRON
+Route115_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route115_EventScript_ItemGreatBall::
@@ -122,8 +132,9 @@ Route115_EventScript_ItemHealPowder::
 	finditem ITEM_HEAL_POWDER
 	end
 
-Route115_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+Route115_EventScript_ItemGimmighoulCoins_2::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route116_EventScript_ItemXSpecial::
@@ -138,8 +149,9 @@ Route116_EventScript_ItemRepel::
 	finditem ITEM_REPEL
 	end
 
-Route116_EventScript_ItemHPUp::
-	finditem ITEM_HP_UP
+Route116_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route116_EventScript_ItemPotion::
@@ -162,8 +174,9 @@ Route119_EventScript_ItemSuperRepel::
 	finditem ITEM_SUPER_REPEL
 	end
 
-Route119_EventScript_ItemZinc::
-	finditem ITEM_ZINC
+Route119_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route119_EventScript_ItemElixir::
@@ -174,8 +187,9 @@ Route119_EventScript_ItemLeafStone::
 	finditem ITEM_LEAF_STONE
 	end
 
-Route119_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+Route119_EventScript_ItemGimmighoulCoins_2::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route119_EventScript_ItemHyperPotion::
@@ -210,20 +224,23 @@ Route120_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route121_EventScript_ItemCarbos::
-	finditem ITEM_CARBOS
+Route121_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route121_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route121_EventScript_ItemZinc::
-	finditem ITEM_ZINC
+Route121_EventScript_ItemGimmighoulCoins_2::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route123_EventScript_ItemCalcium::
-	finditem ITEM_CALCIUM
+Route123_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route123_EventScript_ItemUltraBall::
@@ -234,8 +251,9 @@ Route123_EventScript_ItemElixir::
 	finditem ITEM_ELIXIR
 	end
 
-Route123_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+Route123_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route123_EventScript_ItemRevivalHerb::
@@ -266,24 +284,29 @@ Route126_EventScript_ItemGreenShard::
 	finditem ITEM_GREEN_SHARD
 	end
 
-Route127_EventScript_ItemZinc::
-	finditem ITEM_ZINC
+Route127_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route127_EventScript_ItemCarbos::
-	finditem ITEM_CARBOS
+Route127_EventScript_ItemGimmighoulCoins_2::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route127_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+Route127_EventScript_ItemGimmighoulCoins_3::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route132_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+Route132_EventScript_ItemGimmighoulCoins_1::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route132_EventScript_ItemProtein::
-	finditem ITEM_PROTEIN
+Route132_EventScript_ItemGimmighoulCoins_2::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route133_EventScript_ItemBigPearl::
@@ -298,8 +321,9 @@ Route133_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-Route134_EventScript_ItemCarbos::
-	finditem ITEM_CARBOS
+Route134_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 Route134_EventScript_ItemStarPiece::
@@ -402,8 +426,9 @@ MeteorFalls_1F_1R_EventScript_ItemMoonStone::
 	finditem ITEM_MOON_STONE
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemPPUP::
-	finditem ITEM_PP_UP
+MeteorFalls_1F_1R_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
@@ -486,8 +511,9 @@ SafariZone_Northwest_EventScript_ItemTMSolarBlade::
 	finditem ITEM_TM_SOLAR_BLADE
 	end
 
-SafariZone_North_EventScript_ItemCalcium::
-	finditem ITEM_CALCIUM
+SafariZone_North_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 SafariZone_Southwest_EventScript_ItemMaxRevive::
@@ -570,8 +596,9 @@ ShoalCave_LowTideEntranceRoom_EventScript_ItemBigPearl::
 	finditem ITEM_BIG_PEARL
 	end
 
-ShoalCave_LowTideInnerRoom_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+ShoalCave_LowTideInnerRoom_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal::
@@ -634,8 +661,9 @@ VictoryRoad_1F_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
-VictoryRoad_1F_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+VictoryRoad_1F_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 VictoryRoad_B1F_EventScript_ItemTMPsychic::
@@ -650,16 +678,19 @@ VictoryRoad_B2F_EventScript_ItemFullHeal::
 	finditem ITEM_FULL_HEAL
 	end
 
-ArtisanCave_B1F_EventScript_ItemHPUp::
-	finditem ITEM_HP_UP
+ArtisanCave_B1F_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-ArtisanCave_1F_EventScript_ItemCarbos::
-	finditem ITEM_CARBOS
+ArtisanCave_1F_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-MagmaHideout_1F_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+MagmaHideout_1F_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 MagmaHideout_2F_2R_EventScript_ItemMaxElixir::
@@ -674,8 +705,9 @@ MagmaHideout_3F_1R_EventScript_ItemBigNugget::
 	finditem ITEM_BIG_NUGGET
 	end
 
-MagmaHideout_3F_2R_EventScript_ItemPPMax::
-	finditem ITEM_PP_MAX
+MagmaHideout_3F_2R_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
 MagmaHideout_4F_EventScript_ItemMaxRevive::
@@ -701,4 +733,22 @@ CaveOfOrigin_1F_EventScript_ItemSablenite::
 Common_EventScript_FindItem::
 	callnative GetObjectEventTrainerRangeFromTemplate
 	finditem VAR_RESULT
+	end
+
+Common_EventScript_ItemGimmighoulCoins::
+	checkitem ITEM_AMULET_COIN
+	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_ItemGimmighoulCoins_30
+	goto Common_EventScript_ItemGimmighoulCoins_10
+	end
+
+Common_EventScript_ItemGimmighoulCoins_10::
+	random 10
+	addvar VAR_RESULT, 1
+	finditem ITEM_GIMMIGHOUL_COIN, VAR_RESULT
+	end
+
+Common_EventScript_ItemGimmighoulCoins_30::
+	random 21
+    addvar VAR_RESULT, 10
+	finditem ITEM_GIMMIGHOUL_COIN, VAR_RESULT
 	end

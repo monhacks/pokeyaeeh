@@ -87,8 +87,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route106_EventScript_ItemProtein",
-      "flag": "FLAG_ITEM_ROUTE_106_PROTEIN"
+      "script": "Route106_EventScript_ItemGimmighoulCoins",
+      "flag": "FLAG_ITEM_ROUTE_106_GIMMIGHOUL_COINS"
     }
   ],
   "warp_events": [

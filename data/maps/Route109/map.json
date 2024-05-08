@@ -152,8 +152,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route109_EventScript_ItemPPUp",
-      "flag": "FLAG_ITEM_ROUTE_109_PP_UP"
+      "script": "Route109_EventScript_ItemGimmighoulCoins",
+      "flag": "FLAG_ITEM_ROUTE_109_GIMMIGHOUL_COINS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",

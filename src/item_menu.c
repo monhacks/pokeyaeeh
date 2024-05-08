@@ -3642,7 +3642,7 @@ static const u16 sItemsByType[ITEMS_COUNT] =
         [ITEM_SAIL_FOSSIL] = ITEM_TYPE_FOSSIL,
 
         
-        [ITEM_GIMMIGHOUL_COIN] = ITEM_TYPE_EVOLUTION_STONE,
+        [ITEM_GIMMIGHOUL_COIN] = ITEM_TYPE_HELD_ITEM,
     #endif
 };
 

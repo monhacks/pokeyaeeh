@@ -9925,11 +9925,11 @@ const struct Item gItems[] =
     [ITEM_GIMMIGHOUL_COIN] =
     {
         .name = _("Gimmighoul Coin"),
-        .price = 500,
+        .price = 5000,
         .description = sGimmighoulCoinDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
     [ITEM_LEADERS_CREST] =
