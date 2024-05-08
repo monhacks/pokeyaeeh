@@ -3113,7 +3113,7 @@ static const u8 sTripleDiveDescription[] = _(
 
 static const u8 sMortalSpinDescription[] = _(
     "Erases trap moves and Leech\n"
-    "Seed. Poisons adjecent foes.");
+    "Seed. Poisons adjacent foes.");
 
 static const u8 sDoodleDescription[] = _(
     "Changes user's and ally's\n"
