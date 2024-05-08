@@ -2025,10 +2025,17 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 return COLOR_IMMUNE;
         }
         break;
+        case EFFECT_SONICBOOM:
+        case EFFECT_DRAGON_RAGE:
         case EFFECT_LEVEL_DAMAGE:
+        case EFFECT_PSYWAVE:
+        case EFFECT_OHKO:
+        case EFFECT_BIDE:
         case EFFECT_SUPER_FANG:
+        case EFFECT_ENDEAVOR:
         case EFFECT_COUNTER:
         case EFFECT_MIRROR_COAT:
+        case EFFECT_METAL_BURST:
         {
             if (modifier != 0)
                 return COLOR_EFFECTIVE;
