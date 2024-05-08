@@ -27245,7 +27245,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED}, \
         .noFlip = FALSE
 
-    [SPECIES_GIMMIGHOUL] =
+    [SPECIES_GIMMIGHOUL_CHEST] =
     {
         .baseHP        = 45, \
         .baseAttack    = 30, \
