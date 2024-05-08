@@ -120,11 +120,7 @@ Text_TestDefeat:
     .string "Victorious!$"
 
 Debug_EventScript_Script_1::
-	msgbox Text_TestIntro, MSGBOX_AUTOCLOSE
-	randomelement SPECIES_BULBASAUR, SPECIES_CHARMANDER, SPECIES_SQUIRTLE, SPECIES_TREECKO, SPECIES_TORCHIC, SPECIES_MUDKIP
-	setwildbattle VAR_RESULT, 5
-	dowildbattle
-	msgbox Text_TestDefeat, MSGBOX_DEFAULT
+	additem ITEM_AMULET_COIN, 1
 	end
 
 Debug_EventScript_Script_2::

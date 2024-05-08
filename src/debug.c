@@ -491,7 +491,7 @@ static const u8 sDebugText_Fill[] =             _("Fill PC/Pockets…{CLEAR_TO 1
 static const u8 sDebugText_Sound[] =            _("Sound…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
-static const u8 sDebugText_Util_Script_1[] =               _("Legendary Battle");
+static const u8 sDebugText_Util_Script_1[] =               _("Test Script");
 static const u8 sDebugText_Util_Script_2[] =               _("Single (Lv 50)");
 static const u8 sDebugText_Util_Script_3[] =               _("Double (Lv 50)");
 static const u8 sDebugText_Util_Script_4[] =               _("Terrain Double (Lv 50)");
