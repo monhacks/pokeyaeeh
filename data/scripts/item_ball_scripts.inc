@@ -737,18 +737,18 @@ Common_EventScript_FindItem::
 
 Common_EventScript_ItemGimmighoulCoins::
 	checkitem ITEM_AMULET_COIN
-	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_ItemGimmighoulCoins_30
-	goto Common_EventScript_ItemGimmighoulCoins_10
+	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_ItemGimmighoulCoins_50
+	goto Common_EventScript_ItemGimmighoulCoins_20
 	end
 
-Common_EventScript_ItemGimmighoulCoins_10::
-	random 10
+Common_EventScript_ItemGimmighoulCoins_20::
+	random 20
 	addvar VAR_RESULT, 1
 	finditem ITEM_GIMMIGHOUL_COIN, VAR_RESULT
 	end
 
-Common_EventScript_ItemGimmighoulCoins_30::
-	random 21
+Common_EventScript_ItemGimmighoulCoins_50::
+	random 41
     addvar VAR_RESULT, 10
 	finditem ITEM_GIMMIGHOUL_COIN, VAR_RESULT
 	end
