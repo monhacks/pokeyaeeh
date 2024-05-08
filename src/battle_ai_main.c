@@ -735,6 +735,40 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
 
+    if (gBattleMoves[move].powderMove && !IsAffectedByPowder(battlerDef, aiData->abilities[battlerDef], aiData->holdEffects[battlerDef]))
+        RETURN_SCORE_MINUS(10);
+
+    if (IsSemiInvulnerable(battlerDef, move) && moveEffect != EFFECT_SEMI_INVULNERABLE && AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER)
+        RETURN_SCORE_MINUS(10);
+
+    // check if negates type
+    switch (effectiveness)
+    {
+    case AI_EFFECTIVENESS_x0:
+        RETURN_SCORE_MINUS(20);
+        break;
+    case AI_EFFECTIVENESS_x0_125:
+    case AI_EFFECTIVENESS_x0_25:
+        switch (moveEffect)
+        {
+        case EFFECT_SONICBOOM:
+        case EFFECT_DRAGON_RAGE:
+        case EFFECT_LEVEL_DAMAGE:
+        case EFFECT_PSYWAVE:
+        case EFFECT_OHKO:
+        case EFFECT_BIDE:
+        case EFFECT_SUPER_FANG:
+        case EFFECT_ENDEAVOR:
+        case EFFECT_COUNTER:
+        case EFFECT_MIRROR_COAT:
+        case EFFECT_METAL_BURST:
+            break;
+        default:
+            RETURN_SCORE_MINUS(10);
+        }
+        break;
+    }
+
     // check non-user target
     if (!(moveTarget & MOVE_TARGET_USER))
     {
