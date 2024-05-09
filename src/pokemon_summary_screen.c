@@ -3534,6 +3534,7 @@ static void PrintMoveDetails(u16 move)
     u32 heartRow1, heartRow2;
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
+    u8 monFriendship = GetMonData(&gPlayerParty[sMonSummaryScreen->curMonIndex], MON_DATA_FRIENDSHIP);
 
     SetSpriteInvisibility(SPRITE_ARR_ID_MON, TRUE);
     SetSpriteInvisibility(SPRITE_ARR_ID_ITEM, TRUE);
@@ -3580,7 +3581,17 @@ static void PrintMoveDetails(u16 move)
             }
             else
             {
-                if (gBattleMoves[move].power < 2)
+                if (move == MOVE_RETURN || move == MOVE_PIKA_PAPOW || move == MOVE_VEEVEE_VOLLEY)
+                {
+                   ConvertIntToDecimalStringN(gStringVar2, (10 * monFriendship / 25), STR_CONV_MODE_RIGHT_ALIGN, 3);
+                   StringCopy(gStringVar1, gStringVar2);
+                }
+                else if (move == MOVE_FRUSTRATION)
+                {
+                   ConvertIntToDecimalStringN(gStringVar2, (10 * (MAX_FRIENDSHIP - monFriendship) / 25), STR_CONV_MODE_RIGHT_ALIGN, 3);
+                   StringCopy(gStringVar1, gStringVar2);
+                }
+                else if (gBattleMoves[move].power < 2)
                     StringCopy(gStringVar1, gText_ThreeDashes);
                 else
                     ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
