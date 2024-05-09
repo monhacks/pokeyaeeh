@@ -52,7 +52,7 @@
 #define FLAG_AI_VS_AI_BATTLE         0x25 // Player party will be controlled by AI
 #define FLAG_DYNAMAX_BATTLE          0x26 // Battles will feature Dynamax
 #define FLAG_SKY_BATTLE              0x27 // Starts a Sky Battle
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
+#define FLAG_FORCED_SET_BATTLE       0x28 // Forced set battles.
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag

@@ -10856,6 +10856,13 @@ static const struct TrainerMon sParty_Eric[] = {
     .lvl = 5,
     .moves = {MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH},
     .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL)
+    },
+    {
+    .species = SPECIES_SHIFTRY,
+    .ability = ABILITY_WIND_RIDER,
+    .lvl = 5,
+    .moves = {MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH},
+    .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL)
     }
 };
 

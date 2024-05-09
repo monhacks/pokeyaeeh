@@ -172,6 +172,7 @@
 #define B_SMART_WILD_AI_FLAG        FLAG_WILD_AI_BATTLE        // If not 0, you can set this flag in a script to enable smart wild pokemon
 #define B_FLAG_NO_BAG_USE           FLAG_NO_BAG_USE            // If this flag is set, the ability to use the bag in battle is disabled.
 #define B_FLAG_NO_CATCHING          FLAG_NO_CATCHING           // If this flag is set, the ability to catch wild Pokémon is disabled.
+#define B_FLAG_FORCED_SET_BATTLE    FLAG_FORCED_SET_BATTLE     // If this flag is set, the battle will be a forced set battle.
 #define B_FLAG_AI_VS_AI_BATTLE      FLAG_AI_VS_AI_BATTLE       // If this flag is set, the player's mons will be controlled by the ai next battles.
 #define B_FLAG_DYNAMAX_BATTLE       FLAG_DYNAMAX_BATTLE        // If this flag is set, the ability to Dynamax in battle is enabled for all trainers.
 
