@@ -82,7 +82,6 @@ RustboroCity_EventScript_ScientistAddMatchCall::
 	removeobject LOCALID_SCIENTIST
 	setvar VAR_RUSTBORO_CITY_STATE, 7
 	setflag FLAG_HIDE_RUSTBORO_CITY_SCIENTIST
-	setvar VAR_RUSTBORO_CITY_STATE, 8
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
