@@ -3824,6 +3824,7 @@ const u16 gEggMoves[] = {
     egg_moves(MIENFOO,
               MOVE_ALLY_SWITCH,
               MOVE_BATON_PASS,
+              MOVE_BLAZE_KICK,
               MOVE_ENDURE,
               MOVE_FEINT,
               MOVE_FOCUS_PUNCH,
