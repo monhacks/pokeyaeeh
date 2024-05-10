@@ -3062,7 +3062,11 @@ static void BattleStartClearSetData(void)
         gHitMarker |= HITMARKER_NO_ANIMATIONS;
     }
 
-    gBattleScripting.battleStyle = (B_FLAG_FORCED_SET_BATTLE != 0 && FlagGet(B_FLAG_FORCED_SET_BATTLE)) ? TRUE : FALSE;
+    if (FlagGet(B_FLAG_FORCED_SET_BATTLE))
+        gBattleScripting.battleStyle = TRUE;
+    else
+        gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+
 	gBattleScripting.expOnCatch = (B_EXP_CATCH >= GEN_6);
 	gBattleScripting.monCaught = FALSE;
 
