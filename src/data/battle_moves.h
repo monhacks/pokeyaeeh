@@ -712,11 +712,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_POISON_STING] =
     {
         .effect = EFFECT_POISON_HIT,
-        .power = 15,
+        .power = 20,
         .type = TYPE_POISON,
         .accuracy = 100,
         .pp = 56,
-        .secondaryEffectChance = 30,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
@@ -2168,7 +2168,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_LICK] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 30,
+            .power = 40,
         #else
             .power = 20,
         #endif
@@ -3717,7 +3717,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_ROLLOUT,
         .power = 30,
         .type = TYPE_ROCK,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 32,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -5411,7 +5411,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_ROLLOUT,
         .power = 30,
         .type = TYPE_ICE,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 32,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -5487,7 +5487,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         #else
             .secondaryEffectChance = 30,
         #endif
-        .effect = EFFECT_POISON_FANG,
+        .effect = EFFECT_TOXIC_HIT,
         .power = 60,
         .type = TYPE_POISON,
         .accuracy = 100,
@@ -14676,7 +14676,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MALIGNANT_CHAIN] =
     {
-        .effect = EFFECT_POISON_FANG,
+        .effect = EFFECT_TOXIC_HIT,
         .power = 100,
         .type = TYPE_POISON,
         .accuracy = 100,

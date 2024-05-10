@@ -160,7 +160,7 @@ static const u8 sTailWhipDescription[] = _(
 
 static const u8 sPoisonStingDescription[] = _(
     "A toxic attack with barbs,\n"
-    "etc., that may poison.");
+    "etc., that always poisons.");
 
 static const u8 sTwineedleDescription[] = _(
     "Stingers on the forelegs\n"
@@ -4251,7 +4251,7 @@ static const u8 sMoveFourLineDescription_Thrash[] = _("The user rampages\nabout 
 static const u8 sMoveFourLineDescription_DoubleEdge[] = _("A reckless, life-\nrisking tackle that\nalso hurts the user\na little.");
 static const u8 sMoveFourLineDescription_TailWhip[] = _("The user wags its\ntail cutely, making\nthe foe lower its\nDefense stat.");
 static const u8 sMoveFourLineDescription_PoisonSting[] = _("The foe is stabbed\nwith a toxic barb,\netc. It may poison\nthe foe.");
-static const u8 sMoveFourLineDescription_Twineedle[] = _("The foe is stabbed\ntwice with foreleg\nstingers. It may\npoison the foe.");
+static const u8 sMoveFourLineDescription_Twineedle[] = _("The foe is stabbed\ntwice with foreleg\nstingers. It\npoisons the foe.");
 static const u8 sMoveFourLineDescription_PinMissile[] = _("Sharp pins are shot\nat the foe and hit\ntwo to five times\nat once.");
 static const u8 sMoveFourLineDescription_Leer[] = _("The foe is given an\nintimidating look\nthat lowers its\nDefense stat.");
 static const u8 sMoveFourLineDescription_Bite[] = _("The user bites with\nvicious fangs.\nIt may make the\nfoe flinch.");

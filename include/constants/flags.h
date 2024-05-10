@@ -157,7 +157,7 @@
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
 #define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
 #define FLAG_RECEIVED_DOLL_LANETTE           0x83
-#define FLAG_RECEIVED_POTION_OLDALE          0x84
+#define FLAG_RECEIVED_POKEVIAL_OLDALE        0x84
 #define FLAG_RECEIVED_AMULET_COIN            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86
 #define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
@@ -826,7 +826,7 @@
 #define FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE                      0x301
 #define FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE                          0x302
 #define FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE                         0x303
-#define FLAG_HIDE_PETALBURG_GYM_NORMAN                              0x304
+#define FLAG_UNUSED_0x304                                           0x304
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA                           0x305
 #define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_1         0x306
 #define FLAG_HIDE_LILYCOVE_MUSEUM_CURATOR                           0x307
@@ -835,7 +835,7 @@
 #define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_3                          0x30A
 #define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_4                          0x30B
 #define FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS                          0x30C
-#define FLAG_HIDE_PETALBURG_GYM_GREETER                             0x30D
+#define FLAG_UNUSED_0x30D                                           0x30D
 #define FLAG_HIDE_MARINE_CAVE_KYOGRE                                0x30E
 #define FLAG_HIDE_TERRA_CAVE_GROUDON                                0x30F
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM          0x310
@@ -967,7 +967,7 @@
 #define FLAG_HIDE_SOUTHERN_ISLAND_EON_STONE                         0x38E
 #define FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON              0x38F
 #define FLAG_HIDE_MAUVILLE_CITY_WATTSON                             0x390
-#define FLAG_UNUSED_0x391                                           0x391
+#define FLAG_HIDE_PETALBURG_CITY_GYM_GUY                            0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
 #define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394

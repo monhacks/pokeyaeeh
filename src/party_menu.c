@@ -2986,7 +2986,7 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     u32 i,j, move;
 
     // Adds field moves to the Pokémon's field moves list without knowing them
-    if ((CheckBagHasItem(ITEM_HM02, 1)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE))
+    if ((FlagGet(FLAG_RETURNED_DEVON_GOODS)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)) // Specifically this flag so that the player won't skip thsi event.
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
     if ((FlagGet(FLAG_BADGE02_GET)) && (CheckBagHasItem(ITEM_TM85, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
@@ -2998,12 +2998,7 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     {
         for (j = 0; sFieldMoves[j] != FIELD_MOVE_TERMINATOR; j++)
         {
-            move = GetMonData(&mons[slotId], i + MON_DATA_MOVE1);
-            if (move == MOVE_FLY || move == MOVE_FLASH)
-            {
-                break;
-            }
-            else if (move == sFieldMoves[j])
+            if (move == sFieldMoves[j])
             {
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;

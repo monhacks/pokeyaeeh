@@ -26517,7 +26517,72 @@
         },
         {
           "map": "MAP_PETALBURG_CITY",
-          "base_label": "gPetalburgCity",
+          "base_label": "gPetalburgCity_Morning",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_LECHONK"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_BUNNELBY"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PATRAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ELECTRIKE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_STARLY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SHINX"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_YAMPER"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_LILLIPUP"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_LECHONK"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -26607,6 +26672,71 @@
         {
           "map": "MAP_PETALBURG_CITY",
           "base_label": "gPetalburgCity_Day",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PATRAT"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_BUNNELBY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ELECTRIKE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_STARLY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SHINX"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_YAMPER"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_LECHONK"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_BIDOOF"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -26696,6 +26826,71 @@
         {
           "map": "MAP_PETALBURG_CITY",
           "base_label": "gPetalburgCity_Evening",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PATRAT"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PAWNIARD"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MURKROW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MORELULL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MORELULL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_BUNNELBY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_BIDOOF"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -26785,6 +26980,71 @@
         {
           "map": "MAP_PETALBURG_CITY",
           "base_label": "gPetalburgCity_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_LECHONK"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_BUNNELBY"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PAWNIARD"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MURKROW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MORELULL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MORELULL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PATRAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_LECHONK"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [

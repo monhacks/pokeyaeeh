@@ -954,7 +954,7 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
             return TRUE;
         break;
     case EFFECT_POISON_HIT:
-    case EFFECT_POISON_FANG:
+    case EFFECT_TOXIC_HIT:
         if (AI_CanPoison(battlerAtk, battlerDef, abilityDef, move, MOVE_NONE))
             return TRUE;
         break;

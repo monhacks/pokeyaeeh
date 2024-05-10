@@ -121,7 +121,8 @@ Text_TestDefeat:
     .string "Victorious!$"
 
 Debug_EventScript_Script_1::
-	additem ITEM_AMULET_COIN, 1
+	goto_if_set FLAG_UNUSED_0x304, Debug_EventScript_SetTestFlag
+	goto Debug_EventScript_UnsetTestFlag
 	end
 
 Debug_EventScript_Script_2::
@@ -269,26 +270,19 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_TOXIC_POISON_TEAM
+    setflag FLAG_UNUSED_0x304
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_TOXIC_POISON_TEAM
-	end
-
-Debug_EventScript_ThePoisonIsDisabled::
-    msgbox Debug_Text_PoisonDisabled, MSGBOX_AUTOCLOSE
+    clearflag FLAG_UNUSED_0x304
 	end
 
 Debug_Text_SetTestFlag::
-    .string "Poison flag set.$"
+    .string "Flag set.$"
 
 Debug_Text_UnsetTestFlag::
-    .string "Poison flag unset.$"
-
-Debug_Text_PoisonDisabled::
-	.string "The poison is disabled, lol.$"
+    .string "Flag unset.$"
 
 Route123_EventScript_Alberto_Battle_Event_Script::
     msgbox Route123_EventScript_Alberto_Text_AskSkyBattle, MSGBOX_YESNO

@@ -74,53 +74,17 @@ PetalburgCity_Gym_EventScript_TurnPlayerNorth::
 	end
 
 PetalburgCity_Gym_OnFrame:
-	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
-
-PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
-	lockall
-	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
-	msgbox PetalburgCity_Gym_Text_WallyThankYouBye, MSGBOX_DEFAULT
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitGym
-	waitmovement 0
-	playse SE_EXIT
-	removeobject LOCALID_WALLY
-	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
-	delay 30
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
-	setvar VAR_PETALBURG_GYM_STATE, 2
-	releaseall
-	end
-
-PetalburgCity_Gym_Movement_WallyExitGym:
-	walk_down
-	walk_down
-	walk_down
-	delay_16
-	step_end
 
 PetalburgCity_Gym_EventScript_Norman::
 	lock
 	faceplayer
 	switch VAR_PETALBURG_GYM_STATE
-	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
-	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
-	case 4, PetalburgCity_Gym_EventScript_NormanTwoBadges
-	case 5, PetalburgCity_Gym_EventScript_NormanThreeBadges
 	case 6, PetalburgCity_Gym_EventScript_NormanBattle
 	case 7, PetalburgCity_Gym_EventScript_NormanPostBattle
 	case 8, PetalburgCity_Gym_EventScript_NormanRematch
 	msgbox PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon, MSGBOX_DEFAULT
 	closemessage
-	switch VAR_FACING
-	case DIR_SOUTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth
-	case DIR_NORTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialNorth
-	case DIR_WEST, PetalburgCity_Gym_EventScript_BeginWallyTutorialWest
-	case DIR_EAST, PetalburgCity_Gym_EventScript_BeginWallyTutorialEast
 	end
 
 PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth::
@@ -383,8 +347,6 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	setflag FLAG_BADGE05_GET
 	special ResetHealLocationFromDewford
 	call EventScript_HideMrBriney
-	setflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
-	clearflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
 	setvar VAR_0x8008, 5
 	call Common_EventScript_SetGymTrainers
 	clearflag FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN
@@ -1142,17 +1104,7 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	end
 
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
-	.string "Dad: Hm?\p"
-	.string "Well, if it isn't {PLAYER}!\n"
-	.string "So you're all finished moving in?\p"
-	.string "I'm surprised that you managed to\n"
-	.string "get here by yourself.\p"
-	.string "Oh, I see.\n"
-	.string "You're with your Pokémon.\p"
-	.string "Hm… Then I guess you're going to\n"
-	.string "become a Trainer like me, {PLAYER}.\p"
-	.string "That's great news!\n"
-	.string "I'll be looking forward to it!$"
+	.string "Chrizz: Skeddadle kiddo!$"
 
 PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
 	.string "Um… I…\n"

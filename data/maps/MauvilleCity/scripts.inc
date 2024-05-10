@@ -17,7 +17,6 @@ MauvilleCity_OnTransition:
 	end
 
 MauvilleCity_EventScript_MoveWattsonBackToGym::
-	clearflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
 	setflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
 	setflag FLAG_WATTSON_REMATCH_AVAILABLE
 	return
