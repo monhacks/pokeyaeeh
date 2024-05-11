@@ -3242,19 +3242,19 @@ static const u8 sTM42Desc[] = _(
     "mystical power.");
 
 static const u8 sTM43Desc[] = _(
-    "Recovers half the\n"
-    "HP of the damage \n"
-    "this move inflicts.");
-
-static const u8 sTM44Desc[] = _(
     "Causes a quake\n"
     "that has no effect\n"
     "on flying foes.");
 
+static const u8 sTM44Desc[] = _(
+    "Recovers half the\n"
+    "HP of the damage \n"
+    "this move inflicts.");
+
 static const u8 sTM45Desc[] = _(
-    "Stops the foe from\n"
-    "moving with rocks.\n"
-    "May lower Speed.");
+    "Shoots 2 to 5 seeds\n"
+    "in a row to strike\n"
+    "the foe.");
 
 static const u8 sTM46Desc[] = _(
     "An extremely fast\n"
@@ -3292,9 +3292,9 @@ static const u8 sTM52Desc[] = _(
     "on the location.");
 
 static const u8 sTM53Desc[] = _(
-    "Makes it tough to\n"
-    "attack a foe of the\n"
-    "opposite gender.");
+    "User attacks as if\n"
+    "it was leaping from\n"
+    "grass. Raises Spd.");
 
 static const u8 sTM54Desc[] = _(
     "User cloaks itself\n"
@@ -3302,9 +3302,9 @@ static const u8 sTM54Desc[] = _(
     "Raises Spd.");
 
 static const u8 sTM55Desc[] = _(
-    "Shoots 2 to 5 seeds\n"
-    "in a row to strike\n"
-    "the foe.");
+    "An ice-cold water\n"
+    "attack that lowers\n"
+    "the foe's Atk.");
 
 static const u8 sTM56Desc[] = _(
     "Attacks the foe and\n"
@@ -3582,9 +3582,9 @@ static const u8 sTM110Desc[] = _(
     "Lowers Spd.");
 
 static const u8 sTM111Desc[] = _(
-    "Pecks the foe and\n"
-    "eats its berry if\n"
-    "its holding one.");
+    "Makes it tough to\n"
+    "attack a foe of the\n"
+    "opposite gender.");
 
 static const u8 sTM112Desc[] = _(
     "Yells as if it is\n"

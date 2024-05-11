@@ -361,7 +361,7 @@ OldaleTown_Text_ThisIsAPokemonMart:
 	.string "a promotional item.$"
 
 OldaleTown_Text_PokeVialExplanation:
-	.string "A Poké Vial can be used anytime, so in\n"
+	.string "A PokéVial can be used anytime, so in\n"
 	.string "a way, it's a pocket Pokémon Center.\p"
 	.string "In order to refill it, you need to heal\n"
 	.string "at a Pokémon Center.$"

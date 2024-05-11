@@ -1456,7 +1456,8 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
     else
     {   
         if (IsPlayerPartyHealed() == TRUE)
-        {
+        {            
+            ConvertIntToDecimalStringN(gStringVar1, vialUsagesMax - vialUsages, STR_CONV_MODE_LEFT_ALIGN, 2);
             if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
                 DisplayItemMessageOnField(taskId, gText_PokeVial_HealthFull, Task_CloseCantUseKeyItemMessage);
             else if (!InBattlePyramid())

@@ -999,12 +999,16 @@ static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void)) {
 
 static u8 SaveFileExistsCallback(void)
 {
-  if (gDifferentSaveFile == TRUE) {
-    ShowSaveMessage(gText_DifferentSaveFile, SaveConfirmOverwriteDefaultNoCallback);
-  } else {
-    ShowSaveMessage(gText_AlreadySavedFile, SaveConfirmOverwriteCallback);
-  }
-  return SAVE_IN_PROGRESS;
+    if (gDifferentSaveFile == TRUE)
+    {
+        ShowSaveMessage(gText_DifferentSaveFile, SaveConfirmOverwriteDefaultNoCallback);
+    }
+    else
+    {
+        sSaveDialogCallback = SaveSavingMessageCallback;
+    }
+
+    return SAVE_IN_PROGRESS;
 }
 
 static u8 SaveSavingMessageCallback(void) {

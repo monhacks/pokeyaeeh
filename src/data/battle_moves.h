@@ -2188,13 +2188,13 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SMOG] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 30,
+            .power = 60,
         #else
             .power = 20,
         #endif
         .effect = EFFECT_POISON_HIT,
         .type = TYPE_POISON,
-        .accuracy = 70,
+        .accuracy = 85,
         .pp = 32,
         .secondaryEffectChance = 40,
         .target = MOVE_TARGET_SELECTED,
