@@ -2326,3 +2326,32 @@
 		setvar VAR_RESULT, TRUE
 	2:
 	.endm
+
+	@ This replicates the most common emote structure in the game, which is:
+	@ -----
+	@ playse SE_PIN
+	@ applymovement LOCALID, Common_Movement_ExclamationMark @ (or others)
+	@ waitmovement 0
+	@ applymovement LOCALID, Common_Movement_Delay48
+	@ waitmovement 0
+	@ -----
+	@ If emote is not provided, then it will do an exclamation mark emote.
+	@ Other params include:
+	@ EMOTE_EXCLAM, EMOTE_QUESTION, and EMOTE_HEART. Invalid entries
+	@ do the exclamation mark emote.
+	.macro emote localid:req, emoteArg
+	playse SE_PIN
+	.ifb \emoteArg
+		applymovement \localid, Common_Movement_ExclamationMark
+	.else
+		.if \emoteArg == EMOTE_QUESTION
+			applymovement \localid, Common_Movement_QuestionMark
+		.elseif \emoteArg == EMOTE_HEART
+			applymovement \localid, Common_Movement_Heart
+		.else
+			applymovement \localid, Common_Movement_ExclamationMark
+	.endif
+	waitmovement 0
+	applymovement \localid, Common_Movement_Delay48
+	waitmovement 0
+	.endm
