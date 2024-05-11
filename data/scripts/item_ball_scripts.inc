@@ -649,8 +649,8 @@ ShoalCave_LowTideIceRoom_EventScript_ItemGlalitite::
 	finditem ITEM_GLALITITE
 	end
 
-SeafloorCavern_Room9_EventScript_ItemTMEarthquake::
-	finditem ITEM_TM_EARTHQUAKE
+SeafloorCavern_Room9_EventScript_ItemTMRockSlide::
+	finditem ITEM_TM_ROCK_SLIDE
 	end
 
 Route110_TrickHousePuzzle1_EventScript_ItemFireGem::

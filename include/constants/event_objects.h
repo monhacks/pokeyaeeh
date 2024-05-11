@@ -328,4 +328,9 @@
 #define LOCALID_BATTLE_FRONTIER_MART_CLERK 1
 #define LOCALID_SLATEPORT_ENERGY_GURU 25
 
+// Emotes for emote scripting macro
+#define EMOTE_EXCLAM 0
+#define EMOTE_QUESTION 1
+#define EMOTE_HEART 3
+
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H

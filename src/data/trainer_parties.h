@@ -12021,7 +12021,7 @@ static const struct TrainerMon sParty_Dawson[] = {
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
         .lvl = 23,
-        .moves = {MOVE_MAKE_IT_RAIN, MOVE_SHADOW_BALL, MOVE_PROTECT, MOVE_NASTY_PLOT},
+        .moves = {MOVE_MAKE_IT_RAIN, MOVE_SHADOW_BALL, MOVE_PROTECT, MOVE_FLASH_CANNON},
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID)
 
     },
@@ -12048,7 +12048,7 @@ static const struct TrainerMon sParty_Dawson[] = {
 
     },
     {
-        .species = SPECIES_MAUSHOLD_FAMILY_OF_THREE,
+        .species = SPECIES_MAUSHOLD_FAMILY_OF_FOUR,
         .ability = ABILITY_TECHNICIAN,
         .heldItem = ITEM_WIDE_LENS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
