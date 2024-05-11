@@ -817,6 +817,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             {
             case ABILITY_MAGIC_GUARD:
             case ABILITY_IMPENETRABLE:
+            case ABILITY_GRASS_PELT:
                 switch (moveEffect)
                 {
                 case EFFECT_POISON:
@@ -1892,7 +1893,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-4);
             break;
         case EFFECT_RECOIL_IF_MISS:
-            if ((aiData->abilities[battlerAtk] != ABILITY_MAGIC_GUARD || aiData->abilities[battlerAtk] != ABILITY_IMPENETRABLE) && AI_DATA->moveAccuracy[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] < 75)
+            if ((aiData->abilities[battlerAtk] != ABILITY_MAGIC_GUARD || aiData->abilities[battlerAtk] != ABILITY_IMPENETRABLE || aiData->abilities[battlerAtk] != ABILITY_GRASS_PELT) && AI_DATA->moveAccuracy[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] < 75)
                 ADJUST_SCORE(-6);
             break;
         case EFFECT_RECOIL_25:
@@ -3588,7 +3589,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_MULTI_HIT:
     case EFFECT_TRIPLE_KICK:
         if (AI_MoveMakesContact(aiData->abilities[battlerAtk], aiData->holdEffects[battlerAtk], move)
-          && (aiData->abilities[battlerAtk] != ABILITY_MAGIC_GUARD || aiData->abilities[battlerAtk] != ABILITY_IMPENETRABLE)
+          && (aiData->abilities[battlerAtk] != ABILITY_MAGIC_GUARD || aiData->abilities[battlerAtk] != ABILITY_IMPENETRABLE || aiData->abilities[battlerAtk] != ABILITY_GRASS_PELT)
           && aiData->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET)
             ADJUST_SCORE(-2);
         break;
@@ -3753,7 +3754,8 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
           || HasMoveEffect(battlerDef, EFFECT_RAPID_SPIN)
           || aiData->abilities[battlerDef] == ABILITY_LIQUID_OOZE
           || aiData->abilities[battlerDef] == ABILITY_MAGIC_GUARD
-          || aiData->abilities[battlerDef] == ABILITY_IMPENETRABLE)
+          || aiData->abilities[battlerDef] == ABILITY_IMPENETRABLE
+          || aiData->abilities[battlerDef] == ABILITY_GRASS_PELT)
             break;
         ADJUST_SCORE(3);
         if (!HasDamagingMove(battlerDef) || IsBattlerTrapped(battlerDef, FALSE))
@@ -3918,7 +3920,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         }
         break;
     case EFFECT_NIGHTMARE:
-        if ((aiData->abilities[battlerDef] != ABILITY_MAGIC_GUARD || aiData->abilities[battlerDef] != ABILITY_IMPENETRABLE)
+        if ((aiData->abilities[battlerDef] != ABILITY_MAGIC_GUARD || aiData->abilities[battlerDef] != ABILITY_IMPENETRABLE || aiData->abilities[battlerDef] != ABILITY_GRASS_PELT)
           && !(gBattleMons[battlerDef].status2 & STATUS2_NIGHTMARE)
           && AI_IsBattlerAsleepOrComatose(battlerDef))
         {
@@ -3938,7 +3940,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         }
         else
         {
-            if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY || aiData->abilities[battlerDef] == ABILITY_MAGIC_GUARD || aiData->abilities[battlerDef] == ABILITY_IMPENETRABLE)
+            if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY || aiData->abilities[battlerDef] == ABILITY_MAGIC_GUARD || aiData->abilities[battlerDef] == ABILITY_IMPENETRABLE || aiData->abilities[battlerDef] == ABILITY_GRASS_PELT)
                 break;
             else if (gBattleMons[battlerAtk].statStages[STAT_ATK] < 8)
                 score += (8 - gBattleMons[battlerAtk].statStages[STAT_ATK]);
@@ -4406,7 +4408,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
                         ADJUST_SCORE(2);
                     break;
                 case HOLD_EFFECT_BLACK_SLUDGE:
-                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON) || aiData->abilities[battlerAtk] == ABILITY_MAGIC_GUARD  || aiData->abilities[battlerDef] == ABILITY_IMPENETRABLE)
+                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON) || aiData->abilities[battlerAtk] == ABILITY_MAGIC_GUARD  || aiData->abilities[battlerAtk] == ABILITY_IMPENETRABLE || aiData->abilities[battlerAtk] == ABILITY_GRASS_PELT)
                         ADJUST_SCORE(3);
                     break;
                 case HOLD_EFFECT_IRON_BALL:
@@ -4871,6 +4873,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
               && aiData->hpPercents[BATTLE_PARTNER(battlerDef)] < 12
               && aiData->abilities[BATTLE_PARTNER(battlerDef)] != ABILITY_MAGIC_GUARD
               && aiData->abilities[BATTLE_PARTNER(battlerDef)] != ABILITY_IMPENETRABLE
+              && aiData->abilities[BATTLE_PARTNER(battlerDef)] != ABILITY_GRASS_PELT
               && !IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerDef), TYPE_FIRE))
                 ADJUST_SCORE(1);
         }

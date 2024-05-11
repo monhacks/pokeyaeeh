@@ -2715,6 +2715,14 @@ if (ability == ABILITY_IMPENETRABLE) \
             break;\
 }
 
+#define GRASS_PELT_CHECK \
+if (ability == ABILITY_GRASS_PELT) \
+{\
+    RecordAbilityBattle(battler, ability);\
+    gBattleStruct->turnEffectsTracker++;\
+            break;\
+}
+
 #define TOXIC_BOOST_CHECK \
 if (ability == ABILITY_TOXIC_BOOST) \
 {\
@@ -2800,6 +2808,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 gBattlerTarget = gStatuses3[battler] & STATUS3_LEECHSEED_BATTLER; // Notice gBattlerTarget is actually the HP receiver.
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 8;
@@ -2819,6 +2828,7 @@ u8 DoBattlerEndTurnEffects(void)
                 MAGIC_GUARD_CHECK;
                 TOXIC_BOOST_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 if (ability == ABILITY_POISON_HEAL)
                 {
@@ -2850,6 +2860,7 @@ u8 DoBattlerEndTurnEffects(void)
                 MAGIC_GUARD_CHECK;
                 TOXIC_BOOST_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 if (ability == ABILITY_POISON_HEAL)
                 {
@@ -2884,6 +2895,7 @@ u8 DoBattlerEndTurnEffects(void)
                 MAGIC_GUARD_CHECK;
                 FLARE_BOOST_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
                 if (ability == ABILITY_HEATPROOF)
@@ -2905,6 +2917,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
                 if (gBattleMoveDamage == 0)
@@ -2920,6 +2933,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 // R/S does not perform this sleep check, which causes the nightmare effect to
                 // persist even after the affected Pokemon has been awakened by Shed Skin.
@@ -2944,6 +2958,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
                 IMPENETRABLE_CHECK;
+                GRASS_PELT_CHECK;
 
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 4;
                 if (gBattleMoveDamage == 0)
@@ -2960,6 +2975,7 @@ u8 DoBattlerEndTurnEffects(void)
                 {
                     MAGIC_GUARD_CHECK;
                     IMPENETRABLE_CHECK;
+                    GRASS_PELT_CHECK;
 
                     gBattleScripting.animArg1 = gBattleStruct->wrappedMove[battler];
                     gBattleScripting.animArg2 = gBattleStruct->wrappedMove[battler] >> 8;
@@ -5369,6 +5385,14 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect++;
                 }
                 break;
+            case ABILITY_GRASS_PELT:
+                {
+                    gBattleScripting.abilityPopupOverwrite = ABILITY_GRASS_PELT;
+	    	    	gLastUsedAbility = ABILITY_GRASS_PELT;
+			        BattleScriptPushCursorAndCallback(BattleScript_GrassPeltHealing);
+			        effect++;
+                }
+			    break;
             }
         }
         break;
@@ -6046,7 +6070,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (gBattleMons[gBattlerTarget].species == SPECIES_CRAMORANT_GORGING)
                 {
                     gBattleMons[gBattlerTarget].species = SPECIES_CRAMORANT;
-                    if ((GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE))
+                    if ((GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_GRASS_PELT))
                     {
                         gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
                         if (gBattleMoveDamage == 0)
@@ -6059,7 +6083,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 else if (gBattleMons[gBattlerTarget].species == SPECIES_CRAMORANT_GULPING)
                 {
                     gBattleMons[gBattlerTarget].species = SPECIES_CRAMORANT;
-                    if ((GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE))
+                    if ((GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE) || (GetBattlerAbility(gBattlerAttacker) != ABILITY_GRASS_PELT))
                     {
                         gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
                         if (gBattleMoveDamage == 0)
@@ -7863,7 +7887,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 {
                     goto LEFTOVERS;
                 }
-                else if ((GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD || GetBattlerAbility(battler) != ABILITY_IMPENETRABLE) && !moveTurn)
+                else if ((GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD || GetBattlerAbility(battler) != ABILITY_IMPENETRABLE || GetBattlerAbility(battler) != ABILITY_GRASS_PELT) && !moveTurn)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 8;
                     if (gBattleMoveDamage == 0)
@@ -8200,6 +8224,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE
+                && GetBattlerAbility(gBattlerAttacker) != ABILITY_GRASS_PELT
                 && gSpecialStatuses[gBattlerAttacker].damagedMons)
             {
                 gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 10;
@@ -8246,7 +8271,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)
                     && IsBattlerAlive(gBattlerAttacker)
                     && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
-                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
+                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE
+                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_GRASS_PELT)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 6;
                     if (gBattleMoveDamage == 0)
@@ -8321,7 +8347,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                  && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
                  && IS_MOVE_PHYSICAL(gCurrentMove)
                  && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_GRASS_PELT)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleMoveDamage == 0)
@@ -8342,7 +8369,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                  && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
                  && IS_MOVE_SPECIAL(gCurrentMove)
                  && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_GRASS_PELT)
                 {
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleMoveDamage == 0)
@@ -9987,14 +10015,6 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
                 RecordAbilityBattle(battlerDef, ABILITY_FUR_COAT);
         }
         break;
-    case ABILITY_GRASS_PELT:
-        if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && usesDefStat)
-        {
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-            if (updateFlags)
-                RecordAbilityBattle(battlerDef, ABILITY_GRASS_PELT);
-        }
-        break;
     case ABILITY_FLOWER_GIFT:
         if (gBattleMons[battlerDef].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && !usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
@@ -10241,6 +10261,10 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     case ABILITY_PRISM_ARMOR:
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
             return UQ_4_12(0.75);
+        break;
+    case ABILITY_GRASS_PELT: // Grass Pelt reduces damage by 30% under Grassy Terrain
+        if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
+            return UQ_4_12(0.70);
         break;
     case ABILITY_FLUFFY:
         if (!IsMoveMakingContact(move, battlerAtk) && moveType == TYPE_FIRE)

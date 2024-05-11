@@ -1040,6 +1040,7 @@ BattleScript_EffectSteelBeam::
 	seteffectwithchance
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_SteelBeamAfterSelfDamage
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_SteelBeamAfterSelfDamage
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_SteelBeamAfterSelfDamage
 	call BattleScript_SteelBeamSelfDamage
 BattleScript_SteelBeamAfterSelfDamage::
 	waitstate
@@ -1053,6 +1054,7 @@ BattleScript_SteelBeamMiss::
 	waitmessage B_WAIT_TIME_LONG
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_MoveEnd
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_MoveEnd
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_MoveEnd
 	bichalfword gMoveResultFlags, MOVE_RESULT_MISSED
 	call BattleScript_SteelBeamSelfDamage
 	orhalfword gMoveResultFlags, MOVE_RESULT_MISSED
@@ -3708,6 +3710,7 @@ BattleScript_EffectMindBlown_HpDown:
 	setbyte sMULTIHIT_EFFECT, 1 @ Note to not faint the attacker
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_EffectMindBlown_AnimDmgNoFaint
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_EffectMindBlown_AnimDmgNoFaint
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_EffectMindBlown_AnimDmgNoFaint
 	dmg_1_2_attackerhp
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
@@ -4234,6 +4237,7 @@ BattleScript_EffectRecoilIfMiss::
 BattleScript_MoveMissedDoDamage::
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_PrintMoveMissed
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_PrintMoveMissed
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_PrintMoveMissed
 	attackstring
 	ppreduce
 	pause B_WAIT_TIME_LONG
@@ -7415,6 +7419,7 @@ BattleScript_GulpMissileGorging::
 	waitstate
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_GulpMissileNoDmgGorging
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_GulpMissileNoDmgGorging
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_GulpMissileNoDmgGorging
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	tryfaintmon BS_ATTACKER
@@ -7444,6 +7449,7 @@ BattleScript_GulpMissileGulping::
 	waitstate
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_GulpMissileNoDmgGulping
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_GulpMissileNoDmgGulping
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_GulpMissileNoDmgGulping
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	tryfaintmon BS_ATTACKER
@@ -8435,6 +8441,7 @@ BattleScript_PrintDamageDoneString::
 BattleScript_WrapTurnDmg::
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_DoTurnDmgEnd
 	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_DoTurnDmgEnd
+	jumpifability BS_ATTACKER, ABILITY_GRASS_PELT, BattleScript_DoTurnDmgEnd 
 	playanimation BS_ATTACKER, B_ANIM_TURN_TRAP, sB_ANIM_ARG1
 	printstring STRINGID_PKMNHURTBY
 	waitmessage B_WAIT_TIME_LONG
@@ -9115,6 +9122,7 @@ BattleScript_BadDreamsLoop:
 	jumpiftargetally BattleScript_BadDreamsIncrement
 	jumpifability BS_TARGET, ABILITY_MAGIC_GUARD, BattleScript_BadDreamsIncrement
 	jumpifability BS_TARGET, ABILITY_IMPENETRABLE, BattleScript_BadDreamsIncrement
+	jumpifability BS_TARGET, ABILITY_GRASS_PELT, BattleScript_BadDreamsIncrement
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_BadDreams_Dmg
 	jumpifstatus BS_TARGET, STATUS1_SLEEP, BattleScript_BadDreams_Dmg
 	goto BattleScript_BadDreamsIncrement
@@ -11136,3 +11144,39 @@ BattleScript_FaintWildMon::
 	cleareffectsonfaint BS_SCRIPTING
 	setbyte gBattleOutcome, B_OUTCOME_WON
 	finishturn
+
+BattleScript_GrassPeltHealing::
+    printstring STRINGID_EMPTYSTRING3
+	copybyte gBattlerAbility, gBattlerAttacker
+	sethword sABILITY_OVERWRITE, ABILITY_GRASS_PELT
+	showabilitypopup BS_ABILITY_BATTLER
+    printstring STRINGID_EMPTYSTRING3
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_EMPTYSTRING3
+	jumpifteamhealthy BS_ATTACKER, BattleScript_GrassPeltAtFullHealth
+	copybyte gBattlerTarget, gBattlerAttacker
+	setbyte gBattleCommunication, 0
+GrassPelt_RestoreTargetHealth:
+	copybyte gBattlerAttacker, gBattlerTarget
+	tryhealquarterhealth BS_TARGET, BattleScript_GrassPeltTryRestoreAlly
+	playanimation BS_TARGET, B_ANIM_INGRAIN_HEAL
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_GrassPeltTryRestoreAlly:
+	jumpifbyte CMP_NOT_EQUAL, gBattleCommunication, 0x0, BattleScript_End3
+	addbyte gBattleCommunication, 1
+	jumpifnoally BS_TARGET, BattleScript_End3
+	setallytonexttarget GrassPelt_RestoreTargetHealth
+	goto BattleScript_End3
+
+BattleScript_GrassPeltAtFullHealth:
+	printstring STRINGID_PKMNATFULLHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_End3
+
+BattleScript_End3:
+	end3
+

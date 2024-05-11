@@ -493,6 +493,7 @@ extern const u8 BattleScript_SelectingNotAllowedCurrentMove[];
 extern const u8 BattleScript_SelectingNotAllowedCurrentMoveInPalace[];
 extern const u8 BattleScript_SaltCureExtraDamage[];
 extern const u8 BattleScript_TailstreamActivated[];
+extern const u8 BattleScript_GrassPeltHealing[];
 extern const u8 BattleScript_SyrupBombEndTurn[];
 extern const u8 BattleScript_SyrupBombActivates[];
 extern const u8 BattleScript_PhantomGaleActivates[];
