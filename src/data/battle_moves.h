@@ -14825,6 +14825,38 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
+    [MOVE_FROST_BLADE] =
+    {
+        .effect = EFFECT_FROSTBITE_HIT,
+        .power = 85,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 24,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .highCritRatio = TRUE,
+        .slicingMove = TRUE,
+    },    
+
+    [MOVE_LEAF_LEAP] =
+    {
+        .effect = EFFECT_ACROBATICS,
+        .power = 55,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 24,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

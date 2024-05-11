@@ -3342,6 +3342,10 @@ static const u8 sMaelstromDescription[] = _(
     "Traps and hurts the foe in\n"
     "a whirlpool for 4 or 5 turns.");
 
+static const u8 sFrostBladeDescription[] = _(
+    "Slashes the foe with ice.\n"
+    "May frosbtie. High Crit ratio.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4206,6 +4210,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_AQUA_FANGS - 1] = sAquaFangsDescription,
     [MOVE_GLACIAL_SLAM - 1] = sGlacialSlamDescription,
     [MOVE_MAELSTROM - 1] = sMaelstromDescription,
+    [MOVE_FROST_BLADE - 1] = sMaelstromDescription,
+    [MOVE_LEAF_LEAP -1 ] = sAcrobaticsDescription,
 };
 
 static const u8 sMoveFourLineDescription_Pound[] = _("A physical attack\ndelivered with a\nlong tail or a\nforeleg, etc.");
@@ -5409,6 +5415,7 @@ static const u8 sMoveFourLineDescription_StunningBlow[] = _("The user excitedly\
 static const u8 sMoveFourLineDescription_AquaFangs[] = _("The user's hydro-\npowered fangs bite\ninto the foe. This\nmay lower Defense.");
 static const u8 sMoveFourLineDescription_GlacialSlam[] = _("A cold, freezing\ncharge which harms\nthe user. It may\ncause a frostbite.");
 static const u8 sMoveFourLineDescription_Maelstrom[] = _("The foe is trapped\nin a fast, harsh\nwhirlpool for two\nto five turns.");
+static const u8 sMoveFourLineDescription_FrostBlade[] = _("A sharp piece of\nice is used to slash.\nMay cause frostbite.\nHigh Crit ratio.");
 
 
 #endif
@@ -6290,5 +6297,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_AQUA_FANGS        - 1] = sMoveFourLineDescription_AquaFangs,
     [MOVE_GLACIAL_SLAM      - 1] = sMoveFourLineDescription_GlacialSlam,
     [MOVE_MAELSTROM         - 1] = sMoveFourLineDescription_Maelstrom,
+    [MOVE_FROST_BLADE       - 1] = sMoveFourLineDescription_FrostBlade,
+    [MOVE_LEAF_LEAP        - 1 ] = sMoveFourLineDescription_Acrobatics,
 #endif
 };
