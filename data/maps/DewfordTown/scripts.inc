@@ -22,7 +22,7 @@ DewfordTown_OnTransition:
 DewfordTown_EventScript_Briney::
 	lock
 	faceplayer
-	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, DewfordTown_EventScript_ReturnToPetalburgPrompt
+	goto_if_unset FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_EventScript_ReturnToPetalburgPrompt
 	message DewfordTown_Text_WhereAreWeBound
 	waitmessage
 	multichoicedefault 21, 6, MULTI_BRINEY_ON_DEWFORD, 2, FALSE
@@ -690,8 +690,8 @@ DewfordTown_Text_PetalburgWereSettingSail2:
 	.string "Peeko, we're setting sail, my darling!$"
 
 DewfordTown_Text_GoDeliverIllBeWaiting:
-	.string "Mr. Briney: Then you go on and deliver\n"
-	.string "the Letter. I'll be waiting.$"
+	.string "Mr. Briney: Then you go on and do your\n"
+	.string "duties. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInDewford:
 	.string "Mr. Briney: Ahoy!\n"

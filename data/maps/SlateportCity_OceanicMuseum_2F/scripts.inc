@@ -58,6 +58,8 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	applymovement LOCALID_ARCHIE, SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ARCHIE_MUSEUM, SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat
+	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieFarewell, MSGBOX_DEFAULT
 	closemessage
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -325,7 +327,12 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "and we love the sea!\p"
 	.string "And I am Team Aqua's leader,\n"
 	.string "Archie!\p"
-	.string "What makes you interfere with us?\p"
+	.string "What makes you interfere with us?$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat:
+	.string "What?! Beaten by a mere child!$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchieFarewell:
 	.string "…No! You can't be!\n"
 	.string "You're not one of Team Magma?\p"
 	.string "Wait, that can't be right.\n"
