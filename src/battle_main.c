@@ -1984,7 +1984,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
 
-            if (level + partyData[i].lvl > 100)
+            if (level > 100)
             {
                 level = 100;
             }
