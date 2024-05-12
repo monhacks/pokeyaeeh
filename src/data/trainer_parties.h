@@ -8996,7 +8996,7 @@ static const struct TrainerMon sParty_MayRoute110Mudkip[] = {
         .ability = ABILITY_IRON_FIST,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_PLASMA_FISTS, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_FAKE_OUT},
+        .moves = {MOVE_THUNDER_PUNCH, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_FAKE_OUT},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 36
     },
@@ -9175,7 +9175,7 @@ static const struct TrainerMon sParty_MayRoute110Torchic[] = {
         .ability = ABILITY_IRON_FIST,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_PLASMA_FISTS, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_FAKE_OUT},
+        .moves = {MOVE_THUNDER_PUNCH, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_FAKE_OUT},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 36
     },
