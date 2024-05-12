@@ -97,6 +97,18 @@ Common_Movement_WalkUp:
 	walk_up
 	step_end
 
+Common_Movement_WalkDown:
+	walk_down
+	step_end
+
+Common_Movement_PushDownFromUp:
+	face_up
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	face_up
+	step_end
+
 @ Unused
 Common_Movement_WalkUp2::
 	walk_up

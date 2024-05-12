@@ -5252,7 +5252,7 @@ static const u8 sMoveFourLineDescription_DoubleIronBash[] = _("Spinning rapidly,
 
 // GEN 8
 static const u8 sMoveFourLineDescription_DynamaxCannon[] = _("The user unleashes\na strong beam that\ndamages Dynamaxed\nfoes twice as hard.");
-static const u8 sMoveFourLineDescription_SnipeShot[] = _("The user ignores\neffects that draw\nin moves. Critical\nhits land easier.");
+static const u8 sMoveFourLineDescription_SnipeShot[] = _("The user ignores\neffects that draw\nin moves. Always\nresults in crit hit.");
 static const u8 sMoveFourLineDescription_JawLock[] = _("A brutal bite that\nprevents both the\nuser and the foe\nfrom switching out.");
 static const u8 sMoveFourLineDescription_StuffCheeks[] = _("The user eats its\nheld Berry, then\nsharply raises its\nDefense stat.");
 static const u8 sMoveFourLineDescription_NoRetreat[] = _("Ups all the user's\nstats. However, the\nuser cannot switch\nout or flee.");

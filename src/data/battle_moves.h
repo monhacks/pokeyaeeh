@@ -12033,7 +12033,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SNIPE_SHOT] =
     {
         .effect = EFFECT_SNIPE_SHOT,
-        .power = 90,
+        .power = 60,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 24,
@@ -12042,7 +12042,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
-        .highCritRatio = TRUE,
     },
 
     [MOVE_JAW_LOCK] =
