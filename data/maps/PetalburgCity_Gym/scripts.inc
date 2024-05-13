@@ -122,6 +122,8 @@ PetalburgCity_Gym_EventScript_GiveDrainPunch::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
 	msgbox PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT
+	giveitem ITEM_GALLADITE
+	msgbox PetalburgCity_Gym_Text_ExplainGalladite, MSGBOX_DEFAULT
 	return
 
 PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough::
@@ -446,11 +448,25 @@ PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
 
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Chrizz: TM122 contains Drain Punch.\p"
-	.string "It doubles the power of moves if\n"
-	.string "the Pokémon is poisoned, paralyzed,\l"
-	.string "or burned.\p"
-	.string "It might be able to turn a bad\n"
-	.string "situation into an advantage.$"
+	.string "It heals your Pokémon for half the\n"
+	.string "damage done!\p"
+	.string "Quite the effect, eh?\p"
+	.string "Oh!\p"
+	.string "Here, a souvenir from Kalos$"
+
+PetalburgCity_Gym_Text_ExplainGalladite:
+	.string "That…\p"
+	.string "is a Mega Stone.\p"
+	.string "When held by Gallade, it'll allow you\n"
+	.string "to Mega Evolve it in battle!\p"
+	.string "Oh……\n"
+	.string "You don't have a Mega Ring.\p"
+	.string "Hm…\n"
+	.string "I don't have a spare with me, {PLAYER}.\p"
+	.string "I'm really sorry about that!\p"
+	.string "Perhaps… the Professor might have one?\p"
+	.string "If not, I'll call you when I have one!\n"
+	.string "You deserve the power of Mega Evolution!$"
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "Chrizz: As the Gym Leader, I can't\n"
