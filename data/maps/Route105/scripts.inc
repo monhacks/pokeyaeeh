@@ -116,9 +116,9 @@ Route105_EventScript_Foster_1:
 	end
 
 Route105_EventScript_Foster_2:
-	setflag FLAG_NO_BAG_USE
+	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_FOSTER, Route105_Text_FosterIntro, Route105_Text_FosterDefeated, Route105_EventScript_Foster2
-	clearflag FLAG_NO_BAG_USE
+	clearflag B_FLAG_NO_BAG_USE
 	setflag FLAG_ROUTE_105_BOSS_DEFEATED
 	msgbox Route105_Text_FosterPostBattle
 	goto Route105_EventScript_Foster_1

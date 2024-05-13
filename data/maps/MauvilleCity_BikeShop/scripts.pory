@@ -13,8 +13,12 @@ MauvilleCity_BikeShop_EventScript_Rydel::
 	end
 
 MauvilleCity_BikeShop_EventScript_ChooseBike::
-	message MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne
+	msgbox MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne, MSGBOX_DEFAULT
 	waitmessage
+	goto MauvilleCity_BikeShop_EventScript_GiveBike
+	end
+
+MauvilleCity_BikeShop_EventScript_GiveBike:
 	giveitem ITEM_MACH_BIKE
 	goto MauvilleCity_BikeShop_EventScript_NoMoreBikeSwitch
 	end
@@ -146,14 +150,10 @@ MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne:
 	.string "go anywhere easily while feeling the\l"
 	.string "gentle caress of the wind!\p"
 	.string "I'll tell you what!\n"
-	.string "I'll give you a Bike!\p"
-
-MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes:
-	.string "Rydel: If you get the urge to switch\n"
-	.string "Bikes, just come see me!$"
+	.string "I'll give you a Bike!$"
 
 MauvilleCity_BikeShop_Text_KeepRidin:
-	.string "Rydel: If you'd like to change your bike's\n$"
+	.string "Rydel: If you'd like to change your bike's\n"
 	.string "gears, click on the {R_BUTTON}$"
 
 MauvilleCity_BikeShop_Text_ExchangedMachForAcro:

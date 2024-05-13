@@ -174,6 +174,9 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 
 #include "heat_start_menu.h"
 
+extern const u8 EventScript_AcroBikeMode[];
+extern const u8 EventScript_MachBikeMode[];
+
 int ProcessPlayerFieldInput(struct FieldInput *input)
 {
     struct MapPosition position;
@@ -257,6 +260,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
             gPlayerAvatar.flags += PLAYER_AVATAR_FLAG_ACRO_BIKE;
             SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
             PlaySE(SE_BIKE_BELL);
+            ScriptContext_SetupScript(EventScript_AcroBikeMode);
         }
         else
         {
@@ -264,6 +268,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
             gPlayerAvatar.flags += PLAYER_AVATAR_FLAG_MACH_BIKE;
             SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
             PlaySE(SE_BIKE_BELL);
+            ScriptContext_SetupScript(EventScript_MachBikeMode);
         }
     }
     if (input->pressedRButton && TryStartDexnavSearch())

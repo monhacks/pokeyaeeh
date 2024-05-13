@@ -43,17 +43,17 @@ Route114_EventScript_ReceivedBerry::
 Route114_EventScript_RoarGentleman::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM_ROAR, Route114_EventScript_ReceivedRoar
-	msgbox Route114_Text_AllMyMonDoesIsRoarTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_HYPER_VOICE
+	goto_if_set FLAG_RECEIVED_TM_SNARL, Route114_EventScript_ReceivedSnarl
+	msgbox Route114_Text_AllMyMonDoesIsSnarlTakeThis, MSGBOX_DEFAULT
+	giveitem ITEM_TM_SNARL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_ROAR
-	msgbox Route114_Text_ExplainRoar, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_SNARL
+	msgbox Route114_Text_ExplainSnarl, MSGBOX_DEFAULT
 	release
 	end
 
-Route114_EventScript_ReceivedRoar::
-	msgbox Route114_Text_ExplainRoar, MSGBOX_DEFAULT
+Route114_EventScript_ReceivedSnarl::
+	msgbox Route114_Text_ExplainSnarl, MSGBOX_DEFAULT
 	release
 	end
 
@@ -176,15 +176,16 @@ Route114_EventScript_Kai::
 	msgbox Route114_Text_KaiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route114_Text_AllMyMonDoesIsRoarTakeThis:
-	.string "All my Pokémon does is Roar…\n"
+Route114_Text_AllMyMonDoesIsSnarlTakeThis:
+	.string "All my Pokémon does is Snarl…\n"
 	.string "No one dares to come near me…\p"
 	.string "Sigh… If you would, please take\n"
 	.string "this TM away…$"
 
-Route114_Text_ExplainRoar:
-	.string "TM05 contains Roar.\n"
-	.string "A Roar sends Pokémon scurrying.$"
+Route114_Text_ExplainSnarl:
+	.string "TM112 contains Snarl.\n"
+	.string "A ranting scream that hits both enemies\l"
+	.string "and lowers their Sp. Attack.$"
 
 Route114_Text_Poochyena:
 	.string "Bow! Bowwow!$"

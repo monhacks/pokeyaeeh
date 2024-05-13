@@ -582,9 +582,9 @@ Route109_EventScript_Huey_1:
 	end
 
 Route109_EventScript_Huey_2:
-	setflag FLAG_NO_BAG_USE
+	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyIntro, Route109_EventScript_Huey2
-	clearflag FLAG_NO_BAG_USE
+	clearflag B_FLAG_NO_BAG_USE
 	setflag FLAG_ROUTE_109_BOSS_DEFEATED
 	msgbox Route109_EventScript_Huey_Text_0, MSGBOX_NPC
 	goto Route109_EventScript_Huey_1

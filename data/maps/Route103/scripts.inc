@@ -372,9 +372,9 @@ Route103_EventScript_Daisy_1:
 	end
 
 Route103_EventScript_Daisy_2:
-	setflag FLAG_NO_BAG_USE
+	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated, Route103_EventScript_Daisy2
-	clearflag FLAG_NO_BAG_USE
+	clearflag B_FLAG_NO_BAG_USE
 	setflag FLAG_ROUTE_103_BOSS_DEFEATED
 	msgbox Route103_EventScript_Daisy2_Text_3, MSGBOX_NPC
 	goto Route103_EventScript_Daisy_1

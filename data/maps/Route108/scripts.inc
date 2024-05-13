@@ -67,9 +67,9 @@ Route108_EventScript_Jerome_1:
 	end
 
 Route108_EventScript_Jerome_2:
-	setflag FLAG_NO_BAG_USE
+	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_FOSTER, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated, Route108_EventScript_Jerome2
-	clearflag FLAG_NO_BAG_USE
+	clearflag B_FLAG_NO_BAG_USE
 	setflag FLAG_ROUTE_108_BOSS_DEFEATED
 	msgbox Route108_Text_JeromePostBattle
 	goto Route108_EventScript_Jerome_1

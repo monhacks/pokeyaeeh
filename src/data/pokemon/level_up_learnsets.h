@@ -10667,6 +10667,7 @@ static const struct LevelUpMove sLuxioLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLuxrayLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_ROUSED_FANGS),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
@@ -19738,7 +19739,6 @@ static const struct LevelUpMove sTsareenaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_FLAIL),
     LEVEL_UP_MOVE( 1, MOVE_SWAGGER),
     LEVEL_UP_MOVE( 1, MOVE_RAPID_SPIN),
-    LEVEL_UP_MOVE( 1, MOVE_POWER_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_PLAY_NICE),
     LEVEL_UP_MOVE( 1, MOVE_TROP_KICK),
     LEVEL_UP_MOVE( 1, MOVE_PUNISHMENT),
@@ -19754,8 +19754,8 @@ static const struct LevelUpMove sTsareenaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(37, MOVE_CAPTIVATE),
     LEVEL_UP_MOVE(43, MOVE_AROMATHERAPY),
     LEVEL_UP_MOVE(47, MOVE_LEAF_STORM),
-    LEVEL_UP_MOVE(53, MOVE_HIGH_JUMP_KICK),
-    LEVEL_UP_MOVE(53, MOVE_POWER_WHIP),
+    LEVEL_UP_MOVE(53, MOVE_JUMP_KICK),
+    LEVEL_UP_MOVE(55, MOVE_POWER_WHIP),
     LEVEL_UP_MOVE(58, MOVE_HIGH_JUMP_KICK),
     LEVEL_UP_END
 };

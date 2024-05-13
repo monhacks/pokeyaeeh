@@ -9249,7 +9249,7 @@ const struct Item gItems[] =
 
     [ITEM_BICYCLE] =
     {
-        .name = _("Bicycle"),
+        .name = _("Unused Bicycle"),
         .price = 0,
         .description = sBicycleDesc,
         .importance = 1,
@@ -9260,7 +9260,7 @@ const struct Item gItems[] =
 
     [ITEM_MACH_BIKE] =
     {
-        .name = _("Bike"),
+        .name = _("Bicycle"),
         .price = 0,
         .description = sBicycleDesc,
         .importance = 1,
@@ -9272,7 +9272,7 @@ const struct Item gItems[] =
 
     [ITEM_ACRO_BIKE] =
     {
-        .name = _("Bicycle"),
+        .name = _("Unused Bicycle"),
         .price = 0,
         .description = sBicycleDesc,
         .importance = 1,

@@ -193,7 +193,7 @@
 #define FLAG_RECEIVED_TM_CHARM               0xA5
 #define FLAG_RECEIVED_TM_SEED_BOMB           0xA6
 #define FLAG_RECEIVED_TM_FIRE_BLAST          0xA7
-#define FLAG_RECEIVED_TM_TEMPER_FLARE        0xA8
+#define FLAG_RECEIVED_TM_RETURN              0xA8
 #define FLAG_RECEIVED_TM_DRAIN_PUNCH         0xA9
 #define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
 #define FLAG_RECEIVED_TM_CALM_MIND           0xAB
@@ -256,12 +256,12 @@
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_RECEIVED_TM_RETURN              0xE5
+#define FLAG_RECEIVED_TM_POWER_GEM           0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
-#define FLAG_RECEIVED_TM_ROAR                0xE7
+#define FLAG_RECEIVED_TM_SNARL               0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_RECEIVED_TM_BULK_UP             0xE9 // Unused Flag
+#define FLAG_RECEIVED_TM_BULK_UP             0xE9
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB

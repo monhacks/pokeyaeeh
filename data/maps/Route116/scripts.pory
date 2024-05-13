@@ -491,9 +491,9 @@ script Route116_EventScript_Dawson{
 	   defeated(TRAINER_SARAH) &&
 	   defeated(TRAINER_DEVAN) &&
 	   defeated(TRAINER_JOHNSON)){
-		setflag(FLAG_NO_BAG_USE)
+		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_DAWSON, ("When you lay your eyes on my\nPokémon's gorgeous fur,\ltheir beauty will render you helpless!"), ("Oh, baby, say it isn't so!"), Route116_EventScript_Dawson2)
-		clearflag(FLAG_NO_BAG_USE)
+		clearflag(B_FLAG_NO_BAG_USE)
 	    setflag(FLAG_ROUTE_116_BOSS_DEFEATED)
         msgbox(("Amulet Coin earns you more money in\ntrainer battles if your Pokémon\lholding it participates in the battle.\pAnd the TM, Flash Cannon, is a\nreliable Steel-type attack.\pIt has a chance of lowering your foe's\nSp. Def stat."), MSGBOX_NPC)
 	}

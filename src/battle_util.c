@@ -8619,15 +8619,15 @@ u8 IsMonDisobedient(void)
         
         if (FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103)) // After beating Rival
             obedienceLevel = 16;
-        if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
+        if (FlagGet(FLAG_BADGE01_GET)) // Charm Badge
             obedienceLevel = 23;
-        if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
+        if (FlagGet(FLAG_BADGE02_GET)) // Verdant Badge
             obedienceLevel = 36;
-        if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
+        if (FlagGet(FLAG_BADGE03_GET)) // Inferno Badge
             obedienceLevel = 45;
-        if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
+        if (FlagGet(FLAG_BADGE04_GET)) // Reverse Badge
             obedienceLevel = 55;
-        if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
+        if (FlagGet(FLAG_BADGE05_GET)) // Fist Badge
             obedienceLevel = 60;
         if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
             obedienceLevel = 65;

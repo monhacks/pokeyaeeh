@@ -586,9 +586,9 @@ script Route109_EventScript_Huey{
 		defeated(TRAINER_CHANDLER) &&
 		defeated(TRAINER_HAILEY) &&
 		defeated(TRAINER_ELIJAH)){
-		setflag(FLAG_NO_BAG_USE)
+		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyIntro, Route109_EventScript_Huey2)
-		clearflag(FLAG_NO_BAG_USE)
+		clearflag(B_FLAG_NO_BAG_USE)
 		setflag(FLAG_ROUTE_109_BOSS_DEFEATED)
 		msgbox(("I suggest you give that item to Absol.\pYou saw mine, were you disappointed\nin what you had seen?"), MSGBOX_NPC)
 	}

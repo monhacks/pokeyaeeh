@@ -1174,9 +1174,9 @@ script Route104_EventScript_Ivan{
 	   defeated(TRAINER_WINSTON_1) &&
 	   defeated(TRAINER_HALEY_1) &&
 	   defeated(TRAINER_GINA_AND_MIA_1)){
-		setflag(FLAG_NO_BAG_USE)
+		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_IVAN, ("Why keep it a secret?\pI'm the Water Pokémon expert!\pHuh?\nYou don't know me?"), ("I thought I wasn't too bad,\nif I may say so, but I guess not\p… Bleah…"), Route104_EventScript_Ivan2)
-		clearflag(FLAG_NO_BAG_USE)
+		clearflag(B_FLAG_NO_BAG_USE)
 		setflag(FLAG_ROUTE_104_BOSS_DEFEATED)
 		msgbox("Bouncy! Bouncy! Bouncy!\pBounce is the strongest Water-type\nmove!")
 	}

@@ -5,15 +5,6 @@ LavaridgeTown_Gym_1F_MapScripts::
 LavaridgeTown_Gym_1F_OnTransition:
 	end
 
-LavaridgeTown_Gym_1F_EventScript_Flannery::
-	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
-	goto_if_unset FLAG_RECEIVED_TM_TEMPER_FLARE, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
-	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
 LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
@@ -21,6 +12,8 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
+	clearflag B_FLAG_NO_BAG_USE
+    clearflag B_FLAG_INVERSE_BATTLE
 	setflag FLAG_BADGE04_GET
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	setvar VAR_0x8008, 4
@@ -40,10 +33,10 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
-	giveitem ITEM_TM_TEMPER_FLARE
+	giveitem ITEM_TM_RETURN
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM_TEMPER_FLARE
+	setflag FLAG_RECEIVED_TM_RETURN
 	release
 	end
 
@@ -51,7 +44,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 	giveitem ITEM_TM_TEMPER_FLARE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM_TEMPER_FLARE
+	setflag FLAG_RECEIVED_TM_RETURN
 	return
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
@@ -242,11 +235,11 @@ LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
 	.string "Oh yeah, take this.$"
 
 LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
-	.string "{PLAYER} received the Inverse Badge\n"
+	.string "{PLAYER} received the Reverse Badge\n"
 	.string "from Qanak.$"
 
 LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
-	.string "If you have a Inverse Badge, all Pokémon\n"
+	.string "If you have a Reverse Badge, all Pokémon\n"
 	.string "up to Level 50, even those you get in\l"
 	.string "trades from other people, will obey\l"
 	.string "you completely.\p"
@@ -313,3 +306,54 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two Pokémon.$"
+
+LavaridgeTown_Gym_1F_EventScript_Flannery::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_AXLE
+	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_5
+LavaridgeTown_Gym_1F_EventScript_Flannery_3:
+	msgbox LavaridgeTown_Gym_1F_EventScript_Flannery_Text_0
+	release
+	end
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_2:
+	setflag B_FLAG_NO_BAG_USE
+	setflag B_FLAG_INVERSE_BATTLE
+	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
+	goto_if_unset FLAG_RECEIVED_TM_RETURN, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_4:
+	checktrainerflag TRAINER_JACE
+	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_9
+	goto LavaridgeTown_Gym_1F_EventScript_Flannery_3
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_5:
+	checktrainerflag TRAINER_COLE
+	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_4
+	goto LavaridgeTown_Gym_1F_EventScript_Flannery_3
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_8:
+	checktrainerflag TRAINER_DANIELLE
+	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_12
+	goto LavaridgeTown_Gym_1F_EventScript_Flannery_3
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_9:
+	checktrainerflag TRAINER_ELI
+	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_8
+	goto LavaridgeTown_Gym_1F_EventScript_Flannery_3
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_12:
+	checktrainerflag TRAINER_GERALD
+	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_2
+	goto LavaridgeTown_Gym_1F_EventScript_Flannery_3
+
+
+LavaridgeTown_Gym_1F_EventScript_Flannery_Text_0:
+	.string "Why don't you beat every trainer\n"
+	.string "here before talking to me again?$"
