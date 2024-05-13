@@ -2012,12 +2012,13 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
             if(HasLevelEvolution(partyData[i].species, level, partyData[i].heldItem))
                 CreateMon(&party[i], HasLevelEvolution(partyData[i].species, level, partyData[i].heldItem), level, 0, TRUE, personalityValue, otIdType, fixedOtId);
             else
                 CreateMon(&party[i], partyData[i].species, level, 0, TRUE, personalityValue, otIdType, fixedOtId);
+
+            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[i].iv));

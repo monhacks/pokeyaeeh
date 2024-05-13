@@ -4485,11 +4485,61 @@ static const struct TrainerMon sParty_Norman1[] = { // Chrizz
         .species = SPECIES_LUCARIO,
         .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_INNER_FOCUS,
-        .lvl = 10,
+        .lvl = 55,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .moves = {MOVE_NASTY_PLOT, MOVE_AURA_SPHERE, MOVE_FLASH_CANNON, MOVE_DRAGON_PULSE}
+    },
+    {
+        .species = SPECIES_BRELOOM,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = ABILITY_TECHNICIAN,
+        .lvl = 55,
+        .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_MACH_PUNCH, MOVE_BULLET_SEED, MOVE_SPORE, MOVE_CLOSE_COMBAT},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_SNEASLER,
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = ABILITY_UNBURDEN,
+        .lvl = 55,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_DIRE_CLAW, MOVE_ACROBATICS, MOVE_SWORDS_DANCE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_ANNIHILAPE,
+        .ability = ABILITY_DEFIANT,
+        .lvl = 55,
+        .ev = TRAINER_PARTY_EVS(252, 196, 12, 20, 0, 28),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_BULK_UP, MOVE_RAGE_FIST, MOVE_DRAIN_PUNCH, MOVE_PROTECT},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_KOMMO_O,
+        .heldItem = ITEM_THROAT_SPRAY,
+        .ability = ABILITY_SOUNDPROOF,
+        .lvl = 55,
+        .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_CLANGING_SCALES, MOVE_CLANGOROUS_SOUL, MOVE_AURA_SPHERE, MOVE_DRACO_METEOR},
+        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
+    },
+    {
+        .species = SPECIES_GALLADE,
+        .heldItem = ITEM_GALLADITE,
+        .gender = TRAINER_MON_MALE,
+        .ability = ABILITY_SHARPNESS,
+        .lvl = 55,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_PSYCHO_CUT, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
 
