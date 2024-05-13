@@ -427,7 +427,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(PIKE_QUEEN, "Pike Queen"),
     TRAINER_CLASS(PYRAMID_KING, "Pyramid King"),
     TRAINER_CLASS(RS_PROTAG, "{PKMN} Trainer"),
-    TRAINER_CLASS(ROUTE_BOSS, "ROute Boss", 35),
+    TRAINER_CLASS(ROUTE_BOSS, "Route Boss", 35),
 };
 
 #include "data/text/abilities.h"

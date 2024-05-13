@@ -1235,7 +1235,7 @@
 #define FLAG_ROUTE_108_BOSS_DEFEATED                                0x497 // Route 108 Boss Swimmer Jerome
 #define FLAG_ROUTE_109_BOSS_DEFEATED                                0x498 // Route 109 Boss Sailor Huey
 #define FLAG_ROUTE_103_BOSS_DEFEATED                                0x499 // Route 103 Boss Aroma Lady Daisy
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
+#define FLAG_ROUTE_114_BOSS_DEFEATED                                0x49A // Route 114 Boss Hiker Lenny
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag

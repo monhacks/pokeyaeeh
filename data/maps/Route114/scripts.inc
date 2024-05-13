@@ -1,3 +1,5 @@
+.set LOCALID_LENNY, 3
+
 Route114_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route114_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route114_OnLoad
@@ -8,6 +10,7 @@ Route114_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_SOUTH, AbnormalWeather_StartGroudonWeather
+	call_if_set FLAG_ROUTE_114_BOSS_DEFEATED, Route114_EventScript_LennyCoords
 	end
 
 Route114_OnLoad:
@@ -77,11 +80,6 @@ Route114_EventScript_FossilManiacsHouseSign::
 
 Route114_EventScript_LanettesHouseSign::
 	msgbox Route114_Text_LanettesHouse, MSGBOX_SIGN
-	end
-
-Route114_EventScript_Lenny::
-	trainerbattle_single TRAINER_LENNY, Route114_Text_LennyIntro, Route114_Text_LennyDefeat
-	msgbox Route114_Text_LennyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_Lucas::
@@ -200,3 +198,116 @@ Route114_Text_FossilManiacsHouseSign:
 
 Route114_Text_LanettesHouse:
 	.string "Lanette's House$"
+
+Route114_EventScript_LennyCoords::
+	setobjectxyperm LOCALID_LENNY, 9, 64
+	return
+
+
+Lenny_Movement_Right:
+	walk_right
+	face_down
+	step_end
+
+Player_Movement_DownFaceUp:
+	face_left
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	face_up
+	step_end
+
+Route114_EventScript_Lenny2::
+	msgbox Route114_EventScript_Lenny2_Text_0, MSGBOX_AUTOCLOSE
+	getplayerxy VAR_TEMP_2, VAR_TEMP_3
+	compare VAR_TEMP_2, 9
+	goto_if_eq Route114_EventScript_Lenny2_2
+Route114_EventScript_Lenny2_1:
+	applymovement LOCALID_LENNY, Lenny_Movement_Right
+	waitmovement 0
+	return
+
+Route114_EventScript_Lenny2_2:
+	applymovement OBJ_EVENT_ID_PLAYER, Player_Movement_DownFaceUp
+	waitmovement 0
+	goto Route114_EventScript_Lenny2_1
+
+
+Route114_EventScript_Lenny::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_LUCAS_1
+	goto_if 1, Route114_EventScript_Lenny_5
+Route114_EventScript_Lenny_3:
+	msgbox Route114_EventScript_Lenny_Text_1
+Route114_EventScript_Lenny_1:
+	release
+	end
+
+Route114_EventScript_Lenny_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_LENNY, Route114_Text_LennyIntro, Route114_Text_LennyDefeat, Route114_EventScript_Lenny2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_114_BOSS_DEFEATED
+	msgbox Route114_EventScript_Lenny_Text_0, MSGBOX_AUTOCLOSE
+	goto Route114_EventScript_Lenny_1
+
+Route114_EventScript_Lenny_4:
+	checktrainerflag TRAINER_NANCY
+	goto_if 1, Route114_EventScript_Lenny_9
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_5:
+	checktrainerflag TRAINER_SHANE
+	goto_if 1, Route114_EventScript_Lenny_4
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_8:
+	checktrainerflag TRAINER_BERNIE_1
+	goto_if 1, Route114_EventScript_Lenny_13
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_9:
+	checktrainerflag TRAINER_STEVE_1
+	goto_if 1, Route114_EventScript_Lenny_8
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_12:
+	checktrainerflag TRAINER_NOLAN
+	goto_if 1, Route114_EventScript_Lenny_17
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_13:
+	checktrainerflag TRAINER_CLAUDE
+	goto_if 1, Route114_EventScript_Lenny_12
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_16:
+	checktrainerflag TRAINER_ANGELINA
+	goto_if 1, Route114_EventScript_Lenny_21
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_17:
+	checktrainerflag TRAINER_TYRA_AND_IVY
+	goto_if 1, Route114_EventScript_Lenny_16
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_20:
+	checktrainerflag TRAINER_KAI
+	goto_if 1, Route114_EventScript_Lenny_2
+	goto Route114_EventScript_Lenny_3
+
+Route114_EventScript_Lenny_21:
+	checktrainerflag TRAINER_CHARLOTTE
+	goto_if 1, Route114_EventScript_Lenny_20
+	goto Route114_EventScript_Lenny_3
+
+
+Route114_EventScript_Lenny2_Text_0:
+	.string "Fine, I'll move!$"
+
+Route114_EventScript_Lenny_Text_0:
+	.string "Ya happy now?$"
+
+Route114_EventScript_Lenny_Text_1:
+	.string "Yodelayhihoo!\pI'm busy. Don't even bother!$"

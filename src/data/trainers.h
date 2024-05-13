@@ -6936,9 +6936,9 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Trent1),
     },
 
-    [TRAINER_LENNY] =
+    [TRAINER_LENNY] = // Route Boss
     {
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _("Lenny"),

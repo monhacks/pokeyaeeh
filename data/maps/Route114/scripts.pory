@@ -1,4 +1,6 @@
 raw `
+.set LOCALID_LENNY, 3
+
 Route114_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route114_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route114_OnLoad
@@ -9,6 +11,7 @@ Route114_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_SOUTH, AbnormalWeather_StartGroudonWeather
+	call_if_set FLAG_ROUTE_114_BOSS_DEFEATED, Route114_EventScript_LennyCoords
 	end
 
 Route114_OnLoad:
@@ -78,11 +81,6 @@ Route114_EventScript_FossilManiacsHouseSign::
 
 Route114_EventScript_LanettesHouseSign::
 	msgbox Route114_Text_LanettesHouse, MSGBOX_SIGN
-	end
-
-Route114_EventScript_Lenny::
-	trainerbattle_single TRAINER_LENNY, Route114_Text_LennyIntro, Route114_Text_LennyDefeat
-	msgbox Route114_Text_LennyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_Lucas::
@@ -203,3 +201,64 @@ Route114_Text_LanettesHouse:
 	.string "Lanette's House$"
 
 `
+//Route114_EventScript_Lenny::
+//	trainerbattle_single TRAINER_LENNY, Route114_Text_LennyIntro, Route114_Text_LennyDefeat
+//	msgbox Route114_Text_LennyPostBattle, MSGBOX_AUTOCLOSE
+//	end
+
+script Route114_EventScript_LennyCoords{
+	setobjectxyperm(LOCALID_LENNY, 9, 64)
+}
+
+movement Lenny_Movement_Right{
+    walk_right
+    face_down
+}
+
+movement Player_Movement_DownFaceUp{
+    face_left
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+    face_up
+}
+
+script Route114_EventScript_Lenny2{
+    msgbox("Fine, I'll move!", MSGBOX_AUTOCLOSE)
+    getplayerxy(VAR_TEMP_2, VAR_TEMP_3)
+    if (var(VAR_TEMP_2) == 9)
+    {
+        applymovement(OBJ_EVENT_ID_PLAYER, Player_Movement_DownFaceUp)
+        waitmovement(0)
+    }
+    applymovement(LOCALID_LENNY, Lenny_Movement_Right)
+    waitmovement(0)
+}
+
+script Route114_EventScript_Lenny{
+    lock
+    faceplayer
+	if(defeated(TRAINER_LUCAS_1) &&
+	   defeated(TRAINER_SHANE) &&
+	   defeated(TRAINER_NANCY) &&
+	   defeated(TRAINER_STEVE_1) &&
+	   defeated(TRAINER_BERNIE_1) &&
+	   defeated(TRAINER_CLAUDE) &&
+	   defeated(TRAINER_NOLAN) &&
+	   defeated(TRAINER_TYRA_AND_IVY) &&
+	   defeated(TRAINER_ANGELINA) &&
+	   defeated(TRAINER_CHARLOTTE) &&
+	   defeated(TRAINER_KAI)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_LENNY, Route114_Text_LennyIntro, Route114_Text_LennyDefeat, Route114_EventScript_Lenny2)
+		clearflag(B_FLAG_NO_BAG_USE)
+	    setflag(FLAG_ROUTE_114_BOSS_DEFEATED)
+	    msgbox("Ya happy now?", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Yodelayhihoo!\pI'm busy. Don't even bother!")
+	}
+    release
+    end
+}
