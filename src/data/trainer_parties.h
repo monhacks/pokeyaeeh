@@ -1,4 +1,21 @@
-#define HIDDEN_POWER_FIRE     TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31)
+
+//                 Hidden Power IVs
+// Fire         .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
+// Ice          .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
+// Grass        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
+// Ground       .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30),
+// Fighting     .iv = TRAINER_PARTY_IVS(31, 31, 30, 30, 30, 30),
+// Water        .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 31),
+// Electric     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 31),
+// Poison       .iv = TRAINER_PARTY_IVS(31, 31, 30, 31, 30, 30),
+// Flying       .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
+// Psychic      .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 31),
+// Bug          .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 30),
+// Rock         .iv = TRAINER_PARTY_IVS(31, 30, 30, 30, 31, 30),
+// Ghost        .iv = TRAINER_PARTY_IVS(31, 31, 30, 31, 31, 30),
+// Dragon       .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 31),
+// Steel        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 30),
+// Dark         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 
 static const struct TrainerMon sParty_Sawyer1[] = {
     {
@@ -4290,7 +4307,7 @@ static const struct TrainerMon sParty_Brawly1[] = { // Scep
         .ability = ABILITY_SOUNDPROOF,
         .friendship = 200,
         .heldItem = ITEM_LIFE_ORB,
-        .iv = HIDDEN_POWER_FIRE,
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
         .lvl = 23,
         .moves = {MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN, MOVE_PROTECT, MOVE_HIDDEN_POWER},
