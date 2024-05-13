@@ -27,12 +27,7 @@ PetalburgCity_Gym_EventScript_DontMoveNormanToFront::
 	end
 
 PetalburgCity_Gym_OnWarp:
-	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_TurnPlayerNorth
 	.2byte 0
-
-PetalburgCity_Gym_EventScript_TurnPlayerNorth::
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	end
 
 PetalburgCity_Gym_OnFrame:
 	.2byte 0
@@ -49,7 +44,6 @@ PetalburgCity_Gym_EventScript_Norman::
 	end
 
 PetalburgCity_Gym_EventScript_NormanPostBattle::
-	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry
 	goto_if_unset FLAG_RECEIVED_TM_DRAIN_PUNCH, PetalburgCity_Gym_EventScript_GiveDrainPunch2
 	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
@@ -66,32 +60,10 @@ PetalburgCity_Gym_EventScript_NormanRematch::
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry::
-	specialvar VAR_RESULT, IsEnigmaBerryValid
-	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry
-	checkitem ITEM_ENIGMA_BERRY_E_READER
-	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry
-	checkpcitem ITEM_ENIGMA_BERRY_E_READER
-	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry
-	goto_if_eq VAR_ENIGMA_BERRY_AVAILABLE, 0, PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry
-	msgbox PetalburgCity_Gym_Text_GiveEnigmaBerry, MSGBOX_DEFAULT
-	setvar VAR_RESULT, TRUE
-	return
-
-PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry::
-	setvar VAR_RESULT, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
-	giveitem ITEM_ENIGMA_BERRY_E_READER
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setvar VAR_ENIGMA_BERRY_AVAILABLE, 0
-	release
-	end
-
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	msgbox PetalburgCity_Gym_Text_NormanAfterDefeat, MSGBOX_DEFAULT
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -99,16 +71,18 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	setflag FLAG_DEFEATED_PETALBURG_GYM
 	setvar VAR_PETALBURG_GYM_STATE, 7
 	setflag FLAG_BADGE05_GET
+	setvar VAR_PETALBURG_CITY_STATE, 1
+	clearflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
 	special ResetHealLocationFromDewford
 	call EventScript_HideMrBriney
 	setvar VAR_0x8008, 5
 	call Common_EventScript_SetGymTrainers
 	clearflag FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN
+	@clearflag FLAG_HIDE_PETALBURG_CITY_BIRCH
 	special DrawWholeMapView
 	call PetalburgCity_Gym_EventScript_GiveDrainPunch
-	delay 30
-	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
+	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox Route104_Text_RegisteredDadInPokenav, MSGBOX_DEFAULT
 	waitfanfare
@@ -165,121 +139,6 @@ PetalburgCity_Gym_EventScript_Jody::
 	trainerbattle_single TRAINER_JODY, PetalburgCity_Gym_Text_JodyIntro, PetalburgCity_Gym_Text_JodyDefeat
 	msgbox PetalburgCity_Gym_Text_JodyPostBattle, MSGBOX_AUTOCLOSE
 	end
-
-@ VAR_0x8004 below is the room number
-@ VAR_0x8005 below is 0 when the door should be slid open and 1 when it should be unlocked immediately
-PetalburgCity_Gym_EventScript_OpenGymEntranceDoors::
-	setvar VAR_0x8004, 1
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetEntranceRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenSpeedRoomDoors::
-	setvar VAR_0x8004, 2
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetSpeedRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenAccuracyRoomDoors::
-	setvar VAR_0x8004, 3
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetAccuracyRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenConfusionRoomDoors::
-	setvar VAR_0x8004, 4
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetConfusionRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors::
-	setvar VAR_0x8004, 5
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetDefenseRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenRecoveryRoomDoors::
-	setvar VAR_0x8004, 6
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetRecoveryRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors::
-	setvar VAR_0x8004, 7
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetStrengthRoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_OpenOHKORoomDoors::
-	setvar VAR_0x8004, 8
-	call_if_eq VAR_0x8005, 0, PetalburgCity_Gym_EventScript_SlideOpenRoomDoors
-	call_if_eq VAR_0x8005, 1, PetalburgCity_Gym_EventScript_UnlockRoomDoors
-	call PetalburgCity_Gym_EventScript_SetOHKORoomDoorMetatiles
-	return
-
-PetalburgCity_Gym_EventScript_SetEntranceRoomDoorMetatiles::
-	setmetatile 6, 85, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 7, 85, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	setmetatile 1, 98, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 2, 98, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetSpeedRoomDoorMetatiles::
-	setmetatile 6, 46, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 7, 46, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	setmetatile 1, 59, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 2, 59, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetAccuracyRoomDoorMetatiles::
-	setmetatile 6, 59, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 7, 59, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	setmetatile 1, 72, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 2, 72, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetConfusionRoomDoorMetatiles::
-	setmetatile 1, 20, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 2, 20, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetDefenseRoomDoorMetatiles::
-	setmetatile 6, 20, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 7, 20, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	setmetatile 1, 33, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 2, 33, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetRecoveryRoomDoorMetatiles::
-	setmetatile 6, 33, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 7, 33, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetStrengthRoomDoorMetatiles::
-	setmetatile 1, 7, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 2, 7, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SetOHKORoomDoorMetatiles::
-	setmetatile 6, 7, METATILE_PetalburgGym_RoomEntrance_Left, FALSE
-	setmetatile 7, 7, METATILE_PetalburgGym_RoomEntrance_Right, FALSE
-	return
-
-PetalburgCity_Gym_EventScript_SlideOpenRoomDoors::
-	special PetalburgGymSlideOpenRoomDoors
-	waitstate
-	return
-
-PetalburgCity_Gym_EventScript_UnlockRoomDoors::
-	special PetalburgGymUnlockRoomDoors
-	return
 
 PetalburgCity_Gym_EventScript_GymGuide::
 	lock
@@ -432,57 +291,49 @@ PetalburgCity_Gym_Text_NormanIntro:
 PetalburgCity_Gym_Text_NormanDefeat:
 	.string "…\p"
 	.string "I… I can't…\p"
-	.string "I can't believe it. {PLAYER}…\p"
-	.string "I lost!\p"
-	.string "This is definitely not my day.\n"
-	.string "Here, take this.$"
+	.string "I can't believe it.\p"
+	.string "I lost…\p"
+	.string "This is definitely not my day.$"
+
+PetalburgCity_Gym_Text_NormanAfterDefeat:
+	.string "Chrizz: Amazing!\n"
+	.string "You're a magnificant Trainer!\p"
+	.string "Here, the Fist Badge!$"
 
 PetalburgCity_Gym_Text_ReceivedBalanceBadge:
 	.string "{PLAYER} received the Fist Badge\n"
 	.string "from Chrizz!$"
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
-	.string "Chrizz: This is my gift to you.\n"
-	.string "{PLAYER}, I'm sure you can use it\l"
-	.string "it correctly.$"
+	.string "Also, this\n"
+	.string "My favourite move!$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Chrizz: TM122 contains Drain Punch.\p"
 	.string "It heals your Pokémon for half the\n"
 	.string "damage done!\p"
-	.string "Quite the effect, eh?\p"
+	.string "Amazing, innit?\p"
 	.string "Oh!\p"
-	.string "Here, a souvenir from Kalos$"
+	.string "Here, a souvenir from Kalos.$"
 
 PetalburgCity_Gym_Text_ExplainGalladite:
-	.string "That…\p"
-	.string "is a Mega Stone.\p"
+	.string "Chrizz: That…\n"
+	.string "…is a Mega Stone.\p"
 	.string "When held by Gallade, it'll allow you\n"
 	.string "to Mega Evolve it in battle!\p"
-	.string "Oh……\n"
+	.string "Oh……\p"
 	.string "You don't have a Mega Ring.\p"
 	.string "Hm…\n"
 	.string "I don't have a spare with me, {PLAYER}.\p"
 	.string "I'm really sorry about that!\p"
-	.string "Perhaps… the Professor might have one?\p"
-	.string "If not, I'll call you when I have one!\n"
-	.string "You deserve the power of Mega Evolution!$"
+	.string "You deserve the power of Mega\n"
+	.string "Evolution!\p"
+	.string "… … … … … …$"
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
-	.string "Chrizz: As the Gym Leader, I can't\n"
-	.string "express glad I am to see strong\l"
-	.string "Trainers.\p"
-	.string "Go for it, {PLAYER}!$"
-
-PetalburgCity_Gym_Text_PleaseComeWithMe:
-	.string "Ah, there you are, {PLAYER}{KUN}!\p"
-	.string "Please come with me.\n"
-	.string "I have something I want you to have.$"
-
-PetalburgCity_Gym_Text_LetMeBorrowPlayer:
-	.string "Norman, you don't mind, do you?\p"
-	.string "Let me borrow your {PLAYER}{KUN} for\n"
-	.string "a minute or two.$"
+	.string "Chrizz: That was an amazing battle,\n"
+	.string "{PLAYER}.\l"
+	.string "We should fight again, sometimes.$"
 
 PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough:
 	.string "Chrizz: {PLAYER}, how are things going?\p"
@@ -617,55 +468,12 @@ PetalburgCity_Gym_Text_JodyPostBattle:
 	.string "Why, it's the feelings Trainers have\n"
 	.string "for their Pokémon.$"
 
-PetalburgCity_Gym_Text_DoorAppearsLocked:
-	.string "This door appears to be locked\n"
-	.string "right now…$"
-
-PetalburgCity_Gym_Text_EnterSpeedRoom:
-	.string "“Speed Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-@ Unused
-PetalburgCity_Gym_Text_DoorAppearsLocked2:
-	.string "This door appears to be locked\n"
-	.string "right now…$"
-
-PetalburgCity_Gym_Text_EnterAccuracyRoom:
-	.string "“Accuracy Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-PetalburgCity_Gym_Text_EnterConfusionRoom:
-	.string "“Confusion Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-PetalburgCity_Gym_Text_EnterDefenseRoom:
-	.string "“Defense Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-PetalburgCity_Gym_Text_EnterRecoveryRoom:
-	.string "“Recovery Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-PetalburgCity_Gym_Text_EnterStrengthRoom:
-	.string "“Strength Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-PetalburgCity_Gym_Text_EnterOHKORoom:
-	.string "“One-hit KO Room,” the sign says.\p"
-	.string "Do you want to go through?$"
-
-PetalburgCity_Gym_Text_EnterGymLeadersRoom:
-	.string "“Gym Leader's Room\p"
-	.string "“See for yourself what Pokémon await\n"
-	.string "you!” the sign says.\p"
-	.string "Do you want to go through?$"
-
 PetalburgCity_Gym_Text_GymStatue:
 	.string "Petalburg City Pokémon Gym$"
 
 PetalburgCity_Gym_Text_GymStatueCertified:
 	.string "Petalburg City Pokémon Gym\p"
-	.string "Norman's certified Trainers:\n"
+	.string "Chrizz's certified Trainers:\n"
 	.string "{PLAYER}$"
 
 PetalburgCity_Gym_Text_NormanPreRematch:

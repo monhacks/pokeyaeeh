@@ -325,7 +325,9 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "What's your name?\p"
 	.string "… … …\p"
 	.string "Okay, {PLAYER}!\n"
-	.string "So, you see, Mauville City has a big\l"
+	.string "My name is Anabel.\p"
+	.string "Anabel: I work for the Pokémon League.\p"
+	.string "So, you see, Mauville City has a big\n"
 	.string "underground sector called the New\l"
 	.string "Mauville.\p"
 	.string "I'd like you to go there and switch\n"
@@ -334,7 +336,10 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "haywire. It's getting unsafe.\p"
 	.string "Here, this is the Key to get into\n"
 	.string "New Mauville.\p"
-	.string "Thank you very much, {PLAYER}!$"
+	.string "I would do this myself, but I don't\n"
+	.string "a Pokémon of my own, and my escort is\l"
+	.string "not here.\p"
+	.string "Thank you for your help, {PLAYER}!$"
 
 MauvilleCity_Text_WattsonWontBeChallenge:
 	.string "Anabel: The entrance to New Mauville\n"

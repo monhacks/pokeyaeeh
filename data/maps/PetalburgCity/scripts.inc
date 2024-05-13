@@ -1,7 +1,6 @@
-.set LOCALID_WALLY, 2
-.set LOCALID_BOY, 3
-.set LOCALID_WALLYS_DAD, 5
-.set LOCALID_SCOTT, 8
+.set LOCALID_BOY, 2
+.set LOCALID_SCOTT, 6
+.set LOCALID_BIRCH, 7
 
 PetalburgCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_OnTransition
@@ -10,12 +9,14 @@ PetalburgCity_MapScripts::
 
 PetalburgCity_OnTransition:
 	setflag FLAG_VISITED_PETALBURG_CITY
-	call_if_eq VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
-	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_set FLAG_BADGE04_GET, PetalburgCity_EventScript_RemoveGymGuy
 	goto_if_lt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_EventScript_SetVar
-	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
+	call_if_eq VAR_PETALBURG_CITY_STATE, 1, PetalburgCity_EventScript_HideMapNamePopup
 	end
+
+PetalburgCity_OnFrame:
+	map_script_2 VAR_PETALBURG_CITY_STATE, 1, PetalburgCity_EventScript_ProfBirch
+	.2byte 0
 
 PetalburgCity_EventScript_SetVar::
 	setvar VAR_PETALBURG_GYM_STATE, 6
@@ -25,69 +26,9 @@ PetalburgCity_EventScript_RemoveGymGuy::
 	setflag FLAG_HIDE_PETALBURG_CITY_GYM_GUY
 	return
 
-PetalburgCity_EventScript_DisableMapNameAndMusic::
+PetalburgCity_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	savebgm MUS_FOLLOW_ME
 	return
-
-PetalburgCity_EventScript_SetGymDoorsUnlocked::
-	setvar VAR_PETALBURG_GYM_STATE, 7
-	return
-
-PetalburgCity_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
-	.2byte 0
-
-PetalburgCity_EventScript_WallyTutorial:: @ unused now
-	lockall
-	special SavePlayerParty
-	special LoadWallyZigzagoon
-	applymovement LOCALID_WALLY, PetalburgCity_Movement_WallyTutorialWally
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WallyTutorialPlayer
-	waitmovement 0
-	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_DEFAULT
-	special StartWallyTutorialBattle
-	waitstate
-	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
-	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterLeft, MAP_PETALBURG_CITY
-	waitmovement LOCALID_WALLY, MAP_PETALBURG_CITY
-	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
-	closemessage
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_PETALBURG_CITY_STATE, 3
-	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-	special LoadPlayerParty
-	setvar VAR_PETALBURG_GYM_STATE, 1
-	warp MAP_PETALBURG_CITY_GYM, 4, 108
-	waitstate
-	releaseall
-	end
-
-PetalburgCity_EventScript_WalkToWallyHouse::
-	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WalkToWallyHouseWallysDad
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
-	waitmovement 0
-	setvar VAR_0x8004, 7
-	setvar VAR_0x8005, 5
-	opendoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WalkInsideHouseWallysDad
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
-	waitmovement 0
-	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
-	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_PETALBURG_CITY
-	closedoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-	warp MAP_PETALBURG_CITY_WALLYS_HOUSE, 2, 4
-	waitstate
-	releaseall
-	end
 
 PetalburgCity_EventScript_Boy::
 	lock
@@ -98,134 +39,6 @@ PetalburgCity_EventScript_Boy::
 	waitmovement 0
 	release
 	end
-
-PetalburgCity_EventScript_WallysMom::
-	msgbox PetalburgCity_Text_WhereIsWally, MSGBOX_NPC
-	end
-
-PetalburgCity_Movement_WalkToWallyHousePlayer:
-	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-PetalburgCity_Movement_WalkInsideHousePlayer:
-	walk_up
-	walk_up
-	step_end
-
-PetalburgCity_Movement_WalkToWallyHouseWallysDad:
-	delay_8
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-PetalburgCity_Movement_WalkInsideHouseWallysDad:
-	walk_up
-	set_invisible
-	step_end
-
-PetalburgCity_Movement_WallyTutorialPlayer:
-	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_in_place_faster_right
-	step_end
-
-PetalburgCity_Movement_WallyTutorialWally:
-	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_right
-	delay_16
-	walk_in_place_faster_up
-	delay_16
-	delay_16
-	walk_in_place_faster_right
-	step_end
 
 PetalburgCity_EventScript_GymSign::
 	msgbox PetalburgCity_Text_GymSign, MSGBOX_SIGN
@@ -524,3 +337,81 @@ PetalburgCity_Text_GymLeaderIsNotHere:
 	.string "He's attending a conferance in Kanto\n"
 	.string "and then he's going to Kalos.\p"
 	.string "How about you try other gyms?$"
+
+PetalburgCity_EventScript_ProfBirch::
+	lock
+	addobject LOCALID_BIRCH
+	setobjectxy LOCALID_BIRCH, 15, 15
+	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkUp
+	waitmovement 0
+	msgbox PetalburgCity_EventScript_ProfBirch_Text_0, MSGBOX_AUTOCLOSE
+	giveitem ITEM_MEGA_RING, 1
+	msgbox PetalburgCity_EventScript_ProfBirch_Text_1, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message PetalburgCity_EventScript_ProfBirch_Text_2
+	waitfanfare
+	additem ITEM_VENUSAURITE, 1
+	additem ITEM_CHARIZARDITE_X, 1
+	additem ITEM_CHARIZARDITE_Y, 1
+	additem ITEM_BLASTOISINITE, 1
+	additem ITEM_SCEPTILITE, 1
+	additem ITEM_BLAZIKENITE, 1
+	additem ITEM_SWAMPERTITE, 1
+	msgbox PetalburgCity_EventScript_ProfBirch_Text_3, MSGBOX_AUTOCLOSE
+	giveitem ITEM_HM_SURF, 1
+	msgbox PetalburgCity_EventScript_ProfBirch_Text_4, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkDown
+	waitmovement 0
+	removeobject LOCALID_BIRCH
+	setvar VAR_PETALBURG_CITY_STATE, 2
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_RECEIVED_HM_SURF
+	release
+	end
+
+
+ProfBirch_Movement_WalkUp:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+ProfBirch_Movement_WalkDown:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCity_EventScript_ProfBirch_Text_0:
+	.string "Prof. Birch: Oh, there you are,\n"
+	.string "{PLAYER}!\p"
+	.string "I see you just got your fifth Badge.\p"
+	.string "Looks like I'm a little late to the party,\n"
+	.string "then. Hehe\p"
+	.string "Anyway, I've got something really\n"
+	.string "special for you.\p"
+	.string "It took some time, but it's finally here!$"
+
+PetalburgCity_EventScript_ProfBirch_Text_1:
+	.string "And these, too!$"
+
+PetalburgCity_EventScript_ProfBirch_Text_2:
+	.string "{PLAYER} received some Mega Stones!$"
+
+PetalburgCity_EventScript_ProfBirch_Text_3:
+	.string "You're heading next to Fortree City,\n"
+	.string "right?\p"
+	.string "You might need this, then.$"
+
+PetalburgCity_EventScript_ProfBirch_Text_4:
+	.string "You can use Surf to cross bodies of\n"
+	.string "water.\p"
+	.string "In battle, it is a very strong move,\n"
+	.string "too!\p"
+	.string "Well, I hope your Pokédex is coming\n"
+	.string "along well.\p"
+	.string "Goodbye, {PLAYER}.$"

@@ -88,7 +88,7 @@ Route104_Text_DadPokenavCall:
 	.string "… … … … … Click!$"
 
 Route104_Text_RegisteredDadInPokenav:
-	.string "Registered Chrizz\n"
+	.string "Registered Gym Leader Chrizz\n"
 	.string "in the PokéNav.$"
 
 Route105_EventScript_Foster2::
