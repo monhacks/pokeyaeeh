@@ -502,7 +502,7 @@ static const u8 sDebugText_Util_Script_6[] =               _("Sky (Lv 30)");
 static const u8 sDebugText_Util_Script_7[] =               _("Script 7");
 static const u8 sDebugText_Util_Script_8[] =               _("Script 8");
 
-// Cheat Script menu
+// Script menu
 static const u8 sDebugText_Util_CHEAT_Script_1[] =               _("Candies");
 static const u8 sDebugText_Util_CHEAT_Script_2[] =               _("Cheat Script 2");
 static const u8 sDebugText_Util_CHEAT_Script_3[] =               _("Cheat Script 3");

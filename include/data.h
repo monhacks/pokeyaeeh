@@ -67,8 +67,6 @@ struct Trainer
              u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
              u8 padding:7;
     /*0x1F*/ u8 partySize;
-             u8 transition:7;
-             u8 hasCustomTransition:1;
 };
 
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))

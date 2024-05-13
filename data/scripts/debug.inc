@@ -153,6 +153,10 @@ Debug_EventScript_Script_6:: @ Sky Battle
     end
 
 Debug_EventScript_Script_7::
+	cleartrainerflag TRAINER_MAY_PLACEHOLDER
+	trainerbattle_double TRAINER_MAY_PLACEHOLDER, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
+	end
+
 Debug_EventScript_Script_8::
 	end
 
