@@ -1,21 +1,21 @@
-
-//                 Hidden Power IVs
-// Fire         .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
-// Ice          .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
-// Grass        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
-// Ground       .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30),
-// Fighting     .iv = TRAINER_PARTY_IVS(31, 31, 30, 30, 30, 30),
-// Water        .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 31),
-// Electric     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 31),
-// Poison       .iv = TRAINER_PARTY_IVS(31, 31, 30, 31, 30, 30),
-// Flying       .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
-// Psychic      .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 31),
-// Bug          .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 30),
-// Rock         .iv = TRAINER_PARTY_IVS(31, 30, 30, 30, 31, 30),
-// Ghost        .iv = TRAINER_PARTY_IVS(31, 31, 30, 31, 31, 30),
-// Dragon       .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 31),
-// Steel        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 30),
-// Dark         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+/*                 Hidden Power IVs
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31), // Fire
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31), // Ice
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31), // Grass
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30), // Ground 
+        .iv = TRAINER_PARTY_IVS(31, 31, 30, 30, 30, 30), // Fighting
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 31), // Water
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 31), // Electric
+        .iv = TRAINER_PARTY_IVS(31, 31, 30, 31, 30, 30), // Poison
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30), // Flying
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 31), // Psychic
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 30), // Bug
+        .iv = TRAINER_PARTY_IVS(31, 30, 30, 30, 31, 30), // Rock
+        .iv = TRAINER_PARTY_IVS(31, 31, 30, 31, 31, 30), // Ghost
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 31), // Dragon
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 30), // Steel
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), // Dark 
+*/
 
 static const struct TrainerMon sParty_Sawyer1[] = {
     {
