@@ -259,11 +259,12 @@
 #define STATUS_FIELD_MISTY_TERRAIN                  (1 << 7)
 #define STATUS_FIELD_ELECTRIC_TERRAIN               (1 << 8)
 #define STATUS_FIELD_PSYCHIC_TERRAIN                (1 << 9)
-#define STATUS_FIELD_ION_DELUGE                     (1 << 10)
-#define STATUS_FIELD_FAIRY_LOCK                     (1 << 11)
-#define STATUS_FIELD_TERRAIN_PERMANENT              (1 << 12)   // Overworld thunderstorm generates electric terrain
+#define STATUS_FIELD_METAL_TERRAIN                  (1 << 10)
+#define STATUS_FIELD_ION_DELUGE                     (1 << 11)
+#define STATUS_FIELD_FAIRY_LOCK                     (1 << 12)
+#define STATUS_FIELD_TERRAIN_PERMANENT              (1 << 13)   // Overworld thunderstorm generates electric terrain
 
-#define STATUS_FIELD_TERRAIN_ANY        (STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN)
+#define STATUS_FIELD_TERRAIN_ANY        (STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN | STATUS_FIELD_METAL_TERRAIN)
 
 // Flags describing move's result
 #define MOVE_RESULT_MISSED                (1 << 0)
@@ -529,11 +530,12 @@
 #define STARTING_STATUS_MISTY_TERRAIN       2
 #define STARTING_STATUS_GRASSY_TERRAIN      3
 #define STARTING_STATUS_PSYCHIC_TERRAIN     4
-#define STARTING_STATUS_TRICK_ROOM          5
-#define STARTING_STATUS_MAGIC_ROOM          6
-#define STARTING_STATUS_WONDER_ROOM         7
-#define STARTING_STATUS_TAILWIND_PLAYER     8
-#define STARTING_STATUS_TAILWIND_OPPONENT   9
+#define STARTING_STATUS_METAL_TERRAIN       5
+#define STARTING_STATUS_TRICK_ROOM          6
+#define STARTING_STATUS_MAGIC_ROOM          7
+#define STARTING_STATUS_WONDER_ROOM         8
+#define STARTING_STATUS_TAILWIND_PLAYER     9
+#define STARTING_STATUS_TAILWIND_OPPONENT   10
 
 // Constants for victory catch states
 #define VICTORY_CATCH_START    1

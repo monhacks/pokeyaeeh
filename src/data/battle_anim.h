@@ -1997,4 +1997,5 @@ const struct BattleAnimBackground gBattleAnimBackgroundTable[] =
     [BG_STEEL_BEAM_PLAYER]         = {gBattleAnimBgImage_Highspeed,               gBattleAnimBgPalette_SteelBeam,               gBattleAnimBgTilemap_HighspeedPlayer},
     [BG_CHLOROBLAST]               = {gBattleAnimBgImage_HydroCannon,             gBattleAnimBgPalette_Chloroblast,             gBattleAnimBgTilemap_HydroCannon},
     [BG_RAINBOW]                   = {gBattleAnimBgImage_Rainbow,                 gBattleAnimBGPalette_Rainbow,                 gBattleAnimBgTilemap_Rainbow},
+    [BG_METAL_TERRAIN]             = {gBattleAnimBgImage_ElectricTerrain,         gBattleAnimBgPalette_MetalTerrain,            gBattleAnimBgTilemap_ElectricTerrain},
 };

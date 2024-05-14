@@ -2010,6 +2010,7 @@ enum
     ENDTURN_MISTY_TERRAIN,
     ENDTURN_GRASSY_TERRAIN,
     ENDTURN_PSYCHIC_TERRAIN,
+    ENDTURN_METAL_TERRAIN,
     ENDTURN_ION_DELUGE,
     ENDTURN_FAIRY_LOCK,
     ENDTURN_RETALIATE,
@@ -2467,6 +2468,10 @@ u8 DoFieldEndTurnEffects(void)
             break;
         case ENDTURN_GRASSY_TERRAIN:
             effect = EndTurnTerrain(STATUS_FIELD_GRASSY_TERRAIN, B_MSG_TERRAIN_END_GRASSY);
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_METAL_TERRAIN:
+            effect = EndTurnTerrain(STATUS_FIELD_GRASSY_TERRAIN, B_MSG_TERRAIN_END_METAL);
             gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_PSYCHIC_TERRAIN:
@@ -4260,7 +4265,7 @@ static bool32 TryChangeBattleTerrain(u32 battler, u32 statusFlag, u8 *timer)
 {
     if ((!(gFieldStatuses & statusFlag) && (!gBattleStruct->isSkyBattle)))
     {
-        gFieldStatuses &= ~(STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN);
+        gFieldStatuses &= ~(STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN | STATUS_FIELD_METAL_TERRAIN);
         gFieldStatuses |= statusFlag;
         gDisableStructs[battler].terrainAbilityDone = FALSE;
 
@@ -4346,6 +4351,8 @@ bool32 ChangeTypeBasedOnTerrain(u32 battler)
         battlerType = TYPE_FAIRY;
     else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
         battlerType = TYPE_PSYCHIC;
+    else if (gFieldStatuses & STATUS_FIELD_METAL_TERRAIN)
+        battlerType = TYPE_STEEL;
     else // failsafe
         return FALSE;
 
@@ -4454,6 +4461,18 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 {
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_PSYCHIC;
                     gFieldStatuses |= STATUS_FIELD_PSYCHIC_TERRAIN;
+                    if (timerVal == 0)
+                        gFieldStatuses |= STATUS_FIELD_TERRAIN_PERMANENT;
+                    else
+                        gFieldTimers.terrainTimer = timerVal;
+                    effect = 2;
+                }
+                break;
+            case STARTING_STATUS_METAL_TERRAIN:
+                if (!(gFieldStatuses & STATUS_FIELD_METAL_TERRAIN))
+                {
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_METAL;
+                    gFieldStatuses |= STATUS_FIELD_METAL_TERRAIN;
                     if (timerVal == 0)
                         gFieldStatuses |= STATUS_FIELD_TERRAIN_PERMANENT;
                     else
@@ -9419,6 +9438,8 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_ELECTRIC_TERRAIN) && moveType == TYPE_ELECTRIC)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_PSYCHIC_TERRAIN) && moveType == TYPE_PSYCHIC)
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+    if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_METAL_TERRAIN) && moveType == TYPE_STEEL)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
     if (moveType == TYPE_ELECTRIC && ((gFieldStatuses & STATUS_FIELD_MUDSPORT)
     || AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, 0, ABILITYEFFECT_MUD_SPORT, 0)))

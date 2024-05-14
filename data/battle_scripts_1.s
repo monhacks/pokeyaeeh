@@ -450,6 +450,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_LAST_RESPECTS
 	.4byte BattleScript_EffectFilletAway              @ EFFECT_FILLET_AWAY
 	.4byte BattleScript_EffectShedTail                @ EFFECT_SHED_TAIL
+	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_DRAGON_CHEER
+	.4byte BattleScript_EffectMetalTerrain            @ EFFECT_METAL_TERRAIN
 
 BattleScript_EffectShedTail::
 	attackcanceler
@@ -2809,6 +2811,7 @@ BattleScript_EffectMistyTerrain:
 BattleScript_EffectGrassyTerrain:
 BattleScript_EffectElectricTerrain:
 BattleScript_EffectPsychicTerrain:
+BattleScript_EffectMetalTerrain:
 	attackcanceler
 	attackstring
 	ppreduce

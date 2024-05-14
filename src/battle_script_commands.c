@@ -8286,6 +8286,9 @@ static void RemoveAllTerrains(void)
     case STATUS_FIELD_PSYCHIC_TERRAIN:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_END_PSYCHIC;
         break;
+    case STATUS_FIELD_METAL_TERRAIN:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_END_METAL;
+        break;
     default:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_COUNT;  // failsafe
         break;
@@ -13909,6 +13912,8 @@ u16 GetNaturePowerMove(void)
         return MOVE_ENERGY_BALL;
     else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
         return MOVE_PSYCHIC;
+    else if (gFieldStatuses & STATUS_FIELD_METAL_TERRAIN)
+        return MOVE_FLASH_CANNON;
     else if (sNaturePowerMoves[gBattleTerrain] == MOVE_NONE)
         return MOVE_TRI_ATTACK;
     return sNaturePowerMoves[gBattleTerrain];
@@ -14585,6 +14590,9 @@ u16 GetSecretPowerMoveEffect(void)
             break;
         case STATUS_FIELD_PSYCHIC_TERRAIN:
             moveEffect = MOVE_EFFECT_SPD_MINUS_1;
+            break;
+        case STATUS_FIELD_METAL_TERRAIN:
+            moveEffect = MOVE_EFFECT_ATK_MINUS_1;
             break;
         default:
             moveEffect = MOVE_EFFECT_PARALYSIS;
@@ -16400,6 +16408,10 @@ void BS_SetRemoveTerrain(void)
     case EFFECT_PSYCHIC_TERRAIN:
         statusFlag = STATUS_FIELD_PSYCHIC_TERRAIN;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_PSYCHIC;
+        break;
+    case EFFECT_METAL_TERRAIN:
+        statusFlag = STATUS_FIELD_METAL_TERRAIN;
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_METAL;
         break;
     case EFFECT_HIT_SET_REMOVE_TERRAIN:
         switch (gBattleMoves[gCurrentMove].argument)

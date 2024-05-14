@@ -115,7 +115,7 @@ Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
 
 
 Text_TestIntro:
-	.string "Random wild battle!$"
+	.string "Test battle!$"
 
 Text_TestDefeat:
     .string "Victorious!$"
@@ -126,8 +126,8 @@ Debug_EventScript_Script_1::
 	end
 
 Debug_EventScript_Script_2::
-    cleartrainerflag TRAINER_ERIC
-	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
+    cleartrainerflag TRAINER_BRENDAN_PLACEHOLDER
+	trainerbattle_single TRAINER_BRENDAN_PLACEHOLDER, Text_TestIntro, Text_TestDefeat
 	end
 
 Debug_EventScript_Script_3:: @ both have Mega Evolution

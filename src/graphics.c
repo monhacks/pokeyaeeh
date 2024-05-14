@@ -1423,6 +1423,7 @@ const u32 gBattleAnimBgPalette_DynamaxCannon[] = INCBIN_U32("graphics/battle_ani
 const u32 gBattleAnimBgImage_ElectricTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/electric_terrain.4bpp.lz");
 const u32 gBattleAnimBgPalette_ElectricTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/electric_terrain.gbapal.lz");
 const u32 gBattleAnimBgTilemap_ElectricTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/electric_terrain.bin.lz");
+const u32 gBattleAnimBgPalette_MetalTerrain[] = INCBIN_U32("graphics/battle_anims/backgrounds/metal_terrain.gbapal.lz");
 
 const u32 gBattleAnimBgImage_Fire1[] = INCBIN_U32("graphics/battle_anims/backgrounds/fire1.4bpp.lz");
 const u32 gBattleAnimBgPalette_Fire1[] = INCBIN_U32("graphics/battle_anims/backgrounds/fire1.gbapal.lz");
