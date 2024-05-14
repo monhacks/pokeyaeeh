@@ -570,7 +570,7 @@
         .noFlip = FALSE,                                                             \
     }
 
-#define GENESECT_SPECIES_INFO                         \
+#define GENESECT_SPECIES_INFO(type)                   \
     {                                                 \
         .baseHP        = 71,                          \
         .baseAttack    = 120,                         \
@@ -578,7 +578,7 @@
         .baseSpeed     = 99,                          \
         .baseSpAttack  = 120,                         \
         .baseSpDefense = 95,                          \
-        .types = { TYPE_BUG, TYPE_STEEL},             \
+        .types = { type, TYPE_STEEL},                 \
         .catchRate = 3,                               \
         .expYield = 270,                              \
         .evYield_Attack    = 1,                       \
@@ -16185,7 +16185,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_MYTHICAL,
     },
 
-    [SPECIES_GENESECT] = GENESECT_SPECIES_INFO,
+    [SPECIES_GENESECT] = GENESECT_SPECIES_INFO(TYPE_BUG),
 #endif
 
 #if P_GEN_6_POKEMON == TRUE
@@ -24246,10 +24246,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_MYTHICAL,
     },
 
-    [SPECIES_GENESECT_DOUSE_DRIVE] = GENESECT_SPECIES_INFO,
-    [SPECIES_GENESECT_SHOCK_DRIVE] = GENESECT_SPECIES_INFO,
-    [SPECIES_GENESECT_BURN_DRIVE] = GENESECT_SPECIES_INFO,
-    [SPECIES_GENESECT_CHILL_DRIVE] = GENESECT_SPECIES_INFO,
+    [SPECIES_GENESECT_DOUSE_DRIVE] = GENESECT_SPECIES_INFO(TYPE_WATER),
+    [SPECIES_GENESECT_SHOCK_DRIVE] = GENESECT_SPECIES_INFO(TYPE_ELECTRIC),
+    [SPECIES_GENESECT_BURN_DRIVE] = GENESECT_SPECIES_INFO(TYPE_FIRE),
+    [SPECIES_GENESECT_CHILL_DRIVE] = GENESECT_SPECIES_INFO(TYPE_ICE),
 #endif
 
 #if P_GEN_6_POKEMON == TRUE
