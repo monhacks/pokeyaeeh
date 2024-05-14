@@ -267,7 +267,7 @@ struct DebugMonData
     u8 level;
     bool8 isShiny:1;
     u8 nature:5;
-    u8 abilityNum:2;
+    u16 abilityNum:2;
     u8  mon_iv_hp;
     u8  mon_iv_atk;
     u8  mon_iv_def;
@@ -3416,7 +3416,7 @@ static void DebugAction_Give_Pokemon_SelectNature(u8 taskId)
 
     if (JOY_NEW(A_BUTTON))
     {
-        u8 abilityId;
+        u16 abilityId;
         sDebugMonData->nature = gTasks[taskId].tInput;
         gTasks[taskId].tInput = 0;
         gTasks[taskId].tDigit = 0;
@@ -3771,7 +3771,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
     u8 level        = sDebugMonData->level;
     u8 isShiny      = sDebugMonData->isShiny; //Shiny: no 0, yes 1
     u8 nature       = sDebugMonData->nature;
-    u8 abilityNum   = sDebugMonData->abilityNum;
+    u16 abilityNum  = sDebugMonData->abilityNum;
     moves[0]        = sDebugMonData->mon_move_0;
     moves[1]        = sDebugMonData->mon_move_1;
     moves[2]        = sDebugMonData->mon_move_2;
