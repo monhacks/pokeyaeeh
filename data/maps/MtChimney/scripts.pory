@@ -404,6 +404,11 @@ MtChimney_EventScript_Tabitha::
 	msgbox MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MtChimney_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyIntro, MtChimney_Text_CourtneyDefeat
+	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 MtChimney_EventScript_Grunt2::
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_2, MtChimney_Text_Grunt2Intro, MtChimney_Text_Grunt2Defeat
 	msgbox MtChimney_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
@@ -592,7 +597,6 @@ MtChimney_Text_TabithaIntro:
 	.string "from Meteor Falls to the Boss!$"
 
 MtChimney_Text_TabithaDefeat:
-	.string "Hehehe…\p"
 	.string "Even though I've lost, if our leader\n"
 	.string "awakens that thing…$"
 
@@ -600,6 +604,16 @@ MtChimney_Text_TabithaPostBattle:
 	.string "Boss, hurry!\n"
 	.string "Give it the Meteorite's energy!\p"
 	.string "Hehehe…$"
+
+MtChimney_Text_CourtneyIntro:
+	.string "It's over for you, kiddo!\p"
+	.string "Our Boss is gonna awaken that thing!$"
+
+MtChimney_Text_CourtneyDefeat:
+	.string "You're too late.$"
+
+MtChimney_Text_CourtneyPostBattle:
+	.string "Do it now, Boss!$"
 
 MtChimney_Text_Grunt2Intro:
 	.string "We of Team Magma are working hard for\n"

@@ -8526,15 +8526,15 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_ArchieMuseum),
     },
 
-    [TRAINER_ROXANNE_4] =
+    [TRAINER_COURTNEY_MT_CHIMNEY] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("Dor"),
-        .doubleBattle = TRUE,
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
+        .trainerName = _("Courtney"),
+        .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Roxanne4),
+        .party = TRAINER_PARTY(sParty_CourtneyMtChimney),
     },
 
     [TRAINER_ROXANNE_5] =

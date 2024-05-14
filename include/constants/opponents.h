@@ -775,7 +775,7 @@
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
 #define TRAINER_ROXANNE_2                   770
 #define TRAINER_ARCHIE_MUSEUM               771
-#define TRAINER_ROXANNE_4                   772
+#define TRAINER_COURTNEY_MT_CHIMNEY         772
 #define TRAINER_ROXANNE_5                   773
 #define TRAINER_BRAWLY_2                    774
 #define TRAINER_BRAWLY_3                    775

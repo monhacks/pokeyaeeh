@@ -6879,7 +6879,7 @@ static const struct LevelUpMove sSceptileLevelUpLearnset[] = {
     LEVEL_UP_MOVE(36, MOVE_DUAL_CHOP),
     LEVEL_UP_MOVE(41, MOVE_LEAF_LEAP),
     LEVEL_UP_MOVE(45, MOVE_X_SCISSOR),
-    LEVEL_UP_MOVE(51, MOVE_FALSE_SWIPE),
+    LEVEL_UP_MOVE(51, MOVE_ARM_THRUST),
     LEVEL_UP_MOVE(55, MOVE_SCREECH),
     LEVEL_UP_MOVE(56, MOVE_ENDEAVOR),
     LEVEL_UP_MOVE(63, MOVE_LEAF_STORM),
@@ -10667,7 +10667,6 @@ static const struct LevelUpMove sLuxioLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLuxrayLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_ROUSED_FANGS),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),

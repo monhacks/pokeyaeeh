@@ -113,7 +113,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FIRE_PUNCH] =
     {
         .effect = EFFECT_BURN_HIT,
-        .power = 75,
+        .power = 80,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 24,
@@ -129,12 +129,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ICE_PUNCH] =
     {
-        #if B_USE_FROSTBITE == TRUE
-            .effect = EFFECT_FROSTBITE_HIT,
-        #else
-            .effect = EFFECT_FREEZE_HIT,
-        #endif
-        .power = 75,
+        .effect = EFFECT_FROSTBITE_HIT,
+        .power = 80,
         .type = TYPE_ICE,
         .accuracy = 100,
         .pp = 24,
@@ -151,7 +147,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_THUNDER_PUNCH] =
     {
         .effect = EFFECT_PARALYZE_HIT,
-        .power = 75,
+        .power = 80,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 24,
@@ -6634,7 +6630,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
-        .punchingMove = TRUE,
     },
 
     [MOVE_PAYBACK] =
@@ -7283,7 +7278,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_DRAIN_PUNCH] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 75,
+            .power = 80,
             .pp = 24,
         #else
             .power = 60,
@@ -14720,11 +14715,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_KNUCKLE_PUNCH] =
     {
         .effect = EFFECT_FLINCH_HIT,
-        .power = 85,
+        .power = 90,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 24,
-        .secondaryEffectChance = 15,
+        .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
