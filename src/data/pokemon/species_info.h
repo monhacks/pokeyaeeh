@@ -13412,10 +13412,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_GIGALITH] =
     {
         .baseHP        = 85,
-        .baseAttack    = 80,
+        .baseAttack    = 60,
         .baseDefense   = 130,
         .baseSpeed     = 25,
-        .baseSpAttack  = 115,
+        .baseSpAttack  = 135,
         #if P_UPDATED_STATS >= GEN_6
             .baseSpDefense = 80,
         #else

@@ -3300,6 +3300,7 @@ const u16 gEggMoves[] = {
               MOVE_DOUBLE_KICK,
               MOVE_ENDURE,
               MOVE_FEINT,
+              MOVE_HIGH_JUMP_KICK,
               MOVE_ME_FIRST,
               MOVE_RAGE,
               MOVE_SAND_ATTACK,
