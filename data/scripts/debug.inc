@@ -126,8 +126,10 @@ Debug_EventScript_Script_1::
 	end
 
 Debug_EventScript_Script_2::
-    cleartrainerflag TRAINER_BRENDAN_PLACEHOLDER
-	trainerbattle_single TRAINER_BRENDAN_PLACEHOLDER, Text_TestIntro, Text_TestDefeat
+	msgbox Text_TestIntro, MSGBOX_DEFAULT
+    cleartrainerflag TRAINER_COURTNEY_MT_CHIMNEY
+	cleartrainerflag TRAINER_TABITHA_MT_CHIMNEY
+	trainerbattle_two_trainers TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyDefeat, TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaDefeat
 	end
 
 Debug_EventScript_Script_3:: @ both have Mega Evolution
