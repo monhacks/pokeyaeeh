@@ -2470,12 +2470,12 @@ u8 DoFieldEndTurnEffects(void)
             effect = EndTurnTerrain(STATUS_FIELD_GRASSY_TERRAIN, B_MSG_TERRAIN_END_GRASSY);
             gBattleStruct->turnCountersTracker++;
             break;
-        case ENDTURN_METAL_TERRAIN:
-            effect = EndTurnTerrain(STATUS_FIELD_GRASSY_TERRAIN, B_MSG_TERRAIN_END_METAL);
-            gBattleStruct->turnCountersTracker++;
-            break;
         case ENDTURN_PSYCHIC_TERRAIN:
             effect = EndTurnTerrain(STATUS_FIELD_PSYCHIC_TERRAIN, B_MSG_TERRAIN_END_PSYCHIC);
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_METAL_TERRAIN:
+            effect = EndTurnTerrain(STATUS_FIELD_METAL_TERRAIN, B_MSG_TERRAIN_END_METAL);
             gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_WATER_SPORT:

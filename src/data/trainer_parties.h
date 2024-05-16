@@ -16760,7 +16760,7 @@ static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     .lvl = 1,
     .species = SPECIES_GROVYLE,
     .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_BULLET_SEED, MOVE_SCALE_SHOT, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
