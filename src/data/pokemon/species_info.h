@@ -1390,7 +1390,7 @@
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = {EGG_GROUP_FIELD, EGG_GROUP_MINERAL},                      \
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL},  \
+        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_METAL_SURGE},  \
         .bodyColor = BODY_COLOR_GREEN,                                          \
         .noFlip = FALSE
 
@@ -20702,7 +20702,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_MINERAL},
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL},
+        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_METAL_SURGE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
