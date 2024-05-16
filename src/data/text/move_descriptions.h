@@ -1915,8 +1915,8 @@ static const u8 sQuiverDanceDescription[] = _(
     "Sp. Def and Speed.");
 
 static const u8 sHeavySlamDescription[] = _(
-    "Does more damage if the\n"
-    "user outweighs the foe.");
+    "Does more damage the\n"
+    "higher the user's Def.");
 
 static const u8 sSynchronoiseDescription[] = _(
     "An odd shock wave that only\n"
@@ -5050,7 +5050,6 @@ static const u8 sMoveFourLineDescription_StormThrow[] = _("A fierce blow upon\nt
 static const u8 sMoveFourLineDescription_FlameBurst[] = _("The foe is hit with\na bursting flame.\nThe flame hits the\nfoe's ally, too.");
 static const u8 sMoveFourLineDescription_SludgeWave[] = _("It swamps the area\naround the user\nwith sludge. It may\npoison those hit.");
 static const u8 sMoveFourLineDescription_QuiverDance[] = _("A beautiful, mystic\ndance which boosts\nthe user's Sp. Atk,\nSp. Def and Speed.");
-static const u8 sMoveFourLineDescription_HeavySlam[] = _("The user slams\nthe foe with its\nheavy body. Heavier\nusers are stronger.");
 static const u8 sMoveFourLineDescription_Synchronoise[] = _("An odd shack wave\nthat only hurts\nPokémon of the same\ntype as the user.");
 static const u8 sMoveFourLineDescription_ElectroBall[] = _("An electric orb is\nhurled at the foe.\nFaster users deal\ngreater damage.");
 static const u8 sMoveFourLineDescription_Soak[] = _("The foe is struck\nby a torrent of\nwater which changes\nits type to Water.");
@@ -5927,7 +5926,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_FLAME_BURST       - 1] = sMoveFourLineDescription_FlameBurst,
     [MOVE_SLUDGE_WAVE       - 1] = sMoveFourLineDescription_SludgeWave,
     [MOVE_QUIVER_DANCE      - 1] = sMoveFourLineDescription_QuiverDance,
-    [MOVE_HEAVY_SLAM        - 1] = sMoveFourLineDescription_HeavySlam,
+    [MOVE_HEAVY_SLAM        - 1] = sMoveFourLineDescription_BodyPress,
     [MOVE_SYNCHRONOISE      - 1] = sMoveFourLineDescription_Synchronoise,
     [MOVE_ELECTRO_BALL      - 1] = sMoveFourLineDescription_ElectroBall,
     [MOVE_SOAK              - 1] = sMoveFourLineDescription_Soak,
@@ -5978,7 +5977,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_HORN_LEECH        - 1] = sMoveFourLineDescription_MegaDrain,
     [MOVE_SACRED_SWORD      - 1] = sMoveFourLineDescription_ChipAway,
     [MOVE_RAZOR_SHELL       - 1] = sMoveFourLineDescription_RazorShell,
-    [MOVE_HEAT_CRASH        - 1] = sMoveFourLineDescription_HeavySlam,
+    [MOVE_HEAT_CRASH        - 1] = sMoveFourLineDescription_HeatCrash,
     [MOVE_LEAF_TORNADO      - 1] = sMoveFourLineDescription_LeafTornado,
     [MOVE_STEAMROLLER       - 1] = sMoveFourLineDescription_Steamroller,
     [MOVE_COTTON_GUARD      - 1] = sMoveFourLineDescription_CottonGuard,
