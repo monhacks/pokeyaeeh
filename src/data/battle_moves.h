@@ -8530,7 +8530,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_HEAVY_SLAM] =
     {
         .effect = EFFECT_BODY_PRESS,
-        .power = 1,
+        .power = 80,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 16,
