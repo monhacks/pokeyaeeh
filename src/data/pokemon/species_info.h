@@ -8121,10 +8121,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 1,
         .baseAttack    = 100,
-        .baseDefense   = 30,
-        .baseSpeed     = 40,
+        .baseDefense   = 15,
+        .baseSpeed     = 80,
         .baseSpAttack  = 80,
-        .baseSpDefense = 30,
+        .baseSpDefense = 15,
         .types = { TYPE_BUG, TYPE_GHOST},
         .catchRate = 45,
         .expYield = 83,
