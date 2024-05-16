@@ -862,9 +862,11 @@ static const u8 sText_FogIsDeep[] = _("The fog is deep…");
 static const u8 sText_FogBlownAway[] = _("The fog was blown away!");
 static const u8 sText_AtkTrappedDefInAHarshWhirlpool[] = _("{B_ATK_NAME_WITH_PREFIX} trapped the\n{B_DEF_NAME_WITH_PREFIX} in a harsh whirlpool!");
 static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting from\nthe syrup covering {B_ATK_NAME_WITH_PREFIX}!");
+static const u8 sText_PkmnTeleportedaway[] = _("{B_ATK_NAME_WITH_PREFIX} teleported\naway!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_ESCASPEARTISTTELEPORTED - BATTLESTRINGS_TABLE_START] = sText_PkmnTeleportedaway,
     [STRINGID_LEGENDARYFENDEDBALLOFF - BATTLESTRINGS_TABLE_START] = sText_LegendaryFendedBallOff,
     [STRINGID_YOUMUSTWEAKENIT - BATTLESTRINGS_TABLE_START] = sText_YouMustWeakenIt,
     [STRINGID_VICTORYCATCH - BATTLESTRINGS_TABLE_START] = sText_VictoryCatch,

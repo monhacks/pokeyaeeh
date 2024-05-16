@@ -308,6 +308,7 @@ static const u8 sBombasticDescription[] = _("Boosts ballistic moves. (50%)");
 static const u8 sGroundShockDescription[] = _("Electric hits Ground-types.");
 static const u8 sCrypticPowerDescription[] = _("Doubles Special Attack.");
 static const u8 sImpenetrableDescription[] = _("Only damaged by direct attacks.");
+static const u8 sEscapeArtistDescription[] = _("Teleports away if move misses or fails.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -635,6 +636,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
     [ABILITY_CRYPTIC_POWER] = _("Cryptic Power"),
     [ABILITY_IMPENETRABLE] = _("Impenetrable"),
+    [ABILITY_ESCAPE_ARTIST] = _("Escape Artist"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -962,6 +964,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GROUNDSHOCK] = _("Ground Shock"),
     [ABILITY_CRYPTIC_POWER] = _("Cryptic Power"),
     [ABILITY_IMPENETRABLE] = _("Impenetrable"),
+    [ABILITY_ESCAPE_ARTIST] = _("EscapeArtist"),
 };
 #endif
 
@@ -1290,4 +1293,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_GROUNDSHOCK] = sGroundShockDescription,
     [ABILITY_CRYPTIC_POWER] = sCrypticPowerDescription,
     [ABILITY_IMPENETRABLE] = sImpenetrableDescription,
+    [ABILITY_ESCAPE_ARTIST] = sEscapeArtistDescription,
 };

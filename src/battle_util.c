@@ -6245,6 +6245,23 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
                 effect++;
             }
+            break;
+        case ABILITY_ESCAPE_ARTIST:
+            if (IsBattlerAlive(battler)
+             && (gMoveResultFlags & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_DOESNT_AFFECT_FOE))
+             && !gSpecialStatuses[battler].dancerUsedMove
+             && gBattlerAttacker != gBattlerTarget)
+            {
+                gSpecialStatuses[battler].dancerUsedMove = TRUE;
+                gBattleStruct->atkCancellerTracker = 0;
+                gBattlerAbility = battler;
+                gMoveResultFlags = 0;
+                gHitMarker &= ~HITMARKER_NO_ATTACKSTRING;
+                gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
+                BattleScriptExecute(BattleScript_EscapeArtistActivates);
+                effect++;
+            }
+            break;
         }
         break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
