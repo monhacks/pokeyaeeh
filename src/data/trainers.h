@@ -9424,7 +9424,6 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_BRENDAN,
         .trainerName = _("Brendan"),
         .doubleBattle = FALSE,
-        .startingStatus = STARTING_STATUS_METAL_TERRAIN,
         .aiFlags = AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_BrendanLinkPlaceholder),
     },

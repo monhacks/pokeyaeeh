@@ -14851,6 +14851,23 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
     },
 
+    [MOVE_METAL_TERRAIN] =
+    {
+        .effect = EFFECT_METAL_TERRAIN,
+        .power = 0,
+        .type = TYPE_STEEL,
+        .accuracy = 0,
+        .pp = 16,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .skyBattleBanned = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

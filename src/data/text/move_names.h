@@ -860,6 +860,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_MAELSTROM] = _("Maelstrom"),
     [MOVE_FROST_BLADE] = _("Frost Blade"),
     [MOVE_LEAF_LEAP] = _("Leaf Leap"),
+    [MOVE_METAL_TERRAIN] = _("Metal Terrain"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
     [MOVE_MAX_STRIKE] = _("Max Strike"),
@@ -1777,6 +1778,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_MAELSTROM] = _("Maelstrom"),
     [MOVE_FROST_BLADE] = _("Frost Blade"),
     [MOVE_LEAF_LEAP] = _("Leaf Leap"),
+    [MOVE_METAL_TERRAIN] = _("MetalTerrain"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

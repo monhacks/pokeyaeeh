@@ -956,8 +956,8 @@
         .eggCycles = 120,                               \
         .friendship = 0,                                \
         .growthRate = GROWTH_SLOW,                      \
-        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},            \
-        .abilities = {ABILITY_SOUL_HEART, ABILITY_NONE},\
+        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},        \
+        .abilities = {ABILITY_SOUL_HEART, ABILITY_NONE, ABILITY_METAL_SURGE},  \
         .bodyColor = color,                             \
         .noFlip = FALSE,                                \
         .flags = SPECIES_FLAG_MYTHICAL,                 \
@@ -15061,7 +15061,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
-        .abilities = {ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY},
+        .abilities = {ABILITY_PLUS, ABILITY_METAL_SURGE, ABILITY_CLEAR_BODY},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
     },
@@ -15083,7 +15083,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
-        .abilities = {ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY},
+        .abilities = {ABILITY_PLUS, ABILITY_METAL_SURGE, ABILITY_CLEAR_BODY},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
     },
@@ -15105,7 +15105,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
-        .abilities = {ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY},
+        .abilities = {ABILITY_PLUS, ABILITY_METAL_SURGE, ABILITY_CLEAR_BODY},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
     },

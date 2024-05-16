@@ -3350,6 +3350,10 @@ const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
 
+static const u8 sMetalTerrainDescription[] = _(
+    "Metallizes the ground for\n"
+    "5 turns. Prevents stat drops.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4210,8 +4214,9 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_AQUA_FANGS - 1] = sAquaFangsDescription,
     [MOVE_GLACIAL_SLAM - 1] = sGlacialSlamDescription,
     [MOVE_MAELSTROM - 1] = sMaelstromDescription,
-    [MOVE_FROST_BLADE - 1] = sMaelstromDescription,
+    [MOVE_FROST_BLADE - 1] = sFrostBladeDescription,
     [MOVE_LEAF_LEAP -1 ] = sAcrobaticsDescription,
+    [MOVE_METAL_TERRAIN - 1] = sMetalTerrainDescription,
 };
 
 static const u8 sMoveFourLineDescription_Pound[] = _("A physical attack\ndelivered with a\nlong tail or a\nforeleg, etc.");
@@ -5416,6 +5421,7 @@ static const u8 sMoveFourLineDescription_AquaFangs[] = _("The user's hydro-\npow
 static const u8 sMoveFourLineDescription_GlacialSlam[] = _("A cold, freezing\ncharge which harms\nthe user. It may\ncause a frostbite.");
 static const u8 sMoveFourLineDescription_Maelstrom[] = _("The foe is trapped\nin a fast, harsh\nwhirlpool for two\nto five turns.");
 static const u8 sMoveFourLineDescription_FrostBlade[] = _("A sharp piece of\nice is used to slash.\nMay cause frostbite.\nHigh Crit ratio.");
+static const u8 sMoveFourLineDescription_MetalTerrain[] = _("Boosts Steel-type\nmoves for 5 turns,\nand prevents stats\nfrom falling for all.");
 
 
 #endif
@@ -6298,6 +6304,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_GLACIAL_SLAM      - 1] = sMoveFourLineDescription_GlacialSlam,
     [MOVE_MAELSTROM         - 1] = sMoveFourLineDescription_Maelstrom,
     [MOVE_FROST_BLADE       - 1] = sMoveFourLineDescription_FrostBlade,
-    [MOVE_LEAF_LEAP        - 1 ] = sMoveFourLineDescription_Acrobatics,
+    [MOVE_LEAF_LEAP         - 1] = sMoveFourLineDescription_Acrobatics,
+    [MOVE_METAL_TERRAIN     - 1] = sMoveFourLineDescription_MetalTerrain,
 #endif
 };

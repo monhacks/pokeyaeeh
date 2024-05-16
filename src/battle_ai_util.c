@@ -303,6 +303,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BOMBASTIC] = 6,
     [ABILITY_CRYPTIC_POWER] = 10,
     [ABILITY_ESCAPE_ARTIST] = 10,
+    [ABILITY_METAL_SURGE] = 8,
 };
 
 static const u16 sEncouragedEncoreEffects[] =

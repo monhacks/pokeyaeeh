@@ -886,6 +886,7 @@ gBattleAnims_Moves::
 	.4byte Move_MAELSTROM
 	.4byte Move_FROST_BLADE
 	.4byte Move_LEAF_LEAP
+	.4byte Move_METAL_TERRAIN
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -9067,6 +9068,43 @@ Move_MISTY_TERRAIN::
 	waitforvisualfinish
 	delay 4
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 7, 0, RGB(31, 24, 31)
+	waitforvisualfinish
+	end
+
+Move_METAL_TERRAIN:
+	loadspritegfx ANIM_TAG_ORBS @Recover Ball
+	loadspritegfx ANIM_TAG_METAL_BALL @Green Star
+	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	waitforvisualfinish
+	delay 30
+	createvisualtask AnimTask_BlendMonInAndOut, 5, ANIM_ATTACKER, RGB(11, 26, 11), 12, 5, 1
+	delay 4
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	playsewithpan SE_M_REVERSAL, SOUND_PAN_ATTACKER
+	createsprite gMetalTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 0
+	createsprite gMetalTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 42
+	createsprite gMetalTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 84
+	createsprite gMetalTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 126
+	createsprite gMetalTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 168
+	createsprite gMetalTerrainOrbsTemplate, ANIM_ATTACKER, 2, 26, 210
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 0, 4, RGB(11, 26, 11)
+	delay 52
+	setarg 7, 0xFFFF
+	playsewithpan SE_M_HEAL_BELL, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 0
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 32
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 64
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 96
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 128
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 160
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 192
+	createsprite gMetalTerrainStarTemplate, ANIM_TARGET, 2, 224
+	panse_adjustnone SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +1, 0x0
+	waitforvisualfinish
+	delay 4
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 4, 0, RGB(31, 24, 31)
 	waitforvisualfinish
 	end
 
