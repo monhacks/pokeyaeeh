@@ -3996,7 +3996,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         default: // protect
             ProtectChecks(battlerAtk, battlerDef, move, predictedMove, &score);
             if (gDisableStructs[battlerAtk].isFirstTurn && aiData->abilities[battlerAtk] == ABILITY_SPEED_BOOST)
-            ADJUST_SCORE(10);
+            ADJUST_SCORE(15);
             break;
         }
         break;
@@ -4705,7 +4705,10 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_METAL_TERRAIN:
         ADJUST_SCORE(2);
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_TERRAIN_EXTENDER)
-            ADJUST_SCORE(2);
+            ADJUST_SCORE(10);
+        
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SEEDS)
+            ADJUST_SCORE(10);
         break;
     case EFFECT_PLEDGE:
         if (isDoubleBattle && HasMoveEffect(BATTLE_PARTNER(battlerAtk), EFFECT_PLEDGE))
