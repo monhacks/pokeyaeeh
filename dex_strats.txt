@@ -1,0 +1,11 @@
+Mawile Mega
+{ 
+    name = Heavy Hitter
+    item = Mawilite
+    ability = Huge Power
+    evs = 0, 252, 4, 0, 0, 252
+    nature = Adamant
+    moves = Iron Head, Play Rough, Swords Dance, Sucker Punch
+    comment = Physical sweeping Mawile set.
+    tags = Krypto
+}
