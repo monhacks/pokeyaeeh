@@ -1098,11 +1098,13 @@ BattleScript_EffectMeteorBeam::
 	@ DecideTurn
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_TwoTurnMovesSecondTurn
 	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING, BattleScript_TwoTurnMovesSecondTurn
+	jumpifmove MOVE_RAZOR_WIND, BattleScript_SetStringRazorWind
 	jumpifmove MOVE_METEOR_BEAM, BattleScript_SetStringMeteorBeam
 	jumpifmove MOVE_ELECTRO_SHOT, BattleScript_SetStringElectroShock
 BattleScript_TryCharging:
-	call BattleScript_FirstChargingTurnMeteorBeam
 	jumpifmove MOVE_METEOR_BEAM, BattleScript_TryMeteorBeam
+	call BattleScript_FirstChargingTurnMeteorBeam
+	jumpifmove MOVE_RAZOR_WIND, BattleScript_TryRazorWind
 	jumpifweatheraffected BS_ATTACKER, B_WEATHER_RAIN, BattleScript_TwoTurnMovesSecondTurn @ Check for move Electro Shot
 BattleScript_TryMeteorBeam:
 	call BattleScript_FirstChargingTurnMeteorBeam
@@ -1110,12 +1112,21 @@ BattleScript_TryMeteorBeam:
 	call BattleScript_PowerHerbActivation
 	goto BattleScript_TwoTurnMovesSecondTurn
 
+BattleScript_TryRazorWind:
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_FOG, BattleScript_TwoTurnMovesSecondTurn
+	call BattleScript_TryMeteorBeam
+	end
+
 BattleScript_SetStringMeteorBeam:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_METEOR_BEAM
 	goto BattleScript_TryCharging
 
 BattleScript_SetStringElectroShock:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_ELECTRO_SHOCK
+	goto BattleScript_TryCharging
+
+BattleScript_SetStringRazorWind:
+	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
 	goto BattleScript_TryCharging
 
 BattleScript_FirstChargingTurnMeteorBeam::
@@ -4529,7 +4540,6 @@ BattleScript_EffectTwoTurnsAttack::
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_TwoTurnMovesSecondTurn
 	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING, BattleScript_TwoTurnMovesSecondTurn
 	jumpifmove MOVE_SKY_ATTACK, BattleScript_EffectTwoTurnsAttackSkyAttack
-	jumpifmove MOVE_RAZOR_WIND, BattleScript_EffectTwoTurnsAttackRazorWind
 	jumpifmove MOVE_ICE_BURN, BattleScript_EffectTwoTurnsAttackIceBurn
 	jumpifmove MOVE_FREEZE_SHOCK, BattleScript_EffectTwoTurnsAttackFreezeShock
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
@@ -4540,9 +4550,6 @@ BattleScript_EffectTwoTurnsAttackContinue:
 	goto BattleScript_TwoTurnMovesSecondTurn
 BattleScript_EffectTwoTurnsAttackSkyAttack:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_SKY_ATTACK
-	goto BattleScript_EffectTwoTurnsAttackContinue
-BattleScript_EffectTwoTurnsAttackRazorWind:
-	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
 	goto BattleScript_EffectTwoTurnsAttackContinue
 BattleScript_EffectTwoTurnsAttackIceBurn:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND

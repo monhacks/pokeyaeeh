@@ -1586,6 +1586,12 @@ static bool32 AccuracyCalcHelper(u16 move)
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
+        if (IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_FOG) && (move == MOVE_RAZOR_WIND))
+        {
+            // razor wind ignore acc checks in fog
+            JumpIfMoveFailed(7, move);
+            return TRUE;
+        }
         else if (B_BLIZZARD_HAIL >= GEN_4 && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && (move == MOVE_BLIZZARD || gBattleMoves[move].effect == EFFECT_HURRICANE))
         {
             // Blizzard ignores acc checks in Hail in Gen4+
@@ -1649,6 +1655,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         buff = MAX_STAT_STAGE;
 
     moveAcc = gBattleMoves[move].accuracy;
+
     // Check Thunder and Hurricane on sunny weather.
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN)
       && (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE))
@@ -1657,6 +1664,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN)
       && (move == MOVE_HEAT_WAVE))
         moveAcc = 50;
+
     // Check Thunder on rainy weather.
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN)
       && (gBattleMoves[move].effect == EFFECT_THUNDER))
@@ -1669,6 +1677,11 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN)
       && (move == MOVE_HEAT_WAVE))
         moveAcc = 0;
+    // Check Razor Wind on foggy weather.
+    if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_FOG)
+      && (move == MOVE_RAZOR_WIND))
+        moveAcc = 0;
+
     // Check Wonder Skin.
     if (defAbility == ABILITY_WONDER_SKIN && IS_MOVE_STATUS(move) && moveAcc > 50)
         moveAcc = 50;

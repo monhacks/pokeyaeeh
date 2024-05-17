@@ -51,8 +51,8 @@ static const u8 sGuillotineDescription[] = _(
     "that slicing the foe.");
 
 static const u8 sRazorWindDescription[] = _(
-    "A 2-turn move that strikes\n"
-    "the foe on the 2nd turn.");
+    "A 2-turn move that raises\n"
+    "Sp. Attack before attacking.");
 
 static const u8 sSwordsDanceDescription[] = _(
     "A fighting dance that\n"
@@ -3263,8 +3263,8 @@ static const u8 sIvyCudgelDescription[] = _(
     "High critical-hit ratio.");
 
 static const u8 sElectroShotDescription[] = _(
-    "Absorbs electricity in one turn,\n"
-    "then attacks next turn.");
+    "A 2-turn move that raises\n"
+    "Sp. Attack before attacking.");
 
 static const u8 sTeraStarstormDescription[] = _(
     "Damages all opponents if user is\n"
@@ -4230,8 +4230,8 @@ static const u8 sMoveFourLineDescription_IcePunch[] = _("The foe is punched\nwit
 static const u8 sMoveFourLineDescription_ThunderPunch[] = _("The foe is punched\nwith an electrified\nfist. It may leave\nthe foe paralyzed.");
 static const u8 sMoveFourLineDescription_Scratch[] = _("Hard, pointed, and\nsharp claws rake\nthe foe.");
 static const u8 sMoveFourLineDescription_ViceGrip[] = _("Huge, impressive\npincers grip and\nsqueeze the foe.");
-static const u8 sMoveFourLineDescription_Guillotine[] = _("A vicious tearing\nattack with pincers\nthat slices the foe\nif it hits.");
-static const u8 sMoveFourLineDescription_RazorWind[] = _("Blades of wind hit\nthe foe on the 2nd\nturn. It has a high\ncritical-hit ratio.");
+static const u8 sMoveFourLineDescription_Guillotine[] = _("A vicious tearing\nattack with pincers\nthat slices the foe\nwhen it hits.");
+static const u8 sMoveFourLineDescription_RazorWind[] = _("A 2-turn move that\nnever misses in Fog.\nRaises Sp. Attack\nbefore attacking.");
 
 #if CONFIG_DECAPITALIZE_MOVE_DESCRIPTION_STRINGS
 
