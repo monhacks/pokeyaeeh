@@ -365,7 +365,27 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_GALLADITE] = {gItemIcon_Galladite, gItemIconPalette_Galladite},
     [ITEM_AUDINITE] = {gItemIcon_Audinite, gItemIconPalette_Audinite},
     [ITEM_DIANCITE] = {gItemIcon_Diancite, gItemIconPalette_Diancite},
-    [ITEM_NIDOQUEENITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite}, // TODO: new palette
+    // New Mega Stones
+    // TODO: new palette
+    [ITEM_BUTTERFRITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_MACHAMPITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_KINGLERITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_LAPRASITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_GARBODORITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_MELMETALITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_RILLABOOMITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_CINDERACITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_INTELEONITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_CORVIKNIGHTITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_ORBEETLITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_DREDNITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_COALOSSALITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_SANDACONDANITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_CENTISKORCHITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_HATTERENITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_GRIMMSNARLITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_COPPERAJAHITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_NIDOQUEENITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
     // Gems
     [ITEM_NORMAL_GEM] = {gItemIcon_NormalGem, gItemIconPalette_NormalGem},
     [ITEM_FIRE_GEM] = {gItemIcon_FireGem, gItemIconPalette_FireGem},

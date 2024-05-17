@@ -1178,13 +1178,35 @@
 
 #define ITEM_STEEL_ARMOR 882
 
-// New Mega stones
-#define ITEM_NIDOQUEENITE 883
+#define ITEM_NONE_01 883
 
 #define ITEM_CANDY_BOX 884
 #define ITEM_POKEVIAL 885
 
-#define ITEMS_COUNT 886
+// Gigantamax Mega Stones
+#define ITEM_BUTTERFRITE 886
+#define ITEM_MACHAMPITE 887
+#define ITEM_KINGLERITE 888
+#define ITEM_LAPRASITE 889
+#define ITEM_GARBODORITE 890
+#define ITEM_MELMETALITE 891
+#define ITEM_RILLABOOMITE 892
+#define ITEM_CINDERACITE 893
+#define ITEM_INTELEONITE 894
+#define ITEM_CORVIKNIGHTITE 895
+#define ITEM_ORBEETLITE 896
+#define ITEM_DREDNITE 897
+#define ITEM_COALOSSALITE 898
+#define ITEM_SANDACONDANITE 899
+#define ITEM_CENTISKORCHITE 900
+#define ITEM_HATTERENITE 901
+#define ITEM_GRIMMSNARLITE 902
+#define ITEM_COPPERAJAHITE 903
+
+// Custom Mega Stones
+#define ITEM_NIDOQUEENITE 904
+
+#define ITEMS_COUNT 905
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

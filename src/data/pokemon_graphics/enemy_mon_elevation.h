@@ -283,5 +283,5 @@ const u8 gEnemyMonElevation[NUM_SPECIES + 1] =
     [SPECIES_CHI_YU] = 2,
     [SPECIES_ROARING_MOON] = 20,
 #endif
-    [SPECIES_BUTTERFREE_GIGANTAMAX] = 10,
+    [SPECIES_BUTTERFREE_MEGA] = 10,
 };

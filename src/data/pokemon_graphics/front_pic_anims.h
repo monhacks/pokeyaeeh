@@ -10211,49 +10211,13 @@ static const union AnimCmd sAnim_DecidueyeHisuian_1[] =
 PLACEHOLDER_ANIM_SINGLE_FRAME(WooperPaldean);
 PLACEHOLDER_ANIM_SINGLE_FRAME(TaurosPaldean);
 
-static const union AnimCmd sAnim_VenusaurGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_CharizardGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_BlastoiseGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
 static const union AnimCmd sAnim_ButterfreeGigantamax_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_PikachuGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_MeowthGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
 static const union AnimCmd sAnim_MachampGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_GengarGigantamax_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
@@ -10266,18 +10230,6 @@ static const union AnimCmd sAnim_KinglerGigantamax_1[] =
 };
 
 static const union AnimCmd sAnim_LaprasGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_EeveeGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_SnorlaxGigantamax_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
@@ -10340,25 +10292,7 @@ static const union AnimCmd sAnim_CoalossalGigantamax_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_FlappleGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_AppletunGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
 static const union AnimCmd sAnim_SandacondaGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_ToxtricityGigantamax_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
@@ -10382,19 +10316,7 @@ static const union AnimCmd sAnim_GrimmsnarlGigantamax_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_AlcremieGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
 static const union AnimCmd sAnim_CopperajahGigantamax_1[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_DuraludonGigantamax_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
@@ -12159,19 +12081,11 @@ SINGLE_ANIMATION(LycanrocDusk);
 #if P_GEN_8_POKEMON == TRUE
 SINGLE_ANIMATION(EnamorusTherian);
 #endif
-// Gigantamax Forms
-SINGLE_ANIMATION(VenusaurGigantamax);
-SINGLE_ANIMATION(CharizardGigantamax);
-SINGLE_ANIMATION(BlastoiseGigantamax);
+// Gigantamax Megas
 SINGLE_ANIMATION(ButterfreeGigantamax);
-SINGLE_ANIMATION(PikachuGigantamax);
-SINGLE_ANIMATION(MeowthGigantamax);
 SINGLE_ANIMATION(MachampGigantamax);
-SINGLE_ANIMATION(GengarGigantamax);
 SINGLE_ANIMATION(KinglerGigantamax);
 SINGLE_ANIMATION(LaprasGigantamax);
-SINGLE_ANIMATION(EeveeGigantamax);
-SINGLE_ANIMATION(SnorlaxGigantamax);
 #if P_GEN_5_POKEMON == TRUE
 SINGLE_ANIMATION(GarbodorGigantamax);
 #endif
@@ -12186,16 +12100,11 @@ SINGLE_ANIMATION(CorviknightGigantamax);
 SINGLE_ANIMATION(OrbeetleGigantamax);
 SINGLE_ANIMATION(DrednawGigantamax);
 SINGLE_ANIMATION(CoalossalGigantamax);
-SINGLE_ANIMATION(FlappleGigantamax);
-SINGLE_ANIMATION(AppletunGigantamax);
 SINGLE_ANIMATION(SandacondaGigantamax);
-SINGLE_ANIMATION(ToxtricityGigantamax);
 SINGLE_ANIMATION(CentiskorchGigantamax);
 SINGLE_ANIMATION(HattereneGigantamax);
 SINGLE_ANIMATION(GrimmsnarlGigantamax);
-SINGLE_ANIMATION(AlcremieGigantamax);
 SINGLE_ANIMATION(CopperajahGigantamax);
-SINGLE_ANIMATION(DuraludonGigantamax);
 SINGLE_ANIMATION(UrshifuSingleStrikeStyleGigantamax);
 SINGLE_ANIMATION(UrshifuRapidStrikeStyleGigantamax);
 #endif
@@ -13631,45 +13540,31 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED]      = sAnims_TaurosPaldean,
 
     //Gigantamax Forms
-    [SPECIES_VENUSAUR_GIGANTAMAX]            = sAnims_VenusaurGigantamax,
-    [SPECIES_CHARIZARD_GIGANTAMAX]           = sAnims_CharizardGigantamax,
-    [SPECIES_BLASTOISE_GIGANTAMAX]           = sAnims_BlastoiseGigantamax,
-    [SPECIES_BUTTERFREE_GIGANTAMAX]          = sAnims_ButterfreeGigantamax,
-    [SPECIES_PIKACHU_GIGANTAMAX]             = sAnims_PikachuGigantamax,
-    [SPECIES_MEOWTH_GIGANTAMAX]              = sAnims_MeowthGigantamax,
-    [SPECIES_MACHAMP_GIGANTAMAX]             = sAnims_MachampGigantamax,
-    [SPECIES_GENGAR_GIGANTAMAX]              = sAnims_GengarGigantamax,
-    [SPECIES_KINGLER_GIGANTAMAX]             = sAnims_KinglerGigantamax,
-    [SPECIES_LAPRAS_GIGANTAMAX]              = sAnims_LaprasGigantamax,
-    [SPECIES_EEVEE_GIGANTAMAX]               = sAnims_EeveeGigantamax,
-    [SPECIES_SNORLAX_GIGANTAMAX]             = sAnims_SnorlaxGigantamax,
+    [SPECIES_BUTTERFREE_MEGA]          = sAnims_ButterfreeGigantamax,
+    [SPECIES_MACHAMP_MEGA]             = sAnims_MachampGigantamax,
+    [SPECIES_KINGLER_MEGA]             = sAnims_KinglerGigantamax,
+    [SPECIES_LAPRAS_MEGA]              = sAnims_LaprasGigantamax,
 #if P_GEN_5_POKEMON == TRUE
-    [SPECIES_GARBODOR_GIGANTAMAX]            = sAnims_GarbodorGigantamax,
+    [SPECIES_GARBODOR_MEGA]            = sAnims_GarbodorGigantamax,
 #endif
 #if P_GEN_7_POKEMON == TRUE
-    [SPECIES_MELMETAL_GIGANTAMAX]            = sAnims_MelmetalGigantamax,
+    [SPECIES_MELMETAL_MEGA]            = sAnims_MelmetalGigantamax,
 #endif
 #if P_GEN_8_POKEMON == TRUE
-    [SPECIES_RILLABOOM_GIGANTAMAX]           = sAnims_RillaboomGigantamax,
-    [SPECIES_CINDERACE_GIGANTAMAX]           = sAnims_CinderaceGigantamax,
-    [SPECIES_INTELEON_GIGANTAMAX]            = sAnims_InteleonGigantamax,
-    [SPECIES_CORVIKNIGHT_GIGANTAMAX]         = sAnims_CorviknightGigantamax,
-    [SPECIES_ORBEETLE_GIGANTAMAX]            = sAnims_OrbeetleGigantamax,
-    [SPECIES_DREDNAW_GIGANTAMAX]             = sAnims_DrednawGigantamax,
-    [SPECIES_COALOSSAL_GIGANTAMAX]           = sAnims_CoalossalGigantamax,
-    [SPECIES_FLAPPLE_GIGANTAMAX]             = sAnims_FlappleGigantamax,
-    [SPECIES_APPLETUN_GIGANTAMAX]            = sAnims_AppletunGigantamax,
-    [SPECIES_SANDACONDA_GIGANTAMAX]          = sAnims_SandacondaGigantamax,
-    [SPECIES_TOXTRICITY_AMPED_GIGANTAMAX]    = sAnims_ToxtricityGigantamax,
-    [SPECIES_TOXTRICITY_LOW_KEY_GIGANTAMAX]  = sAnims_ToxtricityGigantamax,
-    [SPECIES_CENTISKORCH_GIGANTAMAX]         = sAnims_CentiskorchGigantamax,
-    [SPECIES_HATTERENE_GIGANTAMAX]           = sAnims_HattereneGigantamax,
-    [SPECIES_GRIMMSNARL_GIGANTAMAX]          = sAnims_GrimmsnarlGigantamax,
-    [SPECIES_ALCREMIE_GIGANTAMAX]            = sAnims_AlcremieGigantamax,
-    [SPECIES_COPPERAJAH_GIGANTAMAX]          = sAnims_CopperajahGigantamax,
-    [SPECIES_DURALUDON_GIGANTAMAX]           = sAnims_DuraludonGigantamax,
-    [SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GIGANTAMAX] = sAnims_UrshifuSingleStrikeStyleGigantamax,
-    [SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX] = sAnims_UrshifuRapidStrikeStyleGigantamax,
+    [SPECIES_RILLABOOM_MEGA]           = sAnims_RillaboomGigantamax,
+    [SPECIES_CINDERACE_MEGA]           = sAnims_CinderaceGigantamax,
+    [SPECIES_INTELEON_MEGA]            = sAnims_InteleonGigantamax,
+    [SPECIES_CORVIKNIGHT_MEGA]         = sAnims_CorviknightGigantamax,
+    [SPECIES_ORBEETLE_MEGA]            = sAnims_OrbeetleGigantamax,
+    [SPECIES_DREDNAW_MEGA]             = sAnims_DrednawGigantamax,
+    [SPECIES_COALOSSAL_MEGA]           = sAnims_CoalossalGigantamax,
+    [SPECIES_SANDACONDA_MEGA]          = sAnims_SandacondaGigantamax,
+    [SPECIES_CENTISKORCH_MEGA]         = sAnims_CentiskorchGigantamax,
+    [SPECIES_HATTERENE_MEGA]           = sAnims_HattereneGigantamax,
+    [SPECIES_GRIMMSNARL_MEGA]          = sAnims_GrimmsnarlGigantamax,
+    [SPECIES_COPPERAJAH_MEGA]          = sAnims_CopperajahGigantamax,
+    [SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_MEGA] = sAnims_UrshifuSingleStrikeStyleGigantamax,
+    [SPECIES_URSHIFU_RAPID_STRIKE_STYLE_MEGA] = sAnims_UrshifuRapidStrikeStyleGigantamax,
 #endif
     [SPECIES_NIDOQUEEN_MEGA]                 = sAnims_NidoqueenMega,
     [SPECIES_EGG]                            = sAnims_Egg,

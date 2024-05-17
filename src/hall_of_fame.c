@@ -492,9 +492,17 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_BLAZIKENITE)
                 return SPECIES_BLAZIKEN_MEGA;
         break;
+        case SPECIES_BUTTERFREE:
+            if(item == ITEM_BUTTERFRITE)
+                return SPECIES_BUTTERFREE_MEGA;
+        break;
         case SPECIES_CAMERUPT:
             if(item == ITEM_CAMERUPTITE)
                 return SPECIES_CAMERUPT_MEGA;
+        break;
+        case SPECIES_CENTISKORCH:
+            if(item == ITEM_CENTISKORCHITE)
+                return SPECIES_CENTISKORCH_MEGA;
         break;
         case SPECIES_CHARIZARD:
             if(item == ITEM_CHARIZARDITE_X)
@@ -502,13 +510,37 @@ u16 getHallofFameSpecies(u8 num)
             else if(item == ITEM_CHARIZARDITE_Y)
                 return SPECIES_CHARIZARD_MEGA_Y;
         break;
+        case SPECIES_CINDERACE:
+            if(item == ITEM_CINDERACITE)
+                return SPECIES_CINDERACE_MEGA;
+        break;
+        case SPECIES_COALOSSAL:
+            if(item == ITEM_COALOSSALITE)
+                return SPECIES_COALOSSAL_MEGA;
+        break;
+        case SPECIES_COPPERAJAH:
+            if(item == ITEM_COPPERAJAHITE)
+                return SPECIES_COPPERAJAH_MEGA;
+        break;
+        case SPECIES_CORVIKNIGHT:
+            if(item == ITEM_CORVIKNIGHTITE)
+                return SPECIES_CORVIKNIGHT_MEGA;
+        break;
         case SPECIES_DIANCIE:
             if(item == ITEM_DIANCITE)
                 return SPECIES_DIANCIE_MEGA;
         break;
+        case SPECIES_DREDNAW:
+            if(item == ITEM_DREDNITE)
+                return SPECIES_DREDNAW_MEGA;
+        break;
         case SPECIES_GALLADE:
             if(item == ITEM_GALLADITE)
                 return SPECIES_GALLADE_MEGA;
+        break;
+        case SPECIES_GARBODOR:
+            if(item == ITEM_GARBODORITE)
+                return SPECIES_GARBODOR_MEGA;
         break;
         case SPECIES_GARCHOMP:
             if(item == ITEM_GARCHOMPITE)
@@ -526,9 +558,17 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_GLALITITE)
                 return SPECIES_GLALIE_MEGA;
         break;
+        case SPECIES_GRIMMSNARL:
+            if(item == ITEM_GRIMMSNARLITE)
+                return SPECIES_GRIMMSNARL_MEGA;
+        break;
         case SPECIES_GYARADOS:
             if(item == ITEM_GYARADOSITE)
                 return SPECIES_GYARADOS_MEGA;
+        break;
+        case SPECIES_HATTERENE:
+            if(item == ITEM_HATTERENITE)
+                return SPECIES_HATTERENE_MEGA;
         break;
         case SPECIES_HERACROSS:
             if(item == ITEM_HERACRONITE)
@@ -538,9 +578,21 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_HOUNDOOMINITE)
                 return SPECIES_HOUNDOOM_MEGA;
         break;
+        case SPECIES_INTELEON:
+            if(item == ITEM_INTELEONITE)
+                return SPECIES_INTELEON_MEGA;
+        break;
         case SPECIES_KANGASKHAN:
             if(item == ITEM_KANGASKHANITE)
                 return SPECIES_KANGASKHAN_MEGA;
+        break;
+        case SPECIES_KINGLER:
+            if(item == ITEM_KINGLERITE)
+                return SPECIES_KINGLER_MEGA;
+        break;
+        case SPECIES_LAPRAS:
+            if(item == ITEM_LAPRASITE)
+                return SPECIES_LAPRAS_MEGA;
         break;
         case SPECIES_LATIAS:
             if(item == ITEM_LATIASITE)
@@ -558,6 +610,10 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_LUCARIONITE)
                 return SPECIES_LUCARIO_MEGA;
         break;
+        case SPECIES_MACHAMP:
+            if(item == ITEM_MACHAMPITE)
+                return SPECIES_MACHAMP_MEGA;
+        break;
         case SPECIES_MANECTRIC:
             if(item == ITEM_MANECTITE)
                 return SPECIES_MANECTRIC;
@@ -569,6 +625,10 @@ u16 getHallofFameSpecies(u8 num)
         case SPECIES_MEDICHAM:
             if(item == ITEM_MEDICHAMITE)
                 return SPECIES_MEDICHAM;
+        break;
+        case SPECIES_MELMETAL:
+            if(item == ITEM_MELMETALITE)
+                return SPECIES_MELMETAL_MEGA;
         break;
         case SPECIES_METAGROSS:
             if(item == ITEM_METAGROSSITE)
@@ -584,6 +644,10 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_NIDOQUEENITE)
                 return SPECIES_NIDOQUEEN_MEGA;
         break;
+        case SPECIES_ORBEETLE:
+            if(item == ITEM_ORBEETLITE)
+                return SPECIES_ORBEETLE_MEGA;
+        break;
         case SPECIES_PIDGEOT:
             if(item == ITEM_PIDGEOTITE)
                 return SPECIES_PIDGEOT_MEGA;
@@ -592,6 +656,10 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_PINSIRITE)
                 return SPECIES_PINSIR_MEGA;
         break;
+        case SPECIES_RILLABOOM:
+            if(item == ITEM_RILLABOOMITE)
+                return SPECIES_RILLABOOM_MEGA;
+        break;
         case SPECIES_SABLEYE:
             if(item == ITEM_SABLENITE)
                 return SPECIES_SABLEYE_MEGA;
@@ -599,6 +667,10 @@ u16 getHallofFameSpecies(u8 num)
         case SPECIES_SALAMENCE:
             if(item == ITEM_SALAMENCITE)
                 return SPECIES_SALAMENCE_MEGA;
+        break;
+        case SPECIES_SANDACONDA:
+            if(item == ITEM_SANDACONDANITE)
+                return SPECIES_SANDACONDA_MEGA;
         break;
         case SPECIES_SCEPTILE:
             if(item == ITEM_SCEPTILITE)
@@ -647,6 +719,24 @@ u16 getHallofFameSpecies(u8 num)
                     return SPECIES_RAYQUAZA_MEGA;
                 else
                     return SPECIES_RAYQUAZA;
+            }
+        break;
+        case SPECIES_URSHIFU_SINGLE_STRIKE_STYLE:
+            for(i = 0; i < MAX_MON_MOVES; i++)
+            {
+                if(GetMonData(&gPlayerParty[num], MON_DATA_MOVE1 + i) == MOVE_WICKED_BLOW)
+                    return SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_MEGA;
+                else
+                    return SPECIES_URSHIFU_SINGLE_STRIKE_STYLE;
+            }
+        break;
+        case SPECIES_URSHIFU_RAPID_STRIKE_STYLE:
+            for(i = 0; i < MAX_MON_MOVES; i++)
+            {
+                if(GetMonData(&gPlayerParty[num], MON_DATA_MOVE1 + i) == MOVE_SURGING_STRIKES)
+                    return SPECIES_URSHIFU_RAPID_STRIKE_STYLE_MEGA;
+                else
+                    return SPECIES_URSHIFU_RAPID_STRIKE_STYLE;
             }
         break;
         case SPECIES_ZACIAN:

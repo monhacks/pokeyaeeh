@@ -1622,44 +1622,32 @@
 #define SPECIES_TERAPAGOS_TERASTAL               FORMS_START + 354
 #define SPECIES_TERAPAGOS_STELLAR                FORMS_START + 355
 
-// Gigantamax Forms
-#define SPECIES_VENUSAUR_GIGANTAMAX                      FORMS_START + 356
-#define SPECIES_BLASTOISE_GIGANTAMAX                     FORMS_START + 357
-#define SPECIES_CHARIZARD_GIGANTAMAX                     FORMS_START + 358
-#define SPECIES_BUTTERFREE_GIGANTAMAX                    FORMS_START + 359
-#define SPECIES_PIKACHU_GIGANTAMAX                       FORMS_START + 360
-#define SPECIES_MEOWTH_GIGANTAMAX                        FORMS_START + 361
-#define SPECIES_MACHAMP_GIGANTAMAX                       FORMS_START + 362
-#define SPECIES_GENGAR_GIGANTAMAX                        FORMS_START + 363
-#define SPECIES_KINGLER_GIGANTAMAX                       FORMS_START + 364
-#define SPECIES_LAPRAS_GIGANTAMAX                        FORMS_START + 365
-#define SPECIES_EEVEE_GIGANTAMAX                         FORMS_START + 366
-#define SPECIES_SNORLAX_GIGANTAMAX                       FORMS_START + 367
-#define SPECIES_GARBODOR_GIGANTAMAX                      FORMS_START + 368
-#define SPECIES_MELMETAL_GIGANTAMAX                      FORMS_START + 369
-#define SPECIES_RILLABOOM_GIGANTAMAX                     FORMS_START + 370
-#define SPECIES_CINDERACE_GIGANTAMAX                     FORMS_START + 371
-#define SPECIES_INTELEON_GIGANTAMAX                      FORMS_START + 372
-#define SPECIES_CORVIKNIGHT_GIGANTAMAX                   FORMS_START + 373
-#define SPECIES_ORBEETLE_GIGANTAMAX                      FORMS_START + 374
-#define SPECIES_DREDNAW_GIGANTAMAX                       FORMS_START + 375
-#define SPECIES_COALOSSAL_GIGANTAMAX                     FORMS_START + 376
-#define SPECIES_FLAPPLE_GIGANTAMAX                       FORMS_START + 377
-#define SPECIES_APPLETUN_GIGANTAMAX                      FORMS_START + 378
-#define SPECIES_SANDACONDA_GIGANTAMAX                    FORMS_START + 379
-#define SPECIES_TOXTRICITY_AMPED_GIGANTAMAX              FORMS_START + 380
-#define SPECIES_TOXTRICITY_LOW_KEY_GIGANTAMAX            FORMS_START + 381
-#define SPECIES_CENTISKORCH_GIGANTAMAX                   FORMS_START + 382
-#define SPECIES_HATTERENE_GIGANTAMAX                     FORMS_START + 383
-#define SPECIES_GRIMMSNARL_GIGANTAMAX                    FORMS_START + 384
-#define SPECIES_ALCREMIE_GIGANTAMAX                      FORMS_START + 385
-#define SPECIES_COPPERAJAH_GIGANTAMAX                    FORMS_START + 386
-#define SPECIES_DURALUDON_GIGANTAMAX                     FORMS_START + 387
-#define SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GIGANTAMAX   FORMS_START + 388
-#define SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX    FORMS_START + 389
+// Gigantamax Megas
+#define SPECIES_BUTTERFREE_MEGA                  FORMS_START + 356
+#define SPECIES_MACHAMP_MEGA                     FORMS_START + 357
+#define SPECIES_KINGLER_MEGA                     FORMS_START + 358
+#define SPECIES_LAPRAS_MEGA                      FORMS_START + 359
+#define SPECIES_GARBODOR_MEGA                    FORMS_START + 360
+#define SPECIES_MELMETAL_MEGA                    FORMS_START + 361
+#define SPECIES_RILLABOOM_MEGA                   FORMS_START + 362
+#define SPECIES_CINDERACE_MEGA                   FORMS_START + 363
+#define SPECIES_INTELEON_MEGA                    FORMS_START + 364
+#define SPECIES_CORVIKNIGHT_MEGA                 FORMS_START + 365
+#define SPECIES_ORBEETLE_MEGA                    FORMS_START + 366
+#define SPECIES_DREDNAW_MEGA                     FORMS_START + 367
+#define SPECIES_COALOSSAL_MEGA                   FORMS_START + 368
+#define SPECIES_SANDACONDA_MEGA                  FORMS_START + 369
+#define SPECIES_CENTISKORCH_MEGA                 FORMS_START + 370
+#define SPECIES_HATTERENE_MEGA                   FORMS_START + 371
+#define SPECIES_GRIMMSNARL_MEGA                  FORMS_START + 372
+#define SPECIES_COPPERAJAH_MEGA                  FORMS_START + 373
+#define SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_MEGA FORMS_START + 374
+#define SPECIES_URSHIFU_RAPID_STRIKE_STYLE_MEGA  FORMS_START + 375
+
+// Gigantamax Forms such as Venusaur, Charizard, Blastoise, Pikachu, Meowth, Eevee, Snorlax, Flapple, Appletun, Toxtricity, Alcremie and Duraludon have been removed due to having other evolutions or bad concept.
 
 // New Megas
-#define SPECIES_NIDOQUEEN_MEGA                           FORMS_START + 390
+#define SPECIES_NIDOQUEEN_MEGA                   FORMS_START + 376
 
 #define SPECIES_EGG SPECIES_NIDOQUEEN_MEGA + 1
 
