@@ -776,9 +776,9 @@
 #define TRAINER_ROXANNE_2                   770
 #define TRAINER_ARCHIE_MUSEUM               771
 #define TRAINER_COURTNEY_MT_CHIMNEY         772
-#define TRAINER_ROXANNE_5                   773
+#define TRAINER_COURTNEY_METEOR_FALLS       773
 #define TRAINER_BRAWLY_2                    774
-#define TRAINER_BRAWLY_3                    775
+#define TRAINER_GRUNT_METEOR_FALLS          775
 #define TRAINER_BRAWLY_4                    776
 #define TRAINER_BRAWLY_5                    777
 #define TRAINER_WATTSON_2                   778

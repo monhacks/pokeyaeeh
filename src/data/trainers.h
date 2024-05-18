@@ -8537,15 +8537,15 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_CourtneyMtChimney),
     },
 
-    [TRAINER_ROXANNE_5] =
+    [TRAINER_COURTNEY_METEOR_FALLS] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("Dor"),
-        .doubleBattle = TRUE,
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN_F,
+        .trainerName = _("Courtney"),
+        .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Roxanne5),
+        .party = TRAINER_PARTY(sParty_CourtneyMeteorFalls),
     },
 
     [TRAINER_BRAWLY_2] =
@@ -8559,15 +8559,15 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Brawly2),
     },
 
-    [TRAINER_BRAWLY_3] =
+    [TRAINER_GRUNT_METEOR_FALLS] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .trainerName = _("Scep"),
-        .doubleBattle = TRUE,
+         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
+        .trainerName = _("Grunt"),
+        .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Brawly3),
+        .party = TRAINER_PARTY(sParty_GruntMeteorFalls),
     },
 
     [TRAINER_BRAWLY_4] =
