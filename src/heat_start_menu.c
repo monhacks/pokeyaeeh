@@ -576,7 +576,10 @@ void HeatStartMenu_Init(void) {
 }
 
 static void HeatStartMenu_LoadSprites(void) {
+  u32 index;
   LoadSpritePalette(sSpritePal_Icon);
+  index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
+  LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
   LoadCompressedSpriteSheet(sSpriteSheet_Icon);
 }
 
