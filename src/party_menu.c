@@ -2988,7 +2988,7 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     // Adds field moves to the Pokémon's field moves list without knowing them
     if ((FlagGet(FLAG_RETURNED_DEVON_GOODS)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)) // Specifically this flag so that the player won't skip thsi event.
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
-    if ((FlagGet(FLAG_BADGE02_GET)) && (CheckBagHasItem(ITEM_TM85, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
+    if ((FlagGet(FLAG_BADGE02_GET)) && (CheckBagHasItem(ITEM_HM_FLASH, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
     if (CanUseDigOrEscapeRopeOnCurMap() == TRUE)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_DIG + MENU_FIELD_MOVES);
@@ -5564,7 +5564,7 @@ bool8 PlayerHasMove(u16 move)
         item = ITEM_TM_SECRET_POWER;
         break;
     case MOVE_FLASH:
-        item = ITEM_TM_FLASH;
+        item = ITEM_HM_FLASH;
         break;
     case MOVE_DEFOG:
         item = ITEM_TM_DEFOG;
@@ -5579,9 +5579,6 @@ bool8 PlayerHasMove(u16 move)
         break;
     case MOVE_STRENGTH:
         item = ITEM_HM_STRENGTH;
-        break;
-    case MOVE_ROCK_CLIMB:
-        item = ITEM_HM_ROCK_CLIMB;
         break;
     case MOVE_ROCK_SMASH:
         item = ITEM_HM_ROCK_SMASH;

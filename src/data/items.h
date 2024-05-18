@@ -8180,7 +8180,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_HEAT_WAVE,
     },
 
-    [ITEM_TM_FLASH] =
+    [ITEM_TM_METAL_TERRAIN] =
     {
         .name = _("TM85"),
         .price = 5000,
@@ -8189,7 +8189,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FLASH,
+        .secondaryId = MOVE_METAL_TERRAIN,
     },
 
     [ITEM_TM_GRASSY_TERRAIN] =
@@ -9019,7 +9019,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_STRENGTH,
     },
 
-    [ITEM_HM_ROCK_CLIMB] =
+    [ITEM_HM_FLASH] =
     {
         .name = _("HM05"),
         .price = 0,
