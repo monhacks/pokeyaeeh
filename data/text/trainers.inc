@@ -1639,9 +1639,7 @@ Route113_Text_DillonPostBattle:
 	.string "Okay, that was bad, sorry…$"
 
 Route113_Text_MadelineIntro:
-	.string "I use this parasol to ward off this\n"
-	.string "filthy, yucky volcanic ash from\l"
-	.string "my dear Numel.$"
+	.string "Go, go! My Pokémon.$"
 
 Route113_Text_MadelineDefeat:
 	.string "Huff, huff…\n"

@@ -8160,7 +8160,7 @@ static const struct TrainerMon sParty_Madeline1[] = {
         .lvl = 46,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
-        .moves = {MOVE_STICKY_WEB, MOVE_BUG_BUZZ, MOVE_MOONBLAST, MOVE_U_TURN},
+        .moves = {MOVE_STICKY_WEB, MOVE_BUG_BUZZ, MOVE_DAZZLING_GLEAM, MOVE_U_TURN},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -8182,7 +8182,7 @@ static const struct TrainerMon sParty_Madeline1[] = {
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_DRAINING_KISS, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL, MOVE_PSYCHIC}
+        .moves = {MOVE_DAZZLING_GLEAM, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL, MOVE_PSYCHIC}
     }
 };
 

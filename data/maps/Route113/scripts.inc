@@ -56,14 +56,6 @@ Route113_EventScript_Dillon::
 	msgbox Route113_Text_DillonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route113_EventScript_Madeline::
-	trainerbattle_single TRAINER_MADELINE_1, Route113_Text_MadelineIntro, Route113_Text_MadelineDefeat, Route113_EventScript_RegisterMadeline
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route113_EventScript_RematchMadeline
-	msgbox Route113_Text_MadelinePostBattle, MSGBOX_DEFAULT
-	release
-	end
-
 Route113_EventScript_RegisterMadeline::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
@@ -163,3 +155,98 @@ Route113_Text_TrainerTipsRegisterKeyItems:
 Route113_Text_GlassWorkshopSign:
 	.string "Glass Workshop\n"
 	.string "“Turning Volcanic Ash into Glass Items”$"
+
+Route113_EventScript_Madeline2::
+	msgbox Route113_EventScript_Madeline2_Text_0, MSGBOX_AUTOCLOSE
+	givemon SPECIES_HATTERENE, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_JOLLY, 2, MON_FEMALE, 252, 0, 0, 0, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL, MOVE_PSYCHIC, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route113_EventScript_Madeline2_Text_1
+	waitmessage
+	msgbox Route113_EventScript_Madeline2_Text_2, MSGBOX_NPC
+	msgbox Route113_EventScript_Madeline2_Text_3, MSGBOX_NPC
+	giveitem ITEM_TM_DAZZLING_GLEAM, 1
+	msgbox Route113_EventScript_Madeline2_Text_4, MSGBOX_NPC
+	return
+
+
+Route113_EventScript_Madeline::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_JAYLEN
+	goto_if 1, Route113_EventScript_Madeline_5
+Route113_EventScript_Madeline_3:
+	msgbox Route113_EventScript_Madeline_Text_0
+Route113_EventScript_Madeline_1:
+	release
+	end
+
+Route113_EventScript_Madeline_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_MADELINE_1, Route113_Text_MadelineIntro, Route113_Text_MadelineDefeat, Route113_EventScript_Madeline2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_113_BOSS_DEFEATED
+	msgbox Route113_EventScript_Madeline2_Text_4, MSGBOX_NPC
+	goto Route113_EventScript_Madeline_1
+
+Route113_EventScript_Madeline_4:
+	checktrainerflag TRAINER_LAO_1
+	goto_if 1, Route113_EventScript_Madeline_9
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_5:
+	checktrainerflag TRAINER_DILLON
+	goto_if 1, Route113_EventScript_Madeline_4
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_8:
+	checktrainerflag TRAINER_TORI_AND_TIA
+	goto_if 1, Route113_EventScript_Madeline_13
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_9:
+	checktrainerflag TRAINER_LUNG
+	goto_if 1, Route113_EventScript_Madeline_8
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_12:
+	checktrainerflag TRAINER_COBY
+	goto_if 1, Route113_EventScript_Madeline_17
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_13:
+	checktrainerflag TRAINER_SOPHIE
+	goto_if 1, Route113_EventScript_Madeline_12
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_16:
+	checktrainerflag TRAINER_WYATT
+	goto_if 1, Route113_EventScript_Madeline_2
+	goto Route113_EventScript_Madeline_3
+
+Route113_EventScript_Madeline_17:
+	checktrainerflag TRAINER_LAWRENCE
+	goto_if 1, Route113_EventScript_Madeline_16
+	goto Route113_EventScript_Madeline_3
+
+
+Route113_EventScript_Madeline2_Text_0:
+	.string "Wow. That was a fantastic battle!\pYou truly are a strong Trainer!\pHere, take this.$"
+
+Route113_EventScript_Madeline2_Text_1:
+	.string "{PLAYER} received a Hatterene!$"
+
+Route113_EventScript_Madeline2_Text_2:
+	.string "Please raise it with care,\nhaha!$"
+
+Route113_EventScript_Madeline2_Text_3:
+	.string "Oh! Also this!$"
+
+Route113_EventScript_Madeline2_Text_4:
+	.string "Dazzling Gleam is a pretty strong move.\pEspecially in double battles,\nwhere hitting both your enemies is\lcrucial.$"
+
+Route113_EventScript_Madeline_Text_0:
+	.string "Hello, there.\p"
+	.string "If you'd like to challenge me,\n"
+	.string "the Route Boss,\l"
+	.string "you need to beat everyone here.\p"
+	.string "Got it?$"
