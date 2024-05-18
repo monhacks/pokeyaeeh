@@ -3452,13 +3452,13 @@ static const u8 sTM84Desc[] = _(
     "May cause burn.");
 
 static const u8 sTM85Desc[] = _(
-    "Looses a powerful\n"
-    "blast of light that\n"
-    "reduces accuracy.");
+    "Metal Terr. blocks\n"
+    "stat drops and boosts\n"
+    "Steel moves.");
 
 static const u8 sTM86Desc[] = _(
     "Grassy Terr. heals\n"
-    "HP and powers up\n"
+    "HPand boosts\n"
     "Grass moves.");
 
 static const u8 sTM87Desc[] = _(
@@ -3468,13 +3468,13 @@ static const u8 sTM87Desc[] = _(
 
 static const u8 sTM88Desc[] = _(
     "Electric Terr. bloc-\n"
-    "ks sleep and powers\n"
+    "ks sleep and boosts\n"
     "up Electric moves.");
 
 static const u8 sTM89Desc[] = _(
     "Psych Terr. blocks\n"
-    "prior. moves and po-\n"
-    "wers Psychic moves.");
+    "prior. moves and bo-\n"
+    "osts Psychic moves.");
 
 static const u8 sTM90Desc[] = _(
     "Power and type\n"
@@ -3802,9 +3802,9 @@ static const u8 sHM04Desc[] = _(
     "the foe.");
 
 static const u8 sHM05Desc[] = _(
-    "Charging attack\n"
-    "that may leave the\n"
-    "foe confused.");
+    "Looses a powerful\n"
+    "blast of light that\n"
+    "reduces accuracy.");
 
 static const u8 sHM06Desc[] = _(
     "A rock-crushingly\n"

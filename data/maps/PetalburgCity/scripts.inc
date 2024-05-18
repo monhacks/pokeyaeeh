@@ -1,5 +1,5 @@
 .set LOCALID_BOY, 2
-.set LOCALID_SCOTT, 6
+.set LOCALID_SCOTT, 5
 .set LOCALID_BIRCH, 7
 
 PetalburgCity_MapScripts::
