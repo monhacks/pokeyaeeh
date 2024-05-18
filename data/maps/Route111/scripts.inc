@@ -439,11 +439,6 @@ Route111_EventScript_Irene::
 	msgbox Route111_Text_IrenePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route111_EventScript_Daisuke::
-	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
-	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route111_EventScript_Wilton::
 	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -688,3 +683,168 @@ Route111_Text_TrainerHillSign:
 	.string "{RIGHT_ARROW} Trainer Hill Entrance\p"
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "Trainers!”$"
+
+Route111_EventScript_Daisuke2::
+	msgbox Route111_EventScript_Daisuke2_Text_0, MSGBOX_AUTOCLOSE
+	givemon SPECIES_KUBFU, 0, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_MEGA_PUNCH, MOVE_FOCUS_ENERGY, MOVE_CLOSE_COMBAT, MOVE_U_TURN, FALSE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route111_EventScript_Daisuke2_Text_1
+	waitmessage
+	waitfanfare
+	msgbox Route111_EventScript_Daisuke2_Text_2
+	goto_if_set FLAG_BADGE07_GET, Route111_EventScript_Daisuke2_2
+	msgbox Route111_EventScript_Daisuke2_Text_6, MSGBOX_NPC
+	return
+
+Route111_EventScript_Daisuke2_2:
+	message Route111_EventScript_Daisuke2_Text_3
+	waitmessage
+	multichoice 20, 8, MULTI_KUBFU_EVO, TRUE
+	compare VAR_RESULT, 0
+	goto_if_eq Route111_EventScript_Daisuke2_4
+	msgbox Route111_EventScript_Daisuke2_Text_4, MSGBOX_AUTOCLOSE
+	giveitem ITEM_SCROLL_OF_WATERS, 1
+	waitfanfare
+	setflag FLAG_CHOSE_WATER_SCROLL
+	msgbox Route111_EventScript_Daisuke2_Text_5, MSGBOX_NPC
+	end
+
+Route111_EventScript_Daisuke2_4:
+	msgbox Route111_EventScript_Daisuke2_Text_4, MSGBOX_AUTOCLOSE
+	giveitem ITEM_SCROLL_OF_DARKNESS, 1
+	waitfanfare
+	setflag FLAG_CHOSE_DARK_SCROLL
+	msgbox Route111_EventScript_Daisuke2_Text_5, MSGBOX_NPC
+	end
+
+
+Route111_EventScript_Daisuke::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_DREW
+	goto_if 1, Route111_EventScript_Daisuke_5
+Route111_EventScript_Daisuke_3:
+	msgbox Route111_EventScript_Daisuke_Text_1, MSGBOX_NPC
+Route111_EventScript_Daisuke_1:
+	release
+	end
+
+Route111_EventScript_Daisuke_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat, Route111_EventScript_Daisuke2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_111_BOSS_DEFEATED
+	goto_if_set FLAG_BADGE07_GET == TRUE, Route111_EventScript_Daisuke_35
+	msgbox Route111_EventScript_Daisuke_Text_0, MSGBOX_NPC
+	goto Route111_EventScript_Daisuke_1
+
+Route111_EventScript_Daisuke_4:
+	checktrainerflag TRAINER_BEAU
+	goto_if 1, Route111_EventScript_Daisuke_9
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_5:
+	checktrainerflag TRAINER_HEIDI
+	goto_if 1, Route111_EventScript_Daisuke_4
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_8:
+	checktrainerflag TRAINER_DUSTY_1
+	goto_if 1, Route111_EventScript_Daisuke_13
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_9:
+	checktrainerflag TRAINER_BECKY
+	goto_if 1, Route111_EventScript_Daisuke_8
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_12:
+	checktrainerflag TRAINER_IRENE
+	goto_if 1, Route111_EventScript_Daisuke_17
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_13:
+	checktrainerflag TRAINER_TRAVIS
+	goto_if 1, Route111_EventScript_Daisuke_12
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_16:
+	checktrainerflag TRAINER_BROOKE_1
+	goto_if 1, Route111_EventScript_Daisuke_21
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_17:
+	checktrainerflag TRAINER_WILTON_1
+	goto_if 1, Route111_EventScript_Daisuke_16
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_20:
+	checktrainerflag TRAINER_BIANCA
+	goto_if 1, Route111_EventScript_Daisuke_25
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_21:
+	checktrainerflag TRAINER_HAYDEN
+	goto_if 1, Route111_EventScript_Daisuke_20
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_24:
+	checktrainerflag TRAINER_CELINA
+	goto_if 1, Route111_EventScript_Daisuke_29
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_25:
+	checktrainerflag TRAINER_TYRON
+	goto_if 1, Route111_EventScript_Daisuke_24
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_28:
+	checktrainerflag TRAINER_BRYAN
+	goto_if 1, Route111_EventScript_Daisuke_32
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_29:
+	checktrainerflag TRAINER_CELIA
+	goto_if 1, Route111_EventScript_Daisuke_28
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_32:
+	checktrainerflag TRAINER_BRANDEN
+	goto_if 1, Route111_EventScript_Daisuke_2
+	goto Route111_EventScript_Daisuke_3
+
+Route111_EventScript_Daisuke_35:
+	msgbox Route111_EventScript_Daisuke2_Text_5, MSGBOX_NPC
+	goto Route111_EventScript_Daisuke_1
+
+
+Route111_EventScript_Daisuke2_Text_0:
+	.string "You deserve the power of Kubfu.$"
+
+Route111_EventScript_Daisuke2_Text_1:
+	.string "{PLAYER} received a Kubfu!$"
+
+Route111_EventScript_Daisuke2_Text_2:
+	.string "Kubfu can only be found in the\nIsle of Armor, in Galar.\pBut, there have been a few spotted in\nHoenn.\pKubfu can evolve into two forms…$"
+
+Route111_EventScript_Daisuke2_Text_3:
+	.string "I can only give you one.\pSo… What kind of a Trainer are you?$"
+
+Route111_EventScript_Daisuke2_Text_4:
+	.string "Then you need this.$"
+
+Route111_EventScript_Daisuke2_Text_5:
+	.string "I hope you made the right choice.$"
+
+Route111_EventScript_Daisuke2_Text_6:
+	.string "Once you're ready for it I'll give it\nto you.$"
+
+Route111_EventScript_Daisuke_Text_0:
+	.string "Kubfu can only be found in the\nIsle of Armor, in Galar.\pBut, there have been a few spotted in\nHoenn.\pKubfu can evolve into two forms…\nOnce you're ready for it I'll give it\lto you.$"
+
+Route111_EventScript_Daisuke_Text_1:
+	.string "Hiyaaa!\p"
+	.string "I will only accept your challenge once\n"
+	.string "you prove your might!\p"
+	.string "How? Simple.\p"
+	.string "Beat every Trainer here, first.$"

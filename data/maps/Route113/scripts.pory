@@ -158,14 +158,6 @@ Route113_Text_GlassWorkshopSign:
 	.string "“Turning Volcanic Ash into Glass Items”$"
 `
 
-// Route113_EventScript_Madeline::
-//	trainerbattle_single TRAINER_MADELINE_1, Route113_Text_MadelineIntro, Route113_Text_MadelineDefeat, Route113_EventScript_RegisterMadeline
-//	specialvar VAR_RESULT, ShouldTryRematchBattle
-//	goto_if_eq VAR_RESULT, TRUE, Route113_EventScript_RematchMadeline
-//	msgbox Route113_Text_MadelinePostBattle, MSGBOX_DEFAULT
-//	release
-//	end
-
 script Route113_EventScript_Madeline2{
 	msgbox(("Wow. That was a fantastic battle!\pYou truly are a strong Trainer!\pHere, take this."), MSGBOX_AUTOCLOSE)
 	givemon(SPECIES_HATTERENE, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_JOLLY, 2, MON_FEMALE, 252, 0, 0, 0, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL, MOVE_PSYCHIC, TRUE)

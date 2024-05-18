@@ -1971,3 +1971,6 @@ const u8 gText_GameCornerQuaxly[] = 	_("Quaxly{CLEAR_TO 0x48}500 Coins");
 const u8 gText_GrassType[] = _("Grass-type");
 const u8 gText_FireType[] = _("Fire-type");
 const u8 gText_WaterType[] = _("Water-type");
+
+const u8 gText_Dark[] = _("Adamant");
+const u8 gText_Water[] = _("Calm");

@@ -440,11 +440,6 @@ Route111_EventScript_Irene::
 	msgbox Route111_Text_IrenePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route111_EventScript_Daisuke::
-	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
-	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route111_EventScript_Wilton::
 	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -691,3 +686,85 @@ Route111_Text_TrainerHillSign:
 	.string "Trainers!”$"
 
 `
+//Route111_EventScript_Daisuke::
+//	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
+//	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
+//	end
+
+script Route111_EventScript_Daisuke2{
+	msgbox(("You deserve the power of Kubfu."), MSGBOX_AUTOCLOSE)
+	givemon(SPECIES_KUBFU, 0, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_MEGA_PUNCH, MOVE_FOCUS_ENERGY, MOVE_CLOSE_COMBAT, MOVE_U_TURN, FALSE)
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox("{PLAYER} received a Kubfu!")
+	waitmessage()
+	waitfanfare()
+	msgbox(("Kubfu can only be found in the\nIsle of Armor, in Galar.\pBut, there have been a few spotted in\nHoenn.\pKubfu can evolve into two forms…"))
+	if (flag(FLAG_BADGE07_GET)) // If the player has the 7th badge, give multi choice between two Urshifus
+	{
+		message("I can only give you one.\pSo… What kind of a Trainer are you?")
+		waitmessage()
+		multichoice(20, 8, MULTI_KUBFU_EVO, TRUE)
+		if (var(VAR_RESULT) == 0)
+		{
+			msgbox("Then you need this.", MSGBOX_AUTOCLOSE)
+			giveitem(ITEM_SCROLL_OF_DARKNESS, 1)
+	        waitfanfare()
+			setflag(FLAG_CHOSE_DARK_SCROLL)
+			msgbox("I hope you made the right choice.", MSGBOX_NPC)
+			end
+		}
+		else
+		{
+			msgbox("Then you need this.", MSGBOX_AUTOCLOSE)
+			giveitem(ITEM_SCROLL_OF_WATERS, 1)
+	        waitfanfare()
+			setflag(FLAG_CHOSE_WATER_SCROLL)
+			msgbox("I hope you made the right choice.", MSGBOX_NPC)
+			end
+		}
+	}
+	msgbox(("Once you're ready for it I'll give it\nto you."), MSGBOX_NPC)
+	return
+}
+
+// \pTalk to me again, and if you're ready,\nI'll give it to you."
+
+script Route111_EventScript_Daisuke{
+	lock
+	faceplayer
+	if(defeated(TRAINER_DREW) &&
+		defeated(TRAINER_HEIDI) &&
+		defeated(TRAINER_BEAU) &&
+		defeated(TRAINER_BECKY) &&
+		defeated(TRAINER_DUSTY_1) &&
+		defeated(TRAINER_TRAVIS) &&
+		defeated(TRAINER_IRENE) &&
+		defeated(TRAINER_WILTON_1) &&
+		defeated(TRAINER_BROOKE_1) &&
+		defeated(TRAINER_HAYDEN) &&
+		defeated(TRAINER_BIANCA) &&
+		defeated(TRAINER_TYRON) &&
+		defeated(TRAINER_CELINA) &&
+		defeated(TRAINER_CELIA) &&
+		defeated(TRAINER_BRYAN) &&
+		defeated(TRAINER_BRANDEN)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat, Route111_EventScript_Daisuke2)
+		clearflag(B_FLAG_NO_BAG_USE)
+		setflag(FLAG_ROUTE_111_BOSS_DEFEATED)
+		if (flag(FLAG_BADGE07_GET == TRUE))
+		{
+			msgbox("I hope you made the right choice.", MSGBOX_NPC)
+		}
+		else
+		{
+			msgbox(("Kubfu can only be found in the\nIsle of Armor, in Galar.\pBut, there have been a few spotted in\nHoenn.\pKubfu can evolve into two forms…\nOnce you're ready for it I'll give it\lto you."), MSGBOX_NPC)
+		}
+	}
+	else{
+		// before defeating every trainer here
+		msgbox(format("Hiyaaa!\pI will only accept your challenge once\nyou prove your might!\pHow? Simple.\pBeat every Trainer here, first."), MSGBOX_NPC)
+	}
+	release
+	end
+}

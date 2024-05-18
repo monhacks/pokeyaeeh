@@ -790,6 +790,11 @@ static const struct MenuAction MultichoiceList_GrassFireWater[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_KubfuEvo[] = 
+{
+    {gText_Dark},
+    {gText_Water},
+};
 
 static const struct MenuAction MultichoiceList_Exit[] =
 {
@@ -920,6 +925,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_ROTOM_CATALOG]              = MULTICHOICE(MultichoiceList_RotomCatalog),
     [MULTI_GRASS_FIRE_WATER]           = MULTICHOICE(MultichoiceList_GrassFireWater),
+    [MULTI_KUBFU_EVO]                  = MULTICHOICE(MultichoiceList_KubfuEvo),
 };
 
 const u8 *const gStdStrings[] =

@@ -1237,7 +1237,7 @@
 #define FLAG_ROUTE_103_BOSS_DEFEATED                                0x499 // Route 103 Boss Aroma Lady Daisy
 #define FLAG_ROUTE_114_BOSS_DEFEATED                                0x49A // Route 114 Boss Hiker Lenny
 #define FLAG_ROUTE_113_BOSS_DEFEATED                                0x49B // Route 113 Boss Cooltrainer Madeline
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
+#define FLAG_ROUTE_111_BOSS_DEFEATED                                0x49C // Route 111 Boss Black Belt Daisuke
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
@@ -1319,8 +1319,8 @@
 #define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
 #define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
-#define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EEF                                          0x4EF // Unused Flag
+#define FLAG_CHOSE_DARK_SCROLL                                      0x4EE
+#define FLAG_CHOSE_WATER_SCROLL                                     0x4EF
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1

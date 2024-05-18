@@ -121,7 +121,7 @@ Text_TestDefeat:
     .string "Victorious!$"
 
 Debug_EventScript_Script_1::
-	goto_if_set FLAG_ROUTE_114_BOSS_DEFEATED, Debug_EventScript_UnsetTestFlag
+	goto_if_set FLAG_BADGE05_GET, Debug_EventScript_UnsetTestFlag
 	goto Debug_EventScript_SetTestFlag
 	end
 
@@ -274,12 +274,12 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_ROUTE_114_BOSS_DEFEATED
+    setflag FLAG_BADGE05_GET
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_ROUTE_114_BOSS_DEFEATED
+    clearflag FLAG_BADGE05_GET
 	end
 
 Debug_Text_SetTestFlag::
