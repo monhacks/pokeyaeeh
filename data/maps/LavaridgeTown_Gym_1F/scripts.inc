@@ -33,7 +33,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
-	giveitem ITEM_TM_RETURN
+	giveitem ITEM_TM_GIGA_IMPACT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_RETURN
@@ -41,7 +41,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
-	giveitem ITEM_TM_TEMPER_FLARE
+	giveitem ITEM_TM_GIGA_IMPACT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_RETURN

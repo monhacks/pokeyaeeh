@@ -27,6 +27,10 @@ MtPyre_6F_EventScript_Cedric::
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MtPyre_6F_EventScript_SignPost::
+	msgbox MtPyre_6F_Text_Coco, MSGBOX_SIGN
+	end
+
 MtPyre_6F_Text_ValerieIntro:
 	.string "When I'm here…\n"
 	.string "A curious power flows into me…$"
@@ -66,3 +70,9 @@ MtPyre_6F_Text_CedricPostBattle:
 	.string "I had this feeling that a lost Trainer\n"
 	.string "would be panicked and easy to beat.\p"
 	.string "It's dirty and I won't try it again…$"
+
+MtPyre_6F_Text_Coco:
+	.string "Here lies Coco.\p"
+	.string "The beloved 18 year old cat of\n"
+	.string "ViralStarfish.\p"
+	.string "Please pay your respects, here.$"

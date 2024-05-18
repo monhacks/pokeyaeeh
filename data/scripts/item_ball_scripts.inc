@@ -576,8 +576,8 @@ MtPyre_5F_EventScript_ItemLaxIncense::
 	finditem ITEM_LAX_INCENSE
 	end
 
-MtPyre_6F_EventScript_ItemTMShadowBall::
-	finditem ITEM_TM_SHADOW_BALL
+MtPyre_6F_EventScript_ItemTMReturn::
+	finditem ITEM_TM_RETURN
 	end
 
 MtPyre_6F_EventScript_ItemBanettite::

@@ -1145,7 +1145,7 @@
 #define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                       0x43E
 #define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE                     0x43F
 #define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
-#define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                         0x441
+#define FLAG_ITEM_MT_PYRE_6F_TM_RETURN                              0x441
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_ROCK_SLIDE              0x442
 #define FLAG_ITEM_FIERY_PATH_TM_WILL_O_WISP                         0x443
 #define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444
