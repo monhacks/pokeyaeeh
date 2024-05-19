@@ -723,10 +723,11 @@
 #define STRINGID_PKMNATFULLHEALTH                     721
 #define STRINGID_METALTERRAINENDS                     722
 #define STRINGID_TERRAINBECOMESMETALLIC               723
-#define STRINGID_METALTERRAINPREVENTS                 724
-#define STRINGID_ESCASPEARTISTTELEPORTED              725
+#define STRINGID_METALTERRAINPREVENTSDEF              724
+#define STRINGID_METALTERRAINPREVENTSATK              725
+#define STRINGID_ESCASPEARTISTTELEPORTED              726
 
-#define BATTLESTRINGS_COUNT                           726
+#define BATTLESTRINGS_COUNT                           727
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

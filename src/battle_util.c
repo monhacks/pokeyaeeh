@@ -6846,6 +6846,11 @@ bool32 IsBattlerTerrainAffected(u32 battler, u32 terrainFlag)
     return IsBattlerGrounded(battler);
 }
 
+bool32 IsBattlerMetalTerrainAffected(u32 battler)
+{
+    return IsBattlerTerrainAffected(battler, STATUS_FIELD_METAL_TERRAIN) && GetBattlerAbility(battler) != ABILITY_CONTRARY;
+}
+
 bool32 CanSleep(u32 battler)
 {
     u16 ability = GetBattlerAbility(battler);

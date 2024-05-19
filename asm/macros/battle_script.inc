@@ -2436,3 +2436,15 @@
 	.macro hidehealthboxes
 	various 0, VARIOUS_HIDE_HEALTHBOXES
 	.endm
+
+	.macro jumpifmetalterrainaffected battler:req jumpInstr:req
+	callnative BS_JumpIfMetalTerrainAffected
+	.byte \battler
+	.4byte \jumpInstr
+	.endm
+
+	.macro jumpifmetalterrainaffectedcontrary battler:req jumpInstr:req
+	callnative BS_JumpIfMetalTerrainAffectedContrary
+	.byte \battler
+	.4byte \jumpInstr
+	.endm
