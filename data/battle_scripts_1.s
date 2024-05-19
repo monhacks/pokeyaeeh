@@ -860,6 +860,7 @@ BattleScript_EffectAttackUpUserAlly:
 BattleScript_EffectAttackUpUserAlly_Works:
 	attackanimation
 	waitanimation
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsAttackUpUserAlly
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_EffectAttackUpUserAlly_TryAlly
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectAttackUpUserAllyUser_PrintString
@@ -874,6 +875,7 @@ BattleScript_EffectAttackUpUserAlly_End:
 	goto BattleScript_MoveEnd
 BattleScript_EffectAttackUpUserAlly_TryAlly_:
  	jumpifability BS_ATTACKER_PARTNER, ABILITY_SOUNDPROOF, BattleScript_EffectAttackUpUserAlly_TryAllyBlocked
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER_PARTNER, BattleScript_MetalTerrainPreventsAttackUpUserAlly_Ally
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_EffectAttackUpUserAlly_End
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectAttackUpUserAlly_AllyAnim
@@ -2481,6 +2483,7 @@ BattleScript_NobleRoarDoMoveAnim::
 	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
 	attackanimation
 	waitanimation
+	jumpifmetalterrainaffected BS_TARGET, BattleScript_MetalTerrainPreventsStats
 	setbyte sSTAT_ANIM_PLAYED, FALSE
 	playstatchangeanimation BS_TARGET, BIT_ATK | BIT_SPATK, STAT_CHANGE_NEGATIVE | STAT_CHANGE_MULTIPLE_STATS
 	playstatchangeanimation BS_TARGET, BIT_ATK, STAT_CHANGE_NEGATIVE
@@ -2490,6 +2493,7 @@ BattleScript_NobleRoarDoMoveAnim::
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_NobleRoarTryLowerSpAtk::
+	jumpifmetalterrainaffected BS_TARGET, BattleScript_MetalTerrainPreventsStats
 	playstatchangeanimation BS_TARGET, BIT_SPATK, STAT_CHANGE_NEGATIVE
 	setstatchanger STAT_SPATK, 1, TRUE
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_NobleRoarEnd
@@ -3331,6 +3335,7 @@ BattleScript_EffectCaptivate:
 	attackcanceler
 	jumpifsubstituteblocks BattleScript_FailedFromAtkString
 	jumpifoppositegenders BattleScript_CaptivateCheckAcc
+	jumpifmetalterrainaffected BS_TARGET, BattleScript_MetalTerrainPreventsStats
 	goto BattleScript_FailedFromAtkString
 BattleScript_CaptivateCheckAcc:
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
@@ -3546,15 +3551,25 @@ BattleScript_MetalTerrainPreventsMemento::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_METALTERRAINPREVENTSDEF
 	waitmessage B_WAIT_TIME_LONG
-	orhalfword gMoveResultFlags, MOVE_RESULT_FAILED
 	goto BattleScript_EffectMementoTryFaint
 
 BattleScript_MetalTerrainPreventsTickle::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_METALTERRAINPREVENTSDEF
 	waitmessage B_WAIT_TIME_LONG
-	orhalfword gMoveResultFlags, MOVE_RESULT_FAILED
 	goto BattleScript_TickleTryLowerDef
+
+BattleScript_MetalTerrainPreventsAttackUpUserAlly::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_METALTERRAINPREVENTSDEF
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_EffectAttackUpUserAlly_TryAlly
+
+BattleScript_MetalTerrainPreventsAttackUpUserAlly_Ally::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_METALTERRAINPREVENTSDEF
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
 
 BattleScript_MetalTerrainPreventsMovesAtk::
 	attackcanceler
