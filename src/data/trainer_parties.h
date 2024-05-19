@@ -5055,7 +5055,7 @@ static const struct TrainerMon sParty_Winona1[] = { // Krypto
         .lvl = 55,
         .ev = TRAINER_PARTY_EVS(252, 0, 92, 0, 0, 164),
         .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL),
-        .moves = {MOVE_STEALTH_ROCK, MOVE_ROCK_SLIDE, MOVE_BODY_PRESS, MOVE_IRON_DEFENSE},
+        .moves = {MOVE_STEALTH_ROCK, MOVE_ROCK_SLIDE, MOVE_STEEL_ROLLER, MOVE_IRON_DEFENSE},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -17382,14 +17382,14 @@ static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     .species = SPECIES_SNIVY,
     .ability = ABILITY_CONTRARY,
     .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_NASTY_PLOT, MOVE_NASTY_PLOT, MOVE_NASTY_PLOT, MOVE_NASTY_PLOT}
+    .moves = {MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER}
     },
     {
     .lvl = 1,
     .species = SPECIES_SQUIRTLE,
     .ability = ABILITY_RAIN_DISH,
     .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_NASTY_PLOT, MOVE_NASTY_PLOT, MOVE_NASTY_PLOT, MOVE_NASTY_PLOT}
+    .moves = {MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER}
     }
 };
 

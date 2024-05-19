@@ -10701,10 +10701,12 @@ BattleScript_RemoveTerrain_Cont:
 	waitmessage B_WAIT_TIME_LONG
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_METAL_TERRAIN, BattleScript_TerrainNotRemoved
 	removeterrain
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
 	printfromtable gTerrainStringIds
 	waitmessage B_WAIT_TIME_LONG
+BattleScript_TerrainNotRemoved:
 	tryfaintmon BS_TARGET
 	goto BattleScript_MoveEnd
 
