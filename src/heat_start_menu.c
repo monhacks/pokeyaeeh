@@ -1211,7 +1211,7 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
       sHeatStartMenu->flag = 0;
       menuSelected++;
       PlaySE(SE_SELECT);
-      if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_POKEDEX) {
+      if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
         menuSelected++;
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
         menuSelected++;
@@ -1229,11 +1229,12 @@ static void HeatStartMenu_HandleInput_DPADUP(void)
       break;
     default:
       PlaySE(SE_SELECT);
-      if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) {
+      if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
+        sHeatStartMenu->flag = 0;
+        menuSelected -= 2;
+      } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) {
         break;
       } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY) {
-        break;
-      } else if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKEDEX) {
         break;
       } else {
         sHeatStartMenu->flag = 0;
