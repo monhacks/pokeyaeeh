@@ -16479,6 +16479,34 @@ void BS_JumpIfTerrainAffected(void)
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+void BS_JumpIfMetalTerrainAffected(void)
+{
+    NATIVE_ARGS(u8 battler, const u8 *jumpInstr);
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+
+    if (IsBattlerMetalTerrainAffected(battler))
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_JumpIfMetalTerrainAffectedContrary(void)
+{
+    NATIVE_ARGS(u8 battler, const u8 *jumpInstr);
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+
+    
+    if (GetBattlerAbility(battler) == ABILITY_CONTRARY)
+    {
+        if (IsBattlerTerrainAffected(battler, STATUS_FIELD_METAL_TERRAIN))
+            gBattlescriptCurrInstr = cmd->jumpInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_TryReflectType(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
