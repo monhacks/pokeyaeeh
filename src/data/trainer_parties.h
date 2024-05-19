@@ -13623,7 +13623,7 @@ static const struct TrainerMon sParty_Dawson[] = {
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
         .lvl = 23,
-        .moves = {MOVE_CHILLING_WATER, MOVE_SNARL, MOVE_ICY_WIND, MOVE_NASTY_PLOT},
+        .moves = {MOVE_SHOCK_WAVE, MOVE_SNARL, MOVE_ICY_WIND, MOVE_NASTY_PLOT},
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST)
 
     },
@@ -13634,7 +13634,7 @@ static const struct TrainerMon sParty_Dawson[] = {
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 4, 252, 252, 0),
         .lvl = 23,
-        .moves = {MOVE_MAKE_IT_RAIN, MOVE_SHADOW_BALL, MOVE_PROTECT, MOVE_FLASH_CANNON},
+        .moves = {MOVE_MAKE_IT_RAIN, MOVE_SHADOW_BALL, MOVE_PROTECT, MOVE_NASTY_PLOT},
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID)
 
     },
@@ -13645,7 +13645,7 @@ static const struct TrainerMon sParty_Dawson[] = {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(4, 0, 126, 252, 126, 0),
         .lvl = 23,
-        .moves = {MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, MOVE_CHARGE_BEAM, MOVE_TRI_ATTACK},
+        .moves = {MOVE_SHOCK_WAVE, MOVE_FLASH_CANNON, MOVE_CHARGE_BEAM, MOVE_TRI_ATTACK},
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID)
 
     },
