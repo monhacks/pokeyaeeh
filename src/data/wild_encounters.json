@@ -7104,7 +7104,7 @@
               {
                 "min_level": 8,
                 "max_level": 16,
-                "species": "SPECIES_BURMY"
+                "species": "SPECIES_BURMY_PLANT_CLOAK"
               },
               {
                 "min_level": 8,
@@ -7258,7 +7258,7 @@
               {
                 "min_level": 8,
                 "max_level": 16,
-                "species": "SPECIES_BURMY"
+                "species": "SPECIES_BURMY_PLANT_CLOAK"
               },
               {
                 "min_level": 8,
@@ -7412,7 +7412,7 @@
               {
                 "min_level": 8,
                 "max_level": 16,
-                "species": "SPECIES_BURMY"
+                "species": "SPECIES_BURMY_PLANT_CLOAK"
               },
               {
                 "min_level": 8,
@@ -7566,7 +7566,7 @@
               {
                 "min_level": 8,
                 "max_level": 16,
-                "species": "SPECIES_BURMY"
+                "species": "SPECIES_BURMY_PLANT_CLOAK"
               },
               {
                 "min_level": 8,
