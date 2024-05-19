@@ -690,4 +690,7 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     
     [SPECIES_NIDOKING] = sNidokingFormSpeciesIdTable,
     [SPECIES_NIDOKING_MEGA] = sNidokingFormSpeciesIdTable,
+    
+    [SPECIES_MILOTIC] = sMiloticFormSpeciesIdTable,
+    [SPECIES_MILOTIC_MEGA] = sMiloticFormSpeciesIdTable,
 };

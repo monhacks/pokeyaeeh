@@ -1517,4 +1517,5 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
 
     [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenTeachableLearnset,
     [SPECIES_NIDOKING_MEGA] = sNidokingTeachableLearnset,
+    [SPECIES_MILOTIC_MEGA] = sMiloticTeachableLearnset,
 };

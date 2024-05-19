@@ -1364,3 +1364,9 @@ static const u16 sNidokingFormSpeciesIdTable[] = {
     SPECIES_NIDOKING_MEGA,
     FORM_SPECIES_END,
 };
+
+static const u16 sMiloticFormSpeciesIdTable[] = {
+    SPECIES_MILOTIC,
+    SPECIES_MILOTIC_MEGA,
+    FORM_SPECIES_END,
+};

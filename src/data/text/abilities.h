@@ -310,6 +310,7 @@ static const u8 sCrypticPowerDescription[] = _("Doubles Special Attack.");
 static const u8 sImpenetrableDescription[] = _("Only damaged by direct attacks.");
 static const u8 sEscapeArtistDescription[] = _("Teleports away if move misses or fails.");
 static const u8 sMetalSurgeDescription[] = _("Field becomes metallic.");
+static const u8 sDragonSheenDescription[] = _("Multiscale + Dragon's Maw");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -639,6 +640,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_IMPENETRABLE] = _("Impenetrable"),
     [ABILITY_ESCAPE_ARTIST] = _("Escape Artist"),
     [ABILITY_METAL_SURGE] = _("Metal Surge"),
+    [ABILITY_DRAGON_SHEEN] = _("Dragon Sheen"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -968,6 +970,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_IMPENETRABLE] = _("Impenetrable"),
     [ABILITY_ESCAPE_ARTIST] = _("EscapeArtist"),
     [ABILITY_METAL_SURGE] = _("Metal Surge"),
+    [ABILITY_DRAGON_SHEEN] = _("Dragon Sheen"),
 };
 #endif
 
@@ -1298,4 +1301,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_IMPENETRABLE] = sImpenetrableDescription,
     [ABILITY_ESCAPE_ARTIST] = sEscapeArtistDescription,
     [ABILITY_METAL_SURGE] = sMetalSurgeDescription,
+    [ABILITY_DRAGON_SHEEN] = sDragonSheenDescription
 };

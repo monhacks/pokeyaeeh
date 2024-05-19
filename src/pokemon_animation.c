@@ -1608,6 +1608,7 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     // New Megas
     [SPECIES_NIDOQUEEN_MEGA]               = BACK_ANIM_H_VIBRATE,
     [SPECIES_NIDOKING_MEGA]                = BACK_ANIM_H_VIBRATE,
+    [SPECIES_MILOTIC_MEGA]                 = BACK_ANIM_H_VIBRATE,
 };
 
 // Equivalent to struct YellowFlashData, but doesn't match as a struct

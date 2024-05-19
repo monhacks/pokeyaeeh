@@ -4434,6 +4434,11 @@ static const u8 sNidokingiteDesc[] = _(
     "Nidoking to Mega\n"
     "Evolve in battle.");
 
+static const u8 sMiloticiteDesc[] = _(
+    "This stone enables\n"
+    "Milotic to Mega\n"
+    "Evolve in battle.");
+
 static const u8 sCandyBoxDesc[] = _(
     "A candy box filled\n"
     "with treats! Maxes\n"

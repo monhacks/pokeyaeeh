@@ -8269,3 +8269,9 @@ const u32 gMonBackPic_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/meg
 const u8 gMonIcon_NidokingMega[] = INCBIN_U8("graphics/pokemon/nidoking/mega/icon.4bpp");
 const u32 gMonPalette_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/mega/normal.gbapal.lz");
 const u32 gMonShinyPalette_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/mega/shiny.gbapal.lz");
+
+const u32 gMonFrontPic_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/front.4bpp.lz");
+const u32 gMonBackPic_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/back.4bpp.lz");
+const u8 gMonIcon_MiloticMega[] = INCBIN_U8("graphics/pokemon/milotic/mega/icon.4bpp");
+const u32 gMonPalette_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/normal.gbapal.lz");
+const u32 gMonShinyPalette_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/shiny.gbapal.lz");

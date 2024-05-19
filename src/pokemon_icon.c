@@ -1465,6 +1465,7 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
 #endif
     [SPECIES_NIDOQUEEN_MEGA] = gMonIcon_NidoqueenMega,
     [SPECIES_NIDOKING_MEGA] = gMonIcon_NidokingMega,
+    [SPECIES_MILOTIC_MEGA] = gMonIcon_MiloticMega,
     [SPECIES_EGG] = gMonIcon_Egg,
 };
 
@@ -2866,6 +2867,7 @@ const u8 gMonIconPaletteIndices[] =
 #endif
     [SPECIES_NIDOQUEEN_MEGA] = 2,
     [SPECIES_NIDOKING_MEGA] = 2,
+    [SPECIES_MILOTIC_MEGA] = 3,
     [SPECIES_EGG] = 1,
 };
 

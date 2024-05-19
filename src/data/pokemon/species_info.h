@@ -28144,4 +28144,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
+
+    [SPECIES_MILOTIC_MEGA] =
+    {
+        .baseHP        = 105,
+        .baseAttack    = 60,
+        .baseDefense   = 109,
+        .baseSpeed     = 91,
+        .baseSpAttack  = 140,
+        .baseSpDefense = 155,
+        .types = { TYPE_WATER, TYPE_DRAGON},
+        .catchRate = 60,
+        .expYield = 189,
+        .evYield_SpDefense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
+        .abilities = {ABILITY_DRAGON_SHEEN, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PINK,
+        .noFlip = FALSE,
+    },
 };

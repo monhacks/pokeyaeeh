@@ -1649,10 +1649,9 @@
 // New Megas
 #define SPECIES_NIDOQUEEN_MEGA                   FORMS_START + 376
 #define SPECIES_NIDOKING_MEGA                    FORMS_START + 377
+#define SPECIES_MILOTIC_MEGA                     FORMS_START + 378
 
-#define FORMS_END                                SPECIES_NIDOKING_MEGA
-
-#define SPECIES_EGG                              FORMS_END + 1
+#define SPECIES_EGG                              SPECIES_MILOTIC_MEGA + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

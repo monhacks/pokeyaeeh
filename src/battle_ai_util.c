@@ -304,6 +304,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_CRYPTIC_POWER] = 10,
     [ABILITY_ESCAPE_ARTIST] = 10,
     [ABILITY_METAL_SURGE] = 8,
+    [ABILITY_DRAGON_SHEEN] = 10,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -2744,7 +2745,9 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
                         || (AtMaxHp(battlerDef) && (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
                         || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
                         || defAbility == ABILITY_MULTISCALE
-                        || defAbility == ABILITY_SHADOW_SHIELD))))
+                        || defAbility == ABILITY_DRAGON_SHEEN
+                        || defAbility == ABILITY_SHADOW_SHIELD
+                        || defAbility == ABILITY_DRAGON_SHEEN))))
                         return PIVOT;   // pivot to break sash/sturdy/multiscale
                 }
                 else if (!hasStatBoost)
@@ -2752,7 +2755,8 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
                     if (!IS_MOVE_STATUS(move) && (AtMaxHp(battlerDef) && (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
                         || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
                         || defAbility == ABILITY_MULTISCALE
-                        || defAbility == ABILITY_SHADOW_SHIELD)))
+                        || defAbility == ABILITY_SHADOW_SHIELD
+                        || defAbility == ABILITY_DRAGON_SHEEN)))
                         return PIVOT;   // pivot to break sash/sturdy/multiscale
 
                     if (shouldSwitch)
