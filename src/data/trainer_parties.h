@@ -17379,15 +17379,15 @@ static const struct TrainerMon sParty_Leaf[] = {
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
     .lvl = 1,
-    .species = SPECIES_SNIVY,
-    .ability = ABILITY_CONTRARY,
+    .species = SPECIES_GEODUDE_ALOLAN,
+    .ability = ABILITY_GALVANIZE,
     .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER}
+    .moves = {MOVE_EXPLOSION, MOVE_EXPLOSION, MOVE_EXPLOSION, MOVE_EXPLOSION}
     },
     {
     .lvl = 1,
-    .species = SPECIES_SQUIRTLE,
-    .ability = ABILITY_RAIN_DISH,
+    .species = SPECIES_PACHIRISU,
+    .ability = ABILITY_VOLT_ABSORB,
     .heldItem = ITEM_EVIOLITE,
     .moves = {MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER, MOVE_STEEL_ROLLER}
     }
