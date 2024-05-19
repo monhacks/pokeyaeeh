@@ -1875,7 +1875,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     // Nidoqueen-Mega
     [SPECIES_NIDOQUEEN_MEGA - 1] = NATIONAL_DEX_NIDOQUEEN,
     [SPECIES_NIDOKING_MEGA - 1] = NATIONAL_DEX_NIDOKING,
-    //[SPECIES_MILOTIC_MEGA - 1] = NATIONAL_DEX_MILOTIC,
+    [SPECIES_MILOTIC_MEGA - 1] = NATIONAL_DEX_MILOTIC,
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
