@@ -297,6 +297,8 @@ const struct FormChange *const gFormChangeTablePointers[NUM_SPECIES] =
 #endif
     [SPECIES_NIDOQUEEN] = sNidoqueenFormChangeTable,
     [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenFormChangeTable,
+    [SPECIES_NIDOKING] = sNidokingFormChangeTable,
+    [SPECIES_NIDOKING_MEGA] = sNidokingFormChangeTable,
 };
 
 const struct Fusion *const gFusionTablePointers[NUM_SPECIES] =

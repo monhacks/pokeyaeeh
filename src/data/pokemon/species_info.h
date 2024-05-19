@@ -28122,4 +28122,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
+
+    [SPECIES_NIDOKING_MEGA] =
+    {
+        .baseHP        = 81,
+        .baseAttack    = 152,
+        .baseDefense   = 97,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 85,
+        .types = { TYPE_POISON, TYPE_GROUND},
+        .catchRate = 45,
+        .expYield = 227,
+        .evYield_Attack    = 3,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
+        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PURPLE,
+        .noFlip = FALSE,
+    },
 };

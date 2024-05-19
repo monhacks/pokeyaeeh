@@ -1587,7 +1587,6 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_RAYQUAZA_MEGA]                = BACK_ANIM_SHAKE_GLOW_GREEN,
     [SPECIES_KYOGRE_PRIMAL]                = BACK_ANIM_SHAKE_GLOW_BLUE,
     [SPECIES_GROUDON_PRIMAL]               = BACK_ANIM_SHAKE_GLOW_RED,
-    [SPECIES_NIDOQUEEN_MEGA]               = BACK_ANIM_H_VIBRATE,
 
     // Other Forms
     [SPECIES_PIKACHU_COSPLAY]              = BACK_ANIM_H_VIBRATE,
@@ -1605,6 +1604,10 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_PIKACHU_PARTNER_CAP]          = BACK_ANIM_H_VIBRATE,
     [SPECIES_PIKACHU_WORLD_CAP]            = BACK_ANIM_H_VIBRATE,
     [SPECIES_PICHU_SPIKY_EARED]            = BACK_ANIM_H_VIBRATE,
+
+    // New Megas
+    [SPECIES_NIDOQUEEN_MEGA]               = BACK_ANIM_H_VIBRATE,
+    [SPECIES_NIDOKING_MEGA]                = BACK_ANIM_H_VIBRATE,
 };
 
 // Equivalent to struct YellowFlashData, but doesn't match as a struct

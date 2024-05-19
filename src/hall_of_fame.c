@@ -640,6 +640,10 @@ u16 getHallofFameSpecies(u8 num)
             else if(item == ITEM_MEWTWONITE_Y)
                 return SPECIES_MEWTWO_MEGA_Y;
         break;
+        case SPECIES_NIDOKING:
+            if(item == ITEM_NIDOKINGITE)
+                return SPECIES_NIDOKING_MEGA;
+        break;
         case SPECIES_NIDOQUEEN:
             if(item == ITEM_NIDOQUEENITE)
                 return SPECIES_NIDOQUEEN_MEGA;

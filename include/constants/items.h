@@ -1205,8 +1205,9 @@
 
 // Custom Mega Stones
 #define ITEM_NIDOQUEENITE 904
+#define ITEM_NIDOKINGITE 905
 
-#define ITEMS_COUNT 905
+#define ITEMS_COUNT 906
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

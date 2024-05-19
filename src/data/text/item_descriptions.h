@@ -4429,6 +4429,11 @@ static const u8 sNidoqueeniteDesc[] = _(
     "Nidoqueen to Mega\n"
     "Evolve in battle.");
 
+static const u8 sNidokingiteDesc[] = _(
+    "This stone enables\n"
+    "Nidoking to Mega\n"
+    "Evolve in battle.");
+
 static const u8 sCandyBoxDesc[] = _(
     "A candy box filled\n"
     "with treats! Maxes\n"
