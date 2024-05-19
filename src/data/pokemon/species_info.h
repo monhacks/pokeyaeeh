@@ -1684,7 +1684,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseHP        = 90,
         .baseDefense   = 87,
         .baseSpeed     = 76,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 95,
         .baseSpDefense = 85,
         #if P_UPDATED_STATS >= GEN_6
             .baseAttack    = 92,
@@ -1757,7 +1757,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 75,
         #if P_UPDATED_STATS >= GEN_6
-            .baseAttack    = 102,
+            .baseAttack    = 112,
         #else
             .baseAttack    = 92,
         #endif
@@ -28107,7 +28107,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 102,
         .baseDefense   = 97,
         .baseSpeed     = 106,
-        .baseSpAttack  = 125,
+        .baseSpAttack  = 135,
         .baseSpDefense = 95,
         .types = { TYPE_POISON, TYPE_GROUND},
         .catchRate = 45,
