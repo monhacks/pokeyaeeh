@@ -819,10 +819,10 @@ static const struct FormChange sNidokingFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 
-/*static const struct FormChange sMiloticFormChangeTable[] = {
+static const struct FormChange sMiloticFormChangeTable[] = {
     {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MILOTIC_MEGA,   ITEM_MILOTICITE},
     {FORM_CHANGE_TERMINATOR},
-}*/
+};
 
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN
