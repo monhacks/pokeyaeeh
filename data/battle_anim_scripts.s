@@ -17528,7 +17528,6 @@ Move_MAELSTROM:
 	waitbgfadeout
 	end
 
-
 Move_LEAF_LEAP:: @mish and mash of acrobatics and trailblaze
 	loadspritegfx ANIM_TAG_ROUND_SHADOW
 	loadspritegfx ANIM_TAG_WHITE_STREAK
@@ -17572,6 +17571,33 @@ Move_LEAF_LEAP:: @mish and mash of acrobatics and trailblaze
 	visible ANIM_ATTACKER
 	end
 
+Move_FROST_BLADE:
+	loadspritegfx ANIM_TAG_ICE_CHUNK @blue cut or smth
+	loadspritegfx ANIM_TAG_SWORD @swords dance
+	loadspritegfx ANIM_TAG_CLAW_SLASH @blade hit
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS @freeze effect
+	monbg ANIM_TARGET
+	setalpha 13, 3
+	fadetobg BG_ICE
+	waitforvisualfinish
+	playsewithpan SE_M_SWORDS_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 16, 6, 1, 4
+	createsprite gSwordsDanceBladeSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0
+	waitforvisualfinish
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
+	createsprite gFrostBladeImpactTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1
+	delay 0x2
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 12, 1
+	waitforvisualfinish
+	call IceCrystalEffectShort
+	waitforvisualfinish
+	restorebg
+	waitbgfadein
+	delay 20
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
 
 Move_PSYCHIC_NOISE::
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
@@ -18194,7 +18220,6 @@ Move_DRAGON_CHEER::
 Move_SUPERCELL_SLAM::
 Move_UPPER_HAND::
 Move_MALIGNANT_CHAIN::
-Move_FROST_BLADE::
 	end @to do
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
