@@ -28104,8 +28104,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_NIDOQUEEN_MEGA] =
     {
         .baseHP        = 90,
-        .baseAttack    = 102,
-        .baseDefense   = 97,
+        .baseAttack    = 92,
+        .baseDefense   = 107,
         .baseSpeed     = 106,
         .baseSpAttack  = 135,
         .baseSpDefense = 95,
