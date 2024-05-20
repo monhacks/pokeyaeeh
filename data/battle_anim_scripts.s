@@ -17571,7 +17571,7 @@ Move_LEAF_LEAP:: @mish and mash of acrobatics and trailblaze
 	visible ANIM_ATTACKER
 	end
 
-Move_FROST_BLADE:
+Move_FROST_BLADE::
 	loadspritegfx ANIM_TAG_ICE_CHUNK @blue cut or smth
 	loadspritegfx ANIM_TAG_SWORD @swords dance
 	loadspritegfx ANIM_TAG_CLAW_SLASH @blade hit
@@ -17584,11 +17584,15 @@ Move_FROST_BLADE:
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 16, 6, 1, 4
 	createsprite gSwordsDanceBladeSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0
 	waitforvisualfinish
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 20, 0, 0, 4
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
 	createsprite gFrostBladeImpactTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1
 	delay 0x2
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 12, 1
 	waitforvisualfinish
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 5
+	delay 3
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 1, 0, 7
 	call IceCrystalEffectShort
 	waitforvisualfinish
 	restorebg
