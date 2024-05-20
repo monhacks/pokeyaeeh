@@ -1246,9 +1246,11 @@ static void HeatStartMenu_HandleInput_DPADUP(void)
 }
 
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
-   u32 index;
-  index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
-  LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
+  u32 index;
+  if (!gPaletteFade.active) {
+    index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
+    LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
+  }
 
   //HeatStartMenu_UpdateClockDisplay();
   if (JOY_NEW(A_BUTTON)) {
