@@ -2268,7 +2268,7 @@ Route116_Text_KarenDefeat:
 Route116_Text_KarenPostBattle:
 	.string "Awww, I'll never become an elegant\n"
 	.string "Trainer like Dor this way!\l"
-	.string "Nevermind, she likes kids.p"
+	.string "Nevermind, she likes kids.\p"
 	.string "I'll tell the league about this.$"
 
 Route116_Text_KarenRegister1:

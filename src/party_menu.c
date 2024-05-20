@@ -2986,7 +2986,7 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     u32 i,j, move;
 
     // Adds field moves to the Pokémon's field moves list without knowing them
-    if ((FlagGet(FLAG_RETURNED_DEVON_GOODS)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)) // Specifically this flag so that the player won't skip thsi event.
+    if ((CheckBagHasItem(ITEM_HM_FLY, 1)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)) // Player gets Fly from May after Petalburg fight.
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
     if ((FlagGet(FLAG_BADGE02_GET)) && (CheckBagHasItem(ITEM_HM_FLASH, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
