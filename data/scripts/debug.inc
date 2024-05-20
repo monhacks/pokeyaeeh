@@ -121,8 +121,7 @@ Text_TestDefeat:
     .string "Victorious!$"
 
 Debug_EventScript_Script_1::
-	goto_if_set FLAG_BADGE05_GET, Debug_EventScript_UnsetTestFlag
-	goto Debug_EventScript_SetTestFlag
+	removeitem ITEM_LETTER
 	end
 
 Debug_EventScript_Script_2::

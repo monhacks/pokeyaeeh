@@ -17411,7 +17411,7 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
         .ev = TRAINER_PARTY_EVS(240, 0, 0, 0, 244, 16),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_SPIKES, MOVE_ACUPRESSURE, MOVE_SCALD, MOVE_RISING_VOLTAGE}
+        .moves = {MOVE_SPIKES, MOVE_ACUPRESSURE, MOVE_SCALD, MOVE_SHOCK_WAVE}
     },
     {
         .species = SPECIES_SQUAWKABILLY_BLUE_PLUMAGE,
@@ -17442,7 +17442,7 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .moves = {MOVE_TRAILBLAZE, MOVE_FLARE_BLITZ, MOVE_CRUNCH, MOVE_LEECH_LIFE}
+        .moves = {MOVE_TRAILBLAZE, MOVE_FIRE_FANG, MOVE_BITE, MOVE_LEER}
     },
     {
         .species = SPECIES_FROGADIER,
@@ -17453,17 +17453,17 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 248, 240, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_BUBBLE_BEAM, MOVE_ICE_BEAM, MOVE_GRASS_KNOT, MOVE_DARK_PULSE}
+        .moves = {MOVE_WATER_PULSE, MOVE_ICY_WIND, MOVE_GRASS_KNOT, MOVE_DARK_PULSE}
     },
     {
         .species = SPECIES_GROVYLE,
         .heldItem = ITEM_LIECHI_BERRY,
         .gender = TRAINER_MON_MALE,
-        .ability = ABILITY_UNBURDEN,
+        .ability = ABILITY_TECHNICIAN,
         .lvl = 23,
         .ev = TRAINER_PARTY_EVS(0, 244, 0, 248, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .moves = {MOVE_LEAF_BLADE, MOVE_ACROBATICS, MOVE_DRAIN_PUNCH, MOVE_ROCK_SLIDE}
+        .moves = {MOVE_RAZOR_LEAF, MOVE_AERIAL_ACE, MOVE_PURSUIT, MOVE_NONE}
     }
 };
