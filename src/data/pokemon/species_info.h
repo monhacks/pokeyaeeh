@@ -1684,7 +1684,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseHP        = 90,
         .baseDefense   = 87,
         .baseSpeed     = 76,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 95,
         .baseSpDefense = 85,
         #if P_UPDATED_STATS >= GEN_6
             .baseAttack    = 92,
@@ -1757,7 +1757,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 75,
         #if P_UPDATED_STATS >= GEN_6
-            .baseAttack    = 102,
+            .baseAttack    = 112,
         #else
             .baseAttack    = 92,
         #endif
@@ -28104,10 +28104,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_NIDOQUEEN_MEGA] =
     {
         .baseHP        = 90,
-        .baseAttack    = 102,
-        .baseDefense   = 97,
+        .baseAttack    = 92,
+        .baseDefense   = 107,
         .baseSpeed     = 106,
-        .baseSpAttack  = 125,
+        .baseSpAttack  = 135,
         .baseSpDefense = 95,
         .types = { TYPE_POISON, TYPE_GROUND},
         .catchRate = 45,
@@ -28120,6 +28120,50 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = FALSE,
+    },
+
+    [SPECIES_NIDOKING_MEGA] =
+    {
+        .baseHP        = 81,
+        .baseAttack    = 152,
+        .baseDefense   = 97,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 85,
+        .types = { TYPE_POISON, TYPE_GROUND},
+        .catchRate = 45,
+        .expYield = 227,
+        .evYield_Attack    = 3,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
+        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PURPLE,
+        .noFlip = FALSE,
+    },
+
+    [SPECIES_MILOTIC_MEGA] =
+    {
+        .baseHP        = 105,
+        .baseAttack    = 60,
+        .baseDefense   = 109,
+        .baseSpeed     = 91,
+        .baseSpAttack  = 140,
+        .baseSpDefense = 155,
+        .types = { TYPE_WATER, TYPE_DRAGON},
+        .catchRate = 60,
+        .expYield = 189,
+        .evYield_SpDefense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
+        .abilities = {ABILITY_DRAGON_SHEEN, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
 };

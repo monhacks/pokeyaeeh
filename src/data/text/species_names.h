@@ -1520,4 +1520,6 @@ const u8 gSpeciesNames[NUM_SPECIES][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = _("Tauros"),
     
     [SPECIES_NIDOQUEEN_MEGA] = _("Nidoqueen"),
+    [SPECIES_NIDOKING_MEGA] = _("Nidoking"),
+    [SPECIES_MILOTIC_MEGA] = _("Milotic"),
 };

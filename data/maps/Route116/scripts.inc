@@ -470,7 +470,7 @@ Route116_EventScript_Dawson2::
 	msgbox Route116_EventScript_Dawson2_Text_0
 	giveitem ITEM_AMULET_COIN, 2
 	playfanfare MUS_OBTAIN_ITEM
-	giveitem ITEM_TM_FLASH_CANNON, 1
+	giveitem ITEM_TM_SHOCK_WAVE, 1
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Route116_EventScript_Dawson2_Text_1, MSGBOX_NPC
 	return
@@ -540,7 +540,7 @@ Route116_EventScript_Dawson2_Text_0:
 	.string "Alrighty, fine! I lost!\pHere, take my stuff.$"
 
 Route116_EventScript_Dawson2_Text_1:
-	.string "Amulet Coin earns you more money in\ntrainer battles if your Pokémon\lholding it participates in the battle.\pAnd the TM, Flash Cannon, is a\nreliable Steel-type attack.\pIt has a chance of lowering your foe's\nSp. Def stat.$"
+	.string "Amulet Coin earns you more money in\ntrainer battles if your Pokémon\lholding it participates in the battle.\pAnd the TM, Shock Wave, is a reliable\nElectric-type attack.\pWhy? Cuz it never misses!$"
 
 Route116_EventScript_Dawson_Text_0:
 	.string "When you lay your eyes on my\nPokémon's gorgeous fur,\ltheir beauty will render you helpless!$"

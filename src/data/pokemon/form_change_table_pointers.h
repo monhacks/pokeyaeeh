@@ -13,6 +13,10 @@ const struct FormChange *const gFormChangeTablePointers[NUM_SPECIES] =
     [SPECIES_BEEDRILL_MEGA] = sBeedrillFormChangeTable,
     [SPECIES_PIDGEOT] = sPidgeotFormChangeTable,
     [SPECIES_PIDGEOT_MEGA] = sPidgeotFormChangeTable,
+    [SPECIES_NIDOQUEEN] = sNidoqueenFormChangeTable,
+    [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenFormChangeTable,
+    [SPECIES_NIDOKING] = sNidokingFormChangeTable,
+    [SPECIES_NIDOKING_MEGA] = sNidokingFormChangeTable,
     [SPECIES_ALAKAZAM] = sAlakazamFormChangeTable,
     [SPECIES_ALAKAZAM_MEGA] = sAlakazamFormChangeTable,
     [SPECIES_MACHAMP] = sMachampFormChangeTable,
@@ -70,6 +74,8 @@ const struct FormChange *const gFormChangeTablePointers[NUM_SPECIES] =
     [SPECIES_MEDICHAM_MEGA] = sMedichamFormChangeTable,
     [SPECIES_ALTARIA] = sAltariaFormChangeTable,
     [SPECIES_ALTARIA_MEGA] = sAltariaFormChangeTable,
+    [SPECIES_MILOTIC] = sMiloticFormChangeTable,
+    [SPECIES_MILOTIC_MEGA] = sMiloticFormChangeTable,
     [SPECIES_ABSOL] = sAbsolFormChangeTable,
     [SPECIES_ABSOL_MEGA] = sAbsolFormChangeTable,
     [SPECIES_CASTFORM_NORMAL] = sCastformFormChangeTable,
@@ -295,8 +301,6 @@ const struct FormChange *const gFormChangeTablePointers[NUM_SPECIES] =
     [SPECIES_TERAPAGOS_TERASTAL] = sTerapagosFormChangeTable,
     [SPECIES_TERAPAGOS_STELLAR] = sTerapagosFormChangeTable,
 #endif
-    [SPECIES_NIDOQUEEN] = sNidoqueenFormChangeTable,
-    [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenFormChangeTable,
 };
 
 const struct Fusion *const gFusionTablePointers[NUM_SPECIES] =

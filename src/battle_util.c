@@ -1059,6 +1059,7 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_WELL_BAKED_BODY] = 1,
     [ABILITY_MINDS_EYE] = 1,
     [ABILITY_ILLUMINATE] = 1,
+    [ABILITY_DRAGON_SHEEN] = 1,
 };
 
 static const u8 sAbilitiesNotTraced[ABILITIES_COUNT] =
@@ -9601,6 +9602,10 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (moveType == TYPE_DRAGON)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_DRAGON_SHEEN:
+        if (moveType == TYPE_DRAGON)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_GORILLA_TACTICS:
         if (IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -10309,6 +10314,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     {
     case ABILITY_MULTISCALE:
     case ABILITY_SHADOW_SHIELD:
+    case ABILITY_DRAGON_SHEEN:
         if (BATTLER_MAX_HP(battlerDef))
             return UQ_4_12(0.5);
         break;

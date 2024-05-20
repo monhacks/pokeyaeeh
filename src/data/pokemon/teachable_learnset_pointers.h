@@ -1516,4 +1516,6 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_TAUROS_PALDEAN_AQUA_BREED] = sTaurosPaldeanAquaBreedTeachableLearnset,
 
     [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenTeachableLearnset,
+    [SPECIES_NIDOKING_MEGA] = sNidokingTeachableLearnset,
+    [SPECIES_MILOTIC_MEGA] = sMiloticTeachableLearnset,
 };

@@ -1358,3 +1358,15 @@ static const u16 sNidoqueenFormSpeciesIdTable[] = {
     SPECIES_NIDOQUEEN_MEGA,
     FORM_SPECIES_END,
 };
+
+static const u16 sNidokingFormSpeciesIdTable[] = {
+    SPECIES_NIDOKING,
+    SPECIES_NIDOKING_MEGA,
+    FORM_SPECIES_END,
+};
+
+static const u16 sMiloticFormSpeciesIdTable[] = {
+    SPECIES_MILOTIC,
+    SPECIES_MILOTIC_MEGA,
+    FORM_SPECIES_END,
+};

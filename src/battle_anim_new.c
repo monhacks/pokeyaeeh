@@ -2387,6 +2387,17 @@ const struct SpriteTemplate gSolarBladeImpactTemplate =
     .callback = AnimClawSlash
 };
 
+const struct SpriteTemplate gFrostBladeImpactTemplate =
+{
+    .tileTag = ANIM_TAG_CLAW_SLASH,
+    .paletteTag = ANIM_TAG_ICE_CHUNK,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gAnims_ClawSlash,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimClawSlash
+};
+
 //leafage
 const struct SpriteTemplate gLeafageImpactTemplate =
 {

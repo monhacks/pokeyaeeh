@@ -2463,6 +2463,8 @@ gCryTable::
 	cry Cry_Unown
 .endif
 	cry Cry_Nidoqueen
+	cry Cry_Nidoking
+	cry Cry_Milotic
 
 	.align 2
 gCryTable_Reverse::
@@ -4884,3 +4886,5 @@ gCryTable_Reverse::
 	cry_reverse Cry_Unown
 .endif
 	cry_reverse Cry_Nidoqueen
+	cry_reverse Cry_Nidoking
+	cry_reverse Cry_Milotic

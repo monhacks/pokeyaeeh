@@ -578,7 +578,7 @@ RustboroCity_EventScript_ReturnGoods::
 	call_if_eq VAR_TEMP_1, 3, RustboroCity_EventScript_EmployeeApproachPlayerDown2
 	call_if_eq VAR_TEMP_1, 4, RustboroCity_EventScript_EmployeeFacePlayerRight
 	msgbox RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT
-	giveitem ITEM_GREAT_BALL
+	giveitem ITEM_TM_CHARGE_BEAM
 	call_if_eq VAR_RESULT, FALSE, RustboroCity_EventScript_BagFull
 	msgbox RustboroCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
@@ -811,7 +811,7 @@ RustboroCity_EventScript_RivalEncounter::
 	end
 
 RustboroCity_EventScript_MayEncounter::
-	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_MayBrineyHint
+	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_MayGiveFly
 	setflag FLAG_MET_RIVAL_RUSTBORO
 	msgbox RustboroCity_Text_MayHiLetsRegister, MSGBOX_DEFAULT
 	closemessage
@@ -839,6 +839,16 @@ RustboroCity_EventScript_BattleMay::
 	case 2, RustboroCity_EventScript_BattleMayMudkip
 	end
 
+RustboroCity_EventScript_MayGiveFly::
+	goto_if_set FLAG_RECEIVED_HM_FLY, RustboroCity_EventScript_MayBrineyHint
+	msgbox RustboroCity_Text_MayGiveFly, MSGBOX_DEFAULT
+	giveitem ITEM_HM_FLY, 1
+	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
+	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
+	setflag FLAG_RECEIVED_HM_FLY
+	releaseall
+	end
+
 RustboroCity_EventScript_MayBrineyHint::
 	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
@@ -853,23 +863,23 @@ RustboroCity_EventScript_RestoreBgm::
 RustboroCity_EventScript_BattleMayTreecko::
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_MayGiveFly
 	end
 
 RustboroCity_EventScript_BattleMayTorchic::
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_MayGiveFly
 	end
 
 RustboroCity_EventScript_BattleMayMudkip::
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_MayGiveFly
 	end
 
 RustboroCity_EventScript_BrendanEncounter::
-	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_BrendanBrineyHint
+	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_BrendanGiveFly
 	setflag FLAG_MET_RIVAL_RUSTBORO
 	msgbox RustboroCity_Text_BrendanHiLetsRegister, MSGBOX_DEFAULT
 	closemessage
@@ -896,6 +906,16 @@ RustboroCity_EventScript_BattleBrendan::
 	case 2, RustboroCity_EventScript_BattleBrendanMudkip
 	end
 
+RustboroCity_EventScript_BrendanGiveFly::
+	goto_if_set FLAG_RECEIVED_HM_FLY, RustboroCity_EventScript_BrendanBrineyHint
+	msgbox RustboroCity_Text_BrendanGiveFly, MSGBOX_DEFAULT
+	giveitem ITEM_HM_FLY, 1
+	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
+	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
+	setflag FLAG_RECEIVED_HM_FLY
+	releaseall
+	end
+
 RustboroCity_EventScript_BrendanBrineyHint::
 	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
@@ -905,19 +925,19 @@ RustboroCity_EventScript_BrendanBrineyHint::
 RustboroCity_EventScript_BattleBrendanTreecko::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	goto RustboroCity_EventScript_BrendanGiveFly
 	end
 
 RustboroCity_EventScript_BattleBrendanTorchic::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	goto RustboroCity_EventScript_BrendanGiveFly
 	end
 
 RustboroCity_EventScript_BattleBrendanMudkip::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	goto RustboroCity_EventScript_BrendanGiveFly
 	end
 
 RustboroCity_Movement_RivalApproachPlayer0:
@@ -1083,11 +1103,11 @@ RustboroCity_Text_YouGotItThankYou:
 	.string "You got them back!\p"
 	.string "You really are a great Trainer!\p"
 	.string "I know! As my thanks, I'll give you\n"
-	.string "another Great Ball!$"
+	.string "another TM!$"
 
 RustboroCity_Text_YoureLoadedWithItems:
-	.string "You're loaded with items.\n"
-	.string "I can't give you this Great Ball.$"
+	.string "You debug using lil bro!\n"
+	.string "I can't give you this TM.$"
 
 RustboroCity_Text_PleaseComeWithMe:
 	.string "Excuse me, please!\n"
@@ -1128,6 +1148,10 @@ RustboroCity_Text_MayDefeat:
 	.string "Yikes!\n"
 	.string "You're better than I expected!$"
 
+RustboroCity_Text_MayGiveFly:
+	.string "Nice battle, {PLAYER}!\p"
+	.string "Here's a reward for your efforts!$"
+
 RustboroCity_Text_MayMrBrineyHint:
 	.string "May: Oh, by the way, Mr. Briney, who\n"
 	.string "I just passed…\p"
@@ -1165,6 +1189,11 @@ RustboroCity_Text_BrendanIWontGoEasy:
 RustboroCity_Text_BrendanDefeat:
 	.string "Hmm…\n"
 	.string "You're pretty good.$"
+
+RustboroCity_Text_BrendanGiveFly:
+	.string "Wow! You're strong!\p"
+	.string "To be fair, I did go easy on you, haha.\p"
+	.string "This should make travels easier!$"
 
 RustboroCity_Text_BrendanMrBrineyHint:
 	.string "Brendan: By the way, you know\n"

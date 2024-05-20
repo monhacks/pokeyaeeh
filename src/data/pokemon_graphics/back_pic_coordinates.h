@@ -1530,5 +1530,7 @@ const struct MonCoords gMonBackPicCoords[NUM_SPECIES + 1] =
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE_MEGA] = { .size = MON_COORDS_SIZE(64, 64), .y_offset = 4 },
 #endif
     [SPECIES_NIDOQUEEN_MEGA]               = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_NIDOKING_MEGA]                = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_MILOTIC_MEGA]                 = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
 };

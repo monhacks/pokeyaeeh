@@ -8196,6 +8196,18 @@ extern const u8 gMonIcon_NidoqueenMega[];
 extern const u32 gMonPalette_NidoqueenMega[];
 extern const u32 gMonShinyPalette_NidoqueenMega[];
 
+extern const u32 gMonFrontPic_NidokingMega[];
+extern const u32 gMonBackPic_NidokingMega[];
+extern const u8 gMonIcon_NidokingMega[];
+extern const u32 gMonPalette_NidokingMega[];
+extern const u32 gMonShinyPalette_NidokingMega[];
+
+extern const u32 gMonFrontPic_MiloticMega[];
+extern const u32 gMonBackPic_MiloticMega[];
+extern const u8 gMonIcon_MiloticMega[];
+extern const u32 gMonPalette_MiloticMega[];
+extern const u32 gMonShinyPalette_MiloticMega[];
+
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
 extern const u32 gMenuPokeblock_Pal[];
