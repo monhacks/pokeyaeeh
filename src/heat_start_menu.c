@@ -63,14 +63,17 @@ static void SpriteCB_IconBag(struct Sprite* sprite);
 static void SpriteCB_IconTrainerCard(struct Sprite* sprite);
 static void SpriteCB_IconSave(struct Sprite* sprite);
 static void SpriteCB_IconOptions(struct Sprite* sprite);
+static void SpriteCB_IconFlag(struct Sprite* sprite);
 
 /* TASKs */
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId);
+static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId);
 static void Task_HandleSave(u8 taskId);
 
 /* OTHER FUNCTIONS */
 static void HeatStartMenu_LoadSprites(void);
 static void HeatStartMenu_CreateSprites(void);
+static void HeatStartMenu_SafariZone_CreateSprites(void);
 static void HeatStartMenu_LoadBgGfx(void);
 static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
@@ -100,6 +103,7 @@ enum MENU {
   MENU_TRAINER_CARD,
   MENU_SAVE,
   MENU_OPTIONS,
+  MENU_FLAG,
 };
 
 enum FLAG_VALUES {
@@ -129,7 +133,7 @@ struct HeatStartMenu {
   u32 spriteIdTrainerCard;
   u32 spriteIdSave;
   u32 spriteIdOptions;
-
+  u32 spriteIdFlag;
 };
 
 static EWRAM_DATA struct HeatStartMenu *sHeatStartMenu = NULL;
@@ -190,7 +194,7 @@ static const struct SpritePalette sSpritePal_Icon[] =
 
 static const struct CompressedSpriteSheet sSpriteSheet_Icon[] = 
 {
-  {sIconGfx, 32*448/2 , TAG_ICON_GFX},
+  {sIconGfx, 32*512/2 , TAG_ICON_GFX},
   {NULL},
 };
 
@@ -313,6 +317,21 @@ static const union AnimCmd *const gIconOptionsAnim[] = {
     gAnimCmdOptions_Selected,
 };
 
+static const union AnimCmd gAnimCmdFlag_NotSelected[] = {
+    ANIMCMD_FRAME(240, 0),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd gAnimCmdFlag_Selected[] = {
+    ANIMCMD_FRAME(224, 0),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const gIconFlagAnim[] = {
+    gAnimCmdFlag_NotSelected,
+    gAnimCmdFlag_Selected,
+};
+
 static const union AffineAnimCmd sAffineAnimIcon_NoAnim[] =
 {
   AFFINEANIMCMD_FRAME(0,0, 0, 60),
@@ -416,6 +435,16 @@ static const struct SpriteTemplate gSpriteIconOptions = {
     .callback = SpriteCB_IconOptions,
 };
 
+static const struct SpriteTemplate gSpriteIconFlag = {
+    .tileTag = TAG_ICON_GFX,
+    .paletteTag = TAG_ICON_PAL,
+    .oam = &gOamIcon,
+    .anims = gIconFlagAnim,
+    .images = NULL,
+    .affineAnims = sAffineAnimsIcon,
+    .callback = SpriteCB_IconFlag,
+};
+
 static void SpriteCB_IconPoketch(struct Sprite* sprite) {
   if (menuSelected == MENU_POKETCH && sHeatStartMenu->flag == FLAG_VALUE_NOT_SET) {
     sHeatStartMenu->flag = FLAG_VALUE_SET;
@@ -493,6 +522,16 @@ static void SpriteCB_IconOptions(struct Sprite* sprite) {
   } 
 }
 
+static void SpriteCB_IconFlag(struct Sprite* sprite) {
+  if (menuSelected == MENU_FLAG && sHeatStartMenu->flag == FLAG_VALUE_NOT_SET) {
+    sHeatStartMenu->flag = FLAG_VALUE_SET;
+    StartSpriteAnim(sprite, 1);
+    StartSpriteAffineAnim(sprite, 1);
+  } else if (menuSelected != MENU_FLAG) {
+    StartSpriteAnim(sprite, 0);
+    StartSpriteAffineAnim(sprite, 0);
+  } 
+}
 
 // If you want to shorten the dates to Sat., Sun., etc., change this to 70
 #define CLOCK_WINDOW_WIDTH 100
@@ -543,14 +582,6 @@ void HeatStartMenu_Init(void) {
   }
 
   LockPlayerFieldControls();
- 
-  if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == 0) {
-    menuSelected = 255;
-  }
-
-  if (menuSelected == 255) {
-    SetSelectedMenu();
-  }
 
   if (sHeatStartMenu == NULL) {
     sHeatStartMenu = AllocZeroed(sizeof(struct HeatStartMenu));
@@ -560,19 +591,45 @@ void HeatStartMenu_Init(void) {
     SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
     return;
   }
-  
 
   sHeatStartMenu->savedCallback = CB2_ReturnToFieldWithOpenMenu;
   sHeatStartMenu->loadState = 0;
   sHeatStartMenu->sStartClockWindowId = 0;
   sHeatStartMenu->flag = 0;
-  HeatStartMenu_LoadSprites();
-  HeatStartMenu_CreateSprites();
-  HeatStartMenu_LoadBgGfx();
-  HeatStartMenu_ShowTimeWindow();
-  sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
-  HeatStartMenu_UpdateMenuName();
-  CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
+
+  if (GetSafariZoneFlag() == FALSE) { 
+    if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == 0) {
+      menuSelected = 255;
+    }
+
+    if (menuSelected == MENU_FLAG) {
+      menuSelected = MENU_POKEDEX;
+    }
+
+    if (menuSelected == 255) {
+      SetSelectedMenu();
+    }
+      
+    HeatStartMenu_LoadSprites();
+    HeatStartMenu_CreateSprites();
+    HeatStartMenu_LoadBgGfx();
+    HeatStartMenu_ShowTimeWindow();
+    sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
+    HeatStartMenu_UpdateMenuName();
+    CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
+  } else {
+    if (menuSelected == 255) {
+      menuSelected = MENU_FLAG;
+    }
+
+    HeatStartMenu_LoadSprites();
+    HeatStartMenu_SafariZone_CreateSprites();
+    HeatStartMenu_LoadBgGfx();
+    HeatStartMenu_ShowTimeWindow();
+    sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
+    HeatStartMenu_UpdateMenuName();
+    CreateTask(Task_HeatStartMenu_SafariZone_HandleMainInput, 0);
+  }
 }
 
 static void HeatStartMenu_LoadSprites(void) {
@@ -623,6 +680,23 @@ static void HeatStartMenu_CreateSprites(void) {
     sHeatStartMenu->spriteIdSave    = CreateSprite(&gSpriteIconSave, x, y3 + 3, 0);
     sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y4 + 1, 0);
   }
+}
+
+static void HeatStartMenu_SafariZone_CreateSprites(void) {
+  u32 x = 224;
+  u32 y1 = 14;
+  u32 y2 = 38;
+  u32 y3 = 60;
+  u32 y4 = 84;
+  u32 y5 = 109;
+  u32 y6 = 130;
+
+  sHeatStartMenu->spriteIdFlag = CreateSprite(&gSpriteIconFlag, x, y1, 0);
+  sHeatStartMenu->spriteIdPokedex = CreateSprite(&gSpriteIconPokedex, x-1, y2, 0);
+  sHeatStartMenu->spriteIdParty   = CreateSprite(&gSpriteIconParty, x, y3, 0);
+  sHeatStartMenu->spriteIdBag     = CreateSprite(&gSpriteIconBag, x, y4, 0);
+  sHeatStartMenu->spriteIdTrainerCard = CreateSprite(&gSpriteIconTrainerCard, x, y5, 0);
+  sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y6, 0);
 }
 
 static void HeatStartMenu_LoadBgGfx(void) {
@@ -719,6 +793,7 @@ static const u8 gText_Bag[]     = _("      Bag  ");
 static const u8 gText_Trainer[] = _("   Trainer");
 static const u8 gText_Save[]    = _("     Save  ");
 static const u8 gText_Options[] = _("   Options");
+static const u8 gText_Flag[]    = _("   Retire");
 
 static void HeatStartMenu_UpdateMenuName(void) {
   
@@ -747,6 +822,9 @@ static void HeatStartMenu_UpdateMenuName(void) {
     case MENU_OPTIONS:
       AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL);
       break;
+    case MENU_FLAG:
+      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL);
+      break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);
 }
@@ -772,10 +850,6 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
   }
   ScheduleBgCopyTilemapToVram(0);
 
-  if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
-    FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdPoketch]);
-    DestroySprite(&gSprites[sHeatStartMenu->spriteIdPoketch]);
-  }
   if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
     FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdPokedex]);
     DestroySprite(&gSprites[sHeatStartMenu->spriteIdPokedex]);
@@ -784,13 +858,24 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
     FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdParty]);
     DestroySprite(&gSprites[sHeatStartMenu->spriteIdParty]);
   }
-    FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdBag]);
+  
+  if (GetSafariZoneFlag() == FALSE) {
+    FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdSave]);
+    DestroySprite(&gSprites[sHeatStartMenu->spriteIdSave]); 
+    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
+      FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdPoketch]);
+      DestroySprite(&gSprites[sHeatStartMenu->spriteIdPoketch]);
+    }
+  } else {
+    FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdFlag]);
+    DestroySprite(&gSprites[sHeatStartMenu->spriteIdFlag]); 
+  }
+
+  FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdBag]);
   FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdTrainerCard]);
-  FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdSave]);
   FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdOptions]);
-   DestroySprite(&gSprites[sHeatStartMenu->spriteIdBag]);
+  DestroySprite(&gSprites[sHeatStartMenu->spriteIdBag]);
   DestroySprite(&gSprites[sHeatStartMenu->spriteIdTrainerCard]);
-  DestroySprite(&gSprites[sHeatStartMenu->spriteIdSave]);
   DestroySprite(&gSprites[sHeatStartMenu->spriteIdOptions]);
 
   if (sHeatStartMenu != NULL) {
@@ -1175,6 +1260,16 @@ static void DoCleanUpAndStartSaveMenu(void) {
     CreateTask(Task_HandleSave, 0x80);
   }
 }
+
+static void DoCleanUpAndStartSafariZoneRetire(void) {
+  if (!gPaletteFade.active) {
+    HeatStartMenu_ExitAndClearTilemap();
+    FreezeObjectEvents();
+    LockPlayerFieldControls();
+    DestroyTask(FindTaskIdByFunc(Task_HeatStartMenu_SafariZone_HandleMainInput));
+    SafariZoneRetirePrompt();
+  }
+}
  
 static void HeatStartMenu_OpenMenu(void) {
   switch (menuSelected) {
@@ -1273,6 +1368,82 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
       HeatStartMenu_OpenMenu();
     } else {
       DoCleanUpAndStartSaveMenu();
+    }
+  }
+}
+
+static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
+  switch (menuSelected) {
+    case MENU_OPTIONS:
+      break;
+    default:
+      PlaySE(SE_SELECT);
+      sHeatStartMenu->flag = 0;
+      if (menuSelected == MENU_FLAG) {
+        menuSelected = MENU_POKEDEX;
+      } else if (menuSelected == MENU_BAG) {
+        menuSelected = MENU_TRAINER_CARD;
+      } else if (menuSelected == MENU_TRAINER_CARD) {
+        menuSelected = MENU_OPTIONS;
+      } else {
+        menuSelected++;
+      }
+      HeatStartMenu_UpdateMenuName();
+      break;
+  }
+}
+
+static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void)
+{
+  
+  switch (menuSelected) {
+    case MENU_FLAG:
+      break;
+    default:
+      sHeatStartMenu->flag = 0;
+      PlaySE(SE_SELECT);
+      if (menuSelected == MENU_POKEDEX) {
+        menuSelected = MENU_FLAG;
+      } else if (menuSelected == MENU_OPTIONS) {
+        menuSelected = MENU_TRAINER_CARD;
+      } else if (menuSelected == MENU_TRAINER_CARD) {
+        menuSelected = MENU_BAG;
+      } else {
+        menuSelected--;
+      }
+      HeatStartMenu_UpdateMenuName();
+      break;
+  }
+}
+
+static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
+  u32 index;
+  if (!gPaletteFade.active) {
+    index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
+    LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
+  }
+
+  //HeatStartMenu_UpdateClockDisplay();
+  if (JOY_NEW(A_BUTTON)) {
+    if (sHeatStartMenu->loadState == 0) {
+      if (menuSelected != MENU_FLAG) {
+        FadeScreen(FADE_TO_BLACK, 0);
+      }
+      sHeatStartMenu->loadState = 1;
+    }
+  } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
+    PlaySE(SE_SELECT);
+    HeatStartMenu_ExitAndClearTilemap();  
+    DestroyTask(taskId);
+  } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
+    HeatStartMenu_SafariZone_HandleInput_DPADDOWN();
+  } else if (gMain.newKeys & DPAD_UP && sHeatStartMenu->loadState == 0) {
+    HeatStartMenu_SafariZone_HandleInput_DPADUP();
+  } else if (sHeatStartMenu->loadState == 1) {
+    if (menuSelected != MENU_FLAG) {
+      HeatStartMenu_OpenMenu();
+    } else {
+      DoCleanUpAndStartSafariZoneRetire();
     }
   }
 }
