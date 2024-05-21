@@ -208,7 +208,7 @@ MossdeepCity_StevensHouse_Text_LetterFromSteven:
 	.string "Pokémon.\p"
 	.string "I'm counting on you.\p"
 	.string "May our paths cross someday.\p"
-	.string "Mystic Stone$"
+	.string "Mystic$"
 
 MossdeepCity_StevensHouse_Text_CollectionOfRareRocks:
 	.string "It's a collection of rare rocks and\n"

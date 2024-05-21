@@ -1238,8 +1238,8 @@
 #define FLAG_ROUTE_114_BOSS_DEFEATED                                0x49A // Route 114 Boss Hiker Lenny
 #define FLAG_ROUTE_113_BOSS_DEFEATED                                0x49B // Route 113 Boss Cooltrainer Madeline
 #define FLAG_ROUTE_111_BOSS_DEFEATED                                0x49C // Route 111 Boss Black Belt Daisuke
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
+#define FLAG_ROUTE_118_BOSS_DEFEATED                                0x49D // Route 118 Boss Bird Keeper Chester
+#define FLAG_ROUTE_119_BOSS_DEFEATED                                0x49E // Route 119 Boss Bug Maniac Donald
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag

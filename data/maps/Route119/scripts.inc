@@ -326,11 +326,6 @@ Route119_EventScript_Brent::
 	msgbox Route119_Text_BrentPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route119_EventScript_Donald::
-	trainerbattle_single TRAINER_DONALD, Route119_Text_DonaldIntro, Route119_Text_DonaldDefeat
-	msgbox Route119_Text_DonaldPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route119_EventScript_Taylor::
 	trainerbattle_single TRAINER_TAYLOR, Route119_Text_TaylorIntro, Route119_Text_TaylorDefeat
 	msgbox Route119_Text_TaylorPostBattle, MSGBOX_AUTOCLOSE
@@ -614,3 +609,129 @@ Route119_Text_BAndDPadToJumpOnRails:
 	.string "To jump on the rails, set the bicycle to\n"
 	.string "Acro mode, and press {B_BUTTON} and the\l"
 	.string "direction you want to go to, at once!$"
+
+Route119_EventScript_Donald2::
+	msgbox Route119_EventScript_Donald2_Text_0
+	givemon SPECIES_PINSIR, 0, ITEM_FOCUS_SASH, ITEM_CHERISH_BALL, NATURE_JOLLY, 2, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_RETURN, MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_QUICK_ATTACK, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route119_EventScript_Donald2_Text_1
+	waitmessage
+	msgbox Route119_EventScript_Donald2_Text_2, MSGBOX_NPC
+	giveitem ITEM_PINSIRITE, 1
+	msgbox Route119_EventScript_Donald2_Text_3, MSGBOX_NPC
+	return
+
+
+Route119_EventScript_Donald::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_BRENT
+	goto_if 1, Route119_EventScript_Donald_5
+Route119_EventScript_Donald_3:
+	msgbox Route119_EventScript_Donald_Text_0
+Route119_EventScript_Donald_1:
+	release
+	end
+
+Route119_EventScript_Donald_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_DONALD, Route119_Text_DonaldIntro, Route119_Text_DonaldDefeat, Route119_EventScript_Donald2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_118_BOSS_DEFEATED
+	msgbox Route119_EventScript_Donald2_Text_3, MSGBOX_NPC
+	goto Route119_EventScript_Donald_1
+
+Route119_EventScript_Donald_4:
+	checktrainerflag TRAINER_DOUG
+	goto_if 1, Route119_EventScript_Donald_9
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_5:
+	checktrainerflag TRAINER_TAYLOR
+	goto_if 1, Route119_EventScript_Donald_4
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_8:
+	checktrainerflag TRAINER_KENT
+	goto_if 1, Route119_EventScript_Donald_13
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_9:
+	checktrainerflag TRAINER_GREG
+	goto_if 1, Route119_EventScript_Donald_8
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_12:
+	checktrainerflag TRAINER_CATHERINE_1
+	goto_if 1, Route119_EventScript_Donald_17
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_13:
+	checktrainerflag TRAINER_JACKSON_1
+	goto_if 1, Route119_EventScript_Donald_12
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_16:
+	checktrainerflag TRAINER_PHIL
+	goto_if 1, Route119_EventScript_Donald_21
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_17:
+	checktrainerflag TRAINER_HUGH
+	goto_if 1, Route119_EventScript_Donald_16
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_20:
+	checktrainerflag TRAINER_TAKASHI
+	goto_if 1, Route119_EventScript_Donald_25
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_21:
+	checktrainerflag TRAINER_YASU
+	goto_if 1, Route119_EventScript_Donald_20
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_24:
+	checktrainerflag TRAINER_CHRIS
+	goto_if 1, Route119_EventScript_Donald_29
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_25:
+	checktrainerflag TRAINER_HIDEO
+	goto_if 1, Route119_EventScript_Donald_24
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_28:
+	checktrainerflag TRAINER_DAYTON
+	goto_if 1, Route119_EventScript_Donald_32
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_29:
+	checktrainerflag TRAINER_FABIAN
+	goto_if 1, Route119_EventScript_Donald_28
+	goto Route119_EventScript_Donald_3
+
+Route119_EventScript_Donald_32:
+	checktrainerflag TRAINER_RACHEL
+	goto_if 1, Route119_EventScript_Donald_2
+	goto Route119_EventScript_Donald_3
+
+
+Route119_EventScript_Donald2_Text_0:
+	.string "Well, here then!$"
+
+Route119_EventScript_Donald2_Text_1:
+	.string "{PLAYER} received a Pinsir!$"
+
+Route119_EventScript_Donald2_Text_2:
+	.string "For more fire power, you can have this.$"
+
+Route119_EventScript_Donald2_Text_3:
+	.string "Holding that Mega Stone,\nPinsir will Mega Evolve and gain a lot of\lpower.\pIt's Normal-type attacks will become\nFlying-type and hit your foes real hard!$"
+
+Route119_EventScript_Donald_Text_0:
+	.string "We Bug Catchers rule this place!\p"
+	.string "If you'd like to challenge my authority,\n"
+	.string "beat every Trainer here so I consider\l"
+	.string "you\l"
+	.string "a challenge.$"

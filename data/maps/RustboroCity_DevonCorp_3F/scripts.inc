@@ -241,7 +241,7 @@ RustboroCity_DevonCorp_3F_Text_CountingOnYou:
 	.string "Mr. Stone: I'm counting on you!$"
 
 RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
-	.string "Mr. Stone: You delivered my Letter?\n"
+	.string "Mr. Stone: You delivered my Goods?\n"
 	.string "Thank you kindly!\p"
 	.string "This is my way of thanking you.\n"
 	.string "It should help you, a Trainer.$"
