@@ -1060,6 +1060,7 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_MINDS_EYE] = 1,
     [ABILITY_ILLUMINATE] = 1,
     [ABILITY_DRAGON_SHEEN] = 1,
+    [ABILITY_DRAGONFLY] = 1,
 };
 
 static const u8 sAbilitiesNotTraced[ABILITIES_COUNT] =
@@ -8913,6 +8914,8 @@ static bool32 IsBattlerGrounded2(u32 battler, bool32 considerInverse)
         return FALSE;
     if (GetBattlerAbility(battler) == ABILITY_LEVITATE)
         return FALSE;
+    if (GetBattlerAbility(battler) == ABILITY_DRAGONFLY)
+        return FALSE;
     if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (!considerInverse || !FlagGet(B_FLAG_INVERSE_BATTLE)))
         return FALSE;
     return TRUE;
@@ -10301,6 +10304,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
             return UQ_4_12(1.5);
         break;
     case ABILITY_TINTED_LENS:
+    case ABILITY_DRAGONFLY:
         if (typeEffectivenessModifier <= UQ_4_12(0.5))
             return UQ_4_12(2.0);
         break;
@@ -10656,6 +10660,14 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
             gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
             RecordAbilityBattle(battlerDef, ABILITY_LEVITATE);
         }
+        else if (recordAbilities && defAbility == ABILITY_DRAGONFLY)
+        {
+            gLastUsedAbility = ABILITY_DRAGONFLY;
+            gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+            gLastLandedMoves[battlerDef] = 0;
+            gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
+            RecordAbilityBattle(battlerDef, ABILITY_DRAGONFLY);
+        }
     }
     else if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
     {
@@ -10718,7 +10730,7 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
         if (gSpeciesInfo[speciesDef].types[1] != gSpeciesInfo[speciesDef].types[0])
             MulByTypeEffectiveness(&modifier, move, moveType, 0, gSpeciesInfo[speciesDef].types[1], 0, FALSE);
 
-        if (moveType == TYPE_GROUND && abilityDef == ABILITY_LEVITATE && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+        if (moveType == TYPE_GROUND && (abilityDef == ABILITY_LEVITATE || abilityDef == ABILITY_DRAGONFLY) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
             modifier = UQ_4_12(0.0);
         if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && gBattleMoves[move].power)
             modifier = UQ_4_12(0.0);
@@ -11874,12 +11886,13 @@ bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
     u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
 
     bool8 hasLevitateAbility = gSpeciesInfo[species].abilities[monAbilityNum] == ABILITY_LEVITATE;
+    bool8 hasDragonflyAbility = gSpeciesInfo[species].abilities[monAbilityNum] == ABILITY_DRAGONFLY;
     bool8 isFlyingType = gSpeciesInfo[species].types[0] == TYPE_FLYING || gSpeciesInfo[species].types[1] == TYPE_FLYING;
     bool8 monIsValidAndNotEgg = GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(mon, MON_DATA_IS_EGG);
 
     if (monIsValidAndNotEgg)
     {
-        if ((hasLevitateAbility || isFlyingType) && !IsMonBannedFromSkyBattles(species))
+        if ((hasLevitateAbility || hasDragonflyAbility || isFlyingType) && !IsMonBannedFromSkyBattles(species))
             return TRUE;
     }
     return FALSE;
