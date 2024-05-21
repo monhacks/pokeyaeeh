@@ -1010,6 +1010,7 @@ const u16 gEggMoves[] = {
               MOVE_DRAGON_DANCE,
               MOVE_FAKE_TEARS,
               MOVE_FLATTER,
+              MOVE_FROST_BLADE,
               MOVE_GLACIAL_SLAM,
               MOVE_HYDRO_PUMP,
               MOVE_ICE_PUNCH,
