@@ -10881,7 +10881,7 @@ const struct Item gItems[] =
     
     [ITEM_COPPERAJAHITE] =
     {
-        .name = _("Copperajah"),
+        .name = _("Copperajahite"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sCopperajahiteDesc,

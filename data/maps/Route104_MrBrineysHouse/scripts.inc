@@ -130,8 +130,8 @@ Route104_MrBrineysHouse_Text_DeclineDeliverySail:
 Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford:
 	.string "Mr. Briney: Ahoy!\n"
 	.string "I know exactly what you want to say!\p"
-	.string "You're to deliver a Letter to Dewford\n"
-	.string "and a package to Slateport.\p"
+	.string "You wanna go to Dewford and get that Gym\n"
+	.string "Badge, and deliver that package to Slateport.\p"
 	.string "What you need me to do is no problem\n"
 	.string "at all--I'm the man for the job!\p"
 	.string "First, we'll set sail for Dewford.$"

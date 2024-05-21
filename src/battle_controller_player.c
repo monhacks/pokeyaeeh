@@ -1894,7 +1894,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
         case TYPE_GROUND:
         {
             // Target Ability
-            if ((((defAbility == ABILITY_LEVITATE) && !(IsBattlerGrounded)) || (defAbility == ABILITY_EARTH_EATER))
+            if (((!(IsBattlerGrounded)) || (defAbility == ABILITY_EARTH_EATER))
                 && (!moldBreaker))
                 return COLOR_IMMUNE;
         }

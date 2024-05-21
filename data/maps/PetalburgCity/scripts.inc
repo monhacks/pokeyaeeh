@@ -338,6 +338,19 @@ PetalburgCity_Text_GymLeaderIsNotHere:
 	.string "and then he's going to Kalos.\p"
 	.string "How about you try other gyms?$"
 
+PetalburgCity_EventScript_ProfBirchUnused:: @ for the dex
+	giveitem ITEM_VENUSAURITE, 1
+	giveitem ITEM_CHARIZARDITE_X, 1
+	giveitem ITEM_CHARIZARDITE_Y, 1
+	giveitem ITEM_BLASTOISINITE, 1
+	giveitem ITEM_SCEPTILITE, 1
+	giveitem ITEM_BLAZIKENITE, 1
+	giveitem ITEM_SWAMPERTITE, 1
+	giveitem ITEM_RILLABOOMITE, 1
+	giveitem ITEM_CINDERACITE, 1
+	giveitem ITEM_INTELEONITE, 1
+	end
+
 PetalburgCity_EventScript_ProfBirch::
 	lock
 	addobject LOCALID_BIRCH
@@ -357,6 +370,9 @@ PetalburgCity_EventScript_ProfBirch::
 	additem ITEM_SCEPTILITE, 1
 	additem ITEM_BLAZIKENITE, 1
 	additem ITEM_SWAMPERTITE, 1
+	additem ITEM_RILLABOOMITE, 1
+	additem ITEM_CINDERACITE, 1
+	additem ITEM_INTELEONITE, 1
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_3, MSGBOX_AUTOCLOSE
 	giveitem ITEM_HM_SURF, 1
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_4, MSGBOX_AUTOCLOSE

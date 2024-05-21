@@ -310,7 +310,8 @@ static const u8 sCrypticPowerDescription[] = _("Doubles Special Attack.");
 static const u8 sImpenetrableDescription[] = _("Only damaged by direct attacks.");
 static const u8 sEscapeArtistDescription[] = _("Teleports away if move misses or fails.");
 static const u8 sMetalSurgeDescription[] = _("Field becomes metallic.");
-static const u8 sDragonSheenDescription[] = _("Multiscale + Dragon's Maw");
+static const u8 sDragonSheenDescription[] = _("Dragon's Maw + Multiscale.");
+static const u8 sDragonflyDescription[] = _("Tinted Lens + Levitate.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -641,6 +642,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_ESCAPE_ARTIST] = _("Escape Artist"),
     [ABILITY_METAL_SURGE] = _("Metal Surge"),
     [ABILITY_DRAGON_SHEEN] = _("Dragon Sheen"),
+    [ABILITY_DRAGONFLY] = _("Dragonfly"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -971,6 +973,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_ESCAPE_ARTIST] = _("EscapeArtist"),
     [ABILITY_METAL_SURGE] = _("Metal Surge"),
     [ABILITY_DRAGON_SHEEN] = _("Dragon Sheen"),
+    [ABILITY_DRAGONFLY] = _("Dragonfly"),
 };
 #endif
 
@@ -1301,5 +1304,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_IMPENETRABLE] = sImpenetrableDescription,
     [ABILITY_ESCAPE_ARTIST] = sEscapeArtistDescription,
     [ABILITY_METAL_SURGE] = sMetalSurgeDescription,
-    [ABILITY_DRAGON_SHEEN] = sDragonSheenDescription
+    [ABILITY_DRAGON_SHEEN] = sDragonSheenDescription,
+    [ABILITY_DRAGONFLY] = sDragonSheenDescription,
 };

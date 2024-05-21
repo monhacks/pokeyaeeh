@@ -782,7 +782,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         // check ground immunities
         if (moveType == TYPE_GROUND
           && !IsBattlerGrounded(battlerDef)
-          && ((aiData->abilities[battlerDef] == ABILITY_LEVITATE
+          && ((((aiData->abilities[battlerDef] == ABILITY_LEVITATE)
+          || (aiData->abilities[battlerDef] == ABILITY_DRAGONFLY))
           && DoesBattlerIgnoreAbilityChecks(aiData->abilities[battlerAtk], move))
           || aiData->holdEffects[battlerDef] == HOLD_EFFECT_AIR_BALLOON
           || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
@@ -1668,7 +1669,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_MAGNITUDE:
-            if (aiData->abilities[battlerDef] == ABILITY_LEVITATE)
+            if ((aiData->abilities[battlerDef] == ABILITY_LEVITATE)
+              || (aiData->abilities[battlerDef] == ABILITY_DRAGONFLY))
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_PARTING_SHOT:

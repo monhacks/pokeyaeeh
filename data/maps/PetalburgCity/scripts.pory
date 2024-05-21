@@ -338,6 +338,20 @@ PetalburgCity_Text_GymLeaderIsNotHere:
 	.string "He's attending a conferance in Kanto\n"
 	.string "and then he's going to Kalos.\p"
 	.string "How about you try other gyms?$"
+
+PetalburgCity_EventScript_ProfBirchUnused:: @ for the dex
+	giveitem ITEM_VENUSAURITE, 1
+	giveitem ITEM_CHARIZARDITE_X, 1
+	giveitem ITEM_CHARIZARDITE_Y, 1
+	giveitem ITEM_BLASTOISINITE, 1
+	giveitem ITEM_SCEPTILITE, 1
+	giveitem ITEM_BLAZIKENITE, 1
+	giveitem ITEM_SWAMPERTITE, 1
+	giveitem ITEM_RILLABOOMITE, 1
+	giveitem ITEM_CINDERACITE, 1
+	giveitem ITEM_INTELEONITE, 1
+	end
+
 `
 script PetalburgCity_EventScript_ProfBirch{
 	lock
@@ -365,6 +379,9 @@ script PetalburgCity_EventScript_ProfBirch{
 	additem(ITEM_SCEPTILITE, 1)
 	additem(ITEM_BLAZIKENITE, 1)
 	additem(ITEM_SWAMPERTITE, 1)
+	additem(ITEM_RILLABOOMITE, 1)
+	additem(ITEM_CINDERACITE, 1)
+	additem(ITEM_INTELEONITE, 1)
 	msgbox("You're heading next to Fortree City,\n"
 	        "right?\p"
 	        "You might need this, then.", MSGBOX_AUTOCLOSE)
