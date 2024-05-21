@@ -362,7 +362,7 @@ static const struct TrainerMon sParty_GruntMuseum1[] = {
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .moves = {MOVE_WATER_PULSE, MOVE_HIDDEN_POWER, MOVE_AURORA_BEAM, MOVE_FLIP_TURN},
-        .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31), // Fire
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31)
     },
     {
         .species = SPECIES_MANDIBUZZ,
@@ -385,7 +385,7 @@ static const struct TrainerMon sParty_GruntMuseum2[] = {
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .moves = {MOVE_WATER_PULSE, MOVE_HIDDEN_POWER, MOVE_DARK_PULSE, MOVE_FLIP_TURN},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30), // Ground 
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30)
     },
     {
         .species = SPECIES_MACHOKE,
@@ -844,7 +844,7 @@ static const struct TrainerMon sParty_Chip[] = {
     }
 };
 
-static const struct TrainerMon sParty_Foster[] = {
+static const struct TrainerMon sParty_Foster[] = { // Route Boss
     {
         .species = SPECIES_HIPPOPOTAS,
         .ability = ABILITY_SAND_STREAM,
@@ -2890,7 +2890,7 @@ static const struct TrainerMon sParty_Tony1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Jerome[] = {
+static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_GYARADOS,
         .ability = ABILITY_INTIMIDATE,
@@ -3373,7 +3373,7 @@ static const struct TrainerMon sParty_Yuji[] = {
     }
 };
 
-static const struct TrainerMon sParty_Daisuke[] = {
+static const struct TrainerMon sParty_Daisuke[] = { // Route Boss
     {
         .species = SPECIES_CONKELDURR,
         .heldItem = ITEM_LIFE_ORB,
@@ -4190,7 +4190,7 @@ static const struct TrainerMon sParty_Brent[] = {
     }
 };
 
-static const struct TrainerMon sParty_Donald[] = {
+static const struct TrainerMon sParty_Donald[] = { // Route Boss
     {
         .species = SPECIES_FORRETRESS,
         .heldItem = ITEM_LEFTOVERS,
@@ -6779,7 +6779,7 @@ static const struct TrainerMon sParty_Andrew[] = {
     }
 };
 
-static const struct TrainerMon sParty_Ivan[] = {
+static const struct TrainerMon sParty_Ivan[] = { // Route Boss
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 252),
@@ -8057,7 +8057,7 @@ static const struct TrainerMon sParty_Benny[] = {
     }
 };
 
-static const struct TrainerMon sParty_Chester[] = {
+static const struct TrainerMon sParty_Chester[] = { // Route Boss
     {
         .species = SPECIES_HONCHKROW,
         .heldItem = ITEM_SCOPE_LENS,
@@ -8621,7 +8621,7 @@ static const struct TrainerMon sParty_Cyndy5[] = {
     }
 };
 
-static const struct TrainerMon sParty_Madeline1[] = {
+static const struct TrainerMon sParty_Madeline1[] = { // Route Boss
     {
         .species = SPECIES_CINDERACE,
         .heldItem = ITEM_EXPERT_BELT,
@@ -9719,7 +9719,7 @@ static const struct TrainerMon sParty_AmyAndLiv6[] = {
     }
 };
 
-static const struct TrainerMon sParty_Huey[] = { // Route boss
+static const struct TrainerMon sParty_Huey[] = { // Route Boss
     {
         .species = SPECIES_GASTRODON_WEST_SEA,
         .heldItem = ITEM_LEFTOVERS,
@@ -12122,7 +12122,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     }
 };
 
-static const struct TrainerMon sParty_Tiana[] = {
+static const struct TrainerMon sParty_Tiana[] = { // Route Boss
     {
         .species = SPECIES_AXEW,
         .ability = ABILITY_RIVALRY,
@@ -12835,7 +12835,7 @@ static const struct TrainerMon sParty_Trent1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Lenny[] = {
+static const struct TrainerMon sParty_Lenny[] = { // Route Boss
     {
     .lvl = 18,
     .species = SPECIES_GEODUDE,
@@ -13203,7 +13203,7 @@ static const struct TrainerMon sParty_Gerald[] = {
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_BOOMBURST, MOVE_HEAT_WAVE, MOVE_HIDDEN_POWER, MOVE_CHATTER} //grass
+        .moves = {MOVE_BOOMBURST, MOVE_HEAT_WAVE, MOVE_HIDDEN_POWER, MOVE_CHATTER}
     },
     {
         .species = SPECIES_PORYGON_Z,
@@ -14253,7 +14253,7 @@ static const struct TrainerMon sParty_Chris[] = {
     }
 };
 
-static const struct TrainerMon sParty_Dawson[] = {
+static const struct TrainerMon sParty_Dawson[] = { // Route Boss
     {
         .species = SPECIES_FURFROU_DIAMOND_TRIM,
         .ability = ABILITY_FUR_COAT,
