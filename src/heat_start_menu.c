@@ -618,7 +618,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_UpdateMenuName();
     CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
   } else {
-    if (menuSelected == 255) {
+    if (menuSelected == 255 || menuSelected == MENU_POKETCH || menuSelected == MENU_SAVE) {
       menuSelected = MENU_FLAG;
     }
 
