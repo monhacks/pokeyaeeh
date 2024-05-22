@@ -8227,6 +8227,7 @@ static const u16 sGyaradosTeachableLearnset[] = {
     MOVE_IRON_HEAD,
     MOVE_IRON_TAIL,
     MOVE_LASH_OUT,
+    MOVE_LIQUIDATION,
     MOVE_OUTRAGE,
     MOVE_PAYBACK,
     MOVE_POISON_JAB,
