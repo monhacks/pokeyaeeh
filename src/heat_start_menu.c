@@ -122,8 +122,9 @@ enum SAVE_STATES {
 struct HeatStartMenu {
   MainCallback savedCallback;
   u32 loadState;
-  u8 sStartClockWindowId;
+  u32 sStartClockWindowId;
   u32 sMenuNameWindowId;
+  u32 sSafariBallsWindowId;
   u32 flag; // some u32 holding values for controlling the sprite anims an lifetime
   
   u32 spriteIdPoketch;
@@ -146,6 +147,7 @@ EWRAM_DATA u8 gClockMode = TWELVE_HOUR_MODE;
 // --BG-GFX--
 static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/heat_start_menu/bg.4bpp.lz");
 static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/heat_start_menu/bg.bin.lz");
+static const u32 sStartMenuTilemapSafari[] = INCBIN_U32("graphics/heat_start_menu/bg_safari.bin.lz");
 static const u16 sStartMenuPalette[] = INCBIN_U16("graphics/heat_start_menu/bg.gbapal");
 static const u16 gStandardMenuPalette[] = INCBIN_U16("graphics/interface/std_menu.gbapal");
 
@@ -183,7 +185,17 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .width = 7, 
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = 0x30 + (13*2)
+  .baseBlock = 0x30 + (12*2)
+};
+
+static const struct WindowTemplate sWindowTemplate_SafariBalls = {
+    .bg = 0,
+    .tilemapLeft = 2,
+    .tilemapTop = 1,
+    .width = 7,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = (0x30 + (12*2)) + (7*2)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -574,6 +586,17 @@ static void SetSelectedMenu(void) {
   }
 }
 
+static void ShowSafariBallsWindow(void)
+{
+    sHeatStartMenu->sSafariBallsWindowId = AddWindow(&sWindowTemplate_SafariBalls);
+    FillWindowPixelBuffer(sHeatStartMenu->sSafariBallsWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
+    PutWindowTilemap(sHeatStartMenu->sSafariBallsWindowId);
+    ConvertIntToDecimalStringN(gStringVar1, gNumSafariBalls, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    StringExpandPlaceholders(gStringVar4, gText_SafariBallStock);
+    AddTextPrinterParameterized(sHeatStartMenu->sSafariBallsWindowId, FONT_NARROW, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sHeatStartMenu->sSafariBallsWindowId, COPYWIN_GFX);
+}
+
 void HeatStartMenu_Init(void) {
   if (!IsOverworldLinkActive()) {
     FreezeObjectEvents();
@@ -625,6 +648,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_LoadSprites();
     HeatStartMenu_SafariZone_CreateSprites();
     HeatStartMenu_LoadBgGfx();
+    ShowSafariBallsWindow();
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
@@ -702,7 +726,11 @@ static void HeatStartMenu_SafariZone_CreateSprites(void) {
 static void HeatStartMenu_LoadBgGfx(void) {
   u8* buf = GetBgTilemapBuffer(0); 
   DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0);
-  LZDecompressWram(sStartMenuTilemap, buf);
+  if (GetSafariZoneFlag() == FALSE) {
+    LZDecompressWram(sStartMenuTilemap, buf);
+  } else {
+    LZDecompressWram(sStartMenuTilemapSafari, buf);
+  }
   LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
   LoadPalette(sStartMenuPalette, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
   ScheduleBgCopyTilemapToVram(0);
@@ -844,6 +872,13 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
 
   RemoveWindow(sHeatStartMenu->sStartClockWindowId);
   RemoveWindow(sHeatStartMenu->sMenuNameWindowId);
+
+  if (GetSafariZoneFlag() == TRUE) {
+    FillWindowPixelBuffer(sHeatStartMenu->sSafariBallsWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    ClearWindowTilemap(sHeatStartMenu->sSafariBallsWindowId); 
+    CopyWindowToVram(sHeatStartMenu->sSafariBallsWindowId, COPYWIN_GFX);
+    RemoveWindow(sHeatStartMenu->sSafariBallsWindowId);
+  }
 
   for(i=0; i<2048; i++) {
     buf[i] = 0;
