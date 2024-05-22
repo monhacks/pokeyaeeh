@@ -2081,7 +2081,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_DAISUKE] =
     {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = _("Daisuke"),
@@ -2466,7 +2466,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_DONALD] =
     {
-        .trainerClass = TRAINER_CLASS_BUG_MANIAC,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
         .trainerName = _("Donald"),
@@ -3544,7 +3544,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Billy),
     },
 
-    [TRAINER_JOSH] = // Rustboro Gym Trainer, Lady Daisy
+    [TRAINER_JOSH] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -3555,7 +3555,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Josh),
     },
 
-    [TRAINER_TOMMY] = //Rustboro Gym Trainer, Aroma Lady Jasmine
+    [TRAINER_TOMMY] =
     {
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -3733,7 +3733,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Andrew),
     },
 
-    [TRAINER_IVAN] = //Route Boss
+    [TRAINER_IVAN] =
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4470,7 +4470,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Presley),
     },
 
-    [TRAINER_EDWARDO] = // Rustboro Gym Trainer, Cool Trainer Pomni
+    [TRAINER_EDWARDO] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4516,7 +4516,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CHESTER] =
     {
-        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .trainerName = _("Chester"),
@@ -4802,7 +4802,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MADELINE_1] =
     {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
         .trainerName = _("Madeline"),
@@ -5416,7 +5416,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_AmyAndLiv6),
     },
 
-    [TRAINER_HUEY] = //Route Boss
+    [TRAINER_HUEY] =
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6309,7 +6309,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntJaggedPass),
     },
 
-    [TRAINER_MARC] = // Rustboro Gym Trainer, Lass Iris
+    [TRAINER_MARC] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6661,7 +6661,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MaxieMtChimney),
     },
 
-    [TRAINER_TIANA] = //Route Boss
+    [TRAINER_TIANA] =
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6936,7 +6936,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Trent1),
     },
 
-    [TRAINER_LENNY] = // Route Boss
+    [TRAINER_LENNY] =
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7668,7 +7668,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Chris),
     },
 
-    [TRAINER_DAWSON] = //Route Boss
+    [TRAINER_DAWSON] =
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,

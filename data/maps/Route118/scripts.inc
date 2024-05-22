@@ -118,11 +118,6 @@ Route118_EventScript_Perry::
 	msgbox Route118_Text_PerryPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route118_EventScript_Chester::
-	trainerbattle_single TRAINER_CHESTER, Route118_Text_ChesterIntro, Route118_Text_ChesterDefeat
-	msgbox Route118_Text_ChesterPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route118_EventScript_Deandre::
 	trainerbattle_single TRAINER_DEANDRE, Route118_Text_DeandreIntro, Route118_Text_DeandreDefeat
 	msgbox Route118_Text_DeandrePostBattle, MSGBOX_AUTOCLOSE
@@ -215,3 +210,81 @@ Route118_Text_Forgor:
 Route118_Text_DontForgot:
 	.string "Here's a piece of advice:\n"
 	.string "Don't forgor.$"
+
+Route118_EventScript_Chester2::
+	msgbox Route118_EventScript_Chester2_Text_0
+	givemon SPECIES_PIDGEOT, 0, ITEM_FOCUS_SASH, ITEM_CHERISH_BALL, NATURE_MODEST, 2, MON_MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_JETSTREAM, MOVE_TAILWIND, MOVE_HYPER_VOICE, MOVE_FOCUS_BLAST, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route118_EventScript_Chester2_Text_1
+	waitmessage
+	msgbox Route118_EventScript_Chester2_Text_2, MSGBOX_NPC
+	giveitem ITEM_PIDGEOTITE, 1
+	msgbox Route118_EventScript_Chester2_Text_3, MSGBOX_NPC
+	return
+
+
+Route118_EventScript_Chester::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_ROSE_1
+	goto_if 1, Route118_EventScript_Chester_5
+Route118_EventScript_Chester_3:
+	msgbox Route118_EventScript_Chester_Text_0
+Route118_EventScript_Chester_1:
+	release
+	end
+
+Route118_EventScript_Chester_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_CHESTER, Route118_Text_ChesterIntro, Route118_Text_ChesterDefeat, Route118_EventScript_Chester2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_118_BOSS_DEFEATED
+	msgbox Route118_EventScript_Chester2_Text_3, MSGBOX_NPC
+	goto Route118_EventScript_Chester_1
+
+Route118_EventScript_Chester_4:
+	checktrainerflag TRAINER_WADE
+	goto_if 1, Route118_EventScript_Chester_9
+	goto Route118_EventScript_Chester_3
+
+Route118_EventScript_Chester_5:
+	checktrainerflag TRAINER_BARNY
+	goto_if 1, Route118_EventScript_Chester_4
+	goto Route118_EventScript_Chester_3
+
+Route118_EventScript_Chester_8:
+	checktrainerflag TRAINER_PERRY
+	goto_if 1, Route118_EventScript_Chester_12
+	goto Route118_EventScript_Chester_3
+
+Route118_EventScript_Chester_9:
+	checktrainerflag TRAINER_DALTON_1
+	goto_if 1, Route118_EventScript_Chester_8
+	goto Route118_EventScript_Chester_3
+
+Route118_EventScript_Chester_12:
+	checktrainerflag TRAINER_DEANDRE
+	goto_if 1, Route118_EventScript_Chester_2
+	goto Route118_EventScript_Chester_3
+
+
+Route118_EventScript_Chester2_Text_0:
+	.string "That was a heck of a battle! As promised…$"
+
+Route118_EventScript_Chester2_Text_1:
+	.string "{PLAYER} received a Pidgeot!$"
+
+Route118_EventScript_Chester2_Text_2:
+	.string "You shall soar the skies with this!$"
+
+Route118_EventScript_Chester2_Text_3:
+	.string "I suggest you give that item to Pidgoet.\pYou'll unlock it's full potential.$"
+
+Route118_EventScript_Chester_Text_0:
+	.string "I am a strong Bird Keeper.\p"
+	.string "You want to challenge me?\n"
+	.string "How about beating everyone here and\l"
+	.string "you come\l"
+	.string "to me?\p"
+	.string "I'll give you a good reward if you beat\n"
+	.string "me.$"

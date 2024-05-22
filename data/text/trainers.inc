@@ -2621,8 +2621,8 @@ Route118_Text_PerryPostBattle:
 	.string "I'll have to train mine better.$"
 
 Route118_Text_ChesterIntro:
-	.string "Take flight!\n"
-	.string "My Bird Pokémon!$"
+	.string "You will taste the might of my\n"
+	.string "Bird Pokémon!$"
 
 Route118_Text_ChesterDefeat:
 	.string "They did take flight…$"
@@ -2710,7 +2710,7 @@ Route119_Text_BrentPostBattle:
 	.string "You'll never understand…$"
 
 Route119_Text_DonaldIntro:
-	.string "So, we finally meet!\n"
+	.string "So, you finally beat them all!\n"
 	.string "My Bug Pokémon will keep you company!$"
 
 Route119_Text_DonaldDefeat:
