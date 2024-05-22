@@ -243,6 +243,9 @@
 #define OBJ_EVENT_GFX_TMHM_BALL                  239
 #define OBJ_EVENT_GFX_MEGA_STONE                 240
 #define OBJ_EVENT_GFX_GIMMIGHOUL_COIN            241
+#define OBJ_EVENT_GFX_ARTICUNO                   242
+#define OBJ_EVENT_GFX_ZAPDOS                     243
+#define OBJ_EVENT_GFX_MOLTRES                    244
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

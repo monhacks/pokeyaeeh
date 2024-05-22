@@ -130,6 +130,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewMauville_Inside_EventScript_Scientist",
       "flag": "FLAG_HIDE_NEW_MAUVILLE_SCIENTISTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 31,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
@@ -139,6 +152,13 @@
       "elevation": 3,
       "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_MAUVILLE_HIDDEN_AREA",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
