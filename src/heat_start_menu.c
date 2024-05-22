@@ -1334,11 +1334,14 @@ void GoToHandleInput(void) {
 }
 
 static void HeatStartMenu_HandleInput_DPADDOWN(void) {
+  // Needs to be set to 0 so that the selected icons change in the frontend
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_OPTIONS:
+      menuSelected = MENU_POKEDEX;
       break;
     default:
-      sHeatStartMenu->flag = 0;
       menuSelected++;
       PlaySE(SE_SELECT);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
@@ -1346,33 +1349,32 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
         menuSelected++;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
-static void HeatStartMenu_HandleInput_DPADUP(void)
-{
-  
+static void HeatStartMenu_HandleInput_DPADUP(void) {
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_POKEDEX:
+      menuSelected = MENU_OPTIONS;
       break;
     default:
       PlaySE(SE_SELECT);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
-        sHeatStartMenu->flag = 0;
         menuSelected -= 2;
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) {
         break;
       } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY) {
         break;
       } else {
-        sHeatStartMenu->flag = 0;
         menuSelected--;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
@@ -1408,12 +1410,14 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
 }
 
 static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_OPTIONS:
+      menuSelected = MENU_FLAG;
       break;
     default:
       PlaySE(SE_SELECT);
-      sHeatStartMenu->flag = 0;
       if (menuSelected == MENU_FLAG) {
         menuSelected = MENU_POKEDEX;
       } else if (menuSelected == MENU_BAG) {
@@ -1423,19 +1427,19 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
       } else {
         menuSelected++;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
-static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void)
-{
-  
+static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void) {
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_FLAG:
+      menuSelected = MENU_OPTIONS;
       break;
     default:
-      sHeatStartMenu->flag = 0;
       PlaySE(SE_SELECT);
       if (menuSelected == MENU_POKEDEX) {
         menuSelected = MENU_FLAG;
@@ -1446,9 +1450,9 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void)
       } else {
         menuSelected--;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
 static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
