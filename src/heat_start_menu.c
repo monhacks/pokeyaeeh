@@ -1333,13 +1333,20 @@ void GoToHandleInput(void) {
   CreateTask(Task_HeatStartMenu_HandleMainInput, 80);
 }
 
+
 static void HeatStartMenu_HandleInput_DPADDOWN(void) {
   // Needs to be set to 0 so that the selected icons change in the frontend
   sHeatStartMenu->flag = 0;
 
   switch (menuSelected) {
     case MENU_OPTIONS:
-      menuSelected = MENU_POKEDEX;
+      if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
+        menuSelected = MENU_POKEDEX;
+      } else if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) {
+        menuSelected = MENU_PARTY;
+      } else {
+        menuSelected = MENU_BAG;
+      }
       break;
     default:
       menuSelected++;
@@ -1365,9 +1372,8 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
       PlaySE(SE_SELECT);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
         menuSelected -= 2;
-      } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) {
-        break;
-      } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY) {
+      } else if ((FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) || (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY)) {
+        menuSelected = MENU_OPTIONS;
         break;
       } else {
         menuSelected--;
