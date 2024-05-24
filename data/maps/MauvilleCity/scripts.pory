@@ -86,6 +86,7 @@ MauvilleCity_EventScript_Wally::
 	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat
 	msgbox MauvilleCity_Text_WallyThankYou, MSGBOX_AUTOCLOSE
 	setflag FLAG_DEFEATED_WALLY_MAUVILLE
+	clearflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY
 	setvar VAR_MAUVILLE_CITY_STATE, 1
 	setvar VAR_WALLY_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL

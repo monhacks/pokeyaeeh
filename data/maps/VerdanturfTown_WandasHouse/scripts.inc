@@ -4,13 +4,6 @@ VerdanturfTown_WandasHouse_MapScripts::
 VerdanturfTown_WandasHouse_EventScript_Wally::
 	lock
 	faceplayer
-	goto_if_set FLAG_WALLY_SPEECH, VerdanturfTown_WandasHouse_EventScript_WallyShortSpeech
-	msgbox VerdanturfTown_WandasHouse_Text_StrongerSpeech, MSGBOX_DEFAULT
-	setflag FLAG_WALLY_SPEECH
-	release
-	end
-
-VerdanturfTown_WandasHouse_EventScript_WallyShortSpeech::
 	msgbox VerdanturfTown_WandasHouse_Text_StrongerSpeechShort, MSGBOX_DEFAULT
 	release
 	end
@@ -82,23 +75,11 @@ VerdanturfTown_WandasHouse_EventScript_WallysAuntEverGrande::
 	release
 	end
 
-VerdanturfTown_WandasHouse_Text_StrongerSpeech:
-	.string "Wally: I lost to you, {PLAYER}, but I'm\n"
-	.string "not feeling down anymore.\p"
-	.string "Because I have a new purpose in life.\n"
-	.string "Together with my Ralts, I'm going\l"
-	.string "to challenge Pokémon Gyms and become\l"
-	.string "a great Trainer.\p"
-	.string "Please watch me, {PLAYER}.\n"
-	.string "I'm going to be stronger than you.\p"
-	.string "When I do, I'm going to challenge you\n"
-	.string "to another battle.$"
-
 VerdanturfTown_WandasHouse_Text_StrongerSpeechShort:
-	.string "Wally: Please watch me, {PLAYER}.\n"
-	.string "I'm going to get stronger than you.\p"
-	.string "When I do, I'm going to challenge you\n"
-	.string "to another battle.$"
+	.string "Wally: Oh hey, {PLAYER}!\n"
+	.string "This is my cousin Wanda's house.\p"
+	.string "Just came to catch some supplies before\n"
+	.string "leaving to Lavaridge.$"
 
 VerdanturfTown_WandasHouse_Text_WallysNextDoor:
 	.string "Uncle: Oh! {PLAYER}{KUN}!\n"

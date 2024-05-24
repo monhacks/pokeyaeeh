@@ -218,7 +218,7 @@
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
 #define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
-#define FLAG_WALLY_SPEECH                    0xC1
+#define FLAG_UNUSED_0x1C1                    0xC1
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //
