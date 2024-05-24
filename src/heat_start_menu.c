@@ -122,8 +122,9 @@ enum SAVE_STATES {
 struct HeatStartMenu {
   MainCallback savedCallback;
   u32 loadState;
-  u8 sStartClockWindowId;
+  u32 sStartClockWindowId;
   u32 sMenuNameWindowId;
+  u32 sSafariBallsWindowId;
   u32 flag; // some u32 holding values for controlling the sprite anims an lifetime
   
   u32 spriteIdPoketch;
@@ -146,6 +147,7 @@ EWRAM_DATA u8 gClockMode = TWELVE_HOUR_MODE;
 // --BG-GFX--
 static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/heat_start_menu/bg.4bpp.lz");
 static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/heat_start_menu/bg.bin.lz");
+static const u32 sStartMenuTilemapSafari[] = INCBIN_U32("graphics/heat_start_menu/bg_safari.bin.lz");
 static const u16 sStartMenuPalette[] = INCBIN_U16("graphics/heat_start_menu/bg.gbapal");
 static const u16 gStandardMenuPalette[] = INCBIN_U16("graphics/interface/std_menu.gbapal");
 
@@ -183,7 +185,17 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .width = 7, 
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = 0x30 + (13*2)
+  .baseBlock = 0x30 + (12*2)
+};
+
+static const struct WindowTemplate sWindowTemplate_SafariBalls = {
+    .bg = 0,
+    .tilemapLeft = 2,
+    .tilemapTop = 1,
+    .width = 7,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = (0x30 + (12*2)) + (7*2)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -574,6 +586,17 @@ static void SetSelectedMenu(void) {
   }
 }
 
+static void ShowSafariBallsWindow(void)
+{
+    sHeatStartMenu->sSafariBallsWindowId = AddWindow(&sWindowTemplate_SafariBalls);
+    FillWindowPixelBuffer(sHeatStartMenu->sSafariBallsWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
+    PutWindowTilemap(sHeatStartMenu->sSafariBallsWindowId);
+    ConvertIntToDecimalStringN(gStringVar1, gNumSafariBalls, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    StringExpandPlaceholders(gStringVar4, gText_SafariBallStock);
+    AddTextPrinterParameterized(sHeatStartMenu->sSafariBallsWindowId, FONT_NARROW, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sHeatStartMenu->sSafariBallsWindowId, COPYWIN_GFX);
+}
+
 void HeatStartMenu_Init(void) {
   if (!IsOverworldLinkActive()) {
     FreezeObjectEvents();
@@ -625,6 +648,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_LoadSprites();
     HeatStartMenu_SafariZone_CreateSprites();
     HeatStartMenu_LoadBgGfx();
+    ShowSafariBallsWindow();
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
@@ -702,7 +726,11 @@ static void HeatStartMenu_SafariZone_CreateSprites(void) {
 static void HeatStartMenu_LoadBgGfx(void) {
   u8* buf = GetBgTilemapBuffer(0); 
   DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0);
-  LZDecompressWram(sStartMenuTilemap, buf);
+  if (GetSafariZoneFlag() == FALSE) {
+    LZDecompressWram(sStartMenuTilemap, buf);
+  } else {
+    LZDecompressWram(sStartMenuTilemapSafari, buf);
+  }
   LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
   LoadPalette(sStartMenuPalette, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
   ScheduleBgCopyTilemapToVram(0);
@@ -844,6 +872,13 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
 
   RemoveWindow(sHeatStartMenu->sStartClockWindowId);
   RemoveWindow(sHeatStartMenu->sMenuNameWindowId);
+
+  if (GetSafariZoneFlag() == TRUE) {
+    FillWindowPixelBuffer(sHeatStartMenu->sSafariBallsWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    ClearWindowTilemap(sHeatStartMenu->sSafariBallsWindowId); 
+    CopyWindowToVram(sHeatStartMenu->sSafariBallsWindowId, COPYWIN_GFX);
+    RemoveWindow(sHeatStartMenu->sSafariBallsWindowId);
+  }
 
   for(i=0; i<2048; i++) {
     buf[i] = 0;
@@ -1298,12 +1333,22 @@ void GoToHandleInput(void) {
   CreateTask(Task_HeatStartMenu_HandleMainInput, 80);
 }
 
+
 static void HeatStartMenu_HandleInput_DPADDOWN(void) {
+  // Needs to be set to 0 so that the selected icons change in the frontend
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_OPTIONS:
+      if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
+        menuSelected = MENU_POKEDEX;
+      } else if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) {
+        menuSelected = MENU_PARTY;
+      } else {
+        menuSelected = MENU_BAG;
+      }
       break;
     default:
-      sHeatStartMenu->flag = 0;
       menuSelected++;
       PlaySE(SE_SELECT);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
@@ -1311,38 +1356,36 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
         menuSelected++;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
-static void HeatStartMenu_HandleInput_DPADUP(void)
-{
-  
+static void HeatStartMenu_HandleInput_DPADUP(void) {
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_POKEDEX:
+      menuSelected = MENU_OPTIONS;
       break;
     default:
       PlaySE(SE_SELECT);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
-        sHeatStartMenu->flag = 0;
         menuSelected -= 2;
-      } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) {
-        break;
-      } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY) {
+      } else if ((FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) || (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY)) {
+        menuSelected = MENU_OPTIONS;
         break;
       } else {
-        sHeatStartMenu->flag = 0;
         menuSelected--;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
   u32 index;
-  if (!gPaletteFade.active) {
+  if (sHeatStartMenu->loadState == 0) {
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
     LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
   }
@@ -1373,12 +1416,14 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
 }
 
 static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_OPTIONS:
+      menuSelected = MENU_FLAG;
       break;
     default:
       PlaySE(SE_SELECT);
-      sHeatStartMenu->flag = 0;
       if (menuSelected == MENU_FLAG) {
         menuSelected = MENU_POKEDEX;
       } else if (menuSelected == MENU_BAG) {
@@ -1388,19 +1433,19 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
       } else {
         menuSelected++;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
-static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void)
-{
-  
+static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void) {
+  sHeatStartMenu->flag = 0;
+
   switch (menuSelected) {
     case MENU_FLAG:
+      menuSelected = MENU_OPTIONS;
       break;
     default:
-      sHeatStartMenu->flag = 0;
       PlaySE(SE_SELECT);
       if (menuSelected == MENU_POKEDEX) {
         menuSelected = MENU_FLAG;
@@ -1411,14 +1456,14 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void)
       } else {
         menuSelected--;
       }
-      HeatStartMenu_UpdateMenuName();
       break;
   }
+  HeatStartMenu_UpdateMenuName();
 }
 
 static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
   u32 index;
-  if (!gPaletteFade.active) {
+  if (sHeatStartMenu->loadState == 0) {
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
     LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
   }
