@@ -435,7 +435,7 @@ static void ClearDaycareMon(struct DaycareMon *daycareMon)
     ClearDaycareMonMail(&daycareMon->mail);
 }
 
-static void UNUSED ClearAllDaycareData(struct DayCare *daycare)
+void ClearAllDaycareData(struct DayCare *daycare)
 {
     u8 i;
 

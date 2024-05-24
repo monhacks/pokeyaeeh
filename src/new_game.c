@@ -42,6 +42,7 @@
 #include "player_pc.h"
 #include "field_specials.h"
 #include "berry_powder.h"
+#include "daycare.h"
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/heal_locations.h"
@@ -215,6 +216,7 @@ void NewGameInitData(void)
     ResetContestLinkResults();
     Overworld_ResetStateAfterWhiteOut();
     FlagSet(FLAG_SYS_B_DASH);
+    ClearAllDaycareData(&gSaveBlock1Ptr->daycare);
     
     memset(&gSaveBlock2Ptr->itemFlags, 0, sizeof(gSaveBlock2Ptr->itemFlags));
     gSaveBlock2Ptr->autoRun = FALSE;
