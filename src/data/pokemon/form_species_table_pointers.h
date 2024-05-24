@@ -693,4 +693,6 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     
     [SPECIES_MILOTIC] = sMiloticFormSpeciesIdTable,
     [SPECIES_MILOTIC_MEGA] = sMiloticFormSpeciesIdTable,
+
+    [SPECIES_RAICHU_MEGA] = sRaichuFormSpeciesIdTable,
 };

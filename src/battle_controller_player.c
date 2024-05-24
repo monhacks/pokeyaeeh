@@ -2864,7 +2864,7 @@ static void ChangeMoveDisplayMode(u32 battler)
      && effect != EFFECT_CHANGE_TYPE_ON_ITEM
      && effect != EFFECT_NATURAL_GIFT
      && ((atkAbility == ABILITY_PIXILATE) || (atkAbility == ABILITY_REFRIGERATE) || (atkAbility == ABILITY_AERILATE) || (atkAbility == ABILITY_GALVANIZE)
-     || (atkAbility == ABILITY_HERBIVATE) || (atkAbility == ABILITY_SCORCHATE) || (atkAbility == ABILITY_OCEANATE)))
+     || (atkAbility == ABILITY_HERBIVATE) || (atkAbility == ABILITY_SCORCHATE) || (atkAbility == ABILITY_OCEANATE) || (atkAbility == ABILITY_PUMMELIZE)))
         ConvertIntToDecimalStringN(gStringVar1, power*(1.2), STR_CONV_MODE_RIGHT_ALIGN, 4);
 
     else if (effect != EFFECT_HIDDEN_POWER

@@ -68,6 +68,7 @@ static const u16 sPikachuFormSpeciesIdTable[] = {
 
 static const u16 sRaichuFormSpeciesIdTable[] = {
     SPECIES_RAICHU,
+    SPECIES_RAICHU_MEGA,
     SPECIES_RAICHU_ALOLAN,
     FORM_SPECIES_END,
 };

@@ -6071,6 +6071,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                  || ((attackerAbility == ABILITY_HERBIVATE) && (ateType = TYPE_GRASS))
                  || ((attackerAbility == ABILITY_SCORCHATE) && (ateType = TYPE_FIRE))
                  || ((attackerAbility == ABILITY_OCEANATE) && (ateType = TYPE_WATER))
+                 || ((attackerAbility == ABILITY_PUMMELIZE) && (ateType == TYPE_FIGHTING))
                 )
             )
     {

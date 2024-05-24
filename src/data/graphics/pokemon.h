@@ -8275,3 +8275,9 @@ const u32 gMonBackPic_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/
 const u8 gMonIcon_MiloticMega[] = INCBIN_U8("graphics/pokemon/milotic/mega/icon.4bpp");
 const u32 gMonPalette_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/normal.gbapal.lz");
 const u32 gMonShinyPalette_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/shiny.gbapal.lz");
+
+const u32 gMonFrontPic_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/front.4bpp.lz");
+const u32 gMonBackPic_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/back.4bpp.lz");
+const u8 gMonIcon_RaichuMega[] = INCBIN_U8("graphics/pokemon/raichu/mega/icon.4bpp");
+const u32 gMonPalette_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/normal.gbapal.lz");
+const u32 gMonShinyPalette_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/shiny.gbapal.lz");

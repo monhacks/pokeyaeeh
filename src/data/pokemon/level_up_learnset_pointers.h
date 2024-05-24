@@ -1524,4 +1524,5 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_NIDOQUEEN_MEGA] = sNidoqueenLevelUpLearnset,
     [SPECIES_NIDOKING_MEGA] = sNidokingLevelUpLearnset,
     [SPECIES_MILOTIC_MEGA] = sMiloticLevelUpLearnset,
+    [SPECIES_RAICHU_MEGA] = sRaichuLevelUpLearnset,
 };

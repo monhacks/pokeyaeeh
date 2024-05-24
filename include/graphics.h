@@ -8208,6 +8208,12 @@ extern const u8 gMonIcon_MiloticMega[];
 extern const u32 gMonPalette_MiloticMega[];
 extern const u32 gMonShinyPalette_MiloticMega[];
 
+extern const u32 gMonFrontPic_RaichuMega[];
+extern const u32 gMonBackPic_RaichuMega[];
+extern const u8 gMonIcon_RaichuMega[];
+extern const u32 gMonPalette_RaichuMega[];
+extern const u32 gMonShinyPalette_RaichuMega[];
+
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
 extern const u32 gMenuPokeblock_Pal[];

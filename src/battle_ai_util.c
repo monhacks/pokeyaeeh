@@ -306,6 +306,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_METAL_SURGE] = 8,
     [ABILITY_DRAGON_SHEEN] = 10,
     [ABILITY_DRAGONFLY] = 9,
+    [ABILITY_PUMMELIZE] = 8,
 };
 
 static const u16 sEncouragedEncoreEffects[] =

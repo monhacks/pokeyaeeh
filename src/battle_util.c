@@ -9589,6 +9589,10 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
+    case ABILITY_PUMMELIZE:
+        if (moveType == TYPE_FIGHTING && gBattleStruct->ateBoost[battlerAtk])
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;
     case ABILITY_PUNK_ROCK:
         if (gBattleMoves[move].soundMove)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));

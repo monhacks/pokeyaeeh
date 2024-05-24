@@ -28166,4 +28166,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
+
+    [SPECIES_RAICHU_MEGA] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 135,
+        .baseDefense   = 55,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 80,
+        .baseSpeed     = 120,
+        .types = { TYPE_ELECTRIC, TYPE_FIGHTING},
+        .catchRate = 75,
+        .expYield = 218,
+        .evYield_Speed     = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
+        .abilities = {ABILITY_PUMMELIZE, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_YELLOW,
+        .noFlip = FALSE,
+    },
 };
