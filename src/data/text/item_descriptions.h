@@ -3906,9 +3906,9 @@ static const u8 sDynamaxBandDesc[] = _(
 
 // Misc. Key Items
 static const u8 sBicycleDesc[] = _(
-    "A folding bicycle\n"
-    "that is faster than\n"
-    "the Running Shoes.");
+    "A fast and foldable\n"
+    "bicycle. Press {R_BUTTON}\n"
+    "to change gears.");
 
 static const u8 sOldRodDesc[] = _(
     "Use by any body of\n"

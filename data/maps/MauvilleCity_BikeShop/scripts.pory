@@ -5,42 +5,22 @@ MauvilleCity_BikeShop_MapScripts::
 MauvilleCity_BikeShop_EventScript_Rydel::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_BIKE, MauvilleCity_BikeShop_EventScript_NoMoreBikeSwitch
+	goto_if_set FLAG_RECEIVED_BIKE, MauvilleCity_BikeShop_EventScript_KeepRidin
 	msgbox MauvilleCity_BikeShop_Text_RydelGreeting, MSGBOX_DEFAULT
-	msgbox MauvilleCity_BikeShop_Text_DidYouComeFromFarAway, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, MauvilleCity_BikeShop_EventScript_YesFar
-	goto_if_eq VAR_RESULT, NO, MauvilleCity_BikeShop_EventScript_NotFar
-	end
-
-MauvilleCity_BikeShop_EventScript_ChooseBike::
-	msgbox MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne, MSGBOX_DEFAULT
-	waitmessage
-	goto MauvilleCity_BikeShop_EventScript_GiveBike
-	end
-
-MauvilleCity_BikeShop_EventScript_GiveBike:
-	giveitem ITEM_MACH_BIKE
-	goto MauvilleCity_BikeShop_EventScript_NoMoreBikeSwitch
-	end
-
-MauvilleCity_BikeShop_EventScript_NotFar::
-	setflag FLAG_DECLINED_BIKE
-	msgbox MauvilleCity_BikeShop_Text_GuessYouDontNeedBike, MSGBOX_DEFAULT
-	release
+	msgbox MauvilleCity_BikeShop_Text_DidYouComeFromFarAway, MSGBOX_DEFAULT
+	goto MauvilleCity_BikeShop_EventScript_YesFar
 	end
 
 MauvilleCity_BikeShop_EventScript_YesFar::
 	setflag FLAG_RECEIVED_BIKE
-	goto MauvilleCity_BikeShop_EventScript_ChooseBike
+	waitmessage
+	goto MauvilleCity_BikeShop_EventScript_GiveBike
 	end
 
-MauvilleCity_BikeShop_EventScript_NoMoreBikeSwitch::
+MauvilleCity_BikeShop_EventScript_GiveBike::
+	giveitem ITEM_ACRO_BIKE
+MauvilleCity_BikeShop_EventScript_KeepRidin::
 	msgbox MauvilleCity_BikeShop_Text_KeepRidin, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_BikeShop_EventScript_KeepBike::
-	msgbox MauvilleCity_BikeShop_Text_HappyYouLikeIt, MSGBOX_DEFAULT
 	release
 	end
 
@@ -133,14 +113,7 @@ MauvilleCity_BikeShop_Text_RydelGreeting:
 MauvilleCity_BikeShop_Text_DidYouComeFromFarAway:
 	.string "Rydel: Your Running Shoes…\n"
 	.string "They're awfully filthy.\p"
-	.string "Did you come from far away?$"
-
-MauvilleCity_BikeShop_Text_GuessYouDontNeedBike:
-	.string "Rydel: Is that right?\p"
-	.string "Then, I guess you have no need for\n"
-	.string "any of my Bikes.$"
-
-MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne:
+	.string "Did you come from far away?\p"
 	.string "Rydel: Hm, hm… … … … …\p"
 	.string "You're saying that you came all this\n"
 	.string "way from Littleroot?\p"
@@ -153,8 +126,8 @@ MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne:
 	.string "I'll give you a Bike!$"
 
 MauvilleCity_BikeShop_Text_KeepRidin:
-	.string "Rydel: If you'd like to change your bike's\n"
-	.string "gears, click on the {R_BUTTON}$"
+	.string "Rydel: If you'd like to change your\n"
+	.string "bike's gears, click on {R_BUTTON}!$"
 
 MauvilleCity_BikeShop_Text_ExchangedMachForAcro:
 	.string "{PLAYER} got the Mach Bike exchanged\n"

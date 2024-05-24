@@ -274,17 +274,3 @@ EventScript_EnableAutoRun::
     end
 AutoRunEnabled:
     .string "Auto Run has been {COLOR GREEN}enabled{COLOR DARK_GRAY}.$"
-
-EventScript_AcroBikeMode::
-    msgbox AcroBikeMode MSGBOX_SIGN
-    end
-
-AcroBikeMode:
-    .string "{COLOR RED}Acro Bike{COLOR DARK_GRAY} mode activated.$"
-    
-EventScript_MachBikeMode::
-    msgbox MachBikeMode MSGBOX_SIGN
-    end
-
-MachBikeMode:
-    .string "{COLOR BLUE}Mach Bike{COLOR DARK_GRAY} mode activated.$"
