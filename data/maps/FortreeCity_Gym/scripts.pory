@@ -1,21 +1,6 @@
 raw `
 FortreeCity_Gym_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_OnTransition
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, FortreeCity_Gym_OnWarp
 	.byte 0
-
-FortreeCity_Gym_OnTransition:
-	special RotatingGate_InitPuzzle
-	end
-
-FortreeCity_Gym_OnWarp:
-	map_script_2 VAR_TEMP_0, VAR_TEMP_0, FortreeCity_Gym_EventScript_InitRotatingGates
-	.2byte 0
-
-@ NOTE: This rotating gate puzzle makes use of VAR_TEMP_0 - VAR_TEMP_3
-FortreeCity_Gym_EventScript_InitRotatingGates::
-	special RotatingGate_InitPuzzleAndGraphics
-	end
 
 FortreeCity_Gym_EventScript_Winona::
 	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
@@ -141,19 +126,17 @@ FortreeCity_Gym_Text_GymGuideAdvice:
 	.string "bound {PLAYER}?\p"
 	.string "Fortree Gym Leader Krypto is\n"
 	.string "a master of Steel-type Pokémon.\p"
-	.string "He's waiting at the back of this Gym,\n"
-	.string "behind the rotating doors.\p"
 	.string "He's waiting for new challengers\n"
 	.string "who are trying to take wing!\p"
 	.string "Okay, go for it!$"
 
 FortreeCity_Gym_Text_GymGuidePostVictory:
 	.string "You did it!\n"
-	.string "You've achieved liftoff!$"
+	.string "You've beaten Krypto at his own game!$"
 
 FortreeCity_Gym_Text_JaredIntro:
-	.string "Behold the elegant battle style of my\n"
-	.string "Steel-type Pokémon!$"
+	.string "Behold the powerful battle style of\n"
+	.string "my Steel-type Pokémon!$"
 
 FortreeCity_Gym_Text_JaredDefeat:
 	.string "You…\n"
