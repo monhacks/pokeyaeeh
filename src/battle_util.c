@@ -8679,7 +8679,7 @@ u8 IsMonDisobedient(void)
             obedienceLevel = 55;
         if (FlagGet(FLAG_BADGE05_GET)) // Fist Badge
             obedienceLevel = 60;
-        if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
+        if (FlagGet(FLAG_BADGE06_GET)) // Hexnut Badge
             obedienceLevel = 65;
         if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
             obedienceLevel = 75;

@@ -104,7 +104,7 @@ FortreeCity_Text_SomethingBlockingGym:
 
 FortreeCity_Text_ThisTimeIllBeatWinona:
 	.string "I've got my pride-and-joy Pokémon\n"
-	.string "with me. This time, I'll beat Winona.$"
+	.string "with me. This time, I'll beat Krypto.$"
 
 FortreeCity_Text_TreesGrowByDrinkingRainwater:
 	.string "The ground absorbs rainwater, and\n"
@@ -150,6 +150,6 @@ FortreeCity_Text_CitySign:
 
 FortreeCity_Text_GymSign:
 	.string "Fortree City Pokémon Gym\n"
-	.string "Leader: Winona\p"
+	.string "Leader: Krypto\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"

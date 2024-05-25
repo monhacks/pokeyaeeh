@@ -2164,26 +2164,26 @@ MatchCall_Text_Flannery4::
 	.string "better at training every time.$"
 
 MatchCall_Text_Winona1::
-	.string "Winona: Hello, {PLAYER}!\p"
+	.string "Krypto: Hello, {PLAYER}!\p"
 	.string "Thanks to our battle, I've come\n"
 	.string "to understand my weak points!\p"
 	.string "When I reopen the Gym, I won't go\n"
 	.string "down in defeat again!$"
 
 MatchCall_Text_Winona2::
-	.string "Winona: You've done it, {PLAYER}!\p"
+	.string "Krypto: You've done it, {PLAYER}!\p"
 	.string "News about the new Champion\n"
 	.string "has reached us in Fortree!\p"
 	.string "But… The next time we battle,\n"
 	.string "it's not going to end the same way.$"
 
 MatchCall_Text_Winona3::
-	.string "Winona: Is this {PLAYER}?\n"
+	.string "Krypto: Is this {PLAYER}?\n"
 	.string "Our Gym is back in operation!\p"
 	.string "We're waiting for you in Fortree!$"
 
 MatchCall_Text_Winona4::
-	.string "Winona: {PLAYER}…\n"
+	.string "Krypto: {PLAYER}…\n"
 	.string "Though I have lost, my wings will\l"
 	.string "never break.\p"
 	.string "Yes, in exactly the same way that\n"

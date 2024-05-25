@@ -21,7 +21,7 @@ FortreeCity_Gym_EventScript_Winona::
 	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
-	goto_if_unset FLAG_RECEIVED_TM_AERIAL_ACE, FortreeCity_Gym_EventScript_GiveAerialAce2
+	goto_if_unset FLAG_RECEIVED_TM_FLASH_CANNON, FortreeCity_Gym_EventScript_GiveFlashCannon2
 	msgbox FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -30,12 +30,13 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	message FortreeCity_Gym_Text_ReceivedFeatherBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_DEFAULT
+	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_AUTOCLOSE
+	giveitem ITEM_MAWILITE
 	setflag FLAG_DEFEATED_FORTREE_GYM
 	setflag FLAG_BADGE06_GET
 	setvar VAR_0x8008, 6
 	call Common_EventScript_SetGymTrainers
-	call FortreeCity_Gym_EventScript_GiveAerialAce
+	call FortreeCity_Gym_EventScript_GiveFlashCannon
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -49,19 +50,21 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	release
 	end
 
-FortreeCity_Gym_EventScript_GiveAerialAce2::
-	giveitem ITEM_TM_AERIAL_ACE
+FortreeCity_Gym_EventScript_GiveFlashCannon2::
+	msgbox FortreeCity_Gym_Text_GiveFlashCannon, MSGBOX_AUTOCLOSE
+	giveitem ITEM_TM_FLASH_CANNON
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	msgbox FortreeCity_Gym_Text_ExplainFlashCannon, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_FLASH_CANNON
 	release
 	end
 
-FortreeCity_Gym_EventScript_GiveAerialAce::
-	giveitem ITEM_TM_AERIAL_ACE
+FortreeCity_Gym_EventScript_GiveFlashCannon::
+	msgbox FortreeCity_Gym_Text_GiveFlashCannon, MSGBOX_AUTOCLOSE
+	giveitem ITEM_TM_FLASH_CANNON
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	msgbox FortreeCity_Gym_Text_ExplainFlashCannon, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_FLASH_CANNON
 	return
 
 FortreeCity_Gym_EventScript_WinonaRematch::
@@ -93,6 +96,10 @@ FortreeCity_Gym_EventScript_Darius::
 	trainerbattle_single TRAINER_DARIUS, FortreeCity_Gym_Text_DariusIntro, FortreeCity_Gym_Text_DariusDefeat
 	msgbox FortreeCity_Gym_Text_DariusPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+FortreeCity_Gym_EventScript_Acheron::
+	trainerbattle_single TRAINER_KEEGAN, FortreeCity_Gym_Text_AcheronIntro, FortreeCity_Gym_Text_AcheronDefeat
+	msgbox FortreeCity_Gym_Text_AcheronPostBattle, MSGBOX_DEFAULT
 
 FortreeCity_Gym_EventScript_GymGuide::
 	lock
@@ -132,11 +139,11 @@ FortreeCity_Gym_EventScript_GymStatue::
 FortreeCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "Fortree Gym Leader Winona is\n"
-	.string "a master of Flying-type Pokémon.\p"
-	.string "She's waiting at the back of this Gym,\n"
+	.string "Fortree Gym Leader Krypto is\n"
+	.string "a master of Steel-type Pokémon.\p"
+	.string "He's waiting at the back of this Gym,\n"
 	.string "behind the rotating doors.\p"
-	.string "She's waiting for new challengers\n"
+	.string "He's waiting for new challengers\n"
 	.string "who are trying to take wing!\p"
 	.string "Okay, go for it!$"
 
@@ -145,8 +152,8 @@ FortreeCity_Gym_Text_GymGuidePostVictory:
 	.string "You've achieved liftoff!$"
 
 FortreeCity_Gym_Text_JaredIntro:
-	.string "Behold the elegant battle style of\n"
-	.string "Bird Pokémon!$"
+	.string "Behold the elegant battle style of my\n"
+	.string "Steel-type Pokémon!$"
 
 FortreeCity_Gym_Text_JaredDefeat:
 	.string "You…\n"
@@ -159,8 +166,8 @@ FortreeCity_Gym_Text_JaredPostBattle:
 	.string "our Leader?$"
 
 FortreeCity_Gym_Text_EdwardoIntro:
-	.string "The lovers of Bird Pokémon aspire\n"
-	.string "to join this Gym.\p"
+	.string "Steel-type fanatics all around Hoenn.\n"
+	.string "want to join this Gym.\p"
 	.string "As a member of the Fortree Gym,\n"
 	.string "I'm not allowed to lose!$"
 
@@ -175,35 +182,34 @@ FortreeCity_Gym_Text_EdwardoPostBattle:
 	.string "myself even stronger.$"
 
 FortreeCity_Gym_Text_FlintIntro:
-	.string "There's no need for Winona, our Gym\n"
+	.string "There's no need for Krypto, our Gym\n"
 	.string "Leader, to deal with you!\p"
 	.string "I'm plenty good enough for you!$"
 
 FortreeCity_Gym_Text_FlintDefeat:
-	.string "Winona, I…\n"
+	.string "Krypto, I…\n"
 	.string "I lost!$"
 
 FortreeCity_Gym_Text_FlintPostBattle:
-	.string "Winona is cute and she's strong.\n"
-	.string "She's the ultimate Leader!\p"
-	.string "Blush…$"
+	.string "Krypto is the greatest!\p"
+	.string "…\p"
+	.string "Krypgoat!$"
 
 FortreeCity_Gym_Text_AshleyIntro:
-	.string "Winona taught me personally!\n"
+	.string "Krypto taught me personally!\n"
 	.string "You can't beat me easily!$"
 
 FortreeCity_Gym_Text_AshleyDefeat:
 	.string "I was beaten…$"
 
 FortreeCity_Gym_Text_AshleyPostBattle:
-	.string "Thanks to Winona, the people of\n"
+	.string "Thanks to Krypto, the people of\n"
 	.string "Fortree can live without fear.$"
 
 FortreeCity_Gym_Text_HumbertoIntro:
-	.string "When Winona takes to battle, her face\n"
-	.string "shines with beautiful determination…\p"
-	.string "I'm not letting you witness that\n"
-	.string "lovely sight!$"
+	.string "When Krypto takes to battle, he\n"
+	.string "destroys everything in his way!\p"
+	.string "I'm not letting you witness that!$"
 
 FortreeCity_Gym_Text_HumbertoDefeat:
 	.string "Urk!\n"
@@ -211,12 +217,11 @@ FortreeCity_Gym_Text_HumbertoDefeat:
 
 FortreeCity_Gym_Text_HumbertoPostBattle:
 	.string "You'd better watch it!\n"
-	.string "Don't get distracted staring at Winona\l"
-	.string "or you'll go crashing down in a heap!$"
+	.string "Krypto is an insane Trainer!$"
 
 FortreeCity_Gym_Text_DariusIntro:
 	.string "You'd better know that there are all\n"
-	.string "sorts of Flying-type Pokémon.\p"
+	.string "sorts of Steel-type Pokémon.\p"
 	.string "You do know that, right?$"
 
 FortreeCity_Gym_Text_DariusDefeat:
@@ -225,62 +230,76 @@ FortreeCity_Gym_Text_DariusDefeat:
 FortreeCity_Gym_Text_DariusPostBattle:
 	.string "Sure, you beat me all right.\n"
 	.string "But you'd better watch it! Our Leader\l"
-	.string "Winona's Pokémon are all business.$"
+	.string "Krypto's Pokémon are all business.$"
+
+FortreeCity_Gym_Text_AcheronIntro:
+	.string "The metals shall be in your face!$"
+
+FortreeCity_Gym_Text_AcheronDefeat:
+	.string "Ow, dang it!$"
+
+FortreeCity_Gym_Text_AcheronPostBattle:
+	.string "I may have lost, but Krypto won't go\n"
+	.string "down that easily!$"
 
 FortreeCity_Gym_Text_WinonaIntro:
-	.string "I am Winona. I am the Leader of\n"
-	.string "the Fortree Pokémon Gym.\p"
-	.string "I have become one with Bird Pokémon\n"
-	.string "and have soared the skies…\p"
-	.string "However grueling the battle, we have\n"
-	.string "triumphed with grace…\p"
-	.string "Witness the elegant choreography\n"
-	.string "of Bird Pokémon and I!$"
+	.string "Welcome, challenger.\p"
+	.string "Great job on getting past the my\n"
+	.string "Trainers.\p"
+	.string "They are push-overs anyway…\p"
+	.string "But now!\n"
+	.string "You must face my Steel-type Pokémon\l"
+	.string "and their overwhelming intensity!$"
 
 FortreeCity_Gym_Text_WinonaDefeat:
-	.string "Never before have I seen a Trainer\n"
-	.string "command Pokémon with more grace\l"
-	.string "than I…\p"
-	.string "In recognition of your prowess,\n"
-	.string "I present to you this Gym Badge.$"
+	.string "What?!\n"
+	.string "No way…!\p"
+	.string "After all of that strategizing just to\n"
+	.string "be melted to nothing but a puddle of\l"
+	.string "metal!$"
 
 FortreeCity_Gym_Text_ReceivedFeatherBadge:
-	.string "{PLAYER} received the Feather Badge\n"
-	.string "from Winona.$"
+	.string "{PLAYER} received the Hexnut Badge\n"
+	.string "from Krypto.$"
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
-	.string "With the Feather Badge, all Pokémon up\n"
-	.string "to Lv 70, even those received through\l"
+	.string "With the Hexnut Badge, all Pokémon up\n"
+	.string "to Lv 65, even those received through\l"
 	.string "trades, will obey your every command.\p"
-	.string "You will also be able to use\n"
-	.string "the HM move Fly outside of battle.\p"
-	.string "And this…\n"
-	.string "This is a gift from me.$"
+	.string "For my first gift, take this Mega Stone,\n"
+	.string "for one of my favorite Pokémon… Mawile.\n"
+	.string "I pray she does you well.$"
 
-FortreeCity_Gym_Text_ExplainAerialAce:
-	.string "TM40 contains Aerial Ace.\p"
-	.string "Its speed…\n"
-	.string "No Pokémon should be able to avoid it.\p"
+FortreeCity_Gym_Text_GiveFlashCannon:
+	.string "And this is another gift from me.$"
+
+FortreeCity_Gym_Text_ExplainFlashCannon:
+	.string "TM20 contains Flash Cannon.\p"
+	.string "A powerful Steel-type attack that has a\n"
+	.string "chance to lower the foe's Special\l"
+	.string "Defense.\p"
+	.string "A reliable and powerful move.\p"
 	.string "… … … … … …$"
 
 FortreeCity_Gym_Text_RegisteredWinona:
-	.string "Registered Gym Leader Winona\n"
+	.string "Registered Gym Leader Krypto\n"
 	.string "in the PokéNav.$"
 
 FortreeCity_Gym_Text_WinonaPostBattle:
-	.string "Though I fell to you, I will remain\n"
-	.string "devoted to Bird Pokémon.$"
+	.string "Go on, challenger,\n"
+	.string "that is all I have for you.\p"
+	.string "Good luck!$"
 
 FortreeCity_Gym_Text_GymStatue:
 	.string "Fortree City Pokémon Gym$"
 
 FortreeCity_Gym_Text_GymStatueCertified:
 	.string "Fortree City Pokémon Gym\p"
-	.string "Winona's certified Trainers:\n"
+	.string "Krypto's certified Trainers:\n"
 	.string "{PLAYER}$"
 
 FortreeCity_Gym_Text_WinonaPreRematch:
-	.string "Winona: We humans can never escape\n"
+	.string "Krypto: We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
@@ -293,14 +312,14 @@ FortreeCity_Gym_Text_WinonaRematchDefeat:
 	.string "I failed to reach your height again…$"
 
 FortreeCity_Gym_Text_WinonaPostRematch:
-	.string "Winona: Even though I have lost,\n"
+	.string "Krypto: Even though I have lost,\n"
 	.string "the wings of my heart remain unbroken.\p"
 	.string "I can rise and soar again and\n"
 	.string "yet again.\p"
 	.string "I am convinced of it!$"
 
 FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
-	.string "Winona: We humans can never escape\n"
+	.string "Krypto: We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
