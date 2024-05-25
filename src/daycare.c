@@ -446,6 +446,11 @@ void ClearAllDaycareData(struct DayCare *daycare)
     daycare->stepCounter = 0;
 }
 
+void ClearDaycareMons(void)
+{
+    ClearAllDaycareData(&gSaveBlock1Ptr->daycare);
+}
+
 // Determines what the species of an Egg would be based on the given species.
 // It determines this by working backwards through the evolution chain of the
 // given species.

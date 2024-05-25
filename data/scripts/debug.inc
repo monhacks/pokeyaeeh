@@ -120,8 +120,12 @@ Text_TestIntro:
 Text_TestDefeat:
     .string "Victorious!$"
 
+Text_DaycareClear:
+	.string "Daycare data cleared!$"
+
 Debug_EventScript_Script_1::
-	removeitem ITEM_LETTER
+	msgbox Text_DaycareClear, MSGBOX_AUTOCLOSE
+	special ClearDaycareMons
 	end
 
 Debug_EventScript_Script_2::

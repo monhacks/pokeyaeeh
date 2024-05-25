@@ -544,3 +544,4 @@ gSpecials::
 	def_special GetLastUsedSprayType
 	def_special TrySkyBattle
 	def_special GetLeadMonSpecies
+	def_special ClearDaycareMons
