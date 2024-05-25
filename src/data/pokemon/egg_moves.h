@@ -3304,6 +3304,7 @@ const u16 gEggMoves[] = {
               MOVE_WISH),
 
     egg_moves(BLITZLE,
+              MOVE_BLAZE_KICK,
               MOVE_DOUBLE_EDGE,
               MOVE_DOUBLE_KICK,
               MOVE_ENDURE,
