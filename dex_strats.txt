@@ -1,3 +1,27 @@
+Charizard Mega X
+{ 
+    name = Physical Sweeper
+    item = Charizardite X
+    ability = Tough Claws
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Adamant / Jolly
+    moves = Flare Blitz / Raging Fury, Dragon Rush / Dragon Claw / Outrage, Dragon Dance / Swords Dance, Earthquake / Supercell Slam / Roost
+    comment = Charizard's kit was buffed to include new moves like Raging Fury (now a contact move), Knuckle Punch and Supercell Slam. Dragon Dance to improve Speed or Swords Dance to hit even harder. Additionally, it also has Roost for reliable recovery.
+    tags = Physical Attacker, Offensive, Sweeper
+}
+
+Charizard Mega Y
+{ 
+    name = Sun Sweeper
+    item = Charizardite Y
+    ability = Drought
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Modesy / Timid
+    moves = Flamethrower / Heat Wave, Jetstream, Focus Blast / Solar Beam, Roost
+    comment = Mega Charizard Y is hands down, the better Mega Charizard. Having a monsterous Sp. Attack stat along with Drought and good moves, it can wreak havoc on any team. In doubles, it can play a good support role to Chlorophyll users (such as Venusaur, Scovillain, etc). Charizard also gets Solar Beam to take out the Rock, Ground and Water types that would otherwise cause trouble. Roost gives Charizard longevity, letting it recover off Stealth Rock damage.
+    tags = Special Attacker, Offensive, Sweeper
+}
+
 Mawile Mega
 { 
     name = Heavy Hitter
@@ -6,6 +30,6 @@ Mawile Mega
     evs = 0, 252, 4, 0, 0, 252
     nature = Adamant
     moves = Iron Head, Play Rough, Swords Dance, Sucker Punch
-    comment = Physical sweeping Mawile set.
-    tags = Krypto
+    comment = Physical sweeping Mawile set. Use Swords Dance to double the already massive Attack stat. EVs in speed can be swapped to bulk too. Mawile got a sweet Speed stat buff, so now you can run max Speed EVs, too.
+    tags = Physical Attacker, Offensive, Sweeper
 }
