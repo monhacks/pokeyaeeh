@@ -8166,7 +8166,7 @@ const u32 gMonFrontPic_UrsalunaBloodmoon[] = INCBIN_U32("graphics/pokemon/ursalu
 const u32 gMonPalette_UrsalunaBloodmoon[] = INCBIN_U32("graphics/pokemon/ursaluna/bloodmoon/normal.gbapal.lz");
 const u32 gMonBackPic_UrsalunaBloodmoon[] = INCBIN_U32("graphics/pokemon/ursaluna/bloodmoon/back.4bpp.lz");
 const u32 gMonShinyPalette_UrsalunaBloodmoon[] = INCBIN_U32("graphics/pokemon/ursaluna/bloodmoon/shiny.gbapal.lz");
-// const u8 gMonIcon_UrsalunaBloodmoon[] = INCBIN_U8("graphics/pokemon/ursaluna/bloodmoon/icon.4bpp");
+const u8 gMonIcon_UrsalunaBloodmoon[] = INCBIN_U8("graphics/pokemon/ursaluna/bloodmoon/icon.4bpp");
 // const u8 gMonFootprint_UrsalunaBloodmoon[] = INCBIN_U8("graphics/pokemon/ursaluna/bloodmoon/footprint.1bpp");
 
 const u32 gMonFrontPic_Dipplin[] = INCBIN_U32("graphics/pokemon/dipplin/front.4bpp.lz");
