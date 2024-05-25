@@ -1499,7 +1499,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(RAGING_BOLT, gMonPalette_RagingBolt),
     SPECIES_PAL(IRON_BOULDER, gMonPalette_IronBoulder),
     SPECIES_PAL(IRON_CROWN, gMonPalette_IronCrown),
-    // SPECIES_PAL(TERAPAGOS, gMonPalette_TerapagosNormal),
+    // SPECIES_PAL(TERAPAGOS_NORMAL, gMonPalette_TerapagosNormal),
     // SPECIES_PAL(TERAPAGOS_TERASTAL, gMonPalette_TerapagosTerastal),
     // SPECIES_PAL(TERAPAGOS_STELLAR, gMonPalette_TerapagosStellar),
     SPECIES_PAL(PECHARUNT, gMonPalette_Pecharunt),

@@ -1501,7 +1501,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(RAGING_BOLT, gMonBackPic_RagingBolt),
     SPECIES_SPRITE(IRON_BOULDER, gMonBackPic_IronBoulder),
     SPECIES_SPRITE(IRON_CROWN, gMonBackPic_IronCrown),
-    // SPECIES_SPRITE(TERAPAGOS, gMonBackPic_TerapagosNormal),
+    // SPECIES_SPRITE(TERAPAGOS_NORMAL, gMonBackPic_TerapagosNormal),
     // SPECIES_SPRITE(TERAPAGOS_TERASTAL, gMonBackPic_TerapagosTerastal),
     // SPECIES_SPRITE(TERAPAGOS_STELLAR, gMonBackPic_TerapagosStellar),
     SPECIES_SPRITE(PECHARUNT, gMonBackPic_Pecharunt),

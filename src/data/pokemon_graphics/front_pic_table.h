@@ -1499,7 +1499,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(RAGING_BOLT, gMonFrontPic_RagingBolt),
     SPECIES_SPRITE(IRON_BOULDER, gMonFrontPic_IronBoulder),
     SPECIES_SPRITE(IRON_CROWN, gMonFrontPic_IronCrown),
-    // SPECIES_SPRITE(TERAPAGOS, gMonFrontPic_TerapagosNormal),
+    // SPECIES_SPRITE(TERAPAGOS_NORMAL, gMonFrontPic_TerapagosNormal),
     // SPECIES_SPRITE(TERAPAGOS_TERASTAL, gMonFrontPic_TerapagosTerastal),
     // SPECIES_SPRITE(TERAPAGOS_STELLAR, gMonFrontPic_TerapagosStellar),
     SPECIES_SPRITE(PECHARUNT, gMonFrontPic_Pecharunt),
