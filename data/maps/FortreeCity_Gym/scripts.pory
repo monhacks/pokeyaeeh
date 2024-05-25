@@ -227,7 +227,7 @@ FortreeCity_Gym_Text_AcheronPostBattle:
 
 FortreeCity_Gym_Text_WinonaIntro:
 	.string "Welcome, challenger.\p"
-	.string "Great job on getting past the my\n"
+	.string "Great job on getting past my Gym\n"
 	.string "Trainers.\p"
 	.string "They are push-overs anyway…\p"
 	.string "But now!\n"
