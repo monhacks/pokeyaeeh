@@ -12280,6 +12280,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
+        .soundMove = TRUE,
         .metronomeBanned = TRUE,
     },
 
