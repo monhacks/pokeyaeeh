@@ -3549,24 +3549,10 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
     s32 dmg;
     u8 effectiveness;
     struct BattlePokemon *savedBattleMons = AllocSaveBattleMons();
-<<<<<<< HEAD
     if(isPartyMonAttacker)
-=======
-
-    if (isPartyMonAttacker)
-    {
->>>>>>> 4f1df84acf (Make AI see Loaded Dice hold effect for multi hit moves that strike 5… (#4622))
         gBattleMons[battlerAtk] = switchinCandidate;
     else
         gBattleMons[battlerDef] = switchinCandidate;
-<<<<<<< HEAD
-=======
-        AI_THINKING_STRUCT->saved[battlerAtk].saved = TRUE;
-        SetBattlerData(battlerAtk); // set known opposing battler data
-        AI_THINKING_STRUCT->saved[battlerAtk].saved = FALSE;
-    }
-
->>>>>>> 4f1df84acf (Make AI see Loaded Dice hold effect for multi hit moves that strike 5… (#4622))
     dmg = AI_CalcDamage(move, battlerAtk, battlerDef, &effectiveness, FALSE, AI_GetWeather(AI_DATA));
     FreeRestoreBattleMons(savedBattleMons);
     return dmg;
