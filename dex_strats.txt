@@ -50,7 +50,7 @@ Kabutops
 {
     name = Endure Salac Berry Killer
     item = Salac Berry
-    ability - Sharpness
+    ability = Sharpness
     evs = 0, 252, 0, 0, 4, 252
     nature = Jolly
     moves = Aqua Cutter, Endure, Swords Dance, Rock Blast / Frost Blade
@@ -114,6 +114,6 @@ Lilligant
     evs = 0, 0, 4, 252, 0, 252
     nature = Timid
     moves = Quiver Dance, Giga Drain, Draining Kiss, Earth Power / Hidden Power [Psychic]
-    comment = Your average Quiver Dance sweeper.
+    comment = Your average Quiver Dance sweeper from the Unova region.
     tags = Special Attacker, Offensive, Sweeper
 }
