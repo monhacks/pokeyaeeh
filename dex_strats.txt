@@ -1,3 +1,15 @@
+Venusaur
+{
+    name = Sunflower
+    item = Papaya Berry / Sitrus Berry
+    ability = Chlorophyll
+    evs = 4, 0, 0, 252, 0, 252
+    nature = Modest / Timid
+    moves = Growth / Sleep Powder, Giga Drain, Weather Ball, Sludge Bomb / Earth Power
+    comment = Needs harsh sunlight to function. Good partners: Drought users such as Mega Charizard Y, Typhlosion, Sunflora, Groudon, Torkoal or Koraidon. 
+    tags = Offensive, Sweeper, Support
+}
+
 Charizard Mega X
 { 
     name = Physical Sweeper
@@ -16,10 +28,70 @@ Charizard Mega Y
     item = Charizardite Y
     ability = Drought
     evs = 0, 0, 4, 252, 0, 252
-    nature = Modesy / Timid
+    nature = Modest / Timid
     moves = Flamethrower / Heat Wave, Jetstream, Focus Blast / Solar Beam, Roost
     comment = Mega Charizard Y is hands down, the better Mega Charizard. Having a monsterous Sp. Attack stat along with Drought and good moves, it can wreak havoc on any team. In doubles, it can play a good support role to Chlorophyll users (such as Venusaur, Scovillain, etc). Charizard also gets Solar Beam to take out the Rock, Ground and Water types that would otherwise cause trouble. Roost gives Charizard longevity, letting it recover off Stealth Rock damage.
     tags = Special Attacker, Offensive, Sweeper
+}
+
+Blastoise Mega 
+{
+    name = Shell Smash Sweeper
+    item = Blastoisinite
+    ability = Mega Launcher
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Timid
+    moves = Shell Smash, Ice Beam, Bubble Beam / Scald, Flash Cannon 
+    comment = Shell Smash already makes Blastoise a really strong sweeper. But without a White Herb, Blastoise will be very frail... Only if the enemy survives +2 Sp. Attack Mega Launcher boosted Bubble Beams, Ice Beams and Flash Cannon. Running this set under Metal Terrain will remove the stat drop problem, while also boosting Flash Cannon. 
+    tags = Special Attacker, Offensive, Sweeper
+}
+
+Kabutops
+{
+    name = Endure Salac Berry Killer
+    item = Salac Berry
+    ability - Sharpness
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Jolly
+    moves = Aqua Cutter, Endure, Swords Dance, Rock Blast / Frost Blade
+    comment = Endure Salac Berry Aqua Cutter shenanigans. They will not see this coming.
+    tags = Physical Attacker, Offensive
+}
+
+Meganium
+{
+    name = Priority Drainer
+    item = Kebia Berry / Occa Berry
+    ability = Triage
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Modest
+    moves = Draining Kiss, Giga Drain, Earth Power, Calm Mind
+    comment = Triage provides +3 priority to healing moves, and Meganium can easily exploit that.
+    tags = Special Attacker, Offensive, Support
+}
+
+Typhlosion
+{ 
+    name = Scarfed Nuke
+    item = Choice Scarf
+    ability = Drought
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Modest / Timid
+    moves = Eruption / Heat Wave, Solar Beam, Earth Power / Scorching Sands, Focus Blast / Hidden Power [Fighting]
+    comment = Basically a poor man's Mega Charizard Y. What it lacks in power, it has in Choice Scarf Eruption. One single move to blow all enemies that try to attack it... unless they are even fast or have Flash Fire or Well Baked Body.
+    tags = Special Attacker, Offensive, Sweeper
+}
+
+Sceptile
+{
+    name = Multi Hitter Frenzy
+    item = Loaded Dice
+    ability = Technician
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Adamant / Jolly
+    moves = Bullet Seed, Scale Shot, Arm Thrust, Swords Dance
+    comment = A little RNG-based, if not for Loaded Dice. Swords Dance set up and Scale Shot in case to up speed. Arm Thrust is coverage against pesky Steel-types tha resist Grass and Dragon-type attacks.
+    tags = Physical Attacker, Offensive
 }
 
 Mawile Mega
@@ -32,4 +104,16 @@ Mawile Mega
     moves = Iron Head, Play Rough, Swords Dance, Sucker Punch
     comment = Physical sweeping Mawile set. Use Swords Dance to double the already massive Attack stat. EVs in speed can be swapped to bulk too. Mawile got a sweet Speed stat buff, so now you can run max Speed EVs, too.
     tags = Physical Attacker, Offensive, Sweeper
+}
+
+Lilligant
+{
+    name = QD Sweeper
+    item = Babiri Berry / Kebia Berry
+    ability = Own Tempo
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Timid
+    moves = Quiver Dance, Giga Drain, Draining Kiss, Earth Power / Hidden Power [Psychic]
+    comment = Your average Quiver Dance sweeper.
+    tags = Special Attacker, Offensive, Sweeper
 }
