@@ -5800,7 +5800,12 @@ u8 GetMonMoveType(u16 move, struct Pokemon *mon, u32 battler)
              && ((ability == ABILITY_PIXILATE       && (ateType = TYPE_FAIRY))
                  || (ability == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (ability == ABILITY_AERILATE    && (ateType = TYPE_FLYING))
-                 || ((ability == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC)))
+                 || (ability == ABILITY_DESERT_GALE && (ateType = TYPE_FLYING))
+                 || ((ability == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
+                 || ((ability == ABILITY_HERBIVATE) && (ateType = TYPE_GRASS))
+                 || ((ability == ABILITY_SCORCHATE) && (ateType = TYPE_FIRE))
+                 || ((ability == ABILITY_OCEANATE ) && (ateType = TYPE_WATER))
+                 || ((ability == ABILITY_PUMMELIZE) && (ateType = TYPE_FIGHTING)))
                 )
                 {
         return ateType;
@@ -5926,10 +5931,15 @@ u8 GetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
              && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
              && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
              && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
-             && (((attackerAbility == ABILITY_PIXILATE)        && (ateType = TYPE_FAIRY))
+             && (((attackerAbility == ABILITY_PIXILATE)       && (ateType = TYPE_FAIRY))
                 || ((attackerAbility == ABILITY_REFRIGERATE)  && (ateType = TYPE_ICE))
                 || ((attackerAbility == ABILITY_AERILATE)     && (ateType = TYPE_FLYING))
-                || ((attackerAbility == ABILITY_GALVANIZE)    && (ateType = TYPE_ELECTRIC)))
+                || ((attackerAbility == ABILITY_DESERT_GALE)  && (ateType = TYPE_FLYING))
+                || ((attackerAbility == ABILITY_GALVANIZE)    && (ateType = TYPE_ELECTRIC))
+                || ((attackerAbility == ABILITY_HERBIVATE)    && (ateType = TYPE_GRASS))
+                || ((attackerAbility == ABILITY_SCORCHATE)    && (ateType = TYPE_FIRE))
+                || ((attackerAbility == ABILITY_OCEANATE)     && (ateType = TYPE_WATER))
+                || ((attackerAbility == ABILITY_PUMMELIZE)    && (ateType = TYPE_FIGHTING)))
              )
         return ateType;
 
@@ -6064,14 +6074,15 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
              && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
              && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
              && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
-             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_FAIRY))
-                 || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
-                 || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
-                 || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
-                 || ((attackerAbility == ABILITY_HERBIVATE) && (ateType = TYPE_GRASS))
-                 || ((attackerAbility == ABILITY_SCORCHATE) && (ateType = TYPE_FIRE))
-                 || ((attackerAbility == ABILITY_OCEANATE) && (ateType = TYPE_WATER))
-                 || ((attackerAbility == ABILITY_PUMMELIZE) && (ateType == TYPE_FIGHTING))
+             && (((attackerAbility == ABILITY_PIXILATE)       && (ateType = TYPE_FAIRY))
+                 || ((attackerAbility == ABILITY_REFRIGERATE) && (ateType = TYPE_ICE))
+                 || ((attackerAbility == ABILITY_AERILATE)    && (ateType = TYPE_FLYING))
+                 || ((attackerAbility == ABILITY_DESERT_GALE) && (ateType = TYPE_FLYING))
+                 || ((attackerAbility == ABILITY_GALVANIZE)   && (ateType = TYPE_ELECTRIC))
+                 || ((attackerAbility == ABILITY_HERBIVATE)   && (ateType = TYPE_GRASS))
+                 || ((attackerAbility == ABILITY_SCORCHATE)   && (ateType = TYPE_FIRE))
+                 || ((attackerAbility == ABILITY_OCEANATE)    && (ateType = TYPE_WATER))
+                 || ((attackerAbility == ABILITY_PUMMELIZE)   && (ateType == TYPE_FIGHTING))
                 )
             )
     {

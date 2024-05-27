@@ -316,6 +316,7 @@ static const u8 sPummelizeDescription[] = _("Normal moves become Fighting. (20%)
 static const u8 sButterflyDescription[] = _("Ups Psychic-type and weak moves. (50%)");
 static const u8 sBoxerBarrageDescription[] = _("Punching moves hit twice.");
 static const u8 sHitmanDescription[] = _("Super Luck + Sniper");
+static const u8 sDesertGaleDescription[] = _("Aerilate + Sand Force");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -651,6 +652,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_ENLIGHTENED_EYES] = _("Enlightened Eyes"),
     [ABILITY_BOXER_BARRAGE] = _("Boxer Barrage"),
     [ABILITY_HITMAN] = _("Hitman"),
+    [ABILITY_DESERT_GALE] = _("Desert Gale"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -986,6 +988,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_ENLIGHTENED_EYES] = _("EnlghtndEyes"),
     [ABILITY_BOXER_BARRAGE] = _("BoxerBarrage"),
     [ABILITY_HITMAN] = _("Hitman"),
+    [ABILITY_DESERT_GALE] = _("Desert Gale"),
 };
 #endif
 
@@ -1322,4 +1325,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_ENLIGHTENED_EYES] = sButterflyDescription,
     [ABILITY_BOXER_BARRAGE] = sBoxerBarrageDescription,
     [ABILITY_HITMAN] = sHitmanDescription,
+    [ABILITY_DESERT_GALE] = sDesertGaleDescription,
 };

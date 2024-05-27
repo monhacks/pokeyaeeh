@@ -310,6 +310,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ENLIGHTENED_EYES] = 7,
     [ABILITY_BOXER_BARRAGE] = 10,
     [ABILITY_HITMAN] = 7,
+    [ABILITY_DESERT_GALE] = 9,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -1748,7 +1749,7 @@ bool32 ShouldSetSandstorm(u32 battler, u32 ability, u32 holdEffect)
       || ability == ABILITY_OVERCOAT
       || ability == ABILITY_MAGIC_GUARD
       || ability == ABILITY_IMPENETRABLE
-      || ability == ABILITY_GRASS_PELT
+      || ability == ABILITY_DESERT_GALE
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
       || IS_BATTLER_OF_TYPE(battler, TYPE_ROCK)
       || IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
@@ -2557,7 +2558,8 @@ static bool32 BattlerAffectedBySandstorm(u32 battlerId, u32 ability)
       && ability != ABILITY_SAND_VEIL
       && ability != ABILITY_SAND_FORCE
       && ability != ABILITY_SAND_RUSH
-      && ability != ABILITY_OVERCOAT)
+      && ability != ABILITY_OVERCOAT
+      && ability != ABILITY_DESERT_GALE)
         return TRUE;
     return FALSE;
 }
