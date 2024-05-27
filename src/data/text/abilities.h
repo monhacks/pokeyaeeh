@@ -313,6 +313,9 @@ static const u8 sMetalSurgeDescription[] = _("Field becomes metallic.");
 static const u8 sDragonSheenDescription[] = _("Dragon's Maw + Multiscale.");
 static const u8 sDragonflyDescription[] = _("Tinted Lens + Levitate.");
 static const u8 sPummelizeDescription[] = _("Normal moves become Fighting. (20%)");
+static const u8 sButterflyDescription[] = _("Ups Psychic-type and weak moves. (50%)");
+static const u8 sBoxerBarrageDescription[] = _("Punching moves hit twice.");
+static const u8 sHitmanDescription[] = _("Super Luck + Sniper");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -645,6 +648,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_DRAGON_SHEEN] = _("Dragon Sheen"),
     [ABILITY_DRAGONFLY] = _("Dragonfly"),
     [ABILITY_PUMMELIZE] = _("Pummelize"),
+    [ABILITY_ENLIGHTENED_EYES] = _("Enlightened Eyes"),
+    [ABILITY_BOXER_BARRAGE] = _("Boxer Barrage"),
+    [ABILITY_HITMAN] = _("Hitman"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -977,6 +983,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_DRAGON_SHEEN] = _("Dragon Sheen"),
     [ABILITY_DRAGONFLY] = _("Dragonfly"),
     [ABILITY_PUMMELIZE] = _("Pummelize"),
+    [ABILITY_ENLIGHTENED_EYES] = _("EnlghtndEyes"),
+    [ABILITY_BOXER_BARRAGE] = _("BoxerBarrage"),
+    [ABILITY_HITMAN] = _("Hitman"),
 };
 #endif
 
@@ -1310,4 +1319,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_DRAGON_SHEEN] = sDragonSheenDescription,
     [ABILITY_DRAGONFLY] = sDragonflyDescription,
     [ABILITY_PUMMELIZE] = sPummelizeDescription,
+    [ABILITY_ENLIGHTENED_EYES] = sButterflyDescription,
+    [ABILITY_BOXER_BARRAGE] = sBoxerBarrageDescription,
+    [ABILITY_HITMAN] = sHitmanDescription,
 };

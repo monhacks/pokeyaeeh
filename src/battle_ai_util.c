@@ -307,6 +307,9 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DRAGON_SHEEN] = 10,
     [ABILITY_DRAGONFLY] = 9,
     [ABILITY_PUMMELIZE] = 8,
+    [ABILITY_ENLIGHTENED_EYES] = 7,
+    [ABILITY_BOXER_BARRAGE] = 10,
+    [ABILITY_HITMAN] = 7,
 };
 
 static const u16 sEncouragedEncoreEffects[] =

@@ -12042,8 +12042,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_JAW_LOCK] =
     {
         .effect = EFFECT_JAW_LOCK,
-        .power = 80,
-        .type = TYPE_DARK,
+        .power = 90,
+        .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 16,
         .secondaryEffectChance = 0,
