@@ -24888,7 +24888,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 90,
         .baseAttack    = 170,
-        .baseDefense   = 30,
+        .baseDefense   = 110,
         .baseSpeed     = 75,
         .baseSpAttack  = 65,
         .baseSpDefense = 95,
@@ -24911,7 +24911,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_KINGLER_MEGA] =
     {
         .baseHP        = 55,
-        .baseAttack    = 140,
+        .baseAttack    = 170,
         .baseDefense   = 115,
         .baseSpeed     = 115,
         .baseSpAttack  = 45,
