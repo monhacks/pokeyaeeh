@@ -754,6 +754,10 @@ static void HeatStartMenu_ShowTimeWindow(void)
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gLocalTime.hours == 0)
+		  ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gLocalTime.hours == 12)
+		  ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
     
 	StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
     if (gClockMode == TWELVE_HOUR_MODE)
