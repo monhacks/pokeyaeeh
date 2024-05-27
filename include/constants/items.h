@@ -362,18 +362,18 @@
 #define ITEM_CHARIZARDITE_Y 294 // Petalburg City (after Gym 5)
 #define ITEM_BLASTOISINITE 295 // Petalburg City (after Gym 5)
 #define ITEM_BEEDRILLITE 296
-#define ITEM_PIDGEOTITE 297
+#define ITEM_PIDGEOTITE 297 // Route 118 Boss Chester
 #define ITEM_ALAKAZITE 298
 #define ITEM_SLOWBRONITE 299 // Abandoned Ship Hidden Floor Rooms
 #define ITEM_GENGARITE 300
 #define ITEM_KANGASKHANITE 301
-#define ITEM_PINSIRITE 302
+#define ITEM_PINSIRITE 302 // Route 119 Boss Donald
 #define ITEM_GYARADOSITE 303 // Route 108 Boss Jerome
-#define ITEM_AERODACTYLITE 304
+#define ITEM_AERODACTYLITE 304 // Held by Fossil revived Aerodactyl, Rustboro City
 #define ITEM_MEWTWONITE_X 305
 #define ITEM_MEWTWONITE_Y 306
 #define ITEM_AMPHAROSITE 307 // Lilycove City
-#define ITEM_STEELIXITE 308
+#define ITEM_STEELIXITE 308 // Route 105 Boss Foster
 #define ITEM_SCIZORITE 309
 #define ITEM_HERACRONITE 310
 #define ITEM_HOUNDOOMINITE 311
@@ -383,7 +383,7 @@
 #define ITEM_SWAMPERTITE 315 // Petalburg City (after Gym 5)
 #define ITEM_GARDEVOIRITE 316
 #define ITEM_SABLENITE 317 // Cave Of Origin 1F
-#define ITEM_MAWILITE 318
+#define ITEM_MAWILITE 318 // Fortree City Gym Leader
 #define ITEM_AGGRONITE 319 // Granite Cave
 #define ITEM_MEDICHAMITE 320
 #define ITEM_MANECTITE 321
@@ -401,7 +401,7 @@
 #define ITEM_GARCHOMPITE 333
 #define ITEM_LUCARIONITE 334 // Verdanturf Town Friendship Rater
 #define ITEM_ABOMASITE 335
-#define ITEM_GALLADITE 336
+#define ITEM_GALLADITE 336 // Petalburg City Gym Leader
 #define ITEM_AUDINITE 337 // Ever Grande City
 #define ITEM_DIANCITE 338
 
