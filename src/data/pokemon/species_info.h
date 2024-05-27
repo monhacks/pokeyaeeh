@@ -25053,11 +25053,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_INTELEON_MEGA] =
     {
         .baseHP        = 75,
-        .baseAttack    = 85,
-        .baseDefense   = 65,
-        .baseSpeed     = 120,
-        .baseSpAttack  = 125,
-        .baseSpDefense = 65,
+        .baseAttack    = 105,
+        .baseDefense   = 80,
+        .baseSpeed     = 140,
+        .baseSpAttack  = 155,
+        .baseSpDefense = 80,
         .types = {TYPE_WATER, TYPE_WATER},
         .catchRate = 45,
         .expYield = 265,
