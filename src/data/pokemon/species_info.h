@@ -25169,7 +25169,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_SANDACONDA_MEGA] =
     {
         .baseHP        = 72,
-        .baseAttack    = 137,
+        .baseAttack    = 147,
         .baseDefense   = 125,
         .baseSpeed     = 101,
         .baseSpAttack  = 65,
