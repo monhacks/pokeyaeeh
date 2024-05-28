@@ -19312,10 +19312,10 @@ static const struct TrainerMon sParty_Leaf[] = {
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
     .lvl = 1,
-    .species = SPECIES_FLYGON,
+    .species = SPECIES_REGIGIGAS,
     .ability = ABILITY_DRAGONFLY,
     .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_BUG_BUZZ, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
