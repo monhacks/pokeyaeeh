@@ -1128,3 +1128,5 @@ Text_PleaseVisitAgain:
     
 
 	.include "data/maps/NewMauville_HiddenArea/scripts.inc"
+
+	.include "data/maps/Route119_HiddenArea/scripts.inc"

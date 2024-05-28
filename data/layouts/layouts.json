@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/NewMauville_HiddenArea/border.bin",
       "blockdata_filepath": "data/layouts/NewMauville_HiddenArea/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE119_HIDDEN_AREA",
+      "name": "Route119_HiddenArea_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route119_HiddenArea/border.bin",
+      "blockdata_filepath": "data/layouts/Route119_HiddenArea/map.bin"
     }
   ]
 }
