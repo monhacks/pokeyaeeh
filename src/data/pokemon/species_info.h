@@ -9231,12 +9231,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_TROPIUS] =
     {
-        .baseHP        = 99,
+        .baseHP        = 104,
         .baseAttack    = 68,
-        .baseDefense   = 83,
+        .baseDefense   = 93,
         .baseSpeed     = 51,
-        .baseSpAttack  = 72,
-        .baseSpDefense = 87,
+        .baseSpAttack  = 82,
+        .baseSpDefense = 97,
         .types = { TYPE_GRASS, TYPE_FLYING},
         .catchRate = 200,
         .expYield = 161,
@@ -9246,7 +9246,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
-        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SOLAR_POWER, ABILITY_HARVEST},
+        .abilities = {ABILITY_HARVEST, ABILITY_SOLAR_POWER, ABILITY_TAILSTREAM},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
