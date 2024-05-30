@@ -1915,8 +1915,8 @@ static const u8 sQuiverDanceDescription[] = _(
     "Sp. Def and Speed.");
 
 static const u8 sHeavySlamDescription[] = _(
-    "Does more damage the\n"
-    "higher the user's Def.");
+    "Does more damage if the\n"
+    "user outweighs the foe.");
 
 static const u8 sSynchronoiseDescription[] = _(
     "An odd shock wave that only\n"
@@ -4198,7 +4198,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_THUNDERCLAP - 1] = sSuckerPunchDescription,
     [MOVE_MIGHTY_CLEAVE - 1] = sFeintDescription,
     [MOVE_TACHYON_CUTTER - 1] = sTachyonCutterDescription,
-    [MOVE_HARD_PRESS - 1] = sWringOutDescription,
+    [MOVE_HARD_PRESS - 1] = sBodyPressDescription,
     [MOVE_DRAGON_CHEER - 1] = sDragonCheerDescription,
     [MOVE_ALLURING_VOICE - 1] = sAlluringVoiceDescription,
     [MOVE_TEMPER_FLARE - 1] = sTemperFlareDescription,
@@ -5050,6 +5050,7 @@ static const u8 sMoveFourLineDescription_StormThrow[] = _("A fierce blow upon\nt
 static const u8 sMoveFourLineDescription_FlameBurst[] = _("The foe is hit with\na bursting flame.\nThe flame hits the\nfoe's ally, too.");
 static const u8 sMoveFourLineDescription_SludgeWave[] = _("It swamps the area\naround the user\nwith sludge. It may\npoison those hit.");
 static const u8 sMoveFourLineDescription_QuiverDance[] = _("A beautiful, mystic\ndance which boosts\nthe user's Sp. Atk,\nSp. Def and Speed.");
+static const u8 sMoveFourLineDescription_HeavySlam[] = _("The user slams\nthe foe with its\nheavy body. Heavier\nusers are stronger.");
 static const u8 sMoveFourLineDescription_Synchronoise[] = _("An odd shack wave\nthat only hurts\nPokémon of the same\ntype as the user.");
 static const u8 sMoveFourLineDescription_ElectroBall[] = _("An electric orb is\nhurled at the foe.\nFaster users deal\ngreater damage.");
 static const u8 sMoveFourLineDescription_Soak[] = _("The foe is struck\nby a torrent of\nwater which changes\nits type to Water.");
@@ -5404,7 +5405,6 @@ static const u8 sMoveFourLineDescription_BurningBulwark[] = _(" ");
 static const u8 sMoveFourLineDescription_Thunderclap[] = _(" ");
 static const u8 sMoveFourLineDescription_MightyCleave[] = _(" ");
 static const u8 sMoveFourLineDescription_TachyonCutter[] = _(" ");
-static const u8 sMoveFourLineDescription_HardPress[] = _(" ");
 static const u8 sMoveFourLineDescription_DragonCheer[] = _(" ");
 static const u8 sMoveFourLineDescription_AlluringVoice[] = _(" ");
 static const u8 sMoveFourLineDescription_TemperFlare[] = _("A frustrated strike\nthat deals twice\nthe damage if the\nlast move failed.");
@@ -5926,7 +5926,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_FLAME_BURST       - 1] = sMoveFourLineDescription_FlameBurst,
     [MOVE_SLUDGE_WAVE       - 1] = sMoveFourLineDescription_SludgeWave,
     [MOVE_QUIVER_DANCE      - 1] = sMoveFourLineDescription_QuiverDance,
-    [MOVE_HEAVY_SLAM        - 1] = sMoveFourLineDescription_BodyPress,
+    [MOVE_HEAVY_SLAM        - 1] = sMoveFourLineDescription_HeavySlam,
     [MOVE_SYNCHRONOISE      - 1] = sMoveFourLineDescription_Synchronoise,
     [MOVE_ELECTRO_BALL      - 1] = sMoveFourLineDescription_ElectroBall,
     [MOVE_SOAK              - 1] = sMoveFourLineDescription_Soak,
@@ -6286,7 +6286,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_THUNDERCLAP       - 1] = sMoveFourLineDescription_Thunderclap,
     [MOVE_MIGHTY_CLEAVE     - 1] = sMoveFourLineDescription_MightyCleave,
     [MOVE_TACHYON_CUTTER    - 1] = sMoveFourLineDescription_TachyonCutter,
-    [MOVE_HARD_PRESS        - 1] = sMoveFourLineDescription_HardPress,
+    [MOVE_HARD_PRESS        - 1] = sMoveFourLineDescription_BodyPress,
     [MOVE_DRAGON_CHEER      - 1] = sMoveFourLineDescription_DragonCheer,
     [MOVE_ALLURING_VOICE    - 1] = sMoveFourLineDescription_AlluringVoice,
     [MOVE_TEMPER_FLARE      - 1] = sMoveFourLineDescription_TemperFlare,
