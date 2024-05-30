@@ -9627,6 +9627,9 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (gBattleMoves[move].soundMove)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
+    case ABILITY_BATTERY:
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -9704,8 +9707,7 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
         switch (GetBattlerAbility(BATTLE_PARTNER(battlerAtk)))
         {
         case ABILITY_BATTERY:
-            if (IS_MOVE_SPECIAL(move))
-                modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
             break;
         case ABILITY_POWER_SPOT:
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
