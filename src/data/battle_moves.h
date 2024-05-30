@@ -7639,7 +7639,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_CONFUSE_HIT,
         .power = 90,
-        .type = TYPE_NORMAL,
+        .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 32,
         .secondaryEffectChance = 20,
@@ -8528,8 +8528,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HEAVY_SLAM] =
     {
-        .effect = EFFECT_BODY_PRESS,
-        .power = 80,
+        .effect = EFFECT_HEAT_CRASH,
+        .power = 1,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 16,
@@ -14570,8 +14570,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HARD_PRESS] =
     {
-        .effect = EFFECT_WRING_OUT,
-        .power = 1,
+        .effect = EFFECT_BODY_PRESS,
+        .power = 80,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 16,
