@@ -224,6 +224,7 @@ Route114_EventScript_Lenny2::
 	goto_if_eq Route114_EventScript_Lenny2_2
 Route114_EventScript_Lenny2_1:
 	applymovement LOCALID_LENNY, Lenny_Movement_Right
+	setflag FLAG_ROUTE_114_BOSS_DEFEATED
 	waitmovement 0
 	return
 

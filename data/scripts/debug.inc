@@ -120,12 +120,22 @@ Text_TestIntro:
 Text_TestDefeat:
     .string "Victorious!$"
 
-Text_DaycareClear:
-	.string "Daycare data cleared!$"
+Text_Route114TrainersCleared:
+	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1::
-	msgbox Text_DaycareClear, MSGBOX_AUTOCLOSE
-	special ClearDaycareMons
+	msgbox Text_Route114TrainersCleared, MSGBOX_AUTOCLOSE
+	settrainerflag TRAINER_LUCAS_1
+	settrainerflag TRAINER_SHANE
+	settrainerflag TRAINER_NANCY
+	settrainerflag TRAINER_STEVE_1
+	settrainerflag TRAINER_BERNIE_1
+	settrainerflag TRAINER_CLAUDE
+	settrainerflag TRAINER_NOLAN
+	settrainerflag TRAINER_TYRA_AND_IVY
+	settrainerflag TRAINER_ANGELINA
+	settrainerflag TRAINER_CHARLOTTE
+	settrainerflag TRAINER_KAI
 	end
 
 Debug_EventScript_Script_2::

@@ -232,6 +232,7 @@ script Route114_EventScript_Lenny2{
         waitmovement(0)
     }
     applymovement(LOCALID_LENNY, Lenny_Movement_Right)
+	setflag(FLAG_ROUTE_114_BOSS_DEFEATED)
     waitmovement(0)
 }
 
