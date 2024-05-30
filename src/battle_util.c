@@ -8834,6 +8834,27 @@ bool32 IsMoveMakingContact(u32 move, u32 battlerAtk)
     }
 }
 
+static bool32 IsMoveMakingContactNoLongReach(u32 move, u32 battlerAtk)
+{
+    u32 atkHoldEffect = GetBattlerHoldEffect(battlerAtk, TRUE);
+
+    if (!gBattleMoves[move].makesContact)
+    {
+        if (gBattleMoves[move].effect == EFFECT_SHELL_SIDE_ARM && gBattleStruct->swapDamageCategory)
+            return TRUE;
+        else
+            return FALSE;
+    }
+    else if (atkHoldEffect == HOLD_EFFECT_PUNCHING_GLOVE && gBattleMoves[move].punchingMove)
+    {
+        return FALSE;
+    }
+    else
+    {
+        return TRUE;
+    }
+}
+
 bool32 IsBattlerProtected(u32 battler, u32 move)
 {
     // Decorate bypasses protect and detect, but not crafty shield
@@ -9540,6 +9561,11 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
     case ABILITY_TOUGH_CLAWS:
         if (IsMoveMakingContact(move, battlerAtk))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    
+    case ABILITY_LONG_REACH:
+        if (!IsMoveMakingContactNoLongReach(move, battlerAtk))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_STRONG_JAW:
         if (gBattleMoves[move].bitingMove)
