@@ -1326,7 +1326,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
 
     SPECIES_SPRITE(ZAMAZENTA_CROWNED_SHIELD, gMonFrontPic_ZamazentaCrownedShield),
 
-    SPECIES_SPRITE(ETERNATUS_ETERNAMAX, gMonFrontPic_EternatusEternamax),
+    SPECIES_SPRITE(ETERNATUS_PRIMAL, gMonFrontPic_EternatusEternamax),
 
     SPECIES_SPRITE(URSHIFU_RAPID_STRIKE_STYLE, gMonFrontPic_UrshifuRapidStrikeStyle),
 

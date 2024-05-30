@@ -1327,7 +1327,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
 
     SPECIES_PAL(ZAMAZENTA_CROWNED_SHIELD, gMonPalette_ZamazentaCrownedShield),
 
-    SPECIES_PAL(ETERNATUS_ETERNAMAX, gMonPalette_EternatusEternamax),
+    SPECIES_PAL(ETERNATUS_PRIMAL, gMonPalette_EternatusEternamax),
 
     SPECIES_PAL(URSHIFU_RAPID_STRIKE_STYLE, gMonPalette_UrshifuRapidStrikeStyle),
 

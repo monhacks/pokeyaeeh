@@ -4305,5 +4305,5 @@ const u16 gPokedexOrder_Height[] =
     // 65'07" / 20m
     NATIONAL_DEX_ETERNATUS,
     // 328'01" / 100m
-    //NATIONAL_DEX_ETERNATUS_ETERNAMAX,
+    //NATIONAL_DEX_ETERNATUS_PRIMAL,
 };

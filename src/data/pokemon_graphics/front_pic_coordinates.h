@@ -1472,7 +1472,7 @@ const struct MonCoords gMonFrontPicCoords[NUM_SPECIES + 1] =
     // Zamazenta
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD]     = { .size = MON_COORDS_SIZE(56, 64), .y_offset =  0 },
     // Eternatus
-    [SPECIES_ETERNATUS_ETERNAMAX]          = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },
+    [SPECIES_ETERNATUS_PRIMAL]             = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },
     // Urshifu
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE]   = { .size = MON_COORDS_SIZE(56, 64), .y_offset =  0 },
     // Zarude

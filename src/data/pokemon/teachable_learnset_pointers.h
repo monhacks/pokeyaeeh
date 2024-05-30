@@ -1438,7 +1438,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     // Zamazenta
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD] = sZamazentaTeachableLearnset,
     // Eternatus
-    [SPECIES_ETERNATUS_ETERNAMAX] = sEternatusTeachableLearnset,
+    [SPECIES_ETERNATUS_PRIMAL] = sEternatusTeachableLearnset,
     // Urshifu
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] = sUrshifuRapidStrikeStyleTeachableLearnset,
     // Zarude

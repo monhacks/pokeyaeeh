@@ -1239,7 +1239,7 @@ static const u16 sZamazentaFormSpeciesIdTable[] = {
 
 static const u16 sEternatusFormSpeciesIdTable[] = {
     SPECIES_ETERNATUS,
-    SPECIES_ETERNATUS_ETERNAMAX,
+    SPECIES_ETERNATUS_PRIMAL,
     FORM_SPECIES_END,
 };
 

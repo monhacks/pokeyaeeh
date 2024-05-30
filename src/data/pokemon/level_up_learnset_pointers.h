@@ -1450,7 +1450,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     // Zamazenta
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD] = sZamazentaLevelUpLearnset,
     // Eternatus
-    [SPECIES_ETERNATUS_ETERNAMAX] = sEternatusLevelUpLearnset,
+    [SPECIES_ETERNATUS_PRIMAL] = sEternatusLevelUpLearnset,
     // Urshifu
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] = sUrshifuRapidStrikeStyleLevelUpLearnset,
     // Zarude

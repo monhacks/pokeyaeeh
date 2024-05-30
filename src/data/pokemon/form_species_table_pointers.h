@@ -618,7 +618,7 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     // Zamazenta
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD] = sZamazentaFormSpeciesIdTable,
     // Eternatus
-    [SPECIES_ETERNATUS_ETERNAMAX] = sEternatusFormSpeciesIdTable,
+    [SPECIES_ETERNATUS_PRIMAL] = sEternatusFormSpeciesIdTable,
     // Urshifu
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] = sUrshifuFormSpeciesIdTable,
     // Zarude

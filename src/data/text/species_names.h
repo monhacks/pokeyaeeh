@@ -1464,7 +1464,7 @@ const u8 gSpeciesNames[NUM_SPECIES][POKEMON_NAME_LENGTH + 1] = {
     // Zamazenta
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD] = _("Zamazenta"),
     // Eternatus
-    [SPECIES_ETERNATUS_ETERNAMAX] = _("Eternatus"),
+    [SPECIES_ETERNATUS_PRIMAL] = _("Eternatus"),
     // Urshifu
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] = _("Urshifu"),
     // Zarude

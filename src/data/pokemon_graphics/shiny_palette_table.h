@@ -1325,7 +1325,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
 
     SPECIES_SHINY_PAL(ZAMAZENTA_CROWNED_SHIELD, gMonShinyPalette_ZamazentaCrownedShield),
 
-    SPECIES_SHINY_PAL(ETERNATUS_ETERNAMAX, gMonShinyPalette_EternatusEternamax),
+    SPECIES_SHINY_PAL(ETERNATUS_PRIMAL, gMonShinyPalette_EternatusEternamax),
 
     SPECIES_SHINY_PAL(URSHIFU_RAPID_STRIKE_STYLE, gMonShinyPalette_UrshifuRapidStrikeStyle),
 
