@@ -17,7 +17,7 @@ Charizard Mega X
     ability = Tough Claws
     evs = 0, 252, 0, 0, 4, 252
     nature = Adamant / Jolly
-    moves = Flare Blitz / Raging Fury, Dragon Rush / Dragon Claw / Outrage, Dragon Dance / Swords Dance, Earthquake / Supercell Slam / Roost
+    moves = Flare Blitz, Dragon Rush / Dragon Claw, Dragon Dance / Swords Dance, Earthquake / Supercell Slam / Roost
     comment = Charizard's kit was buffed to include new moves like Raging Fury (now a contact move), Knuckle Punch and Supercell Slam. Dragon Dance to improve Speed or Swords Dance to hit even harder. Additionally, it also has Roost for reliable recovery.
     tags = Physical Attacker, Offensive, Sweeper
 }
@@ -44,6 +44,18 @@ Blastoise Mega
     moves = Shell Smash, Ice Beam, Bubble Beam / Scald, Flash Cannon 
     comment = Shell Smash already makes Blastoise a really strong sweeper. But without a White Herb, Blastoise will be very frail... Only if the enemy survives +2 Sp. Attack Mega Launcher boosted Bubble Beams, Ice Beams and Flash Cannon. Running this set under Metal Terrain will remove the stat drop problem, while also boosting Flash Cannon. 
     tags = Special Attacker, Offensive, Sweeper
+}
+
+Wigglytuff
+{ 
+    name = Bulky Offense
+    item = Leftovers
+    ability = Fur Coat
+    evs = 252, 0, 4, 252, 0, 0
+    nature = Modest
+    moves = Flamethrower / Calm Mind, Boomburst, Moonblast, Soft-Boiled
+    comment = Wigglytuff is A really helpful defensive piece to teams due to it's access to fur coat and instant recovery, allowing it to set up on enemy Pokemon that can't break through it and create a win condition.
+    tags = Special Attacker, Defensive
 }
 
 Kabutops
@@ -106,6 +118,30 @@ Sceptile Mega
     tags = Physical Attacker, Offensive, Sweeper
 }
 
+Blaziken Mega
+{ 
+    name = Speed Boost Sweeper
+    item = Blazikenite
+    ability = Speed Boost
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Jolly / Adamant
+    moves = Swords Dance, Protect / Thunder Punch, Blaze Kick, High Jump Kick
+    comment = Swords dance then plow through things.
+    tags = Physical Attacker, Sweeper
+}
+
+Sharpedo Mega
+{ 
+    name = Elemental Jaws
+    item = Sharpedonite
+    ability = Strong Jaw
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Jolly / Adamant
+    moves = Aqua Fangs, Poison Fang, Crunch, Protect
+    comment = Use Protect before Mega Evolving to get one Speed Boost and then start sweeping.
+    tags = Physical Attacker, Sweeper
+}
+
 Mawile Mega
 { 
     name = Heavy Hitter
@@ -118,6 +154,18 @@ Mawile Mega
     tags = Physical Attacker, Offensive, Sweeper
 }
 
+Serperior
+{
+    name = Contrary Sweeper
+    item = Expert Belt
+    ability = Chlorophyll
+    evs = 4, 0, 0, 252, 0, 252
+    nature = Modest
+    moves = Leaf Storm, Draco Meteor, Glare, 
+    comment = Contrary is one hell of a drug. Keep spamming.
+    tags = Special Attacker, Offensive, Sweeper
+}
+
 Lilligant
 {
     name = QD Sweeper
@@ -128,4 +176,16 @@ Lilligant
     moves = Quiver Dance, Giga Drain, Draining Kiss, Earth Power / Hidden Power [Psychic]
     comment = Your average Quiver Dance sweeper from the Unova region.
     tags = Special Attacker, Offensive, Sweeper
+}
+
+Lycanroc Dusk
+{ 
+    name = Rocky Pain
+    item = Focus Sash / Life Orb
+    ability = Tough Claws
+    evs = 0, 252, 4,  0, 0, 252
+    nature = Jolly
+    moves = Swords Dance, Accelerock, Rock Slide  / Close Combat, Iron Head
+    comment = Lycanroc has great Speed and Attack to the point that one Swords Dance can allow it to get a few KOs. A Focus Sash is recommended as it is a bit frail.
+    tags = Physical Attacker, Sweeper
 }

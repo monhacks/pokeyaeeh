@@ -4434,6 +4434,7 @@ static const struct LevelUpMove sFeraligatrLevelUpLearnset[] = {
     LEVEL_UP_MOVE(71, MOVE_SUPERPOWER),
     LEVEL_UP_MOVE(73, MOVE_OUTRAGE),
     LEVEL_UP_MOVE(76, MOVE_HYDRO_PUMP),
+    LEVEL_UP_MOVE(80, MOVE_DRAGON_RUSH),
     LEVEL_UP_END
 };
 
@@ -9922,6 +9923,7 @@ static const struct LevelUpMove sSalamenceLevelUpLearnset[] = {
 static const struct LevelUpMove sBeldumLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(25, MOVE_METAL_TERRAIN),
     LEVEL_UP_END
 };
 
@@ -9947,6 +9949,7 @@ static const struct LevelUpMove sMetangLevelUpLearnset[] = {
     LEVEL_UP_MOVE(54, MOVE_IRON_DEFENSE),
     LEVEL_UP_MOVE(58, MOVE_AGILITY),
     LEVEL_UP_MOVE(62, MOVE_METAL_TERRAIN),
+    LEVEL_UP_MOVE(64, MOVE_SHIFT_GEAR),
     LEVEL_UP_MOVE(66, MOVE_HYPER_BEAM),
     LEVEL_UP_END
 };
@@ -9973,6 +9976,7 @@ static const struct LevelUpMove sMetagrossLevelUpLearnset[] = {
     LEVEL_UP_MOVE(58, MOVE_IRON_DEFENSE),
     LEVEL_UP_MOVE(62, MOVE_AGILITY),
     LEVEL_UP_MOVE(67, MOVE_METAL_TERRAIN),
+    LEVEL_UP_MOVE(70, MOVE_SHIFT_GEAR),
     LEVEL_UP_MOVE(75, MOVE_HYPER_BEAM),
     LEVEL_UP_END
 };
