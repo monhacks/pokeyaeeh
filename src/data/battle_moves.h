@@ -12323,8 +12323,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BEHEMOTH_BLADE] =
     {
-        .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
-        .power = 120,
+        .effect = EFFECT_HIT,
+        .power = 100,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 8,
@@ -12338,13 +12338,14 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .metronomeBanned = TRUE,
         .copycatBanned = TRUE,
         .mimicBanned = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
         .assistBanned = B_EXTRAPOLATED_MOVE_FLAGS,
     },
 
     [MOVE_BEHEMOTH_BASH] =
     {
-        .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
-        .power = 120,
+        .effect = EFFECT_BODY_PRESS,
+        .power = 100,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 8,
