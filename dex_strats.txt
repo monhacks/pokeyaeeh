@@ -70,6 +70,18 @@ Kabutops
     tags = Physical Attacker, Offensive
 }
 
+Dragonite
+{ 
+    name = The Extremest of Speeds
+    item = Weakness Policy
+    ability = Multiscale
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Jolly
+    moves = Dragon Dance, Dual Wingbeat, Extreme Speed, Earthquake / Fire Punch
+    comment = With Multiscale, Dragonite gets to have a guranteed Dragon Dance and thanks to its amazing attack stat and average Speed stat it is very good at +1.
+    tags = Physical Attacker, Sweeper
+}
+
 Meganium
 {
     name = Priority Drainer
@@ -130,6 +142,30 @@ Blaziken Mega
     tags = Physical Attacker, Sweeper
 }
 
+Swellow
+{ 
+    name = The Loudest Bird
+    item = Life Orb / Choice Specs
+    ability = Tailstream
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Modest / Timid
+    moves = Boomburst, Air Slash / Jetstream, Heat Wave, Roost / U-Turn 
+    comment = This combination of Speed, Special Attack, and moves will decimate any enemy and if needed you can run Modest for more damage if needed. STAB Boomburst with a Life Orb and Tailwind on entry will carry you through a ton of fights.
+    tags = Special Attacker, Support
+} 
+
+Pelipper
+{ 
+    name = A Rainy Birdie
+    item = Damp Rock
+    ability = Drizzle
+    evs = 252, 0, 4, 0, 252, 0
+    nature = Calm / Bold
+    moves = Scald, Roost, U-Turn, Hurricane
+    comment = Pelipper is a great ultility Pokemon, thanks to Drizzle it can support Water-types while being a counter to Grass-types. You can fish for burns with Scald and do great damage with Hurricane.
+    tags = Weather Setter, Bulky, Passive
+}
+
 Sharpedo Mega
 { 
     name = Elemental Jaws
@@ -142,6 +178,18 @@ Sharpedo Mega
     tags = Physical Attacker, Sweeper
 }
 
+Sableye
+{ 
+    name = A True Gremlin
+    item = Leftovers
+    ability = Prankster
+    evs = 252, 72, 0, 0, 184, 0
+    nature = Relaxed/Sassy
+    moves = Swagger, Foul Play, Thunder Wave / Toxic, Recover
+    comment = Sableye has always been a great support Pokemon, and now with Prankster it can get those great support moves off immediately most of the time. Swagger and Thunder Wave will have a great chance to stun your opponent, Toxic can give more passive damage.
+    tags = Bulky, Passive, Stall
+}
+
 Mawile Mega
 { 
     name = Heavy Hitter
@@ -152,6 +200,30 @@ Mawile Mega
     moves = Iron Head, Play Rough, Swords Dance, Sucker Punch
     comment = Physical sweeping Mawile set. Use Swords Dance to double the already massive Attack stat. EVs in speed can be swapped to bulk too. Mawile got a sweet Speed stat buff, so now you can run max Speed EVs, too.
     tags = Physical Attacker, Offensive, Sweeper
+}
+
+Seviper
+{ 
+    name = A Forceful Biter
+    item = Life Orb
+    ability = Sheer Force
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Jolly
+    moves = Coil, Ice Fang, Crunch, Poison Fang
+    comment = Seviper has tons of coverage, and thanks to its Speed buff it is able to utilize Coil. Sheer Force and Life Orb gives it a massive boost.
+    tags = Physical Attacker, Sweeper
+} 
+
+Walrein
+{ 
+    name = The Resting Walrus
+    item = Leftovers
+    ability = Thick Fat
+    evs = 252, 0, 4, 252, 0, 0
+    nature = Bold/Calm/Modest
+    moves = Rest, Sleep Talk, Scald, Ice Beam
+    comment = Walrein has great bulk already, now having consistent recovery with Rest and Sleep Talk it can fish for Scald burns.
+    tags = Bulky, Special Attacker
 }
 
 Serperior
@@ -178,6 +250,18 @@ Lilligant
     tags = Special Attacker, Offensive, Sweeper
 }
 
+Aegislash
+{ 
+    name = The Sharpest Blade
+    item = Weakness Policy
+    ability = Stance Change
+    evs = 252, 252, 0, 0, 0, 4
+    nature = Adamant
+    moves = King's Shield, Swords Dance, Shadow Sneak, Iron Head
+    comment = With Aegislash's exploitable kit, Weakness Policy work very great on it, and the fact the AI will always go for a super effective move allows it to get +2. Do a Swords Dance and you get +4 while being in Shield Form. 
+    tags = Sweeper, Attacker
+} 
+
 Lycanroc Dusk
 { 
     name = Rocky Pain
@@ -189,3 +273,27 @@ Lycanroc Dusk
     comment = Lycanroc has great Speed and Attack to the point that one Swords Dance can allow it to get a few KOs. A Focus Sash is recommended as it is a bit frail.
     tags = Physical Attacker, Sweeper
 }
+
+Toedscruel
+{ 
+    name = The Recovering Squid
+    item = Leftovers
+    ability = Mycelium Might
+    evs = 252, 4, 0, 0, 252, 0
+    nature = Bold / Calm
+    moves = Leech Seed, Protect, Giga Drain, Spore
+    comment = With Toedscruel's average bulk it can take advantage of Leech Seed with Spore, Giga Drain is there for damage and passive recovery, and Protect to get more health.
+    tags = Bulky, Passive
+}
+
+Roaring Moon
+{ 
+    name = A Menace from the Past
+    item = Booster Energy
+    ability = Protosynthesis
+    evs = 36, 220, 0, 0, 0, 252
+    nature = Jolly
+    moves = Dragon Dance, Acrobatics, Dragon Claw, Crunch
+    comment = With Booster Energy activating immediately, this let's Roaring Moon get a Speed boost and it buffs Acrobatics to 110 BP. Pair it with a EV spread to get a boost in Speed and Dragon Dance and you sweep the game.
+    tags = Attacker, Setup, Sweeper
+} 
