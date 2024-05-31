@@ -12238,7 +12238,27 @@ static const struct TrainerMon sParty_Isaac1[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .moves = {MOVE_CALM_MIND, MOVE_STORED_POWER, MOVE_AIR_SLASH, MOVE_HEAT_WAVE}
-    }
+    },
+    {
+        .species = SPECIES_AMPHAROS,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_LIGHTNING_ROD,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_THUNDERBOLT, MOVE_TAIL_GLOW, MOVE_FOCUS_BLAST, MOVE_DAZZLING_GLEAM}
+    },
+    {
+        .species = SPECIES_SNORLAX,
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = ABILITY_COMATOSE,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_SLEEP_TALK, MOVE_FACADE, MOVE_SLACK_OFF, MOVE_CRUNCH}
+    },
 };
 
 static const struct TrainerMon sParty_Davis[] = {

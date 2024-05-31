@@ -124,18 +124,7 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1::
-	msgbox Text_Route114TrainersCleared, MSGBOX_AUTOCLOSE
-	settrainerflag TRAINER_LUCAS_1
-	settrainerflag TRAINER_SHANE
-	settrainerflag TRAINER_NANCY
-	settrainerflag TRAINER_STEVE_1
-	settrainerflag TRAINER_BERNIE_1
-	settrainerflag TRAINER_CLAUDE
-	settrainerflag TRAINER_NOLAN
-	settrainerflag TRAINER_TYRA_AND_IVY
-	settrainerflag TRAINER_ANGELINA
-	settrainerflag TRAINER_CHARLOTTE
-	settrainerflag TRAINER_KAI
+	goto Route117_EventScript_Isaac2
 	end
 
 Debug_EventScript_Script_2::

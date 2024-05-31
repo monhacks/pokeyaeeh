@@ -39,27 +39,6 @@ Route117_EventScript_DayCareSign::
 	msgbox Route117_Text_DayCareSign, MSGBOX_SIGN
 	end
 
-Route117_EventScript_Isaac::
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchIsaac
-	msgbox Route117_Text_IsaacPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route117_EventScript_RegisterIsaac::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ISAAC_1
-	release
-	end
-
-Route117_EventScript_RematchIsaac::
-	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
-	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route117_EventScript_Lydia::
 	trainerbattle_single TRAINER_LYDIA_1, Route117_Text_LydiaIntro, Route117_Text_LydiaDefeat, Route117_EventScript_RegisterLydia
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -208,3 +187,45 @@ Route117_Text_DayCareSign:
 	.string "“Let us raise your Pokémon.”$"
 
 `
+//Route117_EventScript_Isaac::
+//	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat
+//	msgbox Route117_Text_IsaacPostBattle, MSGBOX_DEFAULT
+//	end
+
+script Route117_EventScript_Isaac2{
+	msgbox("Hey! That was nice!\pNow for your reward.", MSGBOX_DEFAULT)
+	givemon(SPECIES_SNORLAX, 0, ITEM_LEFTOVERS, ITEM_CHERISH_BALL, 3, 2, MON_MALE, 252, 252, 0, 0, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_FACADE, MOVE_SLACK_OFF, MOVE_SLEEP_TALK, MOVE_CRUNCH, TRUE)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received a Snorlax!")
+	waitmessage
+	waitfanfare
+	msgbox("Snorlax is a beast!\pI hope you and he can win many battles\nin the future!", MSGBOX_AUTOCLOSE)
+	msgbox("And this, too!")
+	giveitem(ITEM_TM_FACADE, 1)
+	msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!", MSGBOX_AUTOCLOSE)
+}
+
+script Route117_EventScript_Isaac{
+    lock
+    faceplayer
+	if(defeated(TRAINER_LYDIA_1) &&
+	   defeated(TRAINER_DYLAN_1) &&
+	   defeated(TRAINER_MARIA_1) &&
+	   defeated(TRAINER_DEREK) &&
+	   defeated(TRAINER_ANNA_AND_MEG_1) &&
+	   defeated(TRAINER_MELINA) &&
+	   defeated(TRAINER_BRANDI) &&
+	   defeated(TRAINER_AISHA)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_Isaac2)
+		clearflag(B_FLAG_NO_BAG_USE)
+		setflag(FLAG_ROUTE_117_BOSS_DEFEATED)
+	    msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Hello, there!\pHere for a battle, huh?\pHow about this? You beat everybody else\nhere and then face me?\pIf you beat me, I'll give you a\nlnice big reward?", MSGBOX_AUTOCLOSE)
+	}
+    release
+    end
+}

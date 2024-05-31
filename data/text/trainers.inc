@@ -2345,8 +2345,7 @@ Route116_Text_JohnsonPostBattle:
 	.string "me company?$"
 
 Route117_Text_IsaacIntro:
-	.string "Listen, could I get you to battle\n"
-	.string "the Pokémon I'm raising?$"
+	.string "Big fight for a big reward!$"
 
 Route117_Text_IsaacDefeat:
 	.string "You've raised yours superbly…$"

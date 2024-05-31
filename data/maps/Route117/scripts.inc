@@ -38,27 +38,6 @@ Route117_EventScript_DayCareSign::
 	msgbox Route117_Text_DayCareSign, MSGBOX_SIGN
 	end
 
-Route117_EventScript_Isaac::
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchIsaac
-	msgbox Route117_Text_IsaacPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route117_EventScript_RegisterIsaac::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ISAAC_1
-	release
-	end
-
-Route117_EventScript_RematchIsaac::
-	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
-	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route117_EventScript_Lydia::
 	trainerbattle_single TRAINER_LYDIA_1, Route117_Text_LydiaIntro, Route117_Text_LydiaDefeat, Route117_EventScript_RegisterLydia
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -205,3 +184,90 @@ Route117_Text_RouteSignMauville:
 Route117_Text_DayCareSign:
 	.string "Pokémon Day Care\n"
 	.string "“Let us raise your Pokémon.”$"
+
+Route117_EventScript_Isaac2::
+	msgbox Route117_EventScript_Isaac2_Text_0, MSGBOX_DEFAULT
+	givemon SPECIES_SNORLAX, 0, ITEM_LEFTOVERS, ITEM_CHERISH_BALL, 3, 2, MON_MALE, 252, 252, 0, 0, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_FACADE, MOVE_SLACK_OFF, MOVE_SLEEP_TALK, MOVE_CRUNCH, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	message Route117_EventScript_Isaac2_Text_1
+	waitmessage
+	waitfanfare
+	msgbox Route117_EventScript_Isaac2_Text_2, MSGBOX_AUTOCLOSE
+	msgbox Route117_EventScript_Isaac2_Text_3
+	giveitem ITEM_TM_FACADE, 1
+	msgbox Route117_EventScript_Isaac2_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+
+Route117_EventScript_Isaac::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_LYDIA_1
+	goto_if 1, Route117_EventScript_Isaac_5
+Route117_EventScript_Isaac_3:
+	msgbox Route117_EventScript_Isaac_Text_0, MSGBOX_AUTOCLOSE
+Route117_EventScript_Isaac_1:
+	release
+	end
+
+Route117_EventScript_Isaac_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_Isaac2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_117_BOSS_DEFEATED
+	msgbox Route117_EventScript_Isaac2_Text_4, MSGBOX_AUTOCLOSE
+	goto Route117_EventScript_Isaac_1
+
+Route117_EventScript_Isaac_4:
+	checktrainerflag TRAINER_MARIA_1
+	goto_if 1, Route117_EventScript_Isaac_9
+	goto Route117_EventScript_Isaac_3
+
+Route117_EventScript_Isaac_5:
+	checktrainerflag TRAINER_DYLAN_1
+	goto_if 1, Route117_EventScript_Isaac_4
+	goto Route117_EventScript_Isaac_3
+
+Route117_EventScript_Isaac_8:
+	checktrainerflag TRAINER_ANNA_AND_MEG_1
+	goto_if 1, Route117_EventScript_Isaac_13
+	goto Route117_EventScript_Isaac_3
+
+Route117_EventScript_Isaac_9:
+	checktrainerflag TRAINER_DEREK
+	goto_if 1, Route117_EventScript_Isaac_8
+	goto Route117_EventScript_Isaac_3
+
+Route117_EventScript_Isaac_12:
+	checktrainerflag TRAINER_BRANDI
+	goto_if 1, Route117_EventScript_Isaac_16
+	goto Route117_EventScript_Isaac_3
+
+Route117_EventScript_Isaac_13:
+	checktrainerflag TRAINER_MELINA
+	goto_if 1, Route117_EventScript_Isaac_12
+	goto Route117_EventScript_Isaac_3
+
+Route117_EventScript_Isaac_16:
+	checktrainerflag TRAINER_AISHA
+	goto_if 1, Route117_EventScript_Isaac_2
+	goto Route117_EventScript_Isaac_3
+
+
+Route117_EventScript_Isaac2_Text_0:
+	.string "Hey! That was nice!\pNow for your reward.$"
+
+Route117_EventScript_Isaac2_Text_1:
+	.string "{PLAYER} received a Snorlax!$"
+
+Route117_EventScript_Isaac2_Text_2:
+	.string "Snorlax is a beast!\pI hope you and he can win many battles\nin the future!$"
+
+Route117_EventScript_Isaac2_Text_3:
+	.string "And this, too!$"
+
+Route117_EventScript_Isaac2_Text_4:
+	.string "Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!$"
+
+Route117_EventScript_Isaac_Text_0:
+	.string "Hello, there!\pHere for a battle, huh?\pHow about this? You beat everybody else\nhere and then face me?\pIf you beat me, I'll give you a\nlnice big reward?$"
