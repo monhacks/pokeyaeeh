@@ -3193,38 +3193,18 @@ Route121_Text_TammyPostBattle:
 	.string "There is a mysterious power\l"
 	.string "at work there…$"
 
-Route121_Text_KateIntro:
-	.string "Kate: Together, we're fearless!\n"
-	.string "We'll demonstrate how tough we are!$"
+Route121_Text_RouteBossCoupleIntro:
+	.string "Kate: We live together!\p"
+	.string "Joy: We'll win together!$"
 
-Route121_Text_KateDefeat:
-	.string "Kate: I blew it in front of my junior\n"
-	.string "student partner…$"
+Route121_Text_RouteBossCoupleDefeat:
+	.string "Kate: We lost together…\p"
+	.string "Joy: But still together!$"
 
-Route121_Text_KatePostBattle:
+Route121_Text_RouteBossCouplePostBattle:
 	.string "Kate: When someone's relying on me,\n"
 	.string "I get this urge to look cool in front\l"
 	.string "of them…$"
-
-Route121_Text_KateNotEnoughMons:
-	.string "Kate: If you've only got one Pokémon,\n"
-	.string "we can't battle with you.\p"
-	.string "That would be bullying.$"
-
-Route121_Text_JoyIntro:
-	.string "Joy: Together, we're fearless!\n"
-	.string "We'll demonstrate how tough we are!$"
-
-Route121_Text_JoyDefeat:
-	.string "Joy: Please forgive me, Kate!$"
-
-Route121_Text_JoyPostBattle:
-	.string "Joy: Ehehe, I'll have to train with Kate,\n"
-	.string "my senior student partner, again.$"
-
-Route121_Text_JoyNotEnoughMons:
-	.string "Joy: You need at least two Pokémon\n"
-	.string "if you're going to challenge us!$"
 
 Route121_Text_JessicaIntro:
 	.string "Stop! Have a good look at my precious\n"

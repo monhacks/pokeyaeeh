@@ -443,7 +443,7 @@ script Route120_EventScript_Ydarissep2{
 	msgbox("JusticeForScizor!", MSGBOX_AUTOCLOSE)
 	msgbox("You need it's Mega Stone, bozo.\pHere.")
 	giveitem(ITEM_SCIZORITE, 1)
-	msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice", MSGBOX_AUTOCLOSE)
+	msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice!", MSGBOX_AUTOCLOSE)
 }
 
 script Route120_EventScript_Ydarissep{

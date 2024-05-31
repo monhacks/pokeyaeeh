@@ -446,7 +446,7 @@ Route120_EventScript_Ydarissep::
 	checktrainerflag TRAINER_COLIN
 	goto_if 1, Route120_EventScript_Ydarissep_5
 Route120_EventScript_Ydarissep_3:
-	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route120_EventScript_Ydarissep_Text_1, MSGBOX_AUTOCLOSE
 Route120_EventScript_Ydarissep_1:
 	release
 	end
@@ -456,7 +456,7 @@ Route120_EventScript_Ydarissep_2:
 	trainerbattle_single TRAINER_YDARISSEP, Route120_Text_YdarissepIntro, Route120_Text_YdarissepDefeat, Route120_EventScript_Ydarissep2
 	clearflag B_FLAG_NO_BAG_USE
 	setflag FLAG_ROUTE_120_BOSS_DEFEATED
-	msgbox Route120_EventScript_Ydarissep2_Text_3, MSGBOX_AUTOCLOSE
+	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_AUTOCLOSE
 	goto Route120_EventScript_Ydarissep_1
 
 Route120_EventScript_Ydarissep_4:
@@ -525,7 +525,10 @@ Route120_EventScript_Ydarissep2_Text_2:
 	.string "You need it's Mega Stone, bozo.\pHere.$"
 
 Route120_EventScript_Ydarissep2_Text_3:
-	.string "Holding a Scizorite,\nyour Scizor can get it's Justice$"
+	.string "Holding a Scizorite,\nyour Scizor can get it's Justice!$"
 
 Route120_EventScript_Ydarissep_Text_0:
+	.string "Holding a Scizorite,\nyour Scizor can get it's Justice$"
+
+Route120_EventScript_Ydarissep_Text_1:
 	.string "Nuh uh, you can't battle me yet lil bro$"

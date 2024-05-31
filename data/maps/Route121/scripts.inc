@@ -100,16 +100,6 @@ Route121_EventScript_Tammy::
 	msgbox Route121_Text_TammyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route121_EventScript_Kate::
-	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat
-	msgbox Route121_Text_KatePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route121_EventScript_Joy::
-	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat
-	msgbox Route121_Text_JoyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route121_EventScript_Jessica::
 	trainerbattle_single TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat, Route121_EventScript_RegisterJessica
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -189,3 +179,87 @@ Route121_Text_MtPyrePierSign:
 Route121_Text_SafariZoneSign:
 	.string "“Filled with rare Pokémon!”\n"
 	.string "Safari Zone$"
+
+Route121_EventScript_RouteBossCouple2::
+	msgbox Route121_EventScript_RouteBossCouple2_Text_0
+	giveitem ITEM_NIDOQUEENITE, 1
+	msgbox Route121_EventScript_RouteBossCouple2_Text_1
+	giveitem ITEM_NIDOKINGITE, 1
+	msgbox Route121_EventScript_RouteBossCouple2_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route121_EventScript_RouteBossCouple::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_VANESSA
+	goto_if 1, Route121_EventScript_RouteBossCouple_5
+Route121_EventScript_RouteBossCouple_3:
+	msgbox Route121_EventScript_RouteBossCouple_Text_1, MSGBOX_AUTOCLOSE
+Route121_EventScript_RouteBossCouple_1:
+	release
+	end
+
+Route121_EventScript_RouteBossCouple_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_RouteBossCoupleIntro, Route121_Text_RouteBossCoupleDefeat, Route121_EventScript_RouteBossCouple2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_121_BOSS_DEFEATED
+	msgbox Route121_EventScript_RouteBossCouple_Text_0, MSGBOX_AUTOCLOSE
+	goto Route121_EventScript_RouteBossCouple_1
+
+Route121_EventScript_RouteBossCouple_4:
+	checktrainerflag TRAINER_TAMMY
+	goto_if 1, Route121_EventScript_RouteBossCouple_9
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_5:
+	checktrainerflag TRAINER_WALTER_1
+	goto_if 1, Route121_EventScript_RouteBossCouple_4
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_8:
+	checktrainerflag TRAINER_CALE
+	goto_if 1, Route121_EventScript_RouteBossCouple_13
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_9:
+	checktrainerflag TRAINER_JESSICA_1
+	goto_if 1, Route121_EventScript_RouteBossCouple_8
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_12:
+	checktrainerflag TRAINER_PAT
+	goto_if 1, Route121_EventScript_RouteBossCouple_17
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_13:
+	checktrainerflag TRAINER_MYLES
+	goto_if 1, Route121_EventScript_RouteBossCouple_12
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_16:
+	checktrainerflag TRAINER_CRISTIN_1
+	goto_if 1, Route121_EventScript_RouteBossCouple_2
+	goto Route121_EventScript_RouteBossCouple_3
+
+Route121_EventScript_RouteBossCouple_17:
+	checktrainerflag TRAINER_MARCEL
+	goto_if 1, Route121_EventScript_RouteBossCouple_16
+	goto Route121_EventScript_RouteBossCouple_3
+
+
+Route121_EventScript_RouteBossCouple2_Text_0:
+	.string "Kate: We got defeated!\pJoy: Here's a gift from us to you!$"
+
+Route121_EventScript_RouteBossCouple2_Text_1:
+	.string "Joy: Holding Nidoqueenite,\nyour Nidoqueen becomes mighty and\lstrong!\pKate: And from me.$"
+
+Route121_EventScript_RouteBossCouple2_Text_2:
+	.string "Kate: Holding Nidokingite,\nyour Nidoking becomes a badass\lwarrior! Undefeatable!$"
+
+Route121_EventScript_RouteBossCouple_Text_0:
+	.string "That was an amazing battle!\pMega Power rocks!$"
+
+Route121_EventScript_RouteBossCouple_Text_1:
+	.string "Kate: You're single!\pJoy: How embarrassing…\pKate: We're always together,\nand you're alone.\pJoy: Talk to us after you beat\neverybody else here!$"

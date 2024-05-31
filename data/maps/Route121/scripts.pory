@@ -101,16 +101,6 @@ Route121_EventScript_Tammy::
 	msgbox Route121_Text_TammyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route121_EventScript_Kate::
-	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_KateIntro, Route121_Text_KateDefeat
-	msgbox Route121_Text_KatePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route121_EventScript_Joy::
-	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_JoyIntro, Route121_Text_JoyDefeat
-	msgbox Route121_Text_JoyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route121_EventScript_Jessica::
 	trainerbattle_single TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat, Route121_EventScript_RegisterJessica
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -192,3 +182,42 @@ Route121_Text_SafariZoneSign:
 	.string "Safari Zone$"
 
 `
+
+//Route121_EventScript_RouteBossCouple::
+//	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_RouteBossCoupleIntro, Route121_Text_RouteBossCoupleDefeat
+//	msgbox Route121_Text_RouteBossCouplePostBattle, MSGBOX_AUTOCLOSE
+//	end
+
+script Route121_EventScript_RouteBossCouple2{
+	msgbox("Kate: We got defeated!\pJoy: Here's a gift from us to you!")
+	giveitem(ITEM_NIDOQUEENITE, 1)
+	msgbox("Joy: Holding Nidoqueenite,\nyour Nidoqueen becomes mighty and\lstrong!\pKate: And from me.")
+	giveitem(ITEM_NIDOKINGITE, 1)
+	msgbox("Kate: Holding Nidokingite,\nyour Nidoking becomes a badass\lwarrior! Undefeatable!", MSGBOX_AUTOCLOSE)
+}
+
+script Route121_EventScript_RouteBossCouple{
+    lock
+    faceplayer
+	if(defeated(TRAINER_VANESSA) &&
+	   defeated(TRAINER_WALTER_1) &&
+	   defeated(TRAINER_TAMMY) &&
+	   defeated(TRAINER_JESSICA_1) &&
+	   defeated(TRAINER_CALE) &&
+	   defeated(TRAINER_MYLES) &&
+	   defeated(TRAINER_PAT) &&
+	   defeated(TRAINER_MARCEL) &&
+	   defeated(TRAINER_CRISTIN_1)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_KATE_AND_JOY, Route121_Text_RouteBossCoupleIntro, Route121_Text_RouteBossCoupleDefeat, Route121_EventScript_RouteBossCouple2)
+		clearflag(B_FLAG_NO_BAG_USE)
+		setflag(FLAG_ROUTE_121_BOSS_DEFEATED)
+	    msgbox("That was an amazing battle!\pMega Power rocks!", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Kate: You're single!\pJoy: How embarrassing…\pKate: We're always together,\nand you're alone.\pJoy: Talk to us after you beat\neverybody else here!", MSGBOX_AUTOCLOSE)
+	}
+    release
+    end
+}

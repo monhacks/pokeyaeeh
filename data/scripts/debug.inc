@@ -124,7 +124,7 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1::
-	goto Route117_EventScript_Isaac2
+	goto Route121_EventScript_RouteBossCouple
 	end
 
 Debug_EventScript_Script_2::
