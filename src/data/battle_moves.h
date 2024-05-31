@@ -13572,7 +13572,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_AXE_KICK,
         .power = 120,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_DARK,
         .accuracy = 90,
         .pp = 16,
         .secondaryEffectChance = 30,
