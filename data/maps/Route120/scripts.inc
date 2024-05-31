@@ -327,11 +327,6 @@ Route120_EventScript_Jennifer::
 	msgbox Route120_Text_JenniferPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route120_EventScript_Chip::
-	trainerbattle_single TRAINER_CHIP, Route120_Text_ChipIntro, Route120_Text_ChipDefeat
-	msgbox Route120_Text_ChipPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route120_EventScript_Clarissa::
 	trainerbattle_single TRAINER_CLARISSA, Route120_Text_ClarissaIntro, Route120_Text_ClarissaDefeat
 	msgbox Route120_Text_ClarissaPostBattle, MSGBOX_AUTOCLOSE
@@ -430,3 +425,107 @@ Route120_Text_RouteSignFortree:
 Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} Route 121\n"
 	.string "{LEFT_ARROW} Route 120$"
+
+Route120_EventScript_Ydarissep2::
+	msgbox Route120_EventScript_Ydarissep2_Text_0, MSGBOX_DEFAULT
+	givemon SPECIES_SCIZOR, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, 3, 1, MON_MALE, 248, 0, 12, 0, 0, 248, 31, 31, 31, 31, 31, 31, MOVE_BULLET_PUNCH, MOVE_CRABHAMMER, MOVE_ROOST, MOVE_SWORDS_DANCE, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	message Route120_EventScript_Ydarissep2_Text_1
+	waitmessage
+	waitfanfare
+	msgbox Route120_EventScript_Ydarissep2_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route120_EventScript_Ydarissep2_Text_2
+	giveitem ITEM_SCIZORITE, 1
+	msgbox Route120_EventScript_Ydarissep2_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
+Route120_EventScript_Ydarissep::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_COLIN
+	goto_if 1, Route120_EventScript_Ydarissep_5
+Route120_EventScript_Ydarissep_3:
+	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_AUTOCLOSE
+Route120_EventScript_Ydarissep_1:
+	release
+	end
+
+Route120_EventScript_Ydarissep_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_YDARISSEP, Route120_Text_YdarissepIntro, Route120_Text_YdarissepDefeat, Route120_EventScript_Ydarissep2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_120_BOSS_DEFEATED
+	msgbox Route120_EventScript_Ydarissep2_Text_3, MSGBOX_AUTOCLOSE
+	goto Route120_EventScript_Ydarissep_1
+
+Route120_EventScript_Ydarissep_4:
+	checktrainerflag TRAINER_LORENZO
+	goto_if 1, Route120_EventScript_Ydarissep_9
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_5:
+	checktrainerflag TRAINER_ROBERT_1
+	goto_if 1, Route120_EventScript_Ydarissep_4
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_8:
+	checktrainerflag TRAINER_JEFFREY_1
+	goto_if 1, Route120_EventScript_Ydarissep_13
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_9:
+	checktrainerflag TRAINER_JENNA
+	goto_if 1, Route120_EventScript_Ydarissep_8
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_12:
+	checktrainerflag TRAINER_CLARISSA
+	goto_if 1, Route120_EventScript_Ydarissep_17
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_13:
+	checktrainerflag TRAINER_JENNIFER
+	goto_if 1, Route120_EventScript_Ydarissep_12
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_16:
+	checktrainerflag TRAINER_KEIGO
+	goto_if 1, Route120_EventScript_Ydarissep_21
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_17:
+	checktrainerflag TRAINER_ANGELICA
+	goto_if 1, Route120_EventScript_Ydarissep_16
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_20:
+	checktrainerflag TRAINER_LEONEL
+	goto_if 1, Route120_EventScript_Ydarissep_24
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_21:
+	checktrainerflag TRAINER_RILEY
+	goto_if 1, Route120_EventScript_Ydarissep_20
+	goto Route120_EventScript_Ydarissep_3
+
+Route120_EventScript_Ydarissep_24:
+	checktrainerflag TRAINER_CALLIE
+	goto_if 1, Route120_EventScript_Ydarissep_2
+	goto Route120_EventScript_Ydarissep_3
+
+
+Route120_EventScript_Ydarissep2_Text_0:
+	.string "JusticeForScizor!$"
+
+Route120_EventScript_Ydarissep2_Text_1:
+	.string "{PLAYER} received a Scizor!$"
+
+Route120_EventScript_Ydarissep2_Text_2:
+	.string "You need it's Mega Stone, bozo.\pHere.$"
+
+Route120_EventScript_Ydarissep2_Text_3:
+	.string "Holding a Scizorite,\nyour Scizor can get it's Justice$"
+
+Route120_EventScript_Ydarissep_Text_0:
+	.string "Nuh uh, you can't battle me yet lil bro$"

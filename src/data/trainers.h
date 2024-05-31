@@ -495,15 +495,15 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Dusty1),
     },
 
-    [TRAINER_CHIP] =
+    [TRAINER_YDARISSEP] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Chip"),
-        .doubleBattle = FALSE,
+        .trainerName = _("Ydarissep"),
+        .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Chip),
+        .party = TRAINER_PARTY(sParty_Ydarissep),
     },
 
     [TRAINER_FOSTER] =

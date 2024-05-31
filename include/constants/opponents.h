@@ -48,7 +48,7 @@
 #define TRAINER_VICTORIA_2                   42
 #define TRAINER_VIVI_2                       43
 #define TRAINER_DUSTY_1                      44
-#define TRAINER_CHIP                         45
+#define TRAINER_YDARISSEP                    45
 #define TRAINER_FOSTER                       46
 #define TRAINER_DUSTY_2                      47
 #define TRAINER_VICKY_2                      48

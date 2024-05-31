@@ -339,15 +339,15 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 9,
-      "y": 60,
+      "x": 7,
+      "y": 59,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route120_EventScript_Chip",
+      "script": "Route120_EventScript_Ydarissep",
       "flag": "0"
     },
     {
@@ -638,8 +638,8 @@
     },
     {
       "type": "weather",
-      "x": 12,
-      "y": 64,
+      "x": 23,
+      "y": 61,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_RAIN"
     },
@@ -722,29 +722,29 @@
     },
     {
       "type": "weather",
-      "x": 10,
-      "y": 75,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 11,
-      "y": 75,
+      "x": 12,
+      "y": 64,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
     },
     {
       "type": "weather",
       "x": 12,
-      "y": 75,
+      "y": 85,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
     },
     {
       "type": "weather",
-      "x": 13,
-      "y": 75,
+      "x": 18,
+      "y": 63,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
+    },
+    {
+      "type": "weather",
+      "x": 19,
+      "y": 63,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
     }

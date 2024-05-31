@@ -1206,7 +1206,7 @@ static const struct TrainerMon sParty_Dusty1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Chip[] = {
+static const struct TrainerMon sParty_Ydarissep[] = { // Route Boss
     {
         .species = SPECIES_VOLBEAT,
         .heldItem = ITEM_DAMP_ROCK,
@@ -1224,7 +1224,7 @@ static const struct TrainerMon sParty_Chip[] = {
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(248, 0, 12, 0, 0, 248),
         .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
-        .moves = {MOVE_POUNCE, MOVE_CRABHAMMER, MOVE_ROOST, MOVE_SWORDS_DANCE},
+        .moves = {MOVE_BULLET_PUNCH, MOVE_CRABHAMMER, MOVE_ROOST, MOVE_SWORDS_DANCE},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -12198,7 +12198,7 @@ static const struct TrainerMon sParty_MayRoute119Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_Isaac1[] = {
+static const struct TrainerMon sParty_Isaac1[] = { // Route Boss
     {
         .species = SPECIES_UMBREON,
         .heldItem = ITEM_LEFTOVERS,

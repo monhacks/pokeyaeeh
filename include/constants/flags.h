@@ -1242,7 +1242,7 @@
 #define FLAG_ROUTE_119_BOSS_DEFEATED                                0x49E // Route 119 Boss Bug Maniac Donald
 #define FLAG_ROUTE_110_BOSS_DEFEATED                                0x49F // Route 110 Boss Psychic Jaclyn
 #define FLAG_ROUTE_117_BOSS_DEFEATED                                0x4A0 // Route 117 Boss PKMN Breeder Issac
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
+#define FLAG_ROUTE_120_BOSS_DEFEATED                                0x4A1 // Route 120 Boss Hiker Ydarissep (used to be Chip)
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag

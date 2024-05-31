@@ -3055,19 +3055,14 @@ Route120_Text_JenniferPostBattle:
 	.string "The special abilities of Pokémon\n"
 	.string "will make battle styles change.$"
 
-Route120_Text_ChipIntro:
-	.string "Who might you be?\p"
-	.string "Are you perhaps searching for ancient\n"
-	.string "ruins that are rumored to possibly\l"
-	.string "exist according to legend?$"
+Route120_Text_YdarissepIntro:
+	.string "Prepare for JusticeForScizor!!$"
 
-Route120_Text_ChipDefeat:
-	.string "What a disgraceful setback…$"
+Route120_Text_YdarissepDefeat:
+	.string "But, JusticeForScizor…$"
 
-Route120_Text_ChipPostBattle:
-	.string "That giant rock… I would like to\n"
-	.string "believe it may indeed contain ancient\l"
-	.string "ruins. But I see no entrance.$"
+Route120_Text_YdarissepPostBattle:
+	.string "JusticeForScizor.$"
 
 Route120_Text_ClarissaIntro:
 	.string "Why am I carrying this parasol?\p"
