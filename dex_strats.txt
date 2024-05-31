@@ -283,7 +283,19 @@ Aegislash
     nature = Adamant
     moves = King's Shield, Swords Dance, Shadow Sneak, Iron Head
     comment = With Aegislash's exploitable kit, Weakness Policy work very great on it, and the fact the AI will always go for a super effective move allows it to get +2. Do a Swords Dance and you get +4 while being in Shield Form. 
-    tags = Sweeper, Attacker
+    tags = Physical Attacker, Offensive, Sweeper
+}
+
+Decidueye
+{
+    name = Unburden Sweeper
+    item = Focus Sash/Weakness Policy
+    ability = Unburden
+    evs = 0, 252, 4, 0, 0, 252
+    nature = Jolly
+    moves = Swords Dance, Leaf Leap, Spirit Shackle, Acrobatics
+    comment = Unburden Leaf Leap and Acrobatics go brrr. Set up Swords Dance on first turn to make Decidueye a killer bird!
+    tags = Physical Attacker, Offensive, Sweeper
 }
 
 Incineroar
