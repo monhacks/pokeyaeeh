@@ -245,8 +245,8 @@ Serperior
     ability = Chlorophyll
     evs = 4, 0, 0, 252, 0, 252
     nature = Modest
-    moves = Leaf Storm, Draco Meteor, Glare, 
-    comment = Contrary is one hell of a drug. Keep spamming.
+    moves = Leaf Storm, Draco Meteor, Glare, Hidden Power [Fire]
+    comment = Contrary is one hell of a drug. Keep spamming moves like Leaf Storm and Draco Meteor and they get stronger every time!
     tags = Special Attacker, Offensive, Sweeper
 }
 
@@ -261,6 +261,18 @@ Lilligant
     comment = Your average Quiver Dance sweeper from the Unova region.
     tags = Special Attacker, Offensive, Sweeper
 }
+
+Clawitzer
+{ 
+    name = The Biggest Bazooka
+    item = Choice Specs / Life Orb
+    ability = Mega Launcher
+    evs = 252, 0, 4, 252, 0, 0
+    nature = Modest
+    moves = Bubble Beam, Aura Sphere, Ice Beam, Flash Cannon
+    comment = With immense Special Attack and a insane ability Mega Launcher, Choice Specs STAB Mega Launcher boosted Bubble Beams will hit like a absolute truck, with the great coverage Clawitzer gets you can even run a Life Orb if needed.
+    tags = Special Attacker
+} 
 
 Aegislash
 { 
@@ -344,6 +356,18 @@ Cinderace Mega
     moves = Pyro Ball, High Jump Kick, Iron Head, U-Turn
     comment = Thanks to the busted ability of Libero, Cinderace can utilize it to the fullest potential in the right hands. Although this moveset does gamble with accuracy it will hit hard if it lands a move.
     tags = Physical Attacker, Sweeper
+}
+
+Inteleon Mega 
+{ 
+    name = A Deadeye Sniper
+    item = Inteleonite
+    ability = Hitman
+    evs = 4, 0, 0, 252, 0, 252
+    nature = Hasty
+    moves = Snipe Shot, U-Turn, Dark Pulse, Ice Beam
+    comment = Inteleon has great Special Attack and great Speed and if you combine Sniper with a guaranteed Crit Snipe Shot with STAB you get a Pokémon that is a one click machine
+    tags = Special Attacker
 } 
 
 Toedscruel
