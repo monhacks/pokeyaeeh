@@ -2858,8 +2858,32 @@ static void ChangeMoveDisplayMode(u32 battler)
     CopyWindowToVram(B_WIN_MOVE_NAME_1 , 3);
 
     //Move Power
-    if (gBattleMoves[move].power == 0)
+
+    // Ate abilities
+    if ((gBattleMoves[move].type == TYPE_NORMAL)
+     && (effect != EFFECT_HIDDEN_POWER)
+     && (effect != EFFECT_WEATHER_BALL)
+     && (effect != EFFECT_CHANGE_TYPE_ON_ITEM)
+     && (effect != EFFECT_NATURAL_GIFT)
+     && ((atkAbility == ABILITY_PIXILATE) || (atkAbility == ABILITY_REFRIGERATE) || (atkAbility == ABILITY_AERILATE) || (atkAbility == ABILITY_GALVANIZE)
+     || (atkAbility == ABILITY_HERBIVATE) || (atkAbility == ABILITY_SCORCHATE) || (atkAbility == ABILITY_OCEANATE) || (atkAbility == ABILITY_PUMMELIZE)
+     || (atkAbility == ABILITY_DESERT_GALE)))
+        ConvertIntToDecimalStringN(gStringVar1, power*(1.2), STR_CONV_MODE_RIGHT_ALIGN, 4);
+
+    // Normalize
+    else if ((effect != EFFECT_HIDDEN_POWER)
+     && (effect != EFFECT_WEATHER_BALL)
+     && (effect != EFFECT_CHANGE_TYPE_ON_ITEM)
+     && (effect != EFFECT_NATURAL_GIFT)
+     && (effect != EFFECT_TERRAIN_PULSE)
+     && (effect != EFFECT_CHANGE_TYPE_ON_ITEM)
+     && (atkAbility == ABILITY_NORMALIZE))
+        ConvertIntToDecimalStringN(gStringVar1, power*(1.3), STR_CONV_MODE_RIGHT_ALIGN, 4);
+    
+    // Non Damaging moves
+    else if (gBattleMoves[move].power == 0)
         StringExpandPlaceholders(gStringVar1, gPower0Text);
+    // The rest
     else
         ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 4);
 
