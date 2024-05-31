@@ -686,10 +686,6 @@ Route111_Text_TrainerHillSign:
 	.string "Trainers!”$"
 
 `
-//Route111_EventScript_Daisuke::
-//	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
-//	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
-//	end
 
 script Route111_EventScript_Daisuke2{
 	msgbox(("You deserve the power of Kubfu."), MSGBOX_AUTOCLOSE)

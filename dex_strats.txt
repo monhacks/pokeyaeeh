@@ -10,6 +10,18 @@ Venusaur
     tags = Offensive, Sweeper, Support
 }
 
+Charizard
+{ 
+    name = Pre Mega Charizard Y
+    item = Choice Specs / Life Orb / Heavy-Duty Boots
+    ability = Solar Power
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Modest / Timid
+    moves = Flamethrower / Heat Wave, Jetstream, Focus Blast / Solar Beam, Roost
+    comment = Charizard by itself is... weak, and pathetic. As much as it hurts me to say! But with enough support, it can be a threatening sweeper. Literally all it needs is the Sun set up for it and it can go sweeping with Sun boosted, Solar Power boosted Heat Waves, or 1-turn Solar Beams.
+    tags = Special Attacker, Offensive, Sweeper
+}
+
 Charizard Mega X
 { 
     name = Physical Sweeper
@@ -54,7 +66,7 @@ Wigglytuff
     evs = 252, 0, 4, 252, 0, 0
     nature = Modest
     moves = Flamethrower / Calm Mind, Boomburst, Moonblast, Soft-Boiled
-    comment = Wigglytuff is A really helpful defensive piece to teams due to it's access to fur coat and instant recovery, allowing it to set up on enemy Pokemon that can't break through it and create a win condition.
+    comment = Wigglytuff is A really helpful defensive piece to teams due to it's access to fur coat and instant recovery, allowing it to set up on enemy Pokémon that can't break through it and create a win condition.
     tags = Special Attacker, Defensive
 }
 
@@ -162,7 +174,7 @@ Pelipper
     evs = 252, 0, 4, 0, 252, 0
     nature = Calm / Bold
     moves = Scald, Roost, U-Turn, Hurricane
-    comment = Pelipper is a great ultility Pokemon, thanks to Drizzle it can support Water-types while being a counter to Grass-types. You can fish for burns with Scald and do great damage with Hurricane.
+    comment = Pelipper is a great ultility Pokémon, thanks to Drizzle it can support Water-types while being a counter to Grass-types. You can fish for burns with Scald and do great damage with Hurricane.
     tags = Weather Setter, Bulky, Passive
 }
 
@@ -186,7 +198,7 @@ Sableye
     evs = 252, 72, 0, 0, 184, 0
     nature = Relaxed/Sassy
     moves = Swagger, Foul Play, Thunder Wave / Toxic, Recover
-    comment = Sableye has always been a great support Pokemon, and now with Prankster it can get those great support moves off immediately most of the time. Swagger and Thunder Wave will have a great chance to stun your opponent, Toxic can give more passive damage.
+    comment = Sableye has always been a great support Pokémon, and now with Prankster it can get those great support moves off immediately most of the time. Swagger and Thunder Wave will have a great chance to stun your opponent, Toxic can give more passive damage.
     tags = Bulky, Passive, Stall
 }
 
@@ -260,7 +272,43 @@ Aegislash
     moves = King's Shield, Swords Dance, Shadow Sneak, Iron Head
     comment = With Aegislash's exploitable kit, Weakness Policy work very great on it, and the fact the AI will always go for a super effective move allows it to get +2. Do a Swords Dance and you get +4 while being in Shield Form. 
     tags = Sweeper, Attacker
-} 
+}
+
+Incineroar
+{ 
+    name = The Support Mon of all Time
+    item = Sitrus Berry / Safety Goggles
+    ability = Intimidate
+    evs = 252, 4, 140, 0, 76, 0
+    nature = Careful
+    moves = Flare Blitz, Fake Out, Parting Shot, Knock Off
+    comment = Incineroar is dubbed by many as the King of VGC. But how does it survive the harsh YAEEH meta? I don't really know either. But with amazing tools and utility, Incineroar can be a really strong support Pokémon. With Intimidate, Fake Out, and now even Helping Hand, it can make support your hard hitting teammates!
+    tags = Physical Attacker, Defensive, Support
+}
+
+Incineroar
+{ 
+    name = AV Pivot
+    item = Assault Vest
+    ability = Intimidate
+    evs = 252, 20, 156, 0, 44, 0
+    nature = Impish
+    moves = Flare Blitz, Fake Out, U-Turn, Knock Off
+    comment = Another bulky Incineroar defensive support set. This one runs the Assault Vest item which prevents the use of status moves. But Incineroar has a lot of good moves in its kit, so it doesn't matter a lot!
+    tags = Physical Attacker, Defensive, Support
+}
+
+Primarina
+{ 
+    name = The Great Vocalist
+    item = Throat Spray / Leftovers
+    ability = Liquid Voice / Drizzle
+    evs = 252, 0, 4, 252, 0, 0
+    nature = Modest
+    moves = Boomburst / Hyper Voice / Scald, Psychic, Moonblast / Draining Kiss, Encore / Calm Mind
+    comment = Primarina has great utility with moves ranging from Encore to mess your opponent up to fishing for Scald burns to setting up with Calm Mind to outright sweep teams, you can't go wrong with Primarina.
+    tags = Bulky, Support, Special Attacker.
+}
 
 Lycanroc Dusk
 { 
@@ -273,6 +321,30 @@ Lycanroc Dusk
     comment = Lycanroc has great Speed and Attack to the point that one Swords Dance can allow it to get a few KOs. A Focus Sash is recommended as it is a bit frail.
     tags = Physical Attacker, Sweeper
 }
+
+Rillaboom
+{ 
+    name = The Ape of the Jungle
+    item = Grassy Seed / Terrain Extender
+    ability = Grassy Surge
+    evs = 252, 252, 4, 0, 0, 0
+    nature = Adamant
+    moves = Swords Dance, Acrobatics, Grassy Glide, Drain Punch
+    comment = With a great ability in the form of Grassy Surge, Rillaboom can take advantage of this to the maximum and use items such as Grassy Seed and Terrain Extender to set up and sweep with Acrobatics and Grassy Glide, respectively.
+    tags = Bulky, Physical Attacker
+}
+
+Cinderace Mega
+{ 
+    name = The Great Striker
+    item = Cinderacite
+    ability = Libero
+    evs = 0, 252, 0, 0, 4, 252
+    nature = Jolly
+    moves = Pyro Ball, High Jump Kick, Iron Head, U-Turn
+    comment = Thanks to the busted ability of Libero, Cinderace can utilize it to the fullest potential in the right hands. Although this moveset does gamble with accuracy it will hit hard if it lands a move.
+    tags = Physical Attacker, Sweeper
+} 
 
 Toedscruel
 { 
