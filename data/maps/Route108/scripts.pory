@@ -57,10 +57,17 @@ script Route108_EventScript_Jerome2{
 	return
 }
 
+// Join Route Boss for Route 107 and 108
 script Route108_EventScript_Jerome{
     lock
     faceplayer
-	if(defeated(TRAINER_MISSY) &&
+	if(defeated(TRAINER_DARRIN) &&
+	   defeated(TRAINER_TONY_1) &&
+	   defeated(TRAINER_DENISE) &&
+	   defeated(TRAINER_BETH) &&
+	   defeated(TRAINER_LISA_AND_RAY) &&
+	   defeated(TRAINER_CAMRON) &&
+	   defeated(TRAINER_MISSY) &&
 	   defeated(TRAINER_MATTHEW) &&
 	   defeated(TRAINER_TARA) &&
 	   defeated(TRAINER_CAROLINA) &&
