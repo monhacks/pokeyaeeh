@@ -187,6 +187,7 @@ Route123_EventScript_Violet2::
 	msgbox Route123_EventScript_Violet2_Text_2, MSGBOX_AUTOCLOSE
 	msgbox Route123_EventScript_Violet2_Text_3
 	giveitem ITEM_TROPIUSITE, 1
+	setflag FLAG_ROUTE_123_BOSS_DEFEATED
 	msgbox Route123_EventScript_Violet2_Text_4, MSGBOX_AUTOCLOSE
 	return
 
@@ -206,7 +207,6 @@ Route123_EventScript_Violet_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat, Route123_EventScript_Violet2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_123_BOSS_DEFEATED
 	msgbox Route123_EventScript_Violet2_Text_4, MSGBOX_AUTOCLOSE
 	goto Route123_EventScript_Violet_1
 

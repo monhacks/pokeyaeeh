@@ -691,6 +691,7 @@ Route111_EventScript_Daisuke2::
 	msgbox Route111_EventScript_Daisuke2_Text_1
 	waitmessage
 	waitfanfare
+	setflag FLAG_ROUTE_111_BOSS_DEFEATED
 	msgbox Route111_EventScript_Daisuke2_Text_2
 	goto_if_set FLAG_BADGE07_GET, Route111_EventScript_Daisuke2_2
 	msgbox Route111_EventScript_Daisuke2_Text_6, MSGBOX_NPC
@@ -733,7 +734,6 @@ Route111_EventScript_Daisuke_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat, Route111_EventScript_Daisuke2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_111_BOSS_DEFEATED
 	goto_if_set FLAG_BADGE07_GET == TRUE, Route111_EventScript_Daisuke_35
 	msgbox Route111_EventScript_Daisuke_Text_0, MSGBOX_NPC
 	goto Route111_EventScript_Daisuke_1

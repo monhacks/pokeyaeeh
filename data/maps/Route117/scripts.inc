@@ -195,6 +195,7 @@ Route117_EventScript_Isaac2::
 	msgbox Route117_EventScript_Isaac2_Text_2, MSGBOX_AUTOCLOSE
 	msgbox Route117_EventScript_Isaac2_Text_3
 	giveitem ITEM_TM_FACADE, 1
+	setflag FLAG_ROUTE_117_BOSS_DEFEATED
 	msgbox Route117_EventScript_Isaac2_Text_4, MSGBOX_AUTOCLOSE
 	return
 
@@ -214,7 +215,6 @@ Route117_EventScript_Isaac_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_Isaac2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_117_BOSS_DEFEATED
 	msgbox Route117_EventScript_Isaac2_Text_4, MSGBOX_AUTOCLOSE
 	goto Route117_EventScript_Isaac_1
 

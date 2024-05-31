@@ -99,8 +99,9 @@ Route105_EventScript_Foster2::
 	waitfanfare
 	msgbox Route105_EventScript_Foster2_Text_1
 	giveitem ITEM_TM_EARTHQUAKE, 1
+	clearflag B_FLAG_NO_BAG_USE
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Route105_EventScript_Foster2_Text_2
+	msgbox Route105_EventScript_Foster2_Text_2, MSGBOX_NPC
 	return
 
 
@@ -119,8 +120,7 @@ Route105_EventScript_Foster_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_FOSTER, Route105_Text_FosterIntro, Route105_Text_FosterDefeated, Route105_EventScript_Foster2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_105_BOSS_DEFEATED
-	msgbox Route105_Text_FosterPostBattle
+	msgbox Route105_EventScript_Foster2_Text_2, MSGBOX_NPC
 	goto Route105_EventScript_Foster_1
 
 Route105_EventScript_Foster_4:
@@ -145,10 +145,7 @@ Route105_EventScript_Foster_9:
 
 
 Route105_EventScript_Foster2_Text_0:
-	.string "Now that's what I call an awesome\n"
-	.string "battle!\p"
-	.string "Here!\n"
-	.string "You can have this!$"
+	.string "Now that's what I call an awesome\nbattle!\pHere!\nYou can have this!$"
 
 Route105_EventScript_Foster2_Text_1:
 	.string "And this, too!$"
@@ -157,7 +154,4 @@ Route105_EventScript_Foster2_Text_2:
 	.string "Earthquake is an excellent move!\pIt also hurts your partner in battle\nthough.\pUnless its Flying-type or is floating,\nhehe.$"
 
 Route105_EventScript_Foster_Text_0:
-	.string "I'm searching for a mystical rock\n"
-	.string "around here!\p"
-	.string "Don't bother me til you beat everyon\n"
-	.string "else!$"
+	.string "I'm searching for a mystical rock\naround here!\pDon't bother me til you beat everyon\nelse!$"

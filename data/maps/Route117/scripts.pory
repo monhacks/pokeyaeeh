@@ -202,6 +202,7 @@ script Route117_EventScript_Isaac2{
 	msgbox("Snorlax is a beast!\pI hope you and he can win many battles\nin the future!", MSGBOX_AUTOCLOSE)
 	msgbox("And this, too!")
 	giveitem(ITEM_TM_FACADE, 1)
+	setflag(FLAG_ROUTE_117_BOSS_DEFEATED)
 	msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!", MSGBOX_AUTOCLOSE)
 }
 
@@ -219,7 +220,6 @@ script Route117_EventScript_Isaac{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_Isaac2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_117_BOSS_DEFEATED)
 	    msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!", MSGBOX_AUTOCLOSE)
 	}
 	else{

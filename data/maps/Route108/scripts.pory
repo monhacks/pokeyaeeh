@@ -53,7 +53,8 @@ script Route108_EventScript_Jerome2{
 	msgbox(format("And this, too!"))
 	giveitem(ITEM_TM_BUBBLE_BEAM, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox("Bubble Beam is an excellent move!\pIt can also lower the foe's speed.")
+	setflag(FLAG_ROUTE_108_BOSS_DEFEATED)
+	msgbox("Bubble Beam is an excellent move!\pIt can also lower the foe's speed.", MSGBOX_NPC)
 	return
 }
 
@@ -75,8 +76,7 @@ script Route108_EventScript_Jerome{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_FOSTER, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated, Route108_EventScript_Jerome2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_108_BOSS_DEFEATED)
-		msgbox(Route108_Text_JeromePostBattle)
+		msgbox("Bubble Beam is an excellent move!\pIt can also lower the foe's speed.", MSGBOX_NPC)
 	}
 	else{
 		// before defeating every trainer here

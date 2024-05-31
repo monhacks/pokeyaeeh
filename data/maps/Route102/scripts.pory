@@ -110,8 +110,8 @@ script Route102_EventScript_Tiana2{
 	playfanfare(MUS_OBTAIN_ITEM)
 	giveitem(ITEM_TM_HONE_CLAWS, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
+	setflag(FLAG_ROUTE_102_BOSS_DEFEATED)
 	msgbox(("Berry Juice heal your Pokémon by a\nlittle when held in battle.\pThe TM I gave you will boost your\nPokémon's Attack and accuracy.\pIt'll be useful in your journey."), MSGBOX_NPC)
-	return
 }
 
 script Route102_EventScript_Tiana{
@@ -123,7 +123,6 @@ script Route102_EventScript_Tiana{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_TIANA, ("I'm going to keep winning and aim to be\nthe best Trainer.\pHelp me further my career!"), format("I ended up furthering your career…"), Route102_EventScript_Tiana2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_102_BOSS_DEFEATED)
 		msgbox(("Berry Juice heal your Pokémon by a\nlittle when held in battle.\pThe TM I gave you will boost your\nPokémon's Attack and accuracy.\pIt'll be useful in your journey."), MSGBOX_NPC)
 	}
 	else{

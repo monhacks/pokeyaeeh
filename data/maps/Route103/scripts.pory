@@ -358,6 +358,7 @@ script Route103_EventScript_Daisy2{
 	waitmessage()
 	msgbox(("That Voltorb…\pIt's one of a kind…\pPlease take good care of it."), MSGBOX_NPC)
 	giveitem(ITEM_TM_ENERGY_BALL, 1)
+	setflag(FLAG_ROUTE_103_BOSS_DEFEATED)
 	msgbox(("Energy Ball is a strong Grass-type\nattack that might lower the foe's\lSpecial Defense.\pIt's a really reliable move that'll\nnever let you down."), MSGBOX_NPC)
 	return
 }
@@ -375,7 +376,6 @@ script Route103_EventScript_Daisy{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated, Route103_EventScript_Daisy2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_103_BOSS_DEFEATED)
 		msgbox(("Energy Ball is a strong Grass-type\nattack that might lower the foe's\lSpecial Defense.\pIt's a really reliable move that'll\nnever let you down."), MSGBOX_NPC)
 	}
 	else{

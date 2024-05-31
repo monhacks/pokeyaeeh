@@ -566,6 +566,7 @@ Route109_EventScript_Huey2::
 	waitmessage
 	msgbox Route109_EventScript_Huey2_Text_2, MSGBOX_NPC
 	giveitem ITEM_ABSOLITE, 1
+	setflag FLAG_ROUTE_109_BOSS_DEFEATED
 	msgbox Route109_EventScript_Huey2_Text_3, MSGBOX_NPC
 	return
 
@@ -585,7 +586,6 @@ Route109_EventScript_Huey_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyDefeated, Route109_EventScript_Huey2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_109_BOSS_DEFEATED
 	msgbox Route109_EventScript_Huey_Text_0, MSGBOX_NPC
 	goto Route109_EventScript_Huey_1
 

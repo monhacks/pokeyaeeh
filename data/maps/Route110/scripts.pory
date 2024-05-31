@@ -1000,6 +1000,7 @@ script Route110_EventScript_Jaclyn2{
 	msgbox("Veluza is a fragile Pokémon.\pTake good care of it.", MSGBOX_AUTOCLOSE)
 	msgbox("And this, too!")
 	giveitem(ITEM_TM_PSYCHIC, 1)
+	setflag(FLAG_ROUTE_110_BOSS_DEFEATED)
 	msgbox("Psychic is a very reliable Psychic-type\nattack.\pVery psychic, isn't it?", MSGBOX_AUTOCLOSE)
 }
 
@@ -1021,7 +1022,6 @@ script Route110_EventScript_Jaclyn{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_JACLYN, Route110_Text_JaclynIntro, Route110_Text_JaclynDefeated, Route110_EventScript_Jaclyn2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_110_BOSS_DEFEATED)
 	    msgbox("Psychic is a very reliable Psychic-type attack.\pVery psychic, isn't it?", MSGBOX_AUTOCLOSE)
 	}
 	else{

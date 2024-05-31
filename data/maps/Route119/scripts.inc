@@ -618,6 +618,7 @@ Route119_EventScript_Donald2::
 	waitmessage
 	msgbox Route119_EventScript_Donald2_Text_2, MSGBOX_NPC
 	giveitem ITEM_PINSIRITE, 1
+	setflag FLAG_ROUTE_118_BOSS_DEFEATED
 	msgbox Route119_EventScript_Donald2_Text_3, MSGBOX_NPC
 	return
 
@@ -637,7 +638,6 @@ Route119_EventScript_Donald_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_DONALD, Route119_Text_DonaldIntro, Route119_Text_DonaldDefeat, Route119_EventScript_Donald2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_118_BOSS_DEFEATED
 	msgbox Route119_EventScript_Donald2_Text_3, MSGBOX_NPC
 	goto Route119_EventScript_Donald_1
 

@@ -51,7 +51,8 @@ Route108_EventScript_Jerome2::
 	msgbox Route108_EventScript_Jerome2_Text_1
 	giveitem ITEM_TM_BUBBLE_BEAM, 1
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Route108_EventScript_Jerome2_Text_2
+	setflag FLAG_ROUTE_108_BOSS_DEFEATED
+	msgbox Route108_EventScript_Jerome2_Text_2, MSGBOX_NPC
 	return
 
 
@@ -70,8 +71,7 @@ Route108_EventScript_Jerome_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_FOSTER, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated, Route108_EventScript_Jerome2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_108_BOSS_DEFEATED
-	msgbox Route108_Text_JeromePostBattle
+	msgbox Route108_EventScript_Jerome2_Text_2, MSGBOX_NPC
 	goto Route108_EventScript_Jerome_1
 
 Route108_EventScript_Jerome_4:

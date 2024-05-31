@@ -195,6 +195,7 @@ script Route123_EventScript_Violet2{
 	msgbox("Tropius is one of my favorite Pokémon.\pI hope you will cherish it.", MSGBOX_AUTOCLOSE)
 	msgbox("And this, too!")
 	giveitem(ITEM_TROPIUSITE, 1) // mega yet to be added
+	setflag(FLAG_ROUTE_123_BOSS_DEFEATED)
 	msgbox("Holding Tropiusite,\nyour Tropius will Mega Evolve!\pIt'll be much stronger and bulkier!", MSGBOX_AUTOCLOSE)
 }
 
@@ -218,7 +219,6 @@ script Route123_EventScript_Violet{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat, Route123_EventScript_Violet2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_123_BOSS_DEFEATED)
 	    msgbox("Holding Tropiusite,\nyour Tropius will Mega Evolve!\pIt'll be much stronger and bulkier!", MSGBOX_AUTOCLOSE)
 	}
 	else{

@@ -475,6 +475,7 @@ script Route116_EventScript_Dawson2{
 	playfanfare(MUS_OBTAIN_ITEM)
 	giveitem(ITEM_TM_SHOCK_WAVE, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
+	setflag(FLAG_ROUTE_116_BOSS_DEFEATED)
     msgbox(("Amulet Coin earns you more money in\ntrainer battles if your Pokémon\lholding it participates in the battle.\pAnd the TM, Shock Wave, is a reliable\nElectric-type attack.\pWhy? Cuz it never misses!"), MSGBOX_NPC)
     return
 }
@@ -494,7 +495,6 @@ script Route116_EventScript_Dawson{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_DAWSON, ("When you lay your eyes on my\nPokémon's gorgeous fur,\ltheir beauty will render you helpless!"), ("Oh, baby, say it isn't so!"), Route116_EventScript_Dawson2)
 		clearflag(B_FLAG_NO_BAG_USE)
-	    setflag(FLAG_ROUTE_116_BOSS_DEFEATED)
         msgbox(("Amulet Coin earns you more money in\ntrainer battles if your Pokémon\lholding it participates in the battle.\pAnd the TM, Shock Wave, is a reliable\nElectric-type attack.\pWhy? Cuz it never misses!"), MSGBOX_NPC)
 	}
 	else{

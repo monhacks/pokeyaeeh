@@ -1151,6 +1151,7 @@ script Route104_EventScript_Ivan2{
 	waitfanfare
 	giveitem(ITEM_TM_BOUNCE, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
+	setflag(FLAG_ROUTE_104_BOSS_DEFEATED)
 	msgbox(("Bouncy! Bouncy! Bouncy!\pBounce is the strongest Water-type\nmove!"), MSGBOX_NPC)
 	return
 }
@@ -1167,7 +1168,6 @@ script Route104_EventScript_Ivan{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_IVAN, ("Why keep it a secret?\pI'm the Water Pokémon expert!\pHuh?\nYou don't know me?"), ("I thought I wasn't too bad,\nif I may say so, but I guess not\p… Bleah…"), Route104_EventScript_Ivan2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_104_BOSS_DEFEATED)
 		msgbox("Bouncy! Bouncy! Bouncy!\pBounce is the strongest Water-type\nmove!")
 	}
 	else{

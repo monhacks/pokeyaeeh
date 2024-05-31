@@ -472,6 +472,7 @@ Route116_EventScript_Dawson2::
 	playfanfare MUS_OBTAIN_ITEM
 	giveitem ITEM_TM_SHOCK_WAVE, 1
 	playfanfare MUS_OBTAIN_ITEM
+	setflag FLAG_ROUTE_116_BOSS_DEFEATED
 	msgbox Route116_EventScript_Dawson2_Text_1, MSGBOX_NPC
 	return
 
@@ -491,7 +492,6 @@ Route116_EventScript_Dawson_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_DAWSON, Route116_EventScript_Dawson_Text_0, Route116_EventScript_Dawson_Text_1, Route116_EventScript_Dawson2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_116_BOSS_DEFEATED
 	msgbox Route116_EventScript_Dawson2_Text_1, MSGBOX_NPC
 	goto Route116_EventScript_Dawson_1
 

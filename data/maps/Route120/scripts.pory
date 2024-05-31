@@ -443,6 +443,7 @@ script Route120_EventScript_Ydarissep2{
 	msgbox("JusticeForScizor!", MSGBOX_AUTOCLOSE)
 	msgbox("You need it's Mega Stone, bozo.\pHere.")
 	giveitem(ITEM_SCIZORITE, 1)
+	setflag(FLAG_ROUTE_120_BOSS_DEFEATED)
 	msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice!", MSGBOX_AUTOCLOSE)
 }
 
@@ -464,7 +465,6 @@ script Route120_EventScript_Ydarissep{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_YDARISSEP, Route120_Text_YdarissepIntro, Route120_Text_YdarissepDefeat, Route120_EventScript_Ydarissep2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		setflag(FLAG_ROUTE_120_BOSS_DEFEATED)
 	    msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice", MSGBOX_AUTOCLOSE)
 	}
 	else{

@@ -219,6 +219,7 @@ Route118_EventScript_Chester2::
 	waitmessage
 	msgbox Route118_EventScript_Chester2_Text_2, MSGBOX_NPC
 	giveitem ITEM_PIDGEOTITE, 1
+	setflag FLAG_ROUTE_118_BOSS_DEFEATED
 	msgbox Route118_EventScript_Chester2_Text_3, MSGBOX_NPC
 	return
 
@@ -238,7 +239,6 @@ Route118_EventScript_Chester_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_CHESTER, Route118_Text_ChesterIntro, Route118_Text_ChesterDefeat, Route118_EventScript_Chester2
 	clearflag B_FLAG_NO_BAG_USE
-	setflag FLAG_ROUTE_118_BOSS_DEFEATED
 	msgbox Route118_EventScript_Chester2_Text_3, MSGBOX_NPC
 	goto Route118_EventScript_Chester_1
 
