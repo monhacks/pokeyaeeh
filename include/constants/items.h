@@ -1208,8 +1208,9 @@
 #define ITEM_NIDOKINGITE 905
 #define ITEM_MILOTICITE 906
 #define ITEM_RAICHUNITE 907
+#define ITEM_TROPIUSITE 908
 
-#define ITEMS_COUNT 908
+#define ITEMS_COUNT 909
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

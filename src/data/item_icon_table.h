@@ -389,6 +389,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_NIDOKINGITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
     [ITEM_MILOTICITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
     [ITEM_RAICHUNITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
+    [ITEM_TROPIUSITE] = {gItemIcon_Salamencite, gItemIconPalette_Salamencite},
     // Gems
     [ITEM_NORMAL_GEM] = {gItemIcon_NormalGem, gItemIconPalette_NormalGem},
     [ITEM_FIRE_GEM] = {gItemIcon_FireGem, gItemIconPalette_FireGem},

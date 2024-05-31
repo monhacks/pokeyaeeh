@@ -4444,6 +4444,11 @@ static const u8 sRaichuniteDesc[] = _(
     "Raichu to Mega\n"
     "Evolve in battle.");
 
+static const u8 sTropiusiteDesc[] = _(
+    "This stone enables\n"
+    "Tropius to Mega\n"
+    "Evolve in battle.");
+
 static const u8 sCandyBoxDesc[] = _(
     "A candy box filled\n"
     "with treats! Maxes\n"

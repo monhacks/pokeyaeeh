@@ -46,11 +46,6 @@ Route123_EventScript_Braxton::
 	msgbox Route123_Text_BraxtonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route123_EventScript_Violet::
-	trainerbattle_single TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat
-	msgbox Route123_Text_VioletPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route123_EventScript_Cameron::
 	trainerbattle_single TRAINER_CAMERON_1, Route123_Text_CameronIntro, Route123_Text_CameronDefeat, Route123_EventScript_RegisterCameron
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -184,3 +179,52 @@ Route123_Text_BerryMastersHouse:
 	.string "Berry Master's House$"
 
 `
+
+//Route123_EventScript_Violet::
+//	trainerbattle_single TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat
+//	msgbox Route123_Text_VioletPostBattle, MSGBOX_AUTOCLOSE
+//	end
+
+script Route123_EventScript_Violet2{
+	msgbox("Speaking of Berries…")
+	givemon(SPECIES_TROPIUS, 0, ITEM_SITRUS_BERRY, ITEM_CHERISH_BALL, 15, 2, MON_FEMALE, 252, 0, 0, 0, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_ENERGY_BALL, MOVE_LEAF_STORM, MOVE_JETSTREAM, MOVE_GROWTH, TRUE)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received an Tropius!")
+	waitmessage
+	waitfanfare
+	msgbox("Tropius is one of my favorite Pokémon.\pI hope you will cherish it.", MSGBOX_AUTOCLOSE)
+	msgbox("And this, too!")
+	giveitem(ITEM_TROPIUSITE, 1) // mega yet to be added
+	msgbox("Holding Tropiusite,\nyour Tropius will Mega Evolve!\pIt'll be much stronger and bulkier!", MSGBOX_AUTOCLOSE)
+}
+
+script Route123_EventScript_Violet{
+    lock
+    faceplayer
+	if(defeated(TRAINER_WENDY) &&
+	   defeated(TRAINER_BRAXTON) &&
+	   defeated(TRAINER_CAMERON_1) &&
+	   defeated(TRAINER_JACKI_1) &&
+	   defeated(TRAINER_MIU_AND_YUKI) &&
+	   defeated(TRAINER_KINDRA) &&
+	   defeated(TRAINER_FREDRICK) &&
+	   defeated(TRAINER_ALBERTO) &&
+	   defeated(TRAINER_ED) &&
+	   defeated(TRAINER_KAYLEY) &&
+	   defeated(TRAINER_JONAS) &&
+	   defeated(TRAINER_JAZMYN) &&
+	   defeated(TRAINER_DAVIS) &&
+	   defeated(TRAINER_FERNANDO_1)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat, Route123_EventScript_Violet2)
+		clearflag(B_FLAG_NO_BAG_USE)
+		setflag(FLAG_ROUTE_123_BOSS_DEFEATED)
+	    msgbox("Holding Tropiusite,\nyour Tropius will Mega Evolve!\pIt'll be much stronger and bulkier!", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Good times are good aromas!\pOh. You want a battle?\pI accept your challenge,\njust not now.", MSGBOX_AUTOCLOSE)
+	}
+    release
+    end
+}

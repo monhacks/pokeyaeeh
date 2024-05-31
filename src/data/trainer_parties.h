@@ -1062,7 +1062,7 @@ static const struct TrainerMon sParty_Felix[] = {
     }
 };
 
-static const struct TrainerMon sParty_Violet[] = {
+static const struct TrainerMon sParty_Violet[] = { // Route Boss
     {
         .species = SPECIES_DHELMISE,
         .heldItem = ITEM_CHOICE_BAND,
@@ -1100,6 +1100,26 @@ static const struct TrainerMon sParty_Violet[] = {
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_LEAF_BLADE, MOVE_X_SCISSOR},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_TROPIUS,
+        .heldItem = ITEM_TROPIUSITE,
+        .ability = ABILITY_HARVEST,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .moves = {MOVE_ENERGY_BALL, MOVE_LEAF_STORM, MOVE_JETSTREAM, MOVE_GROWTH},
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_MEOWSCARADA,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_TINTED_LENS,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .moves = {MOVE_FLOWER_TRICK, MOVE_BULLET_SEED, MOVE_KNOCK_OFF, MOVE_GROWTH},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 1
     }

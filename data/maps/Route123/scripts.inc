@@ -45,11 +45,6 @@ Route123_EventScript_Braxton::
 	msgbox Route123_Text_BraxtonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route123_EventScript_Violet::
-	trainerbattle_single TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat
-	msgbox Route123_Text_VioletPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route123_EventScript_Cameron::
 	trainerbattle_single TRAINER_CAMERON_1, Route123_Text_CameronIntro, Route123_Text_CameronDefeat, Route123_EventScript_RegisterCameron
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -181,3 +176,120 @@ Route123_Text_RouteSignMtPyre:
 
 Route123_Text_BerryMastersHouse:
 	.string "Berry Master's House$"
+
+Route123_EventScript_Violet2::
+	msgbox Route123_EventScript_Violet2_Text_0
+	givemon SPECIES_TROPIUS, 0, ITEM_SITRUS_BERRY, ITEM_CHERISH_BALL, 15, 2, MON_FEMALE, 252, 0, 0, 0, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_ENERGY_BALL, MOVE_LEAF_STORM, MOVE_JETSTREAM, MOVE_GROWTH, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	message Route123_EventScript_Violet2_Text_1
+	waitmessage
+	waitfanfare
+	msgbox Route123_EventScript_Violet2_Text_2, MSGBOX_AUTOCLOSE
+	msgbox Route123_EventScript_Violet2_Text_3
+	giveitem ITEM_TROPIUSITE, 1
+	msgbox Route123_EventScript_Violet2_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+
+Route123_EventScript_Violet::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_WENDY
+	goto_if 1, Route123_EventScript_Violet_5
+Route123_EventScript_Violet_3:
+	msgbox Route123_EventScript_Violet_Text_0, MSGBOX_AUTOCLOSE
+Route123_EventScript_Violet_1:
+	release
+	end
+
+Route123_EventScript_Violet_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_VIOLET, Route123_Text_VioletIntro, Route123_Text_VioletDefeat, Route123_EventScript_Violet2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_123_BOSS_DEFEATED
+	msgbox Route123_EventScript_Violet2_Text_4, MSGBOX_AUTOCLOSE
+	goto Route123_EventScript_Violet_1
+
+Route123_EventScript_Violet_4:
+	checktrainerflag TRAINER_CAMERON_1
+	goto_if 1, Route123_EventScript_Violet_9
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_5:
+	checktrainerflag TRAINER_BRAXTON
+	goto_if 1, Route123_EventScript_Violet_4
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_8:
+	checktrainerflag TRAINER_MIU_AND_YUKI
+	goto_if 1, Route123_EventScript_Violet_13
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_9:
+	checktrainerflag TRAINER_JACKI_1
+	goto_if 1, Route123_EventScript_Violet_8
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_12:
+	checktrainerflag TRAINER_FREDRICK
+	goto_if 1, Route123_EventScript_Violet_17
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_13:
+	checktrainerflag TRAINER_KINDRA
+	goto_if 1, Route123_EventScript_Violet_12
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_16:
+	checktrainerflag TRAINER_ED
+	goto_if 1, Route123_EventScript_Violet_21
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_17:
+	checktrainerflag TRAINER_ALBERTO
+	goto_if 1, Route123_EventScript_Violet_16
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_20:
+	checktrainerflag TRAINER_JONAS
+	goto_if 1, Route123_EventScript_Violet_25
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_21:
+	checktrainerflag TRAINER_KAYLEY
+	goto_if 1, Route123_EventScript_Violet_20
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_24:
+	checktrainerflag TRAINER_DAVIS
+	goto_if 1, Route123_EventScript_Violet_28
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_25:
+	checktrainerflag TRAINER_JAZMYN
+	goto_if 1, Route123_EventScript_Violet_24
+	goto Route123_EventScript_Violet_3
+
+Route123_EventScript_Violet_28:
+	checktrainerflag TRAINER_FERNANDO_1
+	goto_if 1, Route123_EventScript_Violet_2
+	goto Route123_EventScript_Violet_3
+
+
+Route123_EventScript_Violet2_Text_0:
+	.string "Speaking of Berries…$"
+
+Route123_EventScript_Violet2_Text_1:
+	.string "{PLAYER} received an Tropius!$"
+
+Route123_EventScript_Violet2_Text_2:
+	.string "Tropius is one of my favorite Pokémon.\pI hope you will cherish it.$"
+
+Route123_EventScript_Violet2_Text_3:
+	.string "And this, too!$"
+
+Route123_EventScript_Violet2_Text_4:
+	.string "Holding Tropiusite,\nyour Tropius will Mega Evolve!\pIt'll be much stronger and bulkier!$"
+
+Route123_EventScript_Violet_Text_0:
+	.string "Good times are good aromas!\pOh. You want a battle?\pI accept your challenge,\njust not now.$"

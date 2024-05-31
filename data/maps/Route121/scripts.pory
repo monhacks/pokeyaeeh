@@ -183,11 +183,6 @@ Route121_Text_SafariZoneSign:
 
 `
 
-//Route121_EventScript_RouteBossCouple::
-//	trainerbattle_single TRAINER_KATE_AND_JOY, Route121_Text_RouteBossCoupleIntro, Route121_Text_RouteBossCoupleDefeat
-//	msgbox Route121_Text_RouteBossCouplePostBattle, MSGBOX_AUTOCLOSE
-//	end
-
 script Route121_EventScript_RouteBossCouple2{
 	msgbox("Kate: We got defeated!\pJoy: Here's a gift from us to you!")
 	giveitem(ITEM_NIDOQUEENITE, 1)
