@@ -7478,11 +7478,11 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         trainerMoney = gTrainerClasses[gTrainers[trainerId].trainerClass].money;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 32 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 128 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
         else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-            moneyReward = 32 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
+            moneyReward = 128 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
         else
-            moneyReward = 32 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 128 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
     }
 
     return moneyReward;
