@@ -5170,7 +5170,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
 				gBattleScripting.abilityPopupOverwrite = ABILITY_TAILSTREAM;
 				gLastUsedAbility = ABILITY_TAILSTREAM;
 				gSideStatuses[GetBattlerSide(battler)] |= SIDE_STATUS_TAILWIND;
-				gSideTimers[GetBattlerSide(battler)].tailwindTimer = 2;
+				gSideTimers[GetBattlerSide(battler)].tailwindTimer = 3;
 				BattleScriptPushCursorAndCallback(BattleScript_TailstreamActivated);
 				effect++;
 			}
