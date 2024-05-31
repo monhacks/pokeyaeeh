@@ -184,12 +184,12 @@ Route121_Text_SafariZoneSign:
 `
 
 script Route121_EventScript_RouteBossCouple2{
-	msgbox("Kate: We got defeated!\pJoy: Here's a gift from us to you!")
+	msgbox("Yuuki: We got defeated!\pJoy: Here's a gift from us to you!")
 	giveitem(ITEM_NIDOQUEENITE, 1)
-	msgbox("Joy: Holding Nidoqueenite,\nyour Nidoqueen becomes mighty and\lstrong!\pKate: And from me.")
+	msgbox("Himari: Holding Nidoqueenite,\nyour Nidoqueen becomes mighty and\lstrong!\pKate: And from me.")
 	giveitem(ITEM_NIDOKINGITE, 1)
 	setflag(FLAG_ROUTE_121_BOSS_DEFEATED)
-	msgbox("Kate: Holding Nidokingite,\nyour Nidoking becomes a badass\lwarrior! Undefeatable!", MSGBOX_NPC)
+	msgbox("Yuuki: Holding Nidokingite,\nyour Nidoking becomes a badass\lwarrior! Undefeatable!", MSGBOX_NPC)
 }
 
 script Route121_EventScript_RouteBossCouple{
@@ -211,7 +211,7 @@ script Route121_EventScript_RouteBossCouple{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Kate: You're single!\pJoy: How embarrassing…\pKate: We're always together,\nand you're alone.\pJoy: Talk to us after you beat\neverybody else here!", MSGBOX_AUTOCLOSE)
+		msgbox("Yuuki: You're single!\pJoy: How embarrassing…\pKate: We're always together,\nand you're alone.\pJoy: Talk to us after you beat\neverybody else here!", MSGBOX_AUTOCLOSE)
 	}
     release
     end

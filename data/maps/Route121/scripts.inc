@@ -250,16 +250,16 @@ Route121_EventScript_RouteBossCouple_17:
 
 
 Route121_EventScript_RouteBossCouple2_Text_0:
-	.string "Kate: We got defeated!\pJoy: Here's a gift from us to you!$"
+	.string "Yuuki: We got defeated!\pJoy: Here's a gift from us to you!$"
 
 Route121_EventScript_RouteBossCouple2_Text_1:
-	.string "Joy: Holding Nidoqueenite,\nyour Nidoqueen becomes mighty and\lstrong!\pKate: And from me.$"
+	.string "Himari: Holding Nidoqueenite,\nyour Nidoqueen becomes mighty and\lstrong!\pKate: And from me.$"
 
 Route121_EventScript_RouteBossCouple2_Text_2:
-	.string "Kate: Holding Nidokingite,\nyour Nidoking becomes a badass\lwarrior! Undefeatable!$"
+	.string "Yuuki: Holding Nidokingite,\nyour Nidoking becomes a badass\lwarrior! Undefeatable!$"
 
 Route121_EventScript_RouteBossCouple_Text_0:
 	.string "That was an amazing battle!\pMega Power rocks!$"
 
 Route121_EventScript_RouteBossCouple_Text_1:
-	.string "Kate: You're single!\pJoy: How embarrassing…\pKate: We're always together,\nand you're alone.\pJoy: Talk to us after you beat\neverybody else here!$"
+	.string "Yuuki: You're single!\pJoy: How embarrassing…\pKate: We're always together,\nand you're alone.\pJoy: Talk to us after you beat\neverybody else here!$"

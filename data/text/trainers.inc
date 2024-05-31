@@ -3194,15 +3194,15 @@ Route121_Text_TammyPostBattle:
 	.string "at work there…$"
 
 Route121_Text_RouteBossCoupleIntro:
-	.string "Kate: We live together!\p"
-	.string "Joy: We'll win together!$"
+	.string "Yuuki: We live together!\p"
+	.string "Himari: We'll win together!$"
 
 Route121_Text_RouteBossCoupleDefeat:
-	.string "Kate: We lost together…\p"
-	.string "Joy: But still together!$"
+	.string "Yuuki: We lost together…\p"
+	.string "Himari: But still together!$"
 
 Route121_Text_RouteBossCouplePostBattle:
-	.string "Kate: When someone's relying on me,\n"
+	.string "Yuuki: When someone's relying on me,\n"
 	.string "I get this urge to look cool in front\l"
 	.string "of them…$"
 
