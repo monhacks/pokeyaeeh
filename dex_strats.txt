@@ -289,7 +289,7 @@ Aegislash
 Decidueye
 {
     name = Unburden Sweeper
-    item = Focus Sash/Weakness Policy
+    item = Focus Sash / Weakness Policy
     ability = Unburden
     evs = 0, 252, 4, 0, 0, 252
     nature = Jolly
