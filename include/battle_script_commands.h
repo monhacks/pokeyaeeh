@@ -57,6 +57,7 @@ bool32 IsMoveNotAllowedInSkyBattles(u32 move);
 bool32 DoSwitchInAbilitiesItems(u32 battlerId);
 u8 GetFirstFaintedPartyIndex(u8 battlerId);
 bool32 IsMoveAffectedByParentalBond(u32 move, u32 battler);
+bool32 IsMoveAffectedByBoxerBarrage(u32 move, u32 battler);
 bool32 DoSwitchInAbilities(u32 battlerId);
 bool8 CanPreventAnyStatLoss(u32 battler, u32 move, u16 abilityDef);
 

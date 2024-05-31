@@ -1328,6 +1328,18 @@ static void Cmd_attackcanceler(void)
         return;
     }
 
+    if (gSpecialStatuses[gBattlerAttacker].boxerBarrageState == BOXER_OFF
+    && GetBattlerAbility(gBattlerAttacker) == ABILITY_BOXER_BARRAGE
+    && IsMoveAffectedByBoxerBarrage(gCurrentMove, gBattlerAttacker)
+    && !(gAbsentBattlerFlags & gBitTable[gBattlerTarget])
+    && gBattleStruct->zmove.toBeUsed[gBattlerAttacker] == MOVE_NONE)
+    {
+        gSpecialStatuses[gBattlerAttacker].boxerBarrageState = BOXER_1ST_HIT;
+        gMultiHitCounter = 2;
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+        return;
+    }
+
     // Check Protean activation.
     if (ProteanTryChangeType(gBattlerAttacker, attackerAbility, gCurrentMove, moveType))
     {
@@ -1477,6 +1489,12 @@ static void Cmd_attackcanceler(void)
         if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT)
         {
             gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF; // No second hit if first hit was blocked
+            gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
+            gMultiHitCounter = 0;
+        }
+        else if (gSpecialStatuses[gBattlerAttacker].boxerBarrageState == BOXER_1ST_HIT)
+        {
+            gSpecialStatuses[gBattlerAttacker].boxerBarrageState = BOXER_OFF; // No second hit if first hit was blocked
             gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
             gMultiHitCounter = 0;
         }
@@ -1803,7 +1821,8 @@ static void Cmd_accuracycheck(void)
         else if (!JumpIfMoveAffectedByProtect(gCurrentMove))
             gBattlescriptCurrInstr = cmd->nextInstr;
     }
-    else if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_2ND_HIT
+    else if ((gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_2ND_HIT
+           || gSpecialStatuses[gBattlerAttacker].boxerBarrageState == BOXER_2ND_HIT)
         || (gSpecialStatuses[gBattlerAttacker].multiHitOn
         && (abilityAtk == ABILITY_SKILL_LINK || holdEffectAtk == HOLD_EFFECT_LOADED_DICE
         || !(gBattleMoves[move].effect == EFFECT_TRIPLE_KICK || gBattleMoves[move].effect == EFFECT_POPULATION_BOMB))))
@@ -1900,7 +1919,8 @@ static void Cmd_ppreduce(void)
         if (gCurrentMove == gLastResultingMoves[gBattlerAttacker]
             && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
             && !WasUnableToUseMove(gBattlerAttacker)
-            && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT) // Don't increment counter on first hit
+            && (gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT
+                || gSpecialStatuses[gBattlerAttacker].boxerBarrageState != BOXER_1ST_HIT)) // Don't increment counter on first hit
                 gBattleStruct->sameMoveTurns[gBattlerAttacker]++;
         else
             gBattleStruct->sameMoveTurns[gBattlerAttacker] = 0;
@@ -2244,6 +2264,12 @@ static void Cmd_attackanimation(void)
     else
     {
         if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_2ND_HIT) // No animation on second hit
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+
+        if (gSpecialStatuses[gBattlerAttacker].boxerBarrageState == BOXER_2ND_HIT) // No animation on second hit
         {
             gBattlescriptCurrInstr = cmd->nextInstr;
             return;
@@ -2836,7 +2862,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
     u16 battlerAbility;
     bool8 activateAfterFaint = FALSE;
 
-    if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT
+    if ((gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT
+        || gSpecialStatuses[gBattlerAttacker].boxerBarrageState == BOXER_1ST_HIT)
         && IsBattlerAlive(gBattlerTarget)
         && IsFinalStrikeEffect(gBattleScripting.moveEffect))
     {
@@ -5959,6 +5986,9 @@ static void Cmd_moveend(void)
                     {
                         if (gSpecialStatuses[gBattlerAttacker].parentalBondState)
                             gSpecialStatuses[gBattlerAttacker].parentalBondState--;
+                            
+                        if (gSpecialStatuses[gBattlerAttacker].boxerBarrageState)
+                            gSpecialStatuses[gBattlerAttacker].boxerBarrageState--;
 
                         gHitMarker |= (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING);
                         gBattleScripting.animTargetsHit = 0;
@@ -5982,6 +6012,7 @@ static void Cmd_moveend(void)
             }
             gMultiHitCounter = 0;
             gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF;
+            gSpecialStatuses[gBattlerAttacker].boxerBarrageState = BOXER_OFF;
             gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
             gBattleScripting.moveendState++;
             break;
@@ -11405,7 +11436,9 @@ static void Cmd_stockpiletobasedamage(void)
         if (gBattleCommunication[MISS_TYPE] != B_MSG_PROTECTED)
             gBattleScripting.animTurn = gDisableStructs[gBattlerAttacker].stockpileCounter;
 
-        if (!(gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT && IsBattlerAlive(gBattlerTarget)))
+        if (!(((gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT)
+        || (gSpecialStatuses[gBattlerAttacker].boxerBarrageState == BOXER_1ST_HIT))
+        && IsBattlerAlive(gBattlerTarget)))
         {
             gBattleStruct->moveEffect2 = MOVE_EFFECT_STOCKPILE_WORE_OFF;
         }
@@ -15874,6 +15907,38 @@ bool32 IsMoveAffectedByParentalBond(u32 move, u32 battler)
 {
     if (move != MOVE_NONE && move != MOVE_UNAVAILABLE && move != MOVE_STRUGGLE
         && !gBattleMoves[move].parentalBondBanned
+        && gBattleMoves[move].split != SPLIT_STATUS
+        && gBattleMoves[move].strikeCount < 2
+        && gBattleMoves[move].effect != EFFECT_MULTI_HIT)
+    {
+        if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+        {
+            switch (GetBattlerMoveTargetType(battler, move))
+            {
+            // Both foes are alive, spread move strikes once
+            case MOVE_TARGET_BOTH:
+                if (CountAliveMonsInBattle(BATTLE_ALIVE_SIDE, gBattlerTarget) >= 2)
+                    return FALSE;
+                break;
+            // Either both foes or one foe and its ally are alive; spread move strikes once
+            case MOVE_TARGET_FOES_AND_ALLY:
+                if (CountAliveMonsInBattle(BATTLE_ALIVE_EXCEPT_BATTLER, gBattlerAttacker) >= 2)
+                    return FALSE;
+                break;
+            default:
+            break;
+            }
+        }
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool32 IsMoveAffectedByBoxerBarrage(u32 move, u32 battler)
+{
+    if (move != MOVE_NONE && move != MOVE_UNAVAILABLE && move != MOVE_STRUGGLE
+        && !gBattleMoves[move].parentalBondBanned
+        && gBattleMoves[move].punchingMove
         && gBattleMoves[move].split != SPLIT_STATUS
         && gBattleMoves[move].strikeCount < 2
         && gBattleMoves[move].effect != EFFECT_MULTI_HIT)
