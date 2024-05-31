@@ -5409,11 +5409,69 @@ static const struct TrainerMon sParty_Cameron5[] = {
     }
 };
 
-static const struct TrainerMon sParty_Jaclyn[] = {
+static const struct TrainerMon sParty_Jaclyn[] = { // Route Boss
     {
-    .lvl = 1,
-    .species = SPECIES_ABRA,
-    .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+        .species = SPECIES_VELUZA,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = ABILITY_SHARPNESS,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_FILLET_AWAY, MOVE_AQUA_CUTTER, MOVE_PSYCHO_CUT, MOVE_SCALE_SHOT},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_INDEEDEE_FEMALE,
+        .heldItem = ITEM_TERRAIN_EXTENDER,
+        .gender = TRAINER_MON_FEMALE,
+        .ability = ABILITY_PSYCHIC_SURGE,
+        .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_BOLD),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_FOLLOW_ME, MOVE_HYPER_VOICE, MOVE_PSYCHIC, MOVE_MYSTICAL_FIRE},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_ARMAROUGE,
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ability = ABILITY_FLASH_FIRE,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_ARMOR_CANNON, MOVE_AURA_SPHERE, MOVE_PSYCHIC, MOVE_ENERGY_BALL},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_GALLADE,
+        .heldItem = ITEM_EXPERT_BELT,
+        .gender = TRAINER_MON_MALE,
+        .ability = ABILITY_SHARPNESS,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_LEAF_BLADE, MOVE_SACRED_SWORD, MOVE_PSYCHO_CUT, MOVE_AQUA_CUTTER},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_ALAKAZAM,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_SYNCHRONIZE,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_JYNX,
+        .heldItem = ITEM_FOCUS_SASH,
+        .gender = TRAINER_MON_FEMALE,
+        .ability = ABILITY_DRY_SKIN,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_LOVELY_KISS, MOVE_ICE_BEAM, MOVE_DRAINING_KISS, MOVE_PSYCHIC},
+        .lvl = 1
     }
 };
 

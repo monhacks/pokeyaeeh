@@ -170,11 +170,6 @@ Route110_EventScript_Edward::
 	msgbox Route110_Text_EdwardPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route110_EventScript_Jaclyn::
-	trainerbattle_single TRAINER_JACLYN, Route110_Text_JaclynIntro, Route110_Text_JaclynDefeated
-	msgbox Route110_Text_JaclynPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route110_EventScript_Edwin::
 	trainerbattle_single TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -197,7 +192,7 @@ Route110_EventScript_EdwinRematch::
 	end
 
 Route110_EventScript_Dale::
-	@ trainerbattle_single TRAINER_DALE, Route110_Text_DaleIntro, Route110_Text_DaleDefeated @ need to script this later
+	trainerbattle_single TRAINER_DALE, Route110_Text_DaleIntro, Route110_Text_DaleDefeated @ need to script this later
 	msgbox Route110_Text_DalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -991,3 +986,113 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "… … … … … …\p"
 	.string "Well, I had better get going.\n"
 	.string "See you again, {PLAYER}{KUN}!$"
+
+Route110_EventScript_Jaclyn2::
+	msgbox Route110_EventScript_Jaclyn2_Text_0
+	givemon SPECIES_VELUZA, 0, ITEM_SITRUS_BERRY, ITEM_CHERISH_BALL, 13, 2, MON_FEMALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_FILLET_AWAY, MOVE_AQUA_CUTTER, MOVE_PSYCHO_CUT, MOVE_SCALE_SHOT, TRUE
+	playfanfare MUS_OBTAIN_ITEM
+	message Route110_EventScript_Jaclyn2_Text_1
+	waitmessage
+	waitfanfare
+	msgbox Route110_EventScript_Jaclyn2_Text_2, MSGBOX_AUTOCLOSE
+	msgbox Route110_EventScript_Jaclyn2_Text_3
+	giveitem ITEM_TM_PSYCHIC, 1
+	msgbox Route110_EventScript_Jaclyn2_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+
+Route110_EventScript_Jaclyn::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_EDWARD
+	goto_if 1, Route110_EventScript_Jaclyn_5
+Route110_EventScript_Jaclyn_3:
+	msgbox Route110_EventScript_Jaclyn_Text_1, MSGBOX_AUTOCLOSE
+Route110_EventScript_Jaclyn_1:
+	release
+	end
+
+Route110_EventScript_Jaclyn_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_JACLYN, Route110_Text_JaclynIntro, Route110_Text_JaclynDefeated, Route110_EventScript_Jaclyn2
+	clearflag B_FLAG_NO_BAG_USE
+	setflag FLAG_ROUTE_110_BOSS_DEFEATED
+	msgbox Route110_EventScript_Jaclyn_Text_0, MSGBOX_AUTOCLOSE
+	goto Route110_EventScript_Jaclyn_1
+
+Route110_EventScript_Jaclyn_4:
+	checktrainerflag TRAINER_DALE
+	goto_if 1, Route110_EventScript_Jaclyn_9
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_5:
+	checktrainerflag TRAINER_EDWIN_1
+	goto_if 1, Route110_EventScript_Jaclyn_4
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_8:
+	checktrainerflag TRAINER_JASMINE
+	goto_if 1, Route110_EventScript_Jaclyn_13
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_9:
+	checktrainerflag TRAINER_JACOB
+	goto_if 1, Route110_EventScript_Jaclyn_8
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_12:
+	checktrainerflag TRAINER_ABIGAIL_1
+	goto_if 1, Route110_EventScript_Jaclyn_17
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_13:
+	checktrainerflag TRAINER_BENJAMIN_1
+	goto_if 1, Route110_EventScript_Jaclyn_12
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_16:
+	checktrainerflag TRAINER_TIMMY
+	goto_if 1, Route110_EventScript_Jaclyn_21
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_17:
+	checktrainerflag TRAINER_ISABEL_1
+	goto_if 1, Route110_EventScript_Jaclyn_16
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_20:
+	checktrainerflag TRAINER_JOSEPH
+	goto_if 1, Route110_EventScript_Jaclyn_24
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_21:
+	checktrainerflag TRAINER_KALEB
+	goto_if 1, Route110_EventScript_Jaclyn_20
+	goto Route110_EventScript_Jaclyn_3
+
+Route110_EventScript_Jaclyn_24:
+	checktrainerflag TRAINER_ALYSSA
+	goto_if 1, Route110_EventScript_Jaclyn_2
+	goto Route110_EventScript_Jaclyn_3
+
+
+Route110_EventScript_Jaclyn2_Text_0:
+	.string "Wonderful!\pI still couldn't predict this coming.$"
+
+Route110_EventScript_Jaclyn2_Text_1:
+	.string "{PLAYER} received a Veluza!$"
+
+Route110_EventScript_Jaclyn2_Text_2:
+	.string "Veluza is a fragile Pokémon.\pTake good care of it.$"
+
+Route110_EventScript_Jaclyn2_Text_3:
+	.string "And this, too!$"
+
+Route110_EventScript_Jaclyn2_Text_4:
+	.string "Psychic is a very reliable Psychic-type\nattack.\pVery psychic, isn't it?$"
+
+Route110_EventScript_Jaclyn_Text_0:
+	.string "Psychic is a very reliable Psychic-type attack.\pVery psychic, isn't it?$"
+
+Route110_EventScript_Jaclyn_Text_1:
+	.string "It would be a miracle if accept your\nbattle.\pOr you beat everyone else here.\pSince you didn't, why not do that?$"

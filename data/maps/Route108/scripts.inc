@@ -58,7 +58,7 @@ Route108_EventScript_Jerome2::
 Route108_EventScript_Jerome::
 	lock
 	faceplayer
-	checktrainerflag TRAINER_MISSY
+	checktrainerflag TRAINER_DARRIN
 	goto_if 1, Route108_EventScript_Jerome_5
 Route108_EventScript_Jerome_3:
 	msgbox Route108_EventScript_Jerome_Text_0
@@ -75,23 +75,53 @@ Route108_EventScript_Jerome_2:
 	goto Route108_EventScript_Jerome_1
 
 Route108_EventScript_Jerome_4:
-	checktrainerflag TRAINER_TARA
+	checktrainerflag TRAINER_DENISE
 	goto_if 1, Route108_EventScript_Jerome_9
 	goto Route108_EventScript_Jerome_3
 
 Route108_EventScript_Jerome_5:
-	checktrainerflag TRAINER_MATTHEW
+	checktrainerflag TRAINER_TONY_1
 	goto_if 1, Route108_EventScript_Jerome_4
 	goto Route108_EventScript_Jerome_3
 
 Route108_EventScript_Jerome_8:
+	checktrainerflag TRAINER_LISA_AND_RAY
+	goto_if 1, Route108_EventScript_Jerome_13
+	goto Route108_EventScript_Jerome_3
+
+Route108_EventScript_Jerome_9:
+	checktrainerflag TRAINER_BETH
+	goto_if 1, Route108_EventScript_Jerome_8
+	goto Route108_EventScript_Jerome_3
+
+Route108_EventScript_Jerome_12:
+	checktrainerflag TRAINER_MISSY
+	goto_if 1, Route108_EventScript_Jerome_17
+	goto Route108_EventScript_Jerome_3
+
+Route108_EventScript_Jerome_13:
+	checktrainerflag TRAINER_CAMRON
+	goto_if 1, Route108_EventScript_Jerome_12
+	goto Route108_EventScript_Jerome_3
+
+Route108_EventScript_Jerome_16:
+	checktrainerflag TRAINER_TARA
+	goto_if 1, Route108_EventScript_Jerome_21
+	goto Route108_EventScript_Jerome_3
+
+Route108_EventScript_Jerome_17:
+	checktrainerflag TRAINER_MATTHEW
+	goto_if 1, Route108_EventScript_Jerome_16
+	goto Route108_EventScript_Jerome_3
+
+Route108_EventScript_Jerome_20:
 	checktrainerflag TRAINER_CORY_1
 	goto_if 1, Route108_EventScript_Jerome_2
 	goto Route108_EventScript_Jerome_3
 
-Route108_EventScript_Jerome_9:
+Route108_EventScript_Jerome_21:
 	checktrainerflag TRAINER_CAROLINA
-	goto_if 1, Route108_EventScript_Jerome_8
+	goto_if 1, Route108_EventScript_Jerome_20
 	goto Route108_EventScript_Jerome_3
 
 

@@ -1240,7 +1240,7 @@
 #define FLAG_ROUTE_111_BOSS_DEFEATED                                0x49C // Route 111 Boss Black Belt Daisuke
 #define FLAG_ROUTE_118_BOSS_DEFEATED                                0x49D // Route 118 Boss Bird Keeper Chester
 #define FLAG_ROUTE_119_BOSS_DEFEATED                                0x49E // Route 119 Boss Bug Maniac Donald
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
+#define FLAG_ROUTE_110_BOSS_DEFEATED                                0x49F // Route 110 Boss Psychic Jaclyn
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag

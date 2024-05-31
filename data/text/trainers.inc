@@ -722,8 +722,11 @@ Route108_Text_JeromeDefeated:
 	.string "like this…$"
 
 Route108_Text_JeromePostBattle:
-	.string "Playing with marine Pokémon is one of\n"
-	.string "the pleasures of swimming!$"
+	.string "Gyarados is one of the majestic\n"
+	.string "Pokémon of the sea!\p"
+	.string "But there's another! Milotic!\p"
+	.string "It's Mega form is one of the\n"
+	.string "most prettiest!$"
 
 Route108_Text_MatthewIntro:
 	.string "Ahoy, there! Are you going out to\n"
