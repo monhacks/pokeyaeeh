@@ -546,3 +546,6 @@ gSpecials::
 	def_special GetLeadMonSpecies
 	def_special ClearDaycareMons
 	def_special TryRespawnLegendaryEncounters
+	def_special EnterMysteryGiftCode
+	def_special GetMysteryGiftFeedback
+

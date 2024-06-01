@@ -124,7 +124,7 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1::
-	goto_if_set FLAG_ROUTE_102_BOSS_DEFEATED, Debug_EventScript_UnsetTestFlag
+	goto_if_set FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN, Debug_EventScript_UnsetTestFlag
 	goto Debug_EventScript_SetTestFlag
 	end
 
@@ -277,12 +277,12 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_ROUTE_102_BOSS_DEFEATED
+    setflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_ROUTE_102_BOSS_DEFEATED
+    clearflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
 	end
 
 Debug_Text_SetTestFlag::

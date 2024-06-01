@@ -27,6 +27,7 @@
 #include "mystery_gift.h"
 #include "match_call.h"
 #include "menu.h"
+#include "naming_screen.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
@@ -4415,4 +4416,58 @@ void PreparePartyForSkyBattle(void)
     }
     VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
     CompactPartySlots();
+}
+
+void EnterMysteryGiftCode(void)
+{
+    DoNamingScreen(NAMING_SCREEN_MYSTERY_GIFT, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+void GetMysteryGiftFeedback(void)
+{
+    struct Pokemon *party = gPlayerParty;
+    u32 i;
+    
+    //The codes
+    static const u8 sText_CodeCelebi[]    = _("QUJ8SF2NIL");
+    static const u8 sText_CodeJirachi[]   = _("ND3HE6HS8J");
+    static const u8 sText_CodeManaphy[]   = _("LC8I92KSOH");
+    static const u8 sText_CodeShaymin[]   = _("BDOGW0M1ND");
+    static const u8 sText_CodeVictini[]   = _("HFOF7SW9SM");
+    static const u8 sText_CodeMeloetta[]  = _("YEROD0AG1I");
+    static const u8 sText_CodeHoopa[]     = _("POD9SMKAD0");
+    static const u8 sText_CodeMarshadow[] = _("VDNWO0BDN2");
+    static const u8 sText_CodePecharunt[] = _("NS8ODNU2HS");
+
+    // Code 1
+    if (!StringCompare(gStringVar2, sText_CodeCelebi))
+        gSpecialVar_Result = 1;
+    // Code 2
+    else if (!StringCompare(gStringVar2, sText_CodeJirachi))
+        gSpecialVar_Result = 2;
+    // Code 3
+    else if (!StringCompare(gStringVar2, sText_CodeManaphy))
+        gSpecialVar_Result = 3;
+    // Code 4
+    else if (!StringCompare(gStringVar2, sText_CodeShaymin))
+        gSpecialVar_Result = 4;
+    // Code 5
+    else if (!StringCompare(gStringVar2, sText_CodeVictini))
+        gSpecialVar_Result = 5;
+    // Code 6
+    else if (!StringCompare(gStringVar2, sText_CodeMeloetta))
+        gSpecialVar_Result = 6;
+    // Code 7
+    else if (!StringCompare(gStringVar2, sText_CodeHoopa))
+        gSpecialVar_Result = 7;
+    // Code 8
+    else if (!StringCompare(gStringVar2, sText_CodeMarshadow))
+        gSpecialVar_Result = 8;
+    // Code 9
+    else if (!StringCompare(gStringVar2, sText_CodePecharunt))
+        gSpecialVar_Result = 9;
+
+    // Invalid cheat code
+    else
+        gSpecialVar_Result = 0;
 }
