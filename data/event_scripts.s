@@ -959,8 +959,8 @@ gText_Sudowoodo_Attacked::
 	.string "Wailmer Pail!\p"
 	.string "The weird tree attacked!$"
 
-gText_LegendaryFlewAway::
-	.string "The {STR_VAR_1} flew away!$"
+gText_LegendaryEscaped::
+	.string "The {STR_VAR_1} escaped!$"
 
 	.include "data/text/pc_transfer.inc"
 	.include "data/text/questionnaire.inc"
@@ -1008,7 +1008,7 @@ Common_EventScript_LegendaryFlewAway::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	msgbox gText_LegendaryEscaped, MSGBOX_DEFAULT
 	release
 	end
 
