@@ -156,5 +156,6 @@ bool32 Overworld_SendKeysToLinkIsRunning(void);
 bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 u8 GetLastUsedWarpMapSectionId(void);
+void TryRespawnLegendaryEncounters(void);
 
 #endif // GUARD_OVERWORLD_H

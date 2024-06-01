@@ -42,6 +42,7 @@
 #include "new_game.h"
 #include "palette.h"
 #include "play_time.h"
+#include "pokedex.h"
 #include "random.h"
 #include "roamer.h"
 #include "rotating_gate.h"
@@ -3261,3 +3262,38 @@ u8 GetLastUsedWarpMapSectionId(void)
     return Overworld_GetMapHeaderByGroupAndId(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum)->regionMapSectionId;
 }
 
+struct SpeciesFlagPair
+{
+    u16 species;
+    u16 flag;
+};
+
+static const struct SpeciesFlagPair sRespawnableMons[] = {
+    {SPECIES_MEW,        FLAG_DEFEATED_MEW},
+    {SPECIES_LUGIA,      FLAG_DEFEATED_LUGIA},
+    {SPECIES_HO_OH,      FLAG_DEFEATED_HO_OH},
+    {SPECIES_REGIROCK,   FLAG_DEFEATED_REGIROCK},
+    {SPECIES_REGICE,     FLAG_DEFEATED_REGICE},
+    {SPECIES_REGISTEEL,  FLAG_DEFEATED_REGISTEEL},
+    {SPECIES_LATIAS,     FLAG_DEFEATED_LATIAS_OR_LATIOS},
+    {SPECIES_LATIOS,     FLAG_DEFEATED_LATIAS_OR_LATIOS},
+    {SPECIES_KYOGRE,     FLAG_DEFEATED_KYOGRE},
+    {SPECIES_GROUDON,    FLAG_DEFEATED_GROUDON},
+    {SPECIES_RAYQUAZA,   FLAG_DEFEATED_RAYQUAZA},
+    {SPECIES_DEOXYS,     FLAG_DEFEATED_DEOXYS}
+    // TODO: Add Articuno, Zapdos, Moltres after scripting them.
+    // Also script Mewtwo as a totem battle.
+};
+
+void TryRespawnLegendaryEncounters(void)
+{
+    u32 i;
+
+    if (!FlagGet(FLAG_SYS_GAME_CLEAR)) return;
+
+    for (i = 0; i < ARRAY_COUNT(sRespawnableMons); ++i)
+    {
+        if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(sRespawnableMons[i].species), FLAG_GET_CAUGHT))
+            FlagClear(sRespawnableMons[i].flag);
+    }
+}

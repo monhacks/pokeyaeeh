@@ -545,3 +545,4 @@ gSpecials::
 	def_special TrySkyBattle
 	def_special GetLeadMonSpecies
 	def_special ClearDaycareMons
+	def_special TryRespawnLegendaryEncounters
