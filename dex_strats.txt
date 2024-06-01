@@ -262,6 +262,18 @@ Lilligant
     tags = Special Attacker, Offensive, Sweeper
 }
 
+Delphox
+{ 
+    name = The Great Magician
+    item = Life Orb
+    ability = Magic Guard
+    evs = 0, 0, 0, 252, 4, 252
+    nature = Timid
+    moves = Will-O-Wisp, Hex, Flamethrower, Psychic
+    comment = Delphox finally got justice by getting Hex to work with Will-O-Wisp, Pair this with a Life Orb and you will do great damage while crippling the physical attacker.
+    tags = Special Attacker, Support
+} 
+
 Clawitzer
 { 
     name = The Biggest Bazooka
