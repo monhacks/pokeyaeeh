@@ -84,7 +84,8 @@ FortreeCity_Gym_EventScript_Darius::
 
 FortreeCity_Gym_EventScript_Acheron::
 	trainerbattle_single TRAINER_KEEGAN, FortreeCity_Gym_Text_AcheronIntro, FortreeCity_Gym_Text_AcheronDefeat
-	msgbox FortreeCity_Gym_Text_AcheronPostBattle, MSGBOX_DEFAULT
+	msgbox FortreeCity_Gym_Text_AcheronPostBattle, MSGBOX_AUTOCLOSE
+	end
 
 FortreeCity_Gym_EventScript_GymGuide::
 	lock

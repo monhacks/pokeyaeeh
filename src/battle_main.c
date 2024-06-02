@@ -5709,8 +5709,6 @@ static void ReturnFromBattleToOverworld(void)
             SetRoamerInactive();
     }
 
-    VarSet(B_VAR_STARTING_STATUS, 0);
-    VarSet(B_VAR_STARTING_STATUS_TIMER, 0);
     FlagClear(B_FLAG_INVERSE_BATTLE);
     FlagClear(B_FLAG_FORCE_DOUBLE_WILD);
     FlagClear(B_SMART_WILD_AI_FLAG);
@@ -5718,6 +5716,8 @@ static void ReturnFromBattleToOverworld(void)
     FlagClear(B_FLAG_NO_CATCHING);
     FlagClear(B_FLAG_FORCED_SET_BATTLE);
     FlagClear(FLAG_TOXIC_POISON_TEAM);
+    VarSet(B_VAR_STARTING_STATUS, 0);
+    VarSet(B_VAR_STARTING_STATUS_TIMER, 0);
 
     m4aSongNumStop(SE_LOW_HEALTH);
     SetMainCallback2(gMain.savedCallback);
