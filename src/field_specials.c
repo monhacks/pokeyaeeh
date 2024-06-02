@@ -4429,7 +4429,7 @@ void GetMysteryGiftFeedback(void)
     u32 i;
     
     //The codes
-    static const u8 sText_CodeCelebi[]    = _("AAAAAAAAAA");
+    static const u8 sText_CodeCelebi[]    = _("ABCDE12345");
     static const u8 sText_CodeJirachi[]   = _("ND3HE6HS8J");
     static const u8 sText_CodeManaphy[]   = _("LC8I92KSOH");
     static const u8 sText_CodeShaymin[]   = _("BDOGW0M1ND");
