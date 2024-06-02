@@ -374,10 +374,7 @@ u32 ScriptGiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 natu
     u8 genderRatio = gSpeciesInfo[species].genderRatio;
     u16 targetSpecies;
 
-    // check whether to use a specific nature or a random one
-    if (OW_SYNCHRONIZE_NATURE >= GEN_6 && (gSpeciesInfo[species].eggGroups[0] == EGG_GROUP_UNDISCOVERED || OW_SYNCHRONIZE_NATURE == GEN_7))
-        nature = PickWildMonNature();
-    else if (nature >= NUM_NATURES)
+    if (nature == NUM_NATURES || nature == 0xFF)
         nature = Random() % NUM_NATURES;
 
     // create a Pokémon with basic data
@@ -409,9 +406,8 @@ u32 ScriptGiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 natu
     // moves
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (moves[0] == MOVE_NONE)
-            break;
-        if (moves[i] >= MOVES_COUNT)
+        if (moves[i] == MOVE_NONE || moves[i] >= MOVES_COUNT)
+            continue;
         SetMonMoveSlot(&mon, moves[i], i);
     }
 
@@ -425,7 +421,7 @@ u32 ScriptGiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 natu
     SetMonData(&mon, MON_DATA_ABILITY_NUM, &abilityNum);
 
     // ball
-    if (ball >= POKEBALL_COUNT)
+    if (ball > POKEBALL_COUNT)
         ball = ITEM_POKE_BALL;
     SetMonData(&mon, MON_DATA_POKEBALL, &ball);
 
