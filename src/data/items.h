@@ -8443,7 +8443,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_CROSS_POISON,
     },
 
-    [ITEM_TM_LOW_SWEEP] =
+    [ITEM_TM_VENOSHOCK] =
     {
         .name = _("TM107"),
         .price = 5000,
@@ -8452,7 +8452,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_LOW_SWEEP,
+        .secondaryId = MOVE_VENOSHOCK,
     },
 
     [ITEM_TM_HEX] =

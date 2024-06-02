@@ -8681,7 +8681,7 @@ u8 IsMonDisobedient(void)
             obedienceLevel = 60;
         if (FlagGet(FLAG_BADGE06_GET)) // Hexnut Badge
             obedienceLevel = 65;
-        if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
+        if (FlagGet(FLAG_BADGE07_GET)) // Sting Badge
             obedienceLevel = 75;
         if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge
             obedienceLevel = 85;

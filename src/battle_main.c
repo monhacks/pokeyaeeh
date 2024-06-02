@@ -5717,6 +5717,7 @@ static void ReturnFromBattleToOverworld(void)
     FlagClear(B_FLAG_NO_BAG_USE);
     FlagClear(B_FLAG_NO_CATCHING);
     FlagClear(B_FLAG_FORCED_SET_BATTLE);
+    FlagClear(FLAG_TOXIC_POISON_TEAM);
 
     m4aSongNumStop(SE_LOW_HEALTH);
     SetMainCallback2(gMain.savedCallback);

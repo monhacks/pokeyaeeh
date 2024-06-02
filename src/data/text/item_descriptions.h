@@ -3562,9 +3562,9 @@ static const u8 sTM106Desc[] = _(
     "High crit-hit ratio.");
 
 static const u8 sTM107Desc[] = _(
-    "Attacks the targe-\n"
-    "t's legs swiftly.\n"
-    "Lowers Spd.");
+    "Special liquid that\n"
+    "deals double damage\n"
+    "to poisoned foes.");
 
 static const u8 sTM108Desc[] = _(
     "Doubles damage if\n"
