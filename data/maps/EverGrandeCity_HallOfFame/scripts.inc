@@ -55,7 +55,6 @@ EverGrandeCity_HallOfFame_EventScript_GameClearMale::
 	fadescreenspeed FADE_TO_BLACK, 24
 	special GameClear
 	special TryRespawnLegendaryEncounters
-	clearflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
 	waitstate
 	releaseall
 	end
@@ -65,7 +64,6 @@ EverGrandeCity_HallOfFame_EventScript_GameClearFemale::
 	fadescreenspeed FADE_TO_BLACK, 24
 	special GameClear
 	special TryRespawnLegendaryEncounters
-	clearflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
 	waitstate
 	releaseall
 	end

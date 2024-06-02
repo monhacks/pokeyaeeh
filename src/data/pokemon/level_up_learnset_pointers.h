@@ -1373,7 +1373,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_ORICORIO_PAU] = sOricorioLevelUpLearnset,
     [SPECIES_ORICORIO_SENSU] = sOricorioLevelUpLearnset,
     // Rockruff
-    [SPECIES_ROCKRUFF_OWN_TEMPO] = sRockruffLevelUpLearnset,
+    [SPECIES_ROCKRUFF_OWN_TEMPO] = sRockruffOwnTempoLevelUpLearnset,
     // Lycanroc
     [SPECIES_LYCANROC_MIDNIGHT] = sLycanrocMidnightLevelUpLearnset,
     [SPECIES_LYCANROC_DUSK] = sLycanrocDuskLevelUpLearnset,
