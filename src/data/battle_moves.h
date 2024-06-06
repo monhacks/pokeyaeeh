@@ -14750,7 +14750,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_ROUSED_FANGS] =
     {
         .effect = EFFECT_BOLT_BEAK,
-        .power = 70,
+        .power = 60,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 24,
