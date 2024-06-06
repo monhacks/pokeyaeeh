@@ -62,6 +62,7 @@ PetalburgCity_Gym_EventScript_NormanRematch::
 
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
+	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	msgbox PetalburgCity_Gym_Text_NormanAfterDefeat, MSGBOX_DEFAULT
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge

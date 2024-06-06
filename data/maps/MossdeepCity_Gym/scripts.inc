@@ -106,15 +106,22 @@ MossdeepCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, Champion-bound\n"
 	.string "{PLAYER}?\p"
 	.string "The Gym Leaders here use\n"
-	.string "Psychic-type Pokémon.\p"
+	.string "Poison-type Pokémon.\p"
 	.string "If you go up against them with\n"
-	.string "Fighting- or Poison-type Pokémon,\l"
+	.string "Grass- or Fairy-type Pokémon,\l"
 	.string "they'll inflict horrible damage!\p"
 	.string "Plus, they'll come at you with\n"
 	.string "outstanding combination attacks.\p"
 	.string "If you want to win, you'll need to show\n"
 	.string "them how tight you are with your\l"
-	.string "Pokémon. Go for it!$"
+	.string "Pokémon. Go for it!\p"
+	.string "Also, if you're wondering,\n"
+	.string "there's 8 Trainers here.\p"
+	.string "They are invisible to the naked eye.\p"
+	.string "You cannot see them. But,\n"
+	.string "if you get close to them,\l"
+	.string "they'll sense you.$"
+
 
 MossdeepCity_Gym_Text_GymGuidePostVictory:
 	.string "Wow, you're astounding!\n"
@@ -336,8 +343,9 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 MossdeepCity_Gym_EventScript_TateAndLiza::
 	lock
 	faceplayer
-	checktrainerflag TRAINER_BRENDAN_PLACEHOLDER
-	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_2
+	checktrainerflag TRAINER_PRESTON
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_5
+MossdeepCity_Gym_EventScript_TateAndLiza_3:
 	msgbox MossdeepCity_Gym_EventScript_TateAndLiza_Text_0
 MossdeepCity_Gym_EventScript_TateAndLiza_1:
 	release
@@ -348,14 +356,49 @@ MossdeepCity_Gym_EventScript_TateAndLiza_2:
 	setflag FLAG_TOXIC_POISON_TEAM
 	trainerbattle_single TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
 	clearflag B_FLAG_NO_BAG_USE
-	goto_if_unset FLAG_RECEIVED_TM_VENOSHOCK, MossdeepCity_Gym_EventScript_TateAndLiza_6
-MossdeepCity_Gym_EventScript_TateAndLiza_5:
+	goto_if_unset FLAG_RECEIVED_TM_VENOSHOCK, MossdeepCity_Gym_EventScript_TateAndLiza_20
+MossdeepCity_Gym_EventScript_TateAndLiza_19:
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
 	goto MossdeepCity_Gym_EventScript_TateAndLiza_1
 
-MossdeepCity_Gym_EventScript_TateAndLiza_6:
+MossdeepCity_Gym_EventScript_TateAndLiza_4:
+	checktrainerflag TRAINER_SYLVIA
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_9
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_5:
+	checktrainerflag TRAINER_VIRGIL
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_4
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_8:
+	checktrainerflag TRAINER_MACEY
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_13
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_9:
+	checktrainerflag TRAINER_NATE
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_8
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_12:
+	checktrainerflag TRAINER_NICHOLAS
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_16
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_13:
+	checktrainerflag TRAINER_CLIFFORD
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_12
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_16:
+	checktrainerflag TRAINER_KATHLEEN
+	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_2
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
+
+MossdeepCity_Gym_EventScript_TateAndLiza_20:
 	goto MossdeepCity_Gym_EventScript_GiveCalmMind2
-	goto MossdeepCity_Gym_EventScript_TateAndLiza_5
+	goto MossdeepCity_Gym_EventScript_TateAndLiza_19
 
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0:

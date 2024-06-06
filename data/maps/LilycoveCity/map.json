@@ -322,7 +322,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_ItemAmpharosite",
-      "flag": "0"
+      "flag": "FLAG_ITEM_LILYCOVE_CITY_AMPHAROSITE"
     }
   ],
   "warp_events": [

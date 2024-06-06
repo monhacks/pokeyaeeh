@@ -10913,6 +10913,19 @@ bool32 CanMegaEvolve(u32 battler)
     u8 partnerPosition = GetBattlerPosition(BATTLE_PARTNER(battler));
     struct MegaEvolutionData *mega = &(((struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]))->mega);
 
+    // Gets mon data.
+    if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
+        mon = &gEnemyParty[gBattlerPartyIndexes[battler]];
+    else
+        mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+
+    itemId = GetMonData(mon, MON_DATA_HELD_ITEM);
+
+    if (itemId == ITEM_ENIGMA_BERRY_E_READER)
+        holdEffect = gEnigmaBerries[battler].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(itemId);
+
     // Check if Player has a Mega Ring
     if ((GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT))
      && !CheckBagHasItem(ITEM_MEGA_RING, 1))
@@ -10931,7 +10944,10 @@ bool32 CanMegaEvolve(u32 battler)
      && (mega->alreadyEvolved[partnerPosition] || (mega->toEvolve & gBitTable[BATTLE_PARTNER(battler)])))
     {
         if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
-            return TRUE;
+        {
+            if (holdEffect == HOLD_EFFECT_MEGA_STONE) // Tested, otherwise any of the enemy's mons can mega evolve
+                return TRUE;
+        }
         else
             return FALSE;
     }
@@ -10940,20 +10956,8 @@ bool32 CanMegaEvolve(u32 battler)
     if (gStatuses3[battler] & STATUS3_SKY_DROPPED)
         return FALSE;
 
-    // Gets mon data.
-    if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
-        mon = &gEnemyParty[gBattlerPartyIndexes[battler]];
-    else
-        mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
-
-    itemId = GetMonData(mon, MON_DATA_HELD_ITEM);
-
-    if (itemId == ITEM_ENIGMA_BERRY_E_READER)
-        holdEffect = gEnigmaBerries[battler].holdEffect;
-    else
-        holdEffect = ItemId_GetHoldEffect(itemId);
-
-    if (gBattleMons[battler].species == SPECIES_SHARPEDO
+    if (GetBattlerSide(battler) == B_SIDE_OPPONENT
+     && gBattleMons[battler].species == SPECIES_SHARPEDO
      && GetBattlerAbility(battler) == ABILITY_SPEED_BOOST
      && HasMove(battler, MOVE_PROTECT)
      && gDisableStructs[battler].isFirstTurn
