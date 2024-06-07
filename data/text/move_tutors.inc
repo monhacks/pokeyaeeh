@@ -20,7 +20,7 @@ MoveTutor_Text_SwaggerTaught:
 	.string "I'll just praise my Pokémon from now\n"
 	.string "on without the swagger.$"
 
-MoveTutor_Text_RolloutTeach:
+MoveTutor_Text_IceBallTeach:
 	.string "Did you know that you can go from\n"
 	.string "here a long way in that direction\l"
 	.string "without changing direction?\p"
@@ -31,15 +31,15 @@ MoveTutor_Text_RolloutTeach:
 	.string "I can teach one the move Ice Ball\n"
 	.string "if you'd like.$"
 
-MoveTutor_Text_RolloutDeclined:
+MoveTutor_Text_IceBallDeclined:
 	.string "You don't need to be shy about it.\n"
 	.string "Let's roll!$"
 
-MoveTutor_Text_RolloutWhichMon:
+MoveTutor_Text_IceBallWhichMon:
 	.string "Ehehe, sure thing! It'd be great if\n"
 	.string "the Pokémon looked like me.$"
 
-MoveTutor_Text_RolloutTaught:
+MoveTutor_Text_IceBallTaught:
 	.string "Rolling around makes me happy.\n"
 	.string "Come on, let's roll!$"
 

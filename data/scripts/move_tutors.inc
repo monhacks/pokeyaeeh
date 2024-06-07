@@ -27,25 +27,25 @@ MoveTutor_EventScript_SwaggerTaught::
 	release
 	end
 
-MauvilleCity_EventScript_RolloutTutor::
+MauvilleCity_EventScript_IceBallTutor::
 	lock
 	faceplayer
-	msgbox MoveTutor_Text_RolloutTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RolloutDeclined
-	msgbox MoveTutor_Text_RolloutWhichMon, MSGBOX_DEFAULT
+	msgbox MoveTutor_Text_IceBallTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_IceBallDeclined
+	msgbox MoveTutor_Text_IceBallWhichMon, MSGBOX_DEFAULT
 	setvar VAR_0x8005, MOVE_ICE_BALL
 	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RolloutDeclined
-	goto MoveTutor_EventScript_RolloutTaught
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_IceBallDeclined
+	goto MoveTutor_EventScript_IceBallTaught
 	end
 
-MoveTutor_EventScript_RolloutDeclined::
-	msgbox MoveTutor_Text_RolloutDeclined, MSGBOX_DEFAULT
+MoveTutor_EventScript_IceBallDeclined::
+	msgbox MoveTutor_Text_IceBallDeclined, MSGBOX_DEFAULT
 	release
 	end
 
-MoveTutor_EventScript_RolloutTaught::
-	msgbox MoveTutor_Text_RolloutTaught, MSGBOX_DEFAULT
+MoveTutor_EventScript_IceBallTaught::
+	msgbox MoveTutor_Text_IceBallTaught, MSGBOX_DEFAULT
 	release
 	end
 
@@ -341,7 +341,7 @@ Route109_EventScript_BraveBirdTutor::
 	msgbox MoveTutor_Text_BraveBirdTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_BraveBirdDeclined
 	msgbox MoveTutor_Text_BraveBirdWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
+	setvar VAR_0x8005, MOVE_BRAVE_BIRD
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_BraveBirdDeclined
 	goto MoveTutor_EventScript_BraveBirdTaught

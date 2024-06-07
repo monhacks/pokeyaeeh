@@ -3009,6 +3009,24 @@ static void SetPartyMonFieldMoveSelectionActions(struct Pokemon *mons, u8 slotId
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
 
+static bool8 DoesMonKnowFieldMove(void)
+{
+    u32 i,j, move;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        for (j = 0; sFieldMoves[j] != FIELD_MOVE_TERMINATOR; j++)
+        {
+            if (move == sFieldMoves[j])
+            {
+                return TRUE;
+            }
+        }
+    }
+
+    return FALSE;
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
@@ -3023,14 +3041,18 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
 
+        if ((((CheckBagHasItem(ITEM_HM_FLY, 1)) && (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE))
+        || ((FlagGet(FLAG_BADGE02_GET)) && (CheckBagHasItem(ITEM_HM_FLASH, 1)) && (gMapHeader.cave == TRUE) && !(FlagGet(FLAG_SYS_USE_FLASH)))
+        || (CanUseDigOrEscapeRopeOnCurMap() == TRUE)) || (DoesMonKnowFieldMove() == TRUE))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
+
+        if ((GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfRelearnableMoves(&mons[slotId]) > 0)
+        || (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfEggMoves(&mons[slotId]) > 0)
+        || (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfTMMoves(&mons[slotId]) > 0))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
+
         if (FlagGet(FLAG_RECEIVED_STAT_EDITOR))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
-
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_FIELD_MOVES);
-
-        if(GetMonData(&mons[slotId], MON_DATA_SPECIES) &&
-          (GetNumberOfRelearnableMoves(&mons[slotId]) || GetNumberOfEggMoves(&mons[slotId]) || GetNumberOfTMMoves(&mons[slotId])))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
 
         if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
