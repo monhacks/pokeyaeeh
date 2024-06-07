@@ -28,7 +28,7 @@ MoveTutor_Text_RolloutTeach:
 	.string "that way.\p"
 	.string "Do you think your Pokémon will\n"
 	.string "want to roll, too?\p"
-	.string "I can teach one the move Rollout\n"
+	.string "I can teach one the move Ice Ball\n"
 	.string "if you'd like.$"
 
 MoveTutor_Text_RolloutDeclined:
@@ -40,8 +40,8 @@ MoveTutor_Text_RolloutWhichMon:
 	.string "the Pokémon looked like me.$"
 
 MoveTutor_Text_RolloutTaught:
-	.string "Rolling around in the grass makes me\n"
-	.string "happy. Come on, let's roll!$"
+	.string "Rolling around makes me happy.\n"
+	.string "Come on, let's roll!$"
 
 MoveTutor_Text_FuryCutterTeach:
 	.string "There's a move that gets stronger\n"
@@ -401,6 +401,76 @@ MoveTutor_Text_WildChargeTaught:
 	.string "Aaand done!\p"
 	.string "Have fun Ko'ing your enemies!$"
 
+MoveTutor_Text_MudSlapTeach:
+	.string "Oh, hello.\p"
+	.string "You wanna learn a move that always\n"
+	.string "strikes first?\l"
+	.string "And might lower accuracy?$"
+
+MoveTutor_Text_MudSlapDeclined:
+	.string "Oh, come on!\n" 
+	.string "I'm not joking, I'm serious!$"
+
+MoveTutor_Text_MudSlapWhichMon:
+	.string "Epic sauce!\n"
+	.string "We throw mud!$"
+
+MoveTutor_Text_MudSlapTaught:
+	.string "Done!\p"
+	.string "Have fun trolling your enemies!$"
+
+PetalburgCity_PokemonCenter_1F_Text_TutorWelcome:
+	.string "Hi.\p"
+	.string "I can teach your Pokémon a few biting\n"
+	.string "moves.$"
+
+PetalburgCity_PokemonCenter_1F_Text_WontTeachMoves:
+	.string "Hi.\n"
+	.string "I am a Move Tutor.\p"
+	.string "I can teach your Pokémon a few biting\n"
+	.string "moves.\p"
+	.string "I see that you haven't beaten Tiana,\n"
+	.string "yet.\p"
+	.string "Beat here, and then I shall teach you\n"
+	.string "my biting techniques!"
+
+PetalburgCity_PokemonCenter_1F_Text_WhichMoveTeach:
+	.string "Which move should I teach?$"
+
+PetalburgCity_PokemonCenter_1F_Text_TheMoveRight:
+	.string "Hmm, {STR_VAR_1}, right?$"
+
+PetalburgCity_PokemonCenter_1F_Text_PleaseChoosePkmn:
+	.string "Okay! Please choose your Pokémon.$"
+
+PetalburgCity_PokemonCenter_1F_Text_AndDone:
+	.string "Aaand done!\p"
+	.string "Please feel free to come again!$"
+
+PetalburgCity_PokemonCenter_1F_Text_PleaseVisitAgain:
+	.string "Please let me know if you need anything\n"
+	.string "else!$"
+
+PetalburgCity_PokemonCenter_1F_Text_BugBiteDesc::
+	.string "A bite that also\n"
+	.string "steals and eats\n"
+	.string "the foe's berry.$"
+
+PetalburgCity_PokemonCenter_1F_Text_FireFangDesc::
+	.string "A bite that may\n"
+	.string "burn or cause\n"
+	.string "flinching.$"
+
+PetalburgCity_PokemonCenter_1F_Text_ThunderFangDesc::
+	.string "A bite that may\n"
+	.string "paralyze or cause\n"
+	.string "flinching.$"
+
+PetalburgCity_PokemonCenter_1F_Text_IceFangDesc::
+	.string "A bite that may\n"
+	.string "frostbite or\n"
+	.string "cause flinching.$"
+
 LilycoveCity_DepartmentStore_4F_Text_TutorWelcome:
 	.string "Welcome!\p"
 	.string "Would you like to teach new moves to\n"
@@ -424,25 +494,25 @@ LilycoveCity_DepartmentStore_4F_Text_PleaseVisitAgain:
 	.string "Please let me know if you need anything\n"
 	.string "else!$"
 
-LilycoveCity_DepartmentStore_4F_Text_FireFangDesc::
-	.string "A bite that may\n"
-	.string "burn or cause\n"
-	.string "flinching.$"
+LilycoveCity_DepartmentStore_4F_Text_OverheatDesc::
+	.string "An intense heat\n"
+	.string "harshly lowers the\n"
+	.string "user's Sp. Atk.$"
 
-LilycoveCity_DepartmentStore_4F_Text_ThunderFangDesc::
-	.string "A bite that may\n"
-	.string "paralyze or cause\n"
-	.string "flinching.$"
+LilycoveCity_DepartmentStore_4F_Text_LeafStormDesc::
+	.string "A storm of leaves\n"
+	.string "harshly lowers the\n"
+	.string "user's Sp. Atk.$"
 
-LilycoveCity_DepartmentStore_4F_Text_IceFangDesc::
-	.string "A bite that may\n"
-	.string "frostbite or\n"
-	.string "cause flinching.$"
+LilycoveCity_DepartmentStore_4F_Text_SheerColdDesc::
+	.string "An intense cold\n"
+	.string "harshly lowers the\n"
+	.string "user's Sp. Atk.$"
 
-LilycoveCity_DepartmentStore_4F_Text_AuraSphereDesc::
-	.string "An aura burst\n"
-	.string "that cannot be\n"
-	.string "evaded by the foe.$"
+LilycoveCity_DepartmentStore_4F_Text_DracoMeteorDesc::
+	.string "A comet attack\n"
+	.string "harshly lowers the\n"
+	.string "user's Sp. Atk.$"
 
 LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc::
 	.string "Deals more damage\n"

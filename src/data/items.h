@@ -8096,7 +8096,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_TOXIC_SPIKES,
     },
 
-    [ITEM_TM_BUG_BITE] =
+    [ITEM_TM_PLUCK] =
     {
         .name = _("TM78"),
         .price = 5000,
@@ -8105,7 +8105,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_BUG_BITE,
+        .secondaryId = MOVE_PLUCK,
     },
 
     [ITEM_TM_CHARGE_BEAM] =

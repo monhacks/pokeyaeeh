@@ -66,10 +66,6 @@ RustboroCity_PokemonSchool_EventScript_Lass::
 	msgbox RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself, MSGBOX_NPC
 	end
 
-RustboroCity_PokemonSchool_EventScript_SchoolKidM::
-	msgbox RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry, MSGBOX_NPC
-	end
-
 RustboroCity_PokemonSchool_EventScript_StudentNotebook::
 	msgbox RustboroCity_PokemonSchool_Text_StudentsNotes, MSGBOX_SIGN
 	end
@@ -264,7 +260,7 @@ RustboroCity_PokemonSchool_Text_TradingRightNow:
 	.string "right now.$"
 
 RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
-	.string "I always wanted a Seedot, and\n"
+	.string "I always wanted a Torracat, and\n"
 	.string "I'm finally getting one!$"
 
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
@@ -279,14 +275,6 @@ RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
 	.string "attack itself without meaning to.\p"
 	.string "But once it leaves battle, it will\n"
 	.string "return to normal.$"
-
-RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry:
-	.string "A Pokémon holding a Berry will heal\n"
-	.string "itself…\p"
-	.string "There are many kinds of items that\n"
-	.string "Pokémon can hold…\p"
-	.string "Boy, it sure is hard taking notes\n"
-	.string "down…$"
 
 RustboroCity_PokemonSchool_Text_StudentsNotes:
 	.string "It's this student's notebook…\p"

@@ -2415,7 +2415,17 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-    case SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1:
+    case SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES:
+        task->tMaxItemsOnScreen = 5;
+        task->tNumItems = 5;
+        task->tLeft = 22;
+        task->tTop = 1;
+        task->tWidth = 12;
+        task->tHeight = 10;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 12;
         task->tLeft = 22;
@@ -2620,12 +2630,20 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Galar,
         gText_Paldea,
     },
-    [SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1] =
+    [SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES] =
     {
+        gText_BugBite,
         gText_FireFang,
         gText_ThunderFang,
         gText_IceFang,
-        gText_AuraSphere,
+        gText_Exit
+    },
+    [SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES] =
+    {
+        gText_Overheat,
+        gText_LeafStorm,
+        gText_SheerCold,
+        gText_DracoMeteor,
         gText_HeatCrash,
         gText_RazorShell,
         gText_Infestation,
@@ -3220,7 +3238,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES || menu == SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES)
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3263,12 +3281,21 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-    static const u8 *const sLilycoveDeptStore_TutorMoveDescriptions[] =
+    static const u8 *const sPetalburgCityPokemonCenter1F_TutorMoveDescriptions[] =
     {
-        LilycoveCity_DepartmentStore_4F_Text_FireFangDesc,
-        LilycoveCity_DepartmentStore_4F_Text_ThunderFangDesc,
-        LilycoveCity_DepartmentStore_4F_Text_IceFangDesc,
-        LilycoveCity_DepartmentStore_4F_Text_AuraSphereDesc,
+        PetalburgCity_PokemonCenter_1F_Text_BugBiteDesc,
+        PetalburgCity_PokemonCenter_1F_Text_FireFangDesc,
+        PetalburgCity_PokemonCenter_1F_Text_ThunderFangDesc,
+        PetalburgCity_PokemonCenter_1F_Text_IceFangDesc,
+        gText_Exit,
+    };
+
+    static const u8 *const sLilycoveDeptStoreDepartmentStore4F_TutorMoveDescriptions[] =
+    {
+        LilycoveCity_DepartmentStore_4F_Text_OverheatDesc,
+        LilycoveCity_DepartmentStore_4F_Text_LeafStormDesc,
+        LilycoveCity_DepartmentStore_4F_Text_SheerColdDesc,
+        LilycoveCity_DepartmentStore_4F_Text_DracoMeteorDesc,
         LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc,
         LilycoveCity_DepartmentStore_4F_Text_RazorShellDesc,
         LilycoveCity_DepartmentStore_4F_Text_InfestationDesc,
@@ -3279,15 +3306,17 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES || menu == SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES)
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-        else
-            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sLilycoveDeptStore_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        if (menu == SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sPetalburgCityPokemonCenter1F_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
+        if (menu == SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sLilycoveDeptStoreDepartmentStore4F_TutorMoveDescriptions[selection], 0, 1, 0, NULL);
     }
 }
 

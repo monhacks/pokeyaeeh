@@ -33,7 +33,7 @@ MauvilleCity_EventScript_RolloutTutor::
 	msgbox MoveTutor_Text_RolloutTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RolloutDeclined
 	msgbox MoveTutor_Text_RolloutWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_ROLLOUT
+	setvar VAR_0x8005, MOVE_ICE_BALL
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RolloutDeclined
 	goto MoveTutor_EventScript_RolloutTaught
@@ -401,7 +401,119 @@ MoveTutor_EventScript_WildChargeTaught::
 	release
 	end
 
+RustboroCity_PokemonSchool_MudSlapTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_MudSlapTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MudSlapeDeclined
+	msgbox MoveTutor_Text_MudSlapWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MUD_SLAP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MudSlapeDeclined
+	goto MoveTutor_EventScript_MudSlapTaught
+	end
+
+MoveTutor_EventScript_MudSlapeDeclined::
+	msgbox MoveTutor_Text_MudSlapDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_MudSlapTaught::
+	msgbox MoveTutor_Text_MudSlapTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// Petalburg Move Tutor
+PetalburgCity_PokemonCenter_1F_EventScript_MoveTutor::
+	lock
+	faceplayer
+	goto_if_unset FLAG_ROUTE_102_BOSS_DEFEATED, PetalburgCity_PokemonCenter_1F_EventScript_WontTeachMoves
+	msgbox PetalburgCity_PokemonCenter_1F_Text_TutorWelcome, MSGBOX_DEFAULT
+	goto PetalburgCity_PokemonCenter_1F_EventScript_TutorMove
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_WontTeachMoves::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_WontTeachMoves, MSGBOX_NPC
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_TutorMove::
+	message PetalburgCity_PokemonCenter_1F_Text_WhichMoveTeach
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
+	setvar VAR_0x8004, SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, PetalburgCity_PokemonCenter_1F_EventScript_BugBiteTutor
+	case 1, PetalburgCity_PokemonCenter_1F_EventScript_FireFangTutor
+	case 2, PetalburgCity_PokemonCenter_1F_EventScript_ThunderFangTutor
+	case 3, PetalburgCity_PokemonCenter_1F_EventScript_IceFangTutor
+	case 4, PetalburgCity_PokemonCenter_1F_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, PetalburgCity_PokemonCenter_1F_EventScript_ExitTutorMoveSelect
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_TeachTutorMove::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_PleaseChoosePkmn, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	special CloseBattleFrontierTutorWindow
+	special ChooseMonForMoveTutor
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_PokemonCenter_1F_EventScript_CancelChooseMon
+	msgbox PetalburgCity_PokemonCenter_1F_Text_AndDone, MSGBOX_DEFAULT
+	copyvar VAR_0x8004, VAR_0x8008
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection::
+	special BufferBattleFrontierTutorMoveName
+	buffernumberstring STR_VAR_2, VAR_0x8008
+	msgbox PetalburgCity_PokemonCenter_1F_Text_TheMoveRight, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_PokemonCenter_1F_EventScript_ChooseNewMove
+	goto_if_ge VAR_TEMP_1, VAR_0x8008, PetalburgCity_PokemonCenter_1F_EventScript_TeachTutorMove
+	goto PetalburgCity_PokemonCenter_1F_EventScript_ChooseNewMove
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_ChooseNewMove::
+	goto PetalburgCity_PokemonCenter_1F_EventScript_TutorMove
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_ExitTutorMoveSelect::
+	special CloseBattleFrontierTutorWindow
+	msgbox PetalburgCity_PokemonCenter_1F_Text_PleaseVisitAgain, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_CancelChooseMon::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_PleaseVisitAgain, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_BugBiteTutor::
+	setvar VAR_0x8005, MOVE_BUG_BITE
+	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_FireFangTutor::
+	setvar VAR_0x8005, MOVE_FIRE_FANG
+	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_ThunderFangTutor::
+	setvar VAR_0x8005, MOVE_THUNDER_FANG
+	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_IceFangTutor::
+	setvar VAR_0x8005, MOVE_ICE_FANG
+	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
+	end
+
+// Lilycove Move Tutor
 LilycoveCity_DepartmentStore_4F_EventScript_MoveTutor::
+	lock
+	faceplayer
 	msgbox LilycoveCity_DepartmentStore_4F_Text_TutorWelcome, MSGBOX_DEFAULT
 	goto LilycoveCity_DepartmentStore_4F_EventScript_TutorMove
 	end
@@ -410,16 +522,16 @@ LilycoveCity_DepartmentStore_4F_EventScript_TutorMove::
 	message LilycoveCity_DepartmentStore_4F_Text_WhichMoveTeach
 	waitmessage
 	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 0
-	setvar VAR_0x8004, SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES_1
+	setvar VAR_0x8004, SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES
 	setvar VAR_0x8006, 0
 	special ShowScrollableMultichoice
 	waitstate
 	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
 	switch VAR_RESULT
-	case 0, LilycoveCity_DepartmentStore_4F_EventScript_FireFangTutor
-	case 1, LilycoveCity_DepartmentStore_4F_EventScript_ThunderFangTutor
-	case 2, LilycoveCity_DepartmentStore_4F_EventScript_IceFangTutor
-	case 3, LilycoveCity_DepartmentStore_4F_EventScript_AuraSphereTutor
+	case 0, LilycoveCity_DepartmentStore_4F_EventScript_OverheatTutor
+	case 1, LilycoveCity_DepartmentStore_4F_EventScript_LeafStormTutor
+	case 2, LilycoveCity_DepartmentStore_4F_EventScript_SheerColdTutor
+	case 3, LilycoveCity_DepartmentStore_4F_EventScript_DracoMeteorTutor
 	case 4, LilycoveCity_DepartmentStore_4F_EventScript_HeatCrashTutor
 	case 5, LilycoveCity_DepartmentStore_4F_EventScript_RazorShellTutor
 	case 6, LilycoveCity_DepartmentStore_4F_EventScript_InfestationTutor
@@ -467,23 +579,23 @@ LilycoveCity_DepartmentStore_4F_EventScript_CancelChooseMon::
 	release
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_FireFangTutor::
-	setvar VAR_0x8005, MOVE_FIRE_FANG
+LilycoveCity_DepartmentStore_4F_EventScript_OverheatTutor::
+	setvar VAR_0x8005, MOVE_OVERHEAT
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_ThunderFangTutor::
-	setvar VAR_0x8005, MOVE_THUNDER_FANG
+LilycoveCity_DepartmentStore_4F_EventScript_LeafStormTutor::
+	setvar VAR_0x8005, MOVE_LEAF_STORM
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_IceFangTutor::
-	setvar VAR_0x8005, MOVE_ICE_FANG
+LilycoveCity_DepartmentStore_4F_EventScript_SheerColdTutor::
+	setvar VAR_0x8005, MOVE_SHEER_COLD
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_AuraSphereTutor::
-	setvar VAR_0x8005, MOVE_AURA_SPHERE
+LilycoveCity_DepartmentStore_4F_EventScript_DracoMeteorTutor::
+	setvar VAR_0x8005, MOVE_DRACO_METEOR
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 

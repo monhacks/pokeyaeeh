@@ -3417,7 +3417,7 @@ static const u8 sTM77Desc[] = _(
     "when switching in.");
 
 static const u8 sTM78Desc[] = _(
-    "Bites the foe and\n"
+    "Pecks the foe and\n"
     "eats its berry if\n"
     "its holding one.");
 

@@ -19,10 +19,6 @@ PetalburgCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_FatMan::
-	msgbox PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem, MSGBOX_NPC
-	end
-
 PetalburgCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP, MSGBOX_NPC
 	end
@@ -54,12 +50,6 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayTorchicType::
 PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType, MSGBOX_DEFAULT
 	return
-
-PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
-	.string "That PC-based Pokémon Storage\n"
-	.string "System…\p"
-	.string "Whoever made it must be some kind\n"
-	.string "of a scientific wizard!$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
 	.string "When my Pokémon ate an\n"
