@@ -401,7 +401,7 @@ MoveTutor_EventScript_WildChargeTaught::
 	release
 	end
 
-RustboroCity_PokemonSchool_MudSlapTutor::
+RustboroCity_PokemonSchool_EventScript_MudSlapTutor::
 	lock
 	faceplayer
 	msgbox MoveTutor_Text_MudSlapTeach, MSGBOX_YESNO
