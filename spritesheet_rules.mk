@@ -749,6 +749,8 @@ $(OBJEVENTGFXDIR)/people/custom/ruin_maniac.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/custom/pkmn_breeder_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-
 $(OBJEVENTGFXDIR)/people/custom/pkmn_breeder_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/custom/aroma_lady.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

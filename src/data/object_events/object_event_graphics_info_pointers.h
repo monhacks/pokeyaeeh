@@ -258,6 +258,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DragonTamer
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PkmnBreederM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PkmnBreederF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AromaLady;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -514,6 +515,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RUIN_MANIAC] =              &gObjectEventGraphicsInfo_RuinManiac,
     [OBJ_EVENT_GFX_PKMN_BREEDER_M] =           &gObjectEventGraphicsInfo_PkmnBreederM,
     [OBJ_EVENT_GFX_PKMN_BREEDER_F] =           &gObjectEventGraphicsInfo_PkmnBreederF,
+    [OBJ_EVENT_GFX_AROMA_LADY] =               &gObjectEventGraphicsInfo_AromaLady,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
