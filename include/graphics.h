@@ -11541,6 +11541,7 @@ extern const u16 gObjectEventPal_NpcBlue[];
 extern const u16 gObjectEventPal_NpcPink[];
 extern const u16 gObjectEventPal_BirdKeeper[];
 extern const u16 gObjectEventPal_BugManiac[];
+extern const u16 gObjectEventPal_DragonTamer[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];

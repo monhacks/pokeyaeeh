@@ -250,6 +250,7 @@
 #define OBJ_EVENT_GFX_BIRD_KEEPER                246
 #define OBJ_EVENT_GFX_GUITARIST                  247
 #define OBJ_EVENT_GFX_BUG_MANIAC                 248
+#define OBJ_EVENT_GFX_DRAGON_TAMER               249
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
