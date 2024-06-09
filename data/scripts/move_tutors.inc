@@ -357,7 +357,7 @@ MoveTutor_EventScript_BraveBirdTaught::
 	release
 	end
 
-RusturfTunnel_EventScript_FlareBlitzTutor::
+Route116_EventScript_FlareBlitzTutor::
 	lock
 	faceplayer
 	msgbox MoveTutor_Text_FlareBlitzTeach, MSGBOX_YESNO
