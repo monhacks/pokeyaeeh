@@ -733,3 +733,6 @@ $(OBJEVENTGFXDIR)/people/custom/kindler.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/custom/bird_keeper.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/custom/guitarist.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

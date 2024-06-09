@@ -390,3 +390,4 @@ const u16 gObjectEventPic_Zapdos[] = INCBIN_U16("graphics/object_events/pics/pok
 const u16 gObjectEventPic_Moltres[] = INCBIN_U16("graphics/object_events/pics/pokemon/moltres.4bpp");
 const u32 gObjectEventPic_Kindler[] = INCBIN_U32("graphics/object_events/pics/people/custom/kindler.4bpp");
 const u32 gObjectEventPic_BirdKeeper[] = INCBIN_U32("graphics/object_events/pics/people/custom/bird_keeper.4bpp");
+const u32 gObjectEventPic_Guitarist[] = INCBIN_U32("graphics/object_events/pics/people/custom/guitarist.4bpp");

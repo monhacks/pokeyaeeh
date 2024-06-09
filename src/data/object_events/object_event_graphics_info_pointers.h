@@ -252,6 +252,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zapdos;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kindler;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdKeeper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -502,6 +503,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZAPDOS] =                   &gObjectEventGraphicsInfo_Zapdos,
     [OBJ_EVENT_GFX_KINDLER] =                  &gObjectEventGraphicsInfo_Kindler,
     [OBJ_EVENT_GFX_BIRD_KEEPER] =              &gObjectEventGraphicsInfo_BirdKeeper,
+    [OBJ_EVENT_GFX_GUITARIST] =                &gObjectEventGraphicsInfo_Guitarist,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
