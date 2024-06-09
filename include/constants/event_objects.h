@@ -247,6 +247,7 @@
 #define OBJ_EVENT_GFX_ZAPDOS                     243
 #define OBJ_EVENT_GFX_MOLTRES                    244
 #define OBJ_EVENT_GFX_KINDLER                    245
+#define OBJ_EVENT_GFX_BIRD_KEEPER                246
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

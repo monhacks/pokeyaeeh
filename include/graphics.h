@@ -11539,6 +11539,7 @@ extern const u16 gObjectEventPal_RubySapphireMay[];
 extern const u16 gObjectEventPal_GimmighoulCoin[];
 extern const u16 gObjectEventPal_NpcBlue[];
 extern const u16 gObjectEventPal_NpcPink[];
+extern const u16 gObjectEventPal_BirdKeeper[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];
