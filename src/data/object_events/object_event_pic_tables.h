@@ -2168,3 +2168,13 @@ static const struct SpriteFrameImage sPicTable_Moltres[] = {
     overworld_frame(gObjectEventPic_Moltres, 4, 4, 0),
     overworld_frame(gObjectEventPic_Moltres, 4, 4, 0),
 };
+
+static const struct SpriteFrameImage sPicTable_Kindler[] = {
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Kindler, 2, 4, 6),
+};

@@ -388,3 +388,4 @@ const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effe
 const u16 gObjectEventPic_Articuno[] = INCBIN_U16("graphics/object_events/pics/pokemon/articuno.4bpp");
 const u16 gObjectEventPic_Zapdos[] = INCBIN_U16("graphics/object_events/pics/pokemon/zapdos.4bpp");
 const u16 gObjectEventPic_Moltres[] = INCBIN_U16("graphics/object_events/pics/pokemon/moltres.4bpp");
+const u32 gObjectEventPic_Kindler[] = INCBIN_U32("graphics/object_events/pics/people/custom/kindler.4bpp");
