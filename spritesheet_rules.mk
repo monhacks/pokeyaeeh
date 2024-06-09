@@ -757,3 +757,9 @@ $(OBJEVENTGFXDIR)/people/custom/aroma_lady.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/custom/pokemaniac.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/custom/pkmn_ranger_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/custom/pkmn_ranger_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
