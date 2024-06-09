@@ -442,6 +442,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_BUG_MANIAC              0x1128
 #define OBJ_EVENT_PAL_TAG_DRAGON_TAMER            0x1129
 #define OBJ_EVENT_PAL_TAG_RUIN_MANIAC             0x112A
+#define OBJ_EVENT_PAL_TAG_PKMN_BREEDER            0x112B
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -495,6 +496,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_BugManiac,             OBJ_EVENT_PAL_TAG_BUG_MANIAC},
     {gObjectEventPal_DragonTamer,           OBJ_EVENT_PAL_TAG_DRAGON_TAMER},
     {gObjectEventPal_RuinManiac,            OBJ_EVENT_PAL_TAG_RUIN_MANIAC},
+    {gObjectEventPal_PkmnBreeder,           OBJ_EVENT_PAL_TAG_PKMN_BREEDER},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else

@@ -252,6 +252,8 @@
 #define OBJ_EVENT_GFX_BUG_MANIAC                 248
 #define OBJ_EVENT_GFX_DRAGON_TAMER               249
 #define OBJ_EVENT_GFX_RUIN_MANIAC                250
+#define OBJ_EVENT_GFX_PKMN_BREEDER_M             251
+#define OBJ_EVENT_GFX_PKMN_BREEDER_F             252
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

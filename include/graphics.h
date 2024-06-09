@@ -11543,6 +11543,7 @@ extern const u16 gObjectEventPal_BirdKeeper[];
 extern const u16 gObjectEventPal_BugManiac[];
 extern const u16 gObjectEventPal_DragonTamer[];
 extern const u16 gObjectEventPal_RuinManiac[];
+extern const u16 gObjectEventPal_PkmnBreeder[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];
