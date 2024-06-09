@@ -516,6 +516,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PKMN_BREEDER_M] =           &gObjectEventGraphicsInfo_PkmnBreederM,
     [OBJ_EVENT_GFX_PKMN_BREEDER_F] =           &gObjectEventGraphicsInfo_PkmnBreederF,
     [OBJ_EVENT_GFX_AROMA_LADY] =               &gObjectEventGraphicsInfo_AromaLady,
+    [OBJ_EVENT_GFX_POKEMANIAC] =               &gObjectEventGraphicsInfo_Pokemaniac,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
