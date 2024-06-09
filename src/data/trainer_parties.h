@@ -6305,9 +6305,9 @@ static const struct TrainerMon sParty_Winona1[] = { // Krypto
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_STURDY,
         .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(252, 0, 92, 0, 0, 164),
-        .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL),
-        .moves = {MOVE_STEALTH_ROCK, MOVE_ROCK_SLIDE, MOVE_STEEL_ROLLER, MOVE_IRON_DEFENSE},
+        .ev = TRAINER_PARTY_EVS(248, 248, 0, 0, 0, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_STEALTH_ROCK, MOVE_ROCK_SLIDE, MOVE_STEEL_ROLLER, MOVE_HEAVY_SLAM},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -6317,7 +6317,7 @@ static const struct TrainerMon sParty_Winona1[] = { // Krypto
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(252, 0, 232, 24, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
-        .moves = {MOVE_TAILWIND, MOVE_ROCK_SLIDE, MOVE_IRON_DEFENSE, MOVE_ROOST},
+        .moves = {MOVE_IRON_DEFENSE, MOVE_ROCK_SLIDE, MOVE_TAILWIND, MOVE_ROOST},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -6325,8 +6325,8 @@ static const struct TrainerMon sParty_Winona1[] = { // Krypto
         .heldItem = ITEM_MAWILITE,
         .ability = ABILITY_INTIMIDATE,
         .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(248, 252, 0, 0, 0, 8),
-        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 248, 0, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_SWORDS_DANCE, MOVE_PLAY_ROUGH, MOVE_IRON_HEAD, MOVE_SUCKER_PUNCH},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
@@ -6361,6 +6361,7 @@ static const struct TrainerMon sParty_Winona1[] = { // Krypto
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
+
 
 static const struct TrainerMon sParty_TateAndLiza1[] = { // light
     {
