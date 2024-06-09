@@ -145,9 +145,9 @@
       "flag": "FLAG_HIDE_RUSTURF_TUNNEL_WANDA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 21,
-      "y": 15,
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
+      "x": 17,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 2,
