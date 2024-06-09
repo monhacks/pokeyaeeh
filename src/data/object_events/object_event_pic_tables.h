@@ -2226,3 +2226,13 @@ static const struct SpriteFrameImage sPicTable_DragonTamer[] = {
     overworld_frame(gObjectEventPic_DragonTamer, 2, 4, 7),
     overworld_frame(gObjectEventPic_DragonTamer, 2, 4, 8),
 };
+
+static const struct SpriteFrameImage sPicTable_RuinManiac[] = {
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 0),
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 1),
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 2),
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 3),
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 4),
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 5),
+    overworld_frame(gObjectEventPic_RuinManiac, 2, 4, 6),
+};
