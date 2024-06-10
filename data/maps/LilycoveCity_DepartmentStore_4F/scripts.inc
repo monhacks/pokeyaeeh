@@ -31,7 +31,6 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_HEAT_WAVE
 	.2byte ITEM_TM_SOLAR_BEAM
 	.2byte ITEM_TM_HYDRO_PUMP
-	.2byte ITEM_TM_ACROBATICS
 	.2byte ITEM_TM_SLUDGE_WAVE
 	.2byte ITEM_TM_HURRICANE
 	.2byte ITEM_TM_POLTERGEIST

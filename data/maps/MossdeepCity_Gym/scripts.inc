@@ -314,7 +314,6 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	setflag FLAG_BADGE07_GET
 	setflag FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
 	clearflag FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY
-	clearflag FLAG_UNKNOWN_0x393
 	setvar VAR_0x8008, 7
 	giveitem ITEM_GENGARITE, 1
 	msgbox MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0, MSGBOX_DEFAULT

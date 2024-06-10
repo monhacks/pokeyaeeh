@@ -596,6 +596,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route123_EventScript_ItemAltarianite",
       "flag": "FLAG_ITEM_ROUTE_123_ALTARIANITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "x": 58,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_ItemHatterenite",
+      "flag": "FLAG_ITEM_ROUTE_123_HATTERENITE"
     }
   ],
   "warp_events": [

@@ -365,8 +365,8 @@
 #define ITEM_PIDGEOTITE 297 // Route 118 Boss Chester
 #define ITEM_ALAKAZITE 298
 #define ITEM_SLOWBRONITE 299 // Abandoned Ship Hidden Floor Rooms
-#define ITEM_GENGARITE 300
-#define ITEM_KANGASKHANITE 301
+#define ITEM_GENGARITE 300 // Mossdeep City Gym Leader
+#define ITEM_KANGASKHANITE 301 // Safari Zone North
 #define ITEM_PINSIRITE 302 // Route 119 Boss Donald
 #define ITEM_GYARADOSITE 303 // Route 108 Boss Jerome
 #define ITEM_AERODACTYLITE 304 // Held by Fossil revived Aerodactyl, Rustboro City
@@ -385,8 +385,8 @@
 #define ITEM_SABLENITE 317 // Cave Of Origin 1F
 #define ITEM_MAWILITE 318 // Fortree City Gym Leader
 #define ITEM_AGGRONITE 319 // Granite Cave
-#define ITEM_MEDICHAMITE 320
-#define ITEM_MANECTITE 321
+#define ITEM_MEDICHAMITE 320 // Safari Zone North East
+#define ITEM_MANECTITE 321 // Route 121
 #define ITEM_SHARPEDONITE 322 // Aqua Hideout B1F
 #define ITEM_CAMERUPTITE 323 // Magma Hideout 4F
 #define ITEM_ALTARIANITE 324 // Route 123
@@ -1185,7 +1185,7 @@
 
 // Gigantamax Mega Stones
 #define ITEM_BUTTERFRITE 886
-#define ITEM_MACHAMPITE 887
+#define ITEM_MACHAMPITE 887 // Victory Road F1
 #define ITEM_KINGLERITE 888
 #define ITEM_LAPRASITE 889
 #define ITEM_GARBODORITE 890
@@ -1195,9 +1195,9 @@
 #define ITEM_INTELEONITE 894 // Petalburg City (after Gym 5)
 #define ITEM_CORVIKNIGHTITE 895
 #define ITEM_ORBEETLITE 896
-#define ITEM_DREDNITE 897
+#define ITEM_DREDNITE 897 // Seaflor Cavern R7
 #define ITEM_COALOSSALITE 898
-#define ITEM_SANDACONDANITE 899
+#define ITEM_SANDACONDANITE 899 // Route 125
 #define ITEM_CENTISKORCHITE 900
 #define ITEM_HATTERENITE 901
 #define ITEM_GRIMMSNARLITE 902

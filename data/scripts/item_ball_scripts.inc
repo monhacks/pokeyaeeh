@@ -161,8 +161,8 @@ Route116_EventScript_ItemXSpecial::
 	finditem ITEM_X_SP_ATK
 	end
 
-Route116_EventScript_ItemEther::
-	finditem ITEM_ETHER
+Route116_EventScript_ItemTMAirSlash::
+	finditem ITEM_TM_AIR_SLASH
 	end
 
 Route116_EventScript_ItemRepel::
@@ -253,6 +253,10 @@ Route121_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
+Route121_EventScript_ItemManectite::
+	finditem ITEM_MANECTITE
+	end
+
 Route121_EventScript_ItemGimmighoulCoins_2::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
@@ -269,6 +273,10 @@ Route123_EventScript_ItemUltraBall::
 
 Route123_EventScript_ItemElixir::
 	finditem ITEM_ELIXIR
+	end
+
+Route123_EventScript_ItemHatterenite::
+	finditem ITEM_HATTERENITE
 	end
 
 Route123_EventScript_ItemGimmighoulCoins::
@@ -298,6 +306,10 @@ Route124_EventScript_ItemYellowShard::
 
 Route125_EventScript_ItemBigPearl::
 	finditem ITEM_BIG_PEARL
+	end
+
+Route125_EventScript_ItemSandacondanite::
+	finditem ITEM_SANDACONDANITE
 	end
 
 Route126_EventScript_ItemGreenShard::
@@ -418,8 +430,12 @@ RusturfTunnel_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
-GraniteCave_1F_EventScript_ItemEscapeRope::
+GraniteCave_1F_EventScript_ItemMaxRepel::
 	finditem ITEM_MAX_REPEL
+	end
+
+GraniteCave_1F_EventScript_ItemTMReversal::
+	finditem ITEM_TM_REVERSAL
 	end
 
 GraniteCave_B1F_EventScript_ItemPokeBall::
@@ -432,6 +448,10 @@ GraniteCave_B2F_EventScript_ItemRepel::
 
 GraniteCave_B2F_EventScript_ItemAggronite::
 	finditem ITEM_AGGRONITE
+	end
+
+MtChimney_EventScript_ItemTMUproar::
+	finditem ITEM_TM_UPROAR
 	end
 
 JaggedPass_EventScript_ItemTMFlamethrower::
@@ -463,8 +483,12 @@ MeteorFalls_1F_1R_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
+MeteorFalls_1F_1R_EventScript_ItemTMDragonClaw::
 	finditem ITEM_TM_DRAGON_CLAW
+	end
+
+MeteorFalls_B1F_2R_EventScript_ItemTMDragonPulse::
+	finditem ITEM_TM_DRAGON_PULSE
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemSalamencite::
@@ -475,7 +499,7 @@ NewMauville_Inside_EventScript_ItemUltraBall::
 	finditem ITEM_ULTRA_BALL
 	end
 
-NewMauville_Inside_EventScript_ItemEscapeRope::
+NewMauville_Inside_EventScript_ItemTMSupercellSlam::
 	finditem ITEM_MAX_REPEL
 	end
 
@@ -495,7 +519,7 @@ AbandonedShip_Rooms_1F_EventScript_ItemHarborMail::
 	finditem ITEM_HARBOR_MAIL
 	end
 
-AbandonedShip_Rooms_B1F_EventScript_ItemEscapeRope::
+AbandonedShip_Rooms_B1F_EventScript_ItemMaxRepel::
 	finditem ITEM_MAX_REPEL
 	end
 
@@ -548,12 +572,16 @@ SafariZone_North_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
+SafariZone_North_EventScript_ItemKangaskhanite::
+	finditem ITEM_KANGASKHANITE
+	end
+
 SafariZone_Southwest_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-SafariZone_Northeast_EventScript_ItemNugget::
-	finditem ITEM_NUGGET
+SafariZone_Northeast_EventScript_ItemMedichamite::
+	finditem ITEM_MEDICHAMITE
 	end
 
 SafariZone_Southeast_EventScript_ItemBigPearl::
@@ -566,6 +594,10 @@ MtPyre_2F_EventScript_ItemUltraBall::
 
 MtPyre_3F_EventScript_ItemSuperRepel::
 	finditem ITEM_SUPER_REPEL
+	end
+
+MtPyre_3F_EventScript_ItemTMShadowClaw::
+	finditem ITEM_TM_SHADOW_CLAW
 	end
 
 MtPyre_4F_EventScript_ItemSeaIncense::
@@ -590,6 +622,10 @@ MtPyre_Exterior_EventScript_ItemMaxPotion::
 
 MtPyre_Exterior_EventScript_ItemTMSkillSwap::
 	finditem ITEM_TM_SKILL_SWAP
+	end
+
+AquaHideout_B1F_EventScript_ItemTMBodyPress::
+	finditem ITEM_TM_BODY_PRESS
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
@@ -652,6 +688,9 @@ ShoalCave_LowTideIceRoom_EventScript_ItemGlalitite::
 SeafloorCavern_Room9_EventScript_ItemTMRockSlide::
 	finditem ITEM_TM_ROCK_SLIDE
 	end
+SeafloorCavern_Room7_EventScript_ItemDrednite::
+	finditem ITEM_DREDNITE
+	end
 
 Route110_TrickHousePuzzle1_EventScript_ItemFireGem::
 	finditem ITEM_FIRE_GEM
@@ -693,13 +732,17 @@ VictoryRoad_1F_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
+VictoryRoad_1F_EventScript_ItemMachampite::
+	finditem ITEM_MACHAMPITE
+	end
+
 VictoryRoad_1F_EventScript_ItemGimmighoulCoins::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-VictoryRoad_B1F_EventScript_ItemTMPsychic::
-	finditem ITEM_TM_PSYCHIC
+VictoryRoad_B1F_EventScript_ItemTMHex::
+	finditem ITEM_TM_HEX
 	end
 
 VictoryRoad_B1F_EventScript_ItemFullRestore::
@@ -723,6 +766,9 @@ ArtisanCave_1F_EventScript_ItemGimmighoulCoins::
 MagmaHideout_1F_EventScript_ItemGimmighoulCoins::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
+	end
+MagmaHideout_2F_1R_EventScript_ItemTMZenHeadbutt::
+	finditem ITEM_TM_ZEN_HEADBUTT
 	end
 
 MagmaHideout_2F_2R_EventScript_ItemMaxElixir::
@@ -760,6 +806,10 @@ EverGradeCity_EventScript_ItemAudinite::
 
 CaveOfOrigin_1F_EventScript_ItemSablenite::
 	finditem ITEM_SABLENITE
+	end
+
+SkyPillar_Outside_EventScript_ItemTMJetstream::
+	finditem ITEM_TM_JETSTREAM
 	end
 
 Common_EventScript_FindItem::
