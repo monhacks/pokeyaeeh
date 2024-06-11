@@ -11344,7 +11344,7 @@ BattleScript_WildBattleVictory::
 BattleScript_FaintWildMon::
 	pause B_WAIT_TIME_SHORT
 	dofaintanimation BS_SCRIPTING
-	printstring STRINGID_TARGETFAINTED
+	printstring STRINGID_SCRIPTINGFAINTED
 	setbyte sGIVEEXP_STATE, 0
 	getexp BS_SCRIPTING
 	cleareffectsonfaint BS_SCRIPTING

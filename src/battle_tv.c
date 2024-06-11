@@ -1048,6 +1048,7 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
         }
         break;
     case STRINGID_TARGETFAINTED:
+    case STRINGID_SCRIPTINGFAINTED:
         AddPointsOnFainting(TRUE);
         if (tvPtr->pos[atkSide][defFlank].waterSportMonId != 0)
         {

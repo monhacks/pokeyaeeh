@@ -10855,7 +10855,10 @@ static void Cmd_various(void)
             gBattleStruct->victoryCatchState = VICTORY_CATCH_START;
         }
         else
+        {
             gBattlescriptCurrInstr = cmd->jumpInstr;
+            gBattleStruct->victoryCatchState = VICTORY_CATCH_FAINTED;
+        }
         return;
     }
     case VARIOUS_CATCH_AFTER_VICTORY:
