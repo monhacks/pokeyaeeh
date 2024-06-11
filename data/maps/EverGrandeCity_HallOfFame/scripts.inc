@@ -55,6 +55,7 @@ EverGrandeCity_HallOfFame_EventScript_GameClearMale::
 	fadescreenspeed FADE_TO_BLACK, 24
 	special GameClear
 	special TryRespawnLegendaryEncounters
+	special InitRoamer
 	waitstate
 	releaseall
 	end
@@ -64,6 +65,7 @@ EverGrandeCity_HallOfFame_EventScript_GameClearFemale::
 	fadescreenspeed FADE_TO_BLACK, 24
 	special GameClear
 	special TryRespawnLegendaryEncounters
+	special InitRoamer
 	waitstate
 	releaseall
 	end

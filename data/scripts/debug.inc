@@ -124,9 +124,8 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1::
-	goto MossdeepCity_Gym_EventScript_TateAndLiza
-	@goto_if_set FLAG_UNLOCK_CHEAT_MENU, Debug_EventScript_UnsetTestFlag
-	@goto Debug_EventScript_SetTestFlag
+	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
+	goto Debug_EventScript_SetTestFlag
 	end
 
 Debug_EventScript_Script_2::
@@ -278,12 +277,13 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_UNLOCK_CHEAT_MENU
+    setflag FLAG_SYS_GAME_CLEAR
+	special InitRoamer
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_UNLOCK_CHEAT_MENU
+    clearflag FLAG_SYS_GAME_CLEAR
 	end
 
 Debug_Text_SetTestFlag::

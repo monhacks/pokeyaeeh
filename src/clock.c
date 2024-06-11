@@ -10,6 +10,7 @@
 #include "berry.h"
 #include "main.h"
 #include "overworld.h"
+#include "roamer.h"
 #include "wallclock.h"
 #include "constants/form_change_types.h"
 
@@ -55,6 +56,7 @@ static void UpdatePerDay(struct Time *localTime)
         UpdateFrontierGambler(daysSince);
         SetShoalItemFlag(daysSince);
         SetRandomLotteryNumber(daysSince);
+        UpdateRoamerRespawns(daysSince);
         *days = localTime->days;
     }
 }
