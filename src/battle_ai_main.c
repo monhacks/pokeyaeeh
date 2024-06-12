@@ -844,6 +844,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case ABILITY_WATER_ABSORB:
             case ABILITY_DRY_SKIN:
             case ABILITY_STORM_DRAIN:
+            case ABILITY_STEAM_ENGINE:
                 if (moveType == TYPE_WATER)
                     RETURN_SCORE_MINUS(20);
                 break;
