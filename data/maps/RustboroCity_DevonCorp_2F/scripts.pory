@@ -363,54 +363,54 @@ text ReceivedMonFromResearcher{
 // givemon is lv 0 because the level will change according to badges, to reduce tedious grinding. 
 ///////////////////////////////////////////////////////////////////////////
 script OmanyteReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_OMANYTE)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OMANYTE)
-    givemon(SPECIES_OMANYTE, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_OMANYTE)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OMANYTE)
+	givemon(SPECIES_OMANYTE, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_OMANYTE)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script KabutoReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_KABUTO)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KABUTO)
-    givemon(SPECIES_KABUTO, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_KABUTO)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KABUTO)
+	givemon(SPECIES_KABUTO, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_KABUTO)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script AerodactylReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_AERODACTYL)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL)
-    givemon(SPECIES_AERODACTYL, 0, ITEM_AERODACTYLITE)
+	bufferspeciesname(STR_VAR_2, SPECIES_AERODACTYL)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL)
+	givemon(SPECIES_AERODACTYL, 0, ITEM_AERODACTYLITE)
 	bufferspeciesname(STR_VAR_1, SPECIES_AERODACTYL)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script LileepReady{
@@ -431,190 +431,190 @@ script LileepReady{
 }
 ///////////////////////////////////////////////////////////////////////////
 script AnorithReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_ANORITH)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANORITH)
-    givemon(SPECIES_ANORITH, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_ANORITH)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANORITH)
+	givemon(SPECIES_ANORITH, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_ANORITH)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script CranidosReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_CRANIDOS)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CRANIDOS)
-    givemon(SPECIES_CRANIDOS, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_CRANIDOS)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CRANIDOS)
+	givemon(SPECIES_CRANIDOS, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_CRANIDOS)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script ShieldonReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_SHIELDON)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIELDON)
-    givemon(SPECIES_SHIELDON, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_SHIELDON)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIELDON)
+	givemon(SPECIES_SHIELDON, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_SHIELDON)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script TirtougaReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_TIRTOUGA)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TIRTOUGA)
-    givemon(SPECIES_TIRTOUGA, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_TIRTOUGA)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TIRTOUGA)
+	givemon(SPECIES_TIRTOUGA, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_TIRTOUGA)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script ArchenReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_ARCHEN)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCHEN)
-    givemon(SPECIES_ARCHEN, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_ARCHEN)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCHEN)
+	givemon(SPECIES_ARCHEN, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_ARCHEN)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script TyruntReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_TYRUNT)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRUNT)
-    givemon(SPECIES_TYRUNT, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_TYRUNT)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYRUNT)
+	givemon(SPECIES_TYRUNT, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_TYRUNT)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script AmauraReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_AMAURA)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AMAURA)
-    givemon(SPECIES_AMAURA, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_AMAURA)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AMAURA)
+	givemon(SPECIES_AMAURA, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_AMAURA)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script ArctozoltReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_ARCTOZOLT)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCTOZOLT)
-    givemon(SPECIES_ARCTOZOLT, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_ARCTOZOLT)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCTOZOLT)
+	givemon(SPECIES_ARCTOZOLT, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_ARCTOZOLT)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script ArctovishReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_ARCTOVISH)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCTOVISH)
-    givemon(SPECIES_ARCTOVISH, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_ARCTOVISH)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ARCTOVISH)
+	givemon(SPECIES_ARCTOVISH, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_ARCTOVISH)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script DracovishReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_DRACOVISH)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRACOVISH)
-    givemon(SPECIES_DRACOVISH, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_DRACOVISH)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRACOVISH)
+	givemon(SPECIES_DRACOVISH, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_DRACOVISH)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script DracozoltReady{
-    bufferspeciesname(STR_VAR_2, SPECIES_DRACOZOLT)
-    msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
-    setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRACOZOLT)
-    givemon(SPECIES_DRACOZOLT, 0)
+	bufferspeciesname(STR_VAR_2, SPECIES_DRACOZOLT)
+	msgbox(FossilBroughtBackToLife, MSGBOX_DEFAULT)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRACOZOLT)
+	givemon(SPECIES_DRACOZOLT, 0)
 	bufferspeciesname(STR_VAR_1, SPECIES_DRACOZOLT)
 	call(ReceivedFossilMonFanfare)
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-        goto(ReceiveFossilParty)
-    }
-    if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-        goto(ReceiveFossilPC)
-    }
-    goto(Common_EventScript_NoMoreRoomForPokemon)
-    end
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+		goto(ReceiveFossilParty)
+	}
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+		goto(ReceiveFossilPC)
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
 }
 ///////////////////////////////////////////////////////////////////////////
 script ReceiveFossilParty{
@@ -643,11 +643,11 @@ script FinishReceivingFossilMon{
 	end
 }
 script ReceivedFossilMonFanfare{
-    playfanfare(MUS_OBTAIN_ITEM)
-    message(ReceivedMonFromResearcher)
-    waitmessage
-    waitfanfare
-    return
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(ReceivedMonFromResearcher)
+	waitmessage
+	waitfanfare
+	return
 }
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
