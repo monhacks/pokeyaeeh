@@ -1027,6 +1027,17 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_MUNKIDORI] = sMunkidoriTeachableLearnset,
     [SPECIES_FEZANDIPITI] = sFezandipitiTeachableLearnset,
     [SPECIES_OGERPON_TEAL_MASK] = sOgerponTeachableLearnset,
+    // Placeholders for now lol.
+    [SPECIES_ARCHALUDON] = sDuraludonTeachableLearnset,
+    [SPECIES_HYDRAPPLE] = sDipplinTeachableLearnset,
+    [SPECIES_GOUGING_FIRE] = sEnteiTeachableLearnset,
+    [SPECIES_RAGING_BOLT] = sRaikouTeachableLearnset,
+    [SPECIES_IRON_BOULDER] = sTerrakionTeachableLearnset,
+    [SPECIES_IRON_CROWN] = sCobalionTeachableLearnset,
+    [SPECIES_TERAPAGOS_NORMAL] = sUnownTeachableLearnset,
+    [SPECIES_TERAPAGOS_TERASTAL] = sUnownTeachableLearnset,
+    [SPECIES_TERAPAGOS_STELLAR] = sUnownTeachableLearnset,
+    [SPECIES_PECHARUNT] = sGengarTeachableLearnset,
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,
