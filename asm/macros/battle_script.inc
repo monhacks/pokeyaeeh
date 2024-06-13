@@ -1339,12 +1339,15 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro itemrestorehp
+	.macro itemrestorehp jumpInstr:req, restoreBattlerInstr:req
 	callnative BS_ItemRestoreHP
+	.4byte \jumpInstr
+	.4byte \restoreBattlerInstr
 	.endm
 
-	.macro itemcurestatus
+	.macro itemcurestatus jumpInstr:req
 	callnative BS_ItemCureStatus
+	.4byte \jumpInstr
 	.endm
 
 	.macro itemincreasestat

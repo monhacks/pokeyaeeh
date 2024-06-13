@@ -20350,14 +20350,7 @@ static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     .species = SPECIES_SHARPEDO,
     .ability = ABILITY_SPEED_BOOST,
     .heldItem = ITEM_SHARPEDONITE,
-    .moves = {MOVE_TACKLE, MOVE_PROTECT, MOVE_NONE, MOVE_NONE}
-    },
-    {
-    .lvl = 1,
-    .species = SPECIES_SHARPEDO,
-    .ability = ABILITY_SPEED_BOOST,
-    .heldItem = ITEM_SHARPEDONITE,
-    .moves = {MOVE_TACKLE, MOVE_PROTECT, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_FISHIOUS_REND, MOVE_PROTECT, MOVE_NONE, MOVE_NONE}
     }
 };
 

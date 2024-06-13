@@ -46,46 +46,60 @@ BattleScript_UseItemMessage:
     waitmessage B_WAIT_TIME_LONG
     return
 
-BattleScript_ItemRestoreHP::
-    call BattleScript_UseItemMessage
-    itemrestorehp
-    jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_ItemRestoreHP_SendOutRevivedBattler
+
+BattleScript_ItemRestoreHPRet:
     bichalfword gMoveResultFlags, MOVE_RESULT_NO_EFFECT
     orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-    healthbarupdate BS_ATTACKER
-    datahpupdate BS_ATTACKER
+    healthbarupdate BS_SCRIPTING
+    datahpupdate BS_SCRIPTING
     printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
     waitmessage B_WAIT_TIME_LONG
+    return
+
+BattleScript_ItemRestoreHP::
+    call BattleScript_UseItemMessage
+    itemrestorehp BattleScript_ItemRestoreHPEnd, BattleScript_ItemRestoreHP_Battler
+	call BattleScript_ItemRestoreHP_Party
+	goto BattleScript_ItemRestoreHPEnd
+
+BattleScript_ItemRestoreHP_Battler::
+    call BattleScript_ItemRestoreHPRet
+BattleScript_ItemRestoreHPEnd:
     end
+
+BattleScript_ItemRestoreHP_Party::
+    jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_ItemRestoreHP_SendOutRevivedBattler
+    bichalfword gMoveResultFlags, MOVE_RESULT_NO_EFFECT
+    printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
+    waitmessage B_WAIT_TIME_LONG
+    return
 
 BattleScript_ItemRestoreHP_SendOutRevivedBattler:
     switchinanim BS_SCRIPTING, FALSE
     waitstate
     switchineffects BS_SCRIPTING
+BattleScript_ItemCureStatusEnd:
     end
 
 BattleScript_ItemCureStatus::
     call BattleScript_UseItemMessage
-    itemcurestatus
-    updatestatusicon BS_ATTACKER
+BattleScript_ItemCureStatusAfterItemMsg:
+    itemcurestatus BattleScript_ItemCureStatusEnd
+    updatestatusicon BS_SCRIPTING
     printstring STRINGID_ITEMCUREDSPECIESSTATUS
     waitmessage B_WAIT_TIME_LONG
     end
 
 BattleScript_ItemHealAndCureStatus::
-    call BattleScript_UseItemMessage
-    itemrestorehp
-    itemcurestatus
-    printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
-    waitmessage B_WAIT_TIME_LONG
-    bichalfword gMoveResultFlags, MOVE_RESULT_NO_EFFECT
-    orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
-    healthbarupdate BS_ATTACKER
-    datahpupdate BS_ATTACKER
-    updatestatusicon BS_ATTACKER
-    printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
-    waitmessage B_WAIT_TIME_LONG
-    end
+	call BattleScript_UseItemMessage
+	itemrestorehp BattleScript_ItemCureStatusAfterItemMsg, BattleScript_ItemHealAndCureStatus_Battler
+	call BattleScript_ItemRestoreHP_Party
+	goto BattleScript_ItemHealAndCureStatusEnd
+
+BattleScript_ItemHealAndCureStatus_Battler::
+	call BattleScript_ItemRestoreHPRet
+BattleScript_ItemHealAndCureStatusEnd::
+	goto BattleScript_ItemCureStatusAfterItemMsg
 
 BattleScript_ItemIncreaseStat::
     call BattleScript_UseItemMessage
