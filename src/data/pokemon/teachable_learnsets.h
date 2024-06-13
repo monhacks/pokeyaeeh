@@ -764,6 +764,7 @@ static const u16 sBeedrillTeachableLearnset[] = {
     MOVE_MEGA_DRAIN,
     MOVE_OUTRAGE,
     MOVE_PAYBACK,
+    MOVE_PIN_MISSILE,
     MOVE_POISON_JAB,
     MOVE_PROTECT,
     MOVE_REFLECT,

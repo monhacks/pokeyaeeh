@@ -1790,7 +1790,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_FOG) 
 	{
         if ((atkAbility != ABILITY_KEEN_EYE) && (atkAbility != ABILITY_ILLUMINATE)
-        && (atkAbility != ABILITY_INFILTRATOR) && (atkAbility != ABILITY_MINDS_EYE))
+        && (atkAbility != ABILITY_INFILTRATOR) && (atkAbility != ABILITY_MINDS_EYE)
+        && (atkHoldEffect != HOLD_EFFECT_SAFETY_GOGGLES))
         {
 		    calc = (calc * 70) / 100; // 1.3 fog loss
         }

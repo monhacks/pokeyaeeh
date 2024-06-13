@@ -3571,6 +3571,18 @@ BattleScript_MetalTerrainPreventsAttackUpUserAlly_Ally::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_MetalTerrainPreventsDefDrop::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_METALTERRAINPREVENTSATK
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_DefDownSpeedUpTrySpeed
+
+BattleScript_MetalTerrainPreventsSpeedDrop::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_METALTERRAINPREVENTSATK
+	waitmessage B_WAIT_TIME_LONG
+	end
+
 BattleScript_MetalTerrainPreventsMovesAtk::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
@@ -8061,9 +8073,10 @@ BattleScript_DefSpDefDownRet::
 	return
 
 BattleScript_DefDownSpeedUp::
+	jumpifmetalterrainaffected BS_ATTACKER, BattleScript_MetalTerrainPreventsDefDrop
 	jumpifstat BS_ATTACKER, CMP_GREATER_THAN, STAT_DEF, MIN_STAT_STAGE, BattleScript_DefDownSpeedUpTryDef
 	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_DefDownSpeedUpRet
-BattleScript_DefDownSpeedUpTryDef::
+BattleScript_DefDownSpeedUpTryDef:
 	playstatchangeanimation BS_ATTACKER, BIT_DEF, STAT_CHANGE_NEGATIVE | STAT_CHANGE_CANT_PREVENT
 	setstatchanger STAT_DEF, 1, TRUE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR | MOVE_EFFECT_CERTAIN, BattleScript_DefDownSpeedUpTrySpeed
@@ -8071,13 +8084,14 @@ BattleScript_DefDownSpeedUpTryDef::
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_DefDownSpeedUpTrySpeed:
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsSpeedDrop
 	playstatchangeanimation BS_ATTACKER, BIT_SPEED, 0
 	setstatchanger STAT_SPEED, 1, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR | MOVE_EFFECT_CERTAIN, BattleScript_DefDownSpeedUpRet
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DefDownSpeedUpRet
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
-BattleScript_DefDownSpeedUpRet::
+BattleScript_DefDownSpeedUpRet:
 	return
 
 BattleScript_KnockedOff::
