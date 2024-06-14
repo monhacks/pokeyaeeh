@@ -65,8 +65,8 @@ Wigglytuff
     ability = Fur Coat
     evs = 252, 0, 4, 252, 0, 0
     nature = Modest
-    moves = Flamethrower / Calm Mind, Boomburst, Moonblast, Soft-Boiled
-    comment = Wigglytuff is A really helpful defensive piece to teams due to it's access to fur coat and instant recovery, allowing it to set up on enemy Pokémon that can't break through it and create a win condition.
+    moves = Flamethrower / Calm Mind, Boomburst / Hyper Voice, Moonblast, Soft-Boiled
+    comment = Wigglytuff is a really helpful defensive piece to teams due to it's access to Fur Coat and instant recovery, allowing it to set up on enemy Pokémon that can't break through it and create a win condition.
     tags = Special Attacker, Defensive
 }
 
@@ -262,6 +262,18 @@ Lilligant
     tags = Special Attacker, Offensive, Sweeper
 }
 
+Chesnaught
+{ 
+    name = The Unstoppable Paladin
+    item = Leftovers / Rocky Helmet
+    ability = Rough SKin
+    evs = 120, 136, 252, 0, 0, 0
+    nature = Impish/Careful
+    moves = Bulk Up, Drain Punch, Bullet Seed / Needle Arm, Iron Head / Synthesis
+    comment = Chesnaught being a bulky Pokémon enables it to set up Bulk Up while getting recovery from Synthesis, Leftovers and Drain Punch. It can wall Physical Attackers and make them regret attacking it with Rough Skin.
+    tags = Physical Attacker, Bulky, Offensive
+} 
+
 Delphox
 { 
     name = The Great Magician
@@ -272,6 +284,42 @@ Delphox
     moves = Will-O-Wisp, Hex, Flamethrower, Psychic
     comment = Delphox finally got justice by getting Hex to work with Will-O-Wisp, Pair this with a Life Orb and you will do great damage while crippling the physical attacker.
     tags = Special Attacker, Support
+}
+
+ Greninja
+{ 
+    name = The Adapting Rogue
+    item = Life Orb / Expert Belt
+    ability = Protean
+    evs = 0, 72, 0, 184, 0, 252
+    nature = Hasty
+    moves = Gunk Shot, Water Shuriken / Bubble Beam, Dark Pulse, Extrasensory
+    comment = Protean nerf isn't here so it allows you to change typing freely as you please while manipulating the AI to your needs. Expert Belt / Life Orb is recommended for a sweet boost for the STAB you get with Protean.
+    tags = Special Attacker, Offensive
+} 
+
+Greninja Battle Bond
+{ 
+    name = The Deadly Rogue
+    item = Life Orb / Expert Belt
+    ability = Battle Bond
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Timid
+    moves = Water Shuriken, Dark Pulse, Ice Beam, Extrasensory / U-Turn
+    comment = With great Special Attack and Speed, with decent coverage, an Expert Belt or Life Orb is a must with deadly priority Water Shurikens for common Ground, Rock, and Fire-types, Dark Pulse to handle Ghost and Psychic-types, Ice Beam and U-Turn to deal with one of it's weaknesses with Grass-types and Extrasensory to deal with strong Fighting-types.
+    tags = Special Attacker, Offensive
+} 
+
+Greninja Ash
+{ 
+    name = The Deadly Rogue
+    item = Life Orb / Expert Belt
+    ability = Battle Bond
+    evs = 0, 0, 4, 252, 0, 252
+    nature = Timid
+    moves = Water Shuriken, Dark Pulse, Ice Beam, Extrasensory / U-Turn
+    comment = With great Special Attack and Speed, with decent coverage, an Expert Belt or Life Orb is a must with deadly priority Water Shurikens for common Ground, Rock, and Fire-types, Dark Pulse to handle Ghost and Psychic-types, Ice Beam and U-Turn to deal with one of it's weaknesses with Grass-types and Extrasensory to deal with strong Fighting-types.
+    tags = Special Attacker, Offensive
 } 
 
 Clawitzer
