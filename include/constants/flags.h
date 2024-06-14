@@ -1228,6 +1228,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_MEDICHAMITE                0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
+// Route Bosses
 #define FLAG_ROUTE_102_BOSS_DEFEATED                                0x493 // Route 102 Boss Lass Tiana
 #define FLAG_ROUTE_104_BOSS_DEFEATED                                0x494 // Route 104 Boss Fisherman Ivan
 #define FLAG_ROUTE_116_BOSS_DEFEATED                                0x495 // Route 116 Boss Rich Boy Dawson
@@ -1245,7 +1246,7 @@
 #define FLAG_ROUTE_120_BOSS_DEFEATED                                0x4A1 // Route 120 Boss Hiker Ydarissep (used to be Chip)
 #define FLAG_ROUTE_121_BOSS_DEFEATED                                0x4A2 // Route 121 Boss Couple 
 #define FLAG_ROUTE_123_BOSS_DEFEATED                                0x4A3 // Route 123 Boss Aroma Lady Violet
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_ROUTE_124_BOSS_DEFEATED                                0x4A4 // Route 124 Boss Swimmer Chad
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
@@ -1332,7 +1333,7 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_SCALEMONS                                              0x4F9 // Unused Flag
+#define FLAG_SCALEMONS                                              0x4F9
 #define FLAG_MET_SLATEPORT_WOMAN                                    0x4FA
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB

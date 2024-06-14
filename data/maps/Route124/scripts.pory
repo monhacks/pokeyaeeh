@@ -47,11 +47,6 @@ Route124_EventScript_Grace::
 	msgbox Route124_Text_GracePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route124_EventScript_Chad::
-	trainerbattle_single TRAINER_CHAD, Route124_Text_ChadIntro, Route124_Text_ChadDefeat
-	msgbox Route124_Text_ChadPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route124_EventScript_Lila::
 	trainerbattle_single TRAINER_LILA_AND_ROY_1, Route124_Text_LilaIntro, Route124_Text_LilaDefeat, Route124_EventScript_RegisterLila
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -104,3 +99,40 @@ Route124_Text_HuntersHouse:
 	.string "Hunter's House$"
 
 `
+
+script Route124_EventScript_Chad2{
+	msgbox("You look like someone who could handle\nthis little guy!")
+	givemon(SPECIES_DREDNAW, 0, ITEM_WHITE_HERB, ITEM_CHERISH_BALL, 3, 0, MON_MALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_AQUA_FANGS, MOVE_SHELL_SMASH, MOVE_ROCK_SLIDE, MOVE_JAW_LOCK, TRUE)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received an Drednaw!")
+	waitmessage
+	waitfanfare
+	msgbox("Drednaw's bites are really powerful.\pSo, be careful if you wanna pet it.", MSGBOX_AUTOCLOSE)
+	msgbox("And this, too!")
+	giveitem(ITEM_DREDNITE, 1)
+	setflag(FLAG_ROUTE_124_BOSS_DEFEATED)
+	msgbox("Holding Drednite,\nyour Drednaw will Mega Evolve!\pIt's bites will be even more powerful!", MSGBOX_AUTOCLOSE)
+}
+
+script Route124_EventScript_Chad{
+    lock
+    faceplayer
+	if(defeated(TRAINER_SPENCER) &&
+	   defeated(TRAINER_ROLAND) &&
+	   defeated(TRAINER_JENNY_1) &&
+	   defeated(TRAINER_GRACE) &&
+	   defeated(TRAINER_LILA_AND_ROY_1) &&
+	   defeated(TRAINER_DECLAN) &&
+	   defeated(TRAINER_ISABELLA)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_CHAD, Route124_Text_ChadIntro, Route124_Text_ChadDefeat, Route124_EventScript_Chad2)
+		clearflag(B_FLAG_NO_BAG_USE)
+	    msgbox("Holding Drednite,\nyour Drednaw will Mega Evolve!\pIt's bites will be even more powerful!", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Fufufufu… I dive deep underwater!\pWho're you?\nYou want a battle?\pYou should beat everyone here then\ntry to challenge me!", MSGBOX_AUTOCLOSE)
+	}
+    release
+    end
+}
