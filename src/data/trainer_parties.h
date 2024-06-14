@@ -6737,7 +6737,7 @@ static const struct TrainerMon sParty_KateAndJoy[] = { // Route Boss
         .species = SPECIES_NIDOKING,
         .heldItem = ITEM_NIDOKINGITE,
         .gender = TRAINER_MON_MALE,
-        .ability = ABILITY_TOUGH_CLAWS,
+        .ability = ABILITY_POISON_POINT,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_HIGH_HORSEPOWER, MOVE_FIRE_PUNCH, MOVE_POISON_JAB, MOVE_THUNDER_PUNCH},
@@ -20347,9 +20347,19 @@ static const struct TrainerMon sParty_Leaf[] = {
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
     .lvl = 1,
-    .species = SPECIES_SERVINE,
-    .ability = ABILITY_CONTRARY,
-    .moves = {MOVE_SCALE_SHOT, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .species = SPECIES_SHARPEDO,
+    .ability = ABILITY_SPEED_BOOST,
+    .heldItem = ITEM_SHARPEDONITE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .moves = {MOVE_PROTECT, MOVE_FISHIOUS_REND, MOVE_CRUNCH, MOVE_ICE_FANG}
+    },
+    {
+    .lvl = 1,
+    .species = SPECIES_RAICHU,
+    .ability = ABILITY_LIGHTNING_ROD,
+    .heldItem = ITEM_RAICHUNITE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
+    .moves = {MOVE_THUNDERBOLT, MOVE_HYPER_VOICE, MOVE_THUNDER_WAVE, MOVE_HIDDEN_POWER}
     }
 };
 

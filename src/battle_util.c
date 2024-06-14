@@ -10939,13 +10939,22 @@ bool32 CanMegaEvolve(u32 battler)
     if (gBattleStruct->zmove.toBeUsed[battler])
         return FALSE;
 
+    if (GetBattlerSide(battler) == B_SIDE_OPPONENT
+     && gBattleMons[battler].species == SPECIES_SHARPEDO
+     && GetBattlerAbility(battler) == ABILITY_SPEED_BOOST
+     && HasMove(battler, MOVE_PROTECT)
+     && gDisableStructs[battler].isFirstTurn
+     && holdEffect == HOLD_EFFECT_MEGA_STONE)
+        return FALSE;
+
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
      && IsPartnerMonFromSameTrainer(battler)
      && (mega->alreadyEvolved[partnerPosition] || (mega->toEvolve & gBitTable[BATTLE_PARTNER(battler)])))
     {
+        // If double battle, the enemy's first two Pokemon can Mega Evolve if holding a Mega Stone.
         if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
         {
-            if (holdEffect == HOLD_EFFECT_MEGA_STONE) // Tested, otherwise any of the enemy's mons can mega evolve
+            if (holdEffect == HOLD_EFFECT_MEGA_STONE)
                 return TRUE;
         }
         else
@@ -10954,14 +10963,6 @@ bool32 CanMegaEvolve(u32 battler)
 
     // Check if mon is currently held by Sky Drop
     if (gStatuses3[battler] & STATUS3_SKY_DROPPED)
-        return FALSE;
-
-    if (GetBattlerSide(battler) == B_SIDE_OPPONENT
-     && gBattleMons[battler].species == SPECIES_SHARPEDO
-     && GetBattlerAbility(battler) == ABILITY_SPEED_BOOST
-     && HasMove(battler, MOVE_PROTECT)
-     && gDisableStructs[battler].isFirstTurn
-     && holdEffect == HOLD_EFFECT_MEGA_STONE)
         return FALSE;
 
     // Check if there is an entry in the evolution table for regular Mega Evolution.
