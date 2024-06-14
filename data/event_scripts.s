@@ -1071,7 +1071,7 @@ Text_PleaseVisitAgain:
 
 Common_EventScript_MysteryGift::
 	lockall
-	goto_if_unset FLAG_RECEIVED_1ST_GIFT, MysteryGift_EventScript_FirstGift
+	goto_if_unset FLAG_RECEIVED_1ST_GIFT, MysteryGift_EventScript_RockruffOwnTempo
 	goto_if_unset FLAG_SYS_GAME_CLEAR, MysteryGift_EventScript_CurrentlyUnavailable
 MysteryGift_EventScript_StartMysteryGift::
 	msgbox MysteryGift_Text_WelcomeToMysteryGiftSystem, MSGBOX_YESNO
@@ -1093,7 +1093,7 @@ MysteryGift_EventScript_DoMysteryGift::
 	goto_if_eq VAR_RESULT, 9, MysteryGift_EventScript_Pecharunt
 	end
 
-MysteryGift_EventScript_FirstGift::
+MysteryGift_EventScript_RockruffOwnTempo::
 	msgbox MysteryGift_Text_FirstTimeHere, MSGBOX_AUTOCLOSE
 	playfanfare MUS_OBTAIN_ITEM
 	message MysteryGift_Text_ReceivedFirstGiftMon
