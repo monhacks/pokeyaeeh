@@ -1061,6 +1061,7 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_ILLUMINATE] = 1,
     [ABILITY_DRAGON_SHEEN] = 1,
     [ABILITY_DRAGONFLY] = 1,
+    [ABILITY_MOON_GUARD] = 1,
 };
 
 static const u8 sAbilitiesNotTraced[ABILITIES_COUNT] =
@@ -2001,6 +2002,7 @@ enum
     ENDTURN_HAIL,
     ENDTURN_SNOW,
     ENDTURN_FOG,
+    ENDTURN_MOON,
     ENDTURN_DAMAGE_NON_TYPES,
     ENDTURN_GRAVITY,
     ENDTURN_WATER_SPORT,
@@ -2398,6 +2400,24 @@ u8 DoFieldEndTurnEffects(void)
                 else
                 {
                     gBattlescriptCurrInstr = BattleScript_FogContinues;
+                }
+
+                BattleScriptExecute(gBattlescriptCurrInstr);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_MOON:
+            if (gBattleWeather & B_WEATHER_MOON)
+            {
+                if (!(gBattleWeather & B_WEATHER_MOON_PERMANENT) && --gWishFutureKnock.weatherDuration == 0)
+                {
+                    gBattleWeather &= ~B_WEATHER_MOON_TEMPORARY;
+                    gBattlescriptCurrInstr = BattleScript_MoonFaded;
+                }
+                else
+                {
+                    gBattlescriptCurrInstr = BattleScript_MoonContinues;
                 }
 
                 BattleScriptExecute(gBattlescriptCurrInstr);
@@ -4217,6 +4237,7 @@ static const u32 sWeatherFlagsInfo[][3] =
     [ENUM_WEATHER_SNOW] = {B_WEATHER_SNOW_TEMPORARY, B_WEATHER_SNOW_PERMANENT, HOLD_EFFECT_ICY_ROCK},
     [ENUM_WEATHER_GHOSTLY_WINDS] = {B_WEATHER_GHOSTLY_WINDS, B_WEATHER_GHOSTLY_WINDS, HOLD_EFFECT_NONE},
     [ENUM_WEATHER_FOG] = {B_WEATHER_FOG_TEMPORARY, B_WEATHER_FOG_PERMANENT, HOLD_EFFECT_NONE},
+    [ENUM_WEATHER_MOON] = {B_WEATHER_MOON_TEMPORARY, B_WEATHER_MOON_PERMANENT, HOLD_EFFECT_MOON_ROCK},
 };
 
 static void ShouldChangeFormInWeather(u32 battler)
@@ -4943,6 +4964,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             else if (B_SNOW_WARNING < GEN_9 && TryChangeBattleWeather(battler, ENUM_WEATHER_HAIL, TRUE))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivatesHail);
+                effect++;
+            }
+            else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT && !gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                effect++;
+            }
+            break;
+        case ABILITY_MOONRISE:
+            if (TryChangeBattleWeather(battler, ENUM_WEATHER_MOON, TRUE))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_EclipseActivates);
                 effect++;
             }
             else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT && !gSpecialStatuses[battler].switchInAbilityDone)
@@ -9455,7 +9489,11 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case EFFECT_SOLAR_BEAM:
-        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
+        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG | B_WEATHER_MOON)))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        break;
+    case EFFECT_LUNAR_BEAM:
+        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG | B_WEATHER_SUN)))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         break;
     case EFFECT_STOMPING_TANTRUM:
@@ -9912,6 +9950,10 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
         if (IS_MOVE_SPECIAL(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_LUNAR_POWER:
+        if (IS_MOVE_SPECIAL(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_MOON))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_DEFEATIST:
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
@@ -10255,6 +10297,12 @@ static uq4_12_t GetWeatherDamageModifier(u32 battlerAtk, u32 move, u32 moveType,
             return UQ_4_12(1.0);
         return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
+    if (weather & B_WEATHER_MOON)
+    {
+        if (moveType != TYPE_DARK)
+            return UQ_4_12(1.0);
+        return (moveType == TYPE_DARK) ? UQ_4_12(1.5) : UQ_4_12(1.0);
+    }
     return UQ_4_12(1.0);
 }
 
@@ -10380,6 +10428,10 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     case ABILITY_PRISM_ARMOR:
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
             return UQ_4_12(0.75);
+        break;
+    case ABILITY_MOON_GUARD:
+        if (gBattleWeather & B_WEATHER_MOON && WEATHER_HAS_EFFECT)
+            return UQ_4_12(0.70);
         break;
     case ABILITY_GRASS_PELT: // Grass Pelt reduces damage by 30% under Grassy Terrain
         if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)

@@ -75,6 +75,7 @@ Route119_WeatherInstitute_1F_EventScript_Scientist::
 	faceplayer
 	goto_if_set FLAG_MET_WEATHER_INSTITUTE_SCIENTIST, Route119_WeatherInstitute_1F_EventScript_Pokemart
 	msgbox Route119_WeatherInstitute_1F_Text_ThankYouForSavingUs, MSGBOX_DEFAULT
+	giveitem ITEM_MOON_ROCK, 1
 	giveitem ITEM_HEAT_ROCK, 1
 	giveitem ITEM_DAMP_ROCK, 1
 	giveitem ITEM_SMOOTH_ROCK, 1
@@ -94,6 +95,7 @@ Route119_WeatherInstitute_1F_EventScript_Pokemart:
 
 	.align 2
 WeatherInstitute_1F__Pokemart_TMsItems:
+	.2byte ITEM_TM_FULL_MOON
 	.2byte ITEM_TM_SUNNY_DAY
 	.2byte ITEM_TM_RAIN_DANCE
 	.2byte ITEM_TM_SNOWSCAPE
@@ -105,6 +107,7 @@ WeatherInstitute_1F__Pokemart_TMsItems:
 	.2byte ITEM_TM_ELECTRIC_TERRAIN
 	.2byte ITEM_TM_PSYCHIC_TERRAIN
 	.2byte ITEM_TM_TERRAIN_PULSE
+	.2byte ITEM_MOON_ROCK
 	.2byte ITEM_HEAT_ROCK
 	.2byte ITEM_DAMP_ROCK
 	.2byte ITEM_SMOOTH_ROCK

@@ -1029,6 +1029,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case MOVE_RAIN_DANCE:
             case MOVE_HAIL:
             case MOVE_SANDSTORM:
+            case MOVE_SNOWSCAPE:
+            case MOVE_FULL_MOON:
                 RETURN_SCORE_MINUS(30);
         }
 
@@ -1661,6 +1663,11 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (weather & B_WEATHER_HAIL)
                 ADJUST_SCORE(-2); // mainly to prevent looping between hail and snow
             break;
+        case EFFECT_MOONFALL:
+            if (weather & (B_WEATHER_MOON | B_WEATHER_PRIMAL_ANY)
+             || IsMoveEffectWeather(aiData->partnerMove))
+                ADJUST_SCORE(-8);
+            break;
         case EFFECT_ATTRACT:
             if (!AI_CanBeInfatuated(battlerAtk, battlerDef, aiData->abilities[battlerDef]))
                 ADJUST_SCORE(-10);
@@ -1874,8 +1881,15 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_MORNING_SUN:
         case EFFECT_SYNTHESIS:
+            if ((AI_GetWeather(aiData) & (B_WEATHER_RAIN | B_WEATHER_SANDSTORM | B_WEATHER_HAIL | B_WEATHER_SNOW | B_WEATHER_FOG| B_WEATHER_MOON)))
+                ADJUST_SCORE(-3);
+            else if (AtMaxHp(battlerAtk))
+                ADJUST_SCORE(-10);
+            else if (aiData->hpPercents[battlerAtk] >= 90)
+                ADJUST_SCORE(-9); //No point in healing, but should at least do it if nothing better
+            break;
         case EFFECT_MOONLIGHT:
-            if ((AI_GetWeather(aiData) & (B_WEATHER_RAIN | B_WEATHER_SANDSTORM | B_WEATHER_HAIL | B_WEATHER_SNOW | B_WEATHER_FOG)))
+            if ((AI_GetWeather(aiData) & (B_WEATHER_RAIN | B_WEATHER_SUN | B_WEATHER_SANDSTORM | B_WEATHER_HAIL | B_WEATHER_SNOW | B_WEATHER_FOG)))
                 ADJUST_SCORE(-3);
             else if (AtMaxHp(battlerAtk))
                 ADJUST_SCORE(-10);
@@ -2809,6 +2823,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_SNOWSCAPE:
         case EFFECT_RAIN_DANCE:
         case EFFECT_SANDSTORM:
+        case EFFECT_MOONFALL:
             if (IsMoveEffectWeather(move))
                 ADJUST_SCORE(-10);
             break;
@@ -2877,6 +2892,12 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
          && ShouldSetSnow(battlerAtkPartner, atkPartnerAbility, atkPartnerHoldEffect))
         {
             RETURN_SCORE_PLUS(2);   // our partner benefits from snow
+        }
+        break;
+    case EFFECT_MOONFALL:
+        if (ShouldSetMoon(battlerAtkPartner, atkPartnerAbility, atkPartnerHoldEffect))
+        {
+            RETURN_SCORE_PLUS(1);   // our partner benefits from moon
         }
         break;
     } // global move effect check
@@ -4103,6 +4124,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
             if (HasMoveEffect(battlerDef, EFFECT_MORNING_SUN)
               || HasMoveEffect(battlerDef, EFFECT_SYNTHESIS)
               || HasMoveEffect(battlerDef, EFFECT_SOLAR_BEAM)
+              || HasMoveEffect(battlerDef, EFFECT_LUNAR_BEAM)
               || HasMoveEffect(battlerDef, EFFECT_MOONLIGHT))
                 ADJUST_SCORE(2);
             if (HasMoveWithType(battlerDef, TYPE_FIRE) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_FIRE))
@@ -4120,6 +4142,16 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
             if (HasMoveWithType(battlerDef, TYPE_WATER) || HasMoveWithType(BATTLE_PARTNER(battlerDef), TYPE_WATER))
                 ADJUST_SCORE(1);
             if (HasMoveEffect(battlerDef, EFFECT_THUNDER) || HasMoveEffect(BATTLE_PARTNER(battlerDef), EFFECT_THUNDER))
+                ADJUST_SCORE(1);
+        }
+        break;
+    case EFFECT_MOONFALL:
+        if (ShouldSetMoon(battlerAtk, aiData->abilities[battlerAtk], aiData->holdEffects[battlerAtk]))
+        {
+            ADJUST_SCORE(1);
+            if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_MOON_ROCK)
+                ADJUST_SCORE(1);
+            if (HasMoveEffect(battlerDef, EFFECT_SYNTHESIS) || HasMoveEffect(BATTLE_PARTNER(battlerDef), EFFECT_SYNTHESIS))
                 ADJUST_SCORE(1);
         }
         break;
@@ -5072,6 +5104,7 @@ static s32 AI_SetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_HIT_SET_ENTRY_HAZARD:
     case EFFECT_FROST_GLARE:
     case EFFECT_METAL_TERRAIN:
+    case EFFECT_MOONFALL:
         ADJUST_SCORE(2);
         break;
     default:
@@ -5297,6 +5330,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_SNOWSCAPE:
             case EFFECT_RAIN_DANCE:
             case EFFECT_FILLET_AWAY:
+            case EFFECT_MOONFALL:
                 ADJUST_SCORE(-2);
                 break;
             default:

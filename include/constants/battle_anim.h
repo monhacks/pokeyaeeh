@@ -570,6 +570,7 @@
 #define B_ANIM_MAGIC_ROOM               48
 #define B_ANIM_TAILWIND                 49
 #define B_ANIM_FOG_CONTINUES            50
+#define B_ANIM_MOON_CONTINUES           51
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -619,6 +620,7 @@
 #define ANIM_WEATHER_HAIL 4
 #define ANIM_WEATHER_SNOW 5
 #define ANIM_WEATHER_FOG 6
+#define ANIM_WEATHER_MOON 7
 
 // horseshoe/fist frames
 #define ANIM_RIGHT_FIST  0

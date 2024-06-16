@@ -120,6 +120,7 @@ bool32 ShouldSetHail(u32 battler, u32 ability, u32 holdEffect);
 bool32 ShouldSetSnow(u32 battler, u32 ability, u32 holdEffect);
 bool32 ShouldSetRain(u32 battlerAtk, u32 ability, u32 holdEffect);
 bool32 ShouldSetSun(u32 battlerAtk, u32 atkAbility, u32 holdEffect);
+bool32 ShouldSetMoon(u32 battlerAtk, u32 atkAbility, u32 holdEffect);
 bool32 HasSleepMoveWithLowAccuracy(u32 battlerAtk, u32 battlerDef);
 bool32 IsHealingMove(u32 move);
 bool32 HasHealingEffect(u32 battler);

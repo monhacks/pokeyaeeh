@@ -3042,9 +3042,9 @@ static const u8 sTM02Desc[] = _(
     "sharp claws.");
 
 static const u8 sTM03Desc[] = _(
-    "Boiling water is\n"
-    "shot at the foe.\n"
-    "May cause a burn.");
+    "Bulks up the body\n"
+    "to boost both Atk\n"
+    "and Def.");
 
 static const u8 sTM04Desc[] = _(
     "Raises Sp. Atk and\n"
@@ -3052,9 +3052,9 @@ static const u8 sTM04Desc[] = _(
     "the mind.");
 
 static const u8 sTM05Desc[] = _(
-    "Bulks up the body\n"
-    "to boost both Atk\n"
-    "and Def.");
+    "Summons the moon,\n"
+    "powering up Dark\n"
+    "moves.");
 
 static const u8 sTM06Desc[] = _(
     "Spurs the sun,\n"
@@ -3727,9 +3727,9 @@ static const u8 sTM139Desc[] = _(
     "health and status.");
 
 static const u8 sTM140Desc[] = _(
-    "Strikes the foe\n"
-    "through its stat\n"
-    "changes.");
+    "Boiling water is\n"
+    "shot at the foe.\n"
+    "May cause a burn.");
 
 static const u8 sTM141Desc[] = _(
     "Absorbs sunlight in\n"
@@ -4423,6 +4423,11 @@ static const u8 sSteelArmorDesc[] =_(
     "Shelmet's armor. It\n"
     "is loved by a\n"
     "certain Pokémon.");
+
+static const u8 sMoonRockDesc[] = _(
+    "Extends the length\n"
+    "of the move Full Moon\n"
+    "used by the holder.");
 
 static const u8 sNidoqueeniteDesc[] = _(
     "This stone enables\n"

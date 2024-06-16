@@ -317,6 +317,10 @@ static const u8 sButterflyDescription[] = _("Ups Psychic-type and weak moves. (5
 static const u8 sBoxerBarrageDescription[] = _("Punching moves hit twice.");
 static const u8 sHitmanDescription[] = _("Super Luck + Sniper");
 static const u8 sDesertGaleDescription[] = _("Aerilate + Sand Force");
+static const u8 sMoonriseDescription[] = _("Summons moon in battle.");
+static const u8 sLunarPowerDescription[] = _("Boosts special moves in moon. (50%)");
+static const u8 sLunarRushDescription[] = _("Doubles Speed in moon.");
+static const u8 sMoonGuardDescription[] = _("Reduces damage under moon. (30%)");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -653,6 +657,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_BOXER_BARRAGE] = _("Boxer Barrage"),
     [ABILITY_HITMAN] = _("Hitman"),
     [ABILITY_DESERT_GALE] = _("Desert Gale"),
+    [ABILITY_MOONRISE] = _("Moonrise"),
+    [ABILITY_LUNAR_POWER] = _("Lunar Power"),
+    [ABILITY_LUNAR_RUSH] = _("Lunar Rush"),
+    [ABILITY_MOON_GUARD] = _("Moon Guard"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -989,6 +997,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_BOXER_BARRAGE] = _("BoxerBarrage"),
     [ABILITY_HITMAN] = _("Hitman"),
     [ABILITY_DESERT_GALE] = _("Desert Gale"),
+    [ABILITY_MOONRISE] = _("Moonrise"),
+    [ABILITY_LUNAR_POWER] = _("Lunar Power"),
+    [ABILITY_LUNAR_RUSH] = _("Lunar Rush"),
+    [ABILITY_MOON_GUARD] = _("Moon Guard"),
 };
 #endif
 
@@ -1326,4 +1338,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_BOXER_BARRAGE] = sBoxerBarrageDescription,
     [ABILITY_HITMAN] = sHitmanDescription,
     [ABILITY_DESERT_GALE] = sDesertGaleDescription,
+    [ABILITY_MOONRISE] = sMoonriseDescription,
+    [ABILITY_LUNAR_POWER] = sLunarPowerDescription,
+    [ABILITY_LUNAR_RUSH] = sLunarRushDescription,
+    [ABILITY_MOON_GUARD] = sMoonGuardDescription,
 };

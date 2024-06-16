@@ -311,6 +311,10 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BOXER_BARRAGE] = 10,
     [ABILITY_HITMAN] = 7,
     [ABILITY_DESERT_GALE] = 9,
+    [ABILITY_MOONRISE] = 9,
+    [ABILITY_LUNAR_POWER] = 3,
+    [ABILITY_LUNAR_RUSH] = 5,
+    [ABILITY_MOON_GUARD] = 9,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -380,6 +384,7 @@ static const u16 sEncouragedEncoreEffects[] =
     EFFECT_CAMOUFLAGE,
     EFFECT_FROST_GLARE,
     EFFECT_FILLET_AWAY,
+    EFFECT_MOONFALL,
 };
 
 // Functions
@@ -1827,7 +1832,6 @@ bool32 ShouldSetSun(u32 battlerAtk, u32 atkAbility, u32 holdEffect)
       || HasMoveEffect(battlerAtk, EFFECT_SOLAR_BEAM)
       || HasMoveEffect(battlerAtk, EFFECT_MORNING_SUN)
       || HasMoveEffect(battlerAtk, EFFECT_SYNTHESIS)
-      || HasMoveEffect(battlerAtk, EFFECT_MOONLIGHT)
       || HasMoveEffect(battlerAtk, EFFECT_WEATHER_BALL)
       || HasMoveEffect(battlerAtk, EFFECT_GROWTH)
       || HasMoveWithType(battlerAtk, TYPE_FIRE)))
@@ -1852,6 +1856,27 @@ bool32 ShouldSetSnow(u32 battler, u32 ability, u32 holdEffect)
       || HasMove(battler, MOVE_HURRICANE)
       || HasMoveEffect(battler, EFFECT_AURORA_VEIL)
       || HasMoveEffect(battler, EFFECT_WEATHER_BALL))
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool32 ShouldSetMoon(u32 battlerAtk, u32 atkAbility, u32 holdEffect)
+{
+    u32 weather = AI_GetWeather(AI_DATA);
+    if (weather & B_WEATHER_MOON)
+        return FALSE;
+
+    if (atkAbility == ABILITY_LUNAR_POWER
+      || atkAbility == ABILITY_LUNAR_RUSH
+      || atkAbility == ABILITY_MOON_GUARD
+      || atkAbility == ABILITY_FORECAST
+      || HasMoveEffect(battlerAtk, EFFECT_LUNAR_BEAM)
+      || HasMoveEffect(battlerAtk, EFFECT_MOONLIGHT)
+      || HasMoveEffect(battlerAtk, EFFECT_SLEEP)
+      || HasMoveEffect(battlerAtk, EFFECT_WEATHER_BALL)
+      || HasMoveWithType(battlerAtk, TYPE_DARK))
     {
         return TRUE;
     }
@@ -2459,6 +2484,9 @@ bool32 IsChargingMove(u32 battlerAtk, u32 effect)
     {
     case EFFECT_SOLAR_BEAM:
         if (AI_GetWeather(AI_DATA) & B_WEATHER_SUN)
+            return FALSE;
+    case EFFECT_LUNAR_BEAM:
+        if (AI_GetWeather(AI_DATA) & B_WEATHER_MOON)
             return FALSE;
     case EFFECT_SKULL_BASH:
     case EFFECT_METEOR_BEAM:
@@ -3412,7 +3440,8 @@ bool32 IsMoveEffectWeather(u32 move)
       || gBattleMoves[move].effect == EFFECT_RAIN_DANCE
       || gBattleMoves[move].effect == EFFECT_SANDSTORM
       || gBattleMoves[move].effect == EFFECT_HAIL
-      || gBattleMoves[move].effect == EFFECT_SNOWSCAPE))
+      || gBattleMoves[move].effect == EFFECT_SNOWSCAPE
+      || gBattleMoves[move].effect == EFFECT_MOONFALL))
         return TRUE;
     return FALSE;
 }

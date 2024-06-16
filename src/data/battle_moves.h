@@ -14854,6 +14854,22 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .skyBattleBanned = TRUE,
     },
 
+    [MOVE_FULL_MOON] =
+    {
+        .effect = EFFECT_MOONFALL,
+        .power = 0,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 8,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

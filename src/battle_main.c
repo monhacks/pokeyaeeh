@@ -4713,6 +4713,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
+        else if (ability == ABILITY_LUNAR_RUSH  && gBattleWeather & B_WEATHER_MOON)
+            speed *= 2;
     }
 
     // other abilities
@@ -5861,6 +5863,8 @@ u8 GetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
                 return TYPE_ICE;
             else if (gBattleWeather & (B_WEATHER_STRONG_WINDS | B_WEATHER_FOG))
                 return TYPE_FLYING;
+            else if (gBattleWeather & (B_WEATHER_STRONG_WINDS | B_WEATHER_MOON))
+                return TYPE_DARK;
             else if (gBattleWeather & B_WEATHER_GHOSTLY_WINDS)
                 return TYPE_GHOST;
             else
@@ -5997,6 +6001,8 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                 gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & (B_WEATHER_STRONG_WINDS | B_WEATHER_FOG))
                 gBattleStruct->dynamicMoveType = TYPE_FLYING | F_DYNAMIC_TYPE_2;
+            else if (gBattleWeather & B_WEATHER_MOON)
+                gBattleStruct->dynamicMoveType = TYPE_DARK | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & B_WEATHER_GHOSTLY_WINDS)
                 gBattleStruct->dynamicMoveType = TYPE_GHOST | F_DYNAMIC_TYPE_2;
             else

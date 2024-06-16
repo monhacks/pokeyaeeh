@@ -887,6 +887,7 @@ gBattleAnims_Moves::
 	.4byte Move_FROST_BLADE
 	.4byte Move_LEAF_LEAP
 	.4byte Move_METAL_TERRAIN
+	.4byte Move_FULL_MOON
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -1046,6 +1047,7 @@ gBattleAnims_General::
 	.4byte General_MagicRoom				@ B_ANIM_MAGIC_ROOM
 	.4byte General_Tailwind					@ B_ANIM_TAILWIND
 	.4byte General_Fog                      @ B_ANIM_FOG_CONTINUES
+	.4byte General_Moon                     @ B_ANIM_MOON_CONTINUES
 
 	.align 2
 gBattleAnims_Special::
@@ -17603,6 +17605,22 @@ Move_FROST_BLADE::
 	blendoff
 	end
 
+Move_FULL_MOON:: @ modified version of moonlight
+	loadspritegfx ANIM_TAG_MOON
+	loadspritegfx ANIM_TAG_GREEN_SPARKLE
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	setalpha 0, 16
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 16, RGB_BLACK
+	waitforvisualfinish
+	createsprite gMoonSpriteTemplate, ANIM_ATTACKER, 2, 32, 21
+	createvisualtask AnimTask_AlphaFadeIn, 3, 0, 16, 16, 0, 1
+	playsewithpan SE_M_MOONLIGHT, 0
+	delay 60
+	delay 0
+	createvisualtask AnimTask_MoonlightEndFade, 2
+	delay 4
+	end
+
 Move_PSYCHIC_NOISE::
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
 	loadspritegfx ANIM_TAG_THIN_RING
@@ -27686,6 +27704,7 @@ Move_WEATHER_BALL:
 	jumpreteq ANIM_WEATHER_HAIL, WeatherBallIce
 	jumpreteq ANIM_WEATHER_SNOW, WeatherBallIce
 	jumpreteq ANIM_WEATHER_FOG, WeatherBallNormal
+	jumpreteq ANIM_WEATHER_MOON, WeatherBallNormal
 WeatherBallNormal:
 	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gWeatherBallNormalDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 0, 0
@@ -28434,6 +28453,9 @@ General_Snow:
 
 General_Fog:
 	goto Move_HAZE
+
+General_Moon:
+	goto Move_FULL_MOON
 
 General_LeechSeedDrain:
 	createvisualtask AnimTask_GetBattlersFromArg, 5

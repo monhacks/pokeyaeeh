@@ -429,7 +429,9 @@
 #define EFFECT_SHED_TAIL                    423
 #define EFFECT_DRAGON_CHEER                 424
 #define EFFECT_METAL_TERRAIN                425
+#define EFFECT_MOONFALL                     426
+#define EFFECT_LUNAR_BEAM                   427
 
-#define NUM_BATTLE_MOVE_EFFECTS             426
+#define NUM_BATTLE_MOVE_EFFECTS             428
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

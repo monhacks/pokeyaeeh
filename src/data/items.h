@@ -7196,7 +7196,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_DRAGON_CLAW,
     },
 
-    [ITEM_TM_SCALD] =
+    [ITEM_TM_BULK_UP] =
     {
         .name = _("TM03"),
         .price = 5000,
@@ -7205,7 +7205,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_SCALD,
+        .secondaryId = MOVE_BULK_UP,
     },
 
     [ITEM_TM_CALM_MIND] =
@@ -7220,7 +7220,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_CALM_MIND,
     },
 
-    [ITEM_TM_BULK_UP] =
+    [ITEM_TM_FULL_MOON] =
     {
         .name = _("TM05"),
         .price = 5000,
@@ -7229,7 +7229,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_BULK_UP,
+        .secondaryId = MOVE_FULL_MOON,
     },
 
     [ITEM_TM_SUNNY_DAY] =
@@ -8839,7 +8839,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_REST,
     },
 
-    [ITEM_TM_CHIP_AWAY] =
+    [ITEM_TM_SCALD] =
     {
         .name = _("TM140"),
         .price = 5000,
@@ -8848,7 +8848,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_CHIP_AWAY,
+        .secondaryId = MOVE_SCALD,
     },
 
     [ITEM_TM_SOLAR_BLADE] =
@@ -10649,6 +10649,18 @@ const struct Item gItems[] =
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
         .flingPower = 30,
+    },
+
+    [ITEM_MOON_ROCK] =
+    {
+        .name = _("Moon Rock"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_MOON_ROCK,
+        .description = sMoonRockDesc,
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 40,
     },
 
     [ITEM_CANDY_BOX] =

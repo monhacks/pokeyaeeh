@@ -5103,7 +5103,8 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
           || animId == B_ANIM_SANDSTORM_CONTINUES
           || animId == B_ANIM_HAIL_CONTINUES
           || animId == B_ANIM_SNOW_CONTINUES
-          || animId == B_ANIM_FOG_CONTINUES)
+          || animId == B_ANIM_FOG_CONTINUES
+          || animId == B_ANIM_MOON_CONTINUES)
     {
         BtlController_EmitBattleAnimation(battler, BUFFER_A, animId, &gDisableStructs[battler], *argPtr);
         MarkBattlerForControllerExec(battler);
@@ -11186,6 +11187,12 @@ static void Cmd_setfieldweather(void)
     case ENUM_WEATHER_SNOW:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SNOW;
         break;
+    case ENUM_WEATHER_FOG:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_FOG;
+        break;
+    case ENUM_WEATHER_MOON:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_MOON;
+        break;
     }
 
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -13707,6 +13714,13 @@ static void Cmd_recoverbasedonsunlight(void)
         if (gCurrentMove == MOVE_SHORE_UP)
         {
             if (WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_SANDSTORM)
+                gBattleMoveDamage = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
+            else
+                gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+        }
+        if (gCurrentMove == MOVE_MOONLIGHT)
+        {
+            if (WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_MOON)
                 gBattleMoveDamage = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
             else
                 gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;

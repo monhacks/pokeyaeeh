@@ -3354,6 +3354,10 @@ static const u8 sMetalTerrainDescription[] = _(
     "Metallizes the ground for\n"
     "5 turns. Prevents stat drops.");
 
+static const u8 sMoonfallDescription[] = _(
+    "Boosts the power of Dark-\n"
+    "type moves for 5 turns.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4217,6 +4221,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FROST_BLADE - 1] = sFrostBladeDescription,
     [MOVE_LEAF_LEAP -1 ] = sAcrobaticsDescription,
     [MOVE_METAL_TERRAIN - 1] = sMetalTerrainDescription,
+    [MOVE_FULL_MOON - 1] = sMoonfallDescription,
 };
 
 static const u8 sMoveFourLineDescription_Pound[] = _("A physical attack\ndelivered with a\nlong tail or a\nforeleg, etc.");
@@ -5421,6 +5426,7 @@ static const u8 sMoveFourLineDescription_GlacialSlam[] = _("A cold, freezing\nch
 static const u8 sMoveFourLineDescription_Maelstrom[] = _("The foe is trapped\nin a fast, harsh\nwhirlpool for two\nto five turns.");
 static const u8 sMoveFourLineDescription_FrostBlade[] = _("A sharp piece of\nice is used to slash.\nMay cause frostbite.\nHigh Crit ratio.");
 static const u8 sMoveFourLineDescription_MetalTerrain[] = _("Boosts Steel-type\nmoves for 5 turns,\nand prevents stats\nfrom falling for all.");
+static const u8 sMoveFourLineDescription_Moonfall[] = _("The moon shines for\nfive turns, powering\nup Dark-type\nmoves.");
 
 
 #endif
@@ -6305,5 +6311,6 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_FROST_BLADE       - 1] = sMoveFourLineDescription_FrostBlade,
     [MOVE_LEAF_LEAP         - 1] = sMoveFourLineDescription_Acrobatics,
     [MOVE_METAL_TERRAIN     - 1] = sMoveFourLineDescription_MetalTerrain,
+    [MOVE_FULL_MOON          - 1] = sMoveFourLineDescription_Moonfall,
 #endif
 };

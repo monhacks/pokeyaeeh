@@ -452,6 +452,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectShedTail                @ EFFECT_SHED_TAIL
 	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_DRAGON_CHEER
 	.4byte BattleScript_EffectMetalTerrain            @ EFFECT_METAL_TERRAIN
+	.4byte BattleScript_EffectMoonfall                @ EFFECT_MOONFALL
+	.4byte BattleScript_EffectLunarBeam               @ EFFECT_LUNAR_BEAM
 
 BattleScript_EffectShedTail::
 	attackcanceler
@@ -5547,6 +5549,14 @@ BattleScript_BlockedByPrimalWeatherRet::
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_GHOSTLY_WINDS, BattleScript_OminousAirCurrentBlowsOnRet
 	return
 
+BattleScript_EffectMoonfall::
+	attackcanceler
+	attackstring
+	ppreduce
+	call BattleScript_CheckPrimalWeather
+	setfieldweather ENUM_WEATHER_MOON
+	goto BattleScript_MoveWeatherChange
+
 BattleScript_EffectDefenseUpHit::
 	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsMovesAtk
 	setmoveeffect MOVE_EFFECT_DEF_PLUS_1 | MOVE_EFFECT_AFFECTS_USER
@@ -7172,7 +7182,6 @@ BattleScript_FogContinues::
 	call BattleScript_ActivateWeatherAbilities
 	end2
 
-
 BattleScript_FogEnded_Ret::
 	printstring STRINGID_FOGBLOWNAWAY
 	waitmessage B_WAIT_TIME_LONG
@@ -7182,6 +7191,28 @@ BattleScript_FogEnded_Ret::
 BattleScript_FogEnded::
 	call BattleScript_FogEnded_Ret
 	end2
+
+BattleScript_MoonContinues::
+	printstring STRINGID_MOONLIGHTSHINES
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_MOON_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end2
+
+BattleScript_MoonFaded::
+	printstring STRINGID_MOONLIGHTFADED
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateWeatherAbilities
+	end2
+
+BattleScript_EclipseActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSSUMMONEDTHEMOON
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_MOON_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
 
 BattleScript_OverworldStatusStarts::
 	flushtextbox
@@ -11400,3 +11431,7 @@ BattleScript_GrassPeltAtFullHealth:
 BattleScript_End3:
 	end3
 
+BattleScript_EffectLunarBeam::
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_MOON, BattleScript_SolarBeamOnFirstTurn
+	goto BattleScript_SolarBeamDecideTurn
+	end
