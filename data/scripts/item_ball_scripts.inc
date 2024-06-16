@@ -68,8 +68,8 @@ Route110_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route110_EventScript_ItemDireHit::
-	finditem ITEM_DIRE_HIT
+Route110_EventScript_ItemTMIronHead::
+	finditem ITEM_TM_IRON_HEAD
 	end
 
 Route110_EventScript_ItemElixir::
@@ -78,6 +78,10 @@ Route110_EventScript_ItemElixir::
 
 Route110_EventScript_ItemTMHyperVoice::
 	finditem ITEM_TM_HYPER_VOICE
+	end
+
+Route111_EventScript_ItemTMEarthPower::
+	finditem ITEM_TM_EARTH_POWER
 	end
 
 Route111_EventScript_ItemTMStompingTantrum::
@@ -131,6 +135,10 @@ Route114_EventScript_ItemEnergyPowder::
 	finditem ITEM_ENERGY_POWDER
 	end
 
+Route114_EventScript_ItemTMGrassKnot::
+	finditem ITEM_TM_GRASS_KNOT
+	end
+
 Route115_EventScript_ItemSuperPotion::
 	finditem ITEM_SUPER_POTION
 	end
@@ -157,6 +165,10 @@ Route115_EventScript_ItemGimmighoulCoins_2::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
+Route115_EventScript_ItemTMCalmMind::
+	finditem ITEM_TM_CALM_MIND
+	end
+
 Route116_EventScript_ItemXSpecial::
 	finditem ITEM_X_SP_ATK
 	end
@@ -178,8 +190,8 @@ Route116_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end
 
-Route117_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
+Route117_EventScript_ItemTMLeechLife::
+	finditem ITEM_TM_LEECH_LIFE
 	end
 
 Route117_EventScript_ItemRevive::
@@ -188,6 +200,10 @@ Route117_EventScript_ItemRevive::
 
 Route118_EventScript_ItemHyperPotion::
 	finditem ITEM_HYPER_POTION
+	end
+
+Route118_EventScript_ItemTMTaunt::
+	finditem ITEM_TM_TAUNT
 	end
 
 Route119_EventScript_ItemSuperRepel::
@@ -224,6 +240,10 @@ Route119_EventScript_ItemElixir2::
 	finditem ITEM_ELIXIR
 	end
 
+Route119_EventScript_ItemTMBugBuzz::
+	finditem ITEM_TM_BUG_BUZZ
+	end
+
 Route120_EventScript_ItemNugget::
 	finditem ITEM_NUGGET
 	end
@@ -244,13 +264,17 @@ Route120_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
+Route120_EventScript_ItemTMHighHorsepower::
+	finditem ITEM_TM_HIGH_HORSEPOWER
+	end
+
 Route121_EventScript_ItemGimmighoulCoins_1::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route121_EventScript_ItemRevive::
-	finditem ITEM_REVIVE
+Route121_EventScript_ItemTMSupercellSlam::
+	finditem ITEM_TM_SUPERCELL_SLAM
 	end
 
 Route121_EventScript_ItemManectite::
@@ -260,6 +284,10 @@ Route121_EventScript_ItemManectite::
 Route121_EventScript_ItemGimmighoulCoins_2::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
+	end
+
+Route122_EventScript_ItemTMMoonblast::
+	finditem ITEM_TM_MOONBLAST
 	end
 
 Route123_EventScript_ItemGimmighoulCoins_1::
@@ -357,8 +385,8 @@ Route133_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-Route133_EventScript_ItemTMMoonblast::
-	finditem ITEM_TM_MOONBLAST
+Route133_EventScript_ItemTMSleepTalk::
+	finditem ITEM_TM_SLEEP_TALK
 	end
 
 Route134_EventScript_ItemGimmighoulCoins::
@@ -368,6 +396,10 @@ Route134_EventScript_ItemGimmighoulCoins::
 
 Route134_EventScript_ItemStarPiece::
 	finditem ITEM_STAR_PIECE
+	end
+
+Route134_EventScript_ItemTMToxicSpikes::
+	finditem ITEM_TM_TOXIC_SPIKES
 	end
 
 PetalburgCity_EventScript_ItemMaxRevive::
@@ -382,8 +414,12 @@ MauvilleCity_EventScript_ItemTMLiquidation::
 	finditem ITEM_TM_LIQUIDATION
 	end
 
-RustboroCity_EventScript_ItemXDefend::
-	finditem ITEM_X_DEFENSE
+MauvilleCity_GameCorner_EventScript_ItemTMToxic::
+	finditem ITEM_TM_TOXIC
+	end
+
+RustboroCity_EventScript_ItemTMAerialAce::
+	finditem ITEM_TM_AERIAL_ACE
 	end
 
 LilycoveCity_EventScript_ItemMaxRepel::
@@ -416,6 +452,10 @@ PetalburgWoods_EventScript_ItemEther::
 
 PetalburgWoods_EventScript_ItemParalyzeHeal::
 	finditem ITEM_PARALYZE_HEAL
+	end
+
+PetalburgWoods_EventScript_ItemTMSilverWind::
+	finditem ITEM_TM_SILVER_WIND
 	end
 
 RusturfTunnel_EventScript_ItemPokeBall::
@@ -578,6 +618,10 @@ SafariZone_North_EventScript_ItemKangaskhanite::
 
 SafariZone_Southwest_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
+	end
+
+SafariZone_South_EventScript_ItemTMCrossPoison::
+	finditem ITEM_TM_CROSS_POISON
 	end
 
 SafariZone_Northeast_EventScript_ItemMedichamite::

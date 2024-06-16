@@ -265,17 +265,17 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 30,
-      "y": 69,
+      "graphics_id": "OBJ_EVENT_GFX_TMHM_BALL",
+      "x": 28,
+      "y": 70,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route110_EventScript_ItemDireHit",
-      "flag": "FLAG_ITEM_ROUTE_110_DIRE_HIT"
+      "script": "Route110_EventScript_ItemTMIronHead",
+      "flag": "FLAG_ITEM_ROUTE_110_TM_IRON_HEAD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIMMIGHOUL_COIN",

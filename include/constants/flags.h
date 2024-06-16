@@ -683,7 +683,7 @@
 #define FLAG_ITEM_EVER_GRANDE_CITY_AUDINITE     0x276
 #define FLAG_ITEM_ROUTE_123_ALTARIANITE         0x277
 #define FLAG_ITEM_ROUTE_132_TM_SPIKES           0x278
-#define FLAG_ITEM_ROUTE_133_TM_MOONBLAST        0x279
+#define FLAG_ITEM_ROUTE_122_TM_MOONBLAST        0x279
 #define FLAG_ITEM_MOSSDEEP_CITY_TM_PLAY_ROUGH   0x27A
 #define FLAG_ITEM_ROUTE_102_TM_PSYCHOCK         0x27B
 #define FLAG_ITEM_ROUTE_107_TM_STEALTH_ROCK     0x27C
@@ -700,17 +700,17 @@
 #define FLAG_ITEM_ROUTE_123_HATTERENITE         0x287
 #define FLAG_ITEM_ROUTE_121_MANECTITE           0x288
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_KANGASKHANITE 0x289
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
+#define FLAG_ITEM_ROUTE_111_TM_EARTH_POWER      0x28A
+#define FLAG_ITEM_ROUTE_115_TM_CALM_MIND        0x28B
+#define FLAG_ITEM_ROUTE_118_TM_TAUNT            0x28C
+#define FLAG_ITEM_ROUTE_119_TM_BUG_BUZZ         0x28D
+#define FLAG_ITEM_MAUVILLE_CITY_GAME_CORNER_TM_TOXIC 0x28E
+#define FLAG_ITEM_ROUTE_120_TM_HIGH_HORSEPOWER  0x28F
+#define FLAG_ITEM_PETALBURG_WOODS_TM_SILVER_WIND 0x290
+#define FLAG_ITEM_ROUTE_133_TM_SLEEP_TALK       0x291
+#define FLAG_ITEM_ROUTE_134_TM_TOXIC_SPIKES     0x292
+#define FLAG_ITEM_ROUTE_114_TM_GRASS_KNOT       0x293
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_TM_CROSS_POISON 0x294
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
@@ -1063,7 +1063,7 @@
 #define FLAG_ITEM_ROUTE_106_GIMMIGHOUL_COINS                        0x3EC
 #define FLAG_ITEM_ROUTE_109_GIMMIGHOUL_COINS                        0x3ED
 #define FLAG_ITEM_ROUTE_110_GIMMIGHOUL_COINS                        0x3EE
-#define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
+#define FLAG_ITEM_ROUTE_110_TM_IRON_HEAD                            0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_STOMPING_TANTRUM                     0x3F0
 #define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
 #define FLAG_ITEM_ROUTE_111_GIMMIGHOUL_COINS                        0x3F2
@@ -1078,7 +1078,7 @@
 #define FLAG_ITEM_ROUTE_116_TM_AIR_SLASH                            0x3FB
 #define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
 #define FLAG_ITEM_ROUTE_116_GIMMIGHOUL_COINS                        0x3FD
-#define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE
+#define FLAG_ITEM_ROUTE_117_TM_LEECH_LIFE                           0x3FE
 #define FLAG_ITEM_ROUTE_117_REVIVE                                  0x3FF
 #define FLAG_ITEM_ROUTE_119_SUPER_REPEL                             0x400
 #define FLAG_ITEM_ROUTE_119_GIMMIGHOUL_COINS_1                      0x401
@@ -1097,7 +1097,7 @@
 #define FLAG_ITEM_ROUTE_133_STAR_PIECE                              0x40E
 #define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
 #define FLAG_ITEM_PETALBURG_CITY_ETHER                              0x410
-#define FLAG_ITEM_RUSTBORO_CITY_X_DEFEND                            0x411
+#define FLAG_ITEM_RUSTBORO_CITY_TM_AERIAL_ACE                       0x411
 #define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
@@ -1205,7 +1205,7 @@
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
-#define FLAG_ITEM_ROUTE_121_REVIVE                                  0x47D
+#define FLAG_ITEM_ROUTE_121_TM_SUPERCELL_SLAM                       0x47D
 #define FLAG_ITEM_ROUTE_121_GIMMIGHOUL_COINS_2                      0x47E
 #define FLAG_ITEM_MAGMA_HIDEOUT_1F_GIMMIGHOUL_COINS                 0x47F
 #define FLAG_ITEM_ROUTE_123_PP_UP                                   0x480
