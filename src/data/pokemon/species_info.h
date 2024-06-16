@@ -35,26 +35,7 @@
         .abilities = {ABILITY_STATIC, ABILITY_GROUNDSHOCK, ABILITY_LIGHTNING_ROD},\
         .bodyColor = BODY_COLOR_YELLOW,                                    \
         .noFlip = flip      
-
-#define GENGAR_MISC_INFO                                        \
-        .baseHP        = 60,                                    \
-        .baseAttack    = 65,                                    \
-        .baseDefense   = 60,                                    \
-        .baseSpeed     = 110,                                   \
-        .baseSpAttack  = 130,                                   \
-        .baseSpDefense = 75,                                    \
-        .types = {TYPE_GHOST, TYPE_POISON},                     \
-        .catchRate = 45,                                        \
-        .expYield = 225,                                        \
-        .evYield_SpAttack  = 3,                                 \
-        .genderRatio = PERCENT_FEMALE(50),                      \
-        .eggCycles = 20,                                        \
-        .friendship = STANDARD_FRIENDSHIP,                      \
-        .growthRate = GROWTH_MEDIUM_SLOW,                       \
-        .eggGroups = {EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},\
-        .abilities = {ABILITY_LEVITATE, ABILITY_NONE, ABILITY_LUNAR_POWER},\
-        .bodyColor = BODY_COLOR_PURPLE,                         \
-        .noFlip = FALSE
+        
 
 #define TAUROS_MISC_INFO                                                                \
         .baseHP        = 75,                                                            \
@@ -70,26 +51,6 @@
         .friendship = STANDARD_FRIENDSHIP,                                              \
         .growthRate = GROWTH_SLOW,                                                      \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},                               \
-        .noFlip = FALSE
-
-#define EEVEE_MISC_INFO                                                             \
-        .baseHP        = 55,                                                        \
-        .baseAttack    = 55,                                                        \
-        .baseDefense   = 50,                                                        \
-        .baseSpeed     = 55,                                                        \
-        .baseSpAttack  = 45,                                                        \
-        .baseSpDefense = 65,                                                        \
-        .types = {TYPE_NORMAL, TYPE_NORMAL},                                        \
-        .catchRate = 45,                                                            \
-        .expYield = 65,                                                             \
-        .evYield_SpDefense = 1,                                                     \
-        .genderRatio = PERCENT_FEMALE(12.5),                                        \
-        .eggCycles = 35,                                                            \
-        .friendship = STANDARD_FRIENDSHIP,                                          \
-        .growthRate = GROWTH_MEDIUM_FAST,                                           \
-        .eggGroups = {EGG_GROUP_FIELD, EGG_GROUP_FIELD},                            \
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION},\
-        .bodyColor = BODY_COLOR_BROWN,                                              \
         .noFlip = FALSE
 
 #define SNORLAX_MISC_INFO                                                       \
@@ -298,7 +259,7 @@
         .noFlip = flip,                               \
     }
 
-#define ARCEUS_SPECIES_INFO(type)                      \
+#define ARCEUS_SPECIES_INFO(type1, type2)              \
     {                                                  \
         .baseHP        = 120,                          \
         .baseAttack    = 120,                          \
@@ -306,7 +267,7 @@
         .baseSpeed     = 120,                          \
         .baseSpAttack  = 120,                          \
         .baseSpDefense = 120,                          \
-        .types = { type, type },                       \
+        .types = { type1, type2 },                     \
         .catchRate = 3,                                \
         .expYield = 324,                               \
         .evYield_HP        = 3,                        \
@@ -644,7 +605,7 @@
         .noFlip = FALSE,                                        \
     }
 
-#define SILVALLY_SPECIES_INFO(type)                     \
+#define SILVALLY_SPECIES_INFO(type1, type2)             \
     {                                                   \
         .baseHP        = 95,                            \
         .baseAttack    = 95,                            \
@@ -652,7 +613,7 @@
         .baseSpeed     = 95,                            \
         .baseSpAttack  = 95,                            \
         .baseSpDefense = 95,                            \
-        .types = { type, type },                        \
+        .types = { type1, type2 },                      \
         .catchRate = 3,                                 \
         .expYield = 257,                                \
         .evYield_HP        = 3,                         \
@@ -886,28 +847,6 @@
         .bodyColor = BODY_COLOR_YELLOW,                    \
         .noFlip = FALSE,                                   \
     }
-
-        
-
-#define DURALUDON_MISC_INFO                                                         \
-        .baseHP        = 70,                                                        \
-        .baseAttack    = 95,                                                        \
-        .baseDefense   = 115,                                                       \
-        .baseSpeed     = 85,                                                        \
-        .baseSpAttack  = 120,                                                       \
-        .baseSpDefense = 50,                                                        \
-        .types = {TYPE_STEEL, TYPE_DRAGON},                                         \
-        .catchRate = 45,                                                            \
-        .expYield = 187,                                                            \
-        .evYield_SpAttack  = 2,                                                     \
-        .genderRatio = PERCENT_FEMALE(50),                                          \
-        .eggCycles = 30,                                                            \
-        .friendship = STANDARD_FRIENDSHIP,                                          \
-        .growthRate = GROWTH_MEDIUM_FAST,                                           \
-        .eggGroups = {EGG_GROUP_MINERAL, EGG_GROUP_DRAGON},                         \
-        .abilities = {ABILITY_LIGHT_METAL, ABILITY_HEAVY_METAL, ABILITY_STALWART},  \
-        .bodyColor = BODY_COLOR_WHITE,                                              \
-        .noFlip = FALSE
 
 #define ZARUDE_SPECIES_INFO                             \
     {                                                   \
@@ -3171,7 +3110,24 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_GENGAR] =
     {
-        GENGAR_MISC_INFO
+        .baseHP        = 60,
+        .baseAttack    = 65,
+        .baseDefense   = 60,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 75,
+        .types = {TYPE_GHOST, TYPE_POISON},
+        .catchRate = 45,
+        .expYield = 225,
+        .evYield_SpAttack  = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = {EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
+        .abilities = {ABILITY_LEVITATE, ABILITY_NONE, ABILITY_LUNAR_POWER},
+        .bodyColor = BODY_COLOR_PURPLE,
+        .noFlip = FALSE,
     },
 
     [SPECIES_ONIX] =
@@ -4069,7 +4025,24 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_EEVEE] =
     {
-        EEVEE_MISC_INFO,
+        .baseHP        = 55,
+        .baseAttack    = 55,
+        .baseDefense   = 50,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 65,
+        .types = {TYPE_NORMAL, TYPE_NORMAL},
+        .catchRate = 45,
+        .expYield = 65,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 35,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = {EGG_GROUP_FIELD, EGG_GROUP_FIELD},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION},
+        .bodyColor = BODY_COLOR_BROWN,
+        .noFlip = FALSE,
     },
 
     [SPECIES_VAPOREON] =
@@ -18385,7 +18358,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_LEGENDARY,
     },
 
-    [SPECIES_SILVALLY_NORMAL] = SILVALLY_SPECIES_INFO(TYPE_NORMAL),
+    [SPECIES_SILVALLY_NORMAL] = SILVALLY_SPECIES_INFO(TYPE_NORMAL, TYPE_NORMAL),
 
     [SPECIES_MINIOR_METEOR_RED] = MINIOR_METEOR_SPECIES_INFO,
 
@@ -20681,7 +20654,24 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_DURALUDON] =
     {
-        DURALUDON_MISC_INFO,
+        .baseHP        = 70,
+        .baseAttack    = 95,
+        .baseDefense   = 115,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 50,
+        .types = {TYPE_STEEL, TYPE_DRAGON},
+        .catchRate = 45,
+        .expYield = 187,
+        .evYield_SpAttack  = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 30,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = {EGG_GROUP_MINERAL, EGG_GROUP_DRAGON},
+        .abilities = {ABILITY_LIGHT_METAL, ABILITY_HEAVY_METAL, ABILITY_STALWART},
+        .bodyColor = BODY_COLOR_WHITE,
+        .noFlip = FALSE,
     },
 
     [SPECIES_DREEPY] =
@@ -23862,23 +23852,23 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_FIGHTING),
-    [SPECIES_ARCEUS_FLYING]   = ARCEUS_SPECIES_INFO(TYPE_FLYING),
-    [SPECIES_ARCEUS_POISON]   = ARCEUS_SPECIES_INFO(TYPE_POISON),
-    [SPECIES_ARCEUS_GROUND]   = ARCEUS_SPECIES_INFO(TYPE_GROUND),
-    [SPECIES_ARCEUS_ROCK]     = ARCEUS_SPECIES_INFO(TYPE_ROCK),
-    [SPECIES_ARCEUS_BUG]      = ARCEUS_SPECIES_INFO(TYPE_BUG),
-    [SPECIES_ARCEUS_GHOST]    = ARCEUS_SPECIES_INFO(TYPE_GHOST),
-    [SPECIES_ARCEUS_STEEL]    = ARCEUS_SPECIES_INFO(TYPE_STEEL),
-    [SPECIES_ARCEUS_FIRE]     = ARCEUS_SPECIES_INFO(TYPE_FIRE),
-    [SPECIES_ARCEUS_WATER]    = ARCEUS_SPECIES_INFO(TYPE_WATER),
-    [SPECIES_ARCEUS_GRASS]    = ARCEUS_SPECIES_INFO(TYPE_GRASS),
-    [SPECIES_ARCEUS_ELECTRIC] = ARCEUS_SPECIES_INFO(TYPE_ELECTRIC),
-    [SPECIES_ARCEUS_PSYCHIC]  = ARCEUS_SPECIES_INFO(TYPE_PSYCHIC),
-    [SPECIES_ARCEUS_ICE]      = ARCEUS_SPECIES_INFO(TYPE_ICE),
-    [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_DRAGON),
-    [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK),
-    [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_FAIRY),
+    [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_FIGHTING, TYPE_FIGHTING),
+    [SPECIES_ARCEUS_FLYING]   = ARCEUS_SPECIES_INFO(TYPE_FLYING, TYPE_FLYING),
+    [SPECIES_ARCEUS_POISON]   = ARCEUS_SPECIES_INFO(TYPE_POISON, TYPE_POISON),
+    [SPECIES_ARCEUS_GROUND]   = ARCEUS_SPECIES_INFO(TYPE_GROUND, TYPE_GROUND),
+    [SPECIES_ARCEUS_ROCK]     = ARCEUS_SPECIES_INFO(TYPE_ROCK, TYPE_ROCK),
+    [SPECIES_ARCEUS_BUG]      = ARCEUS_SPECIES_INFO(TYPE_BUG, TYPE_BUG),
+    [SPECIES_ARCEUS_GHOST]    = ARCEUS_SPECIES_INFO(TYPE_GHOST, TYPE_GHOST),
+    [SPECIES_ARCEUS_STEEL]    = ARCEUS_SPECIES_INFO(TYPE_STEEL, TYPE_STEEL),
+    [SPECIES_ARCEUS_FIRE]     = ARCEUS_SPECIES_INFO(TYPE_FIRE, TYPE_FIRE),
+    [SPECIES_ARCEUS_WATER]    = ARCEUS_SPECIES_INFO(TYPE_WATER, TYPE_WATER),
+    [SPECIES_ARCEUS_GRASS]    = ARCEUS_SPECIES_INFO(TYPE_GRASS, TYPE_GRASS),
+    [SPECIES_ARCEUS_ELECTRIC] = ARCEUS_SPECIES_INFO(TYPE_ELECTRIC, TYPE_ELECTRIC),
+    [SPECIES_ARCEUS_PSYCHIC]  = ARCEUS_SPECIES_INFO(TYPE_PSYCHIC, TYPE_PSYCHIC),
+    [SPECIES_ARCEUS_ICE]      = ARCEUS_SPECIES_INFO(TYPE_ICE, TYPE_ICE),
+    [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_DRAGON, TYPE_DRAGON),
+    [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK, TYPE_DARK),
+    [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_FAIRY, TYPE_FAIRY),
 #endif
 
 #if P_GEN_5_POKEMON == TRUE
@@ -24510,23 +24500,23 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_SILVALLY_FIGHTING] = SILVALLY_SPECIES_INFO(TYPE_FIGHTING),
-    [SPECIES_SILVALLY_FLYING]   = SILVALLY_SPECIES_INFO(TYPE_FLYING),
-    [SPECIES_SILVALLY_POISON]   = SILVALLY_SPECIES_INFO(TYPE_POISON),
-    [SPECIES_SILVALLY_GROUND]   = SILVALLY_SPECIES_INFO(TYPE_GROUND),
-    [SPECIES_SILVALLY_ROCK]     = SILVALLY_SPECIES_INFO(TYPE_ROCK),
-    [SPECIES_SILVALLY_BUG]      = SILVALLY_SPECIES_INFO(TYPE_BUG),
-    [SPECIES_SILVALLY_GHOST]    = SILVALLY_SPECIES_INFO(TYPE_GHOST),
-    [SPECIES_SILVALLY_STEEL]    = SILVALLY_SPECIES_INFO(TYPE_STEEL),
-    [SPECIES_SILVALLY_FIRE]     = SILVALLY_SPECIES_INFO(TYPE_FIRE),
-    [SPECIES_SILVALLY_WATER]    = SILVALLY_SPECIES_INFO(TYPE_WATER),
-    [SPECIES_SILVALLY_GRASS]    = SILVALLY_SPECIES_INFO(TYPE_GRASS),
-    [SPECIES_SILVALLY_ELECTRIC] = SILVALLY_SPECIES_INFO(TYPE_ELECTRIC),
-    [SPECIES_SILVALLY_PSYCHIC]  = SILVALLY_SPECIES_INFO(TYPE_PSYCHIC),
-    [SPECIES_SILVALLY_ICE]      = SILVALLY_SPECIES_INFO(TYPE_ICE),
-    [SPECIES_SILVALLY_DRAGON]   = SILVALLY_SPECIES_INFO(TYPE_DRAGON),
-    [SPECIES_SILVALLY_DARK]     = SILVALLY_SPECIES_INFO(TYPE_DARK),
-    [SPECIES_SILVALLY_FAIRY]    = SILVALLY_SPECIES_INFO(TYPE_FAIRY),
+    [SPECIES_SILVALLY_FIGHTING] = SILVALLY_SPECIES_INFO(TYPE_FIGHTING, TYPE_FIGHTING),
+    [SPECIES_SILVALLY_FLYING]   = SILVALLY_SPECIES_INFO(TYPE_FLYING, TYPE_FLYING),
+    [SPECIES_SILVALLY_POISON]   = SILVALLY_SPECIES_INFO(TYPE_POISON, TYPE_POISON),
+    [SPECIES_SILVALLY_GROUND]   = SILVALLY_SPECIES_INFO(TYPE_GROUND, TYPE_GROUND),
+    [SPECIES_SILVALLY_ROCK]     = SILVALLY_SPECIES_INFO(TYPE_ROCK, TYPE_ROCK),
+    [SPECIES_SILVALLY_BUG]      = SILVALLY_SPECIES_INFO(TYPE_BUG, TYPE_BUG),
+    [SPECIES_SILVALLY_GHOST]    = SILVALLY_SPECIES_INFO(TYPE_GHOST, TYPE_GHOST),
+    [SPECIES_SILVALLY_STEEL]    = SILVALLY_SPECIES_INFO(TYPE_STEEL, TYPE_STEEL),
+    [SPECIES_SILVALLY_FIRE]     = SILVALLY_SPECIES_INFO(TYPE_FIRE, TYPE_FIRE),
+    [SPECIES_SILVALLY_WATER]    = SILVALLY_SPECIES_INFO(TYPE_WATER, TYPE_WATER),
+    [SPECIES_SILVALLY_GRASS]    = SILVALLY_SPECIES_INFO(TYPE_GRASS, TYPE_GRASS),
+    [SPECIES_SILVALLY_ELECTRIC] = SILVALLY_SPECIES_INFO(TYPE_ELECTRIC, TYPE_ELECTRIC),
+    [SPECIES_SILVALLY_PSYCHIC]  = SILVALLY_SPECIES_INFO(TYPE_PSYCHIC, TYPE_PSYCHIC),
+    [SPECIES_SILVALLY_ICE]      = SILVALLY_SPECIES_INFO(TYPE_ICE, TYPE_ICE),
+    [SPECIES_SILVALLY_DRAGON]   = SILVALLY_SPECIES_INFO(TYPE_DRAGON, TYPE_DRAGON),
+    [SPECIES_SILVALLY_DARK]     = SILVALLY_SPECIES_INFO(TYPE_DARK, TYPE_DARK),
+    [SPECIES_SILVALLY_FAIRY]    = SILVALLY_SPECIES_INFO(TYPE_FAIRY, TYPE_FAIRY),
 
     [SPECIES_MINIOR_METEOR_ORANGE] = MINIOR_METEOR_SPECIES_INFO,
     [SPECIES_MINIOR_METEOR_YELLOW] = MINIOR_METEOR_SPECIES_INFO,
