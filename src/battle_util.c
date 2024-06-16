@@ -1752,17 +1752,20 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
 
     if (gBattleMoves[move].cantUseTwice && move == gLastResultingMoves[battler])
     {
-        gCurrentMove = move;
-        PREPARE_MOVE_BUFFER(gBattleTextBuff1, gCurrentMove);
-        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+        if (!(IsBattlerWeatherAffected(battler, B_WEATHER_MOON) && move == MOVE_BLOOD_MOON))
         {
-            gPalaceSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedCurrentMoveInPalace;
-            gProtectStructs[battler].palaceUnableToUseMove = TRUE;
-        }
-        else
-        {
-            gSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedCurrentMove;
-            limitations++;
+            gCurrentMove = move;
+            PREPARE_MOVE_BUFFER(gBattleTextBuff1, gCurrentMove);
+            if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+            {
+                gPalaceSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedCurrentMoveInPalace;
+                gProtectStructs[battler].palaceUnableToUseMove = TRUE;
+            }
+            else
+            {
+                gSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedCurrentMove;
+                limitations++;
+            }
         }
     }
 
