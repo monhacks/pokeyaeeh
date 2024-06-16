@@ -10430,7 +10430,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
             return UQ_4_12(0.75);
         break;
     case ABILITY_MOON_GUARD:
-        if (gBattleWeather & B_WEATHER_MOON && WEATHER_HAS_EFFECT)
+        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_MOON))
             return UQ_4_12(0.70);
         break;
     case ABILITY_GRASS_PELT: // Grass Pelt reduces damage by 30% under Grassy Terrain
