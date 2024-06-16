@@ -91,7 +91,7 @@ static const u8 sPoisonHealDescription[] = _("Restores HP if poisoned.");
 static const u8 sAdaptabilityDescription[] = _("Boosts same type attacks. (50%)");
 static const u8 sSkillLinkDescription[] = _("Multi-hit moves hit 5 times.");
 static const u8 sHydrationDescription[] = _("Cures major status in rain.");
-static const u8 sSolarPowerDescription[] = _("Boosts special moves in sunshine. (50%)");
+static const u8 sSolarPowerDescription[] = _("Boosts moves in sunshine. (30%)");
 static const u8 sQuickFeetDescription[] = _("Ups Speed if suffering. (50%)");
 static const u8 sNormalizeDescription[] = _("All moves become Normal-type. (30%)");
 static const u8 sSniperDescription[] = _("Boosts critical hits. (100%)");
@@ -318,7 +318,7 @@ static const u8 sBoxerBarrageDescription[] = _("Punching moves hit twice.");
 static const u8 sHitmanDescription[] = _("Super Luck + Sniper");
 static const u8 sDesertGaleDescription[] = _("Aerilate + Sand Force");
 static const u8 sMoonriseDescription[] = _("Summons moon in battle.");
-static const u8 sLunarPowerDescription[] = _("Boosts special moves in moon. (50%)");
+static const u8 sLunarPowerDescription[] = _("Boosts moves in moon. (30%)");
 static const u8 sLunarRushDescription[] = _("Doubles Speed in moon.");
 static const u8 sMoonGuardDescription[] = _("Reduces damage under moon. (30%)");
 
