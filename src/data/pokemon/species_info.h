@@ -4554,7 +4554,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_TYPHLOSION] =
     {
         .baseHP        = 78,
-        .baseAttack    = 84,
+        .baseAttack    = 79,
         .baseDefense   = 78,
         .baseSpeed     = 105,
         .baseSpAttack  = 110,
@@ -23295,7 +23295,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_TYPHLOSION_HISUIAN] =
     {
-        .baseHP        = 78,
+        .baseHP        = 73,
         .baseAttack    = 84,
         .baseDefense   = 78,
         .baseSpeed     = 95,
