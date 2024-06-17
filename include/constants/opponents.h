@@ -37,7 +37,7 @@
 #define TRAINER_ZANDER                       31
 #define TRAINER_SHELLY_WEATHER_INSTITUTE     32
 #define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
-#define TRAINER_ARCHIE                       34
+#define TRAINER_ARCHIE_SEAFLOOR_CAVERN                       34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37
@@ -779,8 +779,8 @@
 #define TRAINER_COURTNEY_METEOR_FALLS       773
 #define TRAINER_BRAWLY_2                    774
 #define TRAINER_GRUNT_METEOR_FALLS          775
-#define TRAINER_BRAWLY_4                    776
-#define TRAINER_BRAWLY_5                    777
+#define TRAINER_ARCHIE_MT_PYRE              776
+#define TRAINER_COURTNEY_MAGMA_HIDEOUT      777
 #define TRAINER_WATTSON_2                   778
 #define TRAINER_WATTSON_3                   779
 #define TRAINER_WATTSON_4                   780

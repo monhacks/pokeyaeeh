@@ -32,13 +32,13 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	msgbox SeafloorCavern_Room9_Text_ArchieBeholdKyogre, MSGBOX_DEFAULT
 	applymovement VAR_0x8004, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox SeafloorCavern_Room9_Text_ArchieYouMustDisappear, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_ARCHIE, SeafloorCavern_Room9_Text_ArchieDefeat
 	msgbox SeafloorCavern_Room9_Text_ArchieWithThisRedOrb, MSGBOX_DEFAULT
 	setweather WEATHER_NONE
 	doweather
 	special Script_FadeOutMapMusic
 	waitstate
+	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
 	msgbox SeafloorCavern_Room9_Text_RedOrbShinesByItself, MSGBOX_DEFAULT
 	special WaitWeather
 	waitstate
@@ -51,7 +51,6 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	playfanfare MUS_AWAKEN_LEGEND
 	playse SE_ORB
 	special DoOrbEffect
-	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 150
@@ -69,6 +68,19 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
+	waitmovement 0
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox SeafloorCavern_Room9_Text_ArchieYouMustDisappear, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_ARCHIE_SEAFLOOR_CAVERN, SeafloorCavern_Room9_Text_ArchieDefeat
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceUp
+	waitmovement 0
+	special ShakeCamera
+	waitstate
+	waitmovement 0
 	applymovement LOCALID_KYOGRE, SeafloorCavern_Room9_Movement_KyogreExit
 	waitmovement 0
 	removeobject LOCALID_KYOGRE
@@ -256,16 +268,17 @@ SeafloorCavern_Room9_Text_ArchieWithThisRedOrb:
 	.string "you are truly gifted.\p"
 	.string "But!\n"
 	.string "I have this in my possession!\p"
-	.string "With this Red Orb, I can make Kyogre…$"
+	.string "With this Blue Orb, I should be able\n"
+	.string "control Kyogre!$"
 
 SeafloorCavern_Room9_Text_RedOrbShinesByItself:
-	.string "The Red Orb suddenly began shining\n"
+	.string "The Blue Orb suddenly began shining\n"
 	.string "by itself!$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo:
 	.string "Archie: What?!\p"
 	.string "I didn't do anything.\n"
-	.string "Why did the Red Orb…\p"
+	.string "Why did the Blue Orb…\p"
 	.string "Where did Kyogre go?$"
 
 SeafloorCavern_Room9_Text_ArchieAMessageFromOutside:
@@ -290,7 +303,7 @@ SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard:
 
 SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear:
 	.string "Archie: There's something wrong…\p"
-	.string "The Red Orb is supposed to awaken\n"
+	.string "The Blue Orb is supposed to awaken\n"
 	.string "and control Kyogre…\p"
 	.string "But… Why?\n"
 	.string "Why did Kyogre disappear?\p"
@@ -310,7 +323,7 @@ SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty:
 	.string "Don't get all high and mighty with me!\p"
 	.string "Wasn't it you, Team Magma, that\n"
 	.string "infuriated Groudon?\p"
-	.string "So long as I have this Red Orb,\n"
+	.string "So long as I have this Blue Orb,\n"
 	.string "I should be able to control Kyogre…\p"
 	.string "I should be able to control it…$"
 

@@ -37,8 +37,23 @@ MtPyre_Summit_EventScript_TeamAquaTrigger2::
 	goto MtPyre_Summit_EventScript_TeamAquaExits
 	end
 
-MtPyre_Summit_EventScript_TeamAquaExits::
+MtPyre_Summit_EventScript_ArchieBattle::
+	msgbox MtPyre_Summit_Text_ArchieWhatAreYouDoingHere, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ARCHIE_MT_PYRE, MtPyre_Summit_Text_ArchieDefeat
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	return
+
+MtPyre_Summit_EventScript_TeamAquaExits::
+	delay 4
+	playse SE_PIN
+	applymovement LOCALID_ARCHIE, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_ARCHIE, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_ARCHIE, Common_Movement_FacePlayer
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	call MtPyre_Summit_EventScript_ArchieBattle
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
@@ -489,10 +504,21 @@ MtPyre_Summit_Text_Grunt4PostBattle:
 	.string "We have a great combination going\n"
 	.string "with us members and our leader.$"
 
+MtPyre_Summit_Text_ArchieWhatAreYouDoingHere:
+	.string "{PLAYER}…\n"
+	.string "What are you doing here?\p"
+	.string "… … … … … …\p"
+	.string "I see.\n"
+	.string "You want to stop us!\p"
+	.string "Fine, I didn't think we'd need to this!$"
+
+MtPyre_Summit_Text_ArchieDefeat:
+	.string "You'll regret this, {PLAYER}!$"
+
 MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
 	.string "Archie: Team Magma's Maxie got ahead\n"
 	.string "of us, but we also got what we wanted.\p"
-	.string "The Red Orb preserved at Mt. Pyre…\n"
+	.string "The Blue Orb preserved at Mt. Pyre…\n"
 	.string "I, Archie, now have it in my possession!\p"
 	.string "Fufufu… Now we can bring our ultimate\n"
 	.string "objective to fruition!\p"
@@ -502,8 +528,8 @@ MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
 MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "Oh, no…\n"
 	.string "This cannot happen…\p"
-	.string "Not only the Blue Orb, but even\n"
-	.string "the Red Orb has been taken…\p"
+	.string "Not only the Red Orb, but even\n"
+	.string "the Blue Orb has been taken…\p"
 	.string "The Blue Orb and Red Orb must never\n"
 	.string "be separated. They belong together.\p"
 	.string "What are those men trying to do with\n"
@@ -511,7 +537,7 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Oh, yes. Was it Team Magma who came\n"
-	.string "and took the Blue Orb first?\p"
+	.string "and took the Red Orb first?\p"
 	.string "Well, in their haste, they left this\n"
 	.string "behind.\p"
 	.string "I couldn't imagine what exactly it\n"

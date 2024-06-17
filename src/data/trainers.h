@@ -374,7 +374,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_ShellySeafloorCavern),
     },
 
-    [TRAINER_ARCHIE] =
+    [TRAINER_ARCHIE_SEAFLOOR_CAVERN] =
     {
         .trainerClass = TRAINER_CLASS_AQUA_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -382,7 +382,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Archie"),
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Archie),
+        .party = TRAINER_PARTY(sParty_ArchieSeafloorCavern),
     },
 
     [TRAINER_LEAH] =
@@ -502,7 +502,7 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .trainerName = _("Ydarissep"),
         .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Ydarissep),
     },
 
@@ -8571,26 +8571,26 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntMeteorFalls),
     },
 
-    [TRAINER_BRAWLY_4] =
+    [TRAINER_ARCHIE_MT_PYRE] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .trainerName = _("Brawly"),
+        .trainerClass = TRAINER_CLASS_AQUA_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
+        .trainerName = _("Archie"),
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Brawly4),
+        .party = TRAINER_PARTY(sParty_ArchieMtPyre),
     },
 
-    [TRAINER_BRAWLY_5] =
+    [TRAINER_COURTNEY_MAGMA_HIDEOUT] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
-        .trainerName = _("Brawly"),
-        .doubleBattle = TRUE,
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN_F,
+        .trainerName = _("Courtney"),
+        .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Brawly5),
+        .party = TRAINER_PARTY(sParty_CourtneyMagmaHideout),
     },
 
     [TRAINER_WATTSON_2] =
