@@ -428,20 +428,14 @@ Route120_Text_RouteSign121:
 	.string "{LEFT_ARROW} Route 120$"
 `
 
-//Route120_EventScript_Ydarissep::
-//	trainerbattle_single TRAINER_YDARISSEP, Route120_Text_YdarissepIntro, Route120_Text_YdarissepDefeat
-//	msgbox Route120_Text_YdarissepPostBattle, MSGBOX_AUTOCLOSE
-//	end
-
 script Route120_EventScript_Ydarissep2{
-	msgbox("JusticeForScizor!", MSGBOX_DEFAULT)
+	msgbox("You know what?\nI'm fed up with this team.\pIt seems to attract the rain wherever\nI go.\pI'm starting fresh.\nHere, take my Scizor.", MSGBOX_DEFAULT)
 	givemon(SPECIES_SCIZOR, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, 3, 1, MON_MALE, 248, 0, 12, 0, 0, 248, 31, 31, 31, 31, 31, 31, MOVE_BULLET_PUNCH, MOVE_CRABHAMMER, MOVE_ROOST, MOVE_SWORDS_DANCE, TRUE)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} received a Scizor!")
 	waitmessage
 	waitfanfare
-	msgbox("JusticeForScizor!", MSGBOX_AUTOCLOSE)
-	msgbox("You need it's Mega Stone, bozo.\pHere.")
+	msgbox("If you really want to do it justice,\ngive it a Scizorite.\pYou can have mine.")
 	giveitem(ITEM_SCIZORITE, 1)
 	setflag(FLAG_ROUTE_120_BOSS_DEFEATED)
 	msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice!", MSGBOX_AUTOCLOSE)
@@ -465,11 +459,11 @@ script Route120_EventScript_Ydarissep{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_YDARISSEP, Route120_Text_YdarissepIntro, Route120_Text_YdarissepDefeat, Route120_EventScript_Ydarissep2)
 		clearflag(B_FLAG_NO_BAG_USE)
-	    msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice", MSGBOX_AUTOCLOSE)
+	    msgbox("Holding a Scizorite,\nyour Scizor can get it's Justice!", MSGBOX_AUTOCLOSE)
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Nuh uh, you can't battle me yet lil bro", MSGBOX_AUTOCLOSE)
+		msgbox("What are you doing at my training\nspot?\pHiding from the rain?\pUnfortunately for you,\nI'm not in the mood to share.\pIf you want to stay,\nget in line and defeat everyone who\lwere here before you.\pNo skipping!", MSGBOX_AUTOCLOSE)
 	}
     release
     end

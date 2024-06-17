@@ -3056,10 +3056,20 @@ Route120_Text_JenniferPostBattle:
 	.string "will make battle styles change.$"
 
 Route120_Text_YdarissepIntro:
-	.string "Prepare for JusticeForScizor!!$"
+	.string "I don't like the rain.\n"
+	.string "It's wet, irritating, attracts bugs\l"
+	.string "and it gets everywhere.\p"
+	.string "Why are you staring at me like that?\p"
+	.string "Aren't you here to hide from the rain?\p"
+	.string "Or maybe you're here to explore the\n"
+	.string "ruins?\p"
+	.string "Either way, you're in my spot.\p"
+	.string "If you want to pass,\n"
+	.string "you'll have to defeat me.$"
 
 Route120_Text_YdarissepDefeat:
-	.string "But, JusticeForScizor…$"
+	.string "Oh no! The rain has reached us here\n"
+	.string "too.$"
 
 Route120_Text_YdarissepPostBattle:
 	.string "JusticeForScizor.$"

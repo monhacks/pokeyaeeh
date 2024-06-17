@@ -433,7 +433,6 @@ Route120_EventScript_Ydarissep2::
 	message Route120_EventScript_Ydarissep2_Text_1
 	waitmessage
 	waitfanfare
-	msgbox Route120_EventScript_Ydarissep2_Text_0, MSGBOX_AUTOCLOSE
 	msgbox Route120_EventScript_Ydarissep2_Text_2
 	giveitem ITEM_SCIZORITE, 1
 	setflag FLAG_ROUTE_120_BOSS_DEFEATED
@@ -444,10 +443,9 @@ Route120_EventScript_Ydarissep2::
 Route120_EventScript_Ydarissep::
 	lock
 	faceplayer
-	checktrainerflag TRAINER_COLIN
-	goto_if 1, Route120_EventScript_Ydarissep_5
-Route120_EventScript_Ydarissep_3:
-	msgbox Route120_EventScript_Ydarissep_Text_1, MSGBOX_AUTOCLOSE
+	checktrainerflag TRAINER_BRENDAN_PLACEHOLDER
+	goto_if 1, Route120_EventScript_Ydarissep_2
+	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_AUTOCLOSE
 Route120_EventScript_Ydarissep_1:
 	release
 	end
@@ -456,79 +454,21 @@ Route120_EventScript_Ydarissep_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_YDARISSEP, Route120_Text_YdarissepIntro, Route120_Text_YdarissepDefeat, Route120_EventScript_Ydarissep2
 	clearflag B_FLAG_NO_BAG_USE
-	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route120_EventScript_Ydarissep2_Text_3, MSGBOX_AUTOCLOSE
 	goto Route120_EventScript_Ydarissep_1
-
-Route120_EventScript_Ydarissep_4:
-	checktrainerflag TRAINER_LORENZO
-	goto_if 1, Route120_EventScript_Ydarissep_9
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_5:
-	checktrainerflag TRAINER_ROBERT_1
-	goto_if 1, Route120_EventScript_Ydarissep_4
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_8:
-	checktrainerflag TRAINER_JEFFREY_1
-	goto_if 1, Route120_EventScript_Ydarissep_13
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_9:
-	checktrainerflag TRAINER_JENNA
-	goto_if 1, Route120_EventScript_Ydarissep_8
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_12:
-	checktrainerflag TRAINER_CLARISSA
-	goto_if 1, Route120_EventScript_Ydarissep_17
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_13:
-	checktrainerflag TRAINER_JENNIFER
-	goto_if 1, Route120_EventScript_Ydarissep_12
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_16:
-	checktrainerflag TRAINER_KEIGO
-	goto_if 1, Route120_EventScript_Ydarissep_21
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_17:
-	checktrainerflag TRAINER_ANGELICA
-	goto_if 1, Route120_EventScript_Ydarissep_16
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_20:
-	checktrainerflag TRAINER_LEONEL
-	goto_if 1, Route120_EventScript_Ydarissep_24
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_21:
-	checktrainerflag TRAINER_RILEY
-	goto_if 1, Route120_EventScript_Ydarissep_20
-	goto Route120_EventScript_Ydarissep_3
-
-Route120_EventScript_Ydarissep_24:
-	checktrainerflag TRAINER_CALLIE
-	goto_if 1, Route120_EventScript_Ydarissep_2
-	goto Route120_EventScript_Ydarissep_3
 
 
 Route120_EventScript_Ydarissep2_Text_0:
-	.string "JusticeForScizor!$"
+	.string "You know what?\nI'm fed up with this team.\pIt seems to attract the rain wherever\nI go.\pI'm starting fresh.\nHere, take my Scizor.$"
 
 Route120_EventScript_Ydarissep2_Text_1:
 	.string "{PLAYER} received a Scizor!$"
 
 Route120_EventScript_Ydarissep2_Text_2:
-	.string "You need it's Mega Stone, bozo.\pHere.$"
+	.string "If you really want to do it justice,\ngive it a Scizorite.\pYou can have mine.$"
 
 Route120_EventScript_Ydarissep2_Text_3:
 	.string "Holding a Scizorite,\nyour Scizor can get it's Justice!$"
 
 Route120_EventScript_Ydarissep_Text_0:
-	.string "Holding a Scizorite,\nyour Scizor can get it's Justice$"
-
-Route120_EventScript_Ydarissep_Text_1:
-	.string "Nuh uh, you can't battle me yet lil bro$"
+	.string "What are you doing at my training\nspot?\pHiding from the rain?\pUnfortunately for you,\nI'm not in the mood to share.\pIf you want to stay,\nget in line and defeat everyone who\lwere here before you.\pNo skipping!$"
