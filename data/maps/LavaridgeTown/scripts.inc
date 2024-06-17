@@ -426,7 +426,7 @@ LavaridgeTown_Text_TownSign:
 LavaridgeTown_Text_GymSign:
 	.string "Lavaridge Town Pokémon Gym\n"
 	.string "Leader: Qanak\l"
-	.string "“This one is too normal!”$"
+	.string "“Being normal is overrated!”$"
 
 LavaridgeTown_Text_HerbShopSign:
 	.string "Pokémon Herb Shop\n"
