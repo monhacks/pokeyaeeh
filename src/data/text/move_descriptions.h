@@ -3012,8 +3012,8 @@ static const u8 sEsperWingDescription[] = _(
     "Ups the user's Speed.");
 
 static const u8 sBitterMaliceDescription[] = _(
-    "A spine-chilling resentment.\n"
-    "May lower the foe's Attack.");
+    "Hurts a foe harder if it has\n"
+    "an ailment. May frostbite.");
 
 static const u8 sShelterDescription[] = _(
     "The user hardens their skin,\n"
@@ -5338,10 +5338,10 @@ static const u8 sMoveFourLineDescription_VictoryDance[] = _("An intense dance\nw
 static const u8 sMoveFourLineDescription_HeadlongRush[] = _("The user smashes\ninto the foe. This\ncuts the user's Def\nand Sp. Def stats.");
 static const u8 sMoveFourLineDescription_BarbBarrage[] = _("Poisonous barbs are\nshot at the foe that\ndoubles in damage if\nthe foe is poisoned.");
 static const u8 sMoveFourLineDescription_EsperWing[] = _("The user slashes the\nfoe with aura wings.\nRaises Speed. Has \nhigh crit hit ratio.");
-static const u8 sMoveFourLineDescription_BitterMalice[] = _("Attacks the foe with\nbone chilling grudge.\nThis lowers the foe's\nAttack stat.\n");
+static const u8 sMoveFourLineDescription_BitterMalice[] = _("Attacks the foe with\nbone chilling grudge.\nPower is doubled if\nfoe is suffering.");
 static const u8 sMoveFourLineDescription_Shelter[] = _("The user hardens its\nskin like an iron\nshield to sharply\nraise its Defense.");
 static const u8 sMoveFourLineDescription_TripleArrows[] = _("The user fires three\narrows with high crit\nhit ratio. May lower\nthe foe's Defense.");
-static const u8 sMoveFourLineDescription_InfernalParade[] = _("The user's many fire\nballs may burn the\nfoe. Power is doubled\nwhen foe is burned.");
+static const u8 sMoveFourLineDescription_InfernalParade[] = _("The user's many fire\nballs may burn the\nfoe. Power is doubled\nif foe is suffering.");
 static const u8 sMoveFourLineDescription_CeaselessEdge[] = _("The user slashes the\nfoe with shell blade.\nLeaves Splinters. A\nhigh crit hit ratio.");
 static const u8 sMoveFourLineDescription_BleakwindStorm[] = _("Attacks with savage,\ncold winds that may\ncause frostbite to\nthe foe.");
 static const u8 sMoveFourLineDescription_WildboltStorm[] = _("Attacks with thund-\nerous winds that may\ncause paralysis to\nthe foe.");

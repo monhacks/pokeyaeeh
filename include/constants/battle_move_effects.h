@@ -420,14 +420,16 @@
 #define EFFECT_MAX_MOVE                     414
 #define EFFECT_GLAIVE_RUSH                  415
 #define EFFECT_RAGING_BULL                  416
-#define EFFECT_FROST_GLARE                  417
-#define EFFECT_RAGE_FIST                    418
-#define EFFECT_DOODLE                       419
-#define EFFECT_FICKLE_BEAM                  420
-#define EFFECT_LAST_RESPECTS                421
-#define EFFECT_FILLET_AWAY                  422
-#define EFFECT_SHED_TAIL                    423
-#define EFFECT_DRAGON_CHEER                 424
+#define EFFECT_RAGE_FIST                    417
+#define EFFECT_DOODLE                       418
+#define EFFECT_FICKLE_BEAM                  419
+#define EFFECT_LAST_RESPECTS                420
+#define EFFECT_FILLET_AWAY                  421
+#define EFFECT_SHED_TAIL                    422
+#define EFFECT_DRAGON_CHEER                 423
+
+// Custom effects
+#define EFFECT_FROST_GLARE                  424
 #define EFFECT_METAL_TERRAIN                425
 #define EFFECT_MOONFALL                     426
 #define EFFECT_LUNAR_BEAM                   427

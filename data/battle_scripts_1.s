@@ -443,7 +443,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectMaxMove                 @ EFFECT_MAX_MOVE
 	.4byte BattleScript_EffectGlaiveRush              @ EFFECT_GLAIVE_RUSH
 	.4byte BattleScript_EffectBrickBreak              @ EFFECT_RAGING_BULL
-	.4byte BattleScript_EffectFrostGlare              @ EFFECT_FROST_GLARE
 	.4byte BattleScript_EffectHit                     @ EFFECT_RAGE_FIST
 	.4byte BattleScript_EffectDoodle                  @ EFFECT_DOODLE
 	.4byte BattleScript_EffectHit                     @ EFFECT_FICKLE_BEAM
@@ -451,6 +450,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectFilletAway              @ EFFECT_FILLET_AWAY
 	.4byte BattleScript_EffectShedTail                @ EFFECT_SHED_TAIL
 	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_DRAGON_CHEER
+	.4byte BattleScript_EffectFrostGlare              @ EFFECT_FROST_GLARE
 	.4byte BattleScript_EffectMetalTerrain            @ EFFECT_METAL_TERRAIN
 	.4byte BattleScript_EffectMoonfall                @ EFFECT_MOONFALL
 	.4byte BattleScript_EffectLunarBeam               @ EFFECT_LUNAR_BEAM
@@ -3785,6 +3785,11 @@ BattleScript_AbsorbHealBlock::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectInfernalParade::
+	call BattleScript_EffectHit_Ret
+	argumentstatuseffect
+	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectBurnHit::
 	setmoveeffect MOVE_EFFECT_BURN
 	goto BattleScript_EffectHit

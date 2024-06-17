@@ -3089,7 +3089,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FLAME_WHEEL] =
     {
         .effect = EFFECT_BURN_HIT,
-        .power = 60,
+        .power = 80,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 40,
@@ -8579,7 +8579,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FLAME_CHARGE] =
     {
         .effect = EFFECT_SPEED_UP_HIT,
-        .power = 50,
+        .power = 60,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 32,
@@ -13319,7 +13319,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         #endif
         .effect = EFFECT_SPEED_UP_HIT,
         .type = TYPE_PSYCHIC,
-        .pp = 16,
+        .pp = 24,
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -13331,19 +13331,16 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BITTER_MALICE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_9
-            .power = 75,
-        #else
-            .power = 60,
-        #endif
-        .effect = EFFECT_ATTACK_DOWN_HIT,
+        .power = 65,
+        .effect = EFFECT_INFERNAL_PARADE,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 24,
-        .secondaryEffectChance = 100,
+        .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .argument = STATUS1_FROSTBITE,
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
     },
@@ -13390,7 +13387,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_INFERNAL_PARADE] =
     {
         .effect = EFFECT_INFERNAL_PARADE,
-        .power = 60,
+        .power = 65,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 24,
@@ -13398,6 +13395,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .argument = STATUS1_BURN,
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
     },
@@ -14049,7 +14047,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_TRAILBLAZE] =
     {
         .effect = EFFECT_SPEED_UP_HIT,
-        .power = 50,
+        .power = 60,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 32,
@@ -14065,7 +14063,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_CHILLING_WATER] =
     {
         .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 50,
+        .power = 60,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 32,
@@ -14734,7 +14732,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_ROUSED_FANGS] =
     {
         .effect = EFFECT_BOLT_BEAK,
-        .power = 60,
+        .power = 65,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 24,
