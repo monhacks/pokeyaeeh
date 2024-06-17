@@ -62,7 +62,12 @@ VerdanturfTown_FriendshipRatersHouse_EventScript_LeadMonLucario::
 	return
 
 VerdanturfTown_FriendshipRatersHouse_EventScript_GiveLucarionite::
+	delay 4
+	playse SE_PIN
 	applymovement LOCALID_NPC, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_NPC, Common_Movement_Delay48
+	waitmovement 0
 	msgbox VerdanturfTown_FriendshipRatersHouse_Text_ItsLucario, MSGBOX_AUTOCLOSE
 	giveitem ITEM_LUCARIONITE
 	msgbox VerdanturfTown_FriendshipRatersHouse_Text_ExplainLucarionite, MSGBOX_DEFAULT

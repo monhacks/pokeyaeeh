@@ -684,7 +684,7 @@
 #define FLAG_ITEM_ROUTE_123_ALTARIANITE         0x277
 #define FLAG_ITEM_ROUTE_132_TM_SPIKES           0x278
 #define FLAG_ITEM_ROUTE_122_TM_MOONBLAST        0x279
-#define FLAG_ITEM_MOSSDEEP_CITY_TM_PLAY_ROUGH   0x27A
+#define FLAG_ITEM_MOSSDEEP_CITY_TM_BATON_PASS   0x27A
 #define FLAG_ITEM_ROUTE_102_TM_PSYCHOCK         0x27B
 #define FLAG_ITEM_ROUTE_107_TM_STEALTH_ROCK     0x27C
 #define FLAG_ITEM_ROUTE_108_TM_CRUNCH           0x27D
@@ -711,8 +711,8 @@
 #define FLAG_ITEM_ROUTE_134_TM_TOXIC_SPIKES     0x292
 #define FLAG_ITEM_ROUTE_114_TM_GRASS_KNOT       0x293
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_TM_CROSS_POISON 0x294
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
+#define FLAG_ITEM_FALLARBOR_TOWN_TM_PLAY_ROUGH  0x295
+#define FLAG_ITEM_RUSTBORO_CITY_TM_FLAME_CHARGE 0x296
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag
@@ -1113,7 +1113,7 @@
 #define FLAG_ITEM_GRANITE_CAVE_B2F_AGGRONITE                        0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_LIFE_ORB                          0x41F
 #define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
-#define FLAG_ITEM_ROUTE_104_POKE_BALL                               0x421
+#define FLAG_ITEM_ROUTE_104_TM_TRAILBLAZE                           0x421
 #define FLAG_ITEM_PETALBURG_WOODS_ETHER                             0x422
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ULTRA_BALL                    0x423
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_FIRE_GEM                     0x424
@@ -1171,7 +1171,7 @@
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_ICY_WIND                   0x458
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
 #define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A
-#define FLAG_ITEM_ROUTE_104_X_ACCURACY                              0x45B
+#define FLAG_ITEM_ROUTE_104_TM_CHILLING_WATER                       0x45B
 #define FLAG_ITEM_MAUVILLE_CITY_TM_LIQUIDATION                      0x45C
 #define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
 #define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E

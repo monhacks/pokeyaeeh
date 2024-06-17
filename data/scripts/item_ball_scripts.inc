@@ -20,12 +20,12 @@ Route104_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route104_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+Route104_EventScript_ItemTMTrailblaze::
+	finditem ITEM_TM_TRAILBLAZE
 	end
 
-Route104_EventScript_ItemXAccuracy::
-	finditem ITEM_X_ACCURACY
+Route104_EventScript_ItemTMChillingWater::
+	finditem ITEM_TM_CHILLING_WATER
 	end
 
 Route104_EventScript_ItemPotion::
@@ -422,6 +422,10 @@ RustboroCity_EventScript_ItemTMAerialAce::
 	finditem ITEM_TM_AERIAL_ACE
 	end
 
+RustboroCity_EventScript_ItemTMFlameCharge::
+	finditem ITEM_TM_FLAME_CHARGE
+	end
+
 LilycoveCity_EventScript_ItemMaxRepel::
 	finditem ITEM_MAX_REPEL
 	end
@@ -434,7 +438,11 @@ MossdeepCity_EventScript_ItemNetBall::
 	finditem ITEM_NET_BALL
 	end
 
-MossdeepCity_EventScript_ItemTMPlayRough::
+MossdeepCity_EventScript_ItemTMBatonPass::
+	finditem ITEM_TM_BATON_PASS
+	end
+
+FallarborTown_EventScript_ItemTMPlayRough::
 	finditem ITEM_TM_PLAY_ROUGH
 	end
 
