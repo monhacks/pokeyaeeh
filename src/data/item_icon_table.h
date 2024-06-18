@@ -827,9 +827,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_Z_POWER_RING] = {gItemIcon_ZPowerRing, gItemIconPalette_ZPowerRing},
     [ITEM_DYNAMAX_BAND] = {gItemIcon_DynamaxBand, gItemIconPalette_DynamaxBand},
     // Misc. Key Items
-    [ITEM_BICYCLE] = {gItemIcon_Bicycle, gItemIconPalette_Bicycle},
-    [ITEM_MACH_BIKE] = {gItemIcon_MachBike, gItemIconPalette_MachBike},
-    [ITEM_ACRO_BIKE] = {gItemIcon_AcroBike, gItemIconPalette_AcroBike},
+    [ITEM_BICYCLE] = {gItemIcon_Bicycle, gItemIconPalette_MachBike},
+    [ITEM_MACH_BIKE] = {gItemIcon_MachBike, gItemIconPalette_AcroBike},
+    [ITEM_ACRO_BIKE] = {gItemIcon_AcroBike, gItemIconPalette_Bicycle},
     [ITEM_OLD_ROD] = {gItemIcon_OldRod, gItemIconPalette_OldRod},
     [ITEM_GOOD_ROD] = {gItemIcon_GoodRod, gItemIconPalette_GoodRod},
     [ITEM_SUPER_ROD] = {gItemIcon_SuperRod, gItemIconPalette_SuperRod},

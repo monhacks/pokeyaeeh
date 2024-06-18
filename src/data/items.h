@@ -9270,7 +9270,7 @@ const struct Item gItems[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_Bike,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = MACH_BIKE,
     },
 
