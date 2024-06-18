@@ -2479,8 +2479,8 @@ static const u8 sLaserFocusDescription[] = _(
     "will be a critical hit.");
 
 static const u8 sGearUpDescription[] = _(
-    "Boosts the attacks of\n"
-    "those with Plus or Minus.");
+    "Rotates its gears to raise\n"
+    "Sp. Attack and Speed.");
 
 static const u8 sThroatChopDescription[] = _(
     "Chops the throat to disable\n"
@@ -5202,7 +5202,7 @@ static const u8 sMoveFourLineDescription_Leafage[] = _("The user attacks by\npel
 static const u8 sMoveFourLineDescription_Spotlight[] = _("For 1 turn, a spot-\nlight is shone on\nthe foe so that\nonly it is attacked.");
 static const u8 sMoveFourLineDescription_ToxicThread[] = _("Poisoned threads\nshoot at the foe,\npoisoning it and\nlowering its Speed.");
 static const u8 sMoveFourLineDescription_LaserFocus[] = _("The user focuses\nintensely, making\nsure its next move\nis a critical hit.");
-static const u8 sMoveFourLineDescription_GearUp[] = _("Allies with the\nPlus or Minus\nAbility have their\nattack stats upped.");
+static const u8 sMoveFourLineDescription_GearUp[] =  _("The user rotates its\ngears, raising its\nSp. Atk and sharply\nraising its Speed.");
 static const u8 sMoveFourLineDescription_ThroatChop[] = _("For 2 turns after\nbeing hit, the foe\ncannot use moves\nthat emit sound.");
 static const u8 sMoveFourLineDescription_PollenPuff[] = _("A pollen puff that\nwill explode to\ndamage foes, but\nwill heal allies.");
 static const u8 sMoveFourLineDescription_AnchorShot[] = _("The user's anchor\nchain strikes and\nentangles the foe,\npreventing escape.");
