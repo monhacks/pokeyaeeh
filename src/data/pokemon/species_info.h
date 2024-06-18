@@ -19178,7 +19178,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_RILLABOOM] =
     {
-        .baseHP        = 110,
+        .baseHP        = 105,
         .baseAttack    = 125,
         .baseDefense   = 90,
         .baseSpeed     = 85,
@@ -19245,7 +19245,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_CINDERACE] =
     {
         .baseHP        = 85,
-        .baseAttack    = 121,
+        .baseAttack    = 116,
         .baseDefense   = 75,
         .baseSpeed     = 119,
         .baseSpAttack  = 65,
@@ -19311,7 +19311,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_INTELEON] =
     {
-        .baseHP        = 80,
+        .baseHP        = 75,
         .baseAttack    = 85,
         .baseDefense   = 65,
         .baseSpeed     = 120,
@@ -24989,7 +24989,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_RILLABOOM_MEGA] =
     {
-        .baseHP        = 110,
+        .baseHP        = 105,
         .baseAttack    = 155,
         .baseDefense   = 120,
         .baseSpeed     = 85,
@@ -25013,7 +25013,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_CINDERACE_MEGA] =
     {
         .baseHP        = 85,
-        .baseAttack    = 146,
+        .baseAttack    = 141,
         .baseDefense   = 85,
         .baseSpeed     = 139,
         .baseSpAttack  = 90,
@@ -25035,7 +25035,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_INTELEON_MEGA] =
     {
-        .baseHP        = 80,
+        .baseHP        = 75,
         .baseAttack    = 105,
         .baseDefense   = 80,
         .baseSpeed     = 140,
