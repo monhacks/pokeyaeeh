@@ -25425,7 +25425,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_SKELEDIRGE] =
     {
-        .baseHP        = 1049,
+        .baseHP        = 109,
         .baseAttack    = 75,
         .baseDefense   = 100,
         .baseSpeed     = 66,
