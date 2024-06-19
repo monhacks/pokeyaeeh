@@ -4464,6 +4464,11 @@ static const u8 sPokeVialDesc[] = _(
     "Replenishes at\n"
     "Pokémon Centers.");
 
+static const u8 sRepellentDesc[] = _(
+    "Repels weak wild\n"
+    "Pokémon until\n"
+    "turned off.");
+
 static const u8 sButterfriteDesc[] = _(
     "This stone enables\n"
     "Butterfree to Mega\n"

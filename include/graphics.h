@@ -9961,6 +9961,9 @@ extern const u32 gItemIconPalette_CornerstoneMask[];
 extern const u32 gItemIcon_PokeVial[];
 extern const u32 gItemIconPalette_PokeVial[];
 
+
+extern const u32 gItemIconPalette_InfiniteRepel[];
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

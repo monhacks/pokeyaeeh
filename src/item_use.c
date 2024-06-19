@@ -1482,4 +1482,34 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_Repellent(u8 taskId)
+{
+    if (!(FlagGet(OW_FLAG_NO_ENCOUNTER)))
+	{
+		PlaySE(SE_REPEL);
+        FlagSet(OW_FLAG_NO_ENCOUNTER);
+		if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+		{
+			DisplayItemMessageOnField(taskId, gText_RepellentOn, Task_CloseCantUseKeyItemMessage);
+		}
+		else
+		{
+			DisplayItemMessage(taskId, 1, gText_RepellentOn, CloseItemMessage);
+		}
+	}
+	else
+	{
+		PlaySE(SE_PC_OFF);
+        FlagClear(OW_FLAG_NO_ENCOUNTER);
+		if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+		{
+			DisplayItemMessageOnField(taskId, gText_RepellentOff, Task_CloseCantUseKeyItemMessage);
+		}
+		else
+		{
+			DisplayItemMessage(taskId, 1, gText_RepellentOff, CloseItemMessage);
+		}
+	}
+}
+
 #undef tUsingRegisteredKeyItem

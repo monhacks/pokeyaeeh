@@ -43,7 +43,6 @@ void Task_UseDigEscapeRopeOnField(u8 taskId);
 u8 CanUseDigOrEscapeRopeOnCurMap(void);
 u8 CheckIfItemIsTMHMOrEvolutionStone(u16 itemId);
 void ItemUseOutOfBattle_PokeBall(u8);
-void ItemUseOutOfBattle_PokeVial(u8);
 void ItemUseOutOfBattle_RotomCatalog(u8);
 bool32 CanThrowBall(void);
 void ItemUseOutOfBattle_ExpShare(u8);
@@ -51,6 +50,8 @@ void ItemUseOutOfBattle_SootSack(u8);
 u16 GetAshCount(void);
 void ItemUseOutOfBattle_HiddenPowerCrystals(u8 taskId);
 void ItemUseOutOfBattle_Mints(u8 taskId);
+void ItemUseOutOfBattle_PokeVial(u8);
+void ItemUseOutOfBattle_Repellent(u8 taskId);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

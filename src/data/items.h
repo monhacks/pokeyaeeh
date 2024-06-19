@@ -10687,6 +10687,17 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
     },
 
+    [ITEM_REPELLENT] =
+    {
+        .name = _("Repellent"),
+        .price = 0,
+        .description = sRepellentDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_Repellent,
+        .importance = 1,
+    },
+
     [ITEM_BUTTERFRITE] =
     {
         .name = _("Butterfrite"),

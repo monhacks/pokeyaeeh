@@ -1987,3 +1987,6 @@ const u8 gText_WaterType[] = _("Water-type");
 
 const u8 gText_Dark[] = _("Adamant");
 const u8 gText_Water[] = _("Calm");
+
+const u8 gText_RepellentOn[] = _("The Infinite Repel was enabled!{PAUSE_UNTIL_PRESS}");
+const u8 gText_RepellentOff[] = _("The Infinite Repel was disabled!{PAUSE_UNTIL_PRESS}");

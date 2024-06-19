@@ -1182,35 +1182,36 @@
 
 #define ITEM_CANDY_BOX 884
 #define ITEM_POKEVIAL 885
+#define ITEM_REPELLENT 886
 
 // Gigantamax Mega Stones
-#define ITEM_BUTTERFRITE 886
-#define ITEM_MACHAMPITE 887 // Victory Road F1
-#define ITEM_KINGLERITE 888
-#define ITEM_LAPRASITE 889
-#define ITEM_GARBODORITE 890
-#define ITEM_MELMETALITE 891
-#define ITEM_RILLABOOMITE 892 // Petalburg City (after Gym 5)
-#define ITEM_CINDERACITE 893 // Petalburg City (after Gym 5)
-#define ITEM_INTELEONITE 894 // Petalburg City (after Gym 5)
-#define ITEM_CORVIKNIGHTITE 895
-#define ITEM_ORBEETLITE 896
-#define ITEM_DREDNITE 897 // Seaflor Cavern R7
-#define ITEM_COALOSSALITE 898
-#define ITEM_SANDACONDANITE 899 // Route 125
-#define ITEM_CENTISKORCHITE 900
-#define ITEM_HATTERENITE 901
-#define ITEM_GRIMMSNARLITE 902
-#define ITEM_COPPERAJAHITE 903
+#define ITEM_BUTTERFRITE 887
+#define ITEM_MACHAMPITE 888 // Victory Road F2
+#define ITEM_KINGLERITE 889
+#define ITEM_LAPRASITE 890
+#define ITEM_GARBODORITE 891
+#define ITEM_MELMETALITE 892
+#define ITEM_RILLABOOMITE 893 // Petalburg City (after Gym 6)
+#define ITEM_CINDERACITE 894 // Petalburg City (after Gym 6)
+#define ITEM_INTELEONITE 895 // Petalburg City (after Gym 6)
+#define ITEM_CORVIKNIGHTITE 896
+#define ITEM_ORBEETLITE 897
+#define ITEM_DREDNITE 898 // Seaflor Cavern R8
+#define ITEM_COALOSSALITE 899
+#define ITEM_SANDACONDANITE 900 // Route 126
+#define ITEM_CENTISKORCHITE 901
+#define ITEM_HATTERENITE 902
+#define ITEM_GRIMMSNARLITE 903
+#define ITEM_COPPERAJAHITE 904
 
 // Custom Mega Stones
-#define ITEM_NIDOQUEENITE 904
-#define ITEM_NIDOKINGITE 905
-#define ITEM_MILOTICITE 906
-#define ITEM_RAICHUNITE 907
-#define ITEM_TROPIUSITE 908
+#define ITEM_NIDOQUEENITE 905
+#define ITEM_NIDOKINGITE 906
+#define ITEM_MILOTICITE 907
+#define ITEM_RAICHUNITE 908
+#define ITEM_TROPIUSITE 909
 
-#define ITEMS_COUNT 909
+#define ITEMS_COUNT 910
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

@@ -2068,6 +2068,8 @@ const u32 gItemIconPalette_CornerstoneMask[] = INCBIN_U32("graphics/items/icon_p
 const u32 gItemIcon_PokeVial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
 const u32 gItemIconPalette_PokeVial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal.lz");
 
+const u32 gItemIconPalette_InfiniteRepel[] = INCBIN_U32("graphics/items/icon_palettes/infinite_repel.gbapal.lz");
+
 // Poké Ball Summary Icons
 const u32 gBallIcon_Poke[] = INCBIN_U32("graphics/summary_screen/ball_icons/poke.4bpp.lz");
 const u32 gBallIconPalette_Poke[] = INCBIN_U32("graphics/summary_screen/ball_icons/poke.gbapal.lz");

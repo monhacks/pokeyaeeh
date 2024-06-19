@@ -3213,8 +3213,10 @@ extern const u8 gText_GrassType[];
 extern const u8 gText_FireType[];
 extern const u8 gText_WaterType[];
 
-
 extern const u8 gText_Dark[];
 extern const u8 gText_Water[];
+
+extern const u8 gText_RepellentOn[];
+extern const u8 gText_RepellentOff[];
 
 #endif // GUARD_STRINGS_H

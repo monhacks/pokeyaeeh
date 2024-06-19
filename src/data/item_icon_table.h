@@ -956,6 +956,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_STEEL_CRYSTAL] = {gItemIcon_Revive, gItemIconPalette_SteelGem},
     [ITEM_STEEL_ARMOR] = {gItemIcon_MetalAlloy, gItemIconPalette_MetalCoat},
     [ITEM_POKEVIAL] = {gItemIcon_PokeVial, gItemIconPalette_PokeVial},
+    [ITEM_REPELLENT] = {gItemIcon_Repel, gItemIconPalette_InfiniteRepel},
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };
