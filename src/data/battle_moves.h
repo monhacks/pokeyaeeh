@@ -7963,7 +7963,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 16,
-        .secondaryEffectChance = 70,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
@@ -10940,7 +10940,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SPARKLING_ARIA] =
     {
         .effect = EFFECT_SPARKLING_ARIA,
-        .power = 90,
+        .power = 100,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 16,

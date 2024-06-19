@@ -1788,7 +1788,7 @@ static const u8 sJudgmentDescription[] = _(
 
 static const u8 sChargeBeamDescription[] = _(
     "Fires a beam of electricity.\n"
-    "May raise Sp. Atk.");
+    "Raises Sp. Atk.");
 
 static const u8 sWoodHammerDescription[] = _(
     "Slams the body into a foe.\n"
@@ -5022,7 +5022,7 @@ static const u8 sMoveFourLineDescription_GrassKnot[] = _("A snaring grass\ntrap 
 static const u8 sMoveFourLineDescription_Chatter[] = _("The foe is left\nconfused by sound\nwaves of deafening\nchatter.");
 static const u8 sMoveFourLineDescription_Judgment[] = _("The type of this\nmove varies with\nthe kind of Plate\nthe user is holding.");
 static const u8 sMoveFourLineDescription_BugBite[] = _("The user bites its\nfoe. If the foe is\nholding a Berry,\nthe user eats it.");
-static const u8 sMoveFourLineDescription_ChargeBeam[] = _("The user attacks\nwith an electric\ncharge. This may\nraise its Sp. Atk.");
+static const u8 sMoveFourLineDescription_ChargeBeam[] = _("The user attacks\nwith an electric\ncharge. This raises\nits Sp. Atk.");
 static const u8 sMoveFourLineDescription_WoodHammer[] = _("The user slams its\nrugged body into\nthe foe. The user\nsustains damage.");
 static const u8 sMoveFourLineDescription_AquaJet[] = _("The user lunges at\nthe foe at a fast\nspeed. This always\nstrikes first.");
 static const u8 sMoveFourLineDescription_AttackOrder[] = _("Underlings pummel\nthe foe. Critical\nhits land more\neasily.");

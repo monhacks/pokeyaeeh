@@ -19152,6 +19152,7 @@ static const struct LevelUpMove sToucannonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(40, MOVE_BULLET_SEED),
     LEVEL_UP_MOVE(44, MOVE_FEATHER_DANCE),
     LEVEL_UP_MOVE(50, MOVE_HYPER_VOICE),
+    LEVEL_UP_MOVE(55, MOVE_FLARE_BLITZ),
     LEVEL_UP_END
 };
 
@@ -19585,11 +19586,13 @@ static const struct LevelUpMove sAraquanidLevelUpLearnset[] = {
     LEVEL_UP_MOVE(31, MOVE_CRUNCH),
     LEVEL_UP_MOVE(32, MOVE_SOAK),
     LEVEL_UP_MOVE(38, MOVE_AQUA_FANGS),
+    LEVEL_UP_MOVE(41, MOVE_FIRST_IMPRESSION),
     LEVEL_UP_MOVE(44, MOVE_LUNGE),
     LEVEL_UP_MOVE(45, MOVE_LEECH_LIFE),
     LEVEL_UP_MOVE(49, MOVE_ENTRAINMENT),
     LEVEL_UP_MOVE(53, MOVE_LIQUIDATION),
     LEVEL_UP_MOVE(56, MOVE_MIRROR_COAT),
+    LEVEL_UP_MOVE(64, MOVE_WAVE_CRASH),
     LEVEL_UP_END
 };
 
@@ -20058,6 +20061,7 @@ static const struct LevelUpMove sSilvallyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(66, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE(70, MOVE_RAZOR_WIND),
     LEVEL_UP_MOVE(71, MOVE_PARTING_SHOT),
+    LEVEL_UP_MOVE(80, MOVE_EXTREME_SPEED),
     LEVEL_UP_END
 };
 
@@ -20094,6 +20098,7 @@ static const struct LevelUpMove sKomalaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(36, MOVE_PSYCH_UP),
     LEVEL_UP_MOVE(41, MOVE_WOOD_HAMMER),
     LEVEL_UP_MOVE(46, MOVE_THRASH),
+    LEVEL_UP_MOVE(55, MOVE_SLACK_OFF),
     LEVEL_UP_END
 };
 
@@ -23977,6 +23982,7 @@ static const struct LevelUpMove sRockruffOwnTempoLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLycanrocMidnightLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_SUCKER_PUNCH),
     LEVEL_UP_MOVE( 0, MOVE_COUNTER),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
@@ -24005,9 +24011,10 @@ static const struct LevelUpMove sLycanrocMidnightLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLycanrocDuskLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_CRUSH_CLAW),
-    LEVEL_UP_MOVE( 0, MOVE_THRASH),
-    LEVEL_UP_MOVE( 1, MOVE_ACCELEROCK),
+    LEVEL_UP_MOVE( 0, MOVE_ACCELEROCK),
+    LEVEL_UP_MOVE( 0, MOVE_SUCKER_PUNCH),
+    LEVEL_UP_MOVE( 1, MOVE_THRASH),
+    LEVEL_UP_MOVE( 1, MOVE_CRUSH_CLAW),
     LEVEL_UP_MOVE( 1, MOVE_SUCKER_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_TAUNT),
     LEVEL_UP_MOVE( 1, MOVE_ENDURE),
