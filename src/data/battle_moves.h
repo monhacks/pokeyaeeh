@@ -13752,10 +13752,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_TRIPLE_DIVE] =
     {
-        .effect = EFFECT_HIT,
-        .power = 30,
+        .effect = EFFECT_TRIPLE_KICK,
+        .power = 20,
         .type = TYPE_WATER,
-        .accuracy = 95,
+        .accuracy = 90,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -13764,6 +13764,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
         .strikeCount = 3,
+        .spinningMove = TRUE,
     },
 
     [MOVE_MORTAL_SPIN] =

@@ -671,8 +671,8 @@ static const u8 sSketchDescription[] = _(
     "permanently.");
 
 static const u8 sTripleKickDescription[] = _(
-    "Kicks the foe 3 times in a\n"
-    "row with rising intensity.");
+    "A 3-kick attack that gets\n"
+    "more powerful with each hit.");
 
 static const u8 sThiefDescription[] = _(
     "While attacking, it may\n"
@@ -3108,8 +3108,8 @@ static const u8 sSaltCureDescription[] = _(
     "damage to Steel and Water.");
 
 static const u8 sTripleDiveDescription[] = _(
-    "Hits target with splashes\n"
-    "of water 3 times in a row.");
+    "A triple dive that gets more\n"
+    "powerful with each hit.");
 
 static const u8 sMortalSpinDescription[] = _(
     "Erases trap moves and Leech\n"
@@ -5363,7 +5363,7 @@ static const u8 sMoveFourLineDescription_IceSpinner[] = _("The user covers its\n
 static const u8 sMoveFourLineDescription_GlaiveRush[] = _("The user recklessly\ncharges at the foe.\nThe foe's next move\ndeals double damage.");
 static const u8 sMoveFourLineDescription_RevivalBlessing[] = _("The user bestows a\nloving blessing and\nrevives an ally for\nhalf its max HP.");
 static const u8 sMoveFourLineDescription_SaltCure[] = _("The user salt cures\nthe foe. Water and\nSteel take more\ndamage every turn.");
-static const u8 sMoveFourLineDescription_TripleDive[] = _("The user performs a\nperfectly timed\ntriple dive, hitting\nthe foe three times.");
+static const u8 sMoveFourLineDescription_TripleDive[] = _("A triple dive\nthat becomes more\npowerful with each\nsuccessive hit.");
 static const u8 sMoveFourLineDescription_MortalSpin[] = _("The user spins and\nremoves all hazards.\nThis also poisons\nthe foe.");
 static const u8 sMoveFourLineDescription_Doodle[] = _("The user sketches\nthe foe and changes\nits and its allies\nability to match it.");
 static const u8 sMoveFourLineDescription_FilletAway[] = _("The user sharply\nboosts its Sp. Atk,\nSp. Def. and Speed\nby using its HP.");
