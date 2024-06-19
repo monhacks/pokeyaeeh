@@ -109,8 +109,8 @@ Route113_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
-Route113_EventScript_ItemSuperRepel::
-	finditem ITEM_SUPER_REPEL
+Route113_EventScript_ItemAbilityCapsule::
+	finditem ITEM_ABILITY_CAPSULE
 	end
 
 Route113_EventScript_ItemHyperPotion::
@@ -169,16 +169,16 @@ Route115_EventScript_ItemTMCalmMind::
 	finditem ITEM_TM_CALM_MIND
 	end
 
-Route116_EventScript_ItemXSpecial::
-	finditem ITEM_X_SP_ATK
+Route116_EventScript_ItemAbilityCapsule::
+	finditem ITEM_ABILITY_CAPSULE
 	end
 
 Route116_EventScript_ItemTMAirSlash::
 	finditem ITEM_TM_AIR_SLASH
 	end
 
-Route116_EventScript_ItemRepel::
-	finditem ITEM_REPEL
+Route116_EventScript_ItemThunderStone::
+	finditem ITEM_THUNDER_STONE
 	end
 
 Route116_EventScript_ItemGimmighoulCoins::
@@ -206,8 +206,8 @@ Route118_EventScript_ItemTMTaunt::
 	finditem ITEM_TM_TAUNT
 	end
 
-Route119_EventScript_ItemSuperRepel::
-	finditem ITEM_SUPER_REPEL
+Route119_EventScript_ItemAbilityPatch::
+	finditem ITEM_ABILITY_PATCH
 	end
 
 Route119_EventScript_ItemGimmighoulCoins_1::
@@ -426,8 +426,8 @@ RustboroCity_EventScript_ItemTMFlameCharge::
 	finditem ITEM_TM_FLAME_CHARGE
 	end
 
-LilycoveCity_EventScript_ItemMaxRepel::
-	finditem ITEM_MAX_REPEL
+LilycoveCity_EventScript_ItemAbilityCapsule::
+	finditem ITEM_ABILITY_CAPSULE
 	end
 
 LilycoveCity_EventScript_ItemAmpharosite::
@@ -478,8 +478,8 @@ RusturfTunnel_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
-GraniteCave_1F_EventScript_ItemMaxRepel::
-	finditem ITEM_MAX_REPEL
+GraniteCave_1F_EventScript_ItemHeavyDutyBoots::
+	finditem ITEM_HEAVY_DUTY_BOOTS
 	end
 
 GraniteCave_1F_EventScript_ItemTMReversal::
@@ -490,8 +490,8 @@ GraniteCave_B1F_EventScript_ItemPokeBall::
 	finditem ITEM_POKE_BALL
 	end
 
-GraniteCave_B2F_EventScript_ItemRepel::
-	finditem ITEM_REPEL
+GraniteCave_B2F_EventScript_ItemTMSteelWing::
+	finditem ITEM_TM_STEEL_WING
 	end
 
 GraniteCave_B2F_EventScript_ItemAggronite::
@@ -547,8 +547,8 @@ NewMauville_Inside_EventScript_ItemUltraBall::
 	finditem ITEM_ULTRA_BALL
 	end
 
-NewMauville_Inside_EventScript_ItemTMSupercellSlam::
-	finditem ITEM_MAX_REPEL
+NewMauville_Inside_EventScript_ItemAbilityPatch::
+	finditem ITEM_ABILITY_PATCH
 	end
 
 NewMauville_Inside_EventScript_ItemThunderStone::
@@ -567,8 +567,8 @@ AbandonedShip_Rooms_1F_EventScript_ItemHarborMail::
 	finditem ITEM_HARBOR_MAIL
 	end
 
-AbandonedShip_Rooms_B1F_EventScript_ItemMaxRepel::
-	finditem ITEM_MAX_REPEL
+AbandonedShip_Rooms_B1F_EventScript_ItemDuskStone::
+	finditem ITEM_DUSK_STONE
 	end
 
 AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall::
@@ -644,8 +644,8 @@ MtPyre_2F_EventScript_ItemUltraBall::
 	finditem ITEM_ULTRA_BALL
 	end
 
-MtPyre_3F_EventScript_ItemSuperRepel::
-	finditem ITEM_SUPER_REPEL
+MtPyre_3F_EventScript_ItemSpellTag::
+	finditem ITEM_SPELL_TAG
 	end
 
 MtPyre_3F_EventScript_ItemTMShadowClaw::

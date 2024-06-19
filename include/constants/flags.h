@@ -1057,7 +1057,7 @@
 
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
-#define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
+#define FLAG_ITEM_ROUTE_116_ABILITY_CAPSULE                         0x3E9
 #define FLAG_ITEM_ROUTE_104_GIMMIGHOUL_COINS                        0x3EA
 #define FLAG_ITEM_ROUTE_105_GIMMIGHOUL_COINS                        0x3EB
 #define FLAG_ITEM_ROUTE_106_GIMMIGHOUL_COINS                        0x3EC
@@ -1069,18 +1069,18 @@
 #define FLAG_ITEM_ROUTE_111_GIMMIGHOUL_COINS                        0x3F2
 #define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
-#define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
+#define FLAG_ITEM_ROUTE_113_ABILITY_CAPSULE                         0x3F5
 #define FLAG_ITEM_ROUTE_114_GIMMIGHOUL_COINS_1                      0x3F6
 #define FLAG_ITEM_ROUTE_114_GIMMIGHOUL_COINS_2                      0x3F7
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                          0x3F9
 #define FLAG_ITEM_ROUTE_115_GIMMIGHOUL_COINS_1                      0x3FA
 #define FLAG_ITEM_ROUTE_116_TM_AIR_SLASH                            0x3FB
-#define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
+#define FLAG_ITEM_ROUTE_116_THUNDER_STONE                           0x3FC
 #define FLAG_ITEM_ROUTE_116_GIMMIGHOUL_COINS                        0x3FD
 #define FLAG_ITEM_ROUTE_117_TM_LEECH_LIFE                           0x3FE
 #define FLAG_ITEM_ROUTE_117_REVIVE                                  0x3FF
-#define FLAG_ITEM_ROUTE_119_SUPER_REPEL                             0x400
+#define FLAG_ITEM_ROUTE_119_ABILITY_PATCH                           0x400
 #define FLAG_ITEM_ROUTE_119_GIMMIGHOUL_COINS_1                      0x401
 #define FLAG_ITEM_ROUTE_119_ELIXIR_1                                0x402
 #define FLAG_ITEM_ROUTE_119_LEAF_STONE                              0x403
@@ -1098,7 +1098,7 @@
 #define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
 #define FLAG_ITEM_PETALBURG_CITY_ETHER                              0x410
 #define FLAG_ITEM_RUSTBORO_CITY_TM_AERIAL_ACE                       0x411
-#define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
+#define FLAG_ITEM_LILYCOVE_CITY_ABILITY_CAPSULE                     0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415
@@ -1106,10 +1106,10 @@
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_GIMMIGHOUL_COINS               0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
 #define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
-#define FLAG_ITEM_GRANITE_CAVE_1F_MAX_REPEL                         0x41A
+#define FLAG_ITEM_GRANITE_CAVE_1F_HEAVY_DUTY_BOOTS                  0x41A
 #define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                        0x41B
 #define FLAG_ITEM_MT_PYRE_5F_LAX_INCENSE                            0x41C
-#define FLAG_ITEM_GRANITE_CAVE_B2F_REPEL                            0x41D
+#define FLAG_ITEM_GRANITE_CAVE_B2F_TM_STEEL_WING                    0x41D
 #define FLAG_ITEM_GRANITE_CAVE_B2F_AGGRONITE                        0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_LIFE_ORB                          0x41F
 #define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
@@ -1132,7 +1132,7 @@
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0x431
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP                    0x432
 #define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0x433
-#define FLAG_ITEM_NEW_MAUVILLE_TM_SUPERCELL_SLAM                    0x434
+#define FLAG_ITEM_NEW_MAUVILLE_ABILITY_PATCH                        0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER        0x436
 #define FLAG_ITEM_SCORCHED_SLAB_TM_TEMPER_FLARE                     0x437
@@ -1152,7 +1152,7 @@
 #define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_SOLAR_BLADE             0x446
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_MAX_REPEL                0x448
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_DUSK_STONE               0x448
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_ICE_BEAM              0x44A
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE                  0x44B
@@ -1176,7 +1176,7 @@
 #define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
 #define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_GIMMIGHOUL_COINS                0x45F
-#define FLAG_ITEM_MT_PYRE_3F_SUPER_REPEL                            0x460
+#define FLAG_ITEM_MT_PYRE_3F_SPELL_TAG                              0x460
 #define FLAG_ITEM_ROUTE_118_HYPER_POTION                            0x461
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463

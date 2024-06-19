@@ -1251,7 +1251,7 @@ static const struct TrainerMon sParty_Violet[] = { // Route Boss
         .lvl = 1
     },
     {
-        .species = SPECIES_SAWSBUCK,
+        .species = SPECIES_SAWSBUCK_SUMMER,
         .heldItem = ITEM_CHOICE_SCARF,
         .ability = ABILITY_SERENE_GRACE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
@@ -2563,7 +2563,7 @@ static const struct TrainerMon sParty_Jody[] = {
     }
 };
 
-static const struct TrainerMon sParty_Wendy[] = { // Route Boss
+static const struct TrainerMon sParty_Wendy[] = {
     {
         .species = SPECIES_FERROTHORN,
         .heldItem = ITEM_ROCKY_HELMET,
@@ -2576,12 +2576,12 @@ static const struct TrainerMon sParty_Wendy[] = { // Route Boss
     },
     {
         .species = SPECIES_GARDEVOIR,
-        .heldItem = ITEM_GARDEVOIRITE,
+        .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_SYNCHRONIZE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_CALM_MIND, MOVE_HYPER_VOICE, MOVE_PSYCHIC, MOVE_ENCORE},
+        .moves = {MOVE_CALM_MIND, MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_ENCORE},
         .lvl = 1
     },
     {
@@ -2603,26 +2603,6 @@ static const struct TrainerMon sParty_Wendy[] = { // Route Boss
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .moves = {MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_SLUDGE_WAVE, MOVE_THUNDERBOLT},
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_HYDREIGON,
-        .heldItem = ITEM_EJECT_PACK,
-        .ability = ABILITY_LEVITATE,
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
-        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_FLASH_CANNON, MOVE_DRACO_METEOR, MOVE_DARK_PULSE, MOVE_FLAMETHROWER},
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_LANTURN,
-        .heldItem = ITEM_LEFTOVERS,
-        .ability = ABILITY_WATER_ABSORB,
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
-        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
-        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_SCALD, MOVE_DISCHARGE, MOVE_VOLT_SWITCH, MOVE_ICE_BEAM},
         .lvl = 1
     }
 };
@@ -18918,7 +18898,7 @@ static const struct TrainerMon sParty_ArchieMtPyre[] = {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
-        .species = SPECIES_AEGISLASH,
+        .species = SPECIES_AEGISLASH_SHIELD,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_STANCE_CHANGE,
         .lvl = 1,
