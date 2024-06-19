@@ -3182,9 +3182,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_AEROBLAST] =
     {
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = 110,
         .type = TYPE_FLYING,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 8,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -3984,9 +3984,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SACRED_FIRE] =
     {
         .effect = EFFECT_BURN_HIT,
-        .power = 100,
+        .power = 110,
         .type = TYPE_FIRE,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 8,
         .secondaryEffectChance = 50,
         .target = MOVE_TARGET_SELECTED,

@@ -985,7 +985,7 @@ EventScript_CableClub_SetVarResult0::
 	return
 
 Common_EventScript_UnionRoomAttendant::
-	call EventScript_DoWonderTrade
+	call Common_EventScript_WonderTrade
 	end
 
 Common_EventScript_WirelessClubAttendant::
@@ -1012,61 +1012,69 @@ Common_EventScript_LegendaryFlewAway::
 	release
 	end
 
-EventScript_DoWonderTrade::
+Common_EventScript_WonderTrade::
 	lock
-	goto_if_unset FLAG_BADGE05_GET, EventScript_WonderTradeCurrentlyUnavailable
+	faceplayer
+	dotimebasedevents
+	goto_if_unset FLAG_BADGE05_GET, WonderTrade_EventScript_CurrentlyUnavailable
+	goto_if_set FLAG_DAILY_WONDER_TRADE_DONE, WonderTrade_EventScript_AlreadyDone
 	getpartysize
-	goto_if_eq VAR_RESULT, 0, EventScript_PleaseVisitAgain
-	msgbox Text_HiWouldYouLikeToDoAWonderTrade, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_PleaseVisitAgain
-	goto EventScript_StartWonderTrade
-EventScript_End:
+	goto_if_eq VAR_RESULT, NO, WonderTrade_EventScript_PleaseVisitAgain
+	msgbox WonderTrade_Text_HiWouldYouLikeToDoAWonderTrade, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, WonderTrade_EventScript_PleaseVisitAgain
+	goto WonderTrade_EventScript_StartWonderTrade
+WonderTrade_EventScript_End:
 	end
 
-EventScript_StartWonderTrade:
-	msgbox Text_PleaseChooseAPokemon, MSGBOX_NPC
+WonderTrade_EventScript_StartWonderTrade:
+	msgbox WonderTrade_Text_PleaseChooseAPokemon, MSGBOX_NPC
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_End
+	goto_if_ge VAR_0x8004, PARTY_SIZE, WonderTrade_EventScript_End
 	copyvar VAR_0x8005, VAR_0x8004
 	special CreateWonderTradePokemon
 	special DoInGameTradeScene
 	waitstate
-	msgbox Text_WouldYouLikeAnotherWonderTrade, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_PleaseVisitAgain
-	goto EventScript_StartWonderTrade
+	setflag FLAG_DAILY_WONDER_TRADE_DONE
+	goto WonderTrade_EventScript_PleaseVisitAgain
 	return
 
-EventScript_WonderTradeCurrentlyUnavailable:
-    msgbox Text_WonderTradeCurrentlyUnavailable, MSGBOX_NPC
+WonderTrade_EventScript_CurrentlyUnavailable:
+    msgbox WonderTrade_Text_CurrentlyUnavailable, MSGBOX_NPC
 	release
 	end
 
-EventScript_PleaseVisitAgain:
-	msgbox Text_PleaseVisitAgain, MSGBOX_NPC
+WonderTrade_EventScript_AlreadyDone:
+	msgbox WonderTrade_Text_YouHaveAlreadyDoneYourWonderTrade, MSGBOX_NPC
 	release
 	end
 
-Text_WonderTradeCurrentlyUnavailable:
+WonderTrade_EventScript_PleaseVisitAgain:
+	msgbox WonderTrade_Text_PleaseVisitAgain, MSGBOX_NPC
+	release
+	end
+
+WonderTrade_Text_CurrentlyUnavailable:
 	.string "I'm sorry, but the Wonder Trade System\n"
 	.string "is currently unavailable.\p"
 	.string "Please try again later.\p"
 	.string "Thank you!$"
 
-Text_HiWouldYouLikeToDoAWonderTrade:
+WonderTrade_Text_HiWouldYouLikeToDoAWonderTrade:
 	.string "Hello, {PLAYER}!\p"
 	.string "Welcome to the Wonder Trade System!\p"
 	.string "Would you like to participate in a\n"
 	.string "Wonder Trade?$"
 
-Text_PleaseChooseAPokemon:
+WonderTrade_Text_PleaseChooseAPokemon:
 	.string "Please choose a Pokémon.$"
 
-Text_WouldYouLikeAnotherWonderTrade:
-	.string "Would you like to participate in\n"
-	.string "another Wonder Trade?$"
+WonderTrade_Text_YouHaveAlreadyDoneYourWonderTrade:
+	.string "You have already done your\n"
+	.string "Wonder Trade for today.\p"
+	.string "Please visit again tomorrow!$"
 
-Text_PleaseVisitAgain:
+WonderTrade_Text_PleaseVisitAgain:
 	.string "Please visit again.$"
 
 Common_EventScript_MysteryGift::
