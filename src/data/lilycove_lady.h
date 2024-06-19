@@ -299,9 +299,6 @@ static const u8 *const sFavorLadyRequests[] =
 
 static const u16 sFavorLadyAcceptedItems_Slippery[] =
 {
-    ITEM_REPEL,
-    ITEM_SUPER_REPEL,
-    ITEM_MAX_REPEL,
     ITEM_ANTIDOTE,
     ITEM_PARALYZE_HEAL,
     ITEM_BURN_HEAL,

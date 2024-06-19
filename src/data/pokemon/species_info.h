@@ -1813,7 +1813,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_JIGGLYPUFF] =
     {
-        .baseHP        = 105,
+        .baseHP        = 115,
         .baseAttack    = 45,
         .baseDefense   = 20,
         .baseSpeed     = 20,
@@ -1840,7 +1840,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_WIGGLYTUFF] =
     {
-        .baseHP        = 120,
+        .baseHP        = 140,
         .baseAttack    = 70,
         .baseDefense   = 45,
         .baseSpeed     = 45,
