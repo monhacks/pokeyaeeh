@@ -844,6 +844,8 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	giveitem ITEM_OLD_ROD
 	msgbox LittlerootTown_Text_PlayerGetCandyBox, MSGBOX_DEFAULT
 	giveitem ITEM_CANDY_BOX
+	msgbox LittlerootTown_Text_PlayerGetRepellent, MSGBOX_DEFAULT
+	giveitem ITEM_REPELLENT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_OLD_ROD
 	closemessage
@@ -884,6 +886,11 @@ LittlerootTown_Text_PlayerGetCandyBox:
 	.string "Oh! Also here's some candy for you!\p"
 	.string "In case you or your Pokémon are hungry\n"
 	.string "grab a treat!$"
+
+LittlerootTown_Text_PlayerGetRepellent:
+	.string "Mom: It's a scary world out there.\p"
+	.string "You need some Repellent otherwise\n"
+	.string "wild Pokémon might attack you!$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
