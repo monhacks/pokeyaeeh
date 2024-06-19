@@ -498,8 +498,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_YDARISSEP] =
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BUG_MANIAC,
         .trainerName = _("Ydarissep"),
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
