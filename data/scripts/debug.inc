@@ -124,8 +124,7 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1::
-	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
-	goto Debug_EventScript_SetTestFlag
+	addvar VAR_KECLEON_DEFEATED, 7
 	end
 
 Debug_EventScript_Script_2::

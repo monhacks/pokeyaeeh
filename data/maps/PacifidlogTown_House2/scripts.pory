@@ -148,3 +148,201 @@ PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch:
 	.string "very much.$"
 
 `
+script PacifidlogTown_House2_EventScript_OldManKecleonQuest
+{
+	lock
+	faceplayer
+	if(flag(FLAG_RECEIVED_BATTLE_BOND_GRENINJA) == TRUE)
+	{
+		msgbox("Thanks to your efforts,\n"
+				"there's no longer any Kecleon causing\l"
+				"troubles!\p"
+				"They have all moved south to Route 120.", MSGBOX_DEFAULT)
+		release
+		end
+	}
+	if(flag(FLAG_ACCEPTED_KECLEON_QUEST) == TRUE)
+	{
+		if(var(VAR_KECLEON_DEFEATED) >= 10)
+		{
+			msgbox("You got them all?!\p"
+					"Incredible!\p"
+					"You deserve this gift!", MSGBOX_AUTOCLOSE)
+			bufferspeciesname(STR_VAR_1, SPECIES_GRENINJA)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA)
+			setflag(P_FLAG_FORCE_NO_SHINY)
+			givemon(SPECIES_GRENINJA_BATTLE_BOND, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_MODEST, 0, MON_MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_SHURIKEN, MOVE_DARK_PULSE, MOVE_BUBBLE_BEAM, MOVE_ICE_BEAM, FALSE)
+			playfanfare(MUS_OBTAIN_ITEM)
+			message("{PLAYER} received a Greninja!")
+			waitmessage()
+			waitfanfare()
+			setflag(FLAG_RECEIVED_BATTLE_BOND_GRENINJA)
+			clearflag(P_FLAG_FORCE_NO_SHINY)
+			if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY)
+			{
+				msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+				if((var(VAR_RESULT) == YES))
+				{
+					call(Common_EventScript_GetGiftMonPartySlot)
+					call(Common_EventScript_NameReceivedPartyMon)
+					msgbox("That Greninja is a special one!\p"
+						"If you are as good as I think you are,\n"
+						"you will see a special phenomenon.\p"
+						"Good luck on your journey!", MSGBOX_NPC)
+					release
+					end
+				}
+				else
+				{
+					msgbox("That Greninja is a special one!\p"
+						"If you are as good as I think you are,\n"
+						"you will see a special phenomenon.\p"
+						"Good luck on your journey!", MSGBOX_NPC)
+					release
+					end
+				}
+			}
+			elif ((var(VAR_RESULT) == MON_GIVEN_TO_PC))
+			{
+				msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+				if((var(VAR_RESULT) == YES))
+				{
+					call(Common_EventScript_NameReceivedBoxMon)
+					call(Common_EventScript_TransferredToPC)
+					msgbox("That Greninja is a special one!\p"
+						"If you are as good as I think you are,\n"
+						"you will see a special phenomenon.\p"
+						"Good luck on your journey!", MSGBOX_NPC)
+					release
+					end
+				}
+				else
+				{
+					msgbox("That Greninja is a special one!\p"
+						"If you are as good as I think you are,\n"
+						"you will see a special phenomenon.\p"
+						"Good luck on your journey!", MSGBOX_NPC)
+					release
+					end
+				}
+			}
+			msgbox("That Greninja is a special one!\p"
+					"If you are as good as I think you are,\n"
+					"you will see a special phenomenon.\p"
+					"Good luck on your journey!", MSGBOX_NPC)
+			release
+			end
+		}
+		else
+		{
+			buffernumberstring(STR_VAR_1, VAR_KECLEON_DEFEATED)
+			msgbox("So you've beaten {STR_VAR_1} of the Kecleon?\p"
+					"I'm sure you'll get them all!", MSGBOX_NPC)
+			release
+			end
+		}
+	}
+	msgbox("I've seen a few Kecleon when I was\n"
+		 	"in Fortree City.\p"
+			"I've heard that they are still there!\p"
+			"My brother in Fortree told me they are\n"
+			"like pests there.\p"
+			"Could you get rid of them for me?", MSGBOX_YESNO)
+	if(var(VAR_RESULT) == YES)
+	{
+		setflag(FLAG_ACCEPTED_KECLEON_QUEST)
+		buffernumberstring(STR_VAR_1, VAR_KECLEON_DEFEATED)
+		msgbox("Thank you, very much!", MSGBOX_DEFAULT)
+		if(var(VAR_KECLEON_DEFEATED) >= 10)
+		{
+				msgbox("… … … … … …\p"
+						"You already did?!\p"
+						"Oh, my! You are a wonderous Trainer!\p"
+						"Then you shall take this reward!", MSGBOX_AUTOCLOSE)
+				bufferspeciesname(STR_VAR_1, SPECIES_GRENINJA)
+				setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA)
+				setflag(P_FLAG_FORCE_NO_SHINY)
+				givemon(SPECIES_GRENINJA_BATTLE_BOND, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_MODEST, 0, MON_MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_SHURIKEN, MOVE_DARK_PULSE, MOVE_BUBBLE_BEAM, MOVE_ICE_BEAM, FALSE)
+				playfanfare(MUS_OBTAIN_ITEM)
+				message("{PLAYER} received a Greninja!")
+				waitmessage()
+				waitfanfare()
+				setflag(FLAG_RECEIVED_BATTLE_BOND_GRENINJA)
+				clearflag(P_FLAG_FORCE_NO_SHINY)
+				if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY)
+				{
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if((var(VAR_RESULT) == YES))
+					{
+						call(Common_EventScript_GetGiftMonPartySlot)
+						call(Common_EventScript_NameReceivedPartyMon)
+						msgbox("That Greninja is a special one!\p"
+							"If you are as good as I think you are,\n"
+							"you will see a special phenomenon.\p"
+							"Good luck on your journey!", MSGBOX_NPC)
+						release
+						end
+					}
+					else
+					{
+						msgbox("That Greninja is a special one!\p"
+							"If you are as good as I think you are,\n"
+							"you will see a special phenomenon.\p"
+							"Good luck on your journey!", MSGBOX_NPC)
+						release
+						end
+					}
+
+				}
+				elif ((var(VAR_RESULT) == MON_GIVEN_TO_PC))
+				{
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if((var(VAR_RESULT) == YES))
+					{
+						call(Common_EventScript_NameReceivedBoxMon)
+						call(Common_EventScript_TransferredToPC)
+						msgbox("That Greninja is a special one!\p"
+							"If you are as good as I think you are,\n"
+							"you will see a special phenomenon.\p"
+							"Good luck on your journey!", MSGBOX_NPC)
+						release
+						end
+					}
+					else
+					{
+						msgbox("That Greninja is a special one!\p"
+							"If you are as good as I think you are,\n"
+							"you will see a special phenomenon.\p"
+							"Good luck on your journey!", MSGBOX_NPC)
+						release
+						end
+					}
+				}
+				msgbox("That Greninja is a special one!\p"
+						"If you are as good as I think you are,\n"
+						"you will see a special phenomenon.\p"
+						"Good luck on your journey!", MSGBOX_NPC)
+				release
+				end
+		}
+		else
+		{
+			msgbox("I see you have already come in contact\n"
+				"with a few!\p"
+				"{STR_VAR_1}, you say?!\p"
+				"If you get all, I'll give you a nice\n"
+				"reward that'll be worth your time!", MSGBOX_NPC)
+				release
+				end
+		}
+	}
+	else
+	{
+		msgbox("Oh…\n"
+				"That's fine.\p"
+				"If you're upto the task,\n"
+				"I can give you a very special Pokémon.", MSGBOX_NPC)
+				release
+				end
+	}
+}

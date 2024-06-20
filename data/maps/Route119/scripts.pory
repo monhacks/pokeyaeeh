@@ -97,6 +97,8 @@ Route119_EventScript_BattleMayMudkip::
 
 Route119_EventScript_DefeatedMay::
 	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
+	call Route119_EventScript_GiveDevonScope
+	msgbox Route119_Text_MayExplainDevonScope, MSGBOX_DEFAULT
 	call Route119_EventScript_GiveAcrobaticsTM
 	msgbox Route119_Text_MayExplainAcrobatics, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
@@ -127,6 +129,8 @@ Route119_EventScript_BattleBrendanMudkip::
 
 Route119_EventScript_DefeatedBrendan::
 	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
+	call Route119_EventScript_GiveDevonScope
+	msgbox Route119_Text_BrendanExplainDevonScope, MSGBOX_DEFAULT
 	call Route119_EventScript_GiveAcrobaticsTM
 	msgbox Route119_Text_BrendanExplainAcrobatics, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
@@ -135,6 +139,11 @@ Route119_EventScript_DefeatedBrendan::
 Route119_EventScript_GiveAcrobaticsTM::
 	giveitem ITEM_TM_ACROBATICS
 	setflag FLAG_RECEIVED_TM_ACROBATICS
+	return
+
+Route119_EventScript_GiveDevonScope::
+	giveitem ITEM_DEVON_SCOPE
+	setflag FLAG_RECEIVED_DEVON_SCOPE
 	return
 
 Route119_EventScript_RivalExitScottArrive::
@@ -498,6 +507,14 @@ Route119_Text_MayPresentForYou:
 	.string "worry about! Keep it up!\p"
 	.string "And, here! I have a present for you.$"
 
+Route119_Text_MayExplainDevonScope:
+	.string "May: The Devon Scope lets you see\n"
+	.string "things that you normally won't be able\l"
+	.string "to.\p"
+	.string "The Devon Scope will make it easier for\n"
+	.string "you to see these things!\p"
+	.string "Also, this might be more helpful to you.$"
+
 Route119_Text_MayExplainAcrobatics:
 	.string "May: Acrobatics is a pretty fun move!\n"
 	.string "It doubles in power if you're not\l"
@@ -521,6 +538,14 @@ Route119_Text_BrendanIllGiveYouThis:
 	.string "to search for Pokémon anywhere.\p"
 	.string "Here, I'll give you this.\n"
 	.string "Try it out.$"
+
+Route119_Text_BrendanExplainDevonScope:
+	.string "Brendan: The Devon Scope lets you see\n"
+	.string "things that you normally won't be able\l"
+	.string "to.\p"
+	.string "There may be some Pokémon blocking your\n"
+	.string "way, and you won't even notice!\p"
+	.string "Oh, also this will be helpful!$"
 
 Route119_Text_BrendanExplainAcrobatics:
 	.string "Brendan: Acrobatics is an awesome move!\n"

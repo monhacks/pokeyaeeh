@@ -80,6 +80,7 @@ FortreeCity_EventScript_UseDevonScope::
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_KECLEON_FLED_FORTREE
+	addvar VAR_KECLEON_DEFEATED, 1
 	release
 	end
 
