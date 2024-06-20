@@ -403,19 +403,6 @@
       "flag": "FLAG_ITEM_ROUTE_120_HYPER_POTION"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 8,
-      "y": 16,
-      "elevation": 4,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route120_EventScript_Kecleon6",
-      "flag": "FLAG_HIDE_ROUTE_120_KECLEON_6"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 20,
       "y": 1,
@@ -469,8 +456,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 20,
-      "y": 11,
+      "x": 3,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
@@ -482,8 +469,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 27,
-      "y": 2,
+      "x": 20,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
@@ -495,8 +482,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 4,
-      "y": 77,
+      "x": 27,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
@@ -508,8 +495,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 7,
-      "y": 51,
+      "x": 8,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
@@ -521,8 +508,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 19,
-      "y": 48,
+      "x": 8,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
@@ -583,19 +570,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route120_EventScript_ItemTMHighHorsepower",
       "flag": "FLAG_ITEM_ROUTE_120_TM_HIGH_HORSEPOWER"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
-      "x": 8,
-      "y": 15,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route120_EventScript_Kecleon7",
-      "flag": "FLAG_HIDE_ROUTE_120_KECLEON_7"
     }
   ],
   "warp_events": [

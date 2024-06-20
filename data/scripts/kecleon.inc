@@ -33,14 +33,14 @@ Route120_EventScript_Kecleon5::
 	goto EventScript_Kecleon
 	end
 
-Route120_EventScript_Kecleon6::
+FortreeCity_EventScript_Kecleon2::
 	lock
 	faceplayer
 	setvar VAR_0x8009, 6
 	goto EventScript_Kecleon
 	end
 
-Route120_EventScript_Kecleon7::
+FortreeCity_EventScript_Kecleon3::
 	lock
 	faceplayer
 	setvar VAR_0x8009, 7
