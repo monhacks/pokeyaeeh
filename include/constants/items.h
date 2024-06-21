@@ -1191,12 +1191,12 @@
 #define ITEM_LAPRASITE 890
 #define ITEM_GARBODORITE 891
 #define ITEM_MELMETALITE 892
-#define ITEM_RILLABOOMITE 893 // Petalburg City (after Gym 6)
-#define ITEM_CINDERACITE 894 // Petalburg City (after Gym 6)
-#define ITEM_INTELEONITE 895 // Petalburg City (after Gym 6)
+#define ITEM_RILLABOOMITE 893 // Petalburg City (after Gym 5)
+#define ITEM_CINDERACITE 894 // Petalburg City (after Gym 5)
+#define ITEM_INTELEONITE 895 // Petalburg City (after Gym 5)
 #define ITEM_CORVIKNIGHTITE 896
 #define ITEM_ORBEETLITE 897
-#define ITEM_DREDNITE 898 // Seaflor Cavern R8
+#define ITEM_DREDNITE 898 // Route 124 Boss Chad
 #define ITEM_COALOSSALITE 899
 #define ITEM_SANDACONDANITE 900 // Route 126
 #define ITEM_CENTISKORCHITE 901

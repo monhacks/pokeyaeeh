@@ -37,7 +37,7 @@
 #define TRAINER_ZANDER                       31
 #define TRAINER_SHELLY_WEATHER_INSTITUTE     32
 #define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
-#define TRAINER_ARCHIE_SEAFLOOR_CAVERN                       34
+#define TRAINER_ARCHIE_SEAFLOOR_CAVERN       34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37
