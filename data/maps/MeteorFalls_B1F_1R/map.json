@@ -12,8 +12,22 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
-  "object_events": [],
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TMHM_BALL",
+      "x": 15,
+      "y": 24,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_B1F_1R_EventScript_ItemTMIronTail",
+      "flag": "FLAG_ITEM_METEOR_FALLS_B1F_1R_TM_IRON_TAIL"
+    }
+  ],
   "warp_events": [
     {
       "x": 5,
@@ -58,6 +72,10 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

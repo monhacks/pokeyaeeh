@@ -53,13 +53,13 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AROMA_LADY",
-      "x": 61,
+      "x": 57,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route103_EventScript_Daisy",
       "flag": "0"
@@ -191,8 +191,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_ItemGuardSpec",
-      "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC"
+      "script": "Route103_EventScript_ItemSuperPotion",
+      "flag": "FLAG_ITEM_ROUTE_103_SUPER_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -284,6 +284,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route103_EventScript_ItemGimmighoulCoins",
       "flag": "FLAG_ITEM_ROUTE_103_GIMMIGHOUL_COINS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TMHM_BALL",
+      "x": 72,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route103_EventScript_ItemTMFirePunch",
+      "flag": "FLAG_ITEM_ROUTE_103_TM_FIRE_PUNCH"
     }
   ],
   "warp_events": [

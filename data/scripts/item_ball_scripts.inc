@@ -6,13 +6,17 @@ Route102_EventScript_ItemTMPsyshock::
 	finditem ITEM_TM_PSYSHOCK
 	end
 
-Route103_EventScript_ItemGuardSpec::
-	finditem ITEM_GUARD_SPEC
+Route103_EventScript_ItemSuperPotion::
+	finditem ITEM_SUPER_POTION
 	end
 
 Route103_EventScript_ItemGimmighoulCoins::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
+	end
+
+Route103_EventScript_ItemTMFirePunch::
+	finditem ITEM_TM_FIRE_PUNCH
 	end
 
 Route104_EventScript_ItemGimmighoulCoins::
@@ -59,8 +63,8 @@ Route109_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route109_EventScript_ItemPotion::
-	finditem ITEM_POTION
+Route109_EventScript_ItemTMIcePunch::
+	finditem ITEM_TM_ICE_PUNCH
 	end
 
 Route110_EventScript_ItemGimmighoulCoins::
@@ -97,8 +101,8 @@ Route111_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route111_EventScript_ItemElixir::
-	finditem ITEM_ELIXIR
+Route111_EventScript_ItemTMThunderPunch::
+	finditem ITEM_TM_THUNDER_PUNCH
 	end
 
 Route112_EventScript_ItemNugget::
@@ -514,12 +518,8 @@ FieryPath_EventScript_ItemTMWillOWisp::
 	finditem ITEM_TM_WILL_O_WISP
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemTMIronTail::
-	finditem ITEM_TM_IRON_TAIL
-	end
-
-MeteorFalls_1F_1R_EventScript_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
+MeteorFalls_1F_1R_EventScript_ItemTMFrostGlare::
+	finditem ITEM_TM_FROST_GLARE
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemMoonStone::
@@ -533,6 +533,10 @@ MeteorFalls_1F_1R_EventScript_ItemGimmighoulCoins::
 
 MeteorFalls_1F_1R_EventScript_ItemTMDragonClaw::
 	finditem ITEM_TM_DRAGON_CLAW
+	end
+
+MeteorFalls_B1F_1R_EventScript_ItemTMIronTail::
+	finditem ITEM_TM_IRON_TAIL
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonPulse::
@@ -553,6 +557,9 @@ NewMauville_Inside_EventScript_ItemAbilityPatch::
 
 NewMauville_Inside_EventScript_ItemThunderStone::
 	finditem ITEM_THUNDER_STONE
+	end
+NewMauville_Inside_EventScript_ItemTMThunderWave::
+	finditem ITEM_TM_THUNDER_WAVE
 	end
 
 NewMauville_Inside_EventScript_ItemFullHeal::

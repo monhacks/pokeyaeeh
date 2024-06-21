@@ -17571,7 +17571,7 @@ static const struct TrainerMon sParty_GruntMagmaHideout1[] = {
 static const struct TrainerMon sParty_GruntMagmaHideout2[] = {
     {
         .species = SPECIES_RAICHU,
-        .heldItem = ITEM_LIFE_ORB,
+        .heldItem = ITEM_LIGHT_BALL,
         .ability = ABILITY_GROUNDSHOCK,
         .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
@@ -18888,7 +18888,7 @@ static const struct TrainerMon sParty_Fabian[] = {
     },
     {
         .species = SPECIES_RAICHU_ALOLAN,
-        .heldItem = ITEM_CHOICE_SPECS,
+        .heldItem = ITEM_LIGHT_BALL,
         .ability = ABILITY_SURGE_SURFER,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),

@@ -4426,7 +4426,7 @@ static const u8 sSteelArmorDesc[] =_(
 
 static const u8 sMoonRockDesc[] = _(
     "Extends the length\n"
-    "of the move Full Moon\n"
+    "of the move FullMoon\n"
     "used by the holder.");
 
 static const u8 sNidoqueeniteDesc[] = _(

@@ -923,7 +923,7 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
 #define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
-#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
+#define FLAG_ITEM_NEW_MAUVILLE_TM_THUNDER_WAVE                      0x363
 #define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0x364
 #define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0x365
 #define FLAG_HIDE_LANETTES_HOUSE_LANETTE                            0x366
@@ -1028,7 +1028,7 @@
 #define FLAG_HIDE_FORTREE_CITY_KECLEON_1                            0x3C9
 #define FLAG_HIDE_FORTREE_CITY_KECLEON_2                            0x3CA
 #define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
-#define FLAG_UNUSED_0x3CC                                           0x3CC // Unused Flag
+#define FLAG_ITEM_ROUTE_103_TM_FIRE_PUNCH                           0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2                            0x3CF
@@ -1102,8 +1102,8 @@
 #define FLAG_ITEM_RUSTBORO_CITY_TM_AERIAL_ACE                       0x411
 #define FLAG_ITEM_LILYCOVE_CITY_ABILITY_CAPSULE                     0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415
+#define FLAG_ITEM_METEOR_FALLS_B1F_1R_TM_IRON_TAIL                  0x414
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_FROST_GLARE                 0x415
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_GIMMIGHOUL_COINS               0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
@@ -1172,7 +1172,7 @@
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_ICY_WIND                   0x458
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
-#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A
+#define FLAG_ITEM_ROUTE_103_SUPER_POTION                            0x45A
 #define FLAG_ITEM_ROUTE_104_TM_CHILLING_WATER                       0x45B
 #define FLAG_ITEM_MAUVILLE_CITY_TM_LIQUIDATION                      0x45C
 #define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
@@ -1198,9 +1198,9 @@
 #define FLAG_ITEM_ROUTE_103_GIMMIGHOUL_COINS                        0x471
 #define FLAG_ITEM_MT_PYRE_6F_BANETTITE                              0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
-#define FLAG_ITEM_ROUTE_109_POTION                                  0x474
+#define FLAG_ITEM_ROUTE_109_TM_ICE_PUNCH                            0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
-#define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
+#define FLAG_ITEM_ROUTE_111_TM_THUNDER_PUNCH                        0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
 #define FLAG_ITEM_CAVE_OF_ORIGIN_1F_SABLENITE                       0x479
