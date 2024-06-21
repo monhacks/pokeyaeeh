@@ -6277,15 +6277,15 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntSeafloorCavern5),
     },
 
-    [TRAINER_GRUNT_UNUSED] =
+    [TRAINER_GRUNT_SEAFLOOR_CAVERN_6] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
+        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
         .trainerName = _("Grunt"),
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_GruntUnused),
+        .party = TRAINER_PARTY(sParty_GruntSeafloorCavern6),
     },
 
     [TRAINER_GRUNT_MT_PYRE_4] =

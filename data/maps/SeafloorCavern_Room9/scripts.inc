@@ -8,6 +8,11 @@
 SeafloorCavern_Room9_MapScripts::
 	.byte 0
 
+SeafloorCavern_Room9_EventScript_Shelly::
+	trainerbattle_single TRAINER_SHELLY_SEAFLOOR_CAVERN, SeafloorCavern_Room9_Text_ShellyIntro, SeafloorCavern_Room9_Text_ShellyDefeat
+	msgbox SeafloorCavern_Room9_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	lockall
 	setvar VAR_0x8004, LOCALID_ARCHIE
@@ -236,6 +241,31 @@ SeafloorCavern_Room9_Movement_Delay32:
 	delay_16
 	delay_16
 	step_end
+
+SeafloorCavern_Room9_Text_ShellyIntro:
+	.string "Ahahahaha!\p"
+	.string "How did you manage to get here without\n"
+	.string "a submarine?\l"
+	.string "What an impressive child!\p"
+	.string "But… It won't do to have you\n"
+	.string "meddling about here.\p"
+	.string "And, I do want payback for what\n"
+	.string "happened at the Weather Institute…\p"
+	.string "I'm going to give you a little taste\n"
+	.string "of pain! Resign yourself to it!$"
+
+SeafloorCavern_Room9_Text_ShellyDefeat:
+	.string "Ahahahaha!\p"
+	.string "Ouch!$"
+
+SeafloorCavern_Room9_Text_ShellyPostBattle:
+	.string "Ahahahaha!\n"
+	.string "You're so darn strong.\p"
+	.string "It's terribly disappointing that you're\n"
+	.string "not a Team Aqua member.\p"
+	.string "You could have enjoyed the fabulous\n"
+	.string "world our Boss has promised as\l"
+	.string "one of us…$"
 
 SeafloorCavern_Room9_Text_ArchieHoldItRightThere:
 	.string "Archie: Hold it right there.$"
