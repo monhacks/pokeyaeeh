@@ -548,4 +548,3 @@ gSpecials::
 	def_special TryRespawnLegendaryEncounters
 	def_special EnterMysteryGiftCode
 	def_special GetMysteryGiftFeedback
-
