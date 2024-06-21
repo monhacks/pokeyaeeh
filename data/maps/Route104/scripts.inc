@@ -1142,14 +1142,16 @@ Route104_Text_BrendanPostBattle:
 	.string "become friends with your Pokémon.$"
 
 Route104_EventScript_Ivan2::
-	msgbox Route104_EventScript_Ivan2_Text_0
+	msgbox Route104_EventScript_Ivan2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_MAGIKARP, 0, ITEM_MYSTIC_WATER, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 0, 31, MOVE_SPLASH, MOVE_BOUNCE, MOVE_NONE, MOVE_NONE, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_MAGIKARP
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
 	playfanfare MUS_OBTAIN_ITEM
 	message Route104_EventScript_Ivan2_Text_1
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	giveitem ITEM_TM_BOUNCE, 1
-	playfanfare MUS_OBTAIN_ITEM
 	setflag FLAG_ROUTE_104_BOSS_DEFEATED
 	msgbox Route104_EventScript_Ivan2_Text_2, MSGBOX_NPC
 	return
@@ -1200,8 +1202,7 @@ Route104_EventScript_Ivan_12:
 
 
 Route104_EventScript_Ivan2_Text_0:
-	.string "Ok, fine! I lost! You can have my prized\n"
-	.string "possesion…$"
+	.string "Ok, fine! I lost! You can have my prized possesions…$"
 
 Route104_EventScript_Ivan2_Text_1:
 	.string "{PLAYER} received Magikarp!$"

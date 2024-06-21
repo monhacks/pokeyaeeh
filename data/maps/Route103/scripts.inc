@@ -349,11 +349,15 @@ Route103_Text_RouteSign:
 	.string "{DOWN_ARROW} Oldale Town$"
 
 Route103_EventScript_Daisy2::
-	msgbox Route103_EventScript_Daisy2_Text_0
+	msgbox Route103_EventScript_Daisy2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_VOLTORB_HISUIAN, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_MODEST, 0, MON_MALE, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_CHLOROBLAST, MOVE_ENERGY_BALL, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_VOLTORB_HISUIAN
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLTORB_HISUIAN
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Route103_EventScript_Daisy2_Text_1
+	message Route103_EventScript_Daisy2_Text_1
 	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route103_EventScript_Daisy2_Text_2, MSGBOX_NPC
 	giveitem ITEM_TM_ENERGY_BALL, 1
 	setflag FLAG_ROUTE_103_BOSS_DEFEATED
@@ -410,14 +414,56 @@ Route103_EventScript_Daisy_13:
 	goto Route103_EventScript_Daisy_3
 
 
+Common_EventScript_Nickname::
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Common_EventScript_Nickname_2
+Common_EventScript_Nickname_1:
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Common_EventScript_Nickname_4
+	return
+
+Common_EventScript_Nickname_2:
+	call Common_EventScript_NicknamePartyMon
+	goto Common_EventScript_Nickname_1
+
+Common_EventScript_Nickname_4:
+	call Common_EventScript_NicknamePCMon
+	return
+
+
+Common_EventScript_NicknamePartyMon::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Common_EventScript_NicknamePartyMon_2
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	return
+
+Common_EventScript_NicknamePartyMon_2:
+	return
+
+
+Common_EventScript_NicknamePCMon::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Common_EventScript_NicknamePCMon_2
+	call Common_EventScript_NameReceivedBoxMon
+	call Common_EventScript_TransferredToPC
+	return
+
+Common_EventScript_NicknamePCMon_2:
+	call Common_EventScript_TransferredToPC
+	return
+
+
 Route103_EventScript_Daisy2_Text_0:
-	.string "That was a fun battle!\pHere, some gifts!$"
+	.string "That was a fun battle!\pHere, please accept this!$"
 
 Route103_EventScript_Daisy2_Text_1:
 	.string "{PLAYER} received a Hisuian Voltorb!$"
 
 Route103_EventScript_Daisy2_Text_2:
-	.string "That Voltorb…\pIt's one of a kind…\pPlease take good care of it.$"
+	.string "That Voltorb…\pIt's one of a kind…\pPlease take good care of it.\pAlso, here's another gift.$"
 
 Route103_EventScript_Daisy2_Text_3:
 	.string "Energy Ball is a strong Grass-type\nattack that might lower the foe's\lSpecial Defense.\pIt's a really reliable move that'll\nnever let you down.$"

@@ -688,12 +688,15 @@ Route111_Text_TrainerHillSign:
 `
 
 script Route111_EventScript_Daisuke2{
-	msgbox(("You deserve the power of Kubfu."), MSGBOX_AUTOCLOSE)
+	msgbox("You deserve the power of Kubfu.", MSGBOX_AUTOCLOSE)
 	givemon(SPECIES_KUBFU, 0, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_MEGA_PUNCH, MOVE_FOCUS_ENERGY, MOVE_CLOSE_COMBAT, MOVE_U_TURN, FALSE)
+	bufferspeciesname(STR_VAR_1, SPECIES_KUBFU)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU)
 	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox("{PLAYER} received a Kubfu!")
+	message("{PLAYER} received a Kubfu!")
 	waitmessage()
 	waitfanfare()
+	call(Common_EventScript_Nickname)
 	setflag(FLAG_ROUTE_111_BOSS_DEFEATED)
 	msgbox(("Kubfu can only be found in the\nIsle of Armor, in Galar.\pBut, there have been a few spotted in\nHoenn.\pKubfu can evolve into two forms…"))
 	if (flag(FLAG_BADGE07_GET)) // If the player has the 7th badge, give multi choice between two Urshifus

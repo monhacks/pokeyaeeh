@@ -559,11 +559,15 @@ Route109_Text_TrainerTipsSign:
 	.string "to grow stronger than wild Pokémon.$"
 
 Route109_EventScript_Huey2::
-	msgbox Route109_EventScript_Huey2_Text_0
+	msgbox Route109_EventScript_Huey2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_ABSOL, 0, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_NIGHT_SLASH, MOVE_PSYCHO_CUT, MOVE_AQUA_CUTTER, MOVE_LEAF_BLADE, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_ABSOL
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ABSOL
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Route109_EventScript_Huey2_Text_1
+	message Route109_EventScript_Huey2_Text_1
 	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route109_EventScript_Huey2_Text_2, MSGBOX_NPC
 	giveitem ITEM_ABSOLITE, 1
 	setflag FLAG_ROUTE_109_BOSS_DEFEATED

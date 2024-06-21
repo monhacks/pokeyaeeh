@@ -12,9 +12,12 @@ GraniteCave_StevensRoom_EventScript_StevenBattle::
 GraniteCave_StevensRoom_EventScript_Steven:
 	msgbox GraniteCave_StevensRoom_Text_ImStevenLetterForMe, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
-	givemon SPECIES_HERACROSS, 23, ITEM_TOXIC_ORB, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 0, 31, MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE, TRUE
+	givemon SPECIES_HERACROSS, 0, ITEM_TOXIC_ORB, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_HERACROSS
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HERACROSS
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_SMART_STRIKE
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT

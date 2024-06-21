@@ -180,10 +180,13 @@ Route123_Text_BerryMastersHouse:
 Route123_EventScript_Violet2::
 	msgbox Route123_EventScript_Violet2_Text_0
 	givemon SPECIES_TROPIUS, 0, ITEM_SITRUS_BERRY, ITEM_CHERISH_BALL, 15, 2, MON_FEMALE, 252, 0, 0, 0, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_ENERGY_BALL, MOVE_LEAF_STORM, MOVE_JETSTREAM, MOVE_GROWTH, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_TROPIUS
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TROPIUS
 	playfanfare MUS_OBTAIN_ITEM
 	message Route123_EventScript_Violet2_Text_1
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route123_EventScript_Violet2_Text_2, MSGBOX_AUTOCLOSE
 	msgbox Route123_EventScript_Violet2_Text_3
 	giveitem ITEM_TROPIUSITE, 1

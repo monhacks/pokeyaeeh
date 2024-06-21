@@ -619,7 +619,9 @@ script DracozoltReady{
 ///////////////////////////////////////////////////////////////////////////
 script ReceiveFossilParty{
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, FinishReceivingFossilMon)
+	if(var(VAR_RESULT) == FALSE){
+		goto(FinishReceivingFossilMon)
+	}
 	call(Common_EventScript_GetGiftMonPartySlot)
 	call(Common_EventScript_NameReceivedPartyMon)
 	goto(FinishReceivingFossilMon)

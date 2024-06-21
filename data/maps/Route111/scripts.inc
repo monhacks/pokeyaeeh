@@ -687,10 +687,13 @@ Route111_Text_TrainerHillSign:
 Route111_EventScript_Daisuke2::
 	msgbox Route111_EventScript_Daisuke2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_KUBFU, 0, ITEM_CHOICE_BAND, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_MEGA_PUNCH, MOVE_FOCUS_ENERGY, MOVE_CLOSE_COMBAT, MOVE_U_TURN, FALSE
+	bufferspeciesname STR_VAR_1, SPECIES_KUBFU
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Route111_EventScript_Daisuke2_Text_1
+	message Route111_EventScript_Daisuke2_Text_1
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	setflag FLAG_ROUTE_111_BOSS_DEFEATED
 	msgbox Route111_EventScript_Daisuke2_Text_2
 	goto_if_set FLAG_BADGE07_GET, Route111_EventScript_Daisuke2_2

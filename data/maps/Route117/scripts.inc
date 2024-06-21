@@ -186,12 +186,15 @@ Route117_Text_DayCareSign:
 	.string "“Let us raise your Pokémon.”$"
 
 Route117_EventScript_Isaac2::
-	msgbox Route117_EventScript_Isaac2_Text_0, MSGBOX_DEFAULT
+	msgbox Route117_EventScript_Isaac2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_SNORLAX, 0, ITEM_LEFTOVERS, ITEM_CHERISH_BALL, 3, 2, MON_MALE, 252, 252, 0, 0, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_FACADE, MOVE_SLACK_OFF, MOVE_SLEEP_TALK, MOVE_CRUNCH, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_SNORLAX
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNORLAX
 	playfanfare MUS_OBTAIN_ITEM
 	message Route117_EventScript_Isaac2_Text_1
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route117_EventScript_Isaac2_Text_2, MSGBOX_AUTOCLOSE
 	msgbox Route117_EventScript_Isaac2_Text_3
 	giveitem ITEM_TM_FACADE, 1
@@ -267,7 +270,7 @@ Route117_EventScript_Isaac2_Text_3:
 	.string "And this, too!$"
 
 Route117_EventScript_Isaac2_Text_4:
-	.string "Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!$"
+	.string "Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you get massive damage!$"
 
 Route117_EventScript_Isaac_Text_0:
 	.string "Hello, there!\pHere for a battle, huh?\pHow about this? You beat everybody else\nhere and then face me?\pIf you beat me, I'll give you a\nlnice big reward?$"

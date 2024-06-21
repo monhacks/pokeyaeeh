@@ -193,17 +193,20 @@ Route117_Text_DayCareSign:
 //	end
 
 script Route117_EventScript_Isaac2{
-	msgbox("Hey! That was nice!\pNow for your reward.", MSGBOX_DEFAULT)
+	msgbox("Hey! That was nice!\pNow for your reward.", MSGBOX_AUTOCLOSE)
 	givemon(SPECIES_SNORLAX, 0, ITEM_LEFTOVERS, ITEM_CHERISH_BALL, 3, 2, MON_MALE, 252, 252, 0, 0, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_FACADE, MOVE_SLACK_OFF, MOVE_SLEEP_TALK, MOVE_CRUNCH, TRUE)
+	bufferspeciesname(STR_VAR_1, SPECIES_SNORLAX)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SNORLAX)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} received a Snorlax!")
-	waitmessage
-	waitfanfare
+	waitmessage()
+	waitfanfare()
+	call(Common_EventScript_Nickname)
 	msgbox("Snorlax is a beast!\pI hope you and he can win many battles\nin the future!", MSGBOX_AUTOCLOSE)
 	msgbox("And this, too!")
 	giveitem(ITEM_TM_FACADE, 1)
 	setflag(FLAG_ROUTE_117_BOSS_DEFEATED)
-	msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!", MSGBOX_AUTOCLOSE)
+	msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you get massive damage!", MSGBOX_AUTOCLOSE)
 }
 
 script Route117_EventScript_Isaac{
@@ -220,7 +223,7 @@ script Route117_EventScript_Isaac{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_Isaac2)
 		clearflag(B_FLAG_NO_BAG_USE)
-	    msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you have a League-beating Pokémon!", MSGBOX_AUTOCLOSE)
+	    msgbox("Facade is a move that doubles in damage\nif the Pokémon using it is suffering\lfrom status. Pretty neat, eh?\pPair with a Pokémon who has Guts,\nand you get massive damage!", MSGBOX_AUTOCLOSE)
 	}
 	else{
 		// before defeating every trainer here

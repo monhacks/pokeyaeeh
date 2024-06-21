@@ -263,13 +263,16 @@ Route120_Text_RouteSign121:
 	.string "{LEFT_ARROW} Route 120$"
 
 Route120_EventScript_Ydarissep2::
-	msgbox Route120_EventScript_Ydarissep2_Text_0, MSGBOX_DEFAULT
+	msgbox Route120_EventScript_Ydarissep2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_SCIZOR, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, 3, 1, MON_MALE, 248, 0, 12, 0, 0, 248, 31, 31, 31, 31, 31, 31, MOVE_BULLET_PUNCH, MOVE_CRABHAMMER, MOVE_ROOST, MOVE_SWORDS_DANCE, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_SCIZOR
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCIZOR
 	playfanfare MUS_OBTAIN_ITEM
 	message Route120_EventScript_Ydarissep2_Text_1
 	waitmessage
 	waitfanfare
-	msgbox Route120_EventScript_Ydarissep2_Text_2
+	call Common_EventScript_Nickname
+	msgbox Route120_EventScript_Ydarissep2_Text_2, MSGBOX_AUTOCLOSE
 	giveitem ITEM_SCIZORITE, 1
 	setflag FLAG_ROUTE_120_BOSS_DEFEATED
 	msgbox Route120_EventScript_Ydarissep2_Text_3, MSGBOX_AUTOCLOSE

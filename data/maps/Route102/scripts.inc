@@ -104,11 +104,9 @@ Route102_Text_RouteSignPetalburg:
 	.string "{LEFT_ARROW} Petalburg City$"
 
 Route102_EventScript_Tiana2::
-	msgbox Route102_EventScript_Tiana2_Text_0
+	msgbox Route102_EventScript_Tiana2_Text_0, MSGBOX_AUTOCLOSE
 	giveitem ITEM_BERRY_JUICE, 2
-	playfanfare MUS_OBTAIN_ITEM
 	giveitem ITEM_TM_HONE_CLAWS, 1
-	playfanfare MUS_OBTAIN_ITEM
 	setflag FLAG_ROUTE_102_BOSS_DEFEATED
 	msgbox Route102_EventScript_Tiana2_Text_1, MSGBOX_NPC
 	return
@@ -120,7 +118,7 @@ Route102_EventScript_Tiana::
 	checktrainerflag TRAINER_CALVIN_1
 	goto_if 1, Route102_EventScript_Tiana_5
 Route102_EventScript_Tiana_3:
-	msgbox Route102_EventScript_Tiana_Text_2
+	msgbox Route102_EventScript_Tiana_Text_2, MSGBOX_DEFAULT
 Route102_EventScript_Tiana_1:
 	release
 	end
@@ -156,5 +154,4 @@ Route102_EventScript_Tiana_Text_1:
 	.string "I ended up furthering your career…$"
 
 Route102_EventScript_Tiana_Text_2:
-	.string "Why don't you beat every trainer\n"
-	.string "here before talking to me again?$"
+	.string "Why don't you beat every trainer\nhere before talking to me again?$"

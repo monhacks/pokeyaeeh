@@ -1143,14 +1143,16 @@ Route104_Text_BrendanPostBattle:
 	.string "become friends with your Pokémon.$"
 `
 script Route104_EventScript_Ivan2{
-	msgbox(format("Ok, fine! I lost! You can have my prized possesion…"))
+	msgbox("Ok, fine! I lost! You can have my prized possesions…", MSGBOX_AUTOCLOSE)
 	givemon(SPECIES_MAGIKARP, 0, ITEM_MYSTIC_WATER, ITEM_CHERISH_BALL, NATURE_JOLLY, 0, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 0, 31, MOVE_SPLASH, MOVE_BOUNCE, MOVE_NONE, MOVE_NONE, TRUE)
+	bufferspeciesname(STR_VAR_1, SPECIES_MAGIKARP)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} received Magikarp!")
-	waitmessage
-	waitfanfare
+	waitmessage()
+	waitfanfare()
+	call(Common_EventScript_Nickname)
 	giveitem(ITEM_TM_BOUNCE, 1)
-	playfanfare(MUS_OBTAIN_ITEM)
 	setflag(FLAG_ROUTE_104_BOSS_DEFEATED)
 	msgbox(("Bouncy! Bouncy! Bouncy!\pBounce is the strongest Water-type\nmove!"), MSGBOX_NPC)
 	return

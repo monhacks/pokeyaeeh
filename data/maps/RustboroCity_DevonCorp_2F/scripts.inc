@@ -860,11 +860,17 @@ DracozoltReady_5:
 
 ReceiveFossilParty::
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, FinishReceivingFossilMon
+	compare VAR_RESULT, FALSE
+	goto_if_eq ReceiveFossilParty_2
+ReceiveFossilParty_1:
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	goto FinishReceivingFossilMon
 	end
+
+ReceiveFossilParty_2:
+	goto FinishReceivingFossilMon
+	goto ReceiveFossilParty_1
 
 
 ReceiveFossilPC::

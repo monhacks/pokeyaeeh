@@ -100,10 +100,13 @@ Route124_Text_HuntersHouse:
 Route124_EventScript_Chad2::
 	msgbox Route124_EventScript_Chad2_Text_0
 	givemon SPECIES_DREDNAW, 0, ITEM_WHITE_HERB, ITEM_CHERISH_BALL, 3, 0, MON_MALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_AQUA_FANGS, MOVE_SHELL_SMASH, MOVE_ROCK_SLIDE, MOVE_JAW_LOCK, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_DREDNAW
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DREDNAW
 	playfanfare MUS_OBTAIN_ITEM
 	message Route124_EventScript_Chad2_Text_1
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route124_EventScript_Chad2_Text_2, MSGBOX_AUTOCLOSE
 	msgbox Route124_EventScript_Chad2_Text_3
 	giveitem ITEM_DREDNITE, 1

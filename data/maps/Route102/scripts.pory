@@ -105,11 +105,9 @@ Route102_Text_RouteSignPetalburg:
 	.string "{LEFT_ARROW} Petalburg City$"
 `
 script Route102_EventScript_Tiana2{
-	msgbox("Ok, fine! I lost!\pHere, take these, they'll help you in\nyour journey.")
+	msgbox("Ok, fine! I lost!\pHere, take these, they'll help you in\nyour journey.", MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_BERRY_JUICE, 2)
-	playfanfare(MUS_OBTAIN_ITEM)
 	giveitem(ITEM_TM_HONE_CLAWS, 1)
-	playfanfare(MUS_OBTAIN_ITEM)
 	setflag(FLAG_ROUTE_102_BOSS_DEFEATED)
 	msgbox(("Berry Juice heal your Pokémon by a\nlittle when held in battle.\pThe TM I gave you will boost your\nPokémon's Attack and accuracy.\pIt'll be useful in your journey."), MSGBOX_NPC)
 }
@@ -121,13 +119,13 @@ script Route102_EventScript_Tiana{
 		defeated(TRAINER_RICK) &&
 		defeated(TRAINER_ALLEN)){
 		setflag(B_FLAG_NO_BAG_USE)
-		trainerbattle_single(TRAINER_TIANA, ("I'm going to keep winning and aim to be\nthe best Trainer.\pHelp me further my career!"), format("I ended up furthering your career…"), Route102_EventScript_Tiana2)
+		trainerbattle_single(TRAINER_TIANA, ("I'm going to keep winning and aim to be\nthe best Trainer.\pHelp me further my career!"), ("I ended up furthering your career…"), Route102_EventScript_Tiana2)
 		clearflag(B_FLAG_NO_BAG_USE)
 		msgbox(("Berry Juice heal your Pokémon by a\nlittle when held in battle.\pThe TM I gave you will boost your\nPokémon's Attack and accuracy.\pIt'll be useful in your journey."), MSGBOX_NPC)
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("Why don't you beat every trainer\nhere before talking to me again?"))
+		msgbox("Why don't you beat every trainer\nhere before talking to me again?", MSGBOX_DEFAULT)
 	}
 	release
 	end

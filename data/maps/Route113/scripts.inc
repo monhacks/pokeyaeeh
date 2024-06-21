@@ -159,9 +159,13 @@ Route113_Text_GlassWorkshopSign:
 Route113_EventScript_Madeline2::
 	msgbox Route113_EventScript_Madeline2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_HATTERENE, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_JOLLY, 2, MON_FEMALE, 252, 0, 0, 0, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL, MOVE_PSYCHIC, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_HATTERENE
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HATTERENE
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Route113_EventScript_Madeline2_Text_1
+	message Route113_EventScript_Madeline2_Text_1
 	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route113_EventScript_Madeline2_Text_2, MSGBOX_NPC
 	msgbox Route113_EventScript_Madeline2_Text_3, MSGBOX_NPC
 	giveitem ITEM_TM_DAZZLING_GLEAM, 1

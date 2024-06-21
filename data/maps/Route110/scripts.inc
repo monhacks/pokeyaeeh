@@ -988,12 +988,15 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "See you again, {PLAYER}{KUN}!$"
 
 Route110_EventScript_Jaclyn2::
-	msgbox Route110_EventScript_Jaclyn2_Text_0
+	msgbox Route110_EventScript_Jaclyn2_Text_0, MSGBOX_AUTOCLOSE
 	givemon SPECIES_VELUZA, 0, ITEM_SITRUS_BERRY, ITEM_CHERISH_BALL, 13, 2, MON_FEMALE, 0, 252, 0, 252, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_FILLET_AWAY, MOVE_AQUA_CUTTER, MOVE_PSYCHO_CUT, MOVE_SCALE_SHOT, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_VELUZA
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VELUZA
 	playfanfare MUS_OBTAIN_ITEM
 	message Route110_EventScript_Jaclyn2_Text_1
 	waitmessage
 	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route110_EventScript_Jaclyn2_Text_2, MSGBOX_AUTOCLOSE
 	msgbox Route110_EventScript_Jaclyn2_Text_3
 	giveitem ITEM_TM_PSYCHIC, 1

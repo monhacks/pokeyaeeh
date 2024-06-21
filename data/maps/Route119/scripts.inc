@@ -638,9 +638,13 @@ Route119_Text_BAndDPadToJumpOnRails:
 Route119_EventScript_Donald2::
 	msgbox Route119_EventScript_Donald2_Text_0
 	givemon SPECIES_PINSIR, 0, ITEM_FOCUS_SASH, ITEM_CHERISH_BALL, NATURE_JOLLY, 2, MON_MALE, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_RETURN, MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_QUICK_ATTACK, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_PINSIR
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PINSIR
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Route119_EventScript_Donald2_Text_1
 	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
 	msgbox Route119_EventScript_Donald2_Text_2, MSGBOX_NPC
 	giveitem ITEM_PINSIRITE, 1
 	setflag FLAG_ROUTE_118_BOSS_DEFEATED
