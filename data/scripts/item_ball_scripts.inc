@@ -558,6 +558,7 @@ NewMauville_Inside_EventScript_ItemAbilityPatch::
 NewMauville_Inside_EventScript_ItemThunderStone::
 	finditem ITEM_THUNDER_STONE
 	end
+
 NewMauville_Inside_EventScript_ItemTMThunderWave::
 	finditem ITEM_TM_THUNDER_WAVE
 	end

@@ -254,14 +254,14 @@ MossdeepCity_Gym_Text_ExplainCalmMind:
 	.string "… … … … … …$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza:
-	.string "Registered Gym Leaders Light\n"
+	.string "Registered Gym Leader Light\n"
 	.string "in the PokéNav.$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostBattle:
 	.string "Light: Looks like the bond between you\n"
 	.string "and your Pokémon were able to overcome\l"
 	.string "my toxic strategy.\p"
-	.string "You played fair! Good luck$"
+	.string "You played fair! Good luck!$"
 
 MossdeepCity_Gym_Text_GymStatue:
 	.string "Mossdeep City Pokémon Gym$"
@@ -401,7 +401,10 @@ MossdeepCity_Gym_EventScript_TateAndLiza_20:
 
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0:
-	.string "When held by a Gengar,\nthe Gengarite enables it to Mega Evolve\land become an inescapable threat!\pAnd this as well.$"
+	.string "Light: When held by a Gengar,\n"
+	.string "the Gengarite enables it to Mega Evolve\l"
+	.string "and become an inescapable threat!\p"
+	.string "And this as well.$"
 
 MossdeepCity_Gym_EventScript_TateAndLiza_Text_0:
 	.string "Why don't you beat every trainer\n"

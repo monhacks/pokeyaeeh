@@ -178,18 +178,21 @@ static void CreateInitialRoamerMon(u8 index, u16 species, u8 level, bool8 isTerr
 // gSpecialVar_0x8004 here corresponds to the options in the multichoice MULTI_TV_LATI (0 for 'Red', 1 for 'Blue')
 void InitRoamer(void)
 {
-    // Roamer Lati@s 
-    if (gSpecialVar_0x8004 == 1)
-    {    TryAddRoamer(SPECIES_LATIOS, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
-        GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIOS), FLAG_SET_SEEN);
-    }
-    else
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
-        TryAddRoamer(SPECIES_LATIAS, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
-        GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIAS), FLAG_SET_SEEN);
+        // Roamer Lati@s 
+        if (gSpecialVar_0x8004 == 1)
+        {    TryAddRoamer(SPECIES_LATIOS, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+             GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIOS), FLAG_SET_SEEN);
+        }
+        else
+        {
+            TryAddRoamer(SPECIES_LATIAS, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+            GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIAS), FLAG_SET_SEEN);
+        }
     }
     
-    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+    if (FlagGet(FLAG_BADGE07_GET))
     {
         TryAddTerrestrialRoamer(SPECIES_RAIKOU, ChooseGiveMonLevel(), DOES_NOT_FLEE, DAILY_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAIKOU), FLAG_SET_SEEN);
