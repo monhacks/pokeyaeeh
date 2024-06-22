@@ -194,7 +194,7 @@ void InitRoamer(void)
     
     if (FlagGet(FLAG_BADGE07_GET))
     {
-        TryAddTerrestrialRoamer(SPECIES_RAIKOU, ChooseGiveMonLevel(), DOES_NOT_FLEE, DAILY_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_RAIKOU, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAIKOU), FLAG_SET_SEEN);
 
         TryAddTerrestrialRoamer(SPECIES_ENTEI, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
@@ -203,7 +203,7 @@ void InitRoamer(void)
         TryAddRoamer(SPECIES_SUICUNE, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_SUICUNE), FLAG_SET_SEEN);
         
-        TryAddTerrestrialRoamer(SPECIES_COBALION, ChooseGiveMonLevel(), DOES_NOT_FLEE, DAILY_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_COBALION, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_COBALION), FLAG_SET_SEEN);
 
         TryAddTerrestrialRoamer(SPECIES_TERRAKION, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);

@@ -72,6 +72,7 @@ Debug_CheatStart::
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	setflag FLAG_SYS_GAME_CLEAR
 	additem ITEM_POKEMON_BOX_LINK
+	special InitRoamer
 	release
 	end
 
@@ -278,7 +279,6 @@ DebugText_DaycarePokemonNotCompatible:
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
     setflag FLAG_SYS_GAME_CLEAR
-	special InitRoamer
 	end
 
 Debug_EventScript_UnsetTestFlag::
