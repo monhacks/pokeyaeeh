@@ -19,6 +19,7 @@ int GameClear(void)
     } ribbonCounts[6];
 
     HealPlayerParty();
+	VarSet(VAR_POKEVIAL_USAGES, 0);
 
     if (FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE)
     {

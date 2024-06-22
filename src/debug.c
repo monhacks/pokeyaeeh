@@ -5164,6 +5164,7 @@ static void DebugAction_PartyBoxes_HealParty(u8 taskId)
 {
     PlaySE(SE_USE_ITEM);
     HealPlayerParty();
+	VarSet(VAR_POKEVIAL_USAGES, 0);
     ScriptContext_Enable();
     Debug_DestroyMenu_Full(taskId);
 }
