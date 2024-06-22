@@ -190,15 +190,6 @@ MossdeepCity_SpaceCenter_1F_EventScript_OldManMagma::
 	release
 	end
 
-MossdeepCity_SpaceCenter_1F_EventScript_Steven::
-	lock
-	faceplayer
-	msgbox MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel, MSGBOX_DEFAULT
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
 MossdeepCity_SpaceCenter_1F_EventScript_MagmaNote::
 	lockall
 	msgbox MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice, MSGBOX_DEFAULT
@@ -356,18 +347,6 @@ MossdeepCity_SpaceCenter_1F_Text_MagmaWantsToSpoilMyDream:
 	.string "But Team Magma wants to spoil\n"
 	.string "that dream of mine!\p"
 	.string "I'm not having any of that!$"
-
-MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel:
-	.string "Mystic: {PLAYER}{KUN}, have you read that\n"
-	.string "proclamation already?\p"
-	.string "Team Magma is coming after the rocket\n"
-	.string "fuel on this island.\p"
-	.string "I don't know what they'd need it for,\n"
-	.string "but they can't be allowed to take it.\p"
-	.string "I'll keep an eye on things for\n"
-	.string "a while longer.\p"
-	.string "In the meantime, why don't you go\n"
-	.string "check out the town?$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro:
 	.string "As promised, we've come for\n"

@@ -9,13 +9,13 @@ const struct Trainer gBattlePartners[] = {
         .items = {},
     },
 
-    [PARTNER_STEVEN] =
+    [PARTNER_WALLY] =
     {
-        .party = TRAINER_PARTY(sParty_StevenPartner),
+        .party = TRAINER_PARTY(sParty_WallyPartner),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_BACK_PIC_STEVEN,
-        .trainerName = _("STEVEN"),
+        .trainerPic = TRAINER_BACK_PIC_WALLY,
+        .trainerName = _("Wally"),
     },
 
 };

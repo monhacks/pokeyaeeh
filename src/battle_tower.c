@@ -2943,7 +2943,7 @@ void TryHideBattleTowerReporter(void)
     }
 }
 
-#define STEVEN_OTID 61226
+#define WALLY_OTID 77777
 
 static void FillPartnerParty(u16 trainerId)
 {
@@ -2985,8 +2985,8 @@ static void FillPartnerParty(u16 trainerId)
                     thirdIdPart = partnerName[k];
                 }
             }
-            if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
-                otID = STEVEN_OTID;
+            if (trainerId == TRAINER_PARTNER(PARTNER_WALLY))
+                otID = WALLY_OTID;
             else
                 otID = ((firstIdPart % 72) * 1000) + ((secondIdPart % 23) * 10) + (thirdIdPart % 37) % 65536;
             do
