@@ -2739,10 +2739,6 @@ static const u8 sBoltBeakDescription[] = _(
     "Double power if the user\n"
     "moves before the target.");
 
-static const u8 sFishiousRendDescription[] = _(
-    "Double power if the user\n"
-    "moves before the target.");
-
 static const u8 sCourtChangeDescription[] = _(
     "The user swaps effects on\n"
     "either side of the field.");
@@ -3325,10 +3321,6 @@ static const u8 sKnucklePunchDescription[] = _(
 static const u8 sStunningBlowDescription[] = _(
     "A stunning blow that will\n"
     "cause the foe to flinch.");
-
-static const u8 sRousedFangsDescription[] = _(
-    "Double power if the user\n"
-    "moves before the target.");
 
 static const u8 sAquaFangsDescription[] = _(
     "A hydro-powered bite that\n"
@@ -4063,7 +4055,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_TEATIME - 1] = sTeatimeDescription,
     [MOVE_OCTOLOCK - 1] = sOctolockDescription,
     [MOVE_BOLT_BEAK - 1] = sBoltBeakDescription,
-    [MOVE_FISHIOUS_REND - 1] = sFishiousRendDescription,
+    [MOVE_FISHIOUS_REND - 1] = sBoltBeakDescription,
     [MOVE_COURT_CHANGE - 1] = sCourtChangeDescription,
     [MOVE_CLANGOROUS_SOUL - 1] = sClangorousSoulDescription,
     [MOVE_BODY_PRESS - 1] = sBodyPressDescription,
@@ -4214,7 +4206,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FROST_GLARE - 1] = sFrostGlareDescription,
     [MOVE_KNUCKLE_PUNCH - 1] = sKnucklePunchDescription,
     [MOVE_STUNNING_BLOW - 1] = sStunningBlowDescription,
-    [MOVE_ROUSED_FANGS - 1] = sRousedFangsDescription,
+    [MOVE_ROUSED_FANGS - 1] = sBoltBeakDescription,
     [MOVE_AQUA_FANGS - 1] = sAquaFangsDescription,
     [MOVE_GLACIAL_SLAM - 1] = sGlacialSlamDescription,
     [MOVE_MAELSTROM - 1] = sMaelstromDescription,
@@ -4222,6 +4214,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_LEAF_LEAP -1 ] = sAcrobaticsDescription,
     [MOVE_METAL_TERRAIN - 1] = sMetalTerrainDescription,
     [MOVE_FULL_MOON - 1] = sMoonfallDescription,
+    [MOVE_BOULDER_BASH - 1] = sBoltBeakDescription,
 };
 
 static const u8 sMoveFourLineDescription_Pound[] = _("A physical attack\ndelivered with a\nlong tail or a\nforeleg, etc.");
@@ -6311,6 +6304,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_FROST_BLADE       - 1] = sMoveFourLineDescription_FrostBlade,
     [MOVE_LEAF_LEAP         - 1] = sMoveFourLineDescription_Acrobatics,
     [MOVE_METAL_TERRAIN     - 1] = sMoveFourLineDescription_MetalTerrain,
-    [MOVE_FULL_MOON          - 1] = sMoveFourLineDescription_Moonfall,
+    [MOVE_FULL_MOON         - 1] = sMoveFourLineDescription_Moonfall,
+    [MOVE_BOULDER_BASH      - 1] = sMoveFourLineDescription_BoltBeak,
 #endif
 };

@@ -14742,7 +14742,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
-        .sheerForceBoost = TRUE,
         .bitingMove = TRUE,
     },
 
@@ -14866,6 +14865,21 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_SPD_UP_1,
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_BOULDER_BASH] =
+    {
+        .effect = EFFECT_BOLT_BEAK,
+        .power = 65,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 24,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
     },
 
     // Z-Moves

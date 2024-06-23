@@ -21603,19 +21603,17 @@ static const struct TrainerMon sParty_Leaf[] = {
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
     .lvl = 1,
-    .species = SPECIES_SHARPEDO,
-    .ability = ABILITY_SPEED_BOOST,
-    .heldItem = ITEM_SHARPEDONITE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .moves = {MOVE_PROTECT, MOVE_FISHIOUS_REND, MOVE_CRUNCH, MOVE_ICE_FANG}
+    .species = SPECIES_RAICHU,
+    .ability = ABILITY_GROUNDSHOCK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH}
     },
     {
     .lvl = 1,
-    .species = SPECIES_RAICHU,
-    .ability = ABILITY_LIGHTNING_ROD,
-    .heldItem = ITEM_RAICHUNITE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
-    .moves = {MOVE_THUNDERBOLT, MOVE_HYPER_VOICE, MOVE_THUNDER_WAVE, MOVE_HIDDEN_POWER}
+    .species = SPECIES_SHARPEDO,
+    .ability = ABILITY_SPEED_BOOST,
+    .heldItem = ITEM_SHARPEDONITE,
+    .moves = {MOVE_PROTECT, MOVE_FISHIOUS_REND, MOVE_CRUNCH, MOVE_ICE_FANG}
     }
 };
 
