@@ -14632,7 +14632,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
         .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_ERUPTION, MOVE_EARTH_POWER, MOVE_SOLAR_BEAM, MOVE_PROTECT}
+        .moves = {MOVE_HEAT_WAVE, MOVE_EARTH_POWER, MOVE_SOLAR_BEAM, MOVE_PROTECT}
     },
     {
         .species = SPECIES_VENUSAUR,
