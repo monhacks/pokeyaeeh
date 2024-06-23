@@ -8465,7 +8465,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FLAME_BURST] =
     {
         .effect = EFFECT_FLAME_BURST,
-        .power = 80,
+        .power = 85,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 24,
@@ -10182,7 +10182,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .power = 0,
         .type = TYPE_ELECTRIC,
         .accuracy = 0,
-        .pp = 3,
+        .pp = 8,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -14454,6 +14454,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .sheerForceBoost = TRUE,
+        .megaLauncherBoost = TRUE,
     },
 
     [MOVE_TERA_STARSTORM] =

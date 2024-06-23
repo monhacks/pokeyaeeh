@@ -71,6 +71,7 @@ static const struct LevelUpMove sVenusaurLevelUpLearnset[] = {
     LEVEL_UP_MOVE(47, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE(50, MOVE_PETAL_BLIZZARD),
     LEVEL_UP_MOVE(59, MOVE_SOLAR_BEAM),
+    LEVEL_UP_MOVE(64, MOVE_JUNGLE_HEALING),
     LEVEL_UP_END
 };
 
@@ -150,6 +151,7 @@ static const struct LevelUpMove sCharizardLevelUpLearnset[] = {
     LEVEL_UP_MOVE(65, MOVE_DRAGON_RUSH),
     LEVEL_UP_MOVE(69, MOVE_RAZOR_WIND),
     LEVEL_UP_MOVE(71, MOVE_HEAT_WAVE),
+    LEVEL_UP_MOVE(77, MOVE_SEARING_SHOT),
     LEVEL_UP_END
 };
 
@@ -230,6 +232,7 @@ static const struct LevelUpMove sBlastoiseLevelUpLearnset[] = {
     LEVEL_UP_MOVE(54, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(55, MOVE_HYDRO_PUMP),
     LEVEL_UP_MOVE(56, MOVE_SKULL_BASH),
+    LEVEL_UP_MOVE(56, MOVE_SHELTER),
     LEVEL_UP_END
 };
 
@@ -12489,7 +12492,8 @@ static const struct LevelUpMove sMagmortarLevelUpLearnset[] = {
     LEVEL_UP_MOVE(43, MOVE_FLAMETHROWER),
     LEVEL_UP_MOVE(48, MOVE_SUNNY_DAY),
     LEVEL_UP_MOVE(53, MOVE_FIRE_BLAST),
-    LEVEL_UP_MOVE(63, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE(56, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE(60, MOVE_SEARING_SHOT),
     LEVEL_UP_END
 };
 

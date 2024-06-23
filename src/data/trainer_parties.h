@@ -14256,7 +14256,7 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
         .ev = TRAINER_PARTY_EVS(248, 0, 0, 0, 252, 8),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_SEARING_SHOT, MOVE_AURA_SPHERE, MOVE_SOLAR_BEAM, MOVE_EARTH_POWER}
+        .moves = {MOVE_FLAME_BURST, MOVE_AURA_SPHERE, MOVE_SOLAR_BEAM, MOVE_EARTH_POWER}
     },
     {
         .species = SPECIES_CERULEDGE,
@@ -18316,7 +18316,7 @@ static const struct TrainerMon sParty_TabithaMagmaHideout[] = {
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_SEARING_SHOT, MOVE_AURA_SPHERE, MOVE_SOLAR_BEAM, MOVE_DARK_PULSE},
+        .moves = {MOVE_FLAME_BURST, MOVE_AURA_SPHERE, MOVE_SOLAR_BEAM, MOVE_DARK_PULSE},
         .lvl = 1
     },
     {

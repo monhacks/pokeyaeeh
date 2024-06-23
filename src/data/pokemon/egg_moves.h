@@ -5107,9 +5107,11 @@ const u16 gEggMoves[] = {
     egg_moves(CHARCADET,
               MOVE_DESTINY_BOND,
               MOVE_DISABLE,
+              MOVE_FLAME_BURST,
               MOVE_SPITE),
 
     egg_moves(TADBULB,
+              MOVE_ELECTRIFY,  
               MOVE_MUDDY_WATER,
               MOVE_PARABOLIC_CHARGE,
               MOVE_SOAK),
