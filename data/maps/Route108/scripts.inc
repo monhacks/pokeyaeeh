@@ -43,7 +43,7 @@ Route108_EventScript_CoryRematch::
 	end
 
 Route108_EventScript_Jerome2::
-	msgbox Route108_EventScript_Jerome2_Text_0
+	msgbox Route108_EventScript_Jerome2_Text_0, MSGBOX_AUTOCLOSE
 	giveitem ITEM_GYARADOSITE, 1
 	playfanfare MUS_OBTAIN_ITEM
 	waitmessage
@@ -62,7 +62,7 @@ Route108_EventScript_Jerome::
 	checktrainerflag TRAINER_DARRIN
 	goto_if 1, Route108_EventScript_Jerome_5
 Route108_EventScript_Jerome_3:
-	msgbox Route108_EventScript_Jerome_Text_0
+	msgbox Route108_EventScript_Jerome_Text_0, MSGBOX_NPC
 Route108_EventScript_Jerome_1:
 	release
 	end
@@ -71,7 +71,7 @@ Route108_EventScript_Jerome_2:
 	setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_FOSTER, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated, Route108_EventScript_Jerome2
 	clearflag B_FLAG_NO_BAG_USE
-	msgbox Route108_EventScript_Jerome2_Text_2, MSGBOX_NPC
+	msgbox Route108_EventScript_Jerome2_Text_2, MSGBOX_AUTOCLOSE
 	goto Route108_EventScript_Jerome_1
 
 Route108_EventScript_Jerome_4:
@@ -126,9 +126,7 @@ Route108_EventScript_Jerome_21:
 
 
 Route108_EventScript_Jerome2_Text_0:
-	.string "Ah yes!\p"
-	.string "Peak battle!\p"
-	.string "Here, I have an extra!$"
+	.string "Ah yes!\pPeak battle!\pHere, I have an extra!$"
 
 Route108_EventScript_Jerome2_Text_1:
 	.string "And this, too!$"
@@ -137,6 +135,4 @@ Route108_EventScript_Jerome2_Text_2:
 	.string "Bubble Beam is an excellent move!\pIt can also lower the foe's speed.$"
 
 Route108_EventScript_Jerome_Text_0:
-	.string "I'm gonna swim the entire region!\p"
-	.string "… …\p"
-	.string "Shoo! Meet me when you are strong!$"
+	.string "I'm gonna swim the entire region!\p… …\pShoo! Meet me when you are strong!$"

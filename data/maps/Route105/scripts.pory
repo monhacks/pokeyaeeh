@@ -121,7 +121,7 @@ script Route105_EventScript_Foster{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("I'm searching for a mystical rock\naround here!\pDon't bother me til you beat everyon\nelse!")
+		msgbox("I'm searching for a mystical rock\naround here!\pDon't bother me til you beat everyon\nelse!", MSGBOX_NPC)
 	}
     release
     end

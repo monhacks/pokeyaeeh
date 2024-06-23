@@ -221,7 +221,7 @@ script Route123_EventScript_Violet{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Good times are good aromas!\pOh. You want a battle?\pI accept your challenge,\njust not now.", MSGBOX_AUTOCLOSE)
+		msgbox("Good times are good aromas!\pOh. You want a battle?\pI accept your challenge,\njust not now.", MSGBOX_NPC)
 	}
     release
     end

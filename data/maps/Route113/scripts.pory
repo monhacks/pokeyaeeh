@@ -195,7 +195,7 @@ script Route113_EventScript_Madeline{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("Hello, there.\pIf you'd like to challenge me,\nthe Route Boss,\lyou need to beat everyone here.\pGot it?"))
+		msgbox("Hello, there.\pIf you'd like to challenge me,\nthe Route Boss,\lyou need to beat everyone here.\pGot it?", MSGBOX_NPC)
 	}
 	release
 	end

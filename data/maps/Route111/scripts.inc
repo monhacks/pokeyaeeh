@@ -846,8 +846,4 @@ Route111_EventScript_Daisuke_Text_0:
 	.string "Kubfu can only be found in the\nIsle of Armor, in Galar.\pBut, there have been a few spotted in\nHoenn.\pKubfu can evolve into two forms…\nOnce you're ready for it I'll give it\lto you.$"
 
 Route111_EventScript_Daisuke_Text_1:
-	.string "Hiyaaa!\p"
-	.string "I will only accept your challenge once\n"
-	.string "you prove your might!\p"
-	.string "How? Simple.\p"
-	.string "Beat every Trainer here, first.$"
+	.string "Hiyaaa!\pI will only accept your challenge once\nyou prove your might!\pHow? Simple.\pBeat every Trainer here, first.$"

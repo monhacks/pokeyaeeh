@@ -384,7 +384,7 @@ script Route103_EventScript_Daisy{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("The soul soothing fragrance…\pYou're here for a battle, isn't it?\pPlease talk to me when you're done\nbeating everyone here.\pI'll see you then…"))
+		msgbox("The soul soothing fragrance…\pYou're here for a battle, isn't it?\pPlease talk to me when you're done\nbeating everyone here.\pI'll see you then…", MSGBOX_NPC)
 	}
 	release
 	end

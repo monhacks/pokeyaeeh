@@ -330,7 +330,7 @@ script LavaridgeTown_Gym_1F_EventScript_Flannery{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("Why don't you beat every trainer\nhere before talking to me again?"))
+		msgbox("Why don't you beat every trainer\nhere before talking to me again?", MSGBOX_NPC)
 	}
 	release
 	end

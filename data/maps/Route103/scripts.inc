@@ -371,7 +371,7 @@ Route103_EventScript_Daisy::
 	checktrainerflag TRAINER_AMY_AND_LIV_1
 	goto_if 1, Route103_EventScript_Daisy_5
 Route103_EventScript_Daisy_3:
-	msgbox Route103_EventScript_Daisy_Text_0
+	msgbox Route103_EventScript_Daisy_Text_0, MSGBOX_NPC
 Route103_EventScript_Daisy_1:
 	release
 	end
@@ -469,8 +469,4 @@ Route103_EventScript_Daisy2_Text_3:
 	.string "Energy Ball is a strong Grass-type\nattack that might lower the foe's\lSpecial Defense.\pIt's a really reliable move that'll\nnever let you down.$"
 
 Route103_EventScript_Daisy_Text_0:
-	.string "The soul soothing fragrance…\p"
-	.string "You're here for a battle, isn't it?\p"
-	.string "Please talk to me when you're done\n"
-	.string "beating everyone here.\p"
-	.string "I'll see you then…$"
+	.string "The soul soothing fragrance…\pYou're here for a battle, isn't it?\pPlease talk to me when you're done\nbeating everyone here.\pI'll see you then…$"

@@ -4125,7 +4125,7 @@ Route127_Text_KojiPostRematch:
 	.string "So I can try your Running Shoes?$"
 
 Route127_Text_AthenaIntro:
-	.string "We should have a slow and methodical\n"
+	.string "Now, let's have a slow and methodical\n"
 	.string "match.$"
 
 Route127_Text_AthenaDefeat:

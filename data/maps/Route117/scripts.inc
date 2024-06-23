@@ -209,7 +209,7 @@ Route117_EventScript_Isaac::
 	checktrainerflag TRAINER_LYDIA_1
 	goto_if 1, Route117_EventScript_Isaac_5
 Route117_EventScript_Isaac_3:
-	msgbox Route117_EventScript_Isaac_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route117_EventScript_Isaac_Text_0, MSGBOX_NPC
 Route117_EventScript_Isaac_1:
 	release
 	end

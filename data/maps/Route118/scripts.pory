@@ -246,7 +246,7 @@ script Route118_EventScript_Chester{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("I am a strong Bird Keeper.\pYou want to challenge me?\nHow about beating everyone here and you come\lto me?\pI'll give you a good reward if you beat\nme."))
+		msgbox("I am a strong Bird Keeper.\pYou want to challenge me?\nHow about beating everyone here and you come\lto me?\pI'll give you a good reward if you beat\nme.", MSGBOX_NPC)
 	}
 	release
 	end

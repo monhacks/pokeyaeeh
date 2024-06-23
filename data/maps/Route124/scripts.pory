@@ -134,7 +134,7 @@ script Route124_EventScript_Chad{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Fufufufu… I dive deep underwater!\pWho're you?\nYou want a battle?\pYou should beat everyone here then\ntry to challenge me!", MSGBOX_AUTOCLOSE)
+		msgbox("Fufufufu… I dive deep underwater!\pWho're you?\nYou want a battle?\pYou should beat everyone here then\ntry to challenge me!", MSGBOX_NPC)
 	}
     release
     end

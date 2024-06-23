@@ -598,7 +598,7 @@ script Route109_EventScript_Huey{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("Don't bother me now, kid!\nI'm sleeping over here…\pYou can bother me after you beat\neveryone here.\pI mean\nE-V-E-R-Y-O-N-E\lH-E-R-E.\pGot it?"))
+		msgbox("Don't bother me now, kid!\nI'm sleeping over here…\pYou can bother me after you beat\neveryone here.\pI mean\nE-V-E-R-Y-O-N-E\lH-E-R-E.\pGot it?", MSGBOX_NPC)
 	}
 	release
 	end

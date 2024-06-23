@@ -240,7 +240,7 @@ Route114_EventScript_Lenny::
 	checktrainerflag TRAINER_LUCAS_1
 	goto_if 1, Route114_EventScript_Lenny_5
 Route114_EventScript_Lenny_3:
-	msgbox Route114_EventScript_Lenny_Text_1
+	msgbox Route114_EventScript_Lenny_Text_1, MSGBOX_NPC
 Route114_EventScript_Lenny_1:
 	release
 	end

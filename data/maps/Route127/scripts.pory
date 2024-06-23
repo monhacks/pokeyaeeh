@@ -51,11 +51,6 @@ Route127_EventScript_Aidan::
 	msgbox Route127_Text_AidanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route127_EventScript_Athena::
-	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat
-	msgbox Route127_Text_AthenaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route127_EventScript_Koji::
 	trainerbattle_single TRAINER_KOJI_1, Route127_Text_KojiIntro, Route127_Text_KojiDefeat, Route127_EventScript_RegisterKoji
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -78,3 +73,42 @@ Route127_EventScript_RematchKoji::
 	end
 
 `
+
+script Route127_EventScript_Athena2{
+	msgbox("Haha, that was a great match.\pSince you beat me,\nI should give you a gift.", MSGBOX_AUTOCLOSE)
+	givemon(SPECIES_GARDEVOIR, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, 3, 1, MON_FEMALE, 0, 0, 0, 252, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_CALM_MIND, MOVE_ENCORE, MOVE_PSYSHOCK, MOVE_HYPER_VOICE, TRUE)
+	bufferspeciesname(STR_VAR_1, SPECIES_GARDEVOIR)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GARDEVOIR)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received a Gardevoir!")
+	waitmessage()
+	waitfanfare()
+	call(Common_EventScript_Nickname)
+	msgbox("You can also have this.", MSGBOX_AUTOCLOSE)
+	giveitem(ITEM_GARDEVOIRITE, 1)
+	setflag(FLAG_ROUTE_125_BOSS_DEFEATED)
+	msgbox("Holding a Gardevoirite,\nyour Gardevoir can wreak havoc,\ljust like mine!", MSGBOX_AUTOCLOSE)
+}
+
+script Route127_EventScript_Athena{
+	lock
+    faceplayer
+	if(defeated(TRAINER_CAMDEN) &&
+	   defeated(TRAINER_DONNY) &&
+	   defeated(TRAINER_JONAH) &&
+	   defeated(TRAINER_HENRY) &&
+	   defeated(TRAINER_ROGER) &&
+	   defeated(TRAINER_AIDAN) &&
+	   defeated(TRAINER_KOJI_1)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat, Route127_EventScript_Athena2)
+		clearflag(B_FLAG_NO_BAG_USE)
+	    msgbox("Holding a Gardevoirite,\nyour Gardevoir can wreak havoc,\ljust like mine!", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Hello, Trainer.\pI see you are here to challenge me.\pYou'll have to beat all 7 Trainers here,\nfirst. Then I'll accept your challenge.", MSGBOX_NPC)
+	}
+    release
+    end
+}

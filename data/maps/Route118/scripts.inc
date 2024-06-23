@@ -234,7 +234,7 @@ Route118_EventScript_Chester::
 	checktrainerflag TRAINER_ROSE_1
 	goto_if 1, Route118_EventScript_Chester_5
 Route118_EventScript_Chester_3:
-	msgbox Route118_EventScript_Chester_Text_1
+	msgbox Route118_EventScript_Chester_Text_1, MSGBOX_NPC
 Route118_EventScript_Chester_1:
 	release
 	end
@@ -288,10 +288,4 @@ Route118_EventScript_Chester_Text_0:
 	.string "I suggest you give that item to Pidgoet.\pYou'll unlock it's full potential.$"
 
 Route118_EventScript_Chester_Text_1:
-	.string "I am a strong Bird Keeper.\p"
-	.string "You want to challenge me?\n"
-	.string "How about beating everyone here and\l"
-	.string "you come\l"
-	.string "to me?\p"
-	.string "I'll give you a good reward if you beat\n"
-	.string "me.$"
+	.string "I am a strong Bird Keeper.\pYou want to challenge me?\nHow about beating everyone here and you come\lto me?\pI'll give you a good reward if you beat\nme.$"

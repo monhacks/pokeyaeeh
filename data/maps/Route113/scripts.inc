@@ -180,7 +180,7 @@ Route113_EventScript_Madeline::
 	checktrainerflag TRAINER_JAYLEN
 	goto_if 1, Route113_EventScript_Madeline_5
 Route113_EventScript_Madeline_3:
-	msgbox Route113_EventScript_Madeline_Text_0
+	msgbox Route113_EventScript_Madeline_Text_0, MSGBOX_NPC
 Route113_EventScript_Madeline_1:
 	release
 	end
@@ -249,8 +249,4 @@ Route113_EventScript_Madeline2_Text_4:
 	.string "Dazzling Gleam is a pretty strong move.\pEspecially in double battles,\nwhere hitting both your enemies is\lcrucial.$"
 
 Route113_EventScript_Madeline_Text_0:
-	.string "Hello, there.\p"
-	.string "If you'd like to challenge me,\n"
-	.string "the Route Boss,\l"
-	.string "you need to beat everyone here.\p"
-	.string "Got it?$"
+	.string "Hello, there.\pIf you'd like to challenge me,\nthe Route Boss,\lyou need to beat everyone here.\pGot it?$"

@@ -681,7 +681,7 @@ script Route119_EventScript_Donald{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("We Bug Catchers rule this place!\pIf you'd like to challenge my authority,\nbeat every Trainer here so I consider you\la challenge."))
+		msgbox("We Bug Catchers rule this place!\pIf you'd like to challenge my authority,\nbeat every Trainer here so I consider you\la challenge.", MSGBOX_NPC)
 	}
 	release
 	end

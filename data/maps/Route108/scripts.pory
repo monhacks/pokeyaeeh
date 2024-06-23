@@ -45,7 +45,7 @@ Route108_EventScript_CoryRematch::
 
 `
 script Route108_EventScript_Jerome2{
-	msgbox(format("Ah yes!\pPeak battle!\pHere, I have an extra!"))
+	msgbox("Ah yes!\pPeak battle!\pHere, I have an extra!", MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_GYARADOSITE, 1)
 	playfanfare(MUS_OBTAIN_ITEM)
 	waitmessage
@@ -76,11 +76,11 @@ script Route108_EventScript_Jerome{
 		setflag(B_FLAG_NO_BAG_USE)
 		trainerbattle_single(TRAINER_FOSTER, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated, Route108_EventScript_Jerome2)
 		clearflag(B_FLAG_NO_BAG_USE)
-		msgbox("Bubble Beam is an excellent move!\pIt can also lower the foe's speed.", MSGBOX_NPC)
+		msgbox("Bubble Beam is an excellent move!\pIt can also lower the foe's speed.", MSGBOX_AUTOCLOSE)
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("I'm gonna swim the entire region!\p… …\pShoo! Meet me when you are strong!"))
+		msgbox("I'm gonna swim the entire region!\p… …\pShoo! Meet me when you are strong!", MSGBOX_NPC)
 	}
     release
     end

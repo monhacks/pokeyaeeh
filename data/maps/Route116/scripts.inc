@@ -483,7 +483,7 @@ Route116_EventScript_Dawson::
 	checktrainerflag TRAINER_JOEY
 	goto_if 1, Route116_EventScript_Dawson_5
 Route116_EventScript_Dawson_3:
-	msgbox Route116_EventScript_Dawson_Text_2
+	msgbox Route116_EventScript_Dawson_Text_2, MSGBOX_NPC
 Route116_EventScript_Dawson_1:
 	release
 	end

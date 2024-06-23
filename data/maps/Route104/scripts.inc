@@ -1163,7 +1163,7 @@ Route104_EventScript_Ivan::
 	checktrainerflag TRAINER_BILLY
 	goto_if 1, Route104_EventScript_Ivan_5
 Route104_EventScript_Ivan_3:
-	msgbox Route104_EventScript_Ivan_Text_2
+	msgbox Route104_EventScript_Ivan_Text_2, MSGBOX_NPC
 Route104_EventScript_Ivan_1:
 	release
 	end
@@ -1217,6 +1217,4 @@ Route104_EventScript_Ivan_Text_1:
 	.string "I thought I wasn't too bad,\nif I may say so, but I guess not\p… Bleah…$"
 
 Route104_EventScript_Ivan_Text_2:
-	.string "I'm the Water Pokémon expert!\p"
-	.string "Beat every trainer here before\n"
-	.string "approaching me, little kiddo!$"
+	.string "I'm the Water Pokémon expert!\pBeat every trainer here before\napproaching me, little kiddo!$"

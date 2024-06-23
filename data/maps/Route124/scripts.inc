@@ -121,7 +121,7 @@ Route124_EventScript_Chad::
 	checktrainerflag TRAINER_SPENCER
 	goto_if 1, Route124_EventScript_Chad_5
 Route124_EventScript_Chad_3:
-	msgbox Route124_EventScript_Chad_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route124_EventScript_Chad_Text_0, MSGBOX_NPC
 Route124_EventScript_Chad_1:
 	release
 	end

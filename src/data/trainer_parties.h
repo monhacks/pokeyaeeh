@@ -9117,14 +9117,47 @@ static const struct TrainerMon sParty_Maria5[] = {
 
 static const struct TrainerMon sParty_Camden[] = {
     {
-    .lvl = 1,
-    .species = SPECIES_STARYU,
+        .species = SPECIES_GYARADOS,
+        .heldItem = ITEM_WACAN_BERRY,
+        .ability = ABILITY_INTIMIDATE,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_THUNDERBOLT, MOVE_SCALD, MOVE_ICE_BEAM, MOVE_HURRICANE}
     },
     {
-    .lvl = 1,
-    .species = SPECIES_STARYU,
+        .species = SPECIES_TATSUGIRI_CURLY,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_STORM_DRAIN,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_NASTY_PLOT, MOVE_DRAGON_PULSE, MOVE_ICY_WIND, MOVE_MUDDY_WATER}
+    },
+    {
+        .species = SPECIES_GASTRODON_EAST_SEA,
+        .heldItem = ITEM_RINDO_BERRY,
+        .ability = ABILITY_UNAWARE,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_RECOVER, MOVE_SLUDGE_WAVE, MOVE_EARTH_POWER, MOVE_SURF}
+    },
+    {
+        .species = SPECIES_SWANNA,
+        .heldItem = ITEM_WACAN_BERRY,
+        .ability = ABILITY_BIG_PECKS,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(0, 248, 0, 248, 0, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_BRAVE_BIRD, MOVE_STEEL_WING, MOVE_LIQUIDATION, MOVE_FLIP_TURN},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
+
 
 static const struct TrainerMon sParty_Demetrius[] = {
     {
@@ -9208,13 +9241,45 @@ static const struct TrainerMon sParty_Isobel[] = {
 
 static const struct TrainerMon sParty_Donny[] = {
     {
-    .lvl = 1,
-    .species = SPECIES_WINGULL,
+        .species = SPECIES_WAILORD,
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ability = ABILITY_OBLIVIOUS,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
+        .moves = {MOVE_ICE_BEAM, MOVE_HYPER_VOICE, MOVE_WATER_SPOUT, MOVE_HIDDEN_POWER}
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_STARYU,
+        .species = SPECIES_POLIWRATH,
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = ABILITY_WATER_ABSORB,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(248, 252, 0, 0, 0, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_DARKEST_LARIAT, MOVE_ICE_PUNCH, MOVE_DRAIN_PUNCH, MOVE_EARTHQUAKE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
+    },
+    {
+        .species = SPECIES_KINGDRA,
+        .heldItem = ITEM_CHOICE_SPECS,
+        .gender = TRAINER_MON_MALE,
+        .ability = ABILITY_SNIPER,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_SNIPE_SHOT, MOVE_DRAGON_PULSE, MOVE_ICE_BEAM, MOVE_FLASH_CANNON}
+    },
+    {
+        .species = SPECIES_LUDICOLO,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_OWN_TEMPO,
+        .lvl = 1,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_SWORDS_DANCE, MOVE_TRAILBLAZE, MOVE_WATERFALL, MOVE_DRAIN_PUNCH},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
 
@@ -13720,20 +13785,68 @@ static const struct TrainerMon sParty_Leonardo[] = {
     }
 };
 
-static const struct TrainerMon sParty_Athena[] = {
+static const struct TrainerMon sParty_Athena[] = { // Route Boss
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MANECTRIC,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_QUICK_ATTACK, MOVE_NONE}
+        .species = SPECIES_URSALUNA_BLOODMOON,
+        .heldItem = ITEM_MOON_STONE,
+        .gender = TRAINER_MON_MALE,
+        .ability = ABILITY_MOONRISE,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_BLOOD_MOON, MOVE_CALM_MIND, MOVE_EARTH_POWER, MOVE_MOONLIGHT},
+        .lvl = 1
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_LINOONE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SURF, MOVE_THIEF, MOVE_NONE, MOVE_NONE}
+        .species = SPECIES_LUNATONE,
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = ABILITY_LEVITATE,
+        .ev = TRAINER_PARTY_EVS(248, 0, 0, 0, 252, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_CALM_MIND, MOVE_POWER_GEM, MOVE_PSYCHIC, MOVE_MOONBLAST},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_GARDEVOIR,
+        .heldItem = ITEM_GARDEVOIRITE,
+        .ability = ABILITY_SYNCHRONIZE,
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_CALM_MIND, MOVE_ENCORE, MOVE_PSYSHOCK, MOVE_HYPER_VOICE},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_MIGHTYENA,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_LUNAR_RUSH,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_CRUNCH, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_IRON_TAIL},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_HATTERENE,
+        .heldItem = ITEM_LIFE_ORB,
+        .gender = TRAINER_MON_FEMALE,
+        .ability = ABILITY_LUNAR_POWER,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_TRICK_ROOM, MOVE_PSYSHOCK, MOVE_CALM_MIND, MOVE_DRAINING_KISS},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_SPIRITOMB,
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = ABILITY_MOON_GUARD,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 4, 252),
+        .nature = TRAINER_PARTY_NATURE(NATURE_CALM),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_WILL_O_WISP, MOVE_HEX, MOVE_DARK_PULSE, MOVE_TAUNT},
+        .lvl = 1
     }
 };
 

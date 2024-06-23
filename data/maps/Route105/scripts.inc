@@ -111,7 +111,7 @@ Route105_EventScript_Foster::
 	checktrainerflag TRAINER_IMANI
 	goto_if 1, Route105_EventScript_Foster_5
 Route105_EventScript_Foster_3:
-	msgbox Route105_EventScript_Foster_Text_0
+	msgbox Route105_EventScript_Foster_Text_0, MSGBOX_NPC
 Route105_EventScript_Foster_1:
 	release
 	end

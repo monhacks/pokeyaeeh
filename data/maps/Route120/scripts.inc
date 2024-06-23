@@ -285,7 +285,7 @@ Route120_EventScript_Ydarissep::
 	checktrainerflag TRAINER_COLIN
 	goto_if 1, Route120_EventScript_Ydarissep_5
 Route120_EventScript_Ydarissep_3:
-	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route120_EventScript_Ydarissep_Text_0, MSGBOX_NPC
 Route120_EventScript_Ydarissep_1:
 	release
 	end

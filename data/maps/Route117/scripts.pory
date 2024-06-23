@@ -227,7 +227,7 @@ script Route117_EventScript_Isaac{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Hello, there!\pHere for a battle, huh?\pHow about this? You beat everybody else\nhere and then face me?\pIf you beat me, I'll give you a\nlnice big reward?", MSGBOX_AUTOCLOSE)
+		msgbox("Hello, there!\pHere for a battle, huh?\pHow about this? You beat everybody else\nhere and then face me?\pIf you beat me, I'll give you a\nlnice big reward?", MSGBOX_NPC)
 	}
     release
     end

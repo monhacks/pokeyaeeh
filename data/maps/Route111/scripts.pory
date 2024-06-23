@@ -762,7 +762,7 @@ script Route111_EventScript_Daisuke{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("Hiyaaa!\pI will only accept your challenge once\nyou prove your might!\pHow? Simple.\pBeat every Trainer here, first."), MSGBOX_NPC)
+		msgbox("Hiyaaa!\pI will only accept your challenge once\nyou prove your might!\pHow? Simple.\pBeat every Trainer here, first.", MSGBOX_NPC)
 	}
 	release
 	end

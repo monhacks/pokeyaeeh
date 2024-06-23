@@ -196,7 +196,7 @@ Route121_EventScript_RouteBossCouple::
 	checktrainerflag TRAINER_VANESSA
 	goto_if 1, Route121_EventScript_RouteBossCouple_5
 Route121_EventScript_RouteBossCouple_3:
-	msgbox Route121_EventScript_RouteBossCouple_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Route121_EventScript_RouteBossCouple_Text_1, MSGBOX_NPC
 Route121_EventScript_RouteBossCouple_1:
 	release
 	end

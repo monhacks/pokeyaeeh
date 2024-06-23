@@ -344,7 +344,7 @@ MossdeepCity_Gym_EventScript_TateAndLiza::
 	checktrainerflag TRAINER_PRESTON
 	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_5
 MossdeepCity_Gym_EventScript_TateAndLiza_3:
-	msgbox MossdeepCity_Gym_EventScript_TateAndLiza_Text_0
+	msgbox MossdeepCity_Gym_EventScript_TateAndLiza_Text_0, MSGBOX_NPC
 MossdeepCity_Gym_EventScript_TateAndLiza_1:
 	release
 	end
@@ -406,5 +406,4 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0:
 	.string "And this as well.$"
 
 MossdeepCity_Gym_EventScript_TateAndLiza_Text_0:
-	.string "Why don't you beat every trainer\n"
-	.string "here before talking to me again?$"
+	.string "Why don't you beat every trainer\nhere before talking to me again?$"

@@ -658,7 +658,7 @@ Route119_EventScript_Donald::
 	checktrainerflag TRAINER_BRENT
 	goto_if 1, Route119_EventScript_Donald_5
 Route119_EventScript_Donald_3:
-	msgbox Route119_EventScript_Donald_Text_0
+	msgbox Route119_EventScript_Donald_Text_0, MSGBOX_NPC
 Route119_EventScript_Donald_1:
 	release
 	end
@@ -759,8 +759,4 @@ Route119_EventScript_Donald2_Text_3:
 	.string "Holding that Mega Stone,\nPinsir will Mega Evolve and gain a lot of\lpower.\pIt's Normal-type attacks will become\nFlying-type and hit your foes real hard!$"
 
 Route119_EventScript_Donald_Text_0:
-	.string "We Bug Catchers rule this place!\p"
-	.string "If you'd like to challenge my authority,\n"
-	.string "beat every Trainer here so I consider\l"
-	.string "you\l"
-	.string "a challenge.$"
+	.string "We Bug Catchers rule this place!\pIf you'd like to challenge my authority,\nbeat every Trainer here so I consider you\la challenge.$"

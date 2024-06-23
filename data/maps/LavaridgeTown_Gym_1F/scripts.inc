@@ -313,7 +313,7 @@ LavaridgeTown_Gym_1F_EventScript_Flannery::
 	checktrainerflag TRAINER_AXLE
 	goto_if 1, LavaridgeTown_Gym_1F_EventScript_Flannery_5
 LavaridgeTown_Gym_1F_EventScript_Flannery_3:
-	msgbox LavaridgeTown_Gym_1F_EventScript_Flannery_Text_0
+	msgbox LavaridgeTown_Gym_1F_EventScript_Flannery_Text_0, MSGBOX_NPC
 	release
 	end
 
@@ -355,5 +355,4 @@ LavaridgeTown_Gym_1F_EventScript_Flannery_12:
 
 
 LavaridgeTown_Gym_1F_EventScript_Flannery_Text_0:
-	.string "Why don't you beat every trainer\n"
-	.string "here before talking to me again?$"
+	.string "Why don't you beat every trainer\nhere before talking to me again?$"

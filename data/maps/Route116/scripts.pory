@@ -499,7 +499,7 @@ script Route116_EventScript_Dawson{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Why don't you beat every Trainer here\nbefore approaching me again?")
+		msgbox("Why don't you beat every Trainer here\nbefore approaching me again?", MSGBOX_NPC)
 	}
     release
     end

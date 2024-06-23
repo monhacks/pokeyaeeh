@@ -50,11 +50,6 @@ Route127_EventScript_Aidan::
 	msgbox Route127_Text_AidanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route127_EventScript_Athena::
-	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat
-	msgbox Route127_Text_AthenaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route127_EventScript_Koji::
 	trainerbattle_single TRAINER_KOJI_1, Route127_Text_KojiIntro, Route127_Text_KojiDefeat, Route127_EventScript_RegisterKoji
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -75,3 +70,84 @@ Route127_EventScript_RematchKoji::
 	trainerbattle_rematch TRAINER_KOJI_1, Route127_Text_KojiRematchIntro, Route127_Text_KojiRematchDefeat
 	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
 	end
+
+Route127_EventScript_Athena2::
+	msgbox Route127_EventScript_Athena2_Text_0, MSGBOX_AUTOCLOSE
+	givemon SPECIES_GARDEVOIR, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, 3, 1, MON_FEMALE, 0, 0, 0, 252, 252, 4, 31, 0, 31, 31, 31, 31, MOVE_CALM_MIND, MOVE_ENCORE, MOVE_PSYSHOCK, MOVE_HYPER_VOICE, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_GARDEVOIR
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GARDEVOIR
+	playfanfare MUS_OBTAIN_ITEM
+	message Route127_EventScript_Athena2_Text_1
+	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
+	msgbox Route127_EventScript_Athena2_Text_2, MSGBOX_AUTOCLOSE
+	giveitem ITEM_GARDEVOIRITE, 1
+	setflag FLAG_ROUTE_125_BOSS_DEFEATED
+	msgbox Route127_EventScript_Athena2_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
+Route127_EventScript_Athena::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_CAMDEN
+	goto_if 1, Route127_EventScript_Athena_5
+Route127_EventScript_Athena_3:
+	msgbox Route127_EventScript_Athena_Text_0, MSGBOX_NPC
+Route127_EventScript_Athena_1:
+	release
+	end
+
+Route127_EventScript_Athena_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat, Route127_EventScript_Athena2
+	clearflag B_FLAG_NO_BAG_USE
+	msgbox Route127_EventScript_Athena2_Text_3, MSGBOX_AUTOCLOSE
+	goto Route127_EventScript_Athena_1
+
+Route127_EventScript_Athena_4:
+	checktrainerflag TRAINER_JONAH
+	goto_if 1, Route127_EventScript_Athena_9
+	goto Route127_EventScript_Athena_3
+
+Route127_EventScript_Athena_5:
+	checktrainerflag TRAINER_DONNY
+	goto_if 1, Route127_EventScript_Athena_4
+	goto Route127_EventScript_Athena_3
+
+Route127_EventScript_Athena_8:
+	checktrainerflag TRAINER_ROGER
+	goto_if 1, Route127_EventScript_Athena_13
+	goto Route127_EventScript_Athena_3
+
+Route127_EventScript_Athena_9:
+	checktrainerflag TRAINER_HENRY
+	goto_if 1, Route127_EventScript_Athena_8
+	goto Route127_EventScript_Athena_3
+
+Route127_EventScript_Athena_12:
+	checktrainerflag TRAINER_KOJI_1
+	goto_if 1, Route127_EventScript_Athena_2
+	goto Route127_EventScript_Athena_3
+
+Route127_EventScript_Athena_13:
+	checktrainerflag TRAINER_AIDAN
+	goto_if 1, Route127_EventScript_Athena_12
+	goto Route127_EventScript_Athena_3
+
+
+Route127_EventScript_Athena2_Text_0:
+	.string "Haha, that was a great match.\pSince you beat me,\nI should give you a gift.$"
+
+Route127_EventScript_Athena2_Text_1:
+	.string "{PLAYER} received a Gardevoir!$"
+
+Route127_EventScript_Athena2_Text_2:
+	.string "You can also have this.$"
+
+Route127_EventScript_Athena2_Text_3:
+	.string "Holding a Gardevoirite,\nyour Gardevoir can wreak havoc,\ljust like mine!$"
+
+Route127_EventScript_Athena_Text_0:
+	.string "Hello, Trainer.\pI see you are here to challenge me.\pYou'll have to beat all 7 Trainers here,\nfirst. Then I'll accept your challenge.$"

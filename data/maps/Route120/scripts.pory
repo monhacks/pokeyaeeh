@@ -302,7 +302,7 @@ script Route120_EventScript_Ydarissep{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("What are you doing at my training\nspot?\pHiding from the rain?\pUnfortunately for you,\nI'm not in the mood to share.\pIf you want to stay,\nget in line and defeat everyone who\lwere here before you.\pNo skipping!", MSGBOX_AUTOCLOSE)
+		msgbox("What are you doing at my training\nspot?\pHiding from the rain?\pUnfortunately for you,\nI'm not in the mood to share.\pIf you want to stay,\nget in line and defeat everyone who\lwere here before you.\pNo skipping!", MSGBOX_NPC)
 	}
     release
     end

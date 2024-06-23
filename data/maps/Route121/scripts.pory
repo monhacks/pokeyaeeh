@@ -211,7 +211,7 @@ script Route121_EventScript_RouteBossCouple{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Yuuki: You're single!\pHimari: How embarrassing…\pYuuki: We're always together,\nand you're alone.\pHimari: Talk to us after you beat\neverybody else here!", MSGBOX_AUTOCLOSE)
+		msgbox("Yuuki: You're single!\pHimari: How embarrassing…\pYuuki: We're always together,\nand you're alone.\pHimari: Talk to us after you beat\neverybody else here!", MSGBOX_NPC)
 	}
     release
     end

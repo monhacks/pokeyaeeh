@@ -201,7 +201,7 @@ Route123_EventScript_Violet::
 	checktrainerflag TRAINER_WENDY
 	goto_if 1, Route123_EventScript_Violet_5
 Route123_EventScript_Violet_3:
-	msgbox Route123_EventScript_Violet_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route123_EventScript_Violet_Text_0, MSGBOX_NPC
 Route123_EventScript_Violet_1:
 	release
 	end

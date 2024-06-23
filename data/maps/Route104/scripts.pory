@@ -1174,7 +1174,7 @@ script Route104_EventScript_Ivan{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox(format("I'm the Water Pokémon expert!\pBeat every trainer here before\napproaching me, little kiddo!"))
+		msgbox("I'm the Water Pokémon expert!\pBeat every trainer here before\napproaching me, little kiddo!", MSGBOX_NPC)
 	}
     release
     end

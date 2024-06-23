@@ -581,7 +581,7 @@ Route109_EventScript_Huey::
 	checktrainerflag TRAINER_MAY_ROUTE_103_TORCHIC
 	goto_if 1, Route109_EventScript_Huey_5
 Route109_EventScript_Huey_3:
-	msgbox Route109_EventScript_Huey_Text_1
+	msgbox Route109_EventScript_Huey_Text_1, MSGBOX_NPC
 Route109_EventScript_Huey_1:
 	release
 	end
@@ -665,11 +665,4 @@ Route109_EventScript_Huey_Text_0:
 	.string "I suggest you give that item to Absol.\pYou saw mine, were you disappointed\nin what you had seen?$"
 
 Route109_EventScript_Huey_Text_1:
-	.string "Don't bother me now, kid!\n"
-	.string "I'm sleeping over here…\p"
-	.string "You can bother me after you beat\n"
-	.string "everyone here.\p"
-	.string "I mean\n"
-	.string "E-V-E-R-Y-O-N-E\l"
-	.string "H-E-R-E.\p"
-	.string "Got it?$"
+	.string "Don't bother me now, kid!\nI'm sleeping over here…\pYou can bother me after you beat\neveryone here.\pI mean\nE-V-E-R-Y-O-N-E\lH-E-R-E.\pGot it?$"

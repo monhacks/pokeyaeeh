@@ -118,7 +118,7 @@ Route102_EventScript_Tiana::
 	checktrainerflag TRAINER_CALVIN_1
 	goto_if 1, Route102_EventScript_Tiana_5
 Route102_EventScript_Tiana_3:
-	msgbox Route102_EventScript_Tiana_Text_2, MSGBOX_DEFAULT
+	msgbox Route102_EventScript_Tiana_Text_2, MSGBOX_NPC
 Route102_EventScript_Tiana_1:
 	release
 	end

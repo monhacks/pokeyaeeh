@@ -1011,7 +1011,7 @@ Route110_EventScript_Jaclyn::
 	checktrainerflag TRAINER_EDWARD
 	goto_if 1, Route110_EventScript_Jaclyn_5
 Route110_EventScript_Jaclyn_3:
-	msgbox Route110_EventScript_Jaclyn_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Route110_EventScript_Jaclyn_Text_1, MSGBOX_NPC
 Route110_EventScript_Jaclyn_1:
 	release
 	end
@@ -1098,4 +1098,4 @@ Route110_EventScript_Jaclyn_Text_0:
 	.string "Psychic is a very reliable Psychic-type attack.\pVery psychic, isn't it?$"
 
 Route110_EventScript_Jaclyn_Text_1:
-	.string "It would be a miracle if accept your\nbattle.\pOr you beat everyone else here.\pSince you didn't, why not do that?$"
+	.string "It would be a miracle if I accept your\nbattle.\pOr you beat everyone else here.\pSince you didn't, why not do that?$"

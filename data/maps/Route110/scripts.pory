@@ -1029,7 +1029,7 @@ script Route110_EventScript_Jaclyn{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("It would be a miracle if accept your\nbattle.\pOr you beat everyone else here.\pSince you didn't, why not do that?", MSGBOX_AUTOCLOSE)
+		msgbox("It would be a miracle if I accept your\nbattle.\pOr you beat everyone else here.\pSince you didn't, why not do that?", MSGBOX_NPC)
 	}
     release
     end

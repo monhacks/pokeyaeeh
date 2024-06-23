@@ -257,7 +257,7 @@ script Route114_EventScript_Lenny{
 	}
 	else{
 		// before defeating every trainer here
-		msgbox("Yodelayhihoo!\pI'm busy. Don't even bother!")
+		msgbox("Yodelayhihoo!\pI'm busy. Don't even bother!", MSGBOX_NPC)
 	}
     release
     end
