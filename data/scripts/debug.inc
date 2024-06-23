@@ -125,8 +125,9 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1:: @ testing scripts and stuff
-	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
-	goto Debug_EventScript_SetTestFlag
+	cleartrainerflag TRAINER_MAXIE_MOSSDEEP
+	cleartrainerflag TRAINER_TABITHA_MOSSDEEP
+	multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_WALLY, TRAINER_BACK_PIC_WALLY
 	end
 
 Debug_EventScript_Script_2:: @ regular single battle
