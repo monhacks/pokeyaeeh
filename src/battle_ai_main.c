@@ -4421,6 +4421,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
                 case ABILITY_CHLOROPHYLL:
                 case ABILITY_FLOWER_GIFT:
                 case ABILITY_SOLAR_POWER:
+                case ABILITY_SOLAR_RUSH:
                     if (AI_GetWeather(aiData) & B_WEATHER_SUN)
                         ADJUST_SCORE(3); // Slow 'em down
                     break;

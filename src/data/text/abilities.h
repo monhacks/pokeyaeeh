@@ -44,7 +44,7 @@ static const u8 sMagnetPullDescription[] = _("Traps Steel-type Pokémon.");
 static const u8 sSoundproofDescription[] = _("Avoids sound-based moves.");
 static const u8 sRainDishDescription[] = _("Slight HP recovery in rain.");
 static const u8 sSandStreamDescription[] = _("Summons a sandstorm.");
-static const u8 sPressureDescription[] = _("Raises foe's PP usage.");
+static const u8 sPressureDescription[] = _("Doubles foe's PP and prevents Berries.");
 static const u8 sThickFatDescription[] = _("Heat-and-cold protection.");
 static const u8 sEarlyBirdDescription[] = _("Awakens quickly from sleep.");
 static const u8 sFlameBodyDescription[] = _("Burns the foe on contact.");
@@ -255,7 +255,7 @@ static const u8 sAsOneIceRiderDescription[] = _("Unnerve and Chilling Neigh.");
 static const u8 sAsOneShadowRiderDescription[] = _("Unnerve and Grim Neigh.");
 static const u8 sLingeringAromaDescription[] = _("Spreads with contact.");
 static const u8 sSeedSowerDescription[] = _("Affects terrain when hit.");
-static const u8 sThermalExchangeDescription[] = _("Fire hits up Attack.");
+static const u8 sThermalExchangeDescription[] = _("Fire hits raise Attack. Cannot burn.");
 static const u8 sAngerShellDescription[] = _("Gets angry at half HP.");
 static const u8 sPurifyingSaltDescription[] = _("Resists Ghost and immune to statuses.");
 static const u8 sWellBakedBodyDescription[] = _("Strengthened by Fire.");
@@ -661,6 +661,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_LUNAR_POWER] = _("Lunar Power"),
     [ABILITY_LUNAR_RUSH] = _("Lunar Rush"),
     [ABILITY_MOON_GUARD] = _("Moon Guard"),
+    [ABILITY_SOLAR_RUSH] = _("Solar Rush"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -1001,6 +1002,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_LUNAR_POWER] = _("Lunar Power"),
     [ABILITY_LUNAR_RUSH] = _("Lunar Rush"),
     [ABILITY_MOON_GUARD] = _("Moon Guard"),
+    [ABILITY_SOLAR_RUSH] = _("Solar Rush"),
 };
 #endif
 
@@ -1342,4 +1344,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_LUNAR_POWER] = sLunarPowerDescription,
     [ABILITY_LUNAR_RUSH] = sLunarRushDescription,
     [ABILITY_MOON_GUARD] = sMoonGuardDescription,
+    [ABILITY_SOLAR_RUSH] = sChlorophyllDescription,
 };

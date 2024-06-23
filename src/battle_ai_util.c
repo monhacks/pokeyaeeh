@@ -175,7 +175,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_POWER_CONSTRUCT] = 10,
     [ABILITY_POWER_OF_ALCHEMY] = 0,
     [ABILITY_PRANKSTER] = 8,
-    [ABILITY_PRESSURE] = 5,
+    [ABILITY_PRESSURE] = 8,
     [ABILITY_PRIMORDIAL_SEA] = 10,
     [ABILITY_PRISM_ARMOR] = 6,
     [ABILITY_PROTEAN] = 8,
@@ -315,6 +315,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_LUNAR_POWER] = 3,
     [ABILITY_LUNAR_RUSH] = 5,
     [ABILITY_MOON_GUARD] = 9,
+    [ABILITY_SOLAR_RUSH] = 6,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -1828,6 +1829,7 @@ bool32 ShouldSetSun(u32 battlerAtk, u32 atkAbility, u32 holdEffect)
       || atkAbility == ABILITY_LEAF_GUARD
       || atkAbility == ABILITY_SOLAR_POWER
       || atkAbility == ABILITY_HARVEST
+      || atkAbility == ABILITY_SOLAR_RUSH
       || HasMove(battlerAtk, MOVE_HEAT_WAVE)
       || HasMoveEffect(battlerAtk, EFFECT_SOLAR_BEAM)
       || HasMoveEffect(battlerAtk, EFFECT_MORNING_SUN)

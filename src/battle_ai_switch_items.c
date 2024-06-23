@@ -1559,7 +1559,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
                 {
                     singleUseItemHeal = holdEffectParam;
                 }
-                else if (opposingAbility != ABILITY_UNNERVE && heldItemEffect == HOLD_EFFECT_RESTORE_HP)
+                else if ((opposingAbility != ABILITY_UNNERVE || opposingAbility != ABILITY_PRESSURE) && heldItemEffect == HOLD_EFFECT_RESTORE_HP)
                 {
                     // By default, this should only encompass Oran Berry and Sitrus Berry.
                     singleUseItemHeal = holdEffectParam;
@@ -1569,6 +1569,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
             }
             else if (currentHP < maxHP / CONFUSE_BERRY_HP_FRACTION 
                 && opposingAbility != ABILITY_UNNERVE
+                && opposingAbility != ABILITY_PRESSURE
                 && (item == ITEM_AGUAV_BERRY || item == ITEM_FIGY_BERRY || item == ITEM_IAPAPA_BERRY || item == ITEM_MAGO_BERRY || item == ITEM_WIKI_BERRY))
             {
                 singleUseItemHeal = maxHP / CONFUSE_BERRY_HEAL_FRACTION;

@@ -11457,6 +11457,7 @@ static bool32 TryRemoveScreens(u32 battler)
 static bool32 IsUnnerveAbilityOnOpposingSide(u32 battler)
 {
     if (IsAbilityOnOpposingSide(battler, ABILITY_UNNERVE)
+      || IsAbilityOnOpposingSide(battler, ABILITY_PRESSURE)
       || IsAbilityOnOpposingSide(battler, ABILITY_AS_ONE_ICE_RIDER)
       || IsAbilityOnOpposingSide(battler, ABILITY_AS_ONE_SHADOW_RIDER))
         return TRUE;
