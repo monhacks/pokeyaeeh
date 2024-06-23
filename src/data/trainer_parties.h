@@ -5043,12 +5043,12 @@ static const struct TrainerMon sParty_Ethan1[] = {
 static const struct TrainerMon sParty_Autumn[] = {
     {
         .species = SPECIES_TALONFLAME,
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_GALE_WINGS,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_DUAL_WINGBEAT, MOVE_BLAZE_KICK, MOVE_STEEL_WING, MOVE_FEATHER_DANCE},
+        .moves = {MOVE_DUAL_WINGBEAT, MOVE_FLARE_BLITZ, MOVE_STEEL_WING, MOVE_ROOST},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -17839,7 +17839,7 @@ static const struct TrainerMon sParty_GruntMagmaHideout8[] = {
         .lvl = 1
     },
     {
-        .species = SPECIES_DARMANITAN,
+        .species = SPECIES_DARMANITAN_STANDARD_MODE,
         .heldItem = ITEM_CHOICE_SCARF,
         .ability = ABILITY_GORILLA_TACTICS,
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -17993,7 +17993,7 @@ static const struct TrainerMon sParty_GruntMagmaHideout11[] = {
 static const struct TrainerMon sParty_GruntMagmaHideout12[] = {
     {
         .species = SPECIES_VOLCARONA,
-        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .heldItem = ITEM_FIRE_GEM,
         .ability = ABILITY_FLAME_BODY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
@@ -18012,7 +18012,7 @@ static const struct TrainerMon sParty_GruntMagmaHideout12[] = {
         .lvl = 1
     },
     {
-        .species = SPECIES_AEGISLASH,
+        .species = SPECIES_AEGISLASH_SHIELD,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_STANCE_CHANGE,
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 0, 252),
@@ -19551,7 +19551,7 @@ static const struct TrainerMon sParty_CourtneyMagmaHideout[] = {
         .lvl = 1
     },
     {
-        .species = SPECIES_MIMIKYU,
+        .species = SPECIES_MIMIKYU_DISGUISED,
         .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_DISGUISE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),

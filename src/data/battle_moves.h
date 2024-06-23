@@ -13730,7 +13730,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .mirrorMoveBanned = TRUE,
         .metronomeBanned = TRUE,
         .healBlockBanned = TRUE,
-        .sketchBanned = (B_SKETCH_BANS >= GEN_9),
     },
 
     [MOVE_SALT_CURE] =
