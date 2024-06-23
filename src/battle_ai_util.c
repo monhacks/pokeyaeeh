@@ -1836,6 +1836,8 @@ bool32 ShouldSetSun(u32 battlerAtk, u32 atkAbility, u32 holdEffect)
       || HasMoveEffect(battlerAtk, EFFECT_SYNTHESIS)
       || HasMoveEffect(battlerAtk, EFFECT_WEATHER_BALL)
       || HasMoveEffect(battlerAtk, EFFECT_GROWTH)
+      || HasMoveEffect(battlerAtk, EFFECT_HYDRO_STEAM)
+      || HasMoveEffect(battlerAtk, EFFECT_STEAM_ERUPTION)
       || HasMoveWithType(battlerAtk, TYPE_FIRE)))
     {
         return TRUE;

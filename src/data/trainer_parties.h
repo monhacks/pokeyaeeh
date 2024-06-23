@@ -12092,21 +12092,37 @@ static const struct TrainerMon sParty_Hector[] = {
 
 static const struct TrainerMon sParty_TabithaMossdeep[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_CAMERUPT,
+        .species = SPECIES_COALOSSAL,
+        .heldItem = ITEM_COALOSSALITE,
+        .ability = ABILITY_STEAM_ENGINE,
+        .ev = TRAINER_PARTY_EVS(248, 252, 0, 0, 0, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_BRAVE),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
+        .moves = {MOVE_HIGH_HORSEPOWER, MOVE_GYRO_BALL, MOVE_HEAT_CRASH, MOVE_ROCK_SLIDE},
+        .lvl = 1
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MIGHTYENA,
+        .species = SPECIES_SUNFLORA,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_SOLAR_POWER,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
+        .moves = {MOVE_EARTH_POWER, MOVE_GIGA_DRAIN, MOVE_FLAMETHROWER, MOVE_MORNING_SUN},
+        .lvl = 1
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_GOLBAT,
+        .species = SPECIES_ARMAROUGE,
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = ABILITY_MEGA_LAUNCHER,
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
+        .moves = {MOVE_ARMOR_CANNON, MOVE_FLASH_CANNON, MOVE_AURA_SPHERE, MOVE_SHADOW_BALL},
+        .lvl = 1
     }
 };
+
 
 static const struct TrainerMon sParty_Edwin2[] = {
     {
@@ -18364,21 +18380,37 @@ static const struct TrainerMon sParty_Darcy[] = {
 
 static const struct TrainerMon sParty_MaxieMossdeep[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MIGHTYENA,
+        .species = SPECIES_CAMERUPT,
+        .heldItem = ITEM_CAMERUPTITE,
+        .ability = ABILITY_DROUGHT,
+        .ev = TRAINER_PARTY_EVS(248, 0, 0, 0, 252, 8),
+        .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
+        .moves = {MOVE_ERUPTION, MOVE_EARTH_POWER, MOVE_SOLAR_BEAM, MOVE_HEAT_WAVE},
+        .lvl = 1
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_CROBAT,
+        .species = SPECIES_VOLCANION,
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ability = ABILITY_WATER_ABSORB,
+        .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 3, 30, 31),
+        .moves = {MOVE_FLASH_CANNON, MOVE_HEAT_WAVE, MOVE_STEAM_ERUPTION, MOVE_HIDDEN_POWER},
+        .lvl = 1
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_CAMERUPT,
+        .species = SPECIES_GREAT_TUSK,
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = ABILITY_PROTOSYNTHESIS,
+        .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_BRAVE),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_HIGH_HORSEPOWER, MOVE_KNOCK_OFF, MOVE_IRON_HEAD},
+        .lvl = 1
     }
 };
+
 
 static const struct TrainerMon sParty_Pete[] = {
     {

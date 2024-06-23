@@ -433,7 +433,8 @@
 #define EFFECT_METAL_TERRAIN                425
 #define EFFECT_MOONFALL                     426
 #define EFFECT_LUNAR_BEAM                   427
+#define EFFECT_STEAM_ERUPTION               428 // new effect for an old move
 
-#define NUM_BATTLE_MOVE_EFFECTS             428
+#define NUM_BATTLE_MOVE_EFFECTS             429
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

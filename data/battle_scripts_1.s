@@ -454,6 +454,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectMetalTerrain            @ EFFECT_METAL_TERRAIN
 	.4byte BattleScript_EffectMoonfall                @ EFFECT_MOONFALL
 	.4byte BattleScript_EffectLunarBeam               @ EFFECT_LUNAR_BEAM
+	.4byte BattleScript_EffectBurnHit                 @ EFFECT_STEAM_ERUPTION
 
 BattleScript_EffectShedTail::
 	attackcanceler

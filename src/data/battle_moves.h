@@ -10346,10 +10346,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_STEAM_ERUPTION] =
     {
-        .effect = EFFECT_BURN_HIT,
+        .effect = EFFECT_STEAM_ERUPTION,
         .power = 110,
         .type = TYPE_WATER,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 8,
         .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
