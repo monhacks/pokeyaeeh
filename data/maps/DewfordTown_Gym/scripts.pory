@@ -278,12 +278,14 @@ DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "among Trainers one day!$"
 
 DewfordTown_Gym_Text_GymStatue:
-	.string "Dewford Town Pokémon Gym$"
+	.string "Dewford Town Pokémon Gym\p"
+	.string "Scep's certified Trainers:\n"
+	.string "Wally$"
 
 DewfordTown_Gym_Text_GymStatueCertified:
 	.string "Dewford Town Pokémon Gym\p"
 	.string "Scep's certified Trainers:\n"
-	.string "{PLAYER}$"
+	.string "Wally and {PLAYER}$"
 
 DewfordTown_Gym_Text_BrawlyPreRematch:
 	.string "Scep: A wave may draw back, but it\n"

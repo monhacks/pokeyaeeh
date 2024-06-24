@@ -267,12 +267,14 @@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "Go forth and endeavor, young person!$"
 
 MauvilleCity_Gym_Text_GymStatue:
-	.string "Mauville City Pokémon Gym$"
+	.string "Mauville City Pokémon Gym\p"
+	.string "Tan's certified Trainers:\n"
+	.string "Wally$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
 	.string "Mauville City Pokémon Gym\p"
 	.string "Tan's certified Trainers:\n"
-	.string "{PLAYER}$"
+	.string "Wally and {PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
 	.string "Tan: Ah-ha! Here at last!\n"

@@ -471,12 +471,14 @@ PetalburgCity_Gym_Text_JodyPostBattle:
 	.string "for their Pokémon.$"
 
 PetalburgCity_Gym_Text_GymStatue:
-	.string "Petalburg City Pokémon Gym$"
+	.string "Petalburg City Pokémon Gym\p"
+	.string "Chrizz's certified Trainers:\n"
+	.string "Wally$"
 
 PetalburgCity_Gym_Text_GymStatueCertified:
 	.string "Petalburg City Pokémon Gym\p"
 	.string "Chrizz's certified Trainers:\n"
-	.string "{PLAYER}$"
+	.string "Wally and {PLAYER}$"
 
 PetalburgCity_Gym_Text_NormanPreRematch:
 	.string "Chrizz: {PLAYER}…\n"

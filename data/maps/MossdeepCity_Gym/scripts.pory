@@ -265,12 +265,14 @@ MossdeepCity_Gym_Text_TateAndLizaPostBattle:
 	.string "You played fair! Good luck!$"
 
 MossdeepCity_Gym_Text_GymStatue:
-	.string "Mossdeep City Pokémon Gym$"
+	.string "Mossdeep City Pokémon Gym\p"
+	.string "Light certified Trainers:\n"
+	.string "Wally$"
 
 MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "Mossdeep City Pokémon Gym\p"
 	.string "Light certified Trainers:\n"
-	.string "{PLAYER}$"
+	.string "Wally and {PLAYER}$"
 
 MossdeepCity_Gym_Text_TateAndLizaPreRematch:
 	.string "Tate: Pokémon…\n"

@@ -275,12 +275,14 @@ FortreeCity_Gym_Text_WinonaPostBattle:
 	.string "Good luck!$"
 
 FortreeCity_Gym_Text_GymStatue:
-	.string "Fortree City Pokémon Gym$"
+	.string "Fortree City Pokémon Gym\p"
+	.string "Krypto's certified Trainers:\n"
+	.string "Wally$"
 
 FortreeCity_Gym_Text_GymStatueCertified:
 	.string "Fortree City Pokémon Gym\p"
 	.string "Krypto's certified Trainers:\n"
-	.string "{PLAYER}$"
+	.string "Wally and {PLAYER}$"
 
 FortreeCity_Gym_Text_WinonaPreRematch:
 	.string "Krypto: We humans can never escape\n"
