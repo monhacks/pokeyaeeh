@@ -1,6 +1,5 @@
-.set LOCALID_STEVEN, 3
-.set LOCALID_ARCHIE, 4
-.set LOCALID_MAXIE, 5
+.set LOCALID_ARCHIE, 3
+.set LOCALID_MAXIE, 4
 
 Route128_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route128_OnTransition
@@ -50,33 +49,7 @@ Route128_EventScript_KyogreAwakenedScene::
 	waitmovement 0
 	removeobject LOCALID_MAXIE
 	removeobject LOCALID_ARCHIE
-	delay 100
-	setfieldeffectargument 0, 1
-	dofieldeffect FLDEFF_NPCFLY_OUT
-	waitfieldeffect FLDEFF_NPCFLY_OUT
-	addobject LOCALID_STEVEN
-	applymovement LOCALID_STEVEN, Route128_Movement_StevenApproachPlayer
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox Route128_Text_StevenWhatIsHappening, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_STEVEN, Route128_Movement_StevenWalkUp
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	msgbox Route128_Text_StevenWholeWorldWillDrown, MSGBOX_DEFAULT
-	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	msgbox Route128_Text_StevenImGoingToSootopolis, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	delay 50
-	setfieldeffectargument 0, 1
-	dofieldeffect FLDEFF_NPCFLY_OUT
-	delay 15
-	removeobject LOCALID_STEVEN
-	waitfieldeffect FLDEFF_NPCFLY_OUT
+	delay 10
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE128_STATE, 2
 	releaseall
@@ -99,14 +72,6 @@ Route128_Movement_Unused2:
 	walk_up
 	walk_up
 	walk_up
-	step_end
-
-Route128_Movement_StevenWalkUp:
-	walk_up
-	step_end
-
-Route128_Movement_StevenApproachPlayer:
-	walk_fast_left
 	step_end
 
 Route128_Movement_ArchieLookAround:
@@ -273,33 +238,12 @@ Route128_Text_MaxieResposibilityFallsToArchieAndMe:
 	.string "But neither can we stand by and\n"
 	.string "just watch helplessly.\p"
 	.string "The responsibility for putting an end\n"
-	.string "to this falls to Archie and me…$"
+	.string "to this falls to Archie and me…\p"
+	.string "{PLAYER}, we'll leave to Sootopolis,\n"
+	.string "in hopes of finding answers to this!$"
 
 Route128_Text_MaxieThisDefiesBelief:
 	.string "Maxie: This defies belief…\p"
 	.string "Those super-ancient Pokémon…\p"
 	.string "Their power is unbelievable.\n"
 	.string "They've upset the balance of nature…$"
-
-Route128_Text_StevenWhatIsHappening:
-	.string "Mystic: {PLAYER}{KUN}!\n"
-	.string "What is happening?$"
-
-Route128_Text_StevenWholeWorldWillDrown:
-	.string "This is terrible…\p"
-	.string "After the scorching heat wave ended,\n"
-	.string "this deluge began.\p"
-	.string "If this doesn't stop, all of Hoenn…\n"
-	.string "No, the whole world will drown.\p"
-	.string "This huge rain cloud is spreading\n"
-	.string "from above Sootopolis…\p"
-	.string "What in the world is taking place there?\p"
-	.string "There's no point arguing here…\n"
-	.string "Sootopolis might provide answers…$"
-
-Route128_Text_StevenImGoingToSootopolis:
-	.string "{PLAYER}{KUN}…\n"
-	.string "I don't know what you intend to do,\l"
-	.string "but don't do anything reckless.\p"
-	.string "Okay.\n"
-	.string "I'm going to Sootopolis.$"

@@ -1281,56 +1281,6 @@ static const struct TrainerMon sParty_ArchieSeafloorCavern[] = {
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .moves = {MOVE_WATER_SPOUT, MOVE_ORIGIN_PULSE, MOVE_THUNDER, MOVE_ICE_BEAM},
         .lvl = 1
-    },
-    {
-        .species = SPECIES_HONCHKROW,
-        .heldItem = ITEM_CHOICE_BAND,
-        .ability = ABILITY_TAILSTREAM,
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_BRAVE_BIRD, MOVE_SUCKER_PUNCH, MOVE_U_TURN, MOVE_SUPERPOWER},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_SHARPEDO,
-        .heldItem = ITEM_SHARPEDONITE,
-        .ability = ABILITY_SPEED_BOOST,
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
-        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_CRUNCH, MOVE_PROTECT, MOVE_CLOSE_COMBAT, MOVE_FISHIOUS_REND},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_ZAPDOS,
-        .heldItem = ITEM_CHOICE_SCARF,
-        .ability = ABILITY_DRIZZLE,
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
-        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_THUNDER, MOVE_HURRICANE, MOVE_WEATHER_BALL, MOVE_VOLT_SWITCH},
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_SAMUROTT,
-        .heldItem = ITEM_LIFE_ORB,
-        .ability = ABILITY_SWIFT_SWIM,
-        .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
-        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
-        .moves = {MOVE_SECRET_SWORD, MOVE_HYDRO_PUMP, MOVE_TACHYON_CUTTER, MOVE_JETSTREAM},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_FERROTHORN,
-        .heldItem = ITEM_LEFTOVERS,
-        .ability = ABILITY_IMPENETRABLE,
-        .ev = TRAINER_PARTY_EVS(252, 4, 252, 0, 0, 0),
-        .nature = TRAINER_PARTY_NATURE(NATURE_RELAXED),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
-        .moves = {MOVE_POWER_WHIP, MOVE_GYRO_BALL, MOVE_RAPID_SPIN, MOVE_PROTECT},
-        .lvl = 1
     }
 };
 

@@ -88,13 +88,13 @@ Route119_WeatherInstitute_1F_EventScript_Scientist::
 Route119_WeatherInstitute_1F_EventScript_Pokemart:
 	message Route119_WeatherInstitute_1F_Text_WouldYouLikeToBuyProducts
 	waitmessage
-	pokemart WeatherInstitute_1F__Pokemart_TMsItems
+	pokemart WeatherInstitute_1F_Pokemart_TMsItems
 	msgbox Route119_WeatherInstitute_1F_Text_PleaseVisitAnytime, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-WeatherInstitute_1F__Pokemart_TMsItems:
+WeatherInstitute_1F_Pokemart_TMsItems:
 	.2byte ITEM_TM_FULL_MOON
 	.2byte ITEM_TM_SUNNY_DAY
 	.2byte ITEM_TM_RAIN_DANCE

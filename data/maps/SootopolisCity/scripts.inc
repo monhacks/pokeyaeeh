@@ -60,11 +60,13 @@ SootopolisCity_OnTransition:
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_SetBattleSpectators
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_SetBattleSpectators
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_SetBattleSpectators
+	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_SetBattleSpectators
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos
-	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_SetExitCaveOfOriginObjPos
-	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_SetOutsideGymObjPos
-	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_SetExpertBlockCaveEntrance
+	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos
+	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_SetExitCaveOfOriginObjPos
+	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_SetOutsideGymObjPos
+	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_SetExpertBlockCaveEntrance
 	end
 
 SootopolisCity_EventScript_HideMapNamePopup::
@@ -84,11 +86,12 @@ SootopolisCity_EventScript_SetBattleSpectators::
 
 SootopolisCity_EventScript_SetLayout::
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 0, SootopolisCity_EventScript_SetNormalLayout
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_SetNormalLayout
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_SetNormalLayout
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_SetLegendariesLayout
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_SetLegendariesLayout
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_SetLegendariesLayout
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_SetLegendariesLayout
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_SetLegendariesLayout
 	goto_if_le VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_SetLegendariesLayout
 	return
 
@@ -101,7 +104,7 @@ SootopolisCity_EventScript_SetLegendariesLayout::
 
 SootopolisCity_EventScript_SetWeather::
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 0, SootopolisCity_EventScript_SetNormalWeather
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_SetNormalWeather
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_SetNormalWeather
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_SetDownpour
 	goto_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_SetDownpour
 	goto_if_le VAR_SKY_PILLAR_STATE, 1, Common_EventScript_SetAbnormalWeather
@@ -115,23 +118,20 @@ SootopolisCity_EventScript_SetDownpour::
 	return
 
 SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos::
-	goto_if_set FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN, SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos
+	goto_if_set FLAG_MOVE_CAVE_OF_ORIGIN_EXPERT, SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos
 	return
 
 SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos::
 	setobjectxyperm LOCALID_EXPERT, 30, 18
-	setobjectxyperm LOCALID_STEVEN, 32, 18
 	return
 
 SootopolisCity_EventScript_SetExitCaveOfOriginObjPos::
 	setobjectxyperm LOCALID_EXPERT, 30, 18
 	setobjectxyperm LOCALID_WALLACE, 31, 18
-	setobjectxyperm LOCALID_STEVEN, 32, 18
 	end
 
 SootopolisCity_EventScript_SetOutsideGymObjPos::
 	setobjectxyperm LOCALID_EXPERT, 31, 18
-	setobjectxyperm LOCALID_STEVEN, 29, 33
 	setobjectxyperm LOCALID_MAXIE, 33, 35
 	setobjectxyperm LOCALID_ARCHIE, 34, 35
 	call_if_eq VAR_SOOTOPOLIS_WALLACE_STATE, 0, SootopolisCity_EventScript_SetWallaceMiddle
@@ -159,7 +159,7 @@ SootopolisCity_EventScript_SetExpertBlockCaveEntrance::
 	return
 
 SootopolisCity_OnWarp:
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_PlayerFaceLegendaries
+	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_PlayerFaceLegendaries
 	.2byte 0
 
 SootopolisCity_EventScript_PlayerFaceLegendaries::
@@ -188,6 +188,8 @@ SootopolisCity_OnFrame:
 @ If not at PokeCenter, assumed to have arrived via Dive
 SootopolisCity_EventScript_StartLegendariesScene::
 	lockall
+	setflag FLAG_MOVE_CAVE_OF_ORIGIN_EXPERT
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 2
 	special StorePlayerCoordsInVars
 	goto_if_ne VAR_0x8004, 43, SootopolisCity_EventScript_LegendariesSceneFromDive
 	goto_if_ne VAR_0x8005, 32, SootopolisCity_EventScript_LegendariesSceneFromDive
@@ -259,7 +261,6 @@ SootopolisCity_EventScript_LegendariesSceneFromPokeCenter::
 	applymovement OBJ_EVENT_ID_CAMERA, SootopolisCity_Movement_PanBackToPokeCenter
 	waitmovement 0
 	special RemoveCameraObject
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 2
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
@@ -359,7 +360,6 @@ SootopolisCity_EventScript_LegendariesSceneFromDive::
 	applymovement OBJ_EVENT_ID_CAMERA, SootopolisCity_Movement_PanBackToDive
 	waitmovement 0
 	special RemoveCameraObject
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 2
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
@@ -640,52 +640,16 @@ SootopolisCity_Movement_PlayerApproachLegendaries:
 	walk_up
 	step_end
 
-@ Unused
-SootopolisCity_Movement_PlayerApproachLegendariesDown:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-@ Unused
-SootopolisCity_Movement_UnusedPanUp:
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-@ Unused
-SootopolisCity_Movement_UnusedPanBack:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
+SootopolisCity_Movement_ExpertMoveAside:
+	walk_slow_left
+	walk_in_place_faster_right
 	step_end
 
 SootopolisCity_EventScript_CaveOfOriginExpert::
 	lock
 	faceplayer
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_ExpertPostLegendaries
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_ExpertLegendaries
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_ExpertPostLegendaries
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_ExpertLegendaries
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_ExpertLeadToCave
 	msgbox SootopolisCity_Text_CaveOfOriginPleaseLeave, MSGBOX_DEFAULT
 	release
@@ -706,12 +670,28 @@ SootopolisCity_EventScript_ExpertLegendaries::
 	release
 	end
 
+SootopolisCity_EventScript_ExpertMove::
+	goto_if_set FLAG_MOVE_CAVE_OF_ORIGIN_EXPERT, SootopolisCity_EventScript_ExpertMoveAside
+	end
+
+SootopolisCity_EventScript_ExpertMoveAside::
+	setobjectxyperm LOCALID_EXPERT, 30, 18
+	playse SE_PIN
+	applymovement LOCALID_EXPERT, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_EXPERT, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_EXPERT, SootopolisCity_Movement_ExpertMoveAside
+	waitmovement 0
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 3
+	end
+
 SootopolisCity_EventScript_Kiri::
 	lock
 	faceplayer
 	goto_if_le VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_KiriGiveBerry
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_KiriGiveBerry
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_KiriRayquaza
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_KiriGiveBerry
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_KiriRayquaza
 	msgbox SootopolisCity_Text_BigPokemonFighting, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_KIRI, Common_Movement_FaceOriginalDirection
@@ -773,7 +753,7 @@ SootopolisCity_EventScript_Woman2::
 	lockall
 	applymovement LOCALID_WOMAN_2, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_Woman2Rayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Woman2Rayquaza
 	msgbox SootopolisCity_Text_WeatherWentWild, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_WOMAN_2, Common_Movement_FaceOriginalDirection
@@ -789,7 +769,7 @@ SootopolisCity_EventScript_Woman2Rayquaza::
 SootopolisCity_EventScript_Man::
 	lock
 	faceplayer
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_ManPostLegendaries
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_ManPostLegendaries
 	msgbox SootopolisCity_Text_NoOrdinaryTourist, MSGBOX_DEFAULT
 	release
 	end
@@ -802,8 +782,8 @@ SootopolisCity_EventScript_ManPostLegendaries::
 SootopolisCity_EventScript_Woman1::
 	lock
 	faceplayer
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Woman1PostLegendaries
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_Woman1Rayquaza
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_Woman1PostLegendaries
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Woman1Rayquaza
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_Woman1Legendaries
 	msgbox SootopolisCity_Text_SootopolisSkyBeautiful, MSGBOX_DEFAULT
 	release
@@ -831,8 +811,8 @@ SootopolisCity_EventScript_NinjaBoy::
 	lockall
 	applymovement LOCALID_NINJA_BOY, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_NinjaBoyRayquaza
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_NinjaBoyNormal
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_NinjaBoyRayquaza
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_NinjaBoyNormal
 	goto_if_le VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_NinjaBoyNormal
 	msgbox SootopolisCity_Text_ThisIsWicked, MSGBOX_DEFAULT
 	closemessage
@@ -855,9 +835,9 @@ SootopolisCity_EventScript_Boy1::
 	lockall
 	applymovement LOCALID_BOY_1, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_Boy1Rayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Boy1Rayquaza
 	goto_if_set FLAG_SYS_GAME_CLEAR, SootopolisCity_EventScript_Boy1GameClear
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Boy1Normal
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 7, SootopolisCity_EventScript_Boy1Normal
 	goto_if_le VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_Boy1Normal
 	msgbox SootopolisCity_Text_GiantPokemonSuddenlyAppeared, MSGBOX_DEFAULT
 	closemessage
@@ -893,340 +873,11 @@ EventScript_ClosedSootopolisDoor::
 	msgbox SootopolisCity_Text_DoorIsClosed, MSGBOX_SIGN
 	end
 
-SootopolisCity_EventScript_Steven::
-	lockall
-	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
-	waitmovement 0
-	call_if_unset FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN, SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_StevenHelpWallace
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_StevenHelpedWallace
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_StevenHelpedWallace
-	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_StevenMaxieArchieLeft
-	msgbox SootopolisCity_Text_SoThatsRayquaza, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SootopolisCity_EventScript_StevenHelpWallace::
-	msgbox SootopolisCity_Text_KnowWhatsNeededToHelpHim, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SootopolisCity_EventScript_StevenMaxieArchieLeft::
-	msgbox SootopolisCity_Text_MaxieArchieLeft, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SootopolisCity_EventScript_StevenHelpedWallace::
-	msgbox SootopolisCity_Text_NeverBeenToSkyPillar, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin::
-	msgbox SootopolisCity_Text_InvolvedWithCrisisComeWithMe, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_FACING, DIR_WEST, SootopolisCity_EventScript_StartWalkToCaveOfOriginWest
-	call_if_eq VAR_FACING, DIR_NORTH, SootopolisCity_EventScript_StartWalkToCaveOfOriginNorth
-	msgbox SootopolisCity_Text_DoesThisMakeYourFearPokemon, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_STEVEN, SootopolisCity_Movement_StevenWalkToCaveOfOrigin
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerWalkToCaveOfOrigin
-	waitmovement 0
-	delay 120
-	applymovement LOCALID_EXPERT, SootopolisCity_Movement_ExpertMoveAside
-	waitmovement 0
-	applymovement LOCALID_STEVEN, SootopolisCity_Movement_StevenArriveCaveEntrance
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerArriveCaveEntrance
-	waitmovement 0
-	msgbox SootopolisCity_Text_HereWereAreHelpWallace, MSGBOX_DEFAULT
-	closemessage
-	setflag FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerEnterCaveOfOrigin
-	waitmovement 0
-	warp MAP_CAVE_OF_ORIGIN_ENTRANCE, 9, 20
-	waitstate
-	end
-
-SootopolisCity_EventScript_StartWalkToCaveOfOriginWest::
-	applymovement LOCALID_STEVEN, SootopolisCity_Movement_StevenStartWalkToCaveOfOrigin
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerStartWalkToCaveOfOriginWest
-	waitmovement 0
-	return
-
-SootopolisCity_EventScript_StartWalkToCaveOfOriginNorth::
-	applymovement LOCALID_STEVEN, SootopolisCity_Movement_StevenStartWalkToCaveOfOrigin
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerStartWalkToCaveOfOriginNorth
-	waitmovement 0
-	return
-
-SootopolisCity_Movement_StevenStartWalkToCaveOfOrigin:
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_down
-	step_end
-
-SootopolisCity_Movement_PlayerStartWalkToCaveOfOriginWest:
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-SootopolisCity_Movement_PlayerStartWalkToCaveOfOriginNorth:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-SootopolisCity_Movement_StevenWalkToCaveOfOrigin:
-	walk_up
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	delay_4
-	walk_in_place_faster_left
-	delay_16
-	delay_16
-	walk_right
-	walk_up
-	walk_up
-	step_end
-
-SootopolisCity_Movement_PlayerWalkToCaveOfOrigin:
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-SootopolisCity_Movement_ExpertMoveAside:
-	walk_slow_left
-	walk_in_place_faster_right
-	step_end
-
-SootopolisCity_Movement_StevenArriveCaveEntrance:
-	walk_down
-	walk_down
-	walk_left
-	delay_8
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_in_place_faster_left
-	step_end
-
-SootopolisCity_Movement_PlayerArriveCaveEntrance:
-	delay_16
-	delay_16
-	delay_16
-	delay_8
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_right
-	step_end
-
-SootopolisCity_Movement_PlayerEnterCaveOfOrigin:
-	walk_up
-	walk_up
-	step_end
-
 SootopolisCity_EventScript_Boy2::
 	lockall
 	applymovement LOCALID_BOY_2, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_Boy2Rayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Boy2Rayquaza
 	msgbox SootopolisCity_Text_TwoPokemonArentAngry, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BOY_2, Common_Movement_FaceOriginalDirection
@@ -1242,7 +893,7 @@ SootopolisCity_EventScript_Boy2Rayquaza::
 
 SootopolisCity_EventScript_BlackBelt::
 	lockall
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_BlackBeltRayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_BlackBeltRayquaza
 	msgbox SootopolisCity_Text_GoRedAndBlueMon, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BLACK_BELT, Common_Movement_FacePlayer
@@ -1265,7 +916,7 @@ SootopolisCity_EventScript_Girl::
 	lockall
 	applymovement LOCALID_GIRL, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_GirlRayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_GirlRayquaza
 	msgbox SootopolisCity_Text_SootopolisWillBeWrecked, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_GIRL, Common_Movement_FaceOriginalDirection
@@ -1283,7 +934,7 @@ SootopolisCity_EventScript_Maniac::
 	lockall
 	applymovement LOCALID_MANIAC, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_ManiacRayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_ManiacRayquaza
 	msgbox SootopolisCity_Text_SeeingLegendWithOwnEyes, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MANIAC, Common_Movement_FaceOriginalDirection
@@ -1299,7 +950,7 @@ SootopolisCity_EventScript_ManiacRayquaza::
 SootopolisCity_EventScript_Wallace::
 	lock
 	faceplayer
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_GoToSkyPillar
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_GoToSkyPillar
 	goto_if_set FLAG_RECEIVED_HM_WATERFALL, SootopolisCity_EventScript_GoToGym
 	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
 	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
@@ -1338,7 +989,7 @@ SootopolisCity_EventScript_GoToSkyPillar::
 	end
 
 SootopolisCity_EventScript_GoToGym::
-	msgbox SootopolisCity_Text_DazzledByMentor, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_YouAreAWonderfulTrainer, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1354,7 +1005,7 @@ SootopolisCity_Movement_WallaceMoveFromGymWest:
 
 SootopolisCity_EventScript_Maxie::
 	lockall
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_MaxieRayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_MaxieRayquaza
 	msgbox SootopolisCity_Text_GroudonPleaseStop, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1369,7 +1020,7 @@ SootopolisCity_EventScript_MaxieRayquaza::
 
 SootopolisCity_EventScript_Archie::
 	lockall
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_ArchieRayquaza
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_ArchieRayquaza
 	msgbox SootopolisCity_Text_KyogreCalmDown, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1529,8 +1180,7 @@ SootopolisCity_Text_CaveOfOriginPleaseLeave:
 	.string "Who might you be?\p"
 	.string "This is the Cave of Origin.\p"
 	.string "The spirits of Pokémon, becalmed at\n"
-	.string "Mt. Pyre, are said to be revived here.\p"
-	.string "Please leave.$"
+	.string "Mt. Pyre, are said to be revived here.$"
 
 SootopolisCity_Text_LeadSuperiorTrainerToCave:
 	.string "A person with a strong will and\n"
@@ -1538,8 +1188,8 @@ SootopolisCity_Text_LeadSuperiorTrainerToCave:
 	.string "A Trainer who has knowledge and\n"
 	.string "experience of many kinds of Pokémon…\p"
 	.string "If such a person were to appear, I was\n"
-	.string "instructed by Wallace to lead that\l"
-	.string "Trainer to this Cave.$"
+	.string "instructed to let that Trainer to this\l"
+	.string "Cave.$"
 
 SootopolisCity_Text_AwakenedPokemonClash:
 	.string "Oh, my…\p"
@@ -1631,59 +1281,8 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "something small, even meaningless,\l"
 	.string "to Pokémon…$"
 
-SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
-	.string "Mystic: Those Pokémon fighting…\n"
-	.string "Groudon… And Kyogre…\p"
-	.string "The two super-ancient Pokémon\n"
-	.string "were awakened from a long sleep…\p"
-	.string "And now they are smashing each other\n"
-	.string "with their uncontrollable energy…\p"
-	.string "…{PLAYER}{KUN}.\p"
-	.string "You being here now I'll take to mean\n"
-	.string "that you're prepared to become\l"
-	.string "involved in this crisis.\p"
-	.string "Well, then, there's someone that\n"
-	.string "I'd like you to meet.\p"
-	.string "Come with me, please.$"
-
-SootopolisCity_Text_DoesThisMakeYourFearPokemon:
-	.string "Mystic: Listen, {PLAYER}{KUN}.\p"
-	.string "Does seeing Groudon and Kyogre make\n"
-	.string "you think Pokémon are to be feared?\p"
-	.string "But that's not true.\n"
-	.string "Pokémon are really more…\p"
-	.string "…Why am I asking you this?\n"
-	.string "You already know.$"
-
-SootopolisCity_Text_HereWereAreHelpWallace:
-	.string "Mystic: Okay, here we are!\p"
-	.string "Inside here you'll find someone named\n"
-	.string "Wallace.\p"
-	.string "I think you have what's needed to\n"
-	.string "help him…$"
-
-SootopolisCity_Text_KnowWhatsNeededToHelpHim:
-	.string "Mystic: I think you have what's\n"
-	.string "needed to help him…$"
-
-SootopolisCity_Text_NeverBeenToSkyPillar:
-	.string "Mystic: The Sky Pillar…\p"
-	.string "I've never been there.\n"
-	.string "I wonder where it could be?$"
-
-SootopolisCity_Text_SoThatsRayquaza:
-	.string "Mystic: So that's Rayquaza…\p"
-	.string "It's incredible how the two rampaging\n"
-	.string "Pokémon would flee from it in fear…$"
-
-SootopolisCity_Text_MaxieArchieLeft:
-	.string "Mystic: It looks like both Maxie and\n"
-	.string "Archie have gone away somewhere.\p"
-	.string "Perhaps they've gone to Mt. Pyre to\n"
-	.string "return those Orbs…$"
-
 SootopolisCity_Text_HaventYouScaledSkyPillar:
-	.string "Wallace: Oh?\n"
+	.string "???: Oh?\n"
 	.string "{PLAYER}{KUN}?\p"
 	.string "Haven't you scaled the Sky Pillar\n"
 	.string "yet?\p"
@@ -1691,16 +1290,16 @@ SootopolisCity_Text_HaventYouScaledSkyPillar:
 	.string "the top of the Sky Pillar…$"
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm:
-	.string "Wallace: {PLAYER}{KUN}…\p"
+	.string "???: {PLAYER}{KUN}…\p"
 	.string "The leaders of Team Magma and Aqua,\n"
 	.string "I don't think they meant harm.\p"
 	.string "It wouldn't hurt to hear what they\n"
 	.string "have to say for themselves.$"
 
 SootopolisCity_Text_ThankYouForHelpAcceptThis:
-	.string "Wallace: {PLAYER}{KUN}…\n"
+	.string "???: {PLAYER}{KUN}…\n"
 	.string "My eyes didn't deceive me.\p"
-	.string "Thanks to your help, Sootopolis…\n"
+	.string "Thanks to you, Sootopolis…\n"
 	.string "No, all of Hoenn was saved.\p"
 	.string "On behalf of the people, I thank you.\p"
 	.string "This is a gift from me.\n"
@@ -1709,17 +1308,17 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis:
 SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "That Hidden Machine contains\n"
 	.string "Waterfall.\p"
-	.string "If you have the Rain Badge, a Pokémon\n"
-	.string "that has learned that HM move can\l"
-	.string "force its way up waterfalls.\p"
-	.string "And where does one get the Rain Badge?\n"
+	.string "If you have the Edge Badge,\n"
+	.string "your Pokémon can scale giant waterfalls\l"
+	.string "with it.\p"
+	.string "And where does one get the Edge Badge?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
 	.string "the Sootopolis Gym Leader.\p"
 	.string "When you're all set to go, step through\n"
 	.string "that door.$"
 
-SootopolisCity_Text_DazzledByMentor:
-	.string "Wallace: I'm sure that you will be\n"
-	.string "dazzled by my mentor's breathtakingly\l"
-	.string "elegant battle style.$"
+SootopolisCity_Text_YouAreAWonderfulTrainer:
+	.string "???: I'm sure that you will be\n"
+	.string "able to get that Badge, {PLAYER}!\p"
+	.string "You are a wonderful Trainer!$"
