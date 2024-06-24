@@ -120,17 +120,16 @@ PacifidlogTown_House2_Text_ViciousPokemonTakeThis:
 	.string "needs an item like this.$"
 
 PacifidlogTown_House2_Text_ExplainReturnFrustration:
-	.string "If a Pokémon likes you a lot, Return's\n"
-	.string "power is enhanced.\p"
-	.string "If it doesn't like you, Frustration's\n"
-	.string "power goes up.$"
+	.string "A Choice item locks your Pokémon to a\n"
+	.string "specific move. But also boosts your\l"
+	.string "damage, or speed.$"
 
 PacifidlogTown_House2_Text_GetGoodTMInXDays:
 	.string "Oh, yes. In about {STR_VAR_1} or so days,\n"
 	.string "I should be getting a good item or two.\p"
 	.string "You should come see me then.\n"
-	.string "I'll give you an item that's suitable for\l"
-	.string "your Pokémon.$"
+	.string "I'll give you an item that's suitable\l"
+	.string "for your Pokémon.$"
 
 PacifidlogTown_House2_Text_Rurii:
 	.string "Azurill: Rurii.$"

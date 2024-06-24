@@ -114,6 +114,10 @@ WeatherInstitute_1F__Pokemart_TMsItems:
 	.2byte ITEM_SMOOTH_ROCK
 	.2byte ITEM_ICY_ROCK
 	.2byte ITEM_TERRAIN_EXTENDER
+	.2byte ITEM_GRASSY_SEED
+	.2byte ITEM_MISTY_SEED
+	.2byte ITEM_ELECTRIC_SEED
+	.2byte ITEM_PSYCHIC_SEED
 	.2byte ITEM_NONE
 	release
 	end
