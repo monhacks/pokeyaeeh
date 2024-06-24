@@ -1,4 +1,6 @@
 #include "global.h"
+#include "clock.h"
+#include "event_data.h"
 #include "rtc.h"
 #include "string_util.h"
 #include "text.h"
@@ -329,6 +331,12 @@ u8 GetTimeOfDay(void)
         return TIME_NIGHT;
     else
         return TIME_DAY;
+}
+
+void GetCurrentTime(void)
+{
+    DoTimeBasedEvents();
+    gSpecialVar_Result = GetTimeOfDay();
 }
 
 void RtcInitLocalTimeOffset(s32 hour, s32 minute)

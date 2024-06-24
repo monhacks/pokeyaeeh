@@ -336,3 +336,28 @@ Text_NOW:
     .string "NOW!$"
 
 `
+script Route101_EventScript_GetCurrentTime{
+	lock
+	special(GetCurrentTime)
+	msgbox("The time…\n", MSGBOX_DEFAULT)
+	if(var(VAR_RESULT) == 0){
+		msgbox("It's morning!", MSGBOX_NPC)
+		end
+	}
+	elif(var(VAR_RESULT) == 1){
+		msgbox("It's day!", MSGBOX_NPC)
+		end
+	}
+	elif(var(VAR_RESULT) == 2){
+		msgbox("It's dusk!", MSGBOX_NPC)
+		end
+	}
+	elif(var(VAR_RESULT) == 3){
+		msgbox("It's night!", MSGBOX_NPC)
+		end
+	}
+	else{
+		msgbox("I forgot…", MSGBOX_NPC)
+		end
+	}
+}

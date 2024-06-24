@@ -333,3 +333,53 @@ Text_FaintYourself:
 
 Text_NOW:
     .string "NOW!$"
+
+Route101_EventScript_GetCurrentTime::
+	lock
+	special GetCurrentTime
+	msgbox Route101_EventScript_GetCurrentTime_Text_0, MSGBOX_DEFAULT
+	compare VAR_RESULT, 0
+	goto_if_eq Route101_EventScript_GetCurrentTime_1
+	compare VAR_RESULT, 1
+	goto_if_eq Route101_EventScript_GetCurrentTime_2
+	compare VAR_RESULT, 2
+	goto_if_eq Route101_EventScript_GetCurrentTime_3
+	compare VAR_RESULT, 3
+	goto_if_eq Route101_EventScript_GetCurrentTime_4
+	msgbox Route101_EventScript_GetCurrentTime_Text_5, MSGBOX_NPC
+	end
+
+Route101_EventScript_GetCurrentTime_1:
+	msgbox Route101_EventScript_GetCurrentTime_Text_1, MSGBOX_NPC
+	end
+
+Route101_EventScript_GetCurrentTime_2:
+	msgbox Route101_EventScript_GetCurrentTime_Text_2, MSGBOX_NPC
+	end
+
+Route101_EventScript_GetCurrentTime_3:
+	msgbox Route101_EventScript_GetCurrentTime_Text_3, MSGBOX_NPC
+	end
+
+Route101_EventScript_GetCurrentTime_4:
+	msgbox Route101_EventScript_GetCurrentTime_Text_4, MSGBOX_NPC
+	end
+
+
+Route101_EventScript_GetCurrentTime_Text_0:
+	.string "The time…\n$"
+
+Route101_EventScript_GetCurrentTime_Text_1:
+	.string "It's morning!$"
+
+Route101_EventScript_GetCurrentTime_Text_2:
+	.string "It's day!$"
+
+Route101_EventScript_GetCurrentTime_Text_3:
+	.string "It's dusk!$"
+
+Route101_EventScript_GetCurrentTime_Text_4:
+	.string "It's night!$"
+
+Route101_EventScript_GetCurrentTime_Text_5:
+	.string "I forgot…$"
