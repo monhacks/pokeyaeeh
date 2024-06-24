@@ -22020,7 +22020,6 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
     {
         .species = SPECIES_SQUAWKABILLY_BLUE_PLUMAGE,
         .heldItem = ITEM_FLAME_ORB,
-        .gender = TRAINER_MON_MALE,
         .ability = ABILITY_GUTS,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 240, 0, 236, 0, 28),
@@ -22031,7 +22030,6 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
     {
         .species = SPECIES_HERACROSS,
         .heldItem = ITEM_SALAC_BERRY,
-        .gender = TRAINER_MON_MALE,
         .ability = ABILITY_MOXIE,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 240, 0, 4),
@@ -22051,7 +22049,6 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
     {
         .species = SPECIES_FROGADIER,
         .heldItem = ITEM_WATER_GEM,
-        .gender = TRAINER_MON_MALE,
         .ability = ABILITY_PROTEAN,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 248, 240, 4),
@@ -22062,7 +22059,6 @@ static const struct TrainerMon sParty_Steven_GraniteCave[] = { // team kinda suc
     {
         .species = SPECIES_GROVYLE,
         .heldItem = ITEM_LIECHI_BERRY,
-        .gender = TRAINER_MON_MALE,
         .ability = ABILITY_TECHNICIAN,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 244, 0, 248, 0, 0),
