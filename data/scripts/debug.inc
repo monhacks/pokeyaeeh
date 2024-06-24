@@ -125,7 +125,8 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1:: @ testing scripts and stuff
-	setflag FLAG_MOVE_CAVE_OF_ORIGIN_EXPERT
+	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
+	goto Debug_EventScript_SetTestFlag
 	end
 
 Debug_EventScript_Script_2:: @ regular single battle

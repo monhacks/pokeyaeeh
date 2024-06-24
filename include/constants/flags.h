@@ -526,7 +526,7 @@
 #define FLAG_UNLOCK_CHEAT_MENU               0x1E0 // Cheat Scripts Menu
 #define FLAG_SYS_DISABLE_DAMAGE_DONE         0x1E1 // Damage Done display
 #define FLAG_TOXIC_POISON_TEAM               0x1E2 // Toxic Poisons player party when the battle starts
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_RECEIVED_2ND_GIFT               0x1E3
 
 // Mystery Gift Flags
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
