@@ -41,6 +41,10 @@ Route105_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
+Route105_EventScript_ItemTMXScissor::
+	finditem ITEM_TM_X_SCISSOR
+	end
+
 Route106_EventScript_ItemGimmighoulCoins::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
@@ -105,8 +109,12 @@ Route111_EventScript_ItemTMThunderPunch::
 	finditem ITEM_TM_THUNDER_PUNCH
 	end
 
-Route112_EventScript_ItemNugget::
-	finditem ITEM_NUGGET
+Route112_EventScript_ItemTMDualWingbeat::
+	finditem ITEM_TM_DUAL_WINGBEAT
+	end
+
+Route112_EventScript_ItemTMGyroBall::
+	finditem ITEM_TM_GYRO_BALL
 	end
 
 Route113_EventScript_ItemMaxEther::
@@ -143,8 +151,8 @@ Route114_EventScript_ItemTMGrassKnot::
 	finditem ITEM_TM_GRASS_KNOT
 	end
 
-Route115_EventScript_ItemSuperPotion::
-	finditem ITEM_SUPER_POTION
+Route115_EventScript_ItemTMMagicalLeaf::
+	finditem ITEM_TM_MAGICAL_LEAF
 	end
 
 Route115_EventScript_ItemTMFocusPunch::
@@ -344,8 +352,8 @@ Route125_EventScript_ItemSandacondanite::
 	finditem ITEM_SANDACONDANITE
 	end
 
-Route126_EventScript_ItemGreenShard::
-	finditem ITEM_GREEN_SHARD
+Route126_EventScript_ItemKinglerite::
+	finditem ITEM_KINGLERITE
 	end
 
 Route127_EventScript_ItemGimmighoulCoins_1::
@@ -361,6 +369,10 @@ Route127_EventScript_ItemGimmighoulCoins_2::
 Route127_EventScript_ItemGimmighoulCoins_3::
 	@ finditem ITEM_GIMMIGHOUL_COIN
 	goto Common_EventScript_ItemGimmighoulCoins
+	end
+
+Route128_EventScript_ItemTMAncientPower::
+	finditem ITEM_TM_ANCIENT_POWER
 	end
 
 Route132_EventScript_ItemGimmighoulCoins_1::
@@ -496,6 +508,10 @@ GraniteCave_B1F_EventScript_ItemPokeBall::
 
 GraniteCave_B2F_EventScript_ItemTMSteelWing::
 	finditem ITEM_TM_STEEL_WING
+	end
+
+GraniteCave_B2F_EventScript_ItemTMDrillRun::
+	finditem ITEM_TM_DRILL_RUN
 	end
 
 GraniteCave_B2F_EventScript_ItemAggronite::
@@ -684,6 +700,15 @@ MtPyre_Exterior_EventScript_ItemTMSkillSwap::
 	finditem ITEM_TM_SKILL_SWAP
 	end
 
+MtPyre_Summit_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
+	end
+
+MtPyre_Summit_EventScript_ItemTMPhantomForce::
+	finditem ITEM_TM_PHANTOM_FORCE
+	end
+
 AquaHideout_B1F_EventScript_ItemTMBodyPress::
 	finditem ITEM_TM_BODY_PRESS
 	end
@@ -745,11 +770,21 @@ ShoalCave_LowTideIceRoom_EventScript_ItemGlalitite::
 	finditem ITEM_GLALITITE
 	end
 
+SeafloorCavern_Room5_EventScript_ItemGimmighoulCoins::
+	@ finditem ITEM_GIMMIGHOUL_COIN
+	goto Common_EventScript_ItemGimmighoulCoins
+	end
+
+SeafloorCavern_Room5_EventScript_ItemTMOminousWind::
+	finditem ITEM_TM_OMINOUS_WIND
+	end
+
+SeafloorCavern_Room7_EventScript_ItemLaprasite::
+	finditem ITEM_LAPRASITE
+	end
+
 SeafloorCavern_Room9_EventScript_ItemTMRockSlide::
 	finditem ITEM_TM_ROCK_SLIDE
-	end
-SeafloorCavern_Room7_EventScript_ItemDrednite::
-	finditem ITEM_DREDNITE
 	end
 
 Route110_TrickHousePuzzle1_EventScript_ItemFireGem::
