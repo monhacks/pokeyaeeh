@@ -1100,6 +1100,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_DEFENSE_UP_2:
         case EFFECT_DEFENSE_UP_3:
         case EFFECT_DEFENSE_CURL:
+        case EFFECT_SHELTER:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
                 ADJUST_SCORE(-10);
             break;
@@ -3411,6 +3412,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_DEFENSE_UP:
     case EFFECT_DEFENSE_UP_2:
     case EFFECT_DEFENSE_UP_3:
+    case EFFECT_SHELTER:
         if (!HasMoveWithSplit(battlerDef, SPLIT_PHYSICAL))
             ADJUST_SCORE(-2);
         if (aiData->hpPercents[battlerAtk] > 90 && AI_RandLessThan(128))
@@ -5106,6 +5108,7 @@ static s32 AI_SetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_FROST_GLARE:
     case EFFECT_METAL_TERRAIN:
     case EFFECT_MOONFALL:
+    case EFFECT_SHELTER:
         ADJUST_SCORE(2);
         break;
     default:
@@ -5399,6 +5402,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_DRAGON_DANCE:
             case EFFECT_DEFENSE_UP_3:
             case EFFECT_SPECIAL_ATTACK_UP_3:
+            case EFFECT_SHELTER:
                 ADJUST_SCORE(-2);
                 break;
             default:

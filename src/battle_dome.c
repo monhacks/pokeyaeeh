@@ -3970,6 +3970,7 @@ static bool32 IsDomeDefensiveMoveEffect(u32 effect)
     case EFFECT_INGRAIN:
     case EFFECT_AQUA_RING:
     case EFFECT_SUBSTITUTE:
+    case EFFECT_SHELTER:
         return TRUE;
     default:
         return FALSE;

@@ -455,6 +455,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectMoonfall                @ EFFECT_MOONFALL
 	.4byte BattleScript_EffectLunarBeam               @ EFFECT_LUNAR_BEAM
 	.4byte BattleScript_EffectBurnHit                 @ EFFECT_STEAM_ERUPTION
+	.4byte BattleScript_EffectDefenseUpUserAlly       @ EFFECT_SHELTER
 
 BattleScript_EffectShedTail::
 	attackcanceler
@@ -878,7 +879,7 @@ BattleScript_EffectAttackUpUserAlly_End:
 	goto BattleScript_MoveEnd
 BattleScript_EffectAttackUpUserAlly_TryAlly_:
  	jumpifability BS_ATTACKER_PARTNER, ABILITY_SOUNDPROOF, BattleScript_EffectAttackUpUserAlly_TryAllyBlocked
-	jumpifmetalterrainaffectedcontrary BS_ATTACKER_PARTNER, BattleScript_MetalTerrainPreventsAttackUpUserAlly_Ally
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER_PARTNER, BattleScript_MetalTerrainPreventsMoveEndDef
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_EffectAttackUpUserAlly_End
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectAttackUpUserAlly_AllyAnim
@@ -899,6 +900,45 @@ BattleScript_EffectAttackUpUserAlly_TryAllyBlocked:
 	printstring STRINGID_PKMNSXBLOCKSY2
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+BattleScript_EffectDefenseUpUserAlly::
+	jumpifnoally BS_ATTACKER, BattleScript_EffectDefenseUp2
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_NOT_EQUAL, STAT_DEF, MAX_STAT_STAGE, BattleScript_EffectDefenseUpUserAlly_Works
+	jumpifstat BS_ATTACKER_PARTNER, CMP_EQUAL, STAT_DEF, MAX_STAT_STAGE, BattleScript_ButItFailed
+BattleScript_EffectDefenseUpUserAlly_Works:
+	attackanimation
+	waitanimation
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsDefenseUpUserAlly
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_EffectDefenseUpUserAlly_TryAlly
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectDefenseUpUserAllyUser_PrintString
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+BattleScript_EffectDefenseUpUserAllyUser_PrintString:
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EffectDefenseUpUserAlly_TryAlly:
+	setallytonexttarget BattleScript_EffectDefenseUpUserAlly_TryAlly_
+BattleScript_EffectDefenseUpUserAlly_End:
+	goto BattleScript_MoveEnd
+BattleScript_EffectDefenseUpUserAlly_TryAlly_:
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER_PARTNER, BattleScript_MetalTerrainPreventsMoveEndDef
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_EffectDefenseUpUserAlly_End
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectDefenseUpUserAlly_AllyAnim
+	pause B_WAIT_TIME_SHORTEST
+	printstring STRINGID_TARGETSTATWONTGOHIGHER
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_EffectDefenseUpUserAlly_End
+BattleScript_EffectDefenseUpUserAlly_AllyAnim:
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_EffectDefenseUpUserAlly_End
 
 BattleScript_EffectTeatime::
 	attackcanceler
@@ -3560,11 +3600,11 @@ BattleScript_MetalTerrainPreventsAttackUpUserAlly::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_EffectAttackUpUserAlly_TryAlly
 
-BattleScript_MetalTerrainPreventsAttackUpUserAlly_Ally::
+BattleScript_MetalTerrainPreventsDefenseUpUserAlly::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_METALTERRAINPREVENTSDEF
 	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
+	goto BattleScript_EffectDefenseUpUserAlly_TryAlly
 
 BattleScript_MetalTerrainPreventsDefDrop::
 	pause B_WAIT_TIME_SHORT
@@ -3654,6 +3694,12 @@ BattleScript_MetalTerrainPreventsIntimidate::
 BattleScript_MetalTerrainPreventsMoveEnd::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_METALTERRAINPREVENTSATK
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_MetalTerrainPreventsMoveEndDef::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_METALTERRAINPREVENTSDEF
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

@@ -2379,6 +2379,7 @@ bool32 IsStatRaisingEffect(u32 effect)
     case EFFECT_GEOMANCY:
     case EFFECT_STOCKPILE:
     case EFFECT_VICTORY_DANCE:
+    case EFFECT_SHELTER:
         return TRUE;
     case EFFECT_CHARGE:
         return B_CHARGE_SPDEF_RAISE >= GEN_5;

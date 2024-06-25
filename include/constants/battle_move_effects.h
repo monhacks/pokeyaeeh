@@ -434,6 +434,7 @@
 #define EFFECT_MOONFALL                     426
 #define EFFECT_LUNAR_BEAM                   427
 #define EFFECT_STEAM_ERUPTION               428 // new effect for an old move
+#define EFFECT_SHELTER                      429 // new effect for an old move
 
 #define NUM_BATTLE_MOVE_EFFECTS             429
 
