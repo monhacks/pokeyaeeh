@@ -4678,6 +4678,14 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect++;
                 }
                 break;
+            case WEATHER_NIGHTTIME:
+                if  (!(gBattleWeather & B_WEATHER_MOON))
+                {
+                    gBattleWeather = B_WEATHER_MOON;
+                    gBattleScripting.animArg1 = B_ANIM_MOON_CONTINUES;
+                    effect++;
+                }
+                break;
             }
         }
         if (effect != 0)

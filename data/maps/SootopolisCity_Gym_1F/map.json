@@ -5,7 +5,7 @@
   "music": "MUS_GYM",
   "region_map_section": "MAPSEC_SOOTOPOLIS_CITY",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_NIGHTTIME",
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 7,
       "y": 19,
       "elevation": 0,
@@ -49,12 +49,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "SootopolisCity_Gym_1F_EventScript_Andrea",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 9,
       "y": 19,
       "elevation": 0,
@@ -62,12 +62,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "SootopolisCity_Gym_1F_EventScript_Crissy",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 5,
       "y": 14,
       "elevation": 0,
@@ -75,12 +75,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "SootopolisCity_Gym_1F_EventScript_Connie",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 11,
       "y": 14,
       "elevation": 0,
@@ -88,12 +88,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "SootopolisCity_Gym_1F_EventScript_Bridget",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
       "x": 3,
       "y": 9,
       "elevation": 0,
@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
       "x": 13,
       "y": 9,
       "elevation": 0,
@@ -115,11 +115,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "SootopolisCity_Gym_1F_EventScript_Bethany",
+      "script": "SootopolisCity_Gym_1F_EventScript_Daphne",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMANIAC",
       "x": 8,
       "y": 7,
       "elevation": 0,
@@ -128,11 +128,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "SootopolisCity_Gym_1F_EventScript_Daphne",
+      "script": "SootopolisCity_Gym_1F_EventScript_Bethany",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 8,
       "y": 12,
       "elevation": 0,
@@ -145,7 +145,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMANIAC",
       "x": 8,
       "y": 17,
       "elevation": 0,
