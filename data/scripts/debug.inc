@@ -157,8 +157,16 @@ Debug_EventScript_Script_6:: @ Sky Battle
     end
 
 Debug_EventScript_Script_7::
-	cleartrainerflag TRAINER_MAY_PLACEHOLDER
-	trainerbattle_double TRAINER_MAY_PLACEHOLDER, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
+	special SavePlayerParty
+	fadescreen FADE_TO_BLACK
+	special ChooseHalfPartyForBattle
+	waitstate
+	goto_if_ne VAR_RESULT, 0, EventScript_StartMultiBattle
+	special LoadPlayerParty
+EventScript_StartMultiBattle::
+	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_TRICK_ROOM
+	multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_WALLY, TRAINER_BACK_PIC_WALLY
+    setvar B_VAR_STARTING_STATUS, 0
 	end
 
 Debug_EventScript_Script_8::

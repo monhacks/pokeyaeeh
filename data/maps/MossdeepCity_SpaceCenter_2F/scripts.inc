@@ -326,7 +326,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_DoWallyMultiBattle::
 	applymovement LOCALID_WALLY, Common_Movement_FaceDown
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
+    setvar B_VAR_STARTING_STATUS, STARTING_STATUS_TRICK_ROOM
 	multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_WALLY, TRAINER_BACK_PIC_WALLY
+    setvar B_VAR_STARTING_STATUS, 0
 	switch VAR_RESULT
 	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha
 	fadescreen FADE_TO_BLACK
@@ -387,14 +389,6 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	addobject LOCALID_SCIENTIST
 	fadescreen FADE_FROM_BLACK
 	special InitRoamer
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_MAXIE_MOSSDEEP, 0, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_TABITHA_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_TabithaDefeat, MossdeepCity_SpaceCenter_Text_TabithaDefeat
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::

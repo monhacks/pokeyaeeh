@@ -5,6 +5,7 @@ FortreeCity_MapScripts::
 
 FortreeCity_OnTransition:
 	setflag FLAG_VISITED_FORTREE_CITY
+	setvar B_VAR_STARTING_STATUS, 0
 	end
 
 FortreeCity_OnResume:

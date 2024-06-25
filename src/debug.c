@@ -494,12 +494,12 @@ static const u8 sDebugText_Sound[] =            _("Sound…{CLEAR_TO 110}{RIGHT_
 static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
 static const u8 sDebugText_Util_Script_1[] =               _("Test Script");
-static const u8 sDebugText_Util_Script_2[] =               _("Single (Lv 50)");
-static const u8 sDebugText_Util_Script_3[] =               _("Double (Lv 50)");
-static const u8 sDebugText_Util_Script_4[] =               _("Terrain Double (Lv 50)");
-static const u8 sDebugText_Util_Script_5[] =               _("Tailwind Double (Lv 50)");
-static const u8 sDebugText_Util_Script_6[] =               _("Sky (Lv 30)");
-static const u8 sDebugText_Util_Script_7[] =               _("Script 7");
+static const u8 sDebugText_Util_Script_2[] =               _("Single");
+static const u8 sDebugText_Util_Script_3[] =               _("Double");
+static const u8 sDebugText_Util_Script_4[] =               _("Terrain Double");
+static const u8 sDebugText_Util_Script_5[] =               _("Tailwind Double");
+static const u8 sDebugText_Util_Script_6[] =               _("Sky");
+static const u8 sDebugText_Util_Script_7[] =               _("Multi 2v2");
 static const u8 sDebugText_Util_Script_8[] =               _("Script 8");
 
 // Script menu

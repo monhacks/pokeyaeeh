@@ -1,6 +1,11 @@
 raw `
 FortreeCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_OnTransition
 	.byte 0
+
+FortreeCity_Gym_OnTransition:
+    setvar B_VAR_STARTING_STATUS, STARTING_STATUS_METAL_TERRAIN
+	end
 
 FortreeCity_Gym_EventScript_Winona::
     setflag B_FLAG_NO_BAG_USE
