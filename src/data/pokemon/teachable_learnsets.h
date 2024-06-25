@@ -27881,6 +27881,7 @@ static const u16 sGarchompTeachableLearnset[] = {
     MOVE_DOUBLE_TEAM,
     MOVE_DRACO_METEOR,
     MOVE_DRAGON_CLAW,
+    MOVE_DRAGON_DANCE,
     MOVE_DRAGON_PULSE,
     MOVE_DRAGON_TAIL,
     MOVE_DUAL_CHOP,

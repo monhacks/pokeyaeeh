@@ -21,6 +21,9 @@ int GameClear(void)
     HealPlayerParty();
 	VarSet(VAR_POKEVIAL_USAGES, 0);
 
+    if (VarGet(VAR_SOOTOPOLIS_CITY_STATE) == 7)
+        VarSet(VAR_SOOTOPOLIS_CITY_STATE, 8);
+
     if (FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE)
     {
         gHasHallOfFameRecords = TRUE;

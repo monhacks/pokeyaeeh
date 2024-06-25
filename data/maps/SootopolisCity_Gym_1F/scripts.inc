@@ -1,83 +1,31 @@
+.set LOCALID_NPC1, 11
+.set LOCALID_NPC2, 10
+.set LOCALID_NPC3, 9
+
 SootopolisCity_Gym_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, SootopolisCity_Gym_1F_OnFrame
-	map_script MAP_SCRIPT_ON_RESUME, SootopolisCity_Gym_1F_OnResume
-	map_script MAP_SCRIPT_ON_LOAD, SootopolisCity_Gym_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_Gym_1F_OnTransition
 	.byte 0
 
 SootopolisCity_Gym_1F_OnTransition:
-	setvar VAR_ICE_STEP_COUNT, 1
+	checktrainerflag TRAINER_OLIVIA
+	call_if TRUE, SootopolisCity_Gym_1_OliviaPos
+	checktrainerflag TRAINER_BRIANNA
+	call_if TRUE, SootopolisCity_Gym_1_BriannaPos
+	checktrainerflag TRAINER_DAPHNE
+	call_if TRUE, SootopolisCity_Gym_1_DaphnePos
 	end
 
-SootopolisCity_Gym_1F_OnResume:
-	setstepcallback STEP_CB_SOOTOPOLIS_ICE
-	end
-
-SootopolisCity_Gym_1F_OnLoad:
-	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
-	special SetSootopolisGymCrackedIceMetatiles
-	end
-
-SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles::
-	goto_if_lt VAR_ICE_STEP_COUNT, 8, SootopolisCity_Gym_1F_EventScript_StopCheckingStairs  @ All stairs ice
-	goto_if_lt VAR_ICE_STEP_COUNT, 28, SootopolisCity_Gym_1F_EventScript_OpenFirstStairs
-	goto_if_lt VAR_ICE_STEP_COUNT, 67, SootopolisCity_Gym_1F_EventScript_OpenFirstAndSecondStairs
-	setmetatile 8, 4, METATILE_SootopolisGym_Stairs, FALSE
-	setmetatile 8, 5, METATILE_SootopolisGym_Stairs, FALSE
-SootopolisCity_Gym_1F_EventScript_OpenFirstAndSecondStairs::
-	setmetatile 8, 10, METATILE_SootopolisGym_Stairs, FALSE
-	setmetatile 8, 11, METATILE_SootopolisGym_Stairs, FALSE
-SootopolisCity_Gym_1F_EventScript_OpenFirstStairs::
-	setmetatile 8, 15, METATILE_SootopolisGym_Stairs, FALSE
-	setmetatile 8, 16, METATILE_SootopolisGym_Stairs, FALSE
-SootopolisCity_Gym_1F_EventScript_StopCheckingStairs::
+SootopolisCity_Gym_1_OliviaPos::
+	setobjectxyperm LOCALID_NPC1, 7, 17
 	return
 
-SootopolisCity_Gym_1F_OnFrame:
-	map_script_2 VAR_ICE_STEP_COUNT, 8, SootopolisCity_Gym_1F_EventScript_UnlockFirstStairs
-	map_script_2 VAR_ICE_STEP_COUNT, 28, SootopolisCity_Gym_1F_EventScript_UnlockSecondStairs
-	map_script_2 VAR_ICE_STEP_COUNT, 67, SootopolisCity_Gym_1F_EventScript_UnlockThirdStairs
-	map_script_2 VAR_ICE_STEP_COUNT, 0, SootopolisCity_Gym_1F_EventScript_FallThroughIce
-	.2byte 0
+SootopolisCity_Gym_1_BriannaPos::
+	setobjectxyperm LOCALID_NPC2, 7, 12
+	return
 
-SootopolisCity_Gym_1F_EventScript_UnlockFirstStairs::
-	addvar VAR_ICE_STEP_COUNT, 1
-	delay 40
-	playse SE_ICE_STAIRS
-	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
-	special DrawWholeMapView
-	end
-
-SootopolisCity_Gym_1F_EventScript_UnlockSecondStairs::
-	addvar VAR_ICE_STEP_COUNT, 1
-	delay 40
-	playse SE_ICE_STAIRS
-	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
-	special DrawWholeMapView
-	end
-
-SootopolisCity_Gym_1F_EventScript_UnlockThirdStairs::
-	addvar VAR_ICE_STEP_COUNT, 1
-	delay 40
-	playse SE_ICE_STAIRS
-	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
-	special DrawWholeMapView
-	end
-
-SootopolisCity_Gym_1F_EventScript_FallThroughIce::
-	lockall
-	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Gym_1F_Movement_FallThroughIce
-	waitmovement 0
-	playse SE_FALL
-	delay 60
-	warphole MAP_SOOTOPOLIS_CITY_GYM_B1F
-	waitstate
-	end
-
-SootopolisCity_Gym_1F_Movement_FallThroughIce:
-	set_invisible
-	step_end
+SootopolisCity_Gym_1_DaphnePos::
+	setobjectxyperm LOCALID_NPC3, 7, 7
+	return
 
 SootopolisCity_Gym_1F_EventScript_Juan::
     setflag B_FLAG_NO_BAG_USE
@@ -152,8 +100,14 @@ SootopolisCity_Gym_1F_EventScript_Crissy::
 	end
 
 SootopolisCity_Gym_1F_EventScript_Brianna::
-	trainerbattle_single TRAINER_BRIANNA, SootopolisCity_Gym_1F_Text_BriannaIntro, SootopolisCity_Gym_1F_Text_BriannaDefeat
+	trainerbattle_single TRAINER_BRIANNA, SootopolisCity_Gym_1F_Text_BriannaIntro, SootopolisCity_Gym_1F_Text_BriannaDefeat, SootopolisCity_Gym_1F_EventScript_BriannaDefeated
 	msgbox SootopolisCity_Gym_1F_Text_BriannaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SootopolisCity_Gym_1F_EventScript_BriannaDefeated::
+	msgbox SootopolisCity_Gym_1F_Text_BriannaPostBattle, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_NPC2, SootopolisCity_Gym_1F_Movement_MoveUpLeft
+	waitmovement 0
 	end
 
 SootopolisCity_Gym_1F_EventScript_Connie::
@@ -167,8 +121,14 @@ SootopolisCity_Gym_1F_EventScript_Bridget::
 	end
 
 SootopolisCity_Gym_1F_EventScript_Olivia::
-	trainerbattle_single TRAINER_OLIVIA, SootopolisCity_Gym_1F_Text_OliviaIntro, SootopolisCity_Gym_1F_Text_OliviaDefeat
+	trainerbattle_single TRAINER_OLIVIA, SootopolisCity_Gym_1F_Text_OliviaIntro, SootopolisCity_Gym_1F_Text_OliviaDefeat, SootopolisCity_Gym_1F_EventScript_OliviaDefeated
 	msgbox SootopolisCity_Gym_1F_Text_OliviaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SootopolisCity_Gym_1F_EventScript_OliviaDefeated::
+	msgbox SootopolisCity_Gym_1F_Text_OliviaPostBattle, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_NPC1, SootopolisCity_Gym_1F_Movement_MoveUpLeft
+	waitmovement 0
 	end
 
 SootopolisCity_Gym_1F_EventScript_Tiffany::
@@ -182,9 +142,21 @@ SootopolisCity_Gym_1F_EventScript_Bethany::
 	end
 
 SootopolisCity_Gym_1F_EventScript_Daphne::
-	trainerbattle_single TRAINER_DAPHNE, SootopolisCity_Gym_1F_Text_DaphneIntro, SootopolisCity_Gym_1F_Text_DaphneDefeat
+	trainerbattle_single TRAINER_DAPHNE, SootopolisCity_Gym_1F_Text_DaphneIntro, SootopolisCity_Gym_1F_Text_DaphneDefeat, SootopolisCity_Gym_1F_EventScript_DaphneDefeated
 	msgbox SootopolisCity_Gym_1F_Text_DaphnePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+SootopolisCity_Gym_1F_EventScript_DaphneDefeated::
+	msgbox SootopolisCity_Gym_1F_Text_DaphnePostBattle, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_NPC3, SootopolisCity_Gym_1F_Movement_MoveUpLeft
+	waitmovement 0
+	end
+
+SootopolisCity_Gym_1F_Movement_MoveUpLeft::
+	walk_up
+	walk_left
+	face_down
+	step_end
 
 SootopolisCity_Gym_1F_Text_AndreaIntro:
 	.string "I'll show you the sublime techniques\n"

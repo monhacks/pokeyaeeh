@@ -4,7 +4,7 @@ DewfordTown_Gym_MapScripts::
 	.byte 0
 
 DewfordTown_Gym_OnTransition:
-    setvar VAR_STARTING_STATUS, STATUS_FIELD_GRASSY_TERRAIN
+    setvar B_VAR_STARTING_STATUS, STATUS_FIELD_GRASSY_TERRAIN
 	end
 
 DewfordTown_Gym_EventScript_Brawly::
@@ -36,6 +36,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	delay 30
 	setflag FLAG_ENABLE_BRAWLY_MATCH_CALL
 	setvar VAR_ROXANNE_CALL_STEP_COUNTER, 0
+	setvar B_VAR_STARTING_STATUS, 0
 	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
 	release
 	end
