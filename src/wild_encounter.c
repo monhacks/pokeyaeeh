@@ -358,6 +358,7 @@ u8 ChooseWildMonLevel(void)
 u8 ChooseStaticMonLevel(void)
 {
     u8 level = 15;
+    u8 partyHighest = GetHighestLevelInPlayerParty();
 
     if (FlagGet(FLAG_BADGE01_GET))
         level = 20;
@@ -377,6 +378,9 @@ u8 ChooseStaticMonLevel(void)
         level = 65;
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
         level = 70;
+
+    if (level < partyHighest)
+        return partyHighest;
     
     return level;
 }

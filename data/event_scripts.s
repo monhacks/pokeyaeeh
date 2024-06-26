@@ -1417,3 +1417,5 @@ MysteryGift_Text_ReceivedGiftMon:
 	.include "data/maps/NewMauville_HiddenArea/scripts.inc"
 
 	.include "data/maps/Route119_HiddenArea/scripts.inc"
+
+	.include "data/maps/EmberRidge/scripts.inc"

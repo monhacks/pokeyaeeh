@@ -30994,8 +30994,8 @@
           }
         },
         {
-          "map": "MAP_NEW_MAUVILLE_HIDDEN_AREA",
-          "base_label": "gNewMauville_HiddenArea",
+          "map": "MAP_EMBER_RIDGE",
+          "base_label": "gEmberRidge_Morning",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -31060,10 +31060,49 @@
                 "species": "SPECIES_NONE"
               }
             ]
-          },
-          "water_mons": {
-            "encounter_rate": 4,
+          }
+        },
+        {
+          "map": "MAP_EMBER_RIDGE",
+          "base_label": "gEmberRidge_Day",
+          "land_mons": {
+            "encounter_rate": 20,
             "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
               {
                 "min_level": 5,
                 "max_level": 5,
@@ -31090,10 +31129,93 @@
                 "species": "SPECIES_NONE"
               }
             ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
+          }
+        },
+        {
+          "map": "MAP_EMBER_RIDGE",
+          "base_label": "gEmberRidge_Evening",
+          "land_mons": {
+            "encounter_rate": 20,
             "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_EMBER_RIDGE",
+          "base_label": "gEmberRidge_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
               {
                 "min_level": 5,
                 "max_level": 5,

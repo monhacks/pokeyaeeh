@@ -101,6 +101,11 @@ Common_Movement_WalkDown:
 	walk_down
 	step_end
 
+Common_Movement_WalkDown2:
+	walk_down
+	walk_down
+	step_end
+
 Common_Movement_PushDownFromUp:
 	face_up
 	lock_facing_direction

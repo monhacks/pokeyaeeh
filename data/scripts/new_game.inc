@@ -271,5 +271,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_WALLACE
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN
+	setflag FLAG_HIDE_ARTICUNO
+	setflag FLAG_HIDE_ZAPDOS
+	setflag FLAG_HIDE_MOLTRES
 	call EventScript_ResetAllBerries
 	end

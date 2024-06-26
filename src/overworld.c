@@ -3269,6 +3269,9 @@ struct SpeciesFlagPair
 };
 
 static const struct SpeciesFlagPair sRespawnableMons[] = {
+    {SPECIES_ARTICUNO,   FLAG_DEFEATED_ARTICUNO},
+    {SPECIES_ZAPDOS,     FLAG_DEFEATED_ZAPDOS},
+    {SPECIES_MOLTRES,    FLAG_DEFEATED_MOLTRES},
     {SPECIES_MEW,        FLAG_DEFEATED_MEW},
     {SPECIES_LUGIA,      FLAG_DEFEATED_LUGIA},
     {SPECIES_HO_OH,      FLAG_DEFEATED_HO_OH},
@@ -3280,9 +3283,7 @@ static const struct SpeciesFlagPair sRespawnableMons[] = {
     {SPECIES_KYOGRE,     FLAG_DEFEATED_KYOGRE},
     {SPECIES_GROUDON,    FLAG_DEFEATED_GROUDON},
     {SPECIES_RAYQUAZA,   FLAG_DEFEATED_RAYQUAZA},
-    {SPECIES_DEOXYS,     FLAG_DEFEATED_DEOXYS}
-    // TODO: Add Articuno, Zapdos, Moltres after scripting them.
-    // Also script Mewtwo as a totem battle.
+    {SPECIES_DEOXYS,     FLAG_DEFEATED_DEOXYS},
 };
 
 void TryRespawnLegendaryEncounters(void)

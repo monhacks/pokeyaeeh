@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route119_HiddenArea/border.bin",
       "blockdata_filepath": "data/layouts/Route119_HiddenArea/map.bin"
+    },
+    {
+      "id": "LAYOUT_EMBER_RIDGE",
+      "name": "EmberRidge_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/EmberRidge/border.bin",
+      "blockdata_filepath": "data/layouts/EmberRidge/map.bin"
     }
   ]
 }

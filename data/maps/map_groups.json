@@ -430,7 +430,8 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "NewMauville_HiddenArea"
+    "NewMauville_HiddenArea",
+    "EmberRidge"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

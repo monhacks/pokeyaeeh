@@ -465,8 +465,8 @@
 #define FLAG_REMATCH_DRAKE                   0x1A8
 #define FLAG_REMATCH_WALLACE                 0x1A9
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_HIDE_ARTICUNO                   0x1AA
+#define FLAG_HIDE_ZAPDOS                     0x1AB
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -478,11 +478,11 @@
 #define FLAG_REMATCH_VICTORIA                0x1B3
 #define FLAG_REMATCH_VIVI                    0x1B4
 #define FLAG_REMATCH_VICKY                   0x1B5
-#define FLAG_UNUSED_0x1B6                    0x1B6 // Unused Flag
-#define FLAG_UNUSED_0x1B7                    0x1B7 // Unused Flag
-#define FLAG_UNUSED_0x1B8                    0x1B8 // Unused Flag
-#define FLAG_UNUSED_0x1B9                    0x1B9 // Unused Flag
-#define FLAG_UNUSED_0x1BA                    0x1BA // Unused Flag
+#define FLAG_HIDE_MOLTRES                    0x1B6
+#define FLAG_DEFEATED_ARTICUNO               0x1B7
+#define FLAG_DEFEATED_ZAPDOS                 0x1B8
+#define FLAG_DEFEATED_MOLTRES                0x1B9
+#define FLAG_HIDE_NEW_MAUVILLE_ROCK          0x1BA
 #define FLAG_DEFEATED_REGIROCK               0x1BB
 #define FLAG_DEFEATED_REGICE                 0x1BC
 #define FLAG_DEFEATED_REGISTEEL              0x1BD
@@ -1512,7 +1512,7 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_LANDMARK_EMBER_RIDGE                   (SYSTEM_FLAGS + 0x83) // Unused Flag
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 

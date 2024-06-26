@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_TMHM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 16,
       "y": 22,
       "elevation": 3,
@@ -132,7 +132,7 @@
       "flag": "FLAG_HIDE_NEW_MAUVILLE_SCIENTISTS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 31,
       "y": 23,
       "elevation": 0,
@@ -141,13 +141,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_1"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_HIDE_NEW_MAUVILLE_ROCK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TMHM_BALL",
-      "x": 18,
-      "y": 17,
+      "x": 16,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -264,6 +264,15 @@
       "var": "VAR_NEW_MAUVILLE_STATE",
       "var_value": "1",
       "script": "NewMauville_Inside_EventScript_RedButton"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "NewMauville_Inside_EventScript_GreenButton"
     }
   ],
   "bg_events": [

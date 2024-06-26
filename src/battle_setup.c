@@ -639,7 +639,7 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
     default:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_DP_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_DP_VS_LEGEND);
         break;
     }
 
