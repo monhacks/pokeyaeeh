@@ -5111,19 +5111,25 @@ static bool32 TryDoGimmicksBeforeMoves(void)
             if (gBattleStruct->mega.toEvolve & gBitTable[order[i]]
                 && !(gProtectStructs[order[i]].noValidMoves))
             {
+                battler = 1;
                 gBattlerAttacker = order[i];
                 gBattleStruct->mega.toEvolve &= ~(gBitTable[gBattlerAttacker]);
                 gLastUsedItem = gBattleMons[gBattlerAttacker].item;
+
                 if (GetBattleFormChangeTargetSpecies(gBattlerAttacker, FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE) != SPECIES_NONE)
-                    BattleScriptExecute(BattleScript_WishMegaEvolution);
+                {
+                    if ((gBattleTypeFlags & BATTLE_TYPE_LEGENDARY) && (GetBattlerSide(battler) == B_SIDE_OPPONENT))
+                        BattleScriptExecute(BattleScript_WildWishMegaEvolution);
+                    else
+                        BattleScriptExecute(BattleScript_WishMegaEvolution);
+                }
                 else
-                    {
-                        battler = 1;
-                        if ((gBattleTypeFlags & BATTLE_TYPE_LEGENDARY) && (GetBattlerSide(battler) == B_SIDE_OPPONENT))
-                            BattleScriptExecute(BattleScript_WildMegaEvolution);
-                        else
-                            BattleScriptExecute(BattleScript_MegaEvolution);
-                    }
+                {
+                    if ((gBattleTypeFlags & BATTLE_TYPE_LEGENDARY) && (GetBattlerSide(battler) == B_SIDE_OPPONENT))
+                        BattleScriptExecute(BattleScript_WildMegaEvolution);
+                    else
+                        BattleScriptExecute(BattleScript_MegaEvolution);
+                }
                 return TRUE;
             }
             // Ultra Burst Check
