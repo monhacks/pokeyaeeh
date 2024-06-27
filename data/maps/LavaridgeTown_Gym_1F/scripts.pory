@@ -7,6 +7,7 @@ LavaridgeTown_Gym_1F_OnTransition:
 	end
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
+	msgbox LavaridgeTown_Gym_1F_Text_HereYouGo, MSGBOX_DEFAULT
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -214,26 +215,19 @@ LavaridgeTown_Gym_B1F_Text_EliPostBattle:
 	.string "Hehehehe.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryIntro:
-	.string "Brrr.\p"
-	.string "Puny Trainer, how good to see you've\n"
-	.string "made it here!\p"
-	.string "I am Qanak.\n"
-	.string "No, wait.\p"
-	.string "I'm not paid enough to lose to a\n"
-	.string "mere child…\p"
-	.string "Ok.\n"
-	.string "So, here's the thing.\l"
-	.string "I'mma beat you harder than you have\l"
-	.string "ever been beaten before!$"
+	.string "Too many people underestimate\n"
+	.string "Normal types.\p"
+	.string "Let's see if you do and can deal with\n"
+	.string "the circumstances.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
-	.string "Oh…\n"
-	.string "I guess I was trying too hard…\p"
-	.string "You played really well at my own\n"
-	.string "game.\p"
-	.string "I tried too hard to be someone\n"
-	.string "I'm not.\p"
-	.string "Oh yeah, take this.$"
+	.string "Well done!\n"
+	.string "That was a good match.$"
+
+LavaridgeTown_Gym_1F_Text_HereYouGo:
+	.string "Here you go lad.\n"
+	.string "You deserve this Badge for your\l"
+	.string "inginuity in the Reverse battle.$"
 
 LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
 	.string "{PLAYER} received the Reverse Badge\n"
@@ -246,25 +240,21 @@ LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
 	.string "you completely.\p"
 	.string "And, it lets Pokémon use the HM move\n"
 	.string "Strength outside of battle.\p"
-	.string "This is a token of my appreciation.\n"
-	.string "Don't be shy about taking it!$"
+	.string "Besides the badge, here is a TM.$"
 
 LavaridgeTown_Gym_1F_Text_ExplainOverheat:
-	.string "That TM50 contains Overheat.\p"
-	.string "That move inflicts serious damage on\n"
-	.string "the opponent.\p"
-	.string "But it also sharply cuts the Sp. Atk\n"
-	.string "of the Pokémon using it. It might not\l"
-	.string "be suitable for longer battles.$"
+	.string "That TM130 contains Giga Impact.\p"
+	.string "It ain't special, but it packs one\n"
+	.string "hell of a punch.$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 	.string "Registered Gym Leader Qanak\n"
 	.string "in the PokéNav.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
-	.string "Your power reminds me of someone…\p"
-	.string "Oh! I know! You battle like Norman,\n"
-	.string "the Gym Leader of Petalburg.$"
+	.string "You should head to Petalburg City Gym\n"
+	.string "next.\p"
+	.string "I heard that their Gym Leader is back.$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
 	.string "Lavaridge Town Pokémon Gym\p"

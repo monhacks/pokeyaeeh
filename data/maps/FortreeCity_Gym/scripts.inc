@@ -38,6 +38,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
 	setvar B_VAR_STARTING_STATUS, 0
 	setflag FLAG_SCOTT_CALL_FORTREE_GYM
+	setflag FLAG_REGI_DOORS_OPENED
 	clearflag FLAG_HIDE_ARTICUNO
 	clearflag FLAG_HIDE_ZAPDOS
 	setvar VAR_EMBER_RIDGE_STATE, 1

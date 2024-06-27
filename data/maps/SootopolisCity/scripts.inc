@@ -1309,10 +1309,10 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis:
 SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "That Hidden Machine contains\n"
 	.string "Waterfall.\p"
-	.string "If you have the Edge Badge,\n"
+	.string "If you have the Noir Badge,\n"
 	.string "your Pokémon can scale giant waterfalls\l"
 	.string "with it.\p"
-	.string "And where does one get the Edge Badge?\n"
+	.string "And where does one get the Noir Badge?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
 	.string "the Sootopolis Gym Leader.\p"

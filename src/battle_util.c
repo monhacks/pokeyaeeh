@@ -8726,9 +8726,9 @@ u8 IsMonDisobedient(void)
             obedienceLevel = 60;
         if (FlagGet(FLAG_BADGE06_GET)) // Hexnut Badge
             obedienceLevel = 65;
-        if (FlagGet(FLAG_BADGE07_GET)) // Sting Badge
+        if (FlagGet(FLAG_BADGE07_GET)) // Toxic Badge
             obedienceLevel = 75;
-        if (FlagGet(FLAG_BADGE08_GET)) // Edge Badge
+        if (FlagGet(FLAG_BADGE08_GET)) // Noir Badge
             obedienceLevel = 85;
     }
 

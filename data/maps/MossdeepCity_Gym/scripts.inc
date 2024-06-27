@@ -223,28 +223,26 @@ MossdeepCity_Gym_Text_NicholasPostBattle:
 	.string "invincible Pokémon power next.$"
 
 MossdeepCity_Gym_Text_TateAndLizaIntro:
-	.string "Light: Fufufu… SO you beat everyone\n"
-	.string "here?\p"
-	.string "Alright. Get ready for a toxic\n"
-	.string "showdown!\p"
-	.string "You're going down!$"
+	.string "Light: Fufufu… So you did beat\n"
+	.string "everyone, here!\p"
+	.string "I command power way beyond your\n"
+	.string "comprehension.\p"
+	.string "Prepare to get eroded by my toxins!$"
 
 MossdeepCity_Gym_Text_TateAndLizaDefeat:
-	.string "Light: What?! No way…\n"
-	.string "Impossible!\p"
-	.string "It can't be helped. You've won…\p"
-	.string "So, in recognition, take this.$"
+	.string "Light: It seems my toxins aren't potent\n"
+	.string "enough…$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge:
-	.string "{PLAYER} received the Sting Badge\n"
+	.string "{PLAYER} received the Toxic Badge\n"
 	.string "from Light.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-	.string "Light: With the Sting Badge,\n"
+	.string "Light: With the Toxic Badge,\n"
 	.string "all Pokémon upto Lv 70 will obey you\l"
 	.string "without question.\p"
 	.string "You can also use Dive outside of battle.\p"
-	.string "Oh, take this with you, too!$"
+	.string "Take this with you, too!$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
 	.string "Light: TM107 contains Venoshock!\p"
@@ -274,40 +272,19 @@ MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "Wally and {PLAYER}$"
 
 MossdeepCity_Gym_Text_TateAndLizaPreRematch:
-	.string "Tate: Pokémon…\n"
-	.string "Liza: Pokémon…\p"
-	.string "Tate: By changing the party's mix…\n"
-	.string "Liza: The battle style changes.\p"
-	.string "Tate: But me…\n"
-	.string "Liza: But me…\p"
-	.string "Tate: I'll always be with Liza!\n"
-	.string "Liza: I'll always be with Tate!\p"
-	.string "Tate: Our combination…\n"
-	.string "Liza: We'll show you again and again!$"
+	.string "Light: TBD$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchDefeat:
-	.string "Tate: You and your Pokémon…\n"
-	.string "Liza: It's as if you were siblings!$"
+	.string "Light: TBD 2$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostRematch:
-	.string "Tate: You can knock us down,\n"
-	.string "but we'll never stay down!\p"
-	.string "Liza: Because the two of us,\n"
-	.string "we always support each other!$"
+	.string "Light: TBD 3$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
-	.string "Tate: You're back again…\n"
-	.string "Liza: You're back again…\p"
-	.string "Tate: To give us a rematch.\n"
-	.string "Liza: To give us a rematch.\p"
-	.string "Tate: But…\n"
-	.string "Liza: For our match…\p"
-	.string "Tate: You brought just one Pokémon!\n"
-	.string "Liza: You brought just one Pokémon!\p"
-	.string "Tate: We need you to bring at least…\n"
-	.string "Liza: Two Pokémon when you come back.$"
+	.string "Light: no$"
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
+	msgbox MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0, MSGBOX_DEFAULT
 	message MossdeepCity_Gym_Text_ReceivedMindBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -319,7 +296,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	clearflag FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY
 	setvar VAR_0x8008, 7
 	giveitem ITEM_GENGARITE, 1
-	msgbox MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_1, MSGBOX_DEFAULT
 	call Common_EventScript_SetGymTrainers
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
@@ -402,10 +379,14 @@ MossdeepCity_Gym_EventScript_TateAndLiza_20:
 
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0:
+	.string "Congratulations.\n"
+	.string "You win the toxic badge$"
+
+MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_1:
 	.string "Light: When held by a Gengar,\n"
 	.string "the Gengarite enables it to Mega Evolve\l"
 	.string "and become an inescapable threat!\p"
 	.string "And this as well.$"
 
 MossdeepCity_Gym_EventScript_TateAndLiza_Text_0:
-	.string "Why don't you beat every trainer\nhere before talking to me again?$"
+	.string "Invisibility.\nI suggest you watch your steps,\nand be prepared to face any challenge!\pChallenge me after you beat all 8 of my\nTrainers.$"

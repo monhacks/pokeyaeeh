@@ -2190,41 +2190,41 @@ MatchCall_Text_Winona4::
 	.string "you never lost sight of your dream.$"
 
 MatchCall_Text_TateLiza1::
-	.string "Tate: Oh! You're…\n"
+	.string "Light: Oh! You're…\n"
 	.string "Liza: {PLAYER}!\p"
-	.string "Tate: We're in training again…\n"
+	.string "Light: We're in training again…\n"
 	.string "Liza: So we can reopen our Gym!\p"
-	.string "Tate: When our Gym is ready…\n"
+	.string "Light: When our Gym is ready…\n"
 	.string "Liza: When our Gym is ready…\p"
-	.string "Tate: A mark'll appear by our name…\n"
+	.string "Light: A mark'll appear by our name…\n"
 	.string "Liza: On the Match Call list.$"
 
 MatchCall_Text_TateLiza2::
-	.string "Tate: {PLAYER}, congratulations!\n"
+	.string "Light: {PLAYER}, congratulations!\n"
 	.string "Liza: {PLAYER}, congratulations!\p"
-	.string "Tate: The two of us are…\n"
+	.string "Light: The two of us are…\n"
 	.string "Liza: Still in training!\p"
-	.string "Tate: We need some more time, but…\n"
+	.string "Light: We need some more time, but…\n"
 	.string "Liza: When our Gym is ready…\p"
-	.string "Tate: A mark'll appear by our name…\n"
+	.string "Light: A mark'll appear by our name…\n"
 	.string "Liza: On the Match Call list.$"
 
 MatchCall_Text_TateLiza3::
-	.string "Tate: {PLAYER}!\n"
+	.string "Light: {PLAYER}!\n"
 	.string "Liza: {PLAYER}!\p"
-	.string "Tate: Our Gym is ready!\n"
+	.string "Light: Our Gym is ready!\n"
 	.string "Liza: Our Gym is ready!\p"
-	.string "Tate: Please come visit…\n"
+	.string "Light: Please come visit…\n"
 	.string "Liza: Mossdeep anytime!$"
 
 MatchCall_Text_TateLiza4::
-	.string "Tate: {PLAYER}, the battle we had…\n"
+	.string "Light: {PLAYER}, the battle we had…\n"
 	.string "Liza: Is an invaluable experience.\p"
-	.string "Tate: It would be nice if…\n"
+	.string "Light: It would be nice if…\n"
 	.string "Liza: We could all battle again!$"
 
 MatchCall_Text_Juan1::
-	.string "Juan: Hmm…\n"
+	.string "Chal: Hmm…\n"
 	.string "{PLAYER}{KUN}… Was it?\p"
 	.string "Our battle together--it brought\n"
 	.string "to me memories of when I first\l"
@@ -2233,7 +2233,7 @@ MatchCall_Text_Juan1::
 	.string "yet surpass Wallace!$"
 
 MatchCall_Text_Juan2::
-	.string "Juan: Fufu… {PLAYER}{KUN}…\n"
+	.string "Chal: Fufu… {PLAYER}{KUN}…\n"
 	.string "You've finally achieved your goal.\p"
 	.string "My eye for appraising talent wasn't\n"
 	.string "mistaken…\p"
@@ -2242,14 +2242,14 @@ MatchCall_Text_Juan2::
 	.string "of power and prestige.$"
 
 MatchCall_Text_Juan3::
-	.string "Juan: Hoho… {PLAYER}{KUN}…\p"
+	.string "Chal: Hoho… {PLAYER}{KUN}…\p"
 	.string "Our Sootopolis Gym has finally\n"
 	.string "reopened.\p"
 	.string "If you wish to see me, you are\n"
 	.string "welcome to visit anytime.$"
 
 MatchCall_Text_Juan4::
-	.string "Juan: {PLAYER}{KUN}…\p"
+	.string "Chal: {PLAYER}{KUN}…\p"
 	.string "Like the finest music, the battles\n"
 	.string "we wage together strike chords\l"
 	.string "of inspiration in my heart…\p"

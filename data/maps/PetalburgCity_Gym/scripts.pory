@@ -283,38 +283,41 @@ PetalburgCity_Gym_Text_YouHaveGottenStronger:
 	.string "that you've earned.$"
 
 PetalburgCity_Gym_Text_NormanIntro:
-	.string "Chrizz: Hello, challenger…\n"
-	.string "I see you have been waiting for me,\l"
-	.string "eh?\p"
-	.string "I apologize for the delay.\p"
-	.string "Now, without any further ado,\n"
-	.string "let's have at it!$"
+	.string "Welcome to the Petalburg City Gym\p"
+	.string "I am Chrizz, the Fighting-type Gym\n"
+	.string "Leader!\p"
+	.string "Now, let's not waste our time in\n"
+	.string "exchanging pleasantries.\p"
+	.string "I shall send you back home!$"
 
 PetalburgCity_Gym_Text_NormanDefeat:
-	.string "…\p"
-	.string "I… I can't…\p"
-	.string "I can't believe it.\p"
-	.string "I lost…\p"
-	.string "This is definitely not my day.$"
+	.string "Well, looks like still I'm in need of\n"
+	.string "more training.$"
 
 PetalburgCity_Gym_Text_NormanAfterDefeat:
-	.string "Chrizz: Amazing!\n"
-	.string "You're a magnificant Trainer!\p"
-	.string "Here, the Fist Badge!$"
+	.string "Chrizz: You fought honorably,\n"
+	.string "{PLAYER}!"
+	.string "For that I give you this.$"
 
 PetalburgCity_Gym_Text_ReceivedBalanceBadge:
 	.string "{PLAYER} received the Fist Badge\n"
 	.string "from Chrizz!$"
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
-	.string "Also, this\n"
-	.string "My favourite move!$"
+	.string "Chrizz: With the Fist Badge, all\n"
+	.string "Pokémon upto Lv 55 will obey your\l"
+	.string "command, even the ones you get from\l"
+	.string "trades.\p"
+	.string "It is customary for a Gym Leader to\n"
+	.string "give a TM to the victor.\p"
+	.string "Here is a TM.$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Chrizz: TM122 contains Drain Punch.\p"
 	.string "It heals your Pokémon for half the\n"
 	.string "damage done!\p"
-	.string "Amazing, innit?\p"
+	.string "Dealing damage and healing!\n"
+	.string "Awesome, huh?\p"
 	.string "Oh!\p"
 	.string "Here, a souvenir from Kalos.$"
 
@@ -347,8 +350,8 @@ PetalburgCity_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "This Gym isn't something to laugh at.\p"
-	.string "Chrizz, the Gym Leader has mastered the\n"
-	.string "art of Mega Evolution!\p"
+	.string "Chrizz, the Gym Leader has mastered\n"
+	.string "the art of Mega Evolution!\p"
 	.string "… … …\p"
 	.string "What is it, you ask?\p"
 	.string "It's a special sort of evolution that\n"
