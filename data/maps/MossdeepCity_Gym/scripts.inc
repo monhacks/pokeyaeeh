@@ -105,10 +105,10 @@ MossdeepCity_Gym_EventScript_GymStatue::
 MossdeepCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, Champion-bound\n"
 	.string "{PLAYER}?\p"
-	.string "The Gym Leaders here use\n"
+	.string "Light, the Gym Leader, here uses\n"
 	.string "Poison-type Pokémon.\p"
 	.string "If you go up against them with\n"
-	.string "Grass- or Fairy-type Pokémon,\l"
+	.string "Grass or Fairy-type Pokémon,\l"
 	.string "they'll inflict horrible damage!\p"
 	.string "Plus, they'll come at you with\n"
 	.string "outstanding combination attacks.\p"

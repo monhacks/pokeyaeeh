@@ -299,24 +299,25 @@ SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "Yo! How's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "Sootopolis's Gym Leader Chal is\n"
-	.string "a master of Water-type Pokémon.\p"
-	.string "And, to get to Chal, an icy floor\n"
-	.string "will hamper your progress…\p"
+	.string "an edgy Dark-type specialist.\p"
+	.string "And, to get to Chal, you'll have to\n"
+	.string "beat all these trainers!\p"
 	.string "Listen, I'm sorry, but that's all the\n"
 	.string "advice that I have for you.\p"
 	.string "The rest of the way, you have to\n"
-	.string "go for it yourself!$"
+	.string "go for it yourself in the dark!$"
 
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
-	.string "Yow! You've beaten even Chal, who\n"
-	.string "was supposedly the best in all Hoenn!\p"
+	.string "Yow! You've beaten even Chal, who was\n"
+	.string "supposedly the strongest Gym Leader in\l"
+	.string "Hoenn.\p"
 	.string "Okay! Check out your Trainer Card.\p"
 	.string "If you've gotten all the Badges, you're\n"
 	.string "set for the Pokémon League challenge!$"
 
 SootopolisCity_Gym_1F_Text_JuanIntro:
 	.string "You beat all of them,\n"
-	.string "now its my turn!\p"
+	.string "now it's my turn!\p"
 	.string "Let's see if your win streak ends here.$"
 
 @ NOTE: This defeat text actually causes a buffer overflow. It's about 50 bytes too long for
