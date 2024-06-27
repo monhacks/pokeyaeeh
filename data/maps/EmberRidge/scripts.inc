@@ -20,7 +20,7 @@ EmberRidge_EventScript_TryRemoveMoltres::
 	return
 
 EmberRidge_EventScript_TryRemoveMoltres_1:
-	removeobject VAR_LAST_TALKED
+	removeobject 1
 	return
 
 

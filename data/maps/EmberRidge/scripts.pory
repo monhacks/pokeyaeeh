@@ -15,7 +15,7 @@ script EmberRidge_EventScript_TryRemoveMoltres{
     specialvar(VAR_RESULT, GetBattleOutcome)
 	if((var(VAR_RESULT) == B_OUTCOME_CAUGHT) || (var(VAR_RESULT) == B_OUTCOME_WON))
 	{
-        removeobject(VAR_LAST_TALKED)
+        removeobject(LOCALID_MOLTRES)
         return
     }
     else{
