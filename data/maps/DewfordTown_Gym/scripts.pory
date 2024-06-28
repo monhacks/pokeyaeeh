@@ -232,8 +232,9 @@ DewfordTown_Gym_Text_BrawlyIntro:
 
 DewfordTown_Gym_Text_BrawlyDefeat:
 	.string "Excellent!\p"
-	.string "Defeating me means you have what it\n"
-	.string "takes to conquer the E4.\p"
+	.string "So young and yet already a\n"
+	.string "brilliant Trainer,\l"
+	.string "go on with your journey.\p"
 	.string "Here you go, the Verdant Badge.$"
 
 DewfordTown_Gym_Text_ReceivedKnuckleBadge:
@@ -261,7 +262,9 @@ DewfordTown_Gym_Text_RegisteredBrawly:
 DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "By the way if the whole “Champion”\n"
 	.string "thing doesn't work out I'd love to\l"
-	.string "have you here as a gardener.$"
+	.string "have you here as a gardener.\p"
+	.string "The pay is great, and you get to learn\n"
+	.string "about the beauty of plant life.$"
 
 DewfordTown_Gym_Text_GymStatue:
 	.string "Dewford Town Pokémon Gym\p"
