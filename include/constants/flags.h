@@ -1111,7 +1111,7 @@
 #define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
 #define FLAG_ITEM_GRANITE_CAVE_1F_HEAVY_DUTY_BOOTS                  0x41A
 #define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                        0x41B
-#define FLAG_ITEM_MT_PYRE_5F_LAX_INCENSE                            0x41C
+#define FLAG_ITEM_MT_PYRE_5F_TM_SHADOW_BALL                         0x41C
 #define FLAG_ITEM_GRANITE_CAVE_B2F_TM_STEEL_WING                    0x41D
 #define FLAG_ITEM_GRANITE_CAVE_B2F_AGGRONITE                        0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_LIFE_ORB                          0x41F
@@ -1197,7 +1197,7 @@
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_MET_WEATHER_INSTITUTE_SCIENTIST                        0x470
 #define FLAG_ITEM_ROUTE_103_GIMMIGHOUL_COINS                        0x471
-#define FLAG_ITEM_MT_PYRE_6F_BANETTITE                              0x472
+#define FLAG_ITEM_MT_PYRE_6F_GRIMMSNARLITE                          0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_TM_ICE_PUNCH                            0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
@@ -1253,7 +1253,7 @@
 #define FLAG_ROUTE_125_BOSS_DEFEATED                                0x4A5 // Route 125 Boss Bird Keeper Presley
 #define FLAG_ROUTE_126_BOSS_DEFEATED                                0x4A6 // Route 126 Boss Swimmer
 #define FLAG_ROUTE_127_BOSS_DEFEATED                                0x4A7 // Route 127 Boss Cooltrainer Athena
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
+#define FLAG_MT_PYRE_BOSS_DEFEATED                                  0x4A8 // Mt Pyre Boss Hex Maniac Valerie
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag

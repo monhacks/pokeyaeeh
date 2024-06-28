@@ -680,16 +680,16 @@ MtPyre_4F_EventScript_ItemSeaIncense::
 	finditem ITEM_SEA_INCENSE
 	end
 
-MtPyre_5F_EventScript_ItemLaxIncense::
-	finditem ITEM_LAX_INCENSE
+MtPyre_5F_EventScript_ItemTMShadowBall::
+	finditem ITEM_TM_SHADOW_BALL
 	end
 
 MtPyre_6F_EventScript_ItemTMReturn::
 	finditem ITEM_TM_RETURN
 	end
 
-MtPyre_6F_EventScript_ItemBanettite::
-	finditem ITEM_BANETTITE
+MtPyre_6F_EventScript_ItemGrimmsnarlite::
+	finditem ITEM_GRIMMSNARLITE
 	end
 
 MtPyre_Exterior_EventScript_ItemMaxPotion::
