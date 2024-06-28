@@ -50,18 +50,17 @@ NewMauvilleHiddenArea_EventScript_Zapdos::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_DEFEATED_ZAPDOS
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauvilleHiddenArea_EventScript_RanFromZapdos
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauvilleHiddenArea_EventScript_RanFromZapdos
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NewMauvilleHiddenArea_EventScript_DefeatedZapdos
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauvilleHiddenArea_EventScript_RanFromZapdos
-	setflag FLAG_DEFEATED_ZAPDOS
 	release
 	end
 
 
 NewMauvilleHiddenArea_EventScript_DefeatedZapdos::
-	setflag FLAG_DEFEATED_ZAPDOS
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

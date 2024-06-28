@@ -62,6 +62,7 @@ NavelRock_Top_EventScript_HoOh::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_DEFEATED_HO_OH
 	setvar VAR_LAST_TALKED, LOCALID_HO_OH
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_RanFromHoOh
@@ -73,7 +74,6 @@ NavelRock_Top_EventScript_HoOh::
 	end
 
 NavelRock_Top_EventScript_DefeatedHoOh::
-	setflag FLAG_DEFEATED_HO_OH
 	setvar VAR_0x8004, SPECIES_HO_OH
 	goto Common_EventScript_LegendaryFlewAway
 	end

@@ -19205,16 +19205,14 @@ static const struct TrainerMon sParty_Josue[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
     },
     {
-        .species = SPECIES_ARAQUANID,
-        .ability = ABILITY_WATER_BUBBLE,
-        .friendship = 200,
-        .gender = TRAINER_MON_MALE,
-        .heldItem = ITEM_PINSIRITE,
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+        .species = SPECIES_PINSIR,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_MOXIE,
         .lvl = 1,
-        .moves = {MOVE_DOUBLE_EDGE, MOVE_LUNGE, MOVE_SKITTER_SMACK, MOVE_AERIAL_ACE},
-        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID)
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_SWORDS_DANCE, MOVE_EXTREME_SPEED, MOVE_X_SCISSOR, MOVE_ROCK_SLIDE},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     }
 };
 

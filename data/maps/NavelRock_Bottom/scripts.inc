@@ -58,6 +58,7 @@ NavelRock_Bottom_EventScript_Lugia::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_DEFEATED_LUGIA
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Bottom_EventScript_RanFromLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromLugia
@@ -68,7 +69,6 @@ NavelRock_Bottom_EventScript_Lugia::
 	end
 
 NavelRock_Bottom_EventScript_DefeatedLugia::
-	setflag FLAG_DEFEATED_LUGIA
 	setvar VAR_0x8004, SPECIES_LUGIA
 	goto Common_EventScript_LegendaryFlewAway
 	end
