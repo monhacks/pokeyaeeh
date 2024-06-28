@@ -1646,7 +1646,7 @@ static const struct TrainerMon sParty_Ydarissep[] = { // Route Boss
         .lvl = 1
     },
     {
-        .species = SPECIES_VIVILLON,
+        .species = SPECIES_VIVILLON_POKE_BALL,
         .heldItem = ITEM_FOCUS_SASH,
         .ability = ABILITY_FRIEND_GUARD,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
@@ -3894,7 +3894,6 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_GYARADOS,
         .ability = ABILITY_INTIMIDATE,
-        .friendship = 200,
         .heldItem = ITEM_GYARADOSITE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
@@ -3905,7 +3904,6 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_PELIPPER,
         .ability = ABILITY_DRIZZLE,
-        .friendship = 200,
         .heldItem = ITEM_SITRUS_BERRY,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 8, 0, 252, 0),
@@ -3915,8 +3913,7 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     },
     {
         .species = SPECIES_GLACEON,
-        .ability = ABILITY_SNOW_CLOAK,
-        .friendship = 200,
+        .ability = ABILITY_SLUSH_RUSH,
         .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -3927,7 +3924,6 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_ROTOM_WASH,
         .ability = ABILITY_LEVITATE,
-        .friendship = 200,
         .heldItem = ITEM_ROCKY_HELMET,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 8, 0, 252, 0),
@@ -3938,7 +3934,6 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_GASTRODON_WEST_SEA,
         .ability = ABILITY_STORM_DRAIN,
-        .friendship = 200,
         .heldItem = ITEM_NONE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 8, 0, 252, 0),
@@ -3949,7 +3944,6 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_DREDNAW,
         .ability = ABILITY_SWIFT_SWIM,
-        .friendship = 200,
         .heldItem = ITEM_WHITE_HERB,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 8, 0, 252, 0),
