@@ -4,7 +4,7 @@
   "layout": "LAYOUT_NEW_MAUVILLE_HIDDEN_AREA",
   "music": "MUS_MT_PYRE",
   "region_map_section": "MAPSEC_NEW_MAUVILLE",
-  "requires_flash": false,
+  "requires_flash": true,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
