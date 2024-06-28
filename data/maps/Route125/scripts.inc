@@ -71,12 +71,88 @@ Route125_EventScript_Iris::
 	msgbox Route125_Text_IrisPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route125_EventScript_Presley::
-	trainerbattle_single TRAINER_PRESLEY, Route125_Text_PresleyIntro, Route125_Text_PresleyDefeat
-	msgbox Route125_Text_PresleyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route125_EventScript_Auron::
 	trainerbattle_single TRAINER_AURON, Route125_Text_AuronIntro, Route125_Text_AuronDefeat
 	msgbox Route125_Text_AuronPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route125_EventScript_Presley2::
+	msgbox Route125_EventScript_Presley2_Text_0, MSGBOX_AUTOCLOSE
+	givemon SPECIES_CORVIKNIGHT, 0, ITEM_LEFTOVERS, ITEM_CHERISH_BALL, 8, 2, MON_MALE, 252, 0, 252, 0, 0, 4, 31, 31, 31, 31, 31, 31, MOVE_HARD_PRESS, MOVE_IRON_DEFENSE, MOVE_BODY_PRESS, MOVE_ROOST, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_CORVIKNIGHT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CORVIKNIGHT
+	playfanfare MUS_OBTAIN_ITEM
+	message Route125_EventScript_Presley2_Text_1
+	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
+	msgbox Route125_EventScript_Presley2_Text_2, MSGBOX_AUTOCLOSE
+	giveitem ITEM_CORVIKNIGHTITE, 1
+	setflag FLAG_ROUTE_125_BOSS_DEFEATED
+	msgbox Route125_EventScript_Presley2_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
+Route125_EventScript_Presley::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_NOLEN
+	goto_if 1, Route125_EventScript_Presley_5
+Route125_EventScript_Presley_3:
+	msgbox Route125_EventScript_Presley_Text_0, MSGBOX_NPC
+Route125_EventScript_Presley_1:
+	release
+	end
+
+Route125_EventScript_Presley_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_PRESLEY, Route125_Text_PresleyIntro, Route125_Text_PresleyDefeat, Route125_EventScript_Presley2
+	clearflag B_FLAG_NO_BAG_USE
+	msgbox Route125_EventScript_Presley2_Text_3, MSGBOX_AUTOCLOSE
+	goto Route125_EventScript_Presley_1
+
+Route125_EventScript_Presley_4:
+	checktrainerflag TRAINER_TANYA
+	goto_if 1, Route125_EventScript_Presley_9
+	goto Route125_EventScript_Presley_3
+
+Route125_EventScript_Presley_5:
+	checktrainerflag TRAINER_STAN
+	goto_if 1, Route125_EventScript_Presley_4
+	goto Route125_EventScript_Presley_3
+
+Route125_EventScript_Presley_8:
+	checktrainerflag TRAINER_ERNEST_1
+	goto_if 1, Route125_EventScript_Presley_13
+	goto Route125_EventScript_Presley_3
+
+Route125_EventScript_Presley_9:
+	checktrainerflag TRAINER_SHARON
+	goto_if 1, Route125_EventScript_Presley_8
+	goto Route125_EventScript_Presley_3
+
+Route125_EventScript_Presley_12:
+	checktrainerflag TRAINER_AURON
+	goto_if 1, Route125_EventScript_Presley_2
+	goto Route125_EventScript_Presley_3
+
+Route125_EventScript_Presley_13:
+	checktrainerflag TRAINER_KIM_AND_IRIS
+	goto_if 1, Route125_EventScript_Presley_12
+	goto Route125_EventScript_Presley_3
+
+
+Route125_EventScript_Presley2_Text_0:
+	.string "I guess not.\nHere, this'll be worth your time!$"
+
+Route125_EventScript_Presley2_Text_1:
+	.string "{PLAYER} received a Corviknight!$"
+
+Route125_EventScript_Presley2_Text_2:
+	.string "Also, this is for extra power.$"
+
+Route125_EventScript_Presley2_Text_3:
+	.string "Holding a Corviknightite,\nyour Corviknight can become just as\lstrong as mine!\pMaybe even stronger.$"
+
+Route125_EventScript_Presley_Text_0:
+	.string "I am a strong Bird Keeper in the sea.\pIf you wish to challenge me,\nI suggest you defeat everyone here\lfirst, then come here again.\pI'll be waiting.$"

@@ -1250,9 +1250,9 @@
 #define FLAG_ROUTE_121_BOSS_DEFEATED                                0x4A2 // Route 121 Boss Couple 
 #define FLAG_ROUTE_123_BOSS_DEFEATED                                0x4A3 // Route 123 Boss Aroma Lady Violet
 #define FLAG_ROUTE_124_BOSS_DEFEATED                                0x4A4 // Route 124 Boss Swimmer Chad
-#define FLAG_ROUTE_125_BOSS_DEFEATED                                0x4A5 // Route 125 Boss Cooltrainer Athena
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
+#define FLAG_ROUTE_125_BOSS_DEFEATED                                0x4A5 // Route 125 Boss Bird Keeper Presley
+#define FLAG_ROUTE_126_BOSS_DEFEATED                                0x4A6 // Route 126 Boss Swimmer
+#define FLAG_ROUTE_127_BOSS_DEFEATED                                0x4A7 // Route 127 Boss Cooltrainer Athena
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag

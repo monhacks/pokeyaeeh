@@ -86,7 +86,7 @@ script Route127_EventScript_Athena2{
 	call(Common_EventScript_Nickname)
 	msgbox("You can also have this.", MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_GARDEVOIRITE, 1)
-	setflag(FLAG_ROUTE_125_BOSS_DEFEATED)
+	setflag(FLAG_ROUTE_127_BOSS_DEFEATED)
 	msgbox("Holding a Gardevoirite,\nyour Gardevoir can wreak havoc,\ljust like mine!", MSGBOX_AUTOCLOSE)
 }
 

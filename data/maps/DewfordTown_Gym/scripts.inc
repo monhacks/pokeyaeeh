@@ -129,7 +129,7 @@ DewfordTown_Gym_EventScript_GymStatue::
 DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "Dewford's Gym Leader, Scep, commands\n"
+	.string "Dewford's Gym Leader, Oisin, commands\n"
 	.string "Grass-type Pokémon.\p"
 	.string "Going against him with Water-type\n"
 	.string "Pokémon is asking for trouble.\p"
@@ -160,7 +160,7 @@ DewfordTown_Gym_Text_TakaoPostBattle:
 	.string "You are powerful!$"
 
 DewfordTown_Gym_Text_JocelynIntro:
-	.string "There's no need for Scep to be\n"
+	.string "There's no need for Oisin to be\n"
 	.string "involved!\p"
 	.string "I'll beat you!$"
 
@@ -225,33 +225,19 @@ DewfordTown_Gym_Text_CristianPostBattle:
 	.string "Go get that Badge!$"
 
 DewfordTown_Gym_Text_BrawlyIntro:
-	.string "Hi, I'm Scep!\n"
-	.string "Dewford's Gym Leader!\p"
-	.string "I've been bullied for the better part\n"
-	.string "of my life for being a Grass-type\l"
-	.string "specialist. Life sucks, man.\p"
-	.string "Oh, wait…\n"
-	.string "You're here for a battle!\p"
-	.string "Nobody likes to see me yapping.\n"
-	.string "Sigh…\p"
-	.string "Let me see what you're made of!$"
+	.string "They say to get rid of a weed you have\n"
+	.string "to pull it up from its roots.\p"
+	.string "I hope you have the drive to beat me!$"
 
 DewfordTown_Gym_Text_BrawlyDefeat:
-	.string "Whoah, wow! You made a much bigger\n"
-	.string "splash than I expected!\p"
-	.string "You swamped me!\p"
-	.string "Okay, you've got me.\n"
-	.string "Take this Gym Badge!$"
-
-DewfordTown_Gym_Text_BrawlyNotEnoughMons:
-    .string "Sigh…\p"
-	.string "At least get some more Pokémon, bro.\n"
-	.string "Can't do a double battle with just\l"
-	.string "one critter, eh?$"
+	.string "Excellent!\p"
+	.string "Defeating me means you have what it\n"
+	.string "takes to conquer the E4.\p"
+	.string "Here you go, the Verdant Badge.$"
 
 DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 	.string "{PLAYER} received the Verdant Badge\n"
-	.string "from Scep.$"
+	.string "from Oisin.$"
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "The Verdant Badge makes all Pokémon\n"
@@ -259,36 +245,35 @@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
 	.string "Flash outside of battle.\p"
-	.string "If you'd like, use this Technical\n"
-	.string "Machine, too.$"
+	.string "Also, a TM.$"
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM123 contains Seed Bomb.\p"
-	.string "It's a damage dealing Grass-type\n"
-	.string "move. Quite reliable!\p"
+	.string "never underestimate the persistence of"
+	.string "Grass-types.\p"
 	.string "… … … … … …$"
 
 DewfordTown_Gym_Text_RegisteredBrawly:
-	.string "Registered Gym Leader Scep\n"
+	.string "Registered Gym Leader Oisin\n"
 	.string "in the PokéNav.$"
 
 DewfordTown_Gym_Text_BrawlyPostBattle:
-	.string "I can see your talent becoming a giant\n"
-	.string "wave to cause a storm of astonishment\l"
-	.string "among Trainers one day!$"
+	.string "By the way if the whole “Champion”\n"
+	.string "thing doesn't work out I'd love to\l"
+	.string "have you here as a gardener.$"
 
 DewfordTown_Gym_Text_GymStatue:
 	.string "Dewford Town Pokémon Gym\p"
-	.string "Scep's certified Trainers:\n"
+	.string "Oisin's certified Trainers:\n"
 	.string "Wally$"
 
 DewfordTown_Gym_Text_GymStatueCertified:
 	.string "Dewford Town Pokémon Gym\p"
-	.string "Scep's certified Trainers:\n"
+	.string "Oisin's certified Trainers:\n"
 	.string "Wally and {PLAYER}$"
 
 DewfordTown_Gym_Text_BrawlyPreRematch:
-	.string "Scep: A wave may draw back, but it\n"
+	.string "Oisin: A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"
@@ -300,12 +285,12 @@ DewfordTown_Gym_Text_BrawlyRematchDefeat:
 	.string "Swamped again!$"
 
 DewfordTown_Gym_Text_BrawlyPostRematch:
-	.string "Scep: Battling is vast and it's deep.\n"
+	.string "Oisin: Battling is vast and it's deep.\n"
 	.string "You can't see the bottom.\l"
 	.string "It's just like the sea of Hoenn!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
-	.string "Scep: A wave may draw back, but it\n"
+	.string "Oisin: A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"
