@@ -3934,7 +3934,7 @@ static const struct TrainerMon sParty_Jerome[] = { // Route Boss
     {
         .species = SPECIES_GASTRODON_WEST_SEA,
         .ability = ABILITY_STORM_DRAIN,
-        .heldItem = ITEM_NONE,
+        .heldItem = ITEM_LEFTOVERS,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(248, 0, 8, 0, 252, 0),
         .lvl = 1,
