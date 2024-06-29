@@ -62,18 +62,17 @@ script EmberRidge_EventScript_Moltres{
 	special(BattleSetup_StartLegendaryBattle)
 	waitstate()
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag(FLAG_DEFEATED_MOLTRES)
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	goto_if_eq(VAR_RESULT, B_OUTCOME_WON, EmberRidge_EventScript_RanFromMoltres)
 	goto_if_eq(VAR_RESULT, B_OUTCOME_RAN, EmberRidge_EventScript_RanFromMoltres)
 	goto_if_eq(VAR_RESULT, B_OUTCOME_CAUGHT, EmberRidge_EventScript_DefeatedMoltres)
 	goto_if_eq(VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, EmberRidge_EventScript_RanFromMoltres)
-	setflag(FLAG_DEFEATED_MOLTRES)
 	release
 	end
 }
 
 script EmberRidge_EventScript_DefeatedMoltres{
-	setflag(FLAG_DEFEATED_MOLTRES)
     setvar(VAR_EMBER_RIDGE_STATE, 2)
 	goto(EmberRidge_EventScript_RemoveMoltres)
 	end

@@ -392,7 +392,7 @@
         .friendship = STANDARD_FRIENDSHIP,                                                   \
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},                                       \
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},\
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_MOON_GUARD, ABILITY_SYMBIOSIS},\
         .bodyColor = BODY_COLOR_WHITE,                                      \
         .noFlip = FALSE,                                                    \
     }
@@ -414,7 +414,7 @@
         .friendship = STANDARD_FRIENDSHIP,                                                   \
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},                                       \
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},\
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_MOON_GUARD, ABILITY_SYMBIOSIS},\
         .bodyColor = BODY_COLOR_WHITE,                                      \
         .noFlip = FALSE,                                                    \
     }
@@ -436,7 +436,7 @@
         .friendship = STANDARD_FRIENDSHIP,                                                   \
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},                                       \
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},\
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_MOON_GUARD, ABILITY_SYMBIOSIS},\
         .bodyColor = BODY_COLOR_WHITE,                                      \
         .noFlip = FALSE,                                                    \
     }

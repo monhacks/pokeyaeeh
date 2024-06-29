@@ -83,7 +83,7 @@ Route127_EventScript_Athena2::
 	call Common_EventScript_Nickname
 	msgbox Route127_EventScript_Athena2_Text_2, MSGBOX_AUTOCLOSE
 	giveitem ITEM_GARDEVOIRITE, 1
-	setflag FLAG_ROUTE_125_BOSS_DEFEATED
+	setflag FLAG_ROUTE_127_BOSS_DEFEATED
 	msgbox Route127_EventScript_Athena2_Text_3, MSGBOX_AUTOCLOSE
 	return
 

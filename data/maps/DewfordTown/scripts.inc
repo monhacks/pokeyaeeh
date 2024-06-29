@@ -648,7 +648,7 @@ DewfordTown_EventScript_GymGuy::
 
 DewfordTwon_Text_GymLeaderIsNotHere:
 	.string "Sorry, little guy.\p"
-	.string "But, Scep, the Gym Leader is not here,\n"
+	.string "Oisin, the Gym Leader is not here,\n"
 	.string "at the moment.\p"
 	.string "You gotta wait til he's back!\p"
 	.string "Til then, why not explore the\n"
@@ -665,8 +665,8 @@ DewfordTown_Text_TownSign:
 
 DewfordTown_Text_GymSign:
 	.string "Dewford Town Pokémon Gym\n"
-	.string "Leader: Scep\l"
-	.string "“A big wave in fighting!”$"
+	.string "Leader: Oisin\l"
+	.string "“The high gardener!”$"
 
 DewfordTown_Text_HallSign:
 	.string "Dewford Hall\n"

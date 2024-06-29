@@ -41,6 +41,7 @@ TerraCave_End_EventScript_Groudon::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_DEFEATED_GROUDON
 	setvar VAR_TEMP_1, 0
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, TerraCave_End_EventScript_RanFromGroudon
@@ -48,13 +49,11 @@ TerraCave_End_EventScript_Groudon::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, TerraCave_End_EventScript_DefeatedGroudon
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, TerraCave_End_EventScript_RanFromGroudon
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
-	setflag FLAG_DEFEATED_GROUDON
 	releaseall
 	end
 
 TerraCave_End_EventScript_DefeatedGroudon::
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
-	setflag FLAG_DEFEATED_GROUDON
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
