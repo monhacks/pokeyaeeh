@@ -4424,6 +4424,11 @@ static const u8 sSteelArmorDesc[] =_(
     "is loved by a\n"
     "certain Pokémon.");
 
+static const u8 sMetalSeedDesc[] = _(
+    "Boosts Speed on\n"
+    "Metal Terrain,\n"
+    "but only one time.");
+
 static const u8 sMoonRockDesc[] = _(
     "Extends the length\n"
     "of the move FullMoon\n"

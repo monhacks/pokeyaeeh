@@ -7880,6 +7880,9 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 case HOLD_EFFECT_PARAM_PSYCHIC_TERRAIN:
                     effect = TryHandleSeed(battler, STATUS_FIELD_PSYCHIC_TERRAIN, STAT_SPDEF, gLastUsedItem, TRUE);
                     break;
+                case HOLD_EFFECT_PARAM_METAL_TERRAIN:
+                    effect = TryHandleSeed(battler, STATUS_FIELD_PSYCHIC_TERRAIN, STAT_SPEED, gLastUsedItem, TRUE);
+                    break;
                 }
                 break;
             case HOLD_EFFECT_EJECT_PACK:

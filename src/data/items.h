@@ -10651,6 +10651,19 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
+    [ITEM_METAL_SEED] =
+    {
+        .name = _("Metal Seed"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_SEEDS,
+        .holdEffectParam = HOLD_EFFECT_PARAM_METAL_TERRAIN,
+        .description = sMetalSeedDesc,
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
     [ITEM_MOON_ROCK] =
     {
         .name = _("Moon Rock"),

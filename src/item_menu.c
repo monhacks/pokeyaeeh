@@ -3668,6 +3668,7 @@ static const u16 sItemsByType[ITEMS_COUNT] =
 
         
         [ITEM_GIMMIGHOUL_COIN] = ITEM_TYPE_HELD_ITEM,
+        [ITEM_METAL_SEED] = ITEM_TYPE_HELD_ITEM,
         [ITEM_MOON_ROCK] = ITEM_TYPE_HELD_ITEM,
     #endif
 };

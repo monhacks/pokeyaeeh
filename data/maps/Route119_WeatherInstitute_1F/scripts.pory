@@ -118,6 +118,7 @@ WeatherInstitute_1F_Pokemart_TMsItems:
 	.2byte ITEM_MISTY_SEED
 	.2byte ITEM_ELECTRIC_SEED
 	.2byte ITEM_PSYCHIC_SEED
+	.2byte ITEM_METAL_SEED
 	.2byte ITEM_NONE
 	release
 	end
