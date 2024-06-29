@@ -407,7 +407,7 @@ PlayersHouse_1F_Text_ItsOverWeMissedHim:
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
-	.string "How about introducing yourself to our\n"
+	.string "How about introducing yourself to our\l"
 	.string "new neighbours?\p"
 	.string "Go on, don't be a shy baby!$"
 
