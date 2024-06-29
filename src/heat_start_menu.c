@@ -632,7 +632,7 @@ void HeatStartMenu_Init(void) {
     if (menuSelected == 255) {
       SetSelectedMenu();
     }
-      
+
     HeatStartMenu_LoadSprites();
     HeatStartMenu_CreateSprites();
     HeatStartMenu_LoadBgGfx();
