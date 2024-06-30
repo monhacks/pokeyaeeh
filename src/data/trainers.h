@@ -495,7 +495,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Dusty1),
     },
 
-    [TRAINER_YDARISSEP] =
+    [TRAINER_YDARISSEP] = //idk what to do with this
     {
         .trainerClass = TRAINER_CLASS_ROUTE_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2954,7 +2954,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .trainerName = _("Tanakin"),
+        .trainerName = _("Ydarissep"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PINK,
@@ -8597,7 +8597,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .trainerName = _("Tanakin"),
+        .trainerName = _("Ydarissep"),
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wattson2),

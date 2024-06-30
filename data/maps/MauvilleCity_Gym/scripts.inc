@@ -129,12 +129,12 @@ MauvilleCity_Gym_EventScript_GymStatue::
 MauvilleCity_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "Tan, the Leader of Mauville Gym,\n"
+	.string "Ydarissep, the Leader of Mauville Gym,\n"
 	.string "uses Fire-type Pokémon.\p"
 	.string "If you challenge him with Grass-type\n"
 	.string "Pokémon, he'll burn them!\p"
 	.string "And, due to advancement in technology\n"
-	.string "Tan was able to hustle a mini sun\l"
+	.string "Ydarissep was able to hustle a mini sun\l"
 	.string "inside the gym!\p"
 	.string "It boosts the power of Fire-type\n"
 	.string "attacks and lessens the power of\l"
@@ -161,14 +161,14 @@ MauvilleCity_Gym_Text_KirkPostBattle:
 	.string "We have a passion for burning!$"
 
 MauvilleCity_Gym_Text_ShawnIntro:
-	.string "I trained under Tan!\n"
+	.string "I trained under Ydarissep!\n"
 	.string "There ain't no way I'll lose easily!$"
 
 MauvilleCity_Gym_Text_ShawnDefeat:
 	.string "And I lost that easily…$"
 
 MauvilleCity_Gym_Text_ShawnPostBattle:
-	.string "Tan, our Gym Leader, has been\n"
+	.string "Ydarissep, our Gym Leader, has been\n"
 	.string "around for a long, long time.\p"
 	.string "He was battling even before I was born!$"
 
@@ -180,7 +180,7 @@ MauvilleCity_Gym_Text_BenDefeat:
 	.string "It's no fun to lose…$"
 
 MauvilleCity_Gym_Text_BenPostBattle:
-	.string "Tan says he likes setting\n"
+	.string "Ydarissep says he likes setting\n"
 	.string "public parks on fire.\p"
 	.string "…\p"
 	.string "There are no public parks in Hoenn!$"
@@ -193,7 +193,7 @@ MauvilleCity_Gym_Text_VivianDefeat:
 	.string "I'm warmed by your power!$"
 
 MauvilleCity_Gym_Text_VivianPostBattle:
-	.string "I've heard that Tan loves battling\n"
+	.string "I've heard that Ydarissep loves battling\n"
 	.string "little kids.\p"
 	.string "Not the best example, heh.$"
 
@@ -205,15 +205,15 @@ MauvilleCity_Gym_Text_AngeloDefeat:
 	.string "My eyes are frazzled…$"
 
 MauvilleCity_Gym_Text_AngeloPostBattle:
-	.string "Mauville Gym's Tan has a shiny\n"
+	.string "Mauville Gym's Ydarissep has a shiny\n"
 	.string "forehead. It makes me happy!$"
 
 MauvilleCity_Gym_Text_WattsonIntro:
 	.string "Hello, young aged person.\p"
 	.string "What's poppin'?\p"
-	.string "I'm Tanakin, the Mauville City\n"
+	.string "I'm Ydarissep, the Mauville City\n"
 	.string "Gym Leader.\p"
-	.string "But you can call me Tan!\p"
+	.string "But you can call me Ydarissep!\p"
 	.string "Hmm…\p"
 	.string "…\p"
 	.string "…\p"
@@ -239,7 +239,7 @@ MauvilleCity_Gym_Text_WattsonNeedTwoPokemon:
 
 MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "{PLAYER} received the Inferno Badge\n"
-	.string "from Tan.$"
+	.string "from Ydarissep.$"
 
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "With the Inferno Badge, Pokémon can\n"
@@ -254,7 +254,7 @@ MauvilleCity_Gym_Text_ExplainShockWave:
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered Gym Leader Tan\n"
+	.string "Registered Gym Leader Ydarissep\n"
 	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
@@ -267,16 +267,16 @@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 
 MauvilleCity_Gym_Text_GymStatue:
 	.string "Mauville City Pokémon Gym\p"
-	.string "Tan's certified Trainers:\n"
+	.string "Ydarissep's certified Trainers:\n"
 	.string "Wally$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
 	.string "Mauville City Pokémon Gym\p"
-	.string "Tan's certified Trainers:\n"
+	.string "Ydarissep's certified Trainers:\n"
 	.string "Wally and {PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
-	.string "Tan: Ah-ha! Here at last!\n"
+	.string "Ydarissep: Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my Pokémon!\p"
 	.string "Wahahahaha!\p"
@@ -288,7 +288,7 @@ MauvilleCity_Gym_Text_WattsonRematchDefeat:
 	.string "Our batteries ran dry…$"
 
 MauvilleCity_Gym_Text_WattsonPostRematch:
-	.string "Tan: We'll have to recharge our\n"
+	.string "Ydarissep: We'll have to recharge our\n"
 	.string "batteries again.\p"
 	.string "When we're fully charged up, we'll\n"
 	.string "gladly accept your challenge.\p"
@@ -296,7 +296,7 @@ MauvilleCity_Gym_Text_WattsonPostRematch:
 	.string "won't you?$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-	.string "Tan: Ah-ha! Here at last!\n"
+	.string "Ydarissep: Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my Pokémon!\p"
 	.string "Wahahahaha!\p"

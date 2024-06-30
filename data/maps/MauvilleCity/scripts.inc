@@ -387,7 +387,7 @@ MauvilleCity_Text_CitySign:
 
 MauvilleCity_Text_GymSign:
 	.string "Mauville City Pokémon Gym\n"
-	.string "Leader: Tan:\p"
+	.string "Leader: Ydarissep:\p"
 	.string "“Old man with dementia,\n"
 	.string "and a burning spirit!”$"
 
