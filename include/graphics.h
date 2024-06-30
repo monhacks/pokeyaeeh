@@ -11550,6 +11550,8 @@ extern const u16 gObjectEventPal_PkmnBreeder[];
 extern const u16 gObjectEventPal_AromaLady[];
 extern const u16 gObjectEventPal_Pokemaniac[];
 extern const u16 gObjectEventPal_PkmnRanger[];
+extern const u16 gObjectEventPal_White[];
+extern const u16 gObjectEventPal_Cynthia[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];

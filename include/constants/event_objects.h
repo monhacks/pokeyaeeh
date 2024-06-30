@@ -258,6 +258,8 @@
 #define OBJ_EVENT_GFX_POKEMANIAC                 254
 #define OBJ_EVENT_GFX_PKMN_RANGER_M              256
 #define OBJ_EVENT_GFX_PKMN_RANGER_F              257
+#define OBJ_EVENT_GFX_CYNTHIA                    258
+#define OBJ_EVENT_GFX_LANCE                      259
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
