@@ -5556,14 +5556,14 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ASTONISH] =
     {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 30,
+        .effect = EFFECT_FAKE_OUT,
+        .power = 40,
         .type = TYPE_GHOST,
         .accuracy = 100,
-        .pp = 24,
-        .secondaryEffectChance = 30,
+        .pp = 16,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = 3,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
@@ -5627,7 +5627,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         #endif
         .effect = EFFECT_HIT,
         .type = TYPE_FLYING,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 40,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
@@ -7152,8 +7152,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_AIR_SLASH] =
     {
         .effect = EFFECT_FLINCH_HIT,
-        .power = 60,
-        .pp = 24,
+        .power = 75,
+        .pp = 32,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .secondaryEffectChance = 30,

@@ -1251,8 +1251,8 @@ static const u8 sMeteorMashDescription[] = _(
     "May raise Attack.");
 
 static const u8 sAstonishDescription[] = _(
-    "An attack that may shock\n"
-    "the foe into flinching.");
+    "A 1st-turn, 1st-strike move\n"
+    "that causes flinching.");
 
 static const u8 sWeatherBallDescription[] = _(
     "The move's type and power\n"
@@ -5750,7 +5750,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_BLAST_BURN    - 1] = sMoveFourLineDescription_BlastBurn,
     [MOVE_HYDRO_CANNON  - 1] = sMoveFourLineDescription_HydroCannon,
     [MOVE_METEOR_MASH   - 1] = sMoveFourLineDescription_MeteorMash,
-    [MOVE_ASTONISH      - 1] = sMoveFourLineDescription_Astonish,
+    [MOVE_ASTONISH      - 1] = sMoveFourLineDescription_FakeOut,
     [MOVE_WEATHER_BALL  - 1] = sMoveFourLineDescription_WeatherBall,
     [MOVE_AROMATHERAPY  - 1] = sMoveFourLineDescription_Aromatherapy,
     [MOVE_FAKE_TEARS    - 1] = sMoveFourLineDescription_FakeTears,
