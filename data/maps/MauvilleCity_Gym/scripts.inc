@@ -209,33 +209,39 @@ MauvilleCity_Gym_Text_AngeloPostBattle:
 	.string "forehead. It makes me happy!$"
 
 MauvilleCity_Gym_Text_WattsonIntro:
-	.string "Hello, young aged person.\p"
-	.string "What's poppin'?\p"
-	.string "I'm Ydarissep, the Mauville City\n"
-	.string "Gym Leader.\p"
-	.string "But you can call me Ydarissep!\p"
-	.string "Hmm…\p"
-	.string "…\p"
-	.string "…\p"
-	.string "…\n"
-	.string "…\p"
-	.string "Wahahahah!\n"
-	.string "I'm shy around kids!\p"
-	.string "Oh! A battle!\n"
-	.string "Right… Right…!\p"
-	.string "Let's begin!$"
+	.string "Hello, young trainer.\n"
+	.string "I am Ydarissep,\l"
+	.string "the Gym Leader of Mauville City,\l"
+	.string "though you probably already knew that.\p"
+	.string "What you might not know is that,\n"
+	.string "in my youth, I was a passionate bug\l"
+	.string "catcher…\p"
+	.string "However, I realized that Bug-type\n"
+	.string "Pokémon weren't suited for my ambition\l"
+	.string "to become a Gym Leader,\l"
+	.string "as I constantly lost to Fire-type\l"
+	.string "Pokémon regardless of my efforts.\p"
+	.string "Since then, I've dedicated my life to\n"
+	.string "Fire-type Pokémon.\p"
+	.string "And it has been incredibly successful\n"
+	.string "for me!\p"
+	.string "Now that we've introduced ourselves,\n"
+	.string "let me show you just how heated things\l"
+	.string "can get around here!$"
 
 MauvilleCity_Gym_Text_WattsonDefeat:
-	.string "Wahahahah!\n"
-	.string "Fine, I lost!\p"
-	.string "You ended up giving me a thrill!\n"
-	.string "Take this Badge!$"
+	.string "Wow, I've never seen someone with such\n"
+	.string "a burning passion for battle like\l"
+	.string "yours!\p"
+	.string "Please, accept this Badge!$"
 
 MauvilleCity_Gym_Text_WattsonNeedTwoPokemon:
-    .string "I like your burning passion,\n"
-	.string "young person.\p"
-	.string "But get another Pokémon here.\p"
-	.string "You can't solo this thing, ya'know?$"
+    .string "Hello, young trainer.\p"
+	.string "Congratulations on making it all the\n"
+	.string "way to me!\p"
+	.string "I would gladly battle you,\n"
+	.string "but it seems you only have one Pokémon,\l"
+	.string "it wouldn't be a fair fight.$"
 
 MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "{PLAYER} received the Inferno Badge\n"
@@ -244,13 +250,16 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "With the Inferno Badge, Pokémon can\n"
 	.string "use Rock Smash out of battle.\p"
-	.string "Hmm…\n"
-	.string "You should take this, too!$"
+	.string "You should take this TM too,\n"
+	.string "this is my favorite move!$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM74 there contains Fire Blast.\p"
-	.string "It's a trustworthy move that can\n"
-	.string "sometimes leave a burn!\p"
+	.string "That TM84 there contains Heat Wave.\p"
+	.string "It's a reliable move that never misses\n"
+	.string "under sun!\p"
+	.string "It can deal significant damage to both\n"
+	.string "both of your opponents and\l"
+	.string "occasionally inflict a burn!\p"
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
@@ -258,8 +267,11 @@ MauvilleCity_Gym_Text_RegisteredWattson:
 	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
-	.string "I swell with optimism, seeing a promising\n"
-	.string "young Trainer like you!$"
+	.string "It's never disheartening to lose to\n"
+	.string "such a promising trainer like yourself.\p"
+	.string "It only fuels my desire to battle\n"
+	.string "again.\l"
+	.string "Next time, I will prevail!$"
 
 MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "Wahahahah!\n"

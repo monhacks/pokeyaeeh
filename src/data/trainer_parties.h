@@ -7008,8 +7008,8 @@ static const struct TrainerMon sParty_Wattson1[] = { // Ydarissep
         .ability = ABILITY_STEAM_ENGINE,
         .ev = TRAINER_PARTY_EVS(76, 0, 0, 180, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
-        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31), // Grass
-        .moves = {MOVE_INCINERATE, MOVE_POWER_GEM, MOVE_HIDDEN_POWER, MOVE_EARTH_POWER},
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 30, 31),
+        .moves = {MOVE_HEAT_WAVE, MOVE_POWER_GEM, MOVE_EARTH_POWER, MOVE_HIDDEN_POWER},
         .lvl = 1
     },
     {
@@ -7035,21 +7035,11 @@ static const struct TrainerMon sParty_Wattson1[] = { // Ydarissep
     },
     {
         .species = SPECIES_ARCANINE,
-        .heldItem = ITEM_ROCKY_HELMET,
+        .heldItem = ITEM_SITRUS_BERRY,
         .ability = ABILITY_INTIMIDATE,
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 0, 252),
         .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL),
         .moves = {MOVE_EXTREME_SPEED, MOVE_SNARL, MOVE_WILL_O_WISP, MOVE_MORNING_SUN},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_TORKOAL,
-        .heldItem = ITEM_SITRUS_BERRY,
-        .ability = ABILITY_DROUGHT,
-        .ev = TRAINER_PARTY_EVS(252, 0, 148, 0, 0, 108),
-        .nature = TRAINER_PARTY_NATURE(NATURE_BOLD),
-        .moves = {MOVE_LAVA_PLUME, MOVE_BODY_PRESS, MOVE_RAPID_SPIN, MOVE_PROTECT},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 1
     },
@@ -7061,6 +7051,16 @@ static const struct TrainerMon sParty_Wattson1[] = { // Ydarissep
         .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .moves = {MOVE_SOLAR_BEAM, MOVE_FLAMETHROWER, MOVE_GIGA_DRAIN, MOVE_GROWTH},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_NINETALES,
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = ABILITY_DROUGHT,
+        .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_HEAT_WAVE, MOVE_PSYSHOCK, MOVE_ENERGY_BALL, MOVE_DAZZLING_GLEAM},
         .lvl = 1
     }
 };

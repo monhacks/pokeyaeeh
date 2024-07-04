@@ -125,7 +125,7 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1:: @ testing scripts and stuff
-	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
+	goto MauvilleCity_Gym_EventScript_Wattson
 	goto Debug_EventScript_SetTestFlag
 	end
 

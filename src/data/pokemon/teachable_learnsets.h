@@ -2280,6 +2280,7 @@ static const u16 sNinetalesTeachableLearnset[] = {
     MOVE_ROLE_PLAY,
     MOVE_ROUND,
     MOVE_SAFEGUARD,
+    MOVE_SCORCHING_SANDS,
     MOVE_SECRET_POWER,
     MOVE_SHADOW_BALL,
     MOVE_SLEEP_TALK,
