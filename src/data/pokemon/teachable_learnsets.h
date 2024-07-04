@@ -8375,6 +8375,7 @@ static const u16 sGyaradosTeachableLearnset[] = {
     MOVE_SCALE_SHOT,
     MOVE_SCARY_FACE,
     MOVE_SECRET_POWER,
+    MOVE_SKY_ATTACK,
     MOVE_SLEEP_TALK,
     MOVE_SNORE,
     MOVE_SPITE,

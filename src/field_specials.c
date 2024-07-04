@@ -2633,9 +2633,9 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     [SCROLL_MULTI_PETALBURG_POKECENTER_TUTOR_MOVES] =
     {
         gText_BugBite,
-        gText_FireFang,
-        gText_ThunderFang,
-        gText_IceFang,
+        gText_Covet,
+        gText_WaterPulse,
+        gText_DualChop,
         gText_Exit
     },
     [SCROLL_MULTI_LILYCOVE_DEPT_TUTOR_MOVES] =
@@ -2644,13 +2644,13 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_LeafStorm,
         gText_SheerCold,
         gText_DracoMeteor,
-        gText_HeatCrash,
-        gText_RazorShell,
+        gText_FoulPlay,
+        gText_SkyAttack,
         gText_Infestation,
         gText_FireSpin,
         gText_Whirlpool,
-        gText_AquaTail,
-        gText_Tailwind,
+        gText_PainSplit,
+        gText_Superpower,
         gText_Exit
     },
     [SCROLL_MULTI_GAMECORNER_POKEMON] =
@@ -3284,9 +3284,9 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
     static const u8 *const sPetalburgCityPokemonCenter1F_TutorMoveDescriptions[] =
     {
         PetalburgCity_PokemonCenter_1F_Text_BugBiteDesc,
-        PetalburgCity_PokemonCenter_1F_Text_FireFangDesc,
-        PetalburgCity_PokemonCenter_1F_Text_ThunderFangDesc,
-        PetalburgCity_PokemonCenter_1F_Text_IceFangDesc,
+        PetalburgCity_PokemonCenter_1F_Text_CovetDesc,
+        PetalburgCity_PokemonCenter_1F_Text_WaterPulseDesc,
+        PetalburgCity_PokemonCenter_1F_Text_DualChopDesc,
         gText_Exit,
     };
 
@@ -3296,13 +3296,13 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         LilycoveCity_DepartmentStore_4F_Text_LeafStormDesc,
         LilycoveCity_DepartmentStore_4F_Text_SheerColdDesc,
         LilycoveCity_DepartmentStore_4F_Text_DracoMeteorDesc,
-        LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc,
-        LilycoveCity_DepartmentStore_4F_Text_RazorShellDesc,
+        LilycoveCity_DepartmentStore_4F_Text_FoulPlayDesc,
+        LilycoveCity_DepartmentStore_4F_Text_SkyAttackDesc,
         LilycoveCity_DepartmentStore_4F_Text_InfestationDesc,
         LilycoveCity_DepartmentStore_4F_Text_FireSpinDesc,
         LilycoveCity_DepartmentStore_4F_Text_WhirlpoolDesc,
-        LilycoveCity_DepartmentStore_4F_Text_AquaTailDesc,
-        LilycoveCity_DepartmentStore_4F_Text_TailwindDesc,
+        LilycoveCity_DepartmentStore_4F_Text_PainSplitDesc,
+        NewMauville_Inside_EventScript_SuperpowerTutor,
         gText_Exit,
     };
 

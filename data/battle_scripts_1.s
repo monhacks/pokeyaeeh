@@ -4739,7 +4739,6 @@ BattleScript_PowerHerbActivation:
 BattleScript_EffectTwoTurnsAttack::
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_TwoTurnMovesSecondTurn
 	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING, BattleScript_TwoTurnMovesSecondTurn
-	jumpifmove MOVE_SKY_ATTACK, BattleScript_EffectTwoTurnsAttackSkyAttack
 	jumpifmove MOVE_ICE_BURN, BattleScript_EffectTwoTurnsAttackIceBurn
 	jumpifmove MOVE_FREEZE_SHOCK, BattleScript_EffectTwoTurnsAttackFreezeShock
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
@@ -4748,9 +4747,6 @@ BattleScript_EffectTwoTurnsAttackContinue:
 	jumpifnoholdeffect BS_ATTACKER, HOLD_EFFECT_POWER_HERB, BattleScript_MoveEnd
 	call BattleScript_PowerHerbActivation
 	goto BattleScript_TwoTurnMovesSecondTurn
-BattleScript_EffectTwoTurnsAttackSkyAttack:
-	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_SKY_ATTACK
-	goto BattleScript_EffectTwoTurnsAttackContinue
 BattleScript_EffectTwoTurnsAttackIceBurn:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
 	goto BattleScript_EffectTwoTurnsAttackContinue

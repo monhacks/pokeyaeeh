@@ -2007,8 +2007,8 @@ static const u8 sHexDescription[] = _(
     "foe has a status problem.");
 
 static const u8 sSkyDropDescription[] = _(
-    "Takes the foe into the sky\n"
-    "then drops it the next turn.");
+    "A strong attack but lowers\n"
+    "the defensive stats.");
 
 static const u8 sShiftGearDescription[] = _(
     "Rotates its gears to raise\n"
@@ -5575,7 +5575,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_BARRAGE       - 1] = sMoveFourLineDescription_Barrage,
     [MOVE_LEECH_LIFE    - 1] = sMoveFourLineDescription_LeechLife,
     [MOVE_LOVELY_KISS   - 1] = sMoveFourLineDescription_LovelyKiss,
-    [MOVE_SKY_ATTACK    - 1] = sMoveFourLineDescription_SkyAttack,
+    [MOVE_SKY_ATTACK    - 1] = sMoveFourLineDescription_CloseCombat,
     [MOVE_TRANSFORM     - 1] = sMoveFourLineDescription_Transform,
     [MOVE_BUBBLE        - 1] = sMoveFourLineDescription_Bubble,
     [MOVE_DIZZY_PUNCH   - 1] = sMoveFourLineDescription_DizzyPunch,

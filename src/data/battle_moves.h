@@ -2546,21 +2546,17 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SKY_ATTACK] =
     {
-        .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 140,
+        .effect = EFFECT_CLOSE_COMBAT,
+        .power = 120,
         .type = TYPE_FLYING,
-        .accuracy = 90,
-        .pp = 8,
-        .secondaryEffectChance = 30,
+        .accuracy = 100,
+        .pp = 24,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
-        .argument = MOVE_EFFECT_FLINCH,
         .zMoveEffect = Z_EFFECT_NONE,
-        .twoTurnMove = TRUE,
-        .sheerForceBoost = TRUE,
-        .sleepTalkBanned = TRUE,
-        .instructBanned = TRUE,
+        .makesContact = TRUE,
     },
 
     [MOVE_TRANSFORM] =
@@ -6169,7 +6165,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
-        .sheerForceBoost = TRUE,
     },
 
     [MOVE_MAGICAL_LEAF] =

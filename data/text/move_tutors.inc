@@ -421,18 +421,16 @@ MoveTutor_Text_MudSlapTaught:
 
 PetalburgCity_PokemonCenter_1F_Text_TutorWelcome:
 	.string "Hi.\p"
-	.string "I can teach your Pokémon a few biting\n"
-	.string "moves.$"
+	.string "I can teach your Pokémon a few moves…$"
 
 PetalburgCity_PokemonCenter_1F_Text_WontTeachMoves:
 	.string "Hi.\n"
 	.string "I am a Move Tutor.\p"
-	.string "I can teach your Pokémon a few biting\n"
-	.string "moves.\p"
+	.string "I can teach your Pokémon a few moves…\p"
 	.string "I see that you haven't beaten Tiana,\n"
 	.string "yet.\p"
-	.string "Beat here, and then I shall teach you\n"
-	.string "my biting techniques!"
+	.string "Beat her, and then I shall teach you\n"
+	.string "my techniques!$"
 
 PetalburgCity_PokemonCenter_1F_Text_WhichMoveTeach:
 	.string "Which move should I teach?$"
@@ -456,20 +454,20 @@ PetalburgCity_PokemonCenter_1F_Text_BugBiteDesc::
 	.string "steals and eats\n"
 	.string "the foe's berry.$"
 
-PetalburgCity_PokemonCenter_1F_Text_FireFangDesc::
-	.string "A bite that may\n"
-	.string "burn or cause\n"
-	.string "flinching.$"
+PetalburgCity_PokemonCenter_1F_Text_CovetDesc::
+	.string "Cutely begs to\n"
+	.string "obtain the foe's\n"
+	.string "held item.$"
 
-PetalburgCity_PokemonCenter_1F_Text_ThunderFangDesc::
-	.string "A bite that may\n"
-	.string "paralyze or cause\n"
-	.string "flinching.$"
+PetalburgCity_PokemonCenter_1F_Text_WaterPulseDesc::
+	.string "Pulsing blast of\n"
+	.string "water that may\n"
+	.string "confuse the foe.$"
 
-PetalburgCity_PokemonCenter_1F_Text_IceFangDesc::
-	.string "A bite that may\n"
-	.string "frostbite or\n"
-	.string "cause flinching.$"
+PetalburgCity_PokemonCenter_1F_Text_DualChopDesc::
+	.string "Attacks foe by\n"
+	.string "brutally striking\n"
+	.string "it twice.$"
 
 LilycoveCity_DepartmentStore_4F_Text_TutorWelcome:
 	.string "Welcome!\p"
@@ -514,15 +512,15 @@ LilycoveCity_DepartmentStore_4F_Text_DracoMeteorDesc::
 	.string "harshly lowers the\n"
 	.string "user's Sp. Atk.$"
 
-LilycoveCity_DepartmentStore_4F_Text_HeatCrashDesc::
-	.string "Deals more damage\n"
-	.string "if user is heavier\n"
-	.string "than the foe.$"
+LilycoveCity_DepartmentStore_4F_Text_FoulPlayDesc::
+	.string "Uses the foe's\n"
+	.string "attack stat to\n"
+	.string "deal damage.$"
 
-LilycoveCity_DepartmentStore_4F_Text_RazorShellDesc::
-	.string "Shell slashing\n"
-	.string "attack which may\n"
-	.string "lower foe's Def.$"
+LilycoveCity_DepartmentStore_4F_Text_SkyAttackDesc::
+	.string "Deals a lot of\n"
+	.string "damage, but also\n"
+	.string "lowers defenses.$"
 
 LilycoveCity_DepartmentStore_4F_Text_InfestationDesc::
 	.string "Traps the foe\n"
@@ -539,12 +537,12 @@ LilycoveCity_DepartmentStore_4F_Text_WhirlpoolDesc::
 	.string "for 3-5 turns in\n"
 	.string "a whirlpool.$"
 
-LilycoveCity_DepartmentStore_4F_Text_AquaTailDesc::
-	.string "Swings its tail\n"
-	.string "as if a vicious\n"
-	.string "wave to attack.$"
+LilycoveCity_DepartmentStore_4F_Text_PainSplitDesc::
+	.string "Adds the user and\n"
+	.string "foe's HP, then\n"
+	.string "equally shares it.$"
 
-LilycoveCity_DepartmentStore_4F_Text_TailwindDesc::
-	.string "Doubles ally's\n"
-	.string "speed stat for\n"
-	.string "4 turns.$"
+NewMauville_Inside_EventScript_SuperpowerTutor::
+	.string "Deals a lot of\n"
+	.string "damage, but lowers\n"
+	.string "physical stats.$"

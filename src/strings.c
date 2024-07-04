@@ -1923,18 +1923,18 @@ const u8 gText_Overheat[] = _("Overheat");
 const u8 gText_LeafStorm[] = _("Leaf Storm");
 const u8 gText_SheerCold[] = _("Sheer Cold");
 const u8 gText_DracoMeteor[] = _("Draco Meteor");
-const u8 gText_HeatCrash[] = _("Heat Crash");
-const u8 gText_RazorShell[] = _("Razor Shell");
+const u8 gText_FoulPlay[] = _("Foul Play");
+const u8 gText_SkyAttack[] = _("Sky Attack");
 const u8 gText_Infestation[] = _("Infestation");
 const u8 gText_FireSpin[] = _("Fire Spin");
 const u8 gText_Whirlpool[] = _("Whirlpool");
-const u8 gText_AquaTail[] = _("Aqua Tail");
-const u8 gText_Tailwind[] = _("Tailwind");
+const u8 gText_PainSplit[] = _("Pain Split");
+const u8 gText_Superpower[] = _("Superpower");
 
 const u8 gText_BugBite[] = _("Bug Bite");
-const u8 gText_FireFang[] = _("Fire Fang");
-const u8 gText_ThunderFang[] = _("Thunder Fang");
-const u8 gText_IceFang[] = _("Ice Fang");
+const u8 gText_Covet[] = _("Covet");
+const u8 gText_WaterPulse[] = _("Water Pulse");
+const u8 gText_DualChop[] = _("Dual Chop");
 
 const u8 gText_PokeVial_Success[] = _("PokéVial successfully healed party!\nUses left: {STR_VAR_1}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_PokeVial_HealthFull[] = _("Party is already at full health!\nUses left: {STR_VAR_1}.{PAUSE_UNTIL_PRESS}");

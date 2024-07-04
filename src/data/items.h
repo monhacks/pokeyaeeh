@@ -8971,6 +8971,306 @@ const struct Item gItems[] =
         .secondaryId = MOVE_WONDER_ROOM,
     },
 
+    [ITEM_TM_KNOCK_OFF] =
+    {
+        .name = _("TM151"),
+        .price = 5000,
+        .description = sTM151Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_KNOCK_OFF,
+    },
+
+    [ITEM_TM_TAILWIND] =
+    {
+        .name = _("TM152"),
+        .price = 5000,
+        .description = sTM152Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_TAILWIND,
+    },
+
+    [ITEM_TM_HARD_PRESS] =
+    {
+        .name = _("TM153"),
+        .price = 5000,
+        .description = sTM153Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HARD_PRESS,
+    },
+
+    [ITEM_TM_MYSTICAL_FIRE] =
+    {
+        .name = _("TM154"),
+        .price = 5000,
+        .description = sTM154Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_MYSTICAL_FIRE,
+    },
+
+    [ITEM_TM_PSYCHIC_FANGS] =
+    {
+        .name = _("TM155"),
+        .price = 5000,
+        .description = sTM155Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PSYCHIC_FANGS,
+    },
+
+    [ITEM_TM_AQUA_FANGS] =
+    {
+        .name = _("TM156"),
+        .price = 5000,
+        .description = sTM156Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_AQUA_FANGS,
+    },
+
+    [ITEM_TM_FIRE_FANG] =
+    {
+        .name = _("TM157"),
+        .price = 5000,
+        .description = sTM157Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FIRE_FANG,
+    },
+
+    [ITEM_TM_THUNDER_FANG] =
+    {
+        .name = _("TM158"),
+        .price = 5000,
+        .description = sTM158Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_THUNDER_FANG,
+    },
+
+    [ITEM_TM_ICE_FANG] =
+    {
+        .name = _("TM159"),
+        .price = 5000,
+        .description = sTM159Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ICE_FANG,
+    },
+
+    [ITEM_TM_HEAT_CRASH] =
+    {
+        .name = _("TM160"),
+        .price = 5000,
+        .description = sTM160Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HEAT_CRASH,
+    },
+
+    [ITEM_TM_RAZOR_SHELL] =
+    {
+        .name = _("TM161"),
+        .price = 5000,
+        .description = sTM161Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_RAZOR_SHELL,
+    },
+
+    [ITEM_TM_AQUA_TAIL] =
+    {
+        .name = _("TM162"),
+        .price = 5000,
+        .description = sTM162Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_AQUA_TAIL,
+    },
+
+    [ITEM_TM_TRI_ATTACK] =
+    {
+        .name = _("TM163"),
+        .price = 5000,
+        .description = sTM163Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_TRI_ATTACK,
+    },
+
+    [ITEM_TM_POLLEN_PUFF] =
+    {
+        .name = _("TM164"),
+        .price = 5000,
+        .description = sTM164Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_POLLEN_PUFF,
+    },
+
+    [ITEM_TM_ALLURING_VOICE] =
+    {
+        .name = _("TM165"),
+        .price = 5000,
+        .description = sTM165Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ALLURING_VOICE,
+    },
+
+    [ITEM_TM_DRAGON_TAIL] =
+    {
+        .name = _("TM166"),
+        .price = 5000,
+        .description = sTM166Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_DRAGON_TAIL,
+    },
+
+    [ITEM_TM_MUD_SHOT] =
+    {
+        .name = _("TM167"),
+        .price = 5000,
+        .description = sTM167Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_MUD_SHOT,
+    },
+
+    [ITEM_TM_FALSE_SWIPE] =
+    {
+        .name = _("TM168"),
+        .price = 5000,
+        .description = sTM168Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FALSE_SWIPE,
+    },
+
+    [ITEM_TM_SMACK_DOWN] =
+    {
+        .name = _("TM169"),
+        .price = 5000,
+        .description = sTM169Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SMACK_DOWN,
+    },
+
+    [ITEM_TM_HEAVY_SLAM] =
+    {
+        .name = _("TM170"),
+        .price = 5000,
+        .description = sTM170Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HEAVY_SLAM,
+    },
+
+    [ITEM_TM_SCALE_SHOT] =
+    {
+        .name = _("TM171"),
+        .price = 5000,
+        .description = sTM171Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SCALE_SHOT,
+    },
+
+    [ITEM_TM_ICICLE_SPEAR] =
+    {
+        .name = _("TM172"),
+        .price = 5000,
+        .description = sTM172Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ICICLE_SPEAR,
+    },
+
+    [ITEM_TM_TRIPLE_AXEL] =
+    {
+        .name = _("TM173"),
+        .price = 5000,
+        .description = sTM173Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_TRIPLE_AXEL,
+    },
+
+    [ITEM_TM_THROAT_CHOP] =
+    {
+        .name = _("TM174"),
+        .price = 5000,
+        .description = sTM174Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_THROAT_CHOP,
+    },
+
+    [ITEM_TM_IMPRISON] =
+    {
+        .name = _("TM175"),
+        .price = 5000,
+        .description = sTM175Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_IMPRISON,
+    },
+
     [ITEM_HM_CUT] =
     {
         .name = _("HM01"),

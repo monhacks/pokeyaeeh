@@ -3252,9 +3252,9 @@ static const u8 sTM44Desc[] = _(
     "this move inflicts.");
 
 static const u8 sTM45Desc[] = _(
-    "Shoots 2 to 5 seeds\n"
-    "in a row to strike\n"
-    "the foe.");
+    "Shoots seeds 2 to\n"
+    "5 times in a row to\n"
+    "attack the foe.");
 
 static const u8 sTM46Desc[] = _(
     "An extremely fast\n"
@@ -3453,12 +3453,12 @@ static const u8 sTM84Desc[] = _(
 
 static const u8 sTM85Desc[] = _(
     "Metal Terr. blocks\n"
-    "stat drops and boosts\n"
-    "Steel moves.");
+    "stat drops and\n"
+    "boosts Steel moves.");
 
 static const u8 sTM86Desc[] = _(
     "Grassy Terr. heals\n"
-    "HPand boosts\n"
+    "HP and boosts\n"
     "Grass moves.");
 
 static const u8 sTM87Desc[] = _(
@@ -3703,7 +3703,7 @@ static const u8 sTM134Desc[] = _(
 
 static const u8 sTM135Desc[] = _(
     "Wind blows to clear\n"
-    "obstacles and lower\n"
+    "fog and lower\n"
     "evasiveness.");
 
 static const u8 sTM136Desc[] = _(
@@ -3780,6 +3780,131 @@ static const u8 sTM150Desc[] = _(
     "Creates a bizzare\n"
     "area where Def and\n"
     "Sp. Def are swapped.");
+
+static const u8 sTM151Desc[] = _(
+    "Knocks down the foe\n"
+    "held item for the\n"
+    "rest of the battle.");
+
+static const u8 sTM152Desc[] = _(
+    "Doubles speed on\n"
+	"the user's side for\n"
+	"4 turns.");
+
+static const u8 sTM153Desc[] = _(
+    "Body slams the foe.\n"
+    "Higher the Def,\n"
+    "greater the damage.");
+
+static const u8 sTM154Desc[] = _(
+    "Special, hot fire\n"
+    "that lowers the\n"
+    "foe's Sp. Atk.");
+
+static const u8 sTM155Desc[] = _(
+    "A psychic bite that\n"
+    "also breaks any\n"
+    "barriers.");
+
+static const u8 sTM156Desc[] = _(
+    "A hydro-powered\n"
+    "bite that may lower\n"
+    "the foe's Def.");
+
+static const u8 sTM157Desc[] = _(
+    "A bite that may\n"
+    "cause a burn or\n"
+    "flinching.");
+
+static const u8 sTM158Desc[] = _(
+    "A bite that may\n"
+    "cause paralysis or\n"
+    "flinching.");
+
+static const u8 sTM159Desc[] = _(
+    "A bite that may\n"
+    "cause a frostbite\n"
+    "or flinching.");
+
+static const u8 sTM160Desc[] = _(
+    "Body slams the foe.\n"
+    "Higher the weight,\n"
+    "greater the damage.");
+
+static const u8 sTM161Desc[] = _(
+    "Cuts the foe with a\n"
+    "sharp shell. May\n"
+    "lower its Def.");
+
+static const u8 sTM162Desc[] = _(
+    "Swings its tail as\n"
+	"if a vicious wave\n"
+	"to attack the foe.");
+
+static const u8 sTM163Desc[] = _(
+    "Fires three beams\n"
+    "that may cause burn,\n"
+    "freeze or paralyze.");
+
+static const u8 sTM164Desc[] = _(
+    "Attacks with pollen\n"
+    "puff which damages\n"
+    "foes, heals allies.");
+
+static const u8 sTM165Desc[] = _(
+    "The user's angelic\n"
+    "voice confuses the\n"
+    "foe if stats rose.");
+
+static const u8 sTM166Desc[] = _(
+    "The foe is knocked\n"
+    "and another Pokémon\n"
+    "is sent out.");
+
+static const u8 sTM167Desc[] = _(
+    "Hurls a blob of mud\n"
+    "that may lower the\n"
+    "foe's accuracy.");
+
+static const u8 sTM168Desc[] = _(
+    "A restrained attack\n"
+    "that always leaves\n"
+    "the foe at 1 HP.");
+
+static const u8 sTM169Desc[] = _(
+    "Throws a stone to\n"
+    "attack the foe.\n"
+    "Grounds flyers.");
+
+static const u8 sTM170Desc[] = _(
+    "Body slams the foe.\n"
+    "Higher the weight,\n"
+    "greater the damage.");
+
+static const u8 sTM171Desc[] = _(
+    "Attacks by shooting\n"
+    "scales 2 to 5 turns.\n"
+    "Ups Spd, lowers Def.");
+
+static const u8 sTM172Desc[] = _(
+    "Shoots icicles 2 to\n"
+    "5 times in a row to\n"
+    "attack the foe.");
+
+static const u8 sTM173Desc[] = _(
+    "A consecutive three\n"
+    "kick that becomes\n"
+    "strong after a hit.");
+
+static const u8 sTM174Desc[] = _(
+    "Attacks the foe's\n"
+    "throat, stops them\n"
+    "from using sound.");
+
+static const u8 sTM175Desc[] = _(
+    "Prevents the foe\n"
+    "from using moves\n"
+    "known by the user.");
 
 static const u8 sHM01Desc[] = _(
     "Attacks the foe\n"

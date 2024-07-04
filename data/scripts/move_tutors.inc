@@ -5,425 +5,7 @@ MoveTutor_EventScript_OpenPartyMenu::
 	faceplayer
 	return
 
-SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_SwaggerTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SwaggerDeclined
-	msgbox MoveTutor_Text_SwaggerWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SWAGGER
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SwaggerDeclined
-	goto MoveTutor_EventScript_SwaggerTaught
-	end
-
-MoveTutor_EventScript_SwaggerDeclined::
-	msgbox MoveTutor_Text_SwaggerDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_SwaggerTaught::
-	msgbox MoveTutor_Text_SwaggerTaught, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_EventScript_IceBallTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_IceBallTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_IceBallDeclined
-	msgbox MoveTutor_Text_IceBallWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_ICE_BALL
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_IceBallDeclined
-	goto MoveTutor_EventScript_IceBallTaught
-	end
-
-MoveTutor_EventScript_IceBallDeclined::
-	msgbox MoveTutor_Text_IceBallDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_IceBallTaught::
-	msgbox MoveTutor_Text_IceBallTaught, MSGBOX_DEFAULT
-	release
-	end
-
-VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_FuryCutterTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FuryCutterDeclined
-	msgbox MoveTutor_Text_FuryCutterWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_FURY_CUTTER
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FuryCutterDeclined
-	goto MoveTutor_EventScript_FuryCutterTaught
-	end
-
-MoveTutor_EventScript_FuryCutterDeclined::
-	msgbox MoveTutor_Text_FuryCutterDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_FuryCutterTaught::
-	msgbox MoveTutor_Text_FuryCutterTaught, MSGBOX_DEFAULT
-	release
-	end
-
-LavaridgeTown_House_EventScript_MimicTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_MimicTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MimicDeclined
-	msgbox MoveTutor_Text_MimicWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_MIMIC
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MimicDeclined
-	goto MoveTutor_EventScript_MimicTaught
-	end
-
-MoveTutor_EventScript_MimicDeclined::
-	msgbox MoveTutor_MimicDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_MimicTaught::
-	msgbox MoveTutor_Text_MimicTaught, MSGBOX_DEFAULT
-	release
-	end
-
-FallarborTown_Mart_EventScript_MetronomeTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_MetronomeTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MetronomeDeclined
-	msgbox MoveTutor_Text_MetronomeWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_METRONOME
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MetronomeDeclined
-	goto MoveTutor_EventScript_MetronomeTaught
-	end
-
-MoveTutor_EventScript_MetronomeDeclined::
-	msgbox MoveTutor_Text_MetronomeDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_MetronomeTaught::
-	msgbox MoveTutor_Text_MetronomeTaught, MSGBOX_DEFAULT
-	release
-	end
-
-FortreeCity_House2_EventScript_SleepTalkTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_SleepTalkTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SleepTalkDeclined
-	msgbox MoveTutor_Text_SleepTalkWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SLEEP_TALK
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SleepTalkDeclined
-	goto MoveTutor_EventScript_SleepTalkTaught
-	end
-
-MoveTutor_EventScript_SleepTalkDeclined::
-	msgbox MoveTutor_Text_SleepTalkDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_SleepTalkTaught::
-	msgbox MoveTutor_Text_SleepTalkTaught, MSGBOX_DEFAULT
-	release
-	end
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_SubstituteTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_SubstituteTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SubstituteDeclined
-	msgbox MoveTutor_Text_SubstituteWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SUBSTITUTE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SubstituteDeclined
-	goto MoveTutor_EventScript_SubstituteTaught
-	end
-
-MoveTutor_EventScript_SubstituteDeclined::
-	msgbox MoveTutor_Text_SubstituteDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_SubstituteTaught::
-	msgbox MoveTutor_Text_SubstituteTaught, MSGBOX_DEFAULT
-	release
-	end
-
-MossdeepCity_EventScript_CloseCombatTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_CloseCombatTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_CloseCombatDeclined
-	msgbox MoveTutor_Text_CloseCombatWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_CLOSE_COMBAT
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_CloseCombatDeclined
-	goto MoveTutor_EventScript_CloseCombatTaught
-	end
-
-MoveTutor_EventScript_CloseCombatDeclined::
-	msgbox MoveTutor_Text_CloseCombatDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_CloseCombatTaught::
-	msgbox MoveTutor_Text_CloseCombatTaught, MSGBOX_DEFAULT
-	release
-	end
-
-SootopolisCity_PokemonCenter_1F_EventScript_DoubleEdgeTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_DoubleEdgeTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DoubleEdgeDeclined
-	msgbox MoveTutor_Text_DoubleEdgeWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_DOUBLE_EDGE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DoubleEdgeDeclined
-	goto MoveTutor_EventScript_DoubleEdgeTaught
-	end
-
-MoveTutor_EventScript_DoubleEdgeDeclined::
-	msgbox MoveTutor_Text_DoubleEdgeDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_DoubleEdgeTaught::
-	msgbox MoveTutor_Text_DoubleEdgeTaught, MSGBOX_DEFAULT
-	release
-	end
-
-PacifidlogTown_PokemonCenter_1F_EventScript_ExplosionTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_ExplosionTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ExplosionDeclined
-	msgbox MoveTutor_Text_ExplosionWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_EXPLOSION
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ExplosionDeclined
-	goto MoveTutor_EventScript_ExplosionTaught
-	end
-
-MoveTutor_EventScript_ExplosionDeclined::
-	msgbox MoveTutor_Text_ExplosionDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_ExplosionTaught::
-	msgbox MoveTutor_Text_ExplosionTaught, MSGBOX_DEFAULT
-	release
-	end
-
-Route112_EventScript_ScorchingSandsTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_ScorchingSandsTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ScorchingSandsDeclined
-	msgbox MoveTutor_Text_ScorchingSandsWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SCORCHING_SANDS
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ScorchingSandsDeclined
-	goto MoveTutor_EventScript_ScorchingSandsTaught
-	end
-
-MoveTutor_EventScript_ScorchingSandsDeclined::
-	msgbox MoveTutor_Text_ScorchingSandsDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_ScorchingSandsTaught::
-	msgbox MoveTutor_Text_ScorchingSandsTaught, MSGBOX_DEFAULT
-	release
-	end
-
-Route119_EventScript_GrassyGlideTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_GrassyGlideTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_GrassyGlideDeclined
-	msgbox MoveTutor_Text_GrassyGlideWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_GRASSY_GLIDE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_GrassyGlideDeclined
-	goto MoveTutor_EventScript_GrassyGlideTaught
-	end
-
-MoveTutor_EventScript_GrassyGlideDeclined::
-	msgbox MoveTutor_Text_GrassyGlideDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_GrassyGlideTaught::
-	msgbox MoveTutor_Text_GrassyGlideTaught, MSGBOX_DEFAULT
-	release
-	end
-
-PetalburgWoods_EventScript_SkitterSmackTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_SkitterSmackTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SkitterSmackDeclined
-	msgbox MoveTutor_Text_SkitterSmackWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SKITTER_SMACK
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SkitterSmackDeclined
-	goto MoveTutor_EventScript_SkitterSmackTaught
-	end
-
-MoveTutor_EventScript_SkitterSmackDeclined::
-	msgbox MoveTutor_Text_SkitterSmackDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_SkitterSmackTaught::
-	msgbox MoveTutor_Text_SkitterSmackTaught, MSGBOX_DEFAULT
-	release
-	end
-
-NewMauville_Inside_EventScript_RisingVoltageForceTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_RisingVoltageTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RisingVoltageDeclined
-	msgbox MoveTutor_Text_RisingVoltageWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RisingVoltageDeclined
-	goto MoveTutor_EventScript_RisingVoltageTaught
-	end
-
-MoveTutor_EventScript_RisingVoltageDeclined::
-	msgbox MoveTutor_Text_RisingVoltageDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_RisingVoltageTaught::
-	msgbox MoveTutor_Text_RisingVoltageTaught, MSGBOX_DEFAULT
-	release
-	end
-
-VictoryRoad_B1F_EventScript_ExpandingForceTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_ExpandingForceTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ExpandingForceDeclined
-	msgbox MoveTutor_Text_ExpandingForceWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ExpandingForceDeclined
-	goto MoveTutor_EventScript_ExpandingForceTaught
-	end
-
-MoveTutor_EventScript_ExpandingForceDeclined::
-	msgbox MoveTutor_Text_ExpandingForceDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_ExpandingForceTaught::
-	msgbox MoveTutor_Text_ExpandingForceTaught, MSGBOX_DEFAULT
-	release
-	end
-
-Route109_EventScript_BraveBirdTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_BraveBirdTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_BraveBirdDeclined
-	msgbox MoveTutor_Text_BraveBirdWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_BRAVE_BIRD
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_BraveBirdDeclined
-	goto MoveTutor_EventScript_BraveBirdTaught
-	end
-
-MoveTutor_EventScript_BraveBirdDeclined::
-	msgbox MoveTutor_Text_BraveBirdDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_BraveBirdTaught::
-	msgbox MoveTutor_Text_BraveBirdTaught, MSGBOX_DEFAULT
-	release
-	end
-
-Route116_EventScript_FlareBlitzTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_FlareBlitzTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FlareBlitzDeclined
-	msgbox MoveTutor_Text_FlareBlitzWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_FLARE_BLITZ
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FlareBlitzDeclined
-	goto MoveTutor_EventScript_FlareBlitzTaught
-	end
-
-MoveTutor_EventScript_FlareBlitzDeclined::
-	msgbox MoveTutor_Text_FlareBlitzDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_FlareBlitzTaught::
-	msgbox MoveTutor_Text_FlareBlitzTaught, MSGBOX_DEFAULT
-	release
-	end
-
-Route125_EventScript_WildChargeTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_WildChargeTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_WildChargeDeclined
-	msgbox MoveTutor_Text_WildChargeWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_WILD_CHARGE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_WildChargeDeclined
-	goto MoveTutor_EventScript_WildChargeTaught
-	end
-
-MoveTutor_EventScript_WildChargeDeclined::
-	msgbox MoveTutor_Text_WildChargeDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_WildChargeTaught::
-	msgbox MoveTutor_Text_WildChargeTaught, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_PokemonSchool_EventScript_MudSlapTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_MudSlapTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MudSlapeDeclined
-	msgbox MoveTutor_Text_MudSlapWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_MUD_SLAP
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MudSlapeDeclined
-	goto MoveTutor_EventScript_MudSlapTaught
-	end
-
-MoveTutor_EventScript_MudSlapeDeclined::
-	msgbox MoveTutor_Text_MudSlapDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_MudSlapTaught::
-	msgbox MoveTutor_Text_MudSlapTaught, MSGBOX_DEFAULT
-	release
-	end
-
-// Petalburg Move Tutor
+// Petalburg Move Tutor (new)
 PetalburgCity_PokemonCenter_1F_EventScript_MoveTutor::
 	lock
 	faceplayer
@@ -447,9 +29,9 @@ PetalburgCity_PokemonCenter_1F_EventScript_TutorMove::
 	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
 	switch VAR_RESULT
 	case 0, PetalburgCity_PokemonCenter_1F_EventScript_BugBiteTutor
-	case 1, PetalburgCity_PokemonCenter_1F_EventScript_FireFangTutor
-	case 2, PetalburgCity_PokemonCenter_1F_EventScript_ThunderFangTutor
-	case 3, PetalburgCity_PokemonCenter_1F_EventScript_IceFangTutor
+	case 1, PetalburgCity_PokemonCenter_1F_EventScript_CovetTutor
+	case 2, PetalburgCity_PokemonCenter_1F_EventScript_WaterPulseTutor
+	case 3, PetalburgCity_PokemonCenter_1F_EventScript_DualChopTutor
 	case 4, PetalburgCity_PokemonCenter_1F_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, PetalburgCity_PokemonCenter_1F_EventScript_ExitTutorMoveSelect
 	end
@@ -495,19 +77,221 @@ PetalburgCity_PokemonCenter_1F_EventScript_BugBiteTutor::
 	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_FireFangTutor::
-	setvar VAR_0x8005, MOVE_FIRE_FANG
+PetalburgCity_PokemonCenter_1F_EventScript_CovetTutor::
+	setvar VAR_0x8005, MOVE_COVET
 	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_ThunderFangTutor::
-	setvar VAR_0x8005, MOVE_THUNDER_FANG
+PetalburgCity_PokemonCenter_1F_EventScript_WaterPulseTutor::
+	setvar VAR_0x8005, MOVE_WATER_PULSE
 	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_IceFangTutor::
-	setvar VAR_0x8005, MOVE_ICE_FANG
+PetalburgCity_PokemonCenter_1F_EventScript_DualChopTutor::
+	setvar VAR_0x8005, MOVE_DUAL_CHOP
 	goto PetalburgCity_PokemonCenter_1F_EventScript_ConfirmMoveSelection
+	end
+
+// New
+RustboroCity_PokemonSchool_EventScript_MudSlapTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_MudSlapTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MudSlapeDeclined
+	msgbox MoveTutor_Text_MudSlapWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MUD_SLAP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MudSlapeDeclined
+	goto MoveTutor_EventScript_MudSlapTaught
+	end
+
+MoveTutor_EventScript_MudSlapeDeclined::
+	msgbox MoveTutor_Text_MudSlapDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_MudSlapTaught::
+	msgbox MoveTutor_Text_MudSlapTaught, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_SwaggerTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SwaggerDeclined
+	msgbox MoveTutor_Text_SwaggerWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SWAGGER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SwaggerDeclined
+	goto MoveTutor_EventScript_SwaggerTaught
+	end
+
+MoveTutor_EventScript_SwaggerDeclined::
+	msgbox MoveTutor_Text_SwaggerDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SwaggerTaught::
+	msgbox MoveTutor_Text_SwaggerTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+MauvilleCity_EventScript_IceBallTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_IceBallTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_IceBallDeclined
+	msgbox MoveTutor_Text_IceBallWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ICE_BALL
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_IceBallDeclined
+	goto MoveTutor_EventScript_IceBallTaught
+	end
+
+MoveTutor_EventScript_IceBallDeclined::
+	msgbox MoveTutor_Text_IceBallDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_IceBallTaught::
+	msgbox MoveTutor_Text_IceBallTaught, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_FuryCutterTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FuryCutterDeclined
+	msgbox MoveTutor_Text_FuryCutterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FURY_CUTTER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FuryCutterDeclined
+	goto MoveTutor_EventScript_FuryCutterTaught
+	end
+
+MoveTutor_EventScript_FuryCutterDeclined::
+	msgbox MoveTutor_Text_FuryCutterDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FuryCutterTaught::
+	msgbox MoveTutor_Text_FuryCutterTaught, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_Mart_EventScript_MetronomeTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_MetronomeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MetronomeDeclined
+	msgbox MoveTutor_Text_MetronomeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_METRONOME
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MetronomeDeclined
+	goto MoveTutor_EventScript_MetronomeTaught
+	end
+
+MoveTutor_EventScript_MetronomeDeclined::
+	msgbox MoveTutor_Text_MetronomeDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_MetronomeTaught::
+	msgbox MoveTutor_Text_MetronomeTaught, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_House_EventScript_MimicTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_MimicTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MimicDeclined
+	msgbox MoveTutor_Text_MimicWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MIMIC
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MimicDeclined
+	goto MoveTutor_EventScript_MimicTaught
+	end
+
+MoveTutor_EventScript_MimicDeclined::
+	msgbox MoveTutor_MimicDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_MimicTaught::
+	msgbox MoveTutor_Text_MimicTaught, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_House2_EventScript_SleepTalkTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_SleepTalkTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SleepTalkDeclined
+	msgbox MoveTutor_Text_SleepTalkWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SLEEP_TALK
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SleepTalkDeclined
+	goto MoveTutor_EventScript_SleepTalkTaught
+	end
+
+MoveTutor_EventScript_SleepTalkDeclined::
+	msgbox MoveTutor_Text_SleepTalkDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SleepTalkTaught::
+	msgbox MoveTutor_Text_SleepTalkTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route112_EventScript_ScorchingSandsTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_ScorchingSandsTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ScorchingSandsDeclined
+	msgbox MoveTutor_Text_ScorchingSandsWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SCORCHING_SANDS
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ScorchingSandsDeclined
+	goto MoveTutor_EventScript_ScorchingSandsTaught
+	end
+
+MoveTutor_EventScript_ScorchingSandsDeclined::
+	msgbox MoveTutor_Text_ScorchingSandsDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_ScorchingSandsTaught::
+	msgbox MoveTutor_Text_ScorchingSandsTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route119_EventScript_GrassyGlideTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_GrassyGlideTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_GrassyGlideDeclined
+	msgbox MoveTutor_Text_GrassyGlideWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_GRASSY_GLIDE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_GrassyGlideDeclined
+	goto MoveTutor_EventScript_GrassyGlideTaught
+	end
+
+MoveTutor_EventScript_GrassyGlideDeclined::
+	msgbox MoveTutor_Text_GrassyGlideDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_GrassyGlideTaught::
+	msgbox MoveTutor_Text_GrassyGlideTaught, MSGBOX_DEFAULT
+	release
 	end
 
 // Lilycove Move Tutor
@@ -532,13 +316,13 @@ LilycoveCity_DepartmentStore_4F_EventScript_TutorMove::
 	case 1, LilycoveCity_DepartmentStore_4F_EventScript_LeafStormTutor
 	case 2, LilycoveCity_DepartmentStore_4F_EventScript_SheerColdTutor
 	case 3, LilycoveCity_DepartmentStore_4F_EventScript_DracoMeteorTutor
-	case 4, LilycoveCity_DepartmentStore_4F_EventScript_HeatCrashTutor
-	case 5, LilycoveCity_DepartmentStore_4F_EventScript_RazorShellTutor
+	case 4, LilycoveCity_DepartmentStore_4F_EventScript_FoulPlayTutor
+	case 5, LilycoveCity_DepartmentStore_4F_EventScript_SkyAttackTutor
 	case 6, LilycoveCity_DepartmentStore_4F_EventScript_InfestationTutor
 	case 7, LilycoveCity_DepartmentStore_4F_EventScript_FireSpinTutor
 	case 8, LilycoveCity_DepartmentStore_4F_EventScript_WhirlpoolTutor
-	case 9, LilycoveCity_DepartmentStore_4F_EventScript_AquaTailTutor
-	case 10, LilycoveCity_DepartmentStore_4F_EventScript_TailwindTutor
+	case 9, LilycoveCity_DepartmentStore_4F_EventScript_PainSplitTutor
+	case 10, LilycoveCity_DepartmentStore_4F_EventScript_SuperpowerTutor
 	case 11, LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, LilycoveCity_DepartmentStore_4F_EventScript_ExitTutorMoveSelect
 	end
@@ -599,13 +383,13 @@ LilycoveCity_DepartmentStore_4F_EventScript_DracoMeteorTutor::
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_HeatCrashTutor::
-	setvar VAR_0x8005, MOVE_HEAT_CRASH
+LilycoveCity_DepartmentStore_4F_EventScript_FoulPlayTutor::
+	setvar VAR_0x8005, MOVE_FOUL_PLAY
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_RazorShellTutor::
-	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+LilycoveCity_DepartmentStore_4F_EventScript_SkyAttackTutor::
+	setvar VAR_0x8005, MOVE_SKY_ATTACK
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
@@ -624,12 +408,239 @@ LilycoveCity_DepartmentStore_4F_EventScript_WhirlpoolTutor::
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_AquaTailTutor::
-	setvar VAR_0x8005, MOVE_AQUA_TAIL
+LilycoveCity_DepartmentStore_4F_EventScript_PainSplitTutor::
+	setvar VAR_0x8005, MOVE_PAIN_SPLIT
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
 	end
 
-LilycoveCity_DepartmentStore_4F_EventScript_TailwindTutor::
-	setvar VAR_0x8005, MOVE_TAILWIND
+LilycoveCity_DepartmentStore_4F_EventScript_SuperpowerTutor::
+	setvar VAR_0x8005, MOVE_SUPERPOWER
 	goto LilycoveCity_DepartmentStore_4F_EventScript_ConfirmMoveSelection
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_SubstituteTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_SubstituteTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SubstituteDeclined
+	msgbox MoveTutor_Text_SubstituteWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SUBSTITUTE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SubstituteDeclined
+	goto MoveTutor_EventScript_SubstituteTaught
+	end
+
+MoveTutor_EventScript_SubstituteDeclined::
+	msgbox MoveTutor_Text_SubstituteDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SubstituteTaught::
+	msgbox MoveTutor_Text_SubstituteTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+MossdeepCity_EventScript_CloseCombatTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_CloseCombatTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_CloseCombatDeclined
+	msgbox MoveTutor_Text_CloseCombatWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_CLOSE_COMBAT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_CloseCombatDeclined
+	goto MoveTutor_EventScript_CloseCombatTaught
+	end
+
+MoveTutor_EventScript_CloseCombatDeclined::
+	msgbox MoveTutor_Text_CloseCombatDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_CloseCombatTaught::
+	msgbox MoveTutor_Text_CloseCombatTaught, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_PokemonCenter_1F_EventScript_ExplosionTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_ExplosionTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ExplosionDeclined
+	msgbox MoveTutor_Text_ExplosionWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_EXPLOSION
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ExplosionDeclined
+	goto MoveTutor_EventScript_ExplosionTaught
+	end
+
+MoveTutor_EventScript_ExplosionDeclined::
+	msgbox MoveTutor_Text_ExplosionDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_ExplosionTaught::
+	msgbox MoveTutor_Text_ExplosionTaught, MSGBOX_DEFAULT
+	release
+	end
+
+SootopolisCity_PokemonCenter_1F_EventScript_DoubleEdgeTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_DoubleEdgeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DoubleEdgeDeclined
+	msgbox MoveTutor_Text_DoubleEdgeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_DOUBLE_EDGE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DoubleEdgeDeclined
+	goto MoveTutor_EventScript_DoubleEdgeTaught
+	end
+
+MoveTutor_EventScript_DoubleEdgeDeclined::
+	msgbox MoveTutor_Text_DoubleEdgeDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DoubleEdgeTaught::
+	msgbox MoveTutor_Text_DoubleEdgeTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route109_EventScript_BraveBirdTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_BraveBirdTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_BraveBirdDeclined
+	msgbox MoveTutor_Text_BraveBirdWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BRAVE_BIRD
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_BraveBirdDeclined
+	goto MoveTutor_EventScript_BraveBirdTaught
+	end
+
+MoveTutor_EventScript_BraveBirdDeclined::
+	msgbox MoveTutor_Text_BraveBirdDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_BraveBirdTaught::
+	msgbox MoveTutor_Text_BraveBirdTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route116_EventScript_FlareBlitzTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_FlareBlitzTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FlareBlitzDeclined
+	msgbox MoveTutor_Text_FlareBlitzWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FLARE_BLITZ
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FlareBlitzDeclined
+	goto MoveTutor_EventScript_FlareBlitzTaught
+	end
+
+MoveTutor_EventScript_FlareBlitzDeclined::
+	msgbox MoveTutor_Text_FlareBlitzDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FlareBlitzTaught::
+	msgbox MoveTutor_Text_FlareBlitzTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route125_EventScript_WildChargeTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_WildChargeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_WildChargeDeclined
+	msgbox MoveTutor_Text_WildChargeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_WILD_CHARGE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_WildChargeDeclined
+	goto MoveTutor_EventScript_WildChargeTaught
+	end
+
+MoveTutor_EventScript_WildChargeDeclined::
+	msgbox MoveTutor_Text_WildChargeDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_WildChargeTaught::
+	msgbox MoveTutor_Text_WildChargeTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+PetalburgWoods_EventScript_SkitterSmackTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_SkitterSmackTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SkitterSmackDeclined
+	msgbox MoveTutor_Text_SkitterSmackWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SKITTER_SMACK
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SkitterSmackDeclined
+	goto MoveTutor_EventScript_SkitterSmackTaught
+	end
+
+MoveTutor_EventScript_SkitterSmackDeclined::
+	msgbox MoveTutor_Text_SkitterSmackDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SkitterSmackTaught::
+	msgbox MoveTutor_Text_SkitterSmackTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+NewMauville_Inside_EventScript_RisingVoltageTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_RisingVoltageTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RisingVoltageDeclined
+	msgbox MoveTutor_Text_RisingVoltageWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RisingVoltageDeclined
+	goto MoveTutor_EventScript_RisingVoltageTaught
+	end
+
+MoveTutor_EventScript_RisingVoltageDeclined::
+	msgbox MoveTutor_Text_RisingVoltageDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RisingVoltageTaught::
+	msgbox MoveTutor_Text_RisingVoltageTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+VictoryRoad_B1F_EventScript_ExpandingForceTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_ExpandingForceTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ExpandingForceDeclined
+	msgbox MoveTutor_Text_ExpandingForceWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ExpandingForceDeclined
+	goto MoveTutor_EventScript_ExpandingForceTaught
+	end
+
+MoveTutor_EventScript_ExpandingForceDeclined::
+	msgbox MoveTutor_Text_ExpandingForceDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_ExpandingForceTaught::
+	msgbox MoveTutor_Text_ExpandingForceTaught, MSGBOX_DEFAULT
+	release
 	end
