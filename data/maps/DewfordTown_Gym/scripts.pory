@@ -1,7 +1,12 @@
 raw `
 DewfordTown_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, DewfordTown_Gym_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_Gym_OnTransition
 	.byte 0
+
+DewfordTown_Gym_OnResume:
+    setvar B_VAR_STARTING_STATUS, STARTING_STATUS_GRASSY_TERRAIN
+	return
 
 DewfordTown_Gym_OnTransition:
     setvar B_VAR_STARTING_STATUS, STARTING_STATUS_GRASSY_TERRAIN
@@ -191,7 +196,7 @@ DewfordTown_Gym_Text_LauraPostBattle:
 
 DewfordTown_Gym_Text_LilithIntro:
 	.string "Ufufu…\n"
-	.string "Scared, little bro?$"
+	.string "Scared yet, little one?$"
 
 DewfordTown_Gym_Text_LilithDefeat:
 	.string "Oh, you…\n"
@@ -216,7 +221,7 @@ DewfordTown_Gym_Text_BrendenPostBattle:
 	.string "get hard.$"
 
 DewfordTown_Gym_Text_CristianIntro:
-	.string "Time to take care of the vines$"
+	.string "Time to take care of the vines!$"
 
 DewfordTown_Gym_Text_CristianDefeat:
 	.string "Ah, fungus$"
@@ -251,7 +256,7 @@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM123 contains Seed Bomb.\p"
-	.string "never underestimate the persistence of"
+	.string "never underestimate the persistence of\n"
 	.string "Grass-types.\p"
 	.string "… … … … … …$"
 
@@ -260,9 +265,10 @@ DewfordTown_Gym_Text_RegisteredBrawly:
 	.string "in the PokéNav.$"
 
 DewfordTown_Gym_Text_BrawlyPostBattle:
-	.string "By the way if the whole “Champion”\n"
-	.string "thing doesn't work out I'd love to\l"
-	.string "have you here as a gardener.\p"
+	.string "By the way, if the whole “Champion”\n"
+	.string "thing doesn't work out,\l"
+	.string "I'd love to have you here as a\l"
+	.string "gardener.\p"
 	.string "The pay is great, and you get to learn\n"
 	.string "about the beauty of plant life.$"
 

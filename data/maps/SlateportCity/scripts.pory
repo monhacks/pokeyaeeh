@@ -375,11 +375,12 @@ SlateportCity_EventScript_ManiacSternInterview::
 SlateportCity_EventScript_Woman2::
 	lock
 	faceplayer
-	goto_if_set FLAG_MET_SLATEPORT_WOMAN, SlateportCity_EventScriptWelcomeToSlateport
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_HARBOR_MAIL_RECEIVED, SlateportCity_EventScriptWelcomeToSlateport
 	msgbox SlateportCity_Text_WelcomeToSlateportMarket, MSGBOX_NPC
 	giveitem ITEM_HARBOR_MAIL
 	msgbox SlateportCity_Text_EnjoyYourStay, MSGBOX_NPC
-	setflag FLAG_MET_SLATEPORT_WOMAN
+	setflag FLAG_DAILY_HARBOR_MAIL_RECEIVED
 	release
 	end
 
@@ -1217,15 +1218,15 @@ SlateportCity_Text_GetNameRaterToHelpYou:
 	.string "Rater to help you.$"
 
 SlateportCity_Text_WelcomeToSlateportMarket:
-	.string "Welcome to the Slateport Market\n"
+	.string "Welcome to the Slateport Market,\n"
 	.string "The novelty place of Hoenn!\p"
-	.string "Please take this as a welcoming gift!$"
+	.string "Please accept this gift!$"
 
 SlateportCity_Text_EnjoyYourStay:
 	.string "We hope you enjoy your stay here!$"
 
 SlateportCity_Text_WelcomeToSlateportMarket2:
-	.string "Welcome to the Slateport Market\n"
+	.string "Welcome to the Slateport Market,\n"
 	.string "The novelty place of Hoenn!\p"
 	.string "We hope you enjoy your stay here!$"
 
