@@ -78,9 +78,14 @@ MauvilleCity_EventScript_Wally::
 	waitdooranim
 	addobject LOCALID_WALLY
 	applymovement LOCALID_WALLY, Common_Movement_WalkDown
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	delay 1
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_PushDownFromUp
-	waitmovement 0
 	closedoor 8, 5
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
 	msgbox MauvilleCity_Text_WallyGreetAndBattle, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat
 	msgbox MauvilleCity_Text_WallyThankYou, MSGBOX_AUTOCLOSE
@@ -266,13 +271,14 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	end
 
 MauvilleCity_Text_WallyGreetAndBattle:
-	.string "Oh?\p"
+	.string "Oh?\n"
 	.string "Sorry, I'm blocking your way.\p"
-	.string "Hello, my name is Wally.\n"
-	.string "I'm a Pokémon Trainer, from Petalburg\l"
+	.string "Hello, my name is Wally.\p"
+	.string "I'm a Pokémon Trainer, from Petalburg\n"
 	.string "City.\p"
 	.string "I see you're a Pokémon Trainer, too.\p"
-	.string "Whaddya say, how about a quick battle?\p"
+	.string "Whaddya say,\n"
+	.string "how about a quick battle?\p"
 	.string "… … …\p"
 	.string "That's the spirit! Here I come!$"
 
@@ -282,11 +288,12 @@ MauvilleCity_Text_WallyDefeat:
 	.string "I lost…$"
 
 MauvilleCity_Text_WallyThankYou:
-	.string "{PLAYER}, thank you.\n"
+	.string "Boy, was that fun!\p"
 	.string "Being a Trainer is tough, isn't it?\p"
 	.string "It's not enough just to have Pokémon\n"
-	.string "and make them battle. That isn't what\l"
-	.string "being a real Trainer is about.\p"
+	.string "and make them battle.\p"
+	.string "That isn't what being a real Trainer\n"
+	.string "is about.\p"
 	.string "{PLAYER}, I hope our paths cross again.$"
 
 MauvilleCity_Text_WallyPokenavCall:
