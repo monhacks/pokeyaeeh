@@ -5175,7 +5175,7 @@ static bool8 CalculateMoves(void)
     u8 i,j;
 
     // Mega pokemon don't have distinct learnsets from their base form; so use base species for calculation
-    if ((species >= SPECIES_VENUSAUR_MEGA && species <= SPECIES_GROUDON_PRIMAL) || (species >= SPECIES_BUTTERFREE_MEGA && species <= SPECIES_RAICHU_MEGA))
+    if ((species >= SPECIES_VENUSAUR_MEGA && species <= SPECIES_GROUDON_PRIMAL) || (species >= SPECIES_BUTTERFREE_MEGA && species <= SPECIES_TROPIUS_MEGA))
         species = GetFormSpeciesId(species, 0);
 
     //Calculate amount of Egg and LevelUp moves

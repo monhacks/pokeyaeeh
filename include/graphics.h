@@ -8276,6 +8276,12 @@ extern const u8 gMonIcon_RaichuMega[];
 extern const u32 gMonPalette_RaichuMega[];
 extern const u32 gMonShinyPalette_RaichuMega[];
 
+extern const u32 gMonFrontPic_TropiusMega[];
+extern const u32 gMonBackPic_TropiusMega[];
+extern const u8 gMonIcon_TropiusMega[];
+extern const u32 gMonPalette_TropiusMega[];
+extern const u32 gMonShinyPalette_TropiusMega[];
+
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
 extern const u32 gMenuPokeblock_Pal[];

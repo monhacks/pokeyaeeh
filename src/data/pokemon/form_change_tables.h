@@ -825,7 +825,12 @@ static const struct FormChange sMiloticFormChangeTable[] = {
 };
 
 static const struct FormChange sRaichuFormChangeTable[] = {
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_RAICHU_MEGA,   ITEM_RAICHUNITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_RAICHU_MEGA,    ITEM_RAICHUNITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sTropiusFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_TROPIUS_MEGA,   ITEM_TROPIUSITE},
     {FORM_CHANGE_TERMINATOR},
 };
 

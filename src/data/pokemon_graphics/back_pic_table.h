@@ -1510,6 +1510,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(NIDOKING_MEGA, gMonBackPic_NidokingMega),
     SPECIES_SPRITE(MILOTIC_MEGA, gMonBackPic_MiloticMega),
     SPECIES_SPRITE(RAICHU_MEGA, gMonBackPic_RaichuMega),
+    SPECIES_SPRITE(TROPIUS_MEGA, gMonBackPic_TropiusMega),
     SPECIES_SPRITE(EGG, gMonFrontPic_Egg),
 };
 

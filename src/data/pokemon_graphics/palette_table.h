@@ -1508,6 +1508,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(NIDOKING_MEGA, gMonPalette_NidokingMega),
     SPECIES_PAL(MILOTIC_MEGA, gMonPalette_MiloticMega),
     SPECIES_PAL(RAICHU_MEGA, gMonPalette_RaichuMega),
+    SPECIES_PAL(TROPIUS_MEGA, gMonPalette_TropiusMega),
     SPECIES_PAL(EGG, gMonPalette_Egg),
 };
 

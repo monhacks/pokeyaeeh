@@ -1876,6 +1876,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_NIDOKING_MEGA - 1] = NATIONAL_DEX_NIDOKING,
     [SPECIES_MILOTIC_MEGA - 1] = NATIONAL_DEX_MILOTIC,
     [SPECIES_RAICHU_MEGA - 1] = NATIONAL_DEX_RAICHU,
+    [SPECIES_TROPIUS_MEGA - 1] = NATIONAL_DEX_TROPIUS,
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index

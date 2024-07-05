@@ -1371,3 +1371,9 @@ static const u16 sMiloticFormSpeciesIdTable[] = {
     SPECIES_MILOTIC_MEGA,
     FORM_SPECIES_END,
 };
+
+static const u16 sTropiusFormSpeciesIdTable[] = {
+    SPECIES_TROPIUS,
+    SPECIES_TROPIUS_MEGA,
+    FORM_SPECIES_END,
+};

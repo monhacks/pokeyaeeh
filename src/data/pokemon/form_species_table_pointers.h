@@ -80,6 +80,7 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_ALTARIA] = sAltariaFormSpeciesIdTable,
     [SPECIES_CASTFORM_NORMAL] = sCastformFormSpeciesIdTable,
     [SPECIES_BANETTE] = sBanetteFormSpeciesIdTable,
+    [SPECIES_TROPIUS] = sTropiusFormSpeciesIdTable,
     [SPECIES_ABSOL] = sAbsolFormSpeciesIdTable,
     [SPECIES_GLALIE] = sGlalieFormSpeciesIdTable,
     [SPECIES_SALAMENCE] = sSalamenceFormSpeciesIdTable,
@@ -695,4 +696,5 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     [SPECIES_MILOTIC_MEGA] = sMiloticFormSpeciesIdTable,
 
     [SPECIES_RAICHU_MEGA] = sRaichuFormSpeciesIdTable,
+    [SPECIES_TROPIUS_MEGA] = sTropiusFormSpeciesIdTable,
 };

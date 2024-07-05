@@ -1651,8 +1651,9 @@
 #define SPECIES_NIDOKING_MEGA                    FORMS_START + 377
 #define SPECIES_MILOTIC_MEGA                     FORMS_START + 378
 #define SPECIES_RAICHU_MEGA                      FORMS_START + 379
+#define SPECIES_TROPIUS_MEGA                     FORMS_START + 380
 
-#define SPECIES_EGG                              SPECIES_RAICHU_MEGA + 1
+#define SPECIES_EGG                              SPECIES_TROPIUS_MEGA + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

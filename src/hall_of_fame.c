@@ -708,6 +708,10 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_SWAMPERTITE)
                 return SPECIES_SWAMPERT_MEGA;
         break;
+        case SPECIES_TROPIUS:
+            if(item == ITEM_TROPIUSITE)
+                return SPECIES_TROPIUS_MEGA;
+        break;
         case SPECIES_TYRANITAR:
             if(item == ITEM_TYRANITARITE)
                 return SPECIES_TYRANITAR_MEGA;

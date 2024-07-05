@@ -10359,6 +10359,12 @@ static const union AnimCmd sAnim_RaichuMega_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_TropiusMega_1[] = 
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_PikachuCosplay_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -12130,6 +12136,7 @@ SINGLE_ANIMATION(NidoqueenMega);
 SINGLE_ANIMATION(NidokingMega);
 SINGLE_ANIMATION(MiloticMega);
 SINGLE_ANIMATION(RaichuMega);
+SINGLE_ANIMATION(TropiusMega);
 
 const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
 {   // Gen 1
@@ -13591,5 +13598,6 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
     [SPECIES_NIDOKING_MEGA]                  = sAnims_NidokingMega,
     [SPECIES_MILOTIC_MEGA]                   = sAnims_MiloticMega,
     [SPECIES_RAICHU_MEGA]                    = sAnims_RaichuMega,
+    [SPECIES_TROPIUS_MEGA]                   = sAnims_TropiusMega,
     [SPECIES_EGG]                            = sAnims_Egg,
 };

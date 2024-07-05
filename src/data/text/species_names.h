@@ -1523,4 +1523,5 @@ const u8 gSpeciesNames[NUM_SPECIES][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_NIDOKING_MEGA] = _("Nidoking"),
     [SPECIES_MILOTIC_MEGA] = _("Milotic"),
     [SPECIES_RAICHU_MEGA] = _("Raichu"),
+    [SPECIES_TROPIUS_MEGA] = _("Tropius"),
 };

@@ -28171,4 +28171,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
+
+    [SPECIES_TROPIUS_MEGA] =
+    {
+        .baseHP        = 104,
+        .baseAttack    = 78,
+        .baseDefense   = 123,
+        .baseSpeed     = 41,
+        .baseSpAttack  = 132,
+        .baseSpDefense = 127,
+        .types = { TYPE_GRASS, TYPE_DRAGON},
+        .catchRate = 200,
+        .expYield = 161,
+        .evYield_HP        = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
+        .abilities = {ABILITY_THICK_FAT, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_GREEN,
+        .noFlip = FALSE,
+    },
 };
