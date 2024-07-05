@@ -4878,7 +4878,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         break;
     case EFFECT_TAILWIND:
         if (GetBattlerSideSpeedAverage(battlerAtk) < GetBattlerSideSpeedAverage(battlerDef))
-            ADJUST_SCORE(2);
+            ADJUST_SCORE(8);
         break;
     case EFFECT_LUCKY_CHANT:
         if (!isDoubleBattle)
@@ -5109,7 +5109,7 @@ static s32 AI_SetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_METAL_TERRAIN:
     case EFFECT_MOONFALL:
     case EFFECT_SHELTER:
-        ADJUST_SCORE(2);
+        ADJUST_SCORE(4);
         break;
     default:
         break;

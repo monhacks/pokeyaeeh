@@ -17350,22 +17350,22 @@ static const struct TrainerMon sParty_Ashley[] = {
 
 static const struct TrainerMon sParty_WallyMauville[] = {
     {
+        .species = SPECIES_TALONFLAME,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = ABILITY_GALE_WINGS,
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_BRAVE_BIRD, MOVE_TAILWIND, MOVE_WILL_O_WISP, MOVE_DUAL_WINGBEAT},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
         .species = SPECIES_GOGOAT,
         .heldItem = ITEM_GRASSY_SEED,
         .ability = ABILITY_GRASSY_SURGE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .moves = {MOVE_LEAF_BLADE, MOVE_HIGH_HORSEPOWER, MOVE_LEECH_SEED, MOVE_DOUBLE_EDGE},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1
-    },
-    {
-        .species = SPECIES_TALONFLAME,
-        .heldItem = ITEM_FOCUS_SASH,
-        .ability = ABILITY_GALE_WINGS,
-        .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
-        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_BRAVE_BIRD, MOVE_TAILWIND, MOVE_DUAL_WINGBEAT, MOVE_FLARE_BLITZ},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 1
     },
@@ -17383,11 +17383,11 @@ static const struct TrainerMon sParty_WallyMauville[] = {
     {
         .species = SPECIES_MAGNEZONE,
         .heldItem = ITEM_SHELL_BELL,
-        .ability = ABILITY_ANALYTIC,
+        .ability = ABILITY_STURDY,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 252, 4),
-        .nature = TRAINER_PARTY_NATURE(NATURE_RELAXED),
+        .nature = TRAINER_PARTY_NATURE(NATURE_BOLD),
         .moves = {MOVE_HARD_PRESS, MOVE_IRON_DEFENSE, MOVE_THUNDERBOLT, MOVE_TOXIC},
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .lvl = 1
     },
     {
