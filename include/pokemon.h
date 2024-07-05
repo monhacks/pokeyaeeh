@@ -661,8 +661,5 @@ u8 CalculatePartyCount(struct Pokemon *party);
 u16 SanitizeSpeciesId(u16 species);
 bool32 IsSpeciesEnabled(u16 species);
 u8 GetLevelCap(void);
-bool8 IsSpeciesAffectedByScalemons(u16 species);
-u32 GetBaseStatsTotal(const u16 species);
-u8 GetVisualBaseStat(u8 statId, u16 species);
 
 #endif // GUARD_POKEMON_H
