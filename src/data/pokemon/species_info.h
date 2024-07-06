@@ -12939,10 +12939,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_ROGGENROLA] =
     {
         .baseHP        = 55,
-        .baseAttack    = 75,
+        .baseAttack    = 35,
         .baseDefense   = 85,
         .baseSpeed     = 15,
-        .baseSpAttack  = 25,
+        .baseSpAttack  = 65,
         .baseSpDefense = 25,
         .types = { TYPE_ROCK, TYPE_ROCK},
         .catchRate = 255,
@@ -12963,10 +12963,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_BOLDORE] =
     {
         .baseHP        = 70,
-        .baseAttack    = 105,
+        .baseAttack    = 50,
         .baseDefense   = 105,
         .baseSpeed     = 20,
-        .baseSpAttack  = 50,
+        .baseSpAttack  = 105,
         .baseSpDefense = 40,
         .types = { TYPE_ROCK, TYPE_ROCK},
         .catchRate = 120,
@@ -28175,7 +28175,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_TROPIUS_MEGA] =
     {
         .baseHP        = 104,
-        .baseAttack    = 78,
+        .baseAttack    = 68,
         .baseDefense   = 123,
         .baseSpeed     = 41,
         .baseSpAttack  = 132,
