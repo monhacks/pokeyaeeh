@@ -9517,12 +9517,12 @@ const struct Item gItems[] =
 
 // Battle Mechanic Key Items
 
-    [ITEM_MEGA_RING] =
+    [ITEM_MEGA_BRACELET] =
     {
-        .name = _("Mega Ring"),
+        .name = _("Mega Bracelet"),
         .price = 0,
         .importance = 1,
-        .description = sMegaRingDesc,
+        .description = sMegaBraceletDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

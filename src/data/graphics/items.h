@@ -1793,8 +1793,8 @@ const u32 gItemIconPalette_ReinsOfUnity[] = INCBIN_U32("graphics/items/icon_pale
 
 // Battle Mechanic Key Items
 
-const u32 gItemIcon_MegaRing[] = INCBIN_U32("graphics/items/icons/mega_ring.4bpp.lz");
-const u32 gItemIconPalette_MegaRing[] = INCBIN_U32("graphics/items/icon_palettes/mega_ring.gbapal.lz");
+const u32 gItemIcon_MegaBracelet[] = INCBIN_U32("graphics/items/icons/mega_bracelet.4bpp.lz");
+const u32 gItemIconPalette_MegaBracelet[] = INCBIN_U32("graphics/items/icon_palettes/mega_bracelet.gbapal.lz");
 
 const u32 gItemIcon_ZPowerRing[] = INCBIN_U32("graphics/items/icons/z_power_ring.4bpp.lz");
 const u32 gItemIconPalette_ZPowerRing[] = INCBIN_U32("graphics/items/icon_palettes/z_power_ring.gbapal.lz");

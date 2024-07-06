@@ -9775,8 +9775,8 @@ extern const u32 gItemIconPalette_NLunarizer[];
 extern const u32 gItemIcon_ReinsOfUnity[];
 extern const u32 gItemIconPalette_ReinsOfUnity[];
 // Battle Mechanic Key Items
-extern const u32 gItemIcon_MegaRing[];
-extern const u32 gItemIconPalette_MegaRing[];
+extern const u32 gItemIcon_MegaBracelet[];
+extern const u32 gItemIconPalette_MegaBracelet[];
 extern const u32 gItemIcon_ZPowerRing[];
 extern const u32 gItemIconPalette_ZPowerRing[];
 extern const u32 gItemIcon_DynamaxBand[];

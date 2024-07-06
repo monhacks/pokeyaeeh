@@ -1082,7 +1082,7 @@
 #define ITEM_REINS_OF_UNITY 777
 
 // Battle Mechanic Key Items
-#define ITEM_MEGA_RING 778
+#define ITEM_MEGA_BRACELET 778
 #define ITEM_Z_POWER_RING 779
 #define ITEM_DYNAMAX_BAND 780
 

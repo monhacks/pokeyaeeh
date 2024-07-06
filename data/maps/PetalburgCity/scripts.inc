@@ -358,7 +358,7 @@ PetalburgCity_EventScript_ProfBirch::
 	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkUp
 	waitmovement 0
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_0, MSGBOX_AUTOCLOSE
-	giveitem ITEM_MEGA_RING, 1
+	giveitem ITEM_MEGA_BRACELET, 1
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_1, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message PetalburgCity_EventScript_ProfBirch_Text_2

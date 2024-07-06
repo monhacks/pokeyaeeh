@@ -10995,9 +10995,9 @@ bool32 CanMegaEvolve(u32 battler)
     else
         holdEffect = ItemId_GetHoldEffect(itemId);
 
-    // Check if Player has a Mega Ring
+    // Check if Player has a Mega Bracelet
     if ((GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT))
-     && !CheckBagHasItem(ITEM_MEGA_RING, 1))
+     && !CheckBagHasItem(ITEM_MEGA_BRACELET, 1))
         return FALSE;
 
     // Check if trainer already mega evolved a pokemon.
@@ -11063,7 +11063,7 @@ bool32 CanUltraBurst(u32 battler)
 
     // Check if Player has a Z Ring
     if ((GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT))
-     && !CheckBagHasItem(ITEM_MEGA_RING, 1))
+     && !CheckBagHasItem(ITEM_MEGA_BRACELET, 1))
         return FALSE;
 
     // Check if trainer already ultra bursted a pokemon.

@@ -849,7 +849,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_N_LUNARIZER] = {gItemIcon_NecrozmaFuser, gItemIconPalette_NLunarizer},
     [ITEM_REINS_OF_UNITY] = {gItemIcon_ReinsOfUnity, gItemIconPalette_ReinsOfUnity},
     // Battle Mechanic Key Items
-    [ITEM_MEGA_RING] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_MEGA_BRACELET] = {gItemIcon_MegaBracelet, gItemIconPalette_MegaBracelet},
     [ITEM_Z_POWER_RING] = {gItemIcon_ZPowerRing, gItemIconPalette_ZPowerRing},
     [ITEM_DYNAMAX_BAND] = {gItemIcon_DynamaxBand, gItemIconPalette_DynamaxBand},
     // Misc. Key Items

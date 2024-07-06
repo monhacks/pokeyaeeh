@@ -367,7 +367,7 @@ script PetalburgCity_EventScript_ProfBirch{
 			"Anyway, I've got something really\n"
 			"special for you.\p"
 			"It took some time, but it's finally here!", MSGBOX_AUTOCLOSE)
-	giveitem(ITEM_MEGA_RING, 1)
+	giveitem(ITEM_MEGA_BRACELET, 1)
 	msgbox("And these, too!", MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} received some Mega Stones!")

@@ -4014,7 +4014,7 @@ static const u8 sReinsOfUnityDesc[] = _(
     "beloved steed.");
 
 // Battle Mechanic Key Items
-static const u8 sMegaRingDesc[] = _(
+static const u8 sMegaBraceletDesc[] = _(
     "Enables {PKMN} holding\n"
     "their Mega Stone to\n"
     "Mega Evolve.");
