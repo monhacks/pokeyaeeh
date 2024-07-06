@@ -21015,18 +21015,34 @@ static const struct TrainerMon sParty_Brawly2[] = {
 
 static const struct TrainerMon sParty_GruntMeteorFalls[] = {
     {
+    .species = SPECIES_BLAZIKEN,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = ABILITY_SPEED_BOOST,
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 252, 0),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MACHAMP,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_KARATE_CHOP, MOVE_ROCK_SLIDE, MOVE_FOCUS_PUNCH, MOVE_BULK_UP}
+    .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+    .moves = {MOVE_PROTECT, MOVE_BLAZE_KICK, MOVE_HIGH_JUMP_KICK, MOVE_SKY_ATTACK},
+    .lvl = 1
     },
     {
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_NO_GUARD,
+    .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
+    .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+    .moves = {MOVE_DYNAMIC_PUNCH, MOVE_ROCK_SLIDE, MOVE_FIRE_PUNCH, MOVE_BULK_UP},
+    .lvl = 1
+    },
+    {
     .species = SPECIES_MEDICHAM,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PSYCHIC, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_FOCUS_PUNCH}
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = ABILITY_PURE_POWER,
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 252, 0),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+    .moves = {MOVE_ZEN_HEADBUTT, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_KNUCKLE_PUNCH},
+    .lvl = 1
     }
 };
 

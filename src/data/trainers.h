@@ -8621,7 +8621,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRUNT_METEOR_FALLS] =
     {
-         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
+        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .trainerName = _("Grunt"),

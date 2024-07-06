@@ -770,6 +770,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         break;
     }
 
+    // force the ai to use lava plume/surf if ally will benefit
+    if (isDoubleBattle && (moveType == TYPE_FIRE || moveType == TYPE_WATER) && (aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_STEAM_ENGINE) && (moveTarget == MOVE_TARGET_FOES_AND_ALLY))
+        RETURN_SCORE_PLUS(100);
+
     // check non-user target
     if (!(moveTarget & MOVE_TARGET_USER))
     {
