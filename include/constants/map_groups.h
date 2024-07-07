@@ -402,6 +402,8 @@
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
 #define MAP_NEW_MAUVILLE_HIDDEN_AREA                 (108 | (24 << 8))
 #define MAP_EMBER_RIDGE                              (109 | (24 << 8))
+#define MAP_GRANITE_CAVE_B3F                         (110 | (24 << 8))
+#define MAP_GRANITE_CAVE_HIDDEN_AREA                 (111 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

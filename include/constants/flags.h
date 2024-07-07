@@ -663,8 +663,8 @@
 
 // New Hidden Items
 #define FLAG_HIDDEN_ITEM_GRANITE_CAVE_STEVENS_ROOM_METAL_COAT (FLAG_HIDDEN_ITEMS_START + 0x70)
-#define FLAG_HIDDEN_ITEM_UNUSED_0x265                        (FLAG_HIDDEN_ITEMS_START + 0x71)
-#define FLAG_HIDDEN_ITEM_UNUSED_0x266                        (FLAG_HIDDEN_ITEMS_START + 0x72)
+#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B3F_ROCK_GEM            (FLAG_HIDDEN_ITEMS_START + 0x71)
+#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_HIDDEN_AREA_BESERK_GENE (FLAG_HIDDEN_ITEMS_START + 0x72)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x267                        (FLAG_HIDDEN_ITEMS_START + 0x73)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x268                        (FLAG_HIDDEN_ITEMS_START + 0x74)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x269                        (FLAG_HIDDEN_ITEMS_START + 0x75)
@@ -724,7 +724,7 @@
 #define FLAG_ITEM_MT_PYRE_SUMMIT_GIMMIGHOUL_COINS                   0x29C
 #define FLAG_ITEM_MT_PYRE_SUMMIT_TM_PHANTOM_FORCE                   0x29D
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_2_GIMMIGHOUL_COINS           0x29E
-#define FLAG_UNUSED_0x29F                                           0x29F // Unused Flag
+#define FLAG_ITEM_GRANITE_CAVE_B3F_TM_HARD_PRESS                    0x29F
 #define FLAG_UNUSED_0x2A0                                           0x2A0 // Unused Flag
 #define FLAG_UNUSED_0x2A1                                           0x2A1 // Unused Flag
 #define FLAG_UNUSED_0x2A2                                           0x2A2 // Unused Flag

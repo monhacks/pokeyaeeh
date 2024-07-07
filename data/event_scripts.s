@@ -1419,3 +1419,7 @@ MysteryGift_Text_ReceivedGiftMon:
 	.include "data/maps/Route119_HiddenArea/scripts.inc"
 
 	.include "data/maps/EmberRidge/scripts.inc"
+
+	.include "data/maps/GraniteCave_B3F/scripts.inc"
+
+	.include "data/maps/GraniteCave_HiddenArea/scripts.inc"

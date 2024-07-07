@@ -518,6 +518,10 @@ GraniteCave_B2F_EventScript_ItemAggronite::
 	finditem ITEM_AGGRONITE
 	end
 
+GraniteCave_B3F_EventScript_ItemTMHardPress::
+	finditem ITEM_TM_HARD_PRESS
+	end
+
 MtChimney_EventScript_ItemTMUproar::
 	finditem ITEM_TM_UPROAR
 	end
