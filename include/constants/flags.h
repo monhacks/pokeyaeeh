@@ -715,7 +715,7 @@
 #define FLAG_ITEM_ROUTE_114_TM_GRASS_KNOT                           0x293
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_TM_CROSS_POISON                 0x294
 #define FLAG_ITEM_FALLARBOR_TOWN_TM_PLAY_ROUGH                      0x295
-#define FLAG_ITEM_RUSTBORO_CITY_TM_FLAME_CHARGE                     0x296
+#define FLAG_ITEM_RUSTBORO_CITY_TM_FIRE_FANG                        0x296
 #define FLAG_ITEM_ROUTE_105_TM_X_SCISSOR                            0x297
 #define FLAG_ITEM_ROUTE_128_TM_ANCIENT_POWER                        0x298
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_OMINOUS_WIND            0x299
@@ -1116,7 +1116,7 @@
 #define FLAG_ITEM_GRANITE_CAVE_B2F_AGGRONITE                        0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_LIFE_ORB                          0x41F
 #define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
-#define FLAG_ITEM_ROUTE_104_TM_TRAILBLAZE                           0x421
+#define FLAG_ITEM_ROUTE_104_TM_THUNDER_FANG                         0x421
 #define FLAG_ITEM_PETALBURG_WOODS_ETHER                             0x422
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ULTRA_BALL                    0x423
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_FIRE_GEM                     0x424
@@ -1174,7 +1174,7 @@
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_ICY_WIND                   0x458
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
 #define FLAG_ITEM_ROUTE_103_SUPER_POTION                            0x45A
-#define FLAG_ITEM_ROUTE_104_TM_CHILLING_WATER                       0x45B
+#define FLAG_ITEM_ROUTE_104_TM_ICE_FANG                             0x45B
 #define FLAG_ITEM_MAUVILLE_CITY_TM_LIQUIDATION                      0x45C
 #define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
 #define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E

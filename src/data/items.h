@@ -8132,7 +8132,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_LIQUIDATION,
     },
 
-    [ITEM_TM_BODY_PRESS] =
+    [ITEM_TM_TAILWIND] =
     {
         .name = _("TM81"),
         .price = 5000,
@@ -8141,7 +8141,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_BODY_PRESS,
+        .secondaryId = MOVE_TAILWIND,
     },
 
     [ITEM_TM_DAZZLING_GLEAM] =
@@ -8599,7 +8599,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_PSYSHOCK,
     },
 
-    [ITEM_TM_CRUNCH] =
+    [ITEM_TM_MYSTICAL_FIRE] =
     {
         .name = _("TM120"),
         .price = 5000,
@@ -8608,7 +8608,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_CRUNCH,
+        .secondaryId = MOVE_MYSTICAL_FIRE,
     },
 
     [ITEM_TM_UPROAR] =
@@ -8983,7 +8983,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_KNOCK_OFF,
     },
 
-    [ITEM_TM_TAILWIND] =
+    [ITEM_TM_BODY_PRESS] =
     {
         .name = _("TM152"),
         .price = 5000,
@@ -8992,7 +8992,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_TAILWIND,
+        .secondaryId = MOVE_BODY_PRESS,
     },
 
     [ITEM_TM_HARD_PRESS] =
@@ -9007,16 +9007,16 @@ const struct Item gItems[] =
         .secondaryId = MOVE_HARD_PRESS,
     },
 
-    [ITEM_TM_MYSTICAL_FIRE] =
+    [ITEM_TM_CRUNCH] =
     {
-        .name = _("TM154"),
+        .name = _("TM153"),
         .price = 5000,
-        .description = sTM154Desc,
+        .description = sTM153Desc,
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_MYSTICAL_FIRE,
+        .secondaryId = MOVE_CRUNCH,
     },
 
     [ITEM_TM_PSYCHIC_FANGS] =

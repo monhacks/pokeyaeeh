@@ -75,14 +75,14 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	end
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
-	giveitem ITEM_TM_DARK_PULSE
+	giveitem ITEM_TM_KNOCK_OFF
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
-	giveitem ITEM_TM_DARK_PULSE
+	giveitem ITEM_TM_KNOCK_OFF
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
@@ -344,19 +344,19 @@ SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 	.string "from Chal.$"
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
-	.string "Having the Noir Badge shall assure you\n"
-	.string "the full obedience of all your Pokémon\l"
-	.string "to your every command.\p"
+	.string "Chal: Having the Noir Badge shall\n"
+	.string "assure you the full obedience of all\l"
+	.string "your Pokémon to your every command.\p"
 	.string "The Noir Badge also allows the use\n"
 	.string "of the HM move Waterfall to scale\l"
 	.string "walls of cascading water.\p"
 	.string "Take this as well…$"
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
-	.string "The Technical Machine I handed you\n"
-	.string "contains Water Pulse.\p" @ change to Knock off after 
-	.string "In use, it will occasionally confuse\n"
-	.string "the target with ultrasonic waves.\p"
+	.string "Chal: TM151 contains Knock Off.\p"
+	.string "It deals more damage if the enemy\n"
+	.string "is holding an item, and then knocks it\l"
+	.string "down.\p"
 	.string "… … … … … …$"
 
 SootopolisCity_Gym_1F_Text_RegisteredJuan:
@@ -364,14 +364,12 @@ SootopolisCity_Gym_1F_Text_RegisteredJuan:
 	.string "in the PokéNav.$"
 
 SootopolisCity_Gym_1F_Text_JuanPostBattle:
-	.string "The Trainers who have gathered all\n"
-	.string "the Gym Badges of Hoenn should make\l"
-	.string "way to the ultimate destination.\p"
-	.string "The Pokémon League.\p"
+	.string "Chal: You have proved your worth,\n"
+	.string "{PLAYER}.\p"
 	.string "Travel to the easternmost reaches\n"
 	.string "of Hoenn, to the island Ever Grande.\p"
 	.string "There, you shall find the Pokémon\n"
-	.string "League.$"
+	.string "League, your final challenge!$"
 
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
 	.string "There remains but one Badge to\n"

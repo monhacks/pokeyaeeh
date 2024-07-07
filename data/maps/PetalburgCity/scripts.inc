@@ -115,6 +115,9 @@ PetalburgCity_EventScript_Scott::
 	delay 30
 	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
 	closemessage
+	giveitem ITEM_TM_TRAILBLAZE
+	giveitem ITEM_TM_FLAME_CHARGE
+	giveitem ITEM_TM_CHILLING_WATER
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 30
@@ -324,19 +327,21 @@ PetalburgCity_Text_WellMaybeNot:
 	.string "Well, maybe not.\n"
 	.string "Your clothes aren't all that dirty.\p"
 	.string "You're either a rookie Trainer,\n"
-	.string "or maybe you're just an ordinary kid.$"
+	.string "or maybe you're just an ordinary kid.\p"
+	.string "These may be of help for you, then.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented Trainers.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "I'm sorry to have taken your time.\p"
+	.string "Best of luck, newbie!$"
 
 PetalburgCity_Text_GymLeaderIsNotHere:
-	.string "Sorry, kiddo.\p"
+	.string "Sorry, kiddo.\n"
 	.string "The Gym Leader will be away for a while.\p"
-	.string "He's attending a conferance in Kanto\n"
-	.string "and then he's going to Kalos.\p"
-	.string "How about you try other gyms?$"
+	.string "He's attending a conferance in Kalos.\p"
+	.string "Til then, how about you go and try\n"
+	.string "challenging other gyms?$"
 
 PetalburgCity_EventScript_ProfBirchUnused:: @ for the dex
 	giveitem ITEM_VENUSAURITE, 1

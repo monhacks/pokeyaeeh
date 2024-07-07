@@ -24,12 +24,12 @@ Route104_EventScript_ItemGimmighoulCoins::
 	goto Common_EventScript_ItemGimmighoulCoins
 	end
 
-Route104_EventScript_ItemTMTrailblaze::
-	finditem ITEM_TM_TRAILBLAZE
+Route104_EventScript_ItemTMThunderFang::
+	finditem ITEM_TM_THUNDER_FANG
 	end
 
-Route104_EventScript_ItemTMChillingWater::
-	finditem ITEM_TM_CHILLING_WATER
+Route104_EventScript_ItemTMIceFang::
+	finditem ITEM_TM_ICE_FANG
 	end
 
 Route104_EventScript_ItemPotion::
@@ -438,8 +438,8 @@ RustboroCity_EventScript_ItemTMAerialAce::
 	finditem ITEM_TM_AERIAL_ACE
 	end
 
-RustboroCity_EventScript_ItemTMFlameCharge::
-	finditem ITEM_TM_FLAME_CHARGE
+RustboroCity_EventScript_ItemTMFireFang::
+	finditem ITEM_TM_FIRE_FANG
 	end
 
 LilycoveCity_EventScript_ItemAbilityCapsule::

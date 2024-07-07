@@ -5361,9 +5361,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_BLAZE_KICK] =
     {
         .effect = EFFECT_BURN_HIT,
-        .power = 85,
+        .power = 95,
         .type = TYPE_FIRE,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 16,
         .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -5373,6 +5373,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
         .highCritRatio = TRUE,
         .sheerForceBoost = TRUE,
+        .thawsUser = TRUE,
         .kickingMove = TRUE,
     },
 
@@ -5901,16 +5902,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MUDDY_WATER] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .power = 95,
         .type = TYPE_WATER,
         .accuracy = 85,
         .pp = 16,
-        .secondaryEffectChance = 30,
+        .secondaryEffectChance = 50,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,

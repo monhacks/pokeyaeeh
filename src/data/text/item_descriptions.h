@@ -3627,9 +3627,9 @@ static const u8 sTM119Desc[] = _(
     "delas phys. damage.");
 
 static const u8 sTM120Desc[] = _(
-    "Crunches the foe\n"
-    "with sharp fangs.\n"
-    "May lower Def.");
+    "Special, hot fire\n"
+    "that lowers the\n"
+    "foe's Sp. Atk.");
 
 static const u8 sTM121Desc[] = _(
     "Attacks in uproar\n"
@@ -3787,9 +3787,9 @@ static const u8 sTM151Desc[] = _(
     "rest of the battle.");
 
 static const u8 sTM152Desc[] = _(
-    "Doubles speed on\n"
-	"the user's side for\n"
-	"4 turns.");
+    "Body slams the foe.\n"
+    "Higher the Def,\n"
+    "greater the damage.");
 
 static const u8 sTM153Desc[] = _(
     "Body slams the foe.\n"
@@ -3797,9 +3797,9 @@ static const u8 sTM153Desc[] = _(
     "greater the damage.");
 
 static const u8 sTM154Desc[] = _(
-    "Special, hot fire\n"
-    "that lowers the\n"
-    "foe's Sp. Atk.");
+    "Crunches the foe\n"
+    "with sharp fangs.\n"
+    "May lower Def.");
 
 static const u8 sTM155Desc[] = _(
     "A psychic bite that\n"
