@@ -2169,5 +2169,8 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             *string = flagCount + CHAR_0;
             *endOfString = EOS;
             break;
+        case SAVE_MENU_VERSION:
+            StringCopy(string, gText_VersionNum);
+            break;
     }
 }

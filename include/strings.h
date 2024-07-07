@@ -297,6 +297,8 @@ extern const u8 gText_SavingPlayer[];
 extern const u8 gText_SavingBadges[];
 extern const u8 gText_SavingPokedex[];
 extern const u8 gText_SavingTime[];
+extern const u8 gText_SavingVersionNum[];
+extern const u8 gText_VersionNum[];
 
 // Battle pyramid menu texts
 extern const u8 gText_BattlePyramidConfirmRest[];
@@ -350,6 +352,7 @@ extern const u8 gText_SaveFileCorrupted[];
 extern const u8 gJPText_No1MSubCircuit[];
 extern const u8 gText_BatteryRunDry[];
 extern const u8 gText_MainMenuNewGame[];
+extern const u8 gText_MainMenuNewGameVersion[];
 extern const u8 gText_MainMenuOption[];
 extern const u8 gText_MainMenuContinue[];
 extern const u8 gText_MainMenuMysteryGift2[];
