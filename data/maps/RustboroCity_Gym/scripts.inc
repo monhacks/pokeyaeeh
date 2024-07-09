@@ -27,7 +27,7 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	end
 
 RustboroCity_Gym_EventScript_GiveRockTomb::
-	giveitem ITEM_TM_CHARM
+	giveitem ITEM_TM_DRAINING_KISS
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_CHARM
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
@@ -224,11 +224,11 @@ RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
 	.string "Well, take this, too.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
-	.string "That Technical Machine, TM146,\n"
-	.string "contains Charm.\p"
-	.string "It doesn't inflict any damage,\n"
-	.string "but harshly lowers your foe's\l"
-	.string "Attack stat.\p"
+	.string "That Technical Machine, TM113,\n"
+	.string "contains Draining Kiss.\p"
+	.string "A move which inflicts some damage and\n"
+	.string "also heals you for half the damage that\l"
+	.string "you deal!\p"
 	.string "If you use a TM, it instantly teaches\n"
 	.string "the move to a Pokémon.\p"
 	.string "A TM can be used as many times as you\n"
