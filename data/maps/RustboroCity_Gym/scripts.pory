@@ -197,9 +197,9 @@ RustboroCity_Gym_Text_PomniPostBattle:
 RustboroCity_Gym_Text_RoxanneIntro:
 	.string "Hii, I am Dor! The Rustboro\n"
 	.string "Pokémon Gym Leader.\p"
-	.string "I love children! But the League\n"
-	.string "won't let children anywhere near\l"
-	.string "my gym for some reason…\p"
+	.string "I love children! But the League won't\n"
+	.string "let children anywhere near my Gym\l"
+	.string "for some reason…\p"
 	.string "Oh wait, you are here to fight me,\n"
 	.string "right?\p"
 	.string "Go! My Fairy babies!$"
