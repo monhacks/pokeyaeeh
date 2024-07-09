@@ -15775,12 +15775,12 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     {
         .species = SPECIES_ARMAROUGE,
         .heldItem = ITEM_LIFE_ORB,
-        .ability = ABILITY_FLASH_FIRE,
+        .ability = ABILITY_MEGA_LAUNCHER,
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_QUIET),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
-        .moves = {MOVE_TRICK_ROOM, MOVE_HEAT_WAVE, MOVE_EXPANDING_FORCE, MOVE_AURA_SPHERE}
+        .moves = {MOVE_VACUUM_WAVE, MOVE_HEAT_WAVE, MOVE_EXPANDING_FORCE, MOVE_AURA_SPHERE}
     },
     {
         .species = SPECIES_URSALUNA,
