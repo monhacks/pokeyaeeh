@@ -31910,12 +31910,12 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_FRAXURE"
+                "species": "SPECIES_AXEW"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_SIGILYPH"
+                "species": "SPECIES_FRAXURE"
               }
             ]
           },
