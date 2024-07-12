@@ -68,6 +68,73 @@ LilycoveCity_DepartmentStore_3F_Pokemart_TypeGems:
 	release
 	end
 
+LilycoveCity_DepartmentStore_3F_EventScript_ClerkBottomRight::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_TypeBoostItems
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_3F_Pokemart_TypeBoostItems:
+	.2byte ITEM_SILK_SCARF
+	.2byte ITEM_CHARCOAL
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_MAGNET
+	.2byte ITEM_MIRACLE_SEED
+	.2byte ITEM_NEVER_MELT_ICE
+	.2byte ITEM_BLACK_BELT
+	.2byte ITEM_POISON_BARB
+	.2byte ITEM_SOFT_SAND
+	.2byte ITEM_SHARP_BEAK
+	.2byte ITEM_TWISTED_SPOON
+	.2byte ITEM_SILVER_POWDER
+	.2byte ITEM_HARD_STONE
+	.2byte ITEM_SPELL_TAG
+	.2byte ITEM_DRAGON_FANG
+	.2byte ITEM_BLACK_GLASSES
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_FAIRY_FEATHER
+	.2byte ITEM_NONE
+	release
+	end
+
+LilycoveCity_DepartmentStore_3F_EventScript_ClerkBottomLeft::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_TypePlates
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_3F_Pokemart_TypePlates:
+	.2byte ITEM_FLAME_PLATE
+	.2byte ITEM_SPLASH_PLATE
+	.2byte ITEM_ZAP_PLATE
+	.2byte ITEM_MEADOW_PLATE
+	.2byte ITEM_ICICLE_PLATE
+	.2byte ITEM_FIST_PLATE
+	.2byte ITEM_TOXIC_PLATE
+	.2byte ITEM_EARTH_PLATE
+	.2byte ITEM_SKY_PLATE
+	.2byte ITEM_MIND_PLATE
+	.2byte ITEM_INSECT_PLATE
+	.2byte ITEM_STONE_PLATE
+	.2byte ITEM_SPOOKY_PLATE
+	.2byte ITEM_DRACO_PLATE
+	.2byte ITEM_DREAD_PLATE
+	.2byte ITEM_IRON_PLATE
+	.2byte ITEM_PIXIE_PLATE
+	.2byte ITEM_NONE
+	release
+	end
+
 LilycoveCity_DepartmentStore_3F_EventScript_TriathleteM::
 	msgbox LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon, MSGBOX_NPC
 	end

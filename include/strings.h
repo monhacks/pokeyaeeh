@@ -682,7 +682,7 @@ extern const u8 gText_ElevatorNowOn[];
 
 extern const u8 gText_1F_Entry[];
 extern const u8 gText_2F_TrainerItems[];
-extern const u8 gText_3F_Drugstore[];
+extern const u8 gText_3F_TypeBoosters[];
 extern const u8 gText_4F_TMsTutor[];
 extern const u8 gText_5F_Decorations[];
 
