@@ -360,7 +360,14 @@ PetalburgCity_EventScript_ProfBirch::
 	lock
 	addobject LOCALID_BIRCH
 	setobjectxy LOCALID_BIRCH, 15, 15
-	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkUp
+	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkUp1
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_BIRCH, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_BIRCH, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkUp4
 	waitmovement 0
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_0, MSGBOX_AUTOCLOSE
 	giveitem ITEM_MEGA_BRACELET, 1
@@ -379,9 +386,11 @@ PetalburgCity_EventScript_ProfBirch::
 	additem ITEM_CINDERACITE, 1
 	additem ITEM_INTELEONITE, 1
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_3, MSGBOX_AUTOCLOSE
-	giveitem ITEM_HM_SURF, 1
+	giveitem ITEM_POKEMON_BOX_LINK, 1
 	msgbox PetalburgCity_EventScript_ProfBirch_Text_4, MSGBOX_AUTOCLOSE
-	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkDown
+	giveitem ITEM_HM_SURF, 1
+	msgbox PetalburgCity_EventScript_ProfBirch_Text_5, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_BIRCH, ProfBirch_Movement_WalkDown5
 	waitmovement 0
 	removeobject LOCALID_BIRCH
 	setvar VAR_PETALBURG_CITY_STATE, 2
@@ -391,15 +400,18 @@ PetalburgCity_EventScript_ProfBirch::
 	end
 
 
-ProfBirch_Movement_WalkUp:
+ProfBirch_Movement_WalkUp1:
 	walk_up
+	step_end
+
+ProfBirch_Movement_WalkUp4:
 	walk_up
 	walk_up
 	walk_up
 	walk_up
 	step_end
 
-ProfBirch_Movement_WalkDown:
+ProfBirch_Movement_WalkDown5:
 	walk_down
 	walk_down
 	walk_down
@@ -424,11 +436,18 @@ PetalburgCity_EventScript_ProfBirch_Text_2:
 	.string "{PLAYER} received some Mega Stones!$"
 
 PetalburgCity_EventScript_ProfBirch_Text_3:
-	.string "You're heading next to Fortree City,\n"
-	.string "right?\p"
-	.string "You might need this, then.$"
+	.string "You do a lot of battling.\n"
+	.string "It might be hard for you to run to the\l"
+	.string "Pokémon Center everytime you want to\l"
+	.string "change your team, right?\p"
+	.string "You can use this item!$"
 
 PetalburgCity_EventScript_ProfBirch_Text_4:
+	.string "I assume you're heading next to\n"
+	.string "Fortree City, right?\p"
+	.string "You might need this, then.$"
+
+PetalburgCity_EventScript_ProfBirch_Text_5:
 	.string "You can use Surf to cross bodies of\n"
 	.string "water.\p"
 	.string "In battle, it is a very strong move,\n"

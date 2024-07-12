@@ -689,12 +689,21 @@ void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 static void Task_AccessPokemonBoxLink(u8 taskId)
 {
     u16 currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+    
+    // Prevent player from using the Pokemon Box Link inside Gyms and Pokemon League
     if ((currentMap == MAP_RUSTBORO_CITY_GYM) || (currentMap == MAP_DEWFORD_TOWN_GYM) || (currentMap == MAP_MAUVILLE_CITY_GYM) || (currentMap == MAP_LAVARIDGE_TOWN_GYM_1F)
     || (currentMap == MAP_PETALBURG_CITY_GYM) || (currentMap == MAP_FORTREE_CITY_GYM) || (currentMap == MAP_MOSSDEEP_CITY_GYM) || (currentMap == MAP_SOOTOPOLIS_CITY_GYM_1F)
     || (currentMap == MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_PHOEBES_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_GLACIAS_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_DRAKES_ROOM) || (currentMap == MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM)
     || (currentMap == MAP_EVER_GRANDE_CITY_HALL1) || (currentMap == MAP_EVER_GRANDE_CITY_HALL2) || (currentMap == MAP_EVER_GRANDE_CITY_HALL3) || (currentMap == MAP_EVER_GRANDE_CITY_HALL4) || (currentMap == MAP_EVER_GRANDE_CITY_HALL5))
     {
-        ItemUseOutOfBattle_CannotUse(taskId);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+		{
+			DisplayItemMessageOnField(taskId, gText_DadsAdvice, Task_CloseCantUseKeyItemMessage);
+		}
+		else
+		{
+			DisplayItemMessage(taskId, 1, gText_DadsAdvice, CloseItemMessage);
+		}
     }
     else
     {

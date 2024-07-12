@@ -79,7 +79,7 @@ VerdanturfTown_WandasHouse_Text_StrongerSpeechShort:
 	.string "Wally: Oh hey, {PLAYER}!\n"
 	.string "This is my cousin Wanda's house.\p"
 	.string "Just came to catch some supplies before\n"
-	.string "leaving to Lavaridge.$"
+	.string "leaving to Lavaridge, now.$"
 
 VerdanturfTown_WandasHouse_Text_WallysNextDoor:
 	.string "Uncle: Oh! {PLAYER}{KUN}!\n"
@@ -110,14 +110,14 @@ VerdanturfTown_WandasHouse_Text_MeetWanda:
 	.string "telling me about.\p"
 	.string "I'm Wally's cousin.\n"
 	.string "Glad to meet you!\p"
-	.string "I think Wally's become a lot more lively\n"
-	.string "and healthy since he came here.$"
+	.string "Wally's the best Trainer I know,\n"
+	.string "you must be very strong, then.$"
 
 VerdanturfTown_WandasHouse_Text_DontWorryAboutWally:
-	.string "Wanda: Don't worry about Wally.\n"
-	.string "He'll be just fine.\p"
-	.string "I know my little cousin, and he has\n"
-	.string "Pokémon with him, too.$"
+	.string "Wanda: I'm glad Wally made a friend like\n"
+	.string "you, {PLAYER}.\p"
+	.string "He doesn't often make any friends,\n"
+	.string "so you must be special to him.$"
 
 VerdanturfTown_WandasHouse_Text_CanSeeGirlfriendEveryDay:
 	.string "Thanks to you, I can see my girlfriend\n"

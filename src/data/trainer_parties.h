@@ -7132,7 +7132,7 @@ static const struct TrainerMon sParty_Norman1[] = { // Chrizz
     {
         .species = SPECIES_LUCARIO,
         .heldItem = ITEM_LIFE_ORB,
-        .ability = ABILITY_INNER_FOCUS,
+        .ability = ABILITY_JUSTIFIED, // change after fixing inner focus
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
@@ -16343,7 +16343,7 @@ static const struct TrainerMon sParty_Greg[] = {
 
 static const struct TrainerMon sParty_Kent[] = {
     {
-        .species - SPECIES_ACCELGOR,
+        .species = SPECIES_ACCELGOR,
         .heldItem = ITEM_FOCUS_SASH,
         .ability = ABILITY_UNBURDEN,
         .lvl = 1,
@@ -16353,7 +16353,7 @@ static const struct TrainerMon sParty_Kent[] = {
         .moves = {MOVE_BUG_BUZZ, MOVE_DARK_PULSE, MOVE_WATER_SHURIKEN, MOVE_SPIKES}
     },
     {
-        .species - SPECIES_YANMEGA,
+        .species = SPECIES_YANMEGA,
         .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_SPEED_BOOST,
         .lvl = 1,
@@ -16363,7 +16363,7 @@ static const struct TrainerMon sParty_Kent[] = {
         .moves = {MOVE_BUG_BUZZ, MOVE_ANCIENT_POWER, MOVE_PROTECT, MOVE_JETSTREAM}
     },
     {
-        .species - SPECIES_RABSCA,
+        .species = SPECIES_RABSCA,
         .heldItem = ITEM_AGUAV_BERRY,
         .ability = ABILITY_SYNCHRONIZE,
         .lvl = 1,
@@ -16373,7 +16373,7 @@ static const struct TrainerMon sParty_Kent[] = {
         .moves = {MOVE_BUG_BUZZ, MOVE_PSYCHIC, MOVE_REVIVAL_BLESSING, MOVE_CALM_MIND}
     },
     {
-        .species - SPECIES_WORMADAM_TRASH_CLOAK,
+        .species = SPECIES_WORMADAM_TRASH_CLOAK,
         .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_OVERCOAT,
         .lvl = 1,

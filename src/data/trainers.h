@@ -6900,7 +6900,7 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = _("Kent"),
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STATUS_MOVES || AI_FLAG_STALL || AI_FLAG_CHECK_VIABILITY || AI_FLAG_CHECK_BAD_MOVE || AI_FLAG_OMNISCIENT,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Kent),
     },
 
