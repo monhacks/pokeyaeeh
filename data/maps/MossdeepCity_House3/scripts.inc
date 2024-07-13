@@ -25,11 +25,10 @@ MossdeepCity_House3_EventScript_ReceivedPalafin::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_PALAFIN_ZERO
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MossdeepCity_House3_Text_TrySwitchingInABattle
-	call Common_EventScript_GetGiftMonPartySlot
-	call Common_EventScript_NameReceivedPartyMon
-	msgbox MossdeepCity_House3_Text_TrySwitchingInABattle, MSGBOX_DEFAULT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PALAFIN_ZERO
+	call Common_EventScript_Nickname
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_House3_EventScript_SuperheroesAreAwesome2
+	msgbox MossdeepCity_House3_Text_SuperheroesAreAwesome, MSGBOX_DEFAULT
 	release
 	end
 
@@ -56,15 +55,10 @@ MossdeepCity_House3_Text_WhatALoser:
 	.string "Hunh?\p"
 	.string "What a loser!$"
 
-MossdeepCity_House3_Text_TrySwitchingInABattle:
+MossdeepCity_House3_Text_SuperheroesAreAwesome:
 	.string "Once you switch out in a battle\n"
 	.string "this cute little critter is\l"
 	.string "gonna bite!$"
-
-MossdeepCity_House3_Text_SuperheroesAreAwesome:
-	.string "Superheroes are awesome!\p"
-	.string "My little pal must have brought\n"
-	.string "you big league wins, eh?$"
 
 MossdeepCity_House3_Text_MeetMeWhenYouAreCool:
 	.string "I love superheroes!\p"

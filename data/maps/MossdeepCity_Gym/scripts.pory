@@ -1,6 +1,72 @@
 raw `
+.set LOCALID_NINJABOY_1, 2
+.set LOCALID_NINJABOY_2, 3
+.set LOCALID_COOLTRAINER_M, 5
+.set LOCALID_HEXMANIAC, 6
+.set LOCALID_NINJABOY_3, 7
+.set LOCALID_NINJABOY_4, 8
+.set LOCALID_COOLTRAINER_F, 9
+.set LOCALID_CAMPER, 10
+
 MossdeepCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_Gym_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, MossdeepCity_Gym_OnResume
 	.byte 0
+
+MossdeepCity_Gym_OnTransition:
+	checktrainerflag TRAINER_PRESTON
+	call_if TRUE, MossdeepCity_Gym_PrestonMove
+	checktrainerflag TRAINER_VIRGIL
+	call_if TRUE, MossdeepCity_Gym_VirgilMove
+	checktrainerflag TRAINER_NATE
+	call_if TRUE, MossdeepCity_Gym_NateMove
+	checktrainerflag TRAINER_SYLVIA
+	call_if TRUE, MossdeepCity_Gym_SylviaMove
+	checktrainerflag TRAINER_CLIFFORD
+	call_if TRUE, MossdeepCity_Gym_CliffordMove
+	checktrainerflag TRAINER_MACEY
+	call_if TRUE, MossdeepCity_Gym_MaceyMove
+	checktrainerflag TRAINER_KATHLEEN
+	call_if TRUE, MossdeepCity_Gym_KathleenMove
+	checktrainerflag TRAINER_NICHOLAS
+	call_if TRUE, MossdeepCity_Gym_NicholasMove
+	return
+
+MossdeepCity_Gym_OnResume:
+	call MossdeepCity_Gym_OnTransition
+	end
+
+MossdeepCity_Gym_PrestonMove::
+	setobjectmovementtype LOCALID_NINJABOY_1, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_VirgilMove::
+	setobjectmovementtype LOCALID_NINJABOY_2, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_NateMove::
+	setobjectmovementtype LOCALID_COOLTRAINER_M, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_SylviaMove::
+	setobjectmovementtype LOCALID_HEXMANIAC, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_CliffordMove::
+	setobjectmovementtype LOCALID_NINJABOY_3, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_MaceyMove::
+	setobjectmovementtype LOCALID_NINJABOY_4, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_KathleenMove::
+	setobjectmovementtype LOCALID_COOLTRAINER_F, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+MossdeepCity_Gym_NicholasMove::
+	setobjectmovementtype LOCALID_CAMPER, MOVEMENT_TYPE_FACE_DOWN
+	return
 
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
 	giveitem ITEM_TM_VENOSHOCK

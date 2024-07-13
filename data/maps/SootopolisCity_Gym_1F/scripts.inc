@@ -17,12 +17,7 @@ SootopolisCity_Gym_1F_OnTransition:
 	return
 
 SootopolisCity_Gym_1F_OnResume:
-	checktrainerflag TRAINER_OLIVIA
-	call_if TRUE, SootopolisCity_Gym_1_OliviaPos
-	checktrainerflag TRAINER_BRIANNA
-	call_if TRUE, SootopolisCity_Gym_1_BriannaPos
-	checktrainerflag TRAINER_BETHANY
-	call_if TRUE, SootopolisCity_Gym_1_BethanyPos
+	call SootopolisCity_Gym_1F_OnTransition
 	end
 
 SootopolisCity_Gym_1_OliviaPos::
