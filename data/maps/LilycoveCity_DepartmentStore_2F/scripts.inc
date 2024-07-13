@@ -45,8 +45,6 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_FAST_BALL
 	.2byte ITEM_HEAVY_BALL
 	.2byte ITEM_DREAM_BALL
-	.2byte ITEM_SAFARI_BALL
-	.2byte ITEM_SPORT_BALL
 	.2byte ITEM_NONE
 	release
 	end

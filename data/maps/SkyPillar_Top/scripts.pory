@@ -19,12 +19,16 @@ SkyPillar_Top_EventScript_TryRemoveRayquaza::
 
 SkyPillar_Top_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
-	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
+	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_ShouldShowRayquaza
 	end
 
 SkyPillar_Top_EventScript_SetCleanLayout::
 	setmaplayoutindex LAYOUT_SKY_PILLAR_TOP_CLEAN
 	setobjectmovementtype LOCALID_RAYQUAZA_SLEEPING, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+SkyPillar_Top_EventScript_ShouldShowRayquaza::
+	call_if_set FLAG_SYS_GAME_CLEAR, SkyPillar_Top_EventScript_TryShowRayquaza
 	return
 
 SkyPillar_Top_EventScript_TryShowRayquaza::
@@ -57,6 +61,7 @@ SkyPillar_Top_EventScript_Rayquaza::
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_DEFEATED_RAYQUAZA
+	setvar B_VAR_STARTING_STATUS, 0
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Top_EventScript_RanFromRayquaza
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_Top_EventScript_RanFromRayquaza
