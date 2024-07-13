@@ -620,6 +620,9 @@ MtPyre_Summit_Text_WellThatTooIsFine:
 MtPyre_Summit_Text_MaxieSilence:
 	.string "Maxie: {PLAYER}…\p"
 	.string "… … … … … …\n"
+	.string "… … … … … …\p"
+	.string "We'll be at our hideouts,\n"
+	.string "… … … … … …\l"
 	.string "… … … … … …$"
 
 MtPyre_Summit_Text_HearTheNewLegendOfHoenn:

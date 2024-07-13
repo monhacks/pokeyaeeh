@@ -5268,7 +5268,9 @@ const u16 gEggMoves[] = {
               MOVE_BOUNCE,
               MOVE_BULK_UP,
               MOVE_COUNTER,
+              MOVE_GLACIAL_SLAM,
               MOVE_HAZE,
+              MOVE_ICE_FANG,
               MOVE_TICKLE,
               MOVE_WAVE_CRASH),
 

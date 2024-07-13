@@ -11,11 +11,11 @@ const struct Trainer gBattlePartners[] = {
 
     [PARTNER_WALLY] =
     {
-        .party = TRAINER_PARTY(sParty_WallyPartner),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_BACK_PIC_WALLY,
         .trainerName = _("Wally"),
+        .party = TRAINER_PARTY(sParty_WallyPartner)
     },
 
 };

@@ -80,9 +80,9 @@ FortreeCity_EventScript_UseDevonScope::
 	waitmoncry
 	applymovement VAR_LAST_TALKED, FortreeCity_Movement_KecleonFlee
 	waitmovement 0
-	removeobject VAR_LAST_TALKED
-	setflag FLAG_HIDE_FORTREE_CITY_KECLEON_1
 	addvar VAR_KECLEON_DEFEATED, 1
+	setflag FLAG_HIDE_FORTREE_CITY_KECLEON_1
+	removeobject VAR_LAST_TALKED
 	release
 	end
 
