@@ -6302,7 +6302,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             break;
         case ABILITY_ESCAPE_ARTIST:
             if (IsBattlerAlive(battler)
-             && (gMoveResultFlags & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_DOESNT_AFFECT_FOE))
+             && (gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && !gSpecialStatuses[battler].dancerUsedMove
              && gBattlerAttacker != gBattlerTarget)
             {
