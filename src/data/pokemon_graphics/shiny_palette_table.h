@@ -129,7 +129,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
     SPECIES_SHINY_PAL(MAGMAR, gMonShinyPalette_Magmar),
     SPECIES_SHINY_PAL(PINSIR, gMonShinyPalette_Pinsir),
     SPECIES_SHINY_PAL(TAUROS, gMonShinyPalette_Tauros),
-    SPECIES_SHINY_PAL(TAUROS_PALDEAN, gMonShinyPalette_TaurosCombatBreed),
+    SPECIES_SHINY_PAL(TAUROS_PALDEAN_COMBAT_BREED, gMonShinyPalette_TaurosCombatBreed),
     SPECIES_SHINY_PAL(TAUROS_PALDEAN_BLAZE_BREED, gMonShinyPalette_TaurosBlazeBreed),
     SPECIES_SHINY_PAL(TAUROS_PALDEAN_AQUA_BREED, gMonShinyPalette_TaurosAquaBreed),
     SPECIES_SHINY_PAL(MAGIKARP, gMonShinyPalette_Magikarp),

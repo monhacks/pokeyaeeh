@@ -13303,7 +13303,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
 #endif
     // Paldean Forms
     [SPECIES_WOOPER_PALDEAN]                 = sAnims_WooperPaldean,
-    [SPECIES_TAUROS_PALDEAN]                 = sAnims_TaurosPaldean,
+    [SPECIES_TAUROS_PALDEAN_COMBAT_BREED]    = sAnims_TaurosPaldean,
 
     // Ungrouped
     [SPECIES_PIKACHU_COSPLAY]                = sAnims_PikachuCosplay,

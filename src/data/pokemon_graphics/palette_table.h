@@ -129,7 +129,7 @@ const struct CompressedSpritePalette gMonPaletteTable[NUM_SPECIES + 1] =
     SPECIES_PAL(MAGMAR, gMonPalette_Magmar),
     SPECIES_PAL(PINSIR, gMonPalette_Pinsir),
     SPECIES_PAL(TAUROS, gMonPalette_Tauros),
-    SPECIES_PAL(TAUROS_PALDEAN, gMonPalette_TaurosCombatBreed),
+    SPECIES_PAL(TAUROS_PALDEAN_COMBAT_BREED, gMonPalette_TaurosCombatBreed),
     SPECIES_PAL(TAUROS_PALDEAN_BLAZE_BREED, gMonPalette_TaurosBlazeBreed),
     SPECIES_PAL(TAUROS_PALDEAN_AQUA_BREED, gMonPalette_TaurosAquaBreed),
     SPECIES_PAL(MAGIKARP, gMonPalette_Magikarp),

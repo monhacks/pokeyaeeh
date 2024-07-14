@@ -129,7 +129,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(MAGMAR, gMonFrontPic_Magmar),
     SPECIES_SPRITE(PINSIR, gMonFrontPic_Pinsir),
     SPECIES_SPRITE(TAUROS, gMonFrontPic_Tauros),
-    SPECIES_SPRITE(TAUROS_PALDEAN, gMonFrontPic_TaurosCombatBreed),
+    SPECIES_SPRITE(TAUROS_PALDEAN_COMBAT_BREED, gMonFrontPic_TaurosCombatBreed),
     SPECIES_SPRITE(TAUROS_PALDEAN_BLAZE_BREED, gMonFrontPic_TaurosBlazeBreed),
     SPECIES_SPRITE(TAUROS_PALDEAN_AQUA_BREED, gMonFrontPic_TaurosAquaBreed),
     SPECIES_SPRITE(MAGIKARP, gMonFrontPic_Magikarp),

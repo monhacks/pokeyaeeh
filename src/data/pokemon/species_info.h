@@ -3899,16 +3899,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .types = { TYPE_NORMAL, TYPE_NORMAL },
         .evYield_Attack    = 1,
         .evYield_Speed     = 1,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_RAMPAGE, ABILITY_SHEER_FORCE},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_ANGER_POINT, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_BROWN,
         TAUROS_MISC_INFO
     },
 
-    [SPECIES_TAUROS_PALDEAN] =
+    [SPECIES_TAUROS_PALDEAN_COMBAT_BREED] =
     {
         .types = { TYPE_FIGHTING, TYPE_FIGHTING },
         .evYield_Attack    = 2,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_RAMPAGE, ABILITY_CUD_CHEW},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_ANGER_POINT, ABILITY_CUD_CHEW},
         .bodyColor = BODY_COLOR_BROWN,
         TAUROS_MISC_INFO
     },
@@ -3917,7 +3917,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .types = { TYPE_FIGHTING, TYPE_FIRE },
         .evYield_Attack    = 2,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_RAMPAGE, ABILITY_CUD_CHEW},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_ANGER_POINT, ABILITY_CUD_CHEW},
         .bodyColor = BODY_COLOR_BROWN,
         TAUROS_MISC_INFO
     },
@@ -3926,7 +3926,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .types = { TYPE_FIGHTING, TYPE_WATER },
         .evYield_Attack    = 2,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_RAMPAGE, ABILITY_CUD_CHEW},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_ANGER_POINT, ABILITY_CUD_CHEW},
         .bodyColor = BODY_COLOR_BROWN,
         TAUROS_MISC_INFO
     },

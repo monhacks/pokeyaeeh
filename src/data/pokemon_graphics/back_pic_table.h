@@ -129,7 +129,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[NUM_SPECIES + 1] =
     SPECIES_SPRITE(MAGMAR, gMonBackPic_Magmar),
     SPECIES_SPRITE(PINSIR, gMonBackPic_Pinsir),
     SPECIES_SPRITE(TAUROS, gMonBackPic_Tauros),
-    SPECIES_SPRITE(TAUROS_PALDEAN, gMonBackPic_TaurosCombatBreed),
+    SPECIES_SPRITE(TAUROS_PALDEAN_COMBAT_BREED, gMonBackPic_TaurosCombatBreed),
     SPECIES_SPRITE(TAUROS_PALDEAN_BLAZE_BREED, gMonBackPic_TaurosBlazeBreed),
     SPECIES_SPRITE(TAUROS_PALDEAN_AQUA_BREED, gMonBackPic_TaurosAquaBreed),
     SPECIES_SPRITE(MAGIKARP, gMonBackPic_Magikarp),

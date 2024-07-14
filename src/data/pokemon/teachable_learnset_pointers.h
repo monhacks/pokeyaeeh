@@ -1162,7 +1162,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_DECIDUEYE_HISUIAN] = sDecidueyeHisuianTeachableLearnset,
 #endif
     [SPECIES_WOOPER_PALDEAN] = sWooperPaldeanTeachableLearnset,
-    [SPECIES_TAUROS_PALDEAN] = sTaurosPaldeanTeachableLearnset,
+    [SPECIES_TAUROS_PALDEAN_COMBAT_BREED] = sTaurosPaldeaCombatBreedTeachableLearnset,
     // Misc Forms
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] = sPikachuTeachableLearnset,
