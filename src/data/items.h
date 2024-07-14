@@ -9091,7 +9091,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_HEAT_CRASH,
     },
 
-    [ITEM_TM_RAZOR_SHELL] =
+    [ITEM_TM_POISON_JAB] =
     {
         .name = _("TM161"),
         .price = 5000,
@@ -9100,7 +9100,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_RAZOR_SHELL,
+        .secondaryId = MOVE_POISON_JAB,
     },
 
     [ITEM_TM_AQUA_TAIL] =

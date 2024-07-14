@@ -3832,9 +3832,9 @@ static const u8 sTM160Desc[] = _(
     "greater the damage.");
 
 static const u8 sTM161Desc[] = _(
-    "Cuts the foe with a\n"
-    "sharp shell. May\n"
-    "lower its Def.");
+    "A stabbing attack\n"
+    "that may poison the\n"
+    "foe.");
 
 static const u8 sTM162Desc[] = _(
     "Swings its tail as\n"
