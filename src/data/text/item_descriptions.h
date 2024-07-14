@@ -531,8 +531,8 @@ static const u8 sNaiveMintDesc[] = _(
 
 static const u8 sSeriousMintDesc[] = _(
     "Can be smelled. It\n"
-    "ups Speed, but\n"
-    "reduces Attack.");
+    "makes each stat\n"
+    "grow equally.");
 
 // Candy
 static const u8 sRareCandyDesc[] = _(
@@ -4559,31 +4559,6 @@ static const u8 sMoonRockDesc[] = _(
     "of the move FullMoon\n"
     "used by the holder.");
 
-static const u8 sNidoqueeniteDesc[] = _(
-    "This stone enables\n"
-    "Nidoqueen to Mega\n"
-    "Evolve in battle.");
-
-static const u8 sNidokingiteDesc[] = _(
-    "This stone enables\n"
-    "Nidoking to Mega\n"
-    "Evolve in battle.");
-
-static const u8 sMiloticiteDesc[] = _(
-    "This stone enables\n"
-    "Milotic to Mega\n"
-    "Evolve in battle.");
-
-static const u8 sRaichuniteDesc[] = _(
-    "This stone enables\n"
-    "Raichu to Mega\n"
-    "Evolve in battle.");
-
-static const u8 sTropiusiteDesc[] = _(
-    "This stone enables\n"
-    "Tropius to Mega\n"
-    "Evolve in battle.");
-
 static const u8 sCandyBoxDesc[] = _(
     "A candy box filled\n"
     "with treats! Maxes\n"
@@ -4687,4 +4662,29 @@ static const u8 sGrimmsnarliteDesc[] = _(
 static const u8 sCopperajahiteDesc[] = _(
     "This stone enables\n"
     "Copperajah to Mega\n"
+    "Evolve in battle.");
+
+static const u8 sNidoqueeniteDesc[] = _(
+    "This stone enables\n"
+    "Nidoqueen to Mega\n"
+    "Evolve in battle.");
+
+static const u8 sNidokingiteDesc[] = _(
+    "This stone enables\n"
+    "Nidoking to Mega\n"
+    "Evolve in battle.");
+
+static const u8 sMiloticiteDesc[] = _(
+    "This stone enables\n"
+    "Milotic to Mega\n"
+    "Evolve in battle.");
+
+static const u8 sRaichuniteDesc[] = _(
+    "This stone enables\n"
+    "Raichu to Mega\n"
+    "Evolve in battle.");
+
+static const u8 sTropiusiteDesc[] = _(
+    "This stone enables\n"
+    "Tropius to Mega\n"
     "Evolve in battle.");
