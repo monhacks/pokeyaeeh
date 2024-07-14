@@ -546,3 +546,24 @@ NewMauville_Inside_EventScript_SuperpowerTutor::
 	.string "Deals a lot of\n"
 	.string "damage, but lowers\n"
 	.string "physical stats.$"
+
+MoveTutor_Text_RazorShellTeach:
+	.string "I can teach you a move.\n"
+	.string "A strong, slicing move.\l"
+	.string "It can slice through anything.\l"
+	.string "… … … … …\l"
+	.string "… … … … …\p"
+	.string "Would you like to learn Razor Shell?$"
+
+MoveTutor_Text_RazorShellDeclined:
+	.string "It's fine!\p"
+	.string "I'll be here, if you change your mind.$"
+
+MoveTutor_Text_RazorShellWhichMon:
+	.string "You made the right choice!\n"
+	.string "Show me which Pokémon I should teach.$"
+
+MoveTutor_Text_RazorShellTaught:
+	.string "Razor Shell is a strong, slicing move\n"
+	.string "which may also lower the enemy's\l"
+	.string "defense!$"

@@ -137,7 +137,7 @@ MoveTutor_EventScript_SwaggerTaught::
 	release
 	end
 
-// New
+// Edited (used to be Rollout, but now Rollout is no longer a Tutor move)
 MauvilleCity_EventScript_IceBallTutor::
 	lock
 	faceplayer
@@ -268,6 +268,29 @@ MoveTutor_EventScript_ScorchingSandsDeclined::
 
 MoveTutor_EventScript_ScorchingSandsTaught::
 	msgbox MoveTutor_Text_ScorchingSandsTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route115_EventScript_RazorShellTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_RazorShellTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RazorShellDeclined
+	msgbox MoveTutor_Text_RazorShellWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RazorShellDeclined
+	goto MoveTutor_EventScript_RazorShellTaught
+	end
+
+MoveTutor_EventScript_RazorShellDeclined::
+	msgbox MoveTutor_Text_RazorShellDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RazorShellTaught::
+	msgbox MoveTutor_Text_RazorShellTaught, MSGBOX_DEFAULT
 	release
 	end
 

@@ -7070,7 +7070,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_POISON_JAB] =
     {
         .effect = EFFECT_POISON_HIT,
-        .power = 80,
+        .power = 85,
         .type = TYPE_POISON,
         .accuracy = 100,
         .pp = 32,
@@ -11541,7 +11541,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 24,
-        .secondaryEffectChance = 20,
+        .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
