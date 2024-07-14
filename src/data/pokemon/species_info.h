@@ -22165,10 +22165,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 90,
         .baseAttack    = 132,
-        .baseDefense   = 125,
+        .baseDefense   = 115,
         .baseSpeed     = 30,
         .baseSpAttack  = 132,
-        .baseSpDefense = 125,
+        .baseSpDefense = 115,
         .types = { TYPE_GRASS, TYPE_ICE},
         .catchRate = 60,
         .expYield = 208,

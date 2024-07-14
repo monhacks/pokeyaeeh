@@ -288,8 +288,8 @@
       "x": 39,
       "y": 35,
       "elevation": 3,
-      "item": "ITEM_MAX_REPEL",
-      "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_MAX_REPEL"
+      "item": "ITEM_BUG_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_BUG_GEM"
     },
     {
       "type": "hidden_item",

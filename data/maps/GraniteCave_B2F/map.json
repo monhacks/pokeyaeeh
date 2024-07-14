@@ -198,12 +198,12 @@
       "x": 15,
       "y": 11,
       "elevation": 3,
-      "item": "ITEM_EVERSTONE",
-      "flag": "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE"
+      "item": "ITEM_MOON_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_MOON_STONE"
     },
     {
       "type": "hidden_item",
-      "x": 16,
+      "x": 22,
       "y": 11,
       "elevation": 3,
       "item": "ITEM_EVIOLITE",

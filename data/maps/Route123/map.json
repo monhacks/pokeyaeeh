@@ -812,8 +812,8 @@
       "x": 75,
       "y": 1,
       "elevation": 3,
-      "item": "ITEM_SUPER_REPEL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL"
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_HEART_SCALE"
     },
     {
       "type": "sign",
@@ -851,8 +851,8 @@
       "x": 138,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY"
+      "item": "ITEM_FIRE_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_FIRE_GEM"
     }
   ]
 }

@@ -794,8 +794,8 @@
       "x": 17,
       "y": 13,
       "elevation": 3,
-      "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1"
+      "item": "ITEM_LEAF_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_LEAF_STONE"
     },
     {
       "type": "hidden_item",
@@ -810,8 +810,8 @@
       "x": 0,
       "y": 86,
       "elevation": 3,
-      "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2"
+      "item": "ITEM_WATER_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_WATER_GEM"
     },
     {
       "type": "hidden_item",
