@@ -567,3 +567,24 @@ MoveTutor_Text_RazorShellTaught:
 	.string "Razor Shell is a strong, slicing move\n"
 	.string "which may also lower the enemy's\l"
 	.string "defense!$"
+
+MoveTutor_Text_RockTombTeach:
+	.string "Oh, boy!\n"
+	.string "Breaking all those rocks in the tunnel\l"
+	.string "made me break my back.\p"
+	.string "It was like a tomb, there!\n"
+	.string "A Rock TOmb, if you say so!\p"
+	.string "Now, my good man, wanna learn the move\n"
+	.string "Rock Tomb?$"
+
+MoveTutor_Text_RockTombDeclined:
+	.string "Guess not everytime likes rocking in a\n"
+	.string "tomb.$"
+
+MoveTutor_Text_RockTombWhichMon:
+	.string "Okay, show me which Pokémon I should\n"
+	.string "teach.$"
+
+MoveTutor_Text_RockTombTaught:
+	.string "Rock Tomb hurles boulders at the\n"
+	.string "enemy, which always lowers its speed.$"

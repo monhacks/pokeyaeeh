@@ -295,6 +295,29 @@ MoveTutor_EventScript_RazorShellTaught::
 	end
 
 // New
+Route116_TunnelersRestHouse_EventScript_RockTombTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_RockTombTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RockTombDeclined
+	msgbox MoveTutor_Text_RockTombWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RockTombDeclined
+	goto MoveTutor_EventScript_RockTombTaught
+	end
+
+MoveTutor_EventScript_RockTombDeclined::
+	msgbox MoveTutor_Text_RockTombDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RockTombTaught::
+	msgbox MoveTutor_Text_RockTombTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
 Route119_EventScript_GrassyGlideTutor::
 	lock
 	faceplayer
