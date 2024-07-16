@@ -248,42 +248,6 @@ MoveTutor_EventScript_SleepTalkTaught::
 	release
 	end
 
-// New
-Route112_EventScript_ScorchingSandsTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_ScorchingSandsTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ScorchingSandsDeclined
-	msgbox MoveTutor_Text_ScorchingSandsWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SCORCHING_SANDS
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ScorchingSandsDeclined
-	goto MoveTutor_EventScript_ScorchingSandsTaught
-	end
-
-MoveTutor_EventScript_ScorchingSandsDeclined::
-	msgbox MoveTutor_Text_ScorchingSandsDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_ScorchingSandsTaught::
-	msgbox MoveTutor_Text_ScorchingSandsTaught, MSGBOX_DEFAULT
-	release
-	end
-
-// New
-Route115_EventScript_RazorShellTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_RazorShellTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RazorShellDeclined
-	msgbox MoveTutor_Text_RazorShellWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_RAZOR_SHELL
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RazorShellDeclined
-	goto MoveTutor_EventScript_RazorShellTaught
-	end
-
 MoveTutor_EventScript_RazorShellDeclined::
 	msgbox MoveTutor_Text_RazorShellDeclined, MSGBOX_DEFAULT
 	release
@@ -291,52 +255,6 @@ MoveTutor_EventScript_RazorShellDeclined::
 
 MoveTutor_EventScript_RazorShellTaught::
 	msgbox MoveTutor_Text_RazorShellTaught, MSGBOX_DEFAULT
-	release
-	end
-
-// New
-Route116_TunnelersRestHouse_EventScript_RockTombTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_RockTombTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RockTombDeclined
-	msgbox MoveTutor_Text_RockTombWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_RAZOR_SHELL
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RockTombDeclined
-	goto MoveTutor_EventScript_RockTombTaught
-	end
-
-MoveTutor_EventScript_RockTombDeclined::
-	msgbox MoveTutor_Text_RockTombDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_RockTombTaught::
-	msgbox MoveTutor_Text_RockTombTaught, MSGBOX_DEFAULT
-	release
-	end
-
-// New
-Route119_EventScript_GrassyGlideTutor::
-	lock
-	faceplayer
-	msgbox MoveTutor_Text_GrassyGlideTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_GrassyGlideDeclined
-	msgbox MoveTutor_Text_GrassyGlideWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_GRASSY_GLIDE
-	call MoveTutor_EventScript_OpenPartyMenu
-	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_GrassyGlideDeclined
-	goto MoveTutor_EventScript_GrassyGlideTaught
-	end
-
-MoveTutor_EventScript_GrassyGlideDeclined::
-	msgbox MoveTutor_Text_GrassyGlideDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_GrassyGlideTaught::
-	msgbox MoveTutor_Text_GrassyGlideTaught, MSGBOX_DEFAULT
 	release
 	end
 
@@ -577,6 +495,42 @@ MoveTutor_EventScript_BraveBirdTaught::
 	end
 
 // New
+Route112_EventScript_ScorchingSandsTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_ScorchingSandsTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ScorchingSandsDeclined
+	msgbox MoveTutor_Text_ScorchingSandsWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SCORCHING_SANDS
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ScorchingSandsDeclined
+	goto MoveTutor_EventScript_ScorchingSandsTaught
+	end
+
+MoveTutor_EventScript_ScorchingSandsDeclined::
+	msgbox MoveTutor_Text_ScorchingSandsDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_ScorchingSandsTaught::
+	msgbox MoveTutor_Text_ScorchingSandsTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route115_EventScript_RazorShellTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_RazorShellTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RazorShellDeclined
+	msgbox MoveTutor_Text_RazorShellWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RazorShellDeclined
+	goto MoveTutor_EventScript_RazorShellTaught
+	end
+
+// New
 Route116_EventScript_FlareBlitzTutor::
 	lock
 	faceplayer
@@ -596,6 +550,52 @@ MoveTutor_EventScript_FlareBlitzDeclined::
 
 MoveTutor_EventScript_FlareBlitzTaught::
 	msgbox MoveTutor_Text_FlareBlitzTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route116_TunnelersRestHouse_EventScript_RockTombTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_RockTombTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RockTombDeclined
+	msgbox MoveTutor_Text_RockTombWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RockTombDeclined
+	goto MoveTutor_EventScript_RockTombTaught
+	end
+
+MoveTutor_EventScript_RockTombDeclined::
+	msgbox MoveTutor_Text_RockTombDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RockTombTaught::
+	msgbox MoveTutor_Text_RockTombTaught, MSGBOX_DEFAULT
+	release
+	end
+
+// New
+Route119_EventScript_GrassyGlideTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_GrassyGlideTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_GrassyGlideDeclined
+	msgbox MoveTutor_Text_GrassyGlideWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_GRASSY_GLIDE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_GrassyGlideDeclined
+	goto MoveTutor_EventScript_GrassyGlideTaught
+	end
+
+MoveTutor_EventScript_GrassyGlideDeclined::
+	msgbox MoveTutor_Text_GrassyGlideDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_GrassyGlideTaught::
+	msgbox MoveTutor_Text_GrassyGlideTaught, MSGBOX_DEFAULT
 	release
 	end
 
