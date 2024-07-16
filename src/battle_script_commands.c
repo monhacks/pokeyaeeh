@@ -10919,6 +10919,20 @@ static void Cmd_various(void)
         VARIOUS_ARGS();
         UpdateOamPriorityInAllHealthboxes(1, TRUE);
         break;
+    }    
+    case VARIOUS_TRY_HEAL_1_3RD_HP:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+        gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 3;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+        gBattleMoveDamage *= -1;
+
+        if (gBattleMons[battler].hp == gBattleMons[battler].maxHP)
+            gBattlescriptCurrInstr = cmd->failInstr;    // fail
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;   // can heal
+        return;
     }
     } // End of switch (cmd->id)
 

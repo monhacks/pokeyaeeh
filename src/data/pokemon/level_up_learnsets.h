@@ -17678,6 +17678,7 @@ static const struct LevelUpMove sGogoatLevelUpLearnset[] = {
     LEVEL_UP_MOVE(47, MOVE_HORN_LEECH),
     LEVEL_UP_MOVE(55, MOVE_LEAF_BLADE),
     LEVEL_UP_MOVE(58, MOVE_MILK_DRINK),
+    LEVEL_UP_MOVE(67, MOVE_JUNGLE_HEALING),
     LEVEL_UP_END
 };
 

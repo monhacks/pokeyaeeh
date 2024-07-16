@@ -2056,6 +2056,11 @@
 	.macro tryhealquarterhealth battler:req, failInstr:req
 	various \battler, VARIOUS_TRY_HEAL_QUARTER_HP
 	.4byte \failInstr
+	.endm 
+
+	.macro tryhealone3rdhealth battler:req, failInstr:req
+	various \battler, VARIOUS_TRY_HEAL_1_3RD_HP
+	.4byte \failInstr
 	.endm
 
 	.macro removeterrain

@@ -1662,7 +1662,32 @@ BattleScript_JungleHealingTryRestoreAlly:
 	jumpifbyte CMP_NOT_EQUAL, gBattleCommunication, 0x0, BattleScript_MoveEnd
 	addbyte gBattleCommunication, 1
 	jumpifnoally BS_TARGET, BattleScript_MoveEnd
-	setallytonexttarget JungleHealing_RestoreTargetHealth
+	setallytonexttarget JungleHealing_RestoreTargetHealth_Ally
+	goto BattleScript_MoveEnd
+JungleHealing_RestoreTargetHealth_Ally:
+	copybyte gBattlerAttacker, gBattlerTarget
+	tryhealquarterhealth BS_TARGET, BattleScript_JungleHealing_TryCureStatus
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	jumpifmove MOVE_JUNGLE_HEALING, BattleScript_JungleHealingTryRaiseSpDef  @ jungle healing will heal and raise spdef in grassy terrain
+	goto BattleScript_MoveEnd
+BattleScript_JungleHealingTryRaiseSpDef:
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_GRASSY_TERRAIN, BattleScript_JungleHealingTryUpSpDef
+	goto BattleScript_MoveEnd
+BattleScript_JungleHealingTryUpSpDef:
+	jumpifstat BS_TARGET, CMP_NOT_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_JungleHealingTryUpSpDef_Works
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_MoveEnd
+BattleScript_JungleHealingTryUpSpDef_Works:
+	playstatchangeanimation BS_TARGET, BIT_SPDEF, 0
+	setstatchanger STAT_SPDEF, 1, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_MoveEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_MoveEnd
+	addbyte gBattleCommunication, 1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectAttackerDefenseDownHit:
@@ -11455,7 +11480,12 @@ BattleScript_GrassPeltHealing::
 	setbyte gBattleCommunication, 0
 GrassPelt_RestoreTargetHealth:
 	copybyte gBattlerAttacker, gBattlerTarget
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_GRASSY_TERRAIN, GrassPelt_RestoreTargetHealth_GrassyTerrain
 	tryhealquarterhealth BS_TARGET, BattleScript_GrassPeltTryRestoreAlly
+	goto GrassPelt_AnimationAndString
+GrassPelt_RestoreTargetHealth_GrassyTerrain:
+	tryhealone3rdhealth BS_TARGET, BattleScript_GrassPeltTryRestoreAlly
+GrassPelt_AnimationAndString:
 	playanimation BS_TARGET, B_ANIM_INGRAIN_HEAL
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
 	healthbarupdate BS_TARGET

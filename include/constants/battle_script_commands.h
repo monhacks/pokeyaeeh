@@ -249,6 +249,7 @@
 #define VARIOUS_JUMP_IF_NO_BALLS                     158
 #define VARIOUS_CATCH_AFTER_VICTORY                  159
 #define VARIOUS_HIDE_HEALTHBOXES                     160
+#define VARIOUS_TRY_HEAL_1_3RD_HP                    161
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
