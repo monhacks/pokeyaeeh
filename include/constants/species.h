@@ -1653,8 +1653,11 @@
 #define SPECIES_MILOTIC_MEGA                     FORMS_START + 378
 #define SPECIES_RAICHU_MEGA                      FORMS_START + 379
 #define SPECIES_TROPIUS_MEGA                     FORMS_START + 380
+#define SPECIES_KINGDRA_MEGA                     FORMS_START + 381
 
-#define SPECIES_EGG                              SPECIES_TROPIUS_MEGA + 1
+#define FORMS_END                                SPECIES_KINGDRA_MEGA + 1
+
+#define SPECIES_EGG                              FORMS_END
 
 #define NUM_SPECIES SPECIES_EGG
 

@@ -586,6 +586,10 @@ u16 getHallofFameSpecies(u8 num)
             if(item == ITEM_KANGASKHANITE)
                 return SPECIES_KANGASKHAN_MEGA;
         break;
+        case SPECIES_KINGDRA:
+            if(item == ITEM_KINGDRITE)
+                return SPECIES_KINGDRA_MEGA;
+        break;
         case SPECIES_KINGLER:
             if(item == ITEM_KINGLERITE)
                 return SPECIES_KINGLER_MEGA;

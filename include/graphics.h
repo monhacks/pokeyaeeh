@@ -8282,6 +8282,12 @@ extern const u8 gMonIcon_TropiusMega[];
 extern const u32 gMonPalette_TropiusMega[];
 extern const u32 gMonShinyPalette_TropiusMega[];
 
+extern const u32 gMonFrontPic_KingdraMega[];
+extern const u32 gMonBackPic_KingdraMega[];
+extern const u8 gMonIcon_KingdraMega[];
+extern const u32 gMonPalette_KingdraMega[];
+extern const u32 gMonShinyPalette_KingdraMega[];
+
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
 extern const u32 gMenuPokeblock_Pal[];

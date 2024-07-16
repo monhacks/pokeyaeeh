@@ -1469,6 +1469,7 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     [SPECIES_MILOTIC_MEGA] = gMonIcon_MiloticMega,
     [SPECIES_RAICHU_MEGA] = gMonIcon_RaichuMega,
     [SPECIES_TROPIUS_MEGA] = gMonIcon_TropiusMega,
+    [SPECIES_KINGDRA_MEGA] = gMonIcon_KingdraMega,
     [SPECIES_EGG] = gMonIcon_Egg,
 };
 
@@ -2875,6 +2876,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_MILOTIC_MEGA] = 3,
     [SPECIES_RAICHU_MEGA] = 0,
     [SPECIES_TROPIUS_MEGA] = 1,
+    [SPECIES_KINGDRA_MEGA] = 3,
     [SPECIES_EGG] = 1,
 };
 

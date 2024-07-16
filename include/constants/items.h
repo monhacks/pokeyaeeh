@@ -1261,8 +1261,9 @@
 #define ITEM_MILOTICITE 933
 #define ITEM_RAICHUNITE 934
 #define ITEM_TROPIUSITE 935
+#define ITEM_KINGDRITE 936
 
-#define ITEMS_COUNT 936
+#define ITEMS_COUNT 937
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

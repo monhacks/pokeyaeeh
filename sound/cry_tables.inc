@@ -2466,6 +2466,8 @@ gCryTable::
 	cry Cry_Nidoking
 	cry Cry_Milotic
 	cry Cry_Raichu
+	cry Cry_Tropius
+	cry Cry_Kingdra
 
 	.align 2
 gCryTable_Reverse::
@@ -4890,3 +4892,5 @@ gCryTable_Reverse::
 	cry_reverse Cry_Nidoking
 	cry_reverse Cry_Milotic
 	cry_reverse Cry_Raichu
+	cry_reverse Cry_Tropius
+	cry_reverse Cry_Kingdra

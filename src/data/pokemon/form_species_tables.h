@@ -1377,3 +1377,9 @@ static const u16 sTropiusFormSpeciesIdTable[] = {
     SPECIES_TROPIUS_MEGA,
     FORM_SPECIES_END,
 };
+
+static const u16 sKingdraFormSpeciesIdTable[] = {
+    SPECIES_KINGDRA,
+    SPECIES_KINGDRA_MEGA,
+    FORM_SPECIES_END,
+};

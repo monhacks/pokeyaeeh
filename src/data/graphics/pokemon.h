@@ -8346,3 +8346,9 @@ const u32 gMonBackPic_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/
 const u8 gMonIcon_TropiusMega[] = INCBIN_U8("graphics/pokemon/tropius/mega/icon.4bpp");
 const u32 gMonPalette_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/normal.gbapal.lz");
 const u32 gMonShinyPalette_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/shiny.gbapal.lz");
+
+const u32 gMonFrontPic_KingdraMega[] = INCBIN_U32("graphics/pokemon/kingdra/mega/front.4bpp.lz");
+const u32 gMonBackPic_KingdraMega[] = INCBIN_U32("graphics/pokemon/kingdra/mega/back.4bpp.lz");
+const u8 gMonIcon_KingdraMega[] = INCBIN_U8("graphics/pokemon/kingdra/mega/icon.4bpp");
+const u32 gMonPalette_KingdraMega[] = INCBIN_U32("graphics/pokemon/kingdra/mega/normal.gbapal.lz");
+const u32 gMonShinyPalette_KingdraMega[] = INCBIN_U32("graphics/pokemon/kingdra/mega/shiny.gbapal.lz");

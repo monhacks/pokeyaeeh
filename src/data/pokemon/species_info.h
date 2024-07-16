@@ -6226,7 +6226,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_KINGDRA] =
     {
-        .baseHP        = 75,
+        .baseHP        = 85,
         .baseAttack    = 95,
         .baseDefense   = 95,
         .baseSpeed     = 85,
@@ -6386,8 +6386,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 50,
         .baseAttack    = 105,
-        .baseDefense   = 95,
-        .baseSpeed     = 80,
+        .baseDefense   = 105,
+        .baseSpeed     = 70,
         .baseSpAttack  = 35,
         .baseSpDefense = 110,
         .types = { TYPE_FIGHTING, TYPE_FIGHTING },
@@ -28101,9 +28101,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE},
+        .abilities = {ABILITY_SHEER_FORCE, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
 
     [SPECIES_NIDOKING_MEGA] =
@@ -28123,9 +28124,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_NONE},
+        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
 
     [SPECIES_MILOTIC_MEGA] =
@@ -28145,9 +28147,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
-        .abilities = {ABILITY_DRAGON_SHEEN, ABILITY_NONE},
+        .abilities = {ABILITY_DRAGON_SHEEN, ABILITY_DRAGON_SHEEN},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
 
     [SPECIES_RAICHU_MEGA] =
@@ -28167,9 +28170,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
-        .abilities = {ABILITY_PUMMELIZE, ABILITY_NONE},
+        .abilities = {ABILITY_PUMMELIZE, ABILITY_PUMMELIZE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
 
     [SPECIES_TROPIUS_MEGA] =
@@ -28189,8 +28193,35 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
-        .abilities = {ABILITY_THICK_FAT, ABILITY_NONE},
+        .abilities = {ABILITY_THICK_FAT, ABILITY_THICK_FAT},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
+    },
+
+    [SPECIES_KINGDRA_MEGA] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 105,
+        .baseDefense   = 115,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 115,
+        .types = { TYPE_WATER, TYPE_DRAGON },
+        .catchRate = 45,
+        .expYield = 243,
+        .evYield_Attack    = 1,
+        .evYield_SpAttack  = 1,
+        .evYield_SpDefense = 1,
+        .itemRare = ITEM_DRAGON_SCALE,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
+        .abilities = {ABILITY_DRIZZLE, ABILITY_DRIZZLE},
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
 };
