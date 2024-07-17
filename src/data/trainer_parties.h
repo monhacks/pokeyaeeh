@@ -17839,7 +17839,7 @@ static const struct TrainerMon sParty_BrendanLilycoveTreecko[] = {
         .lvl = 1
     },
     {
-        .species = SPECIES_GASTRODON,
+        .species = SPECIES_GASTRODON_WEST_SEA,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_UNAWARE,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 4, 0),
