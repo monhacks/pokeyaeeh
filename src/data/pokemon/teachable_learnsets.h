@@ -50119,6 +50119,7 @@ static const u16 sNihilegoTeachableLearnset[] = {
 };
 
 static const u16 sBuzzwoleTeachableLearnset[] = {
+    MOVE_BODY_PRESS,
     MOVE_BODY_SLAM,
     MOVE_BOUNCE,
     MOVE_BRICK_BREAK,
@@ -50142,6 +50143,7 @@ static const u16 sBuzzwoleTeachableLearnset[] = {
     MOVE_FRUSTRATION,
     MOVE_GIGA_IMPACT,
     MOVE_GYRO_BALL,
+    MOVE_HARD_PRESS,
     MOVE_HIDDEN_POWER,
     MOVE_HIGH_HORSEPOWER,
     MOVE_ICE_PUNCH,
@@ -50822,6 +50824,7 @@ static const u16 sStakatakaTeachableLearnset[] = {
     MOVE_GIGA_IMPACT,
     MOVE_GRAVITY,
     MOVE_GYRO_BALL,
+    MOVE_HARD_PRESS,
     MOVE_HEAT_CRASH,
     MOVE_HEAVY_SLAM,
     MOVE_HIDDEN_POWER,
@@ -54874,6 +54877,7 @@ static const u16 sZacianTeachableLearnset[] = {
     MOVE_FOCUS_ENERGY,
     MOVE_FRUSTRATION,
     MOVE_GIGA_IMPACT,
+    MOVE_HARD_PRESS,
     MOVE_HELPING_HAND,
     MOVE_HIDDEN_POWER,
     MOVE_HYPER_BEAM,
@@ -54936,6 +54940,7 @@ static const u16 sZamazentaTeachableLearnset[] = {
     MOVE_FRUSTRATION,
     MOVE_GIGA_IMPACT,
     MOVE_GUARD_SWAP,
+    MOVE_HARD_PRESS,
     MOVE_HEAVY_SLAM,
     MOVE_HELPING_HAND,
     MOVE_HIDDEN_POWER,
