@@ -374,14 +374,14 @@
 #define ITEM_MEWTWONITE_Y 306
 #define ITEM_AMPHAROSITE 307 // Lilycove City
 #define ITEM_STEELIXITE 308 // Route 105 Boss Foster
-#define ITEM_SCIZORITE 309
+#define ITEM_SCIZORITE 309 // Route 120 Boss Ydarissep
 #define ITEM_HERACRONITE 310
 #define ITEM_HOUNDOOMINITE 311
 #define ITEM_TYRANITARITE 312
 #define ITEM_SCEPTILITE 313 // Petalburg City (after Gym 5)
 #define ITEM_BLAZIKENITE 314 // Petalburg City (after Gym 5)
 #define ITEM_SWAMPERTITE 315 // Petalburg City (after Gym 5)
-#define ITEM_GARDEVOIRITE 316
+#define ITEM_GARDEVOIRITE 316 // Route 127 Boss Athena
 #define ITEM_SABLENITE 317 // Cave Of Origin 1F
 #define ITEM_MAWILITE 318 // Fortree City Gym Leader
 #define ITEM_AGGRONITE 319 // Granite Cave
@@ -1238,29 +1238,29 @@
 // Gigantamax Mega Stones
 #define ITEM_BUTTERFRITE 913
 #define ITEM_MACHAMPITE 914 // Victory Road F2
-#define ITEM_KINGLERITE 915
-#define ITEM_LAPRASITE 916
+#define ITEM_KINGLERITE 915 // Route 126
+#define ITEM_LAPRASITE 916 // SeafloorCavern R7
 #define ITEM_GARBODORITE 917
 #define ITEM_MELMETALITE 918
 #define ITEM_RILLABOOMITE 919 // Petalburg City (after Gym 5)
 #define ITEM_CINDERACITE 920 // Petalburg City (after Gym 5)
 #define ITEM_INTELEONITE 921 // Petalburg City (after Gym 5)
-#define ITEM_CORVIKNIGHTITE 922
+#define ITEM_CORVIKNIGHTITE 922 // Route 125 Presley
 #define ITEM_ORBEETLITE 923
 #define ITEM_DREDNITE 924 // Route 124 Boss Chad
 #define ITEM_COALOSSALITE 925
 #define ITEM_SANDACONDANITE 926 // Route 126
 #define ITEM_CENTISKORCHITE 927
-#define ITEM_HATTERENITE 928
-#define ITEM_GRIMMSNARLITE 929
+#define ITEM_HATTERENITE 928 // Route 123
+#define ITEM_GRIMMSNARLITE 929 // Mt Pyre F6
 #define ITEM_COPPERAJAHITE 930
 
 // Custom Mega Stones
-#define ITEM_NIDOQUEENITE 931
-#define ITEM_NIDOKINGITE 932
+#define ITEM_NIDOQUEENITE 931 // Route 121 Boss Yuuki
+#define ITEM_NIDOKINGITE 932 // Route 121 Boss Himari
 #define ITEM_MILOTICITE 933
 #define ITEM_RAICHUNITE 934
-#define ITEM_TROPIUSITE 935
+#define ITEM_TROPIUSITE 935 // ROute 123 Boss Violet
 #define ITEM_KINGDRITE 936
 
 #define ITEMS_COUNT 937
