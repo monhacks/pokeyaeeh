@@ -125,7 +125,7 @@ struct HeatStartMenu {
   u32 sStartClockWindowId;
   u32 sMenuNameWindowId;
   u32 sSafariBallsWindowId;
-  u32 flag; // some u32 holding values for controlling the sprite anims an lifetime
+  u32 flag; // some u32 holding values for controlling the sprite anims and lifetime
   
   u32 spriteIdPoketch;
   u32 spriteIdPokedex;
@@ -142,7 +142,6 @@ static EWRAM_DATA u8 menuSelected = 255;
 static EWRAM_DATA u8 (*sSaveDialogCallback)(void) = NULL;
 static EWRAM_DATA u8 sSaveDialogTimer = 0;
 static EWRAM_DATA u8 sSaveInfoWindowId = 0;
-EWRAM_DATA u8 gClockMode = TWELVE_HOUR_MODE;
 
 // --BG-GFX--
 static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/heat_start_menu/bg.4bpp.lz");
@@ -163,7 +162,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = 14,
-    .height = 12,
+    .height = 10,
     .paletteNum = 15,
     .baseBlock = 8
 };
@@ -632,7 +631,7 @@ void HeatStartMenu_Init(void) {
     if (menuSelected == 255) {
       SetSelectedMenu();
     }
-
+      
     HeatStartMenu_LoadSprites();
     HeatStartMenu_CreateSprites();
     HeatStartMenu_LoadBgGfx();
@@ -725,6 +724,7 @@ static void HeatStartMenu_SafariZone_CreateSprites(void) {
 
 static void HeatStartMenu_LoadBgGfx(void) {
   u8* buf = GetBgTilemapBuffer(0); 
+  LoadBgTilemap(0, 0, 0, 0);
   DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0);
   if (GetSafariZoneFlag() == FALSE) {
     LZDecompressWram(sStartMenuTilemap, buf);
@@ -752,21 +752,13 @@ static void HeatStartMenu_ShowTimeWindow(void)
 	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
     ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
-    if (gLocalTime.hours == 0)
-		  ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
-    if (gLocalTime.hours == 12)
-		  ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
     
 	StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
-    if (gClockMode == TWELVE_HOUR_MODE)
-    {
-        if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
+        if (gLocalTime.hours >= 13 && gLocalTime.hours <= 24)
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
-    }
     
 	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
@@ -784,7 +776,6 @@ static void HeatStartMenu_UpdateClockDisplay(void)
 	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
     ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gLocalTime.hours == 0)
 		ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
@@ -794,24 +785,18 @@ static void HeatStartMenu_UpdateClockDisplay(void)
 	if (gLocalTime.seconds % 2)
 	{
         StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
-        if (gClockMode == TWELVE_HOUR_MODE)
-        {
             if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
             else
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
-        } 
     }
 	else
 	{
         StringExpandPlaceholders(gStringVar4, gText_CurrentTimeOff);
-        if (gClockMode == TWELVE_HOUR_MODE)
-        {
             if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimePMOff); 
             else
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAMOff);  
-        } 
     }
     
 	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
@@ -1243,13 +1228,6 @@ static void ShowSaveInfoWindow(void) {
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
-    // Print version number
-    yOffset += 16;
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingVersionNum, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_VERSION, gStringVar4, color);
-    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
 }
 
@@ -1278,9 +1256,10 @@ static void Task_HandleSave(u8 taskId) {
       break;
     case SAVE_SUCCESS:
     case SAVE_CANCELED: // Back to start menu
-      ClearDialogWindowAndFrameToTransparent(0, FALSE);
+      ClearDialogWindowAndFrameToTransparent(0, TRUE);
+      ScriptUnfreezeObjectEvents();  
+      UnlockPlayerFieldControls();
       DestroyTask(taskId);
-      HeatStartMenu_Init();
       break;
     case SAVE_ERROR:    // Close start menu
       ClearDialogWindowAndFrameToTransparent(0, TRUE);
@@ -1344,7 +1323,6 @@ void GoToHandleInput(void) {
   CreateTask(Task_HeatStartMenu_HandleMainInput, 80);
 }
 
-
 static void HeatStartMenu_HandleInput_DPADDOWN(void) {
   // Needs to be set to 0 so that the selected icons change in the frontend
   sHeatStartMenu->flag = 0;
@@ -1396,7 +1374,7 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
 
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
   u32 index;
-  if (sHeatStartMenu->loadState == 0) {
+  if (sHeatStartMenu->loadState == 0 && !gPaletteFade.active) {
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
     LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
   }
@@ -1474,7 +1452,7 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void) {
 
 static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
   u32 index;
-  if (sHeatStartMenu->loadState == 0) {
+  if (sHeatStartMenu->loadState == 0 && !gPaletteFade.active) {
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
     LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
   }
@@ -1503,3 +1481,4 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
     }
   }
 }
+
