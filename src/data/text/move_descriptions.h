@@ -340,7 +340,7 @@ static const u8 sFireSpinDescription[] = _(
 
 static const u8 sThunderShockDescription[] = _(
     "An electrical attack that\n"
-    "may paralyze the foe.");
+    "paralyzes the foe.");
 
 static const u8 sThunderboltDescription[] = _(
     "A strong electrical attack\n"
@@ -4647,7 +4647,7 @@ static const u8 sMoveFourLineDescription_PetalDance[] = _("The user attacks\nwit
 static const u8 sMoveFourLineDescription_StringShot[] = _("The foe is bound\nwith strings shot\nfrom the mouth to\nreduce its SPEED.");
 static const u8 sMoveFourLineDescription_DragonRage[] = _("The foe is hit with\na shock wave that\nalways inflicts 40-\nHP damage.");
 static const u8 sMoveFourLineDescription_FireSpin[] = _("The foe is trapped\nin an intense spiral\nof fire that rages\nfour or five turns.");
-static const u8 sMoveFourLineDescription_ThunderShock[] = _("An electric shock\nattack that may\nalso leave the foe\nparalyzed.");
+static const u8 sMoveFourLineDescription_ThunderShock[] = _("An electric shock\nattack that also\nleaves the foe\nparalyzed.");
 static const u8 sMoveFourLineDescription_Thunderbolt[] = _("A strong electrical\nattack that may\nalso leave the foe\nparalyzed.");
 static const u8 sMoveFourLineDescription_ThunderWave[] = _("A weak electric\nshock that is sure\nto cause paralysis\nif it hits.");
 static const u8 sMoveFourLineDescription_Thunder[] = _("A brutal lightning\nattack that may\nalso leave the foe\nparalyzed.");

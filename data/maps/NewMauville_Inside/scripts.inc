@@ -142,8 +142,24 @@ NewMauville_Inside_EventScript_SetBarrierStateGreenButton::
 
 NewMauville_Inside_EventScript_RedButton::
 	lockall
-	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_DEFAULT
+	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_AUTOCLOSE
 	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	playmoncry SPECIES_ROTOM, CRY_MODE_ENCOUNTER
+	@ show rotom
+	delay 60
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox NewMauville_Inside_Text_TheWildRotomAttacked, MSGBOX_AUTOCLOSE
+	setwildbattle SPECIES_ROTOM, 0, ITEM_MAGNET, NATURE_MODEST, 2, 0, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_THUNDER_SHOCK, MOVE_HYPER_VOICE, MOVE_HEX, MOVE_DOUBLE_TEAM
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	msgbox NewMauville_Inside_Text_TheWildRotomDroppedSomething, MSGBOX_AUTOCLOSE
+	giveitem ITEM_ROTOM_CATALOG
 	setvar VAR_NEW_MAUVILLE_STATE, 2
 	releaseall
 	end
@@ -267,7 +283,16 @@ NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped:
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "The generator appears to have\n"
-	.string "stopped…$"
+	.string "stopped…\p"
+	.string "… … … … … … … …\n"
+	.string "… … … … … … … …\p"
+	.string "A Pokemon came out of the generator!$"
+
+NewMauville_Inside_Text_TheWildRotomAttacked:
+	.string "The wild Rotom attacked!$"
+
+NewMauville_Inside_Text_TheWildRotomDroppedSomething:
+	.string "The wild Rotom dropped something.$"
 
 NewMauville_Inside_Text_LeagueHiredUs:
 	.string "The League hired us to take care of\n"
