@@ -142,6 +142,7 @@ static EWRAM_DATA u8 menuSelected = 255;
 static EWRAM_DATA u8 (*sSaveDialogCallback)(void) = NULL;
 static EWRAM_DATA u8 sSaveDialogTimer = 0;
 static EWRAM_DATA u8 sSaveInfoWindowId = 0;
+EWRAM_DATA u8 gClockMode = TWELVE_HOUR_MODE;
 
 // --BG-GFX--
 static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/heat_start_menu/bg.4bpp.lz");
@@ -162,7 +163,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = 14,
-    .height = 10,
+    .height = 12,
     .paletteNum = 15,
     .baseBlock = 8
 };
@@ -739,35 +740,38 @@ static void HeatStartMenu_LoadBgGfx(void) {
 static void HeatStartMenu_ShowTimeWindow(void)
 {
     u8 analogHour;
-
 	RtcCalcLocalTime();
       // print window
   sHeatStartMenu->sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
   FillWindowPixelBuffer(sHeatStartMenu->sStartClockWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
   PutWindowTilemap(sHeatStartMenu->sStartClockWindowId);
 	FlagSet(FLAG_TEMP_5);
-
     analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
-
 	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
     ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
-    
+    if (gLocalTime.hours == 0)
+		  ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gLocalTime.hours == 12)
+		  ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
+
 	StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
-        if (gLocalTime.hours >= 13 && gLocalTime.hours <= 24)
+    if (gClockMode == TWELVE_HOUR_MODE)
+    {
+        if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
-    
+    }
+
 	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
-
 static void HeatStartMenu_UpdateClockDisplay(void)
 {
     u8 analogHour;
-
 	if (!FlagGet(FLAG_TEMP_5))
 		return;
 	RtcCalcLocalTime();
@@ -776,29 +780,35 @@ static void HeatStartMenu_UpdateClockDisplay(void)
 	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
     ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gClockMode == TWELVE_HOUR_MODE)
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gLocalTime.hours == 0)
 		ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gLocalTime.hours == 12)
 		ConvertIntToDecimalStringN(gStringVar1, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
-
 	if (gLocalTime.seconds % 2)
 	{
         StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
+        if (gClockMode == TWELVE_HOUR_MODE)
+        {
             if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
             else
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
+        } 
     }
 	else
 	{
         StringExpandPlaceholders(gStringVar4, gText_CurrentTimeOff);
+        if (gClockMode == TWELVE_HOUR_MODE)
+        {
             if (gLocalTime.hours >= 12 && gLocalTime.hours <= 24)
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimePMOff); 
             else
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAMOff);  
+        } 
     }
-    
+
 	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
@@ -1228,6 +1238,13 @@ static void ShowSaveInfoWindow(void) {
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
+    // Print version number
+    yOffset += 16;
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingVersionNum, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    BufferSaveMenuText(SAVE_MENU_VERSION, gStringVar4, color);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
 }
 
@@ -1255,11 +1272,15 @@ static void Task_HandleSave(u8 taskId) {
     case SAVE_IN_PROGRESS:
       break;
     case SAVE_SUCCESS:
-    case SAVE_CANCELED: // Back to start menu
       ClearDialogWindowAndFrameToTransparent(0, TRUE);
       ScriptUnfreezeObjectEvents();  
       UnlockPlayerFieldControls();
       DestroyTask(taskId);
+      break;
+    case SAVE_CANCELED: // Back to start menu
+      ClearDialogWindowAndFrameToTransparent(0, FALSE);
+      DestroyTask(taskId);
+      HeatStartMenu_Init();
       break;
     case SAVE_ERROR:    // Close start menu
       ClearDialogWindowAndFrameToTransparent(0, TRUE);
@@ -1481,4 +1502,3 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
     }
   }
 }
-
