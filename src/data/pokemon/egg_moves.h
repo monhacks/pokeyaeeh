@@ -54,6 +54,7 @@ const u16 gEggMoves[] = {
               MOVE_MIST,
               MOVE_MUD_SPORT,
               MOVE_MUDDY_WATER,
+              MOVE_SHELL_SMASH,
               MOVE_REFRESH,
               MOVE_WATER_SPOUT,
               MOVE_YAWN),
@@ -2364,7 +2365,8 @@ const u16 gEggMoves[] = {
               MOVE_SMELLING_SALTS,
               MOVE_SWITCHEROO,
               MOVE_TEETER_DANCE,
-              MOVE_WORRY_SEED),
+              MOVE_WORRY_SEED,
+              MOVE_WOOD_HAMMER),
 
     egg_moves(SWABLU,
               MOVE_AGILITY,
@@ -2541,7 +2543,8 @@ const u16 gEggMoves[] = {
               MOVE_NATURE_POWER,
               MOVE_RAZOR_WIND,
               MOVE_SLAM,
-              MOVE_SYNTHESIS),
+              MOVE_SYNTHESIS,
+              MOVE_WOOD_HAMMER),
 
     egg_moves(CHIMECHO,
               MOVE_COSMIC_POWER,
@@ -3544,6 +3547,8 @@ const u16 gEggMoves[] = {
               MOVE_LEECH_SEED,
               MOVE_SEED_BOMB,
               MOVE_SPIKES,
+              MOVE_TOXIC_SPIKES,
+              MOVE_TWINEEDLE,
               MOVE_WOOD_HAMMER,
               MOVE_WORRY_SEED),
 
@@ -4002,7 +4007,8 @@ const u16 gEggMoves[] = {
               MOVE_SPIKES,
               MOVE_SUPER_FANG,
               MOVE_SYNTHESIS,
-              MOVE_WIDE_GUARD),
+              MOVE_WIDE_GUARD,
+              MOVE_WOOD_HAMMER),
 
     egg_moves(FENNEKIN,
               MOVE_COPYCAT,

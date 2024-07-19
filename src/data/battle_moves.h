@@ -456,19 +456,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_JUMP_KICK] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 100,
-            .pp = 16,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 85,
-            .pp = 40,
-        #else
-            .power = 70,
-            .pp = 40,
-        #endif
         .effect = EFFECT_RECOIL_IF_MISS,
+        .power = 100,
         .type = TYPE_FIGHTING,
         .accuracy = 95,
+        .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -2546,7 +2538,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SKY_ATTACK] =
     {
-        .effect = EFFECT_CLOSE_COMBAT,
+        .effect = EFFECT_SUPERPOWER,
         .power = 120,
         .type = TYPE_FLYING,
         .accuracy = 100,
@@ -7466,7 +7458,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_THUNDER_FANG] =
     {
         .effect = EFFECT_FLINCH_STATUS,
-        .power = 75,
+        .power = 70,
         .type = TYPE_ELECTRIC,
         .accuracy = 95,
         .pp = 24,
@@ -7484,7 +7476,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_ICE_FANG] =
     {
         .effect = EFFECT_FLINCH_STATUS,
-        .power = 75,
+        .power = 70,
         .type = TYPE_ICE,
         .accuracy = 95,
         .pp = 24,
@@ -7502,7 +7494,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FIRE_FANG] =
     {
         .effect = EFFECT_FLINCH_STATUS,
-        .power = 75,
+        .power = 70,
         .type = TYPE_FIRE,
         .accuracy = 95,
         .pp = 24,
@@ -8298,11 +8290,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_WONDER_ROOM] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 0,
-        #else
-            .priority = -7,
-        #endif
         .effect = EFFECT_WONDER_ROOM,
         .power = 0,
         .type = TYPE_PSYCHIC,
@@ -8310,6 +8297,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
         .ignoresProtect = TRUE,
@@ -8362,11 +8350,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_RAGE_POWDER] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 2,
-        #else
-            .priority = 3,
-        #endif
         .effect = EFFECT_FOLLOW_ME,
         .power = 0,
         .type = TYPE_BUG,
@@ -8374,6 +8357,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .pp = 32,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,
+        .priority = 3,
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_RESET_STATS,
         .powderMove = TRUE,
@@ -8402,11 +8386,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MAGIC_ROOM] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 0,
-        #else
-            .priority = -7,
-        #endif
         .effect = EFFECT_MAGIC_ROOM,
         .power = 0,
         .type = TYPE_PSYCHIC,
@@ -8414,6 +8393,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
         .ignoresProtect = TRUE,
@@ -14809,6 +14789,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
         .highCritRatio = TRUE,
         .slicingMove = TRUE,
+        .sheerForceBoost = TRUE,
     },    
 
     [MOVE_LEAF_LEAP] =

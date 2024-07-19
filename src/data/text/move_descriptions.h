@@ -1115,8 +1115,8 @@ static const u8 sIngrainDescription[] = _(
     "The user can't switch out.");
 
 static const u8 sSuperpowerDescription[] = _(
-    "Boosts strength sharply,\n"
-    "but lowers abilities.");
+    "Powerful attack which lowers\n"
+    "Attack and Defense stats.");
 
 static const u8 sMagicCoatDescription[] = _(
     "Reflects special effects\n"
@@ -3495,7 +3495,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_BARRAGE - 1] = sBarrageDescription,
     [MOVE_LEECH_LIFE - 1] = sLeechLifeDescription,
     [MOVE_LOVELY_KISS - 1] = sLovelyKissDescription,
-    [MOVE_SKY_ATTACK - 1] = sSkyAttackDescription,
+    [MOVE_SKY_ATTACK - 1] = sSuperpowerDescription,
     [MOVE_TRANSFORM - 1] = sTransformDescription,
     [MOVE_BUBBLE - 1] = sBubbleDescription,
     [MOVE_DIZZY_PUNCH - 1] = sDizzyPunchDescription,
@@ -5575,7 +5575,7 @@ const u8 *const gMoveFourLineDescriptionPointers[MOVES_COUNT - 1] = {
     [MOVE_BARRAGE       - 1] = sMoveFourLineDescription_Barrage,
     [MOVE_LEECH_LIFE    - 1] = sMoveFourLineDescription_LeechLife,
     [MOVE_LOVELY_KISS   - 1] = sMoveFourLineDescription_LovelyKiss,
-    [MOVE_SKY_ATTACK    - 1] = sMoveFourLineDescription_CloseCombat,
+    [MOVE_SKY_ATTACK    - 1] = sMoveFourLineDescription_Superpower,
     [MOVE_TRANSFORM     - 1] = sMoveFourLineDescription_Transform,
     [MOVE_BUBBLE        - 1] = sMoveFourLineDescription_Bubble,
     [MOVE_DIZZY_PUNCH   - 1] = sMoveFourLineDescription_DizzyPunch,
