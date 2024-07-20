@@ -84,8 +84,8 @@ static const u8 sUnusedFRLGBlankedDownArrow[] = INCBIN_U8("graphics/fonts/unused
 static const u8 sUnusedFRLGDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_down_arrow.4bpp");
 static const u8 sDownArrowYCoords[] = { 0, 1, 2, 1 };
 static const u8 sWindowVerticalScrollSpeeds[] = {
-    [OPTIONS_TEXT_SPEED_FAST] = 4,
-    [OPTIONS_TEXT_SPEED_INSTANT] = 4,
+    [OPTIONS_INSTANT_TEXT_ON] = 4,
+    [OPTIONS_INSTANT_TEXT_OFF] = 4,
 };
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
@@ -366,7 +366,7 @@ void RunTextPrinters(void)
     int i;
     int j;
     u16 temp;
-    bool32 isInstantText = (gSaveBlock2Ptr->optionsTextSpeed == OPTIONS_TEXT_SPEED_INSTANT); // Force correct result. This is dumb, Revo knows.
+    bool32 isInstantText = (gSaveBlock2Ptr->optionsTextSpeed == OPTIONS_INSTANT_TEXT_ON); // Force correct result. This is dumb, Revo knows.
 
     do
     {

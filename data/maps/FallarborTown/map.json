@@ -87,8 +87,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FallarborTown_EventScript_ItemTMPlayRough",
-      "flag": "FLAG_ITEM_FALLARBOR_TOWN_TM_PLAY_ROUGH"
+      "script": "FallarborTown_EventScript_ItemTMThunderbolt",
+      "flag": "FLAG_ITEM_FALLARBOR_TOWN_TM_THUNDERBOLT"
     }
   ],
   "warp_events": [

@@ -74,8 +74,8 @@ const u16 gStandardMenuPalette[] = INCBIN_U16("graphics/interface/std_menu.gbapa
 
 static const u8 sTextSpeedFrameDelays[] =
 {
-    [OPTIONS_TEXT_SPEED_FAST] = 1,
-    [OPTIONS_TEXT_SPEED_INSTANT] = 1
+    [OPTIONS_INSTANT_TEXT_ON] = 1,
+    [OPTIONS_INSTANT_TEXT_OFF] = 1
 };
 
 static const struct WindowTemplate sStandardTextBox_WindowTemplates[] =
@@ -477,8 +477,8 @@ u32 GetPlayerTextSpeed(void)
 u8 GetPlayerTextSpeedDelay(void)
 {
     u32 speed = GetPlayerTextSpeed();
-    if (speed > OPTIONS_TEXT_SPEED_INSTANT)
-        speed = OPTIONS_TEXT_SPEED_FAST;
+    if (speed > OPTIONS_INSTANT_TEXT_ON)
+        speed = OPTIONS_INSTANT_TEXT_OFF;
     return sTextSpeedFrameDelays[speed];
 }
 

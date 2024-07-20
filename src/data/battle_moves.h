@@ -14385,7 +14385,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SYRUP_BOMB] =
     {
         .effect = EFFECT_SYRUP_BOMB,
-        .power = 60,
+        .power = 75,
         .type = TYPE_GRASS,
         .accuracy = 85,
         .pp = 16,

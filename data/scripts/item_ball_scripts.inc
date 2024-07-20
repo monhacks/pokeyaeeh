@@ -458,8 +458,8 @@ MossdeepCity_EventScript_ItemTMBatonPass::
 	finditem ITEM_TM_BATON_PASS
 	end
 
-FallarborTown_EventScript_ItemTMPlayRough::
-	finditem ITEM_TM_PLAY_ROUGH
+FallarborTown_EventScript_ItemTMThunderbolt::
+	finditem ITEM_TM_THUNDERBOLT
 	end
 
 PetalburgWoods_EventScript_ItemLifeOrb::

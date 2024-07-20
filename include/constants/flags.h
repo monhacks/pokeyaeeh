@@ -714,7 +714,7 @@
 #define FLAG_ITEM_ROUTE_134_TM_TOXIC_SPIKES                         0x292
 #define FLAG_ITEM_ROUTE_114_TM_GRASS_KNOT                           0x293
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_TM_CROSS_POISON                 0x294
-#define FLAG_ITEM_FALLARBOR_TOWN_TM_PLAY_ROUGH                      0x295
+#define FLAG_ITEM_FALLARBOR_TOWN_TM_THUNDERBOLT                     0x295
 #define FLAG_ITEM_RUSTBORO_CITY_TM_FIRE_FANG                        0x296
 #define FLAG_ITEM_ROUTE_105_TM_X_SCISSOR                            0x297
 #define FLAG_ITEM_ROUTE_128_TM_ANCIENT_POWER                        0x298
