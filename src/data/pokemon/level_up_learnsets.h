@@ -26360,6 +26360,7 @@ static const struct LevelUpMove sGreatTuskLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_MEGAHORN),
     LEVEL_UP_MOVE(84, MOVE_HEAD_SMASH),
     LEVEL_UP_MOVE(91, MOVE_HEADLONG_RUSH),
+    LEVEL_UP_MOVE(98, MOVE_FISSURE),
     LEVEL_UP_END
 };
 
@@ -26381,6 +26382,7 @@ static const struct LevelUpMove sScreamTailLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_GYRO_BALL),
     LEVEL_UP_MOVE(84, MOVE_PERISH_SONG),
     LEVEL_UP_MOVE(91, MOVE_BOOMBURST),
+    LEVEL_UP_MOVE(98, MOVE_COSMIC_POWER),
     LEVEL_UP_END
 };
 
@@ -26401,6 +26403,7 @@ static const struct LevelUpMove sBruteBonnetLevelUpLearnset[] = {
     LEVEL_UP_MOVE(70, MOVE_INGRAIN),
     LEVEL_UP_MOVE(77, MOVE_RAGE_POWDER),
     LEVEL_UP_MOVE(91, MOVE_SOLAR_BEAM),
+    LEVEL_UP_MOVE(98, MOVE_WICKED_BLOW),
     LEVEL_UP_END
 };
 
@@ -26422,6 +26425,7 @@ static const struct LevelUpMove sFlutterManeLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_PAIN_SPLIT),
     LEVEL_UP_MOVE(84, MOVE_MOONBLAST),
     LEVEL_UP_MOVE(91, MOVE_PERISH_SONG),
+    LEVEL_UP_MOVE(98, MOVE_FLEUR_CANNON),
     LEVEL_UP_END
 };
 
@@ -26444,6 +26448,7 @@ static const struct LevelUpMove sSlitherWingLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_VICTORY_DANCE),
     LEVEL_UP_MOVE(84, MOVE_LEECH_LIFE),
     LEVEL_UP_MOVE(91, MOVE_THRASH),
+    LEVEL_UP_MOVE(98, MOVE_VICTORY_DANCE),
     LEVEL_UP_END
 };
 
@@ -26466,6 +26471,7 @@ static const struct LevelUpMove sSandyShocksLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_GRAVITY),
     LEVEL_UP_MOVE(84, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE(91, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(98, MOVE_ELECTRO_SHOT),
     LEVEL_UP_END
 };
 
@@ -26486,6 +26492,7 @@ static const struct LevelUpMove sIronTreadsLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_MEGAHORN),
     LEVEL_UP_MOVE(84, MOVE_GIGA_IMPACT),
     LEVEL_UP_MOVE(91, MOVE_STEEL_ROLLER),
+    LEVEL_UP_MOVE(98, MOVE_SHIFT_GEAR),
     LEVEL_UP_END
 };
 
@@ -26506,6 +26513,7 @@ static const struct LevelUpMove sIronBundleLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_HYDRO_PUMP),
     LEVEL_UP_MOVE(84, MOVE_AURORA_VEIL),
     LEVEL_UP_MOVE(91, MOVE_BLIZZARD),
+    LEVEL_UP_MOVE(98, MOVE_SHEER_COLD),
     LEVEL_UP_END
 };
 
@@ -26530,6 +26538,7 @@ static const struct LevelUpMove sIronHandsLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_HEAVY_SLAM),
     LEVEL_UP_MOVE(84, MOVE_BELLY_DRUM),
     LEVEL_UP_MOVE(91, MOVE_FOCUS_PUNCH),
+    LEVEL_UP_MOVE(98, MOVE_PLASMA_FISTS),
     LEVEL_UP_END
 };
 
@@ -26552,6 +26561,7 @@ static const struct LevelUpMove sIronJugulisLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_OUTRAGE),
     LEVEL_UP_MOVE(84, MOVE_DRAGON_PULSE),
     LEVEL_UP_MOVE(91, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE(98, MOVE_AEROBLAST),
     LEVEL_UP_END
 };
 
@@ -26574,6 +26584,7 @@ static const struct LevelUpMove sIronMothLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_HURRICANE),
     LEVEL_UP_MOVE(84, MOVE_BUG_BUZZ),
     LEVEL_UP_MOVE(91, MOVE_OVERHEAT),
+    LEVEL_UP_MOVE(98, MOVE_ERUPTION),
     LEVEL_UP_END
 };
 
@@ -26596,6 +26607,7 @@ static const struct LevelUpMove sIronThornsLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_STEALTH_ROCK),
     LEVEL_UP_MOVE(84, MOVE_STONE_EDGE),
     LEVEL_UP_MOVE(91, MOVE_GIGA_IMPACT),
+    LEVEL_UP_MOVE(98, MOVE_MIGHTY_CLEAVE),
     LEVEL_UP_END
 };
 
@@ -26799,6 +26811,7 @@ static const struct LevelUpMove sRoaringMoonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(77, MOVE_THROAT_CHOP),
     LEVEL_UP_MOVE(84, MOVE_ROOST),
     LEVEL_UP_MOVE(91, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_MOVE(98, MOVE_GLAIVE_RUSH),
     LEVEL_UP_END
 };
 
@@ -26823,6 +26836,7 @@ static const struct LevelUpMove sIronValiantLevelUpLearnset[] = {
     LEVEL_UP_MOVE(84, MOVE_WIDE_GUARD),
     LEVEL_UP_MOVE(84, MOVE_QUICK_GUARD),
     LEVEL_UP_MOVE(91, MOVE_SPIRIT_BREAK),
+    LEVEL_UP_MOVE(98, MOVE_METEOR_ASSAULT),
     LEVEL_UP_END
 };
 
@@ -26885,6 +26899,7 @@ static const struct LevelUpMove sWalkingWakeLevelUpLearnset[] = {
     LEVEL_UP_MOVE(70, MOVE_OUTRAGE),
     LEVEL_UP_MOVE(77, MOVE_FLAMETHROWER),
     LEVEL_UP_MOVE(84, MOVE_HYDRO_PUMP),
+    LEVEL_UP_MOVE(91, MOVE_STEAM_ERUPTION),
     LEVEL_UP_END
 };
 

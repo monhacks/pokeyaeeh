@@ -14496,7 +14496,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_MIGHTY_CLEAVE] =
     {
         .effect = EFFECT_FEINT,
-        .power = 95,
+        .power = 100,
         .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 8,
