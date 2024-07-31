@@ -11552,8 +11552,8 @@ extern const u16 gObjectEventPal_RubySapphireBrendan[];
 extern const u16 gObjectEventPal_RubySapphireMay[];
 
 extern const u16 gObjectEventPal_GimmighoulCoin[];
-extern const u16 gObjectEventPal_NpcBlue[];
-extern const u16 gObjectEventPal_NpcPink[];
+extern const u16 gObjectEventPal_Articuno[];
+extern const u16 gObjectEventPal_Moltres[];
 extern const u16 gObjectEventPal_BirdKeeper[];
 extern const u16 gObjectEventPal_BugManiac[];
 extern const u16 gObjectEventPal_DragonTamer[];
@@ -11562,8 +11562,16 @@ extern const u16 gObjectEventPal_PkmnBreeder[];
 extern const u16 gObjectEventPal_AromaLady[];
 extern const u16 gObjectEventPal_Pokemaniac[];
 extern const u16 gObjectEventPal_PkmnRanger[];
-extern const u16 gObjectEventPal_White[];
+extern const u16 gObjectEventPal_Lance[];
 extern const u16 gObjectEventPal_Cynthia[];
+extern const u16 gObjectEventPal_Zapdos[];
+extern const u16 gObjectEventPal_Regirock[];
+extern const u16 gObjectEventPal_Regice[];
+extern const u16 gObjectEventPal_Registeel[];
+extern const u16 gObjectEventPal_Regigigas[];
+extern const u16 gObjectEventPal_Regieleki[];
+extern const u16 gObjectEventPal_Regidrago[];
+extern const u16 gObjectEventPal_Volcarona[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];

@@ -260,6 +260,10 @@
 #define OBJ_EVENT_GFX_PKMN_RANGER_F              257
 #define OBJ_EVENT_GFX_CYNTHIA                    258
 #define OBJ_EVENT_GFX_LANCE                      259
+#define OBJ_EVENT_GFX_REGIGIGAS                  260
+#define OBJ_EVENT_GFX_REGIELEKI                  261
+#define OBJ_EVENT_GFX_REGIDRAGO                  262
+#define OBJ_EVENT_GFX_VOLCARONA                  263
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

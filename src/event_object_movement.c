@@ -436,8 +436,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_GIMMIGHOUL_COIN         0x1124
-#define OBJ_EVENT_PAL_TAG_NPC_BLUE                0x1125
-#define OBJ_EVENT_PAL_TAG_NPC_PINK                0x1126
+#define OBJ_EVENT_PAL_TAG_ARTICUNO                0x1125
+#define OBJ_EVENT_PAL_TAG_MOLTRES                 0x1126
 #define OBJ_EVENT_PAL_TAG_BIRD_KEEPER             0x1127
 #define OBJ_EVENT_PAL_TAG_BUG_MANIAC              0x1128
 #define OBJ_EVENT_PAL_TAG_DRAGON_TAMER            0x1129
@@ -447,7 +447,15 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_POKEMANIAC              0x112D
 #define OBJ_EVENT_PAL_TAG_PKMN_RANGER             0x112E
 #define OBJ_EVENT_PAL_TAG_NPC_CYNTHIA             0x112F
-#define OBJ_EVENT_PAL_TAG_NPC_WHITE               0x1130
+#define OBJ_EVENT_PAL_TAG_NPC_LANCE               0x1130
+#define OBJ_EVENT_PAL_TAG_ZAPDOS                  0x1131
+#define OBJ_EVENT_PAL_TAG_REGIROCK                0x1132
+#define OBJ_EVENT_PAL_TAG_REGICE                  0x1133
+#define OBJ_EVENT_PAL_TAG_REGISTEEL               0x1134
+#define OBJ_EVENT_PAL_TAG_REGIGIGAS               0x1135
+#define OBJ_EVENT_PAL_TAG_REGIELEKI               0x1136
+#define OBJ_EVENT_PAL_TAG_REGIDRAGO               0x1137
+#define OBJ_EVENT_PAL_TAG_VOLCARONA               0x1138
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -495,8 +503,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_GimmighoulCoin,        OBJ_EVENT_PAL_TAG_GIMMIGHOUL_COIN},
-    {gObjectEventPal_NpcBlue,               OBJ_EVENT_PAL_TAG_NPC_BLUE},
-    {gObjectEventPal_NpcPink,               OBJ_EVENT_PAL_TAG_NPC_PINK},
+    {gObjectEventPal_Articuno,              OBJ_EVENT_PAL_TAG_ARTICUNO},
+    {gObjectEventPal_Moltres,               OBJ_EVENT_PAL_TAG_MOLTRES},
     {gObjectEventPal_BirdKeeper,            OBJ_EVENT_PAL_TAG_BIRD_KEEPER},
     {gObjectEventPal_BugManiac,             OBJ_EVENT_PAL_TAG_BUG_MANIAC},
     {gObjectEventPal_DragonTamer,           OBJ_EVENT_PAL_TAG_DRAGON_TAMER},
@@ -506,7 +514,15 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Pokemaniac,            OBJ_EVENT_PAL_TAG_POKEMANIAC},
     {gObjectEventPal_PkmnRanger,            OBJ_EVENT_PAL_TAG_PKMN_RANGER},
     {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_NPC_CYNTHIA},
-    {gObjectEventPal_White,                 OBJ_EVENT_PAL_TAG_NPC_WHITE},
+    {gObjectEventPal_Lance,                 OBJ_EVENT_PAL_TAG_NPC_LANCE},
+    {gObjectEventPal_Zapdos,                OBJ_EVENT_PAL_TAG_ZAPDOS},
+    {gObjectEventPal_Regirock,              OBJ_EVENT_PAL_TAG_REGIROCK},
+    {gObjectEventPal_Regice,                OBJ_EVENT_PAL_TAG_REGICE},
+    {gObjectEventPal_Registeel,             OBJ_EVENT_PAL_TAG_REGISTEEL},
+    {gObjectEventPal_Regigigas,             OBJ_EVENT_PAL_TAG_REGIGIGAS},
+    {gObjectEventPal_Regieleki,             OBJ_EVENT_PAL_TAG_REGIELEKI},
+    {gObjectEventPal_Regidrago,             OBJ_EVENT_PAL_TAG_REGIDRAGO},
+    {gObjectEventPal_Volcarona,             OBJ_EVENT_PAL_TAG_VOLCARONA},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
