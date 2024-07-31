@@ -1707,7 +1707,7 @@ static bool32 MegaIndicator_ShouldBeInvisible(u32 battlerId, struct Sprite *spri
         sprite->tType = INDICATOR_ALPHA;
     else if (primalReverted && gBattleMons[battlerId].species == SPECIES_GROUDON_PRIMAL)
         sprite->tType = INDICATOR_OMEGA;
-    else if (dynamaxed)
+    else if (primalReverted && gBattleMons[battlerId].species == SPECIES_ETERNATUS_PRIMAL)
         sprite->tType = INDICATOR_DYNAMAX;
 
     sprite->oam.tileNum = GetSpriteTileStartByTag(sMegaIndicatorTags[sprite->tType][0]);

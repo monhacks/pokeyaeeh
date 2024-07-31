@@ -807,6 +807,11 @@ static const struct FormChange sTerapagosFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 
+static const struct FormChange sEternatusFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_ETERNATUS_PRIMAL, ITEM_RED_ORB}, //item placeholder for now
+    {FORM_CHANGE_TERMINATOR},
+};
+
 #endif
 
 static const struct FormChange sNidoqueenFormChangeTable[] = {
