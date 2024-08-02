@@ -5150,7 +5150,7 @@ BattleScript_PartyHealEnd::
 BattleScript_EffectTripleKick::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	addbyte sTRIPLE_KICK_POWER, 20 @ triple kick and triple axel get +20 power
+	addbyte sTRIPLE_KICK_POWER, 20 @ all triple kick and clones get +20 after each strike
 	goto BattleScript_HitFromAtkString
 
 BattleScript_EffectThief::

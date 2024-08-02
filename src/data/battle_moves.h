@@ -2983,7 +2983,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_TRIPLE_KICK,
         .power = 20,
         .type = TYPE_FIGHTING,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -3783,22 +3783,17 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FURY_CUTTER] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 40,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 20,
-        #else
-            .power = 10,
-        #endif
-        .effect = EFFECT_FURY_CUTTER,
+        .effect = EFFECT_TRIPLE_KICK,
+        .power = 20,
         .type = TYPE_BUG,
         .accuracy = 95,
-        .pp = 32,
+        .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
+        .strikeCount = 3,
         .makesContact = TRUE,
         .slicingMove = TRUE,
     },
@@ -9250,6 +9245,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
+        .sheerForceBoost = TRUE,
         .highCritRatio = TRUE,
         .spinningMove = TRUE,
     },
@@ -12805,7 +12801,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_TRIPLE_KICK,
         .power = 20,
         .type = TYPE_ICE,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -13725,7 +13721,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_TRIPLE_KICK,
         .power = 20,
         .type = TYPE_WATER,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
