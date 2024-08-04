@@ -336,7 +336,7 @@ Text_NOW:
     .string "NOW!$"
 
 `
-script Route101_EventScript_GetCurrentTime{
+script EventScript_GetCurrentTime{
 	lock
 	special(GetCurrentTime)
 	msgbox("The time…\n", MSGBOX_DEFAULT)
@@ -359,5 +359,19 @@ script Route101_EventScript_GetCurrentTime{
 	else{
 		msgbox("I forgot…", MSGBOX_NPC)
 		end
+	}
+}
+
+script EventScript_PartyHasGogoat{
+	lock
+	faceplayer
+	msgbox("Hmm.", MSGBOX_DEFAULT)
+	setvar(VAR_0x8000, SPECIES_GOGOAT)
+	special(HasSpecies)
+	if(var(VAR_RESULT) == TRUE){
+		msgbox("You are the goat!", MSGBOX_NPC)
+	}
+	else{
+		msgbox("You are not the goat.", MSGBOX_NPC)
 	}
 }

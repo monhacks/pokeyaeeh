@@ -549,3 +549,4 @@ gSpecials::
 	def_special EnterMysteryGiftCode
 	def_special GetMysteryGiftFeedback
 	def_special GetCurrentTime
+	def_special HasSpecies

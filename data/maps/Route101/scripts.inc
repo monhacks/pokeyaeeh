@@ -334,52 +334,77 @@ Text_FaintYourself:
 Text_NOW:
     .string "NOW!$"
 
-Route101_EventScript_GetCurrentTime::
+EventScript_GetCurrentTime::
 	lock
 	special GetCurrentTime
-	msgbox Route101_EventScript_GetCurrentTime_Text_0, MSGBOX_DEFAULT
+	msgbox EventScript_GetCurrentTime_Text_0, MSGBOX_DEFAULT
 	compare VAR_RESULT, 0
-	goto_if_eq Route101_EventScript_GetCurrentTime_1
+	goto_if_eq EventScript_GetCurrentTime_1
 	compare VAR_RESULT, 1
-	goto_if_eq Route101_EventScript_GetCurrentTime_2
+	goto_if_eq EventScript_GetCurrentTime_2
 	compare VAR_RESULT, 2
-	goto_if_eq Route101_EventScript_GetCurrentTime_3
+	goto_if_eq EventScript_GetCurrentTime_3
 	compare VAR_RESULT, 3
-	goto_if_eq Route101_EventScript_GetCurrentTime_4
-	msgbox Route101_EventScript_GetCurrentTime_Text_5, MSGBOX_NPC
+	goto_if_eq EventScript_GetCurrentTime_4
+	msgbox EventScript_GetCurrentTime_Text_5, MSGBOX_NPC
 	end
 
-Route101_EventScript_GetCurrentTime_1:
-	msgbox Route101_EventScript_GetCurrentTime_Text_1, MSGBOX_NPC
+EventScript_GetCurrentTime_1:
+	msgbox EventScript_GetCurrentTime_Text_1, MSGBOX_NPC
 	end
 
-Route101_EventScript_GetCurrentTime_2:
-	msgbox Route101_EventScript_GetCurrentTime_Text_2, MSGBOX_NPC
+EventScript_GetCurrentTime_2:
+	msgbox EventScript_GetCurrentTime_Text_2, MSGBOX_NPC
 	end
 
-Route101_EventScript_GetCurrentTime_3:
-	msgbox Route101_EventScript_GetCurrentTime_Text_3, MSGBOX_NPC
+EventScript_GetCurrentTime_3:
+	msgbox EventScript_GetCurrentTime_Text_3, MSGBOX_NPC
 	end
 
-Route101_EventScript_GetCurrentTime_4:
-	msgbox Route101_EventScript_GetCurrentTime_Text_4, MSGBOX_NPC
+EventScript_GetCurrentTime_4:
+	msgbox EventScript_GetCurrentTime_Text_4, MSGBOX_NPC
 	end
 
 
-Route101_EventScript_GetCurrentTime_Text_0:
+EventScript_PartyHasGogoat::
+	lock
+	faceplayer
+	msgbox EventScript_PartyHasGogoat_Text_0, MSGBOX_DEFAULT
+	setvar VAR_0x8000, SPECIES_GOGOAT
+	special HasSpecies
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_PartyHasGogoat_1
+	msgbox EventScript_PartyHasGogoat_Text_2, MSGBOX_NPC
+	return
+
+EventScript_PartyHasGogoat_1:
+	msgbox EventScript_PartyHasGogoat_Text_1, MSGBOX_NPC
+	return
+
+
+EventScript_GetCurrentTime_Text_0:
 	.string "The time…\n$"
 
-Route101_EventScript_GetCurrentTime_Text_1:
+EventScript_GetCurrentTime_Text_1:
 	.string "It's morning!$"
 
-Route101_EventScript_GetCurrentTime_Text_2:
+EventScript_GetCurrentTime_Text_2:
 	.string "It's day!$"
 
-Route101_EventScript_GetCurrentTime_Text_3:
+EventScript_GetCurrentTime_Text_3:
 	.string "It's dusk!$"
 
-Route101_EventScript_GetCurrentTime_Text_4:
+EventScript_GetCurrentTime_Text_4:
 	.string "It's night!$"
 
-Route101_EventScript_GetCurrentTime_Text_5:
+EventScript_GetCurrentTime_Text_5:
 	.string "I forgot…$"
+
+EventScript_PartyHasGogoat_Text_0:
+	.string "Hmm.$"
+
+EventScript_PartyHasGogoat_Text_1:
+	.string "You are the goat!$"
+
+EventScript_PartyHasGogoat_Text_2:
+	.string "You are not the goat.$"

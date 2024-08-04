@@ -1438,6 +1438,22 @@ u8 TryUpdateRusturfTunnelState(void)
     return FALSE;
 }
 
+void HasSpecies(void)
+{
+    u32 partyMon = 0;
+    struct Pokemon *party = gPlayerParty;
+
+    for (; partyMon < gPlayerPartyCount; partyMon++)
+    {
+        if (GetMonData(&party[partyMon], MON_DATA_SPECIES) == gSpecialVar_0x8000)
+        {
+            gSpecialVar_Result = TRUE;
+            return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+}
+
 void SetShoalItemFlag(u16 unused)
 {
     FlagSet(FLAG_SYS_SHOAL_ITEM);
