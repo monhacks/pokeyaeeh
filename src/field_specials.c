@@ -4466,6 +4466,7 @@ void GetMysteryGiftFeedback(void)
     static const u8 sText_CodeMeloetta[]  = _("YEROD0AG1I");
     static const u8 sText_CodeHoopa[]     = _("POD9SMKAD0");
     static const u8 sText_CodeMarshadow[] = _("VDNWO0BDN2");
+    static const u8 sText_CodeZarude[]    = _("OSJME3KRH3");
     static const u8 sText_CodePecharunt[] = _("NS8ODNU2HS");
 
     // Code 1
@@ -4493,8 +4494,11 @@ void GetMysteryGiftFeedback(void)
     else if (!StringCompare(gStringVar2, sText_CodeMarshadow))
         gSpecialVar_Result = 8;
     // Code 9
-    else if (!StringCompare(gStringVar2, sText_CodePecharunt))
+    else if (!StringCompare(gStringVar2, sText_CodeZarude))
         gSpecialVar_Result = 9;
+    // Code 10
+    else if (!StringCompare(gStringVar2, sText_CodePecharunt))
+        gSpecialVar_Result = 10;
 
     // Invalid mystery gift code
     else

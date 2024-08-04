@@ -530,16 +530,16 @@
 
 // Mystery Gift Flags
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
-#define FLAG_MYSTERY_GIFT_1                  0x1E5
-#define FLAG_MYSTERY_GIFT_2                  0x1E6
-#define FLAG_MYSTERY_GIFT_3                  0x1E7
-#define FLAG_MYSTERY_GIFT_4                  0x1E8
-#define FLAG_MYSTERY_GIFT_5                  0x1E9
-#define FLAG_MYSTERY_GIFT_6                  0x1EA
-#define FLAG_MYSTERY_GIFT_7                  0x1EB
-#define FLAG_MYSTERY_GIFT_8                  0x1EC
-#define FLAG_MYSTERY_GIFT_9                  0x1ED
-#define FLAG_MYSTERY_GIFT_10                 0x1EE
+#define FLAG_MYSTERY_GIFT_1                  0x1E5 // Celebi
+#define FLAG_MYSTERY_GIFT_2                  0x1E6 // Jirachi
+#define FLAG_MYSTERY_GIFT_3                  0x1E7 // Manaphy
+#define FLAG_MYSTERY_GIFT_4                  0x1E8 // Shaymin
+#define FLAG_MYSTERY_GIFT_5                  0x1E9 // Victini
+#define FLAG_MYSTERY_GIFT_6                  0x1EA // Meloetta
+#define FLAG_MYSTERY_GIFT_7                  0x1EB // Hoopa
+#define FLAG_MYSTERY_GIFT_8                  0x1EC // Marshadow
+#define FLAG_MYSTERY_GIFT_9                  0x1ED // Zarude
+#define FLAG_MYSTERY_GIFT_10                 0x1EE // Pecharunt
 #define FLAG_MYSTERY_GIFT_11                 0x1EF
 #define FLAG_MYSTERY_GIFT_12                 0x1F0
 #define FLAG_MYSTERY_GIFT_13                 0x1F1

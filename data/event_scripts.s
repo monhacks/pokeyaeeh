@@ -1099,7 +1099,8 @@ MysteryGift_EventScript_DoMysteryGift::
 	goto_if_eq VAR_RESULT, 6, MysteryGift_EventScript_Meloetta
 	goto_if_eq VAR_RESULT, 7, MysteryGift_EventScript_Hoopa
 	goto_if_eq VAR_RESULT, 8, MysteryGift_EventScript_Marshadow
-	goto_if_eq VAR_RESULT, 9, MysteryGift_EventScript_Pecharunt
+	goto_if_eq VAR_RESULT, 9, MysteryGift_EventScript_Zarude
+	goto_if_eq VAR_RESULT, 10, MysteryGift_EventScript_Pecharunt
 	end
 
 MysteryGift_EventScript_RockruffOwnTempo::
@@ -1274,12 +1275,22 @@ MysteryGift_EventScript_Marshadow::
 	releaseall
 	end
 
-MysteryGift_EventScript_Pecharunt::
+MysteryGift_EventScript_Zarude::
 	goto_if_set FLAG_MYSTERY_GIFT_9, MysteryGift_EventScript_Redeemed
+	bufferspeciesname STR_VAR_1, SPECIES_ZARUDE_DADA
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZARUDE_DADA
+	givemon SPECIES_ZARUDE_DADA, 100, ITEM_CHOICE_SCARF, ITEM_CHERISH_BALL, NATURE_ADAMANT, 0, MON_GENDERLESS, 0, 252, 4, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_POWER_WHIP, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_CELEBRATE, TRUE
+	setflag FLAG_MYSTERY_GIFT_9
+	call MysteryGift_EventScript_ReceivedMon
+	releaseall
+	end
+
+MysteryGift_EventScript_Pecharunt::
+	goto_if_set FLAG_MYSTERY_GIFT_10, MysteryGift_EventScript_Redeemed
 	bufferspeciesname STR_VAR_1, SPECIES_PECHARUNT
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PECHARUNT
 	givemon SPECIES_PECHARUNT, 100, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_MODEST, 0, MON_GENDERLESS, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_MALIGNANT_CHAIN, MOVE_HEX, MOVE_RECOVER, MOVE_CELEBRATE, TRUE
-	setflag FLAG_MYSTERY_GIFT_9
+	setflag FLAG_MYSTERY_GIFT_10
 	call MysteryGift_EventScript_ReceivedMon
 	releaseall
 	end
