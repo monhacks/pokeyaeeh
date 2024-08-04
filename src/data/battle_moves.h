@@ -978,12 +978,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HYDRO_PUMP] =
     {
-        .power = 120,
         .effect = EFFECT_FLINCH_HIT,
+        .power = 120,
         .type = TYPE_WATER,
         .accuracy = 85,
         .pp = 8,
-        .secondaryEffectChance = 30,
+        .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
@@ -993,21 +993,13 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SURF] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-            .target = MOVE_TARGET_FOES_AND_ALLY,
-        #elif B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 95,
-            .target = MOVE_TARGET_FOES_AND_ALLY,
-        #else
-            .power = 95,
-            .target = MOVE_TARGET_BOTH,
-        #endif
         .effect = EFFECT_HIT,
+        .power = 95,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 24,
         .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -9422,7 +9414,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_PSYSTRIKE] =
     {
         .effect = EFFECT_PSYSHOCK,
-        .power = 120,
+        .power = 110,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 16,
@@ -10755,9 +10747,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_ORIGIN_PULSE] =
     {
         .effect = EFFECT_HIT,
-        .power = 110,
+        .power = 120,
         .type = TYPE_WATER,
-        .accuracy = 85,
+        .accuracy = 90,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
@@ -10771,9 +10763,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_PRECIPICE_BLADES] =
     {
         .effect = EFFECT_HIT,
-        .power = 120,
+        .power = 130,
         .type = TYPE_GROUND,
-        .accuracy = 85,
+        .accuracy = 90,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
