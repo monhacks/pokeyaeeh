@@ -7992,6 +7992,18 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     }
 }
 
+bool8 IsMoveTM(u16 move)
+{
+    u32 i;
+
+    for (i = ITEM_TM01; i < ITEM_HM08; i++)
+    {
+        if (ItemIdToBattleMoveId(i) == move)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
 {
     u16 learnedMoves[4];
@@ -8195,6 +8207,74 @@ u8 GetNumberOfTMMoves(struct Pokemon *mon)
     if (species == SPECIES_EGG)
         return 0;
     return GetTMMoves(mon, moves);
+}
+
+u8 GetTutorMoves(struct Pokemon *mon, u16 *moves)
+{
+    u16 learnedMoves[MAX_MON_MOVES] = {0};
+    u8 numMoves = 0;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u32 i, j;
+    bool8 isTM;
+
+    // Get all learned moves by the Pokémon
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    // Iterate over all possible moves and check if they're tutor moves (teachable but not a TM)
+    for (i = 1; i < MOVES_COUNT; i++)
+    {
+        if (CanLearnTeachableMove(species, i))
+        {
+            isTM = IsMoveTM(i);
+
+            if (!isTM)
+            {
+                // Check if the Pokémon hasn't already learned this move and add it if not
+                bool8 alreadyLearned = FALSE;
+
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                {
+                    if (learnedMoves[j] == i)
+                    {
+                        alreadyLearned = TRUE;
+                        break;
+                    }
+                }
+
+                if (!alreadyLearned)
+                {
+                    bool8 moveAlreadyInList = FALSE;
+
+                    for (j = 0; j < numMoves; j++)
+                    {
+                        if (moves[j] == i)
+                        {
+                            moveAlreadyInList = TRUE;
+                            break;
+                        }
+                    }
+
+                    if (!moveAlreadyInList)
+                        moves[numMoves++] = i;
+                }
+            }
+        }
+    }
+
+    return numMoves;
+}
+
+
+u8 GetNumberOfTutorMoves(struct Pokemon *mon)
+{
+    u16 moves[60]; // Adjust size as needed
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+
+    if (species == SPECIES_EGG)
+        return 0;
+
+    return GetTutorMoves(mon, moves);
 }
 
 u16 SpeciesToPokedexNum(u16 species)

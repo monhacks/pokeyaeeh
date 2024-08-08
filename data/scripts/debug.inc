@@ -24,6 +24,7 @@ Debug_CheatStart::
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
 	setflag FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER
+	setflag FLAG_SYS_ENABLE_TUTOR_MOVE_RELEARNER
     setflag FLAG_SYS_POKENAV_GET
     setflag FLAG_SYS_DEXNAV_GET
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH

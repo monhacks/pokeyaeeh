@@ -948,8 +948,6 @@ extern const u8 gText_TeachWhichMoveToPkmn[];
 extern const u8 gText_MoveRelearnerGiveUp[];
 extern const u8 gText_MoveRelearnerTeachMoveConfirm[];
 extern const u8 gText_MoveRelearnerLevelUpMoves[];
-extern const u8 gText_MoveRelearnerEggMoves[];
-extern const u8 gText_MoveRelearnerTMMoves[];
 extern const u8 gText_MoveRelearnerPP[];
 extern const u8 gText_MoveRelearnerPower[];
 extern const u8 gText_MoveRelearnerAccuracy[];
@@ -3132,6 +3130,7 @@ extern const u8 gText_Paldea[];
 extern const u8 gText_Moves[];
 extern const u8 gText_EggMoves[];
 extern const u8 gText_TMMoves[];
+extern const u8 gText_TutorMoves[];
 
 extern const u8 gText_Overheat[];
 extern const u8 gText_LeafStorm[];

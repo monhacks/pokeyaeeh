@@ -863,6 +863,7 @@ struct
     [MENU_MOVES] = {gText_Moves, CursorCb_ChangeMoves},
 	[MENU_EGG_MOVES] = {gText_EggMoves, CursorCb_ChangeEggMoves},
 	[MENU_TM_MOVES] = {gText_TMMoves, CursorCb_ChangeTMMoves},
+	[MENU_TUTOR_MOVES] = {gText_TutorMoves, CursorCb_ChangeTutorMoves},
     [MENU_SUB_MOVES] = {gText_LearnMoves, CursorCb_LearnMovesSubMenu},
     [MENU_TOSS] = {gMenuText_Toss, CursorCb_Toss},
     [MENU_STAT_EDIT] = {gText_StatEditor, CursorCb_StatEdit},

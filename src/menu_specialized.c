@@ -766,9 +766,13 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
 			str = gText_MoveRelearnerLevelUpMoves;
 		break;
 		case MOVE_TUTOR_EGG_MOVES:
-			str = gText_MoveRelearnerEggMoves;
+			str = gText_EggMoves;
+        break;
         case MOVE_TUTOR_TM_MOVES:
-            str = gText_MoveRelearnerTMMoves;
+            str = gText_TMMoves;
+		break;
+        case MOVE_TUTOR_TUTOR_MOVES:
+            str = gText_TutorMoves;
 		break;
 	}
     x = GetStringCenterAlignXOffset(FONT_NORMAL, str, 128);
