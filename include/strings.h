@@ -947,7 +947,6 @@ extern const u8 gText_MoveRelearnerPkmnForgotMoveAndLearnedNew[];
 extern const u8 gText_TeachWhichMoveToPkmn[];
 extern const u8 gText_MoveRelearnerGiveUp[];
 extern const u8 gText_MoveRelearnerTeachMoveConfirm[];
-extern const u8 gText_MoveRelearnerLevelUpMoves[];
 extern const u8 gText_MoveRelearnerPP[];
 extern const u8 gText_MoveRelearnerPower[];
 extern const u8 gText_MoveRelearnerAccuracy[];
@@ -3127,7 +3126,7 @@ extern const u8 gText_Galar[];
 extern const u8 gText_Paldea[];
 
 // Move tutors
-extern const u8 gText_Moves[];
+extern const u8 gText_RelearnMoves[];
 extern const u8 gText_EggMoves[];
 extern const u8 gText_TMMoves[];
 extern const u8 gText_TutorMoves[];

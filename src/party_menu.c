@@ -102,7 +102,7 @@ enum {
     MENU_TRADE2,
     MENU_TOSS,
     MENU_STAT_EDIT,
-    MENU_MOVES,
+    MENU_RELEARN_MOVES,
 	MENU_EGG_MOVES,
     MENU_TM_MOVES,
     MENU_TUTOR_MOVES,
@@ -2899,9 +2899,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
         u8 fontColorsId = 3;
         if ((sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) || (sPartyMenuInternal->actions[i] == MENU_SUB_FIELD_MOVES))
             fontColorsId = 4;
-        if (sPartyMenuInternal->actions[i] == MENU_MOVES
-        || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES || sPartyMenuInternal->actions[i] == MENU_TM_MOVES
-        || sPartyMenuInternal->actions[i] == MENU_SUB_MOVES || sPartyMenuInternal->actions[i] == MENU_TUTOR_MOVES)
+        if (sPartyMenuInternal->actions[i] == MENU_SUB_MOVES
+        || sPartyMenuInternal->actions[i] == MENU_RELEARN_MOVES || sPartyMenuInternal->actions[i] == MENU_EGG_MOVES
+        || sPartyMenuInternal->actions[i] == MENU_TM_MOVES || sPartyMenuInternal->actions[i] == MENU_TUTOR_MOVES)
             fontColorsId = 6;
         if (sPartyMenuInternal->actions[i] == MENU_STAT_EDIT)
             fontColorsId = 7;
@@ -2971,7 +2971,7 @@ static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId
     u32 species = GetMonData(&mons[slotId], MON_DATA_SPECIES, NULL);
 
     if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && GetNumberOfRelearnableMoves(&mons[slotId]) > 0)
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MOVES);
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_MOVES);
 
     if (FlagGet(FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER))
     {

@@ -763,7 +763,7 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
     switch(VarGet(VAR_PARTY_MENU_TUTOR_STATE))
     {
 		case MOVE_TUTOR_LEVEL_UP_MOVES:
-			str = gText_MoveRelearnerLevelUpMoves;
+			str = gText_RelearnMoves;
 		break;
 		case MOVE_TUTOR_EGG_MOVES:
 			str = gText_EggMoves;
