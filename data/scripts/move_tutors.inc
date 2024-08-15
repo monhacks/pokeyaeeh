@@ -248,16 +248,6 @@ MoveTutor_EventScript_SleepTalkTaught::
 	release
 	end
 
-MoveTutor_EventScript_RazorShellDeclined::
-	msgbox MoveTutor_Text_RazorShellDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_RazorShellTaught::
-	msgbox MoveTutor_Text_RazorShellTaught, MSGBOX_DEFAULT
-	release
-	end
-
 // Lilycove Move Tutor
 LilycoveCity_DepartmentStore_4F_EventScript_MoveTutor::
 	lock
@@ -530,6 +520,16 @@ Route115_EventScript_RazorShellTutor::
 	goto MoveTutor_EventScript_RazorShellTaught
 	end
 
+MoveTutor_EventScript_RazorShellDeclined::
+	msgbox MoveTutor_Text_RazorShellDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RazorShellTaught::
+	msgbox MoveTutor_Text_RazorShellTaught, MSGBOX_DEFAULT
+	release
+	end
+
 // New
 Route116_EventScript_FlareBlitzTutor::
 	lock
@@ -560,7 +560,7 @@ Route116_TunnelersRestHouse_EventScript_RockTombTutor::
 	msgbox MoveTutor_Text_RockTombTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RockTombDeclined
 	msgbox MoveTutor_Text_RockTombWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_RAZOR_SHELL
+	setvar VAR_0x8005, MOVE_ROCK_TOMB
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RockTombDeclined
 	goto MoveTutor_EventScript_RockTombTaught
@@ -652,7 +652,7 @@ NewMauville_Inside_EventScript_RisingVoltageTutor::
 	msgbox MoveTutor_Text_RisingVoltageTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RisingVoltageDeclined
 	msgbox MoveTutor_Text_RisingVoltageWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_EXPANDING_FORCE
+	setvar VAR_0x8005, MOVE_RISING_VOLTAGE
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RisingVoltageDeclined
 	goto MoveTutor_EventScript_RisingVoltageTaught

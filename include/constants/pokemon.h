@@ -362,7 +362,7 @@
 
 // Move Relearner
 
-#define MAX_RELEARNER_MOVES 151
+#define MAX_RELEARNER_MOVES 175
 
 #define MOVE_TUTOR_LEVEL_UP_MOVES 0
 #define MOVE_TUTOR_EGG_MOVES 1
