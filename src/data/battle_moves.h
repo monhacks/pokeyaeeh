@@ -5600,12 +5600,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_AIR_CUTTER] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-        #else
-            .power = 55,
-        #endif
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_ALWAYS_CRIT,
+        .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 40,
@@ -5614,7 +5610,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
-        .highCritRatio = TRUE,
         .windMove = TRUE,
         .slicingMove = TRUE,
     },
@@ -5912,7 +5907,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_AERIAL_ACE] =
     {
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_ALWAYS_CRIT,
         .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 0,
@@ -13796,7 +13791,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FLOWER_TRICK] =
     {
         .effect = EFFECT_ALWAYS_CRIT,
-        .power = 70,
+        .power = 60,
         .type = TYPE_GRASS,
         .accuracy = 0,
         .pp = 16,
