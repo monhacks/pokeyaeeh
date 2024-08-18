@@ -4990,11 +4990,20 @@ BattleScript_EffectEncore::
 	attackstring
 	ppreduce
 	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+	jumpifability BS_TARGET, ABILITY_DEAD_SHOT, BattleScript_DeadShotProtects
 	trysetencore BattleScript_ButItFailed
 	attackanimation
 	waitanimation
 	printstring STRINGID_PKMNGOTENCORE
 	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_DeadShotProtects:
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DEADSHOTPREVENTSTHEENCORE
+	waitmessage B_WAIT_TIME_LONG
+	orhalfword gMoveResultFlags, MOVE_RESULT_FAILED
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectPainSplit::

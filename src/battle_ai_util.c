@@ -316,6 +316,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_LUNAR_RUSH] = 5,
     [ABILITY_MOON_GUARD] = 9,
     [ABILITY_SOLAR_RUSH] = 6,
+    [ABILITY_DEAD_SHOT] = 6,
 };
 
 static const u16 sEncouragedEncoreEffects[] =

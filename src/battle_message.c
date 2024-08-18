@@ -870,9 +870,11 @@ static const u8 sText_MoonlightGotBright[] = _("The moonlight got bright!");
 static const u8 sText_MoonlightShines[] = _("The moonlight shines.");
 static const u8 sText_MoonlightFaded[] = _("The moonlight faded.");
 static const u8 sText_PkmnsXSummonedTheMoon[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nsummoned the moon!");
+static const u8 sText_DeadShotPreventsTheEncore[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nprevents the Encore!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_DEADSHOTPREVENTSTHEENCORE - BATTLESTRINGS_TABLE_START] = sText_DeadShotPreventsTheEncore,
     [STRINGID_PKMNSSUMMONEDTHEMOON - BATTLESTRINGS_TABLE_START] = sText_PkmnsXSummonedTheMoon,
     [STRINGID_MOONLIGHTFADED - BATTLESTRINGS_TABLE_START] = sText_MoonlightFaded,
     [STRINGID_MOONLIGHTSHINES - BATTLESTRINGS_TABLE_START] = sText_MoonlightShines,

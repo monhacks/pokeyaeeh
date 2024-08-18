@@ -3552,7 +3552,20 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
                 break;
             case MOVE_EFFECT_THRASH:
-                if (gBattleMons[gEffectBattler].status2 & STATUS2_LOCK_CONFUSE)
+                if (GetBattlerAbility(gEffectBattler) == ABILITY_DEAD_SHOT)
+                {
+                    if (gBattleMons[gBattlerAttacker].status2 == STATUS2_CONFUSION_TURN(0))
+                    {
+                        gLockedMoves[gEffectBattler] = gCurrentMove;
+                        gBattlerAttacker = gEffectBattler;
+                        gBattleMons[gBattlerAttacker].status2 |= STATUS2_CONFUSION_TURN(((Random()) % 4) + 2);
+                        BattleScriptPush(gBattlescriptCurrInstr + 1);
+                        gBattlescriptCurrInstr = BattleScript_ThrashConfuses;
+                    }
+                    else
+                        gBattlescriptCurrInstr++;
+                }
+                else if (gBattleMons[gEffectBattler].status2 & STATUS2_LOCK_CONFUSE)
                 {
                     gBattlescriptCurrInstr++;
                 }
@@ -5593,7 +5606,7 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_CHOICE_MOVE: // update choice band move
             if (gHitMarker & HITMARKER_OBEYS
-             && (HOLD_EFFECT_CHOICE(holdEffectAtk) || GetBattlerAbility(gBattlerAttacker) == ABILITY_GORILLA_TACTICS)
+             && ((HOLD_EFFECT_CHOICE(holdEffectAtk) && GetBattlerAbility(gBattlerAttacker) != ABILITY_DEAD_SHOT) || GetBattlerAbility(gBattlerAttacker) == ABILITY_GORILLA_TACTICS)
              && gChosenMove != MOVE_STRUGGLE
              && (*choicedMoveAtk == MOVE_NONE || *choicedMoveAtk == MOVE_UNAVAILABLE))
             {

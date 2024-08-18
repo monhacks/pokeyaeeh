@@ -2041,6 +2041,11 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 return COLOR_EFFECTIVE;
         }
         break;
+        case EFFECT_ENCORE:
+        {
+            if ((defAbility == ABILITY_DEAD_SHOT) && (!moldBreaker))
+                return COLOR_IMMUNE;
+        }
     }
 
     // Ability cases
