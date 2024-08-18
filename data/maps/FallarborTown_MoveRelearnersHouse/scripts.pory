@@ -8,14 +8,22 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
 	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_set FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER, FallarborTown_MoveRelearnersHouse_EventScript_KitExplain
+	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearnersKit
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor1, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearnersKit::
+	goto_if_set FLAG_SYS_ENABLE_EGG_AND_TUTOR_MOVES, FallarborTown_MoveRelearnersHouse_EventScript_KitExplain
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message FallarborTown_MoveRelearnersHouse_Text_PlayerReceivedMoveKit
 	waitmessage
 	waitfanfare
 	msgbox FallarborTown_MoveRelearnersHouse_Text_KitExplain, MSGBOX_NPC
-	setflag FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER
+	setflag FLAG_SYS_ENABLE_EGG_AND_TUTOR_MOVES
 	end
 
 FallarborTown_MoveRelearnersHouse_EventScript_ImTheMoveTutor::
@@ -25,6 +33,14 @@ FallarborTown_MoveRelearnersHouse_EventScript_ImTheMoveTutor::
 FallarborTown_MoveRelearnersHouse_EventScript_KitExplain::
     msgbox FallarborTown_MoveRelearnersHouse_Text_KitExplain, MSGBOX_NPC
 	end
+
+FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor1:
+	.string "I'm the Move Tutor.\p"
+	.string "I know all the moves that Pokémon\n"
+	.string "learn--every one of them--and I can\l"
+	.string "teach Pokémon those moves.\p"
+	.string "Ugh…\n"
+	.string "I'm sick.$"
 
 FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
 	.string "I'm the Move Tutor.\p"
@@ -46,7 +62,7 @@ FallarborTown_MoveRelearnersHouse_Text_PlayerReceivedMoveKit:
 FallarborTown_MoveRelearnersHouse_Text_KitExplain:
     .string "My kit will help you to teach\n"
 	.string "moves your Pokémon would normally\l"
-	.string "only learn via breeding.$"
+	.string "only learn via breeding or tutoring.$"
 
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon, MSGBOX_DEFAULT

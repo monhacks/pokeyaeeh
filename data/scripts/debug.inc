@@ -23,8 +23,7 @@ Debug_CheatStart::
 	givemon SPECIES_MUDKIP, 20, ITEM_NONE
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
-	setflag FLAG_SYS_ENABLE_EGG_MOVE_RELEARNER
-	setflag FLAG_SYS_ENABLE_TUTOR_MOVE_RELEARNER
+	setflag FLAG_SYS_ENABLE_EGG_AND_TUTOR_MOVES
     setflag FLAG_SYS_POKENAV_GET
     setflag FLAG_SYS_DEXNAV_GET
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
@@ -71,7 +70,7 @@ Debug_CheatStart::
 	setflag FLAG_LANDMARK_BATTLE_FRONTIER
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setflag FLAG_SYS_GAME_CLEAR
+	setflag FLAG_DEFEATED_PETALBURG_GYM
 	additem ITEM_POKEMON_BOX_LINK
 	special InitRoamer
 	release
@@ -126,7 +125,7 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1:: @ testing scripts and stuff
-	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
+	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Debug_EventScript_UnsetTestFlag
 	goto Debug_EventScript_SetTestFlag
 	end
 
@@ -287,12 +286,12 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_SYS_GAME_CLEAR
+    setflag FLAG_DEFEATED_PETALBURG_GYM
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_SYS_GAME_CLEAR
+    clearflag FLAG_DEFEATED_PETALBURG_GYM
 	end
 
 Debug_Text_SetTestFlag::
