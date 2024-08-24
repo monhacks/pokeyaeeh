@@ -731,7 +731,7 @@
 #define STRINGID_MOONLIGHTSHINES                      729
 #define STRINGID_MOONLIGHTFADED                       730
 #define STRINGID_PKMNSSUMMONEDTHEMOON                 731
-#define STRINDID_WILDWISHMEGAEVO                      732
+#define STRINGID_WILDWISHMEGAEVO                      732
 #define STRINGID_DEADSHOTPREVENTSTHEENCORE            733
 #define STRINGID_REBOUNDBOUNCEDBACKDAMAGE             734
 

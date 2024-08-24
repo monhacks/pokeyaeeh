@@ -8326,7 +8326,7 @@ BattleScript_WildMegaEvolution::
 BattleScript_WildWishMegaEvolution::
 	flushtextbox
 	trytrainerslidemegaevolutionmsg
-	printstring STRINDID_WILDWISHMEGAEVO
+	printstring STRINGID_WILDWISHMEGAEVO
 	goto BattleScript_MegaEvolutionAfterString
 
 BattleScript_WishMegaEvolution::
