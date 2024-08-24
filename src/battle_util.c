@@ -5866,6 +5866,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattlescriptCurrInstr = BattleScript_TargetsStatWasMaxedOut;
                 effect++;
             }
+            break;        
+        case ABILITY_DRAGONS_FURY:
+            if ((gMoveResultFlags & MOVE_RESULT_SUPER_EFFECTIVE)
+             && TARGET_TURN_DAMAGED
+             && IsBattlerAlive(battler)
+             && CompareStat(battler, GetHighestStatId(battler), MAX_STAT_STAGE, CMP_LESS_THAN))
+            {
+                SET_STATCHANGER(GetHighestStatId(battler), 1, FALSE);
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
+                effect++;
+            }
             break;
         case ABILITY_COLOR_CHANGE:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
