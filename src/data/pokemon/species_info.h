@@ -1864,7 +1864,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
-        .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FUR_COAT},
+        .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_MISTY_SURGE},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = TRUE,
     },
@@ -4865,7 +4865,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
-        .abilities = {ABILITY_VOLT_ABSORB, ABILITY_ILLUMINATE, ABILITY_WATER_ABSORB},
+        .abilities = {ABILITY_VOLT_ABSORB, ABILITY_WATER_ABSORB, ABILITY_ELECTRIC_SURGE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -4888,7 +4888,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
-        .abilities = {ABILITY_VOLT_ABSORB, ABILITY_ILLUMINATE, ABILITY_WATER_ABSORB},
+        .abilities = {ABILITY_VOLT_ABSORB, ABILITY_WATER_ABSORB, ABILITY_ELECTRIC_SURGE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -7476,7 +7476,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         #endif
-        .abilities = {ABILITY_SYNCHRONIZE, ABILITY_MAGIC_GUARD, ABILITY_TRACE},
+        .abilities = {ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE, ABILITY_TRACE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -28084,6 +28084,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_MYTHICAL,
     },
 #endif
+
     [SPECIES_NIDOQUEEN_MEGA] =
     {
         .baseHP        = 90,
