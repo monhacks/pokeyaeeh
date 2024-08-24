@@ -732,9 +732,10 @@
 #define STRINGID_MOONLIGHTFADED                       730
 #define STRINGID_PKMNSSUMMONEDTHEMOON                 731
 #define STRINDID_WILDWISHMEGAEVO                      732
-#define STRINGID_DEADSHOTPREVENTSTHEENCORE                    733
+#define STRINGID_DEADSHOTPREVENTSTHEENCORE            733
+#define STRINGID_REBOUNDBOUNCEDBACKDAMAGE             734
 
-#define BATTLESTRINGS_COUNT                           734
+#define BATTLESTRINGS_COUNT                           735
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

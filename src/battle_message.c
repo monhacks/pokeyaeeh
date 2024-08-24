@@ -871,9 +871,11 @@ static const u8 sText_MoonlightShines[] = _("The moonlight shines.");
 static const u8 sText_MoonlightFaded[] = _("The moonlight faded.");
 static const u8 sText_PkmnsXSummonedTheMoon[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nsummoned the moon!");
 static const u8 sText_DeadShotPreventsTheEncore[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nprevents the Encore!");
+static const u8 sText_ReboundBouncedBackDamage[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nbounced back some damage!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_REBOUNDBOUNCEDBACKDAMAGE - BATTLESTRINGS_TABLE_START] = sText_ReboundBouncedBackDamage,
     [STRINGID_DEADSHOTPREVENTSTHEENCORE - BATTLESTRINGS_TABLE_START] = sText_DeadShotPreventsTheEncore,
     [STRINGID_PKMNSSUMMONEDTHEMOON - BATTLESTRINGS_TABLE_START] = sText_PkmnsXSummonedTheMoon,
     [STRINGID_MOONLIGHTFADED - BATTLESTRINGS_TABLE_START] = sText_MoonlightFaded,

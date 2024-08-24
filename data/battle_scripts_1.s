@@ -9890,6 +9890,21 @@ BattleScript_RoughSkinActivates::
 	call BattleScript_HurtAttacker
 	return
 
+BattleScript_ReboundActivates::
+	call BattleScript_AbilityPopUp
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_REBOUNDBOUNCEDBACKDAMAGE
+	waitmessage B_WAIT_TIME_LONG
+	effectivenesssound
+	hitanimation BS_ATTACKER
+	waitstate
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER
+	return
+
 BattleScript_RockyHelmetActivates::
 	@ don't play the animation for a fainted mon
 	jumpifabsent BS_TARGET, BattleScript_RockyHelmetActivatesDmg

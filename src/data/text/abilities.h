@@ -324,6 +324,7 @@ static const u8 sLunarRushDescription[] = _("Doubles Speed in moon.");
 static const u8 sMoonGuardDescription[] = _("Reduces damage under moon. (30%)");
 static const u8 sDeadShotDescription[] = _("Prevents locking into moves.");
 static const u8 sDragonsFuryDescription[] = _("“Super effective” hits raise stat.");
+static const u8 sReboundDescription[] = _("Bounces back special damage. (25%)");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -667,6 +668,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SOLAR_RUSH] = _("Solar Rush"),
     [ABILITY_DEAD_SHOT] = _("Dead Shot"),
     [ABILITY_DRAGONS_FURY] = _("Dragon's Fury"),
+    [ABILITY_REBOUND] = _("Rebound"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -1009,7 +1011,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_MOON_GUARD] = _("Moon Guard"),
     [ABILITY_SOLAR_RUSH] = _("Solar Rush"),
     [ABILITY_DEAD_SHOT] = _("Dead Shot"),
-    [ABILITY_DRAGONS_FURY] = _("Dragon'sFury"),
+    [ABILITY_DRAGONS_FURY] = _("Dragons Fury"),
+    [ABILITY_REBOUND] = _("Rebound"),
 };
 #endif
 
@@ -1354,4 +1357,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SOLAR_RUSH] = sChlorophyllDescription,
     [ABILITY_DEAD_SHOT] = sDeadShotDescription,    
     [ABILITY_DRAGONS_FURY] = sDragonsFuryDescription,
+    [ABILITY_REBOUND] = sReboundDescription,
 };
