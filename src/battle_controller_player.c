@@ -2046,6 +2046,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
             if ((defAbility == ABILITY_DEAD_SHOT) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
+        break;
     }
 
     // Ability cases
@@ -2084,6 +2085,7 @@ u8 TypeEffectiveness(u8 targetId, u32 battler)
                 && !(moveTarget & MOVE_TARGET_ALL_BATTLERS) && (!moldBreaker))
                 return COLOR_IMMUNE;
         }
+        break;
         case ABILITY_ILLUSION:
         {
             // Nothing for now.

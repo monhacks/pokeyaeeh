@@ -23625,18 +23625,18 @@ static const struct TrainerMon sParty_Leaf[] = {
 
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
+    .species = SPECIES_ZOROARK,
     .lvl = 1,
+    .ability = ABILITY_ILLUSION,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_PROTECT, MOVE_PROTECT, MOVE_PROTECT, MOVE_PROTECT}
+    },
+    {
     .species = SPECIES_RAICHU,
+    .lvl = 1,
     .ability = ABILITY_GROUNDSHOCK,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH, MOVE_SPLASH}
-    },
-    {
-    .lvl = 1,
-    .species = SPECIES_SHARPEDO,
-    .ability = ABILITY_SPEED_BOOST,
-    .heldItem = ITEM_SHARPEDONITE,
-    .moves = {MOVE_PROTECT, MOVE_FISHIOUS_REND, MOVE_CRUNCH, MOVE_ICE_FANG}
     }
 };
 

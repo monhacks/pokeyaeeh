@@ -16089,7 +16089,7 @@ bool8 CanPreventAnyStatLoss(u32 battler, u32 move, u16 abilityDef)
         case ABILITY_ILLUMINATE:
         case ABILITY_MINDS_EYE:
         {
-            if ((gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN) || (gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN))
+            if ((gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN) || (gBattleMoves[move].effect == EFFECT_ACCURACY_DOWN_2))
                 return TRUE;
         }
         break;
