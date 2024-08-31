@@ -2836,6 +2836,7 @@ static const struct LevelUpMove sExeggutorLevelUpLearnset[] = {
     LEVEL_UP_MOVE(27, MOVE_EGG_BOMB),
     LEVEL_UP_MOVE(37, MOVE_WOOD_HAMMER),
     LEVEL_UP_MOVE(47, MOVE_LEAF_STORM),
+    LEVEL_UP_MOVE(52, MOVE_SEED_FLARE),
     LEVEL_UP_END
 };
 
@@ -5292,6 +5293,7 @@ static const struct LevelUpMove sSunfloraLevelUpLearnset[] = {
     LEVEL_UP_MOVE(47, MOVE_FIRE_BLAST),
     LEVEL_UP_MOVE(50, MOVE_PETAL_BLIZZARD),
     LEVEL_UP_MOVE(54, MOVE_OVERHEAT),
+    LEVEL_UP_MOVE(59, MOVE_SEED_FLARE),
     LEVEL_UP_END
 };
 
@@ -23293,6 +23295,7 @@ static const struct LevelUpMove sExeggutorAlolanLevelUpLearnset[] = {
     LEVEL_UP_MOVE(27, MOVE_EGG_BOMB),
     LEVEL_UP_MOVE(37, MOVE_WOOD_HAMMER),
     LEVEL_UP_MOVE(47, MOVE_LEAF_STORM),
+    LEVEL_UP_MOVE(52, MOVE_SEED_FLARE),
     LEVEL_UP_END
 };
 
@@ -25292,6 +25295,7 @@ static const struct LevelUpMove sArbolivaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(46, MOVE_TERRAIN_PULSE),
     LEVEL_UP_MOVE(52, MOVE_PETAL_BLIZZARD),
     LEVEL_UP_MOVE(58, MOVE_PETAL_DANCE),
+    LEVEL_UP_MOVE(65, MOVE_SEED_FLARE),
     LEVEL_UP_END
 };
 

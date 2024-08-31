@@ -1268,7 +1268,7 @@ static const u8 sFakeTearsDescription[] = _(
 
 static const u8 sAirCutterDescription[] = _(
     "Hacks with razorlike wind.\n"
-    "High critical-hit ratio.");
+    "Always results in a crit.");
 
 static const u8 sOverheatDescription[] = _(
     "Allows a full-power attack,\n"
@@ -4533,7 +4533,7 @@ static const u8 sMoveFourLineDescription_Astonish[] = _("An attack using a\nstar
 static const u8 sMoveFourLineDescription_WeatherBall[] = _("An attack that\nvaries in power and\ntype depending on\nthe weather.");
 static const u8 sMoveFourLineDescription_Aromatherapy[] = _("A soothing scent is\nreleased to heal\nall status problems\nin the user's party.");
 static const u8 sMoveFourLineDescription_FakeTears[] = _("The user feigns\ncrying to sharply\nlower the foe's\nSp. Def stat.");
-static const u8 sMoveFourLineDescription_AirCutter[] = _("The foe is hit with\nrazor-like wind.\nIt has a high\ncritical-hit ratio.");
+static const u8 sMoveFourLineDescription_AirCutter[] = _("The foe is hit with\nrazor-like wind.\nIt always results\nin a critical-hit.");
 static const u8 sMoveFourLineDescription_Overheat[] = _("An intense attack\nthat also sharply\nreduces the user's\nSp. Atk stat.");
 static const u8 sMoveFourLineDescription_OdorSleuth[] = _("Completely negates\nthe foe's efforts to\nheighten its ability\nto evade.");
 static const u8 sMoveFourLineDescription_RockTomb[] = _("Boulders are hurled\nat the foe. It also\nlowers the foe's\nSpeed if it hits.");

@@ -5604,7 +5604,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 40,
+        .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
@@ -5911,7 +5911,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 0,
-        .pp = 32,
+        .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -9138,14 +9138,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FROST_BREATH] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-        #else
-            .power = 40,
-        #endif
         .effect = EFFECT_ALWAYS_CRIT,
+        .power = 60,
         .type = TYPE_ICE,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -11966,10 +11962,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SNIPE_SHOT] =
     {
         .effect = EFFECT_SNIPE_SHOT,
-        .power = 70,
+        .power = 60,
         .type = TYPE_WATER,
         .accuracy = 100,
-        .pp = 24,
+        .pp = 16,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
