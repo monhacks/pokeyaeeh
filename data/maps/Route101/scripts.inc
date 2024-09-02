@@ -672,105 +672,193 @@ Text_NOW:
     .string "NOW!$"
 
 EventScript_GetCurrentTime::
-# 340 "data/maps/Route101/scripts.pory"
-	lock
-# 341 "data/maps/Route101/scripts.pory"
-	special GetCurrentTime
 # 342 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetCurrentTime_Text_0, MSGBOX_DEFAULT
+	lock
 # 343 "data/maps/Route101/scripts.pory"
+	special GetCurrentTime
+# 344 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetCurrentTime_Text_0, MSGBOX_DEFAULT
+# 345 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_GetCurrentTime_1
-# 347 "data/maps/Route101/scripts.pory"
+# 349 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq EventScript_GetCurrentTime_2
-# 351 "data/maps/Route101/scripts.pory"
+# 353 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq EventScript_GetCurrentTime_3
-# 355 "data/maps/Route101/scripts.pory"
+# 357 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq EventScript_GetCurrentTime_4
-# 360 "data/maps/Route101/scripts.pory"
+# 362 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_GetCurrentTime_Text_5, MSGBOX_NPC
 	end
 
 EventScript_GetCurrentTime_1:
-# 344 "data/maps/Route101/scripts.pory"
+# 346 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_GetCurrentTime_Text_1, MSGBOX_NPC
 	end
 
 EventScript_GetCurrentTime_2:
-# 348 "data/maps/Route101/scripts.pory"
+# 350 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_GetCurrentTime_Text_2, MSGBOX_NPC
 	end
 
 EventScript_GetCurrentTime_3:
-# 352 "data/maps/Route101/scripts.pory"
+# 354 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_GetCurrentTime_Text_3, MSGBOX_NPC
 	end
 
 EventScript_GetCurrentTime_4:
-# 356 "data/maps/Route101/scripts.pory"
+# 358 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_GetCurrentTime_Text_4, MSGBOX_NPC
 	end
 
 
 EventScript_PartyHasGogoat::
-# 366 "data/maps/Route101/scripts.pory"
-	lock
-# 367 "data/maps/Route101/scripts.pory"
-	faceplayer
 # 368 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_PartyHasGogoat_Text_0, MSGBOX_DEFAULT
+	lock
 # 369 "data/maps/Route101/scripts.pory"
-	setvar VAR_0x8000, SPECIES_GOGOAT
+	faceplayer
 # 370 "data/maps/Route101/scripts.pory"
-	special HasSpecies
+	msgbox EventScript_PartyHasGogoat_Text_0, MSGBOX_DEFAULT
 # 371 "data/maps/Route101/scripts.pory"
+	setvar VAR_0x8000, SPECIES_GOGOAT
+# 372 "data/maps/Route101/scripts.pory"
+	special HasSpecies
+# 373 "data/maps/Route101/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq EventScript_PartyHasGogoat_1
-# 375 "data/maps/Route101/scripts.pory"
+# 377 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_PartyHasGogoat_Text_2, MSGBOX_NPC
 	return
 
 EventScript_PartyHasGogoat_1:
-# 372 "data/maps/Route101/scripts.pory"
+# 374 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_PartyHasGogoat_Text_1, MSGBOX_NPC
 	return
 
 
+EventScript_RtcDayOfTheWeek::
+# 382 "data/maps/Route101/scripts.pory"
+	lock
+# 383 "data/maps/Route101/scripts.pory"
+	faceplayer
+# 384 "data/maps/Route101/scripts.pory"
+	special VarRtcDayOfTheWeek
+# 385 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, DAY_MONDAY
+	goto_if_eq EventScript_RtcDayOfTheWeek_1
+# 388 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, DAY_TUESDAY
+	goto_if_eq EventScript_RtcDayOfTheWeek_2
+# 391 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, DAY_WEDNESDAY
+	goto_if_eq EventScript_RtcDayOfTheWeek_3
+# 394 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, DAY_THURSDAY
+	goto_if_eq EventScript_RtcDayOfTheWeek_4
+# 397 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, DAY_FRIDAY
+	goto_if_eq EventScript_RtcDayOfTheWeek_5
+# 400 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, DAY_SATURDAY
+	goto_if_eq EventScript_RtcDayOfTheWeek_6
+# 404 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_6, MSGBOX_NPC
+	return
+
+EventScript_RtcDayOfTheWeek_1:
+# 386 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_0, MSGBOX_NPC
+	return
+
+EventScript_RtcDayOfTheWeek_2:
+# 389 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_1, MSGBOX_NPC
+	return
+
+EventScript_RtcDayOfTheWeek_3:
+# 392 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_2, MSGBOX_NPC
+	return
+
+EventScript_RtcDayOfTheWeek_4:
+# 395 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_3, MSGBOX_NPC
+	return
+
+EventScript_RtcDayOfTheWeek_5:
+# 398 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_4, MSGBOX_NPC
+	return
+
+EventScript_RtcDayOfTheWeek_6:
+# 401 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_RtcDayOfTheWeek_Text_5, MSGBOX_NPC
+	return
+
+
 EventScript_GetCurrentTime_Text_0:
-# 342 "data/maps/Route101/scripts.pory"
+# 344 "data/maps/Route101/scripts.pory"
 	.string "The time…\n$"
 
 EventScript_GetCurrentTime_Text_1:
-# 344 "data/maps/Route101/scripts.pory"
+# 346 "data/maps/Route101/scripts.pory"
 	.string "It's morning!$"
 
 EventScript_GetCurrentTime_Text_2:
-# 348 "data/maps/Route101/scripts.pory"
+# 350 "data/maps/Route101/scripts.pory"
 	.string "It's day!$"
 
 EventScript_GetCurrentTime_Text_3:
-# 352 "data/maps/Route101/scripts.pory"
+# 354 "data/maps/Route101/scripts.pory"
 	.string "It's dusk!$"
 
 EventScript_GetCurrentTime_Text_4:
-# 356 "data/maps/Route101/scripts.pory"
+# 358 "data/maps/Route101/scripts.pory"
 	.string "It's night!$"
 
 EventScript_GetCurrentTime_Text_5:
-# 360 "data/maps/Route101/scripts.pory"
+# 362 "data/maps/Route101/scripts.pory"
 	.string "I forgot…$"
 
 EventScript_PartyHasGogoat_Text_0:
-# 368 "data/maps/Route101/scripts.pory"
+# 370 "data/maps/Route101/scripts.pory"
 	.string "Hmm.$"
 
 EventScript_PartyHasGogoat_Text_1:
-# 372 "data/maps/Route101/scripts.pory"
+# 374 "data/maps/Route101/scripts.pory"
 	.string "You are the goat!$"
 
 EventScript_PartyHasGogoat_Text_2:
-# 375 "data/maps/Route101/scripts.pory"
+# 377 "data/maps/Route101/scripts.pory"
 	.string "You are not the goat.$"
+
+EventScript_RtcDayOfTheWeek_Text_0:
+# 386 "data/maps/Route101/scripts.pory"
+	.string "It's Monday!$"
+
+EventScript_RtcDayOfTheWeek_Text_1:
+# 389 "data/maps/Route101/scripts.pory"
+	.string "It's Tuesday!$"
+
+EventScript_RtcDayOfTheWeek_Text_2:
+# 392 "data/maps/Route101/scripts.pory"
+	.string "It's Wednesday!$"
+
+EventScript_RtcDayOfTheWeek_Text_3:
+# 395 "data/maps/Route101/scripts.pory"
+	.string "It's Thursday!$"
+
+EventScript_RtcDayOfTheWeek_Text_4:
+# 398 "data/maps/Route101/scripts.pory"
+	.string "It's Friday!$"
+
+EventScript_RtcDayOfTheWeek_Text_5:
+# 401 "data/maps/Route101/scripts.pory"
+	.string "It's Saturday!$"
+
+EventScript_RtcDayOfTheWeek_Text_6:
+# 404 "data/maps/Route101/scripts.pory"
+	.string "It's Sunday!$"

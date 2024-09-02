@@ -67,5 +67,6 @@ u32 RtcGetMinuteCount(void);
 u32 RtcGetLocalDayCount(void);
 u8 RtcSecondChange(void);
 void RtcCalcLocalTimeFast(void);
+int RtcDayOfTheWeek(void);
 
 #endif // GUARD_RTC_UTIL_H

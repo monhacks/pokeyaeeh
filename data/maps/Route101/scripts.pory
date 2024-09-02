@@ -336,6 +336,8 @@ Text_NOW:
     .string "NOW!$"
 
 `
+# Just some extra scripts
+
 script EventScript_GetCurrentTime{
 	lock
 	special(GetCurrentTime)
@@ -373,5 +375,32 @@ script EventScript_PartyHasGogoat{
 	}
 	else{
 		msgbox("You are not the goat.", MSGBOX_NPC)
+	}
+}
+
+script EventScript_RtcDayOfTheWeek{
+	lock
+	faceplayer
+	special(VarRtcDayOfTheWeek)
+	if(var(VAR_RESULT) == DAY_MONDAY){
+		msgbox("It's Monday!", MSGBOX_NPC)
+	}
+	elif(var(VAR_RESULT) == DAY_TUESDAY){
+		msgbox("It's Tuesday!", MSGBOX_NPC)
+	}
+	elif(var(VAR_RESULT) == DAY_WEDNESDAY){
+		msgbox("It's Wednesday!", MSGBOX_NPC)
+	}
+	elif(var(VAR_RESULT) == DAY_THURSDAY){
+		msgbox("It's Thursday!", MSGBOX_NPC)
+	}
+	elif(var(VAR_RESULT) == DAY_FRIDAY){
+		msgbox("It's Friday!", MSGBOX_NPC)
+	}
+	elif(var(VAR_RESULT) == DAY_SATURDAY){
+		msgbox("It's Saturday!", MSGBOX_NPC)
+	}
+	else{
+		msgbox("It's Sunday!", MSGBOX_NPC)
 	}
 }

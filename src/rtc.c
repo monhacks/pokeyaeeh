@@ -406,3 +406,15 @@ void RtcCalcLocalTimeFast(void)
     }
     RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
 }
+
+int RtcDayOfTheWeek(void)
+{
+    // returns 0 to 6. 0 being Friday, and 6 being Thursday
+    return (gLocalTime.days % 7);
+}
+
+void VarRtcDayOfTheWeek(void)
+{
+    DoTimeBasedEvents();
+    gSpecialVar_Result = RtcDayOfTheWeek();
+}
