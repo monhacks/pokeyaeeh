@@ -208,7 +208,7 @@ Route101_Movement_Unused2:
 	step_end
 
 Route101_EventScript_Youngster::
-	goto EventScript_GetDayFromTime
+	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
 	end
 
 Route101_EventScript_Boy::
@@ -380,25 +380,30 @@ script EventScript_GetDayFromTime{
 	lock
 	faceplayer
 	gettime()
-	if(var(VAR_0x8003) == DAY_MONDAY){
-		msgbox("It's Monday!", MSGBOX_NPC)
-	}
-	elif(var(VAR_0x8003) == DAY_TUESDAY){
-		msgbox("It's Tuesday!", MSGBOX_NPC)
-	}
-	elif(var(VAR_0x8003) == DAY_WEDNESDAY){
-		msgbox("It's Wednesday!", MSGBOX_NPC)
-	}
-	elif(var(VAR_0x8003) == DAY_THURSDAY){
-		msgbox("It's Thursday!", MSGBOX_NPC)
-	}
-	elif(var(VAR_0x8003) == DAY_FRIDAY){
-		msgbox("It's Friday!", MSGBOX_NPC)
-	}
-	elif(var(VAR_0x8003) == DAY_SATURDAY){
-		msgbox("It's Saturday!", MSGBOX_NPC)
-	}
-	else{
-		msgbox("It's Sunday!", MSGBOX_NPC)
+	switch (var(VAR_0x8003))
+	{
+		case DAY_SUNDAY:
+			msgbox("It's Sunday!", MSGBOX_NPC)
+
+		case DAY_MONDAY:
+			msgbox("It's Monday!", MSGBOX_NPC)
+
+		case DAY_TUESDAY:
+			msgbox("It's Tuesday!", MSGBOX_NPC)
+
+		case DAY_WEDNESDAY:
+			msgbox("It's Wednesday!", MSGBOX_NPC)
+
+		case DAY_THURSDAY:
+			msgbox("It's Thursday!", MSGBOX_NPC)
+
+		case DAY_FRIDAY:
+			msgbox("It's Friday!", MSGBOX_NPC)
+
+		case DAY_SATURDAY:
+			msgbox("It's Saturday!", MSGBOX_NPC)
+
+		default:
+			msgbox("I forgor!", MSGBOX_NPC)
 	}
 }

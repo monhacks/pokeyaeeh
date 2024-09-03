@@ -39,6 +39,7 @@ Debug_CheatStart::
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4 @ 4: Received Pokedex
 	setflag FLAG_RECEIVED_BIKE
 	additem ITEM_MACH_BIKE
+	additem ITEM_POKEMON_BOX_LINK
 	setvar VAR_BRINEY_HOUSE_STATE, 1
 	setvar VAR_ROUTE116_STATE, 2
 	setflag FLAG_HIDE_ROUTE_116_MR_BRINEY
@@ -70,8 +71,7 @@ Debug_CheatStart::
 	setflag FLAG_LANDMARK_BATTLE_FRONTIER
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setflag FLAG_DEFEATED_PETALBURG_GYM
-	additem ITEM_POKEMON_BOX_LINK
+	setflag FLAG_SYS_GAME_CLEAR
 	special InitRoamer
 	release
 	end
@@ -125,7 +125,8 @@ Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1:: @ testing scripts and stuff
-	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Debug_EventScript_UnsetTestFlag
+	goto EventScript_GetDayFromTime
+	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
 	goto Debug_EventScript_SetTestFlag
 	end
 
@@ -286,12 +287,12 @@ DebugText_DaycarePokemonNotCompatible:
 
 Debug_EventScript_SetTestFlag::
     msgbox Debug_Text_SetTestFlag, MSGBOX_AUTOCLOSE
-    setflag FLAG_DEFEATED_PETALBURG_GYM
+    setflag FLAG_SYS_GAME_CLEAR
 	end
 
 Debug_EventScript_UnsetTestFlag::
     msgbox Debug_Text_UnsetTestFlag, MSGBOX_AUTOCLOSE
-    clearflag FLAG_DEFEATED_PETALBURG_GYM
+    clearflag FLAG_SYS_GAME_CLEAR
 	end
 
 Debug_Text_SetTestFlag::

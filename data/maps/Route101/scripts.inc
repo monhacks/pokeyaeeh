@@ -419,7 +419,7 @@ Route101_Movement_Unused2:
 # 210 "data/maps/Route101/scripts.pory"
 Route101_EventScript_Youngster::
 # 211 "data/maps/Route101/scripts.pory"
-	goto EventScript_GetDayFromTime
+	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
 # 212 "data/maps/Route101/scripts.pory"
 	end
 # 213 "data/maps/Route101/scripts.pory"
@@ -747,55 +747,58 @@ EventScript_GetDayFromTime::
 # 382 "data/maps/Route101/scripts.pory"
 	gettime
 # 383 "data/maps/Route101/scripts.pory"
-	compare VAR_0x8003, DAY_MONDAY
-	goto_if_eq EventScript_GetDayFromTime_1
-# 386 "data/maps/Route101/scripts.pory"
-	compare VAR_0x8003, DAY_TUESDAY
-	goto_if_eq EventScript_GetDayFromTime_2
-# 389 "data/maps/Route101/scripts.pory"
-	compare VAR_0x8003, DAY_WEDNESDAY
-	goto_if_eq EventScript_GetDayFromTime_3
-# 392 "data/maps/Route101/scripts.pory"
-	compare VAR_0x8003, DAY_THURSDAY
-	goto_if_eq EventScript_GetDayFromTime_4
-# 395 "data/maps/Route101/scripts.pory"
-	compare VAR_0x8003, DAY_FRIDAY
-	goto_if_eq EventScript_GetDayFromTime_5
-# 398 "data/maps/Route101/scripts.pory"
-	compare VAR_0x8003, DAY_SATURDAY
-	goto_if_eq EventScript_GetDayFromTime_6
-# 402 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetDayFromTime_Text_6, MSGBOX_NPC
-	return
-
-EventScript_GetDayFromTime_1:
-# 384 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetDayFromTime_Text_0, MSGBOX_NPC
+	switch VAR_0x8003
+# 385 "data/maps/Route101/scripts.pory"
+	case DAY_SUNDAY, EventScript_GetDayFromTime_2
+# 388 "data/maps/Route101/scripts.pory"
+	case DAY_MONDAY, EventScript_GetDayFromTime_3
+# 391 "data/maps/Route101/scripts.pory"
+	case DAY_TUESDAY, EventScript_GetDayFromTime_4
+# 394 "data/maps/Route101/scripts.pory"
+	case DAY_WEDNESDAY, EventScript_GetDayFromTime_5
+# 397 "data/maps/Route101/scripts.pory"
+	case DAY_THURSDAY, EventScript_GetDayFromTime_6
+# 400 "data/maps/Route101/scripts.pory"
+	case DAY_FRIDAY, EventScript_GetDayFromTime_7
+# 403 "data/maps/Route101/scripts.pory"
+	case DAY_SATURDAY, EventScript_GetDayFromTime_8
+# 407 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_7, MSGBOX_NPC
 	return
 
 EventScript_GetDayFromTime_2:
-# 387 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetDayFromTime_Text_1, MSGBOX_NPC
+# 386 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_0, MSGBOX_NPC
 	return
 
 EventScript_GetDayFromTime_3:
-# 390 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetDayFromTime_Text_2, MSGBOX_NPC
+# 389 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_1, MSGBOX_NPC
 	return
 
 EventScript_GetDayFromTime_4:
-# 393 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetDayFromTime_Text_3, MSGBOX_NPC
+# 392 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_2, MSGBOX_NPC
 	return
 
 EventScript_GetDayFromTime_5:
-# 396 "data/maps/Route101/scripts.pory"
-	msgbox EventScript_GetDayFromTime_Text_4, MSGBOX_NPC
+# 395 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_3, MSGBOX_NPC
 	return
 
 EventScript_GetDayFromTime_6:
-# 399 "data/maps/Route101/scripts.pory"
+# 398 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_4, MSGBOX_NPC
+	return
+
+EventScript_GetDayFromTime_7:
+# 401 "data/maps/Route101/scripts.pory"
 	msgbox EventScript_GetDayFromTime_Text_5, MSGBOX_NPC
+	return
+
+EventScript_GetDayFromTime_8:
+# 404 "data/maps/Route101/scripts.pory"
+	msgbox EventScript_GetDayFromTime_Text_6, MSGBOX_NPC
 	return
 
 
@@ -836,29 +839,33 @@ EventScript_PartyHasGogoat_Text_2:
 	.string "You are not the goat.$"
 
 EventScript_GetDayFromTime_Text_0:
-# 384 "data/maps/Route101/scripts.pory"
-	.string "It's Monday!$"
+# 386 "data/maps/Route101/scripts.pory"
+	.string "It's Sunday!$"
 
 EventScript_GetDayFromTime_Text_1:
-# 387 "data/maps/Route101/scripts.pory"
-	.string "It's Tuesday!$"
+# 389 "data/maps/Route101/scripts.pory"
+	.string "It's Monday!$"
 
 EventScript_GetDayFromTime_Text_2:
-# 390 "data/maps/Route101/scripts.pory"
-	.string "It's Wednesday!$"
+# 392 "data/maps/Route101/scripts.pory"
+	.string "It's Tuesday!$"
 
 EventScript_GetDayFromTime_Text_3:
-# 393 "data/maps/Route101/scripts.pory"
-	.string "It's Thursday!$"
+# 395 "data/maps/Route101/scripts.pory"
+	.string "It's Wednesday!$"
 
 EventScript_GetDayFromTime_Text_4:
-# 396 "data/maps/Route101/scripts.pory"
-	.string "It's Friday!$"
+# 398 "data/maps/Route101/scripts.pory"
+	.string "It's Thursday!$"
 
 EventScript_GetDayFromTime_Text_5:
-# 399 "data/maps/Route101/scripts.pory"
-	.string "It's Saturday!$"
+# 401 "data/maps/Route101/scripts.pory"
+	.string "It's Friday!$"
 
 EventScript_GetDayFromTime_Text_6:
-# 402 "data/maps/Route101/scripts.pory"
-	.string "It's Sunday!$"
+# 404 "data/maps/Route101/scripts.pory"
+	.string "It's Saturday!$"
+
+EventScript_GetDayFromTime_Text_7:
+# 407 "data/maps/Route101/scripts.pory"
+	.string "I forgor!$"
