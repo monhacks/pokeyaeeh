@@ -1,6 +1,8 @@
 #include "global.h"
 #include "event_data.h"
 #include "pokedex.h"
+#include "rtc.h"
+#include "constants/opponents.h"
 
 #define SPECIAL_FLAGS_SIZE  (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte
 #define TEMP_FLAGS_SIZE     (NUM_TEMP_FLAGS / 8)
@@ -59,6 +61,27 @@ void ClearDailyHiddenItemFlags(void)
     for (i = FLAG_HIDDEN_ITEMS_START; i <= FLAG_HIDDEN_ITEMS_END; i++)
     {
         FlagClear(i);
+    }
+}
+
+void ShowLilycoveLanceOrCynthia(void)
+{
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+    {
+        if (gLocalTime.dayOfWeek == DAY_FRIDAY)
+        {
+            FlagClear(FLAG_HIDE_LILYCOVE_DEPT_STORE_LANCE);
+            if (FlagGet(TRAINER_FLAGS_START + TRAINER_LANCE))
+                FlagClear(TRAINER_FLAGS_START + TRAINER_LANCE);
+            FlagSet(FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA);
+        }
+        else if (gLocalTime.dayOfWeek == DAY_SATURDAY)
+        {
+            FlagClear(FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA);
+            if (FlagGet(TRAINER_FLAGS_START + TRAINER_CYNTHIA))
+                FlagClear(TRAINER_FLAGS_START + TRAINER_CYNTHIA);
+            FlagSet(FLAG_HIDE_LILYCOVE_DEPT_STORE_LANCE);
+        }
     }
 }
 

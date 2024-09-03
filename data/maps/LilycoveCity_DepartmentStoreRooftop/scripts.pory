@@ -1,4 +1,8 @@
 raw `
+
+.set LOCALID_CYNTHIA, 5
+.set LOCALID_LANCE, 6
+
 LilycoveCity_DepartmentStoreRooftop_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_DepartmentStoreRooftop_OnTransition
 	.byte 0
@@ -219,3 +223,72 @@ LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney:
 LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink:
 	.string "Decided against buying a drink.$"
 `
+script LilycoveCity_DepartmentStoreRooftop_EventScript_Lance{
+	lockall
+	if (flag(FLAG_DEFEATED_LANCE) == false && flag(FLAG_SYS_GAME_CLEAR) == true){
+		faceplayer
+		msgbox("Hello, there!\p"
+				"You're the new Champion of Hoenn,\n"
+				"I hear!\p"
+				"My name is Lance!\n"
+				"I am the Champion of Kanto and Johto!\p"
+				"Now, let's duel, shall we?", MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_LANCE, "You really are the strongest!")
+		msgbox("You fought well, young Trainer!\p"
+				"Let's meet again, sometime!", MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_LANCE)
+	}
+	else{
+		faceplayer
+		msgbox("Would you like another battle,\n"
+				"{PLAYER}?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			trainerbattle_no_intro(TRAINER_LANCE, "That was fun!")
+			msgbox("Let's battle again, next Friday!", MSGBOX_AUTOCLOSE)
+		}
+		else{
+			msgbox("That's fine.\n"
+					"I'll be here til midnight.", MSGBOX_NPC)
+			end
+		}
+	}
+	fadescreen(FADE_TO_BLACK)
+	removeobject(LOCALID_LANCE)
+	fadescreen(FADE_FROM_BLACK)
+	releaseall
+}
+
+script LilycoveCity_DepartmentStoreRooftop_EventScript_Cynthia{
+	lockall
+	if (flag(FLAG_DEFEATED_CYNTHIA) == false && flag(FLAG_SYS_GAME_CLEAR) == true){
+		faceplayer
+		msgbox("Hello, there!\p"
+				"You're the new Champion of Hoenn,\n"
+				"I hear!\p"
+				"My name is Cynthia!\n"
+				"I am the Champion of Sinnoh!\p"
+				"Now, let's dance, shall we?", MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_CYNTHIA, "You really are the strongest!")
+		msgbox("You fought well, young Trainer!\p"
+				"Let's meet again, sometime!", MSGBOX_AUTOCLOSE)
+		setflag(FLAG_DEFEATED_CYNTHIA)
+	}
+	else{
+		faceplayer
+		msgbox("Would you like another battle,\n"
+				"{PLAYER}?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			trainerbattle_no_intro(TRAINER_CYNTHIA, "That was fun!")
+			msgbox("Let's battle again, next Saturday!", MSGBOX_AUTOCLOSE)
+		}
+		else{
+			msgbox("That's fine.\n"
+					"I'll be here til midnight.", MSGBOX_NPC)
+			end
+		}
+	}
+	fadescreen(FADE_TO_BLACK)
+	removeobject(LOCALID_CYNTHIA)
+	fadescreen(FADE_FROM_BLACK)
+	releaseall
+}

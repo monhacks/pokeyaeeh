@@ -88,8 +88,8 @@
 #define TRAINER_VITO                         82
 #define TRAINER_OWEN                         83
 #define TRAINER_WILTON_2                     84
-#define TRAINER_WILTON_3                     85
-#define TRAINER_WILTON_4                     86
+#define TRAINER_CYNTHIA                      85
+#define TRAINER_LANCE                        86
 #define TRAINER_WILTON_5                     87
 #define TRAINER_WARREN                       88
 #define TRAINER_MARY                         89

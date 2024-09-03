@@ -2652,39 +2652,29 @@ static const struct TrainerMon sParty_Wilton2[] = {
     }
 };
 
-static const struct TrainerMon sParty_Wilton3[] = {
+static const struct TrainerMon sParty_Cynthia[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MANECTRIC,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MAKUHITA,
+        .species = SPECIES_GARCHOMP,
+        .heldItem = ITEM_GARCHOMPITE,
+        .ability = ABILITY_ROUGH_SKIN,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .moves = {MOVE_DRAGON_RUSH, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DRAGON_DANCE},
+        .lvl = 1
     }
 };
 
-static const struct TrainerMon sParty_Wilton4[] = {
+static const struct TrainerMon sParty_Lance[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MANECTRIC,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 1,
-    .species = SPECIES_MAKUHITA,
+        .species = SPECIES_SALAMENCE,
+        .heldItem = ITEM_SALAMENCITE,
+        .ability = ABILITY_INTIMIDATE,
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .moves = {MOVE_DRAGON_RUSH, MOVE_DOUBLE_EDGE, MOVE_ROCK_SLIDE, MOVE_DRAGON_DANCE},
+        .lvl = 1
     }
 };
 

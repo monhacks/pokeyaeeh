@@ -119,15 +119,15 @@ Text_TestIntro:
 	.string "Test battle!$"
 
 Text_TestDefeat:
-    .string "Victorious!$"
+    .string "Flags set!$"
 
 Text_Route114TrainersCleared:
 	.string "Route 114 Trainers cleared!$"
 
 Debug_EventScript_Script_1:: @ testing scripts and stuff
-	goto EventScript_GetDayFromTime
-	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_EventScript_UnsetTestFlag
-	goto Debug_EventScript_SetTestFlag
+	setflag FLAG_SYS_GAME_CLEAR
+	special ShowLilycoveLanceOrCynthia
+	msgbox Text_TestDefeat, MSGBOX_AUTOCLOSE
 	end
 
 Debug_EventScript_Script_2:: @ regular single battle
