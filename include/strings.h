@@ -3220,4 +3220,14 @@ extern const u8 gText_Water[];
 extern const u8 gText_RepellentOn[];
 extern const u8 gText_RepellentOff[];
 
+// Day Strings
+extern const u8 gText_Sunday[];
+extern const u8 gText_Monday[];
+extern const u8 gText_Tuesday[];
+extern const u8 gText_Wednesday[];
+extern const u8 gText_Thursday[];
+extern const u8 gText_Friday[];
+extern const u8 gText_Saturday[];
+extern const u8 *const gDayNameStringsTable[];
+
 #endif // GUARD_STRINGS_H

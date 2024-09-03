@@ -548,25 +548,6 @@ static void SpriteCB_IconFlag(struct Sprite* sprite) {
 // If you want to shorten the dates to Sat., Sun., etc., change this to 70
 #define CLOCK_WINDOW_WIDTH 100
 
-static const u8 gText_Friday[]    = _("Fri,");
-static const u8 gText_Saturday[]  = _("Sat,");
-static const u8 gText_Sunday[]    = _("Sun,");
-static const u8 gText_Monday[]    = _("Mon,");
-static const u8 gText_Tuesday[]   = _("Tue,");
-static const u8 gText_Wednesday[] = _("Wed,");
-static const u8 gText_Thursday[]  = _("Thu,");
-
-static const u8 *const gDayNameStringsTable[] =
-{
-    gText_Friday,
-    gText_Saturday,
-    gText_Sunday,
-    gText_Monday,
-    gText_Tuesday,
-    gText_Wednesday,
-    gText_Thursday
-};
-
 static const u8 gText_CurrentTime[]      = _("  {STR_VAR_3} {CLEAR_TO 64}{STR_VAR_1}:{STR_VAR_2}");
 static const u8 gText_CurrentTimeOff[]   = _("  {STR_VAR_3} {CLEAR_TO 64}{STR_VAR_1} {STR_VAR_2}");
 static const u8 gText_CurrentTimeAM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} AM");
@@ -747,7 +728,10 @@ static void HeatStartMenu_ShowTimeWindow(void)
   PutWindowTilemap(sHeatStartMenu->sStartClockWindowId);
 	FlagSet(FLAG_TEMP_5);
     analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
-	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
+	  if (gLocalTime.dayOfWeek <= DAY_SATURDAY)
+      StringCopy(gStringVar3, gDayNameStringsTable[gLocalTime.dayOfWeek]);
+    else
+      StringCopy(gStringVar3, gText_None);
     ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gClockMode == TWELVE_HOUR_MODE)
@@ -777,7 +761,10 @@ static void HeatStartMenu_UpdateClockDisplay(void)
 	RtcCalcLocalTime();
     analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
     
-	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
+	  if (gLocalTime.dayOfWeek <= DAY_SATURDAY)
+      StringCopy(gStringVar3, gDayNameStringsTable[gLocalTime.dayOfWeek]);
+    else
+      StringCopy(gStringVar3, gText_None);
     ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
 	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     if (gClockMode == TWELVE_HOUR_MODE)

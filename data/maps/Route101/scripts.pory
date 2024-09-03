@@ -208,7 +208,7 @@ Route101_Movement_Unused2:
 	step_end
 
 Route101_EventScript_Youngster::
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
+	goto EventScript_GetDayFromTime
 	end
 
 Route101_EventScript_Boy::
@@ -336,8 +336,6 @@ Text_NOW:
     .string "NOW!$"
 
 `
-# Just some extra scripts
-
 script EventScript_GetCurrentTime{
 	lock
 	special(GetCurrentTime)
@@ -378,26 +376,26 @@ script EventScript_PartyHasGogoat{
 	}
 }
 
-script EventScript_RtcDayOfTheWeek{
+script EventScript_GetDayFromTime{
 	lock
 	faceplayer
-	special(VarRtcDayOfTheWeek)
-	if(var(VAR_RESULT) == DAY_MONDAY){
+	gettime()
+	if(var(VAR_0x8003) == DAY_MONDAY){
 		msgbox("It's Monday!", MSGBOX_NPC)
 	}
-	elif(var(VAR_RESULT) == DAY_TUESDAY){
+	elif(var(VAR_0x8003) == DAY_TUESDAY){
 		msgbox("It's Tuesday!", MSGBOX_NPC)
 	}
-	elif(var(VAR_RESULT) == DAY_WEDNESDAY){
+	elif(var(VAR_0x8003) == DAY_WEDNESDAY){
 		msgbox("It's Wednesday!", MSGBOX_NPC)
 	}
-	elif(var(VAR_RESULT) == DAY_THURSDAY){
+	elif(var(VAR_0x8003) == DAY_THURSDAY){
 		msgbox("It's Thursday!", MSGBOX_NPC)
 	}
-	elif(var(VAR_RESULT) == DAY_FRIDAY){
+	elif(var(VAR_0x8003) == DAY_FRIDAY){
 		msgbox("It's Friday!", MSGBOX_NPC)
 	}
-	elif(var(VAR_RESULT) == DAY_SATURDAY){
+	elif(var(VAR_0x8003) == DAY_SATURDAY){
 		msgbox("It's Saturday!", MSGBOX_NPC)
 	}
 	else{

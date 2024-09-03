@@ -550,4 +550,3 @@ gSpecials::
 	def_special GetMysteryGiftFeedback
 	def_special GetCurrentTime
 	def_special HasSpecies
-	def_special VarRtcDayOfTheWeek
