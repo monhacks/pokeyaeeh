@@ -2694,7 +2694,7 @@ static const struct TrainerMon sParty_Cynthia[] = {
         .lvl = 1
     },
     {
-        .species = SPECIES_GIRATINA,
+        .species = SPECIES_GIRATINA_ALTERED,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_CONTRARY,
         .ev = TRAINER_PARTY_EVS(248, 0, 248, 0, 0, 12),
