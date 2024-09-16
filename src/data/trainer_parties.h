@@ -2670,7 +2670,7 @@ static const struct TrainerMon sParty_Cynthia[] = {
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-        .moves = {MOVE_AIR_CUTTER, MOVE_MOONBLAST, MOVE_ANCIENT_POWER, MOVE_DRAINING_KISS},
+        .moves = {MOVE_AIR_CUTTER, MOVE_MOONBLAST, MOVE_ANCIENT_POWER, MOVE_TWISTER},
         .lvl = 1
     },
     {
@@ -2697,8 +2697,8 @@ static const struct TrainerMon sParty_Cynthia[] = {
         .species = SPECIES_GIRATINA_ALTERED,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_CONTRARY,
-        .ev = TRAINER_PARTY_EVS(248, 0, 124, 0, 124, 12),
-        .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
+        .ev = TRAINER_PARTY_EVS(248, 0, 124, 0, 12, 124),
+        .nature = TRAINER_PARTY_NATURE(NATURE_BOLD),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
         .moves = {MOVE_DRACO_METEOR, MOVE_WILL_O_WISP, MOVE_HEX, MOVE_RECOVER},
         .lvl = 1
