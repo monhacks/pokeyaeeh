@@ -319,6 +319,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DEAD_SHOT] = 6,
     [ABILITY_DRAGONS_FURY] = 7,
     [ABILITY_REBOUND] = 5,
+    [ABILITY_JUGGERNAUT] = 6,
 };
 
 static const u16 sEncouragedEncoreEffects[] =

@@ -229,7 +229,7 @@ script LilycoveCity_DepartmentStoreRooftop_EventScript_Lance{
 		faceplayer
 		msgbox("Hello, there!\p"
 				"You're the new Champion of Hoenn,\n"
-				"I hear!\p"
+				"{PLAYER}, I hear!\p"
 				"My name is Lance!\n"
 				"I am the Champion of Kanto and Johto!\p"
 				"Now, let's duel, shall we?", MSGBOX_AUTOCLOSE)
@@ -264,7 +264,7 @@ script LilycoveCity_DepartmentStoreRooftop_EventScript_Cynthia{
 		faceplayer
 		msgbox("Hello, there!\p"
 				"You're the new Champion of Hoenn,\n"
-				"I hear!\p"
+				"{PLAYER}, I hear!\p"
 				"My name is Cynthia!\n"
 				"I am the Champion of Sinnoh!\p"
 				"Now, let's dance, shall we?", MSGBOX_AUTOCLOSE)

@@ -152,7 +152,6 @@ Debug_EventScript_Script_5:: @ Honchkrow sets Tailwind
 
 Debug_EventScript_Script_6:: @ Sky Battle
 	lock
-	cleartrainerflag TRAINER_JOHN_AND_JAY_3
     goto Route123_EventScript_Alberto_Battle_Event_Script
 	release
     end
