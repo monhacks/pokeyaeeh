@@ -474,6 +474,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_COSMOEM]               = {{EVO_LEVEL_DAY, 53, SPECIES_SOLGALEO},
                                        {EVO_LEVEL_NIGHT, 53, SPECIES_LUNALA}},
     [SPECIES_POIPOLE]               = {{EVO_MOVE, MOVE_DRAGON_PULSE, SPECIES_NAGANADEL}},
+    [SPECIES_MELTAN]                = {{EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_MELMETAL}},
 #endif
 #if P_GEN_8_POKEMON == TRUE
     [SPECIES_GROOKEY]               = {{EVO_LEVEL, 16, SPECIES_THWACKEY}},
