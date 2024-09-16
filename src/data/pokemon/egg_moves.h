@@ -1196,7 +1196,8 @@ const u16 gEggMoves[] = {
               MOVE_PSYCHO_SHIFT,
               MOVE_SECRET_POWER,
               MOVE_STORED_POWER,
-              MOVE_STUNNING_BLOW),
+              MOVE_STUNNING_BLOW,
+              MOVE_TWISTER),
 
     egg_moves(NATU,
               MOVE_ALLY_SWITCH,
