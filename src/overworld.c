@@ -423,6 +423,9 @@ void Overworld_ResetStateAfterDigEscRope(void)
     FlagClear(B_FLAG_NO_CATCHING);
     FlagClear(B_FLAG_FORCED_SET_BATTLE);
     FlagClear(FLAG_TOXIC_POISON_TEAM);
+
+    if (VarGet(VAR_ELITE_4_STATE) > 0)
+        VarSet(VAR_ELITE_4_STATE, 0);
 }
 #endif
 

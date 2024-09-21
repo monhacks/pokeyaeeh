@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/GraniteCave_HiddenArea/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_HiddenArea/map.bin"
+    },
+    {
+      "id": "LAYOUT_EVER_GRANDE_CITY_POKEMON_LEAGUE_ROOM",
+      "name": "EverGrandeCity_PokemonLeagueRoom_Layout",
+      "width": 27,
+      "height": 25,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/EverGrandeCity_PokemonLeagueRoom/border.bin",
+      "blockdata_filepath": "data/layouts/EverGrandeCity_PokemonLeagueRoom/map.bin"
     }
   ]
 }
