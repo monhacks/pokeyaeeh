@@ -6998,70 +6998,64 @@ static const struct TrainerMon sParty_Drake[] = {
 
 static const struct TrainerMon sParty_Roxanne1[] = { // Dor
     {
-        .species = SPECIES_MARILL,
-        .ability = ABILITY_HUGE_POWER,
-        .friendship = 200,
-        .gender = TRAINER_MON_FEMALE,
-        .heldItem = ITEM_ASSAULT_VEST,
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1,
-        .moves = {MOVE_AQUA_JET, MOVE_POWER_UP_PUNCH, MOVE_TRAILBLAZE, MOVE_NONE},
-        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
-    },
-    {
-        .species = SPECIES_MILCERY,
-        .ability = ABILITY_AROMA_VEIL,
-        .friendship = 200,
-        .gender = TRAINER_MON_FEMALE,
-        .heldItem = ITEM_LEFTOVERS,
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1,
-        .moves = {MOVE_PROTECT, MOVE_DRAINING_KISS, MOVE_RECOVER, MOVE_CHARM},
-        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
-    },
-    {
         .species = SPECIES_COTTONEE,
-        .ability = ABILITY_PRANKSTER,
-        .friendship = 200,
-        .gender = TRAINER_MON_FEMALE,
         .heldItem = ITEM_MENTAL_HERB,
+        .ability = ABILITY_PRANKSTER,
+        .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 4, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_BOLD),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_TAILWIND, MOVE_DAZZLING_GLEAM, MOVE_HELPING_HAND, MOVE_TAUNT},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_SYLVEON,
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = ABILITY_PIXILATE,
+        .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
+        .moves = {MOVE_PSYCHIC, MOVE_SWIFT, MOVE_QUICK_ATTACK, MOVE_MYSTICAL_FIRE},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1,
-        .moves = {MOVE_PROTECT, MOVE_HELPING_HAND, MOVE_MEGA_DRAIN, MOVE_LEECH_SEED},
-        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_CLEFAIRY,
+        .heldItem = ITEM_EVIOLITE,
+        .ability = ABILITY_FRIEND_GUARD,
+        .ev = TRAINER_PARTY_EVS(248, 0, 140, 0, 0, 120),
+        .nature = TRAINER_PARTY_NATURE(NATURE_CALM),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_HELPING_HAND, MOVE_FOLLOW_ME, MOVE_HEAL_PULSE, MOVE_PROTECT},
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_AZUMARILL,
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = ABILITY_HUGE_POWER,
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+        .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
+        .moves = {MOVE_AQUA_JET, MOVE_PLAY_ROUGH, MOVE_LIQUIDATION, MOVE_ICE_SPINNER},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
+    },
+    {
+        .species = SPECIES_MR_MIME,
+        .heldItem = ITEM_EXPERT_BELT,
+        .ability = ABILITY_TECHNICIAN,
+        .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_REFLECT, MOVE_PSYCHIC, MOVE_NASTY_PLOT, MOVE_MOONBLAST},
+        .lvl = 1
     },
     {
         .species = SPECIES_COMFEY,
+        .heldItem = ITEM_BIG_ROOT,
         .ability = ABILITY_TRIAGE,
-        .friendship = 200,
-        .gender = TRAINER_MON_FEMALE,
-        .heldItem = ITEM_BERRY_JUICE,
+        .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
+        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
+        .moves = {MOVE_CALM_MIND, MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_KNOCK_OFF},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1,
-        .moves = {MOVE_DRAINING_KISS, MOVE_GROWTH, MOVE_LEECH_SEED, MOVE_PROTECT},
-        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
-    },
-    {
-        .species = SPECIES_FLOETTE_ORANGE_FLOWER,
-        .ability = ABILITY_SYMBIOSIS,
-        .friendship = 200,
-        .gender = TRAINER_MON_FEMALE,
-        .heldItem = ITEM_EVIOLITE,
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1,
-        .moves = {MOVE_DRAINING_KISS, MOVE_GRASS_KNOT, MOVE_GRASSY_TERRAIN, MOVE_SYNTHESIS},
-        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
-    },
-    {
-        .species = SPECIES_TOGEPI,
-        .ability = ABILITY_TELEPATHY,
-        .friendship = 200,
-        .gender = TRAINER_MON_FEMALE,
-        .heldItem = ITEM_CHOICE_SCARF,
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 1,
-        .moves = {MOVE_METRONOME, MOVE_NONE, MOVE_NONE, MOVE_NONE},
-        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS)
+        .lvl = 1
     }
 };
 
