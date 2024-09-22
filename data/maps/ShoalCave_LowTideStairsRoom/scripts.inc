@@ -114,7 +114,7 @@ ShoalCave_LowTideStairsRoom_EventScript_Articuno::
 # 67 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	waitmoncry
 # 68 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
-	settotemboost 1, 1, 1, 1, 2, 1, 0, 0
+	settotemboost 1, 0, 2, 2, 2, 2, 0, 0
 # 69 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	setwildbattle SPECIES_ARTICUNO, 0, ITEM_LEFTOVERS, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 30, 31, 30, 30, 31, MOVE_BLIZZARD, MOVE_HURRICANE, MOVE_HIDDEN_POWER, MOVE_ROOST
 # 70 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"

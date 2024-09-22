@@ -75,74 +75,76 @@ TerraCave_End_EventScript_Groudon::
 # 38 "data/maps/TerraCave_End/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_GROUDON
 # 39 "data/maps/TerraCave_End/scripts.pory"
-	setwildbattle SPECIES_GROUDON, 0
+    settotemboost 1, 2, 2, 2, 0, 2, 0, 0
 # 40 "data/maps/TerraCave_End/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setwildbattle SPECIES_GROUDON, 0
 # 41 "data/maps/TerraCave_End/scripts.pory"
-	special BattleSetup_StartLegendaryBattle
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 42 "data/maps/TerraCave_End/scripts.pory"
-	waitstate
+	special BattleSetup_StartLegendaryBattle
 # 43 "data/maps/TerraCave_End/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitstate
 # 44 "data/maps/TerraCave_End/scripts.pory"
-	setflag FLAG_DEFEATED_GROUDON
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 45 "data/maps/TerraCave_End/scripts.pory"
-	setvar VAR_TEMP_1, 0
+	setflag FLAG_DEFEATED_GROUDON
 # 46 "data/maps/TerraCave_End/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setvar VAR_TEMP_1, 0
 # 47 "data/maps/TerraCave_End/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, TerraCave_End_EventScript_RanFromGroudon
+	specialvar VAR_RESULT, GetBattleOutcome
 # 48 "data/maps/TerraCave_End/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, TerraCave_End_EventScript_RanFromGroudon
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, TerraCave_End_EventScript_RanFromGroudon
 # 49 "data/maps/TerraCave_End/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, TerraCave_End_EventScript_DefeatedGroudon
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, TerraCave_End_EventScript_RanFromGroudon
 # 50 "data/maps/TerraCave_End/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, TerraCave_End_EventScript_RanFromGroudon
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, TerraCave_End_EventScript_DefeatedGroudon
 # 51 "data/maps/TerraCave_End/scripts.pory"
-	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, TerraCave_End_EventScript_RanFromGroudon
 # 52 "data/maps/TerraCave_End/scripts.pory"
-	releaseall
-# 53 "data/maps/TerraCave_End/scripts.pory"
-	end
-# 54 "data/maps/TerraCave_End/scripts.pory"
-
-# 55 "data/maps/TerraCave_End/scripts.pory"
-TerraCave_End_EventScript_DefeatedGroudon::
-# 56 "data/maps/TerraCave_End/scripts.pory"
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
+# 53 "data/maps/TerraCave_End/scripts.pory"
+	releaseall
+# 54 "data/maps/TerraCave_End/scripts.pory"
+	end
+# 55 "data/maps/TerraCave_End/scripts.pory"
+
+# 56 "data/maps/TerraCave_End/scripts.pory"
+TerraCave_End_EventScript_DefeatedGroudon::
 # 57 "data/maps/TerraCave_End/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
+	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 # 58 "data/maps/TerraCave_End/scripts.pory"
-	end
+	goto Common_EventScript_RemoveStaticPokemon
 # 59 "data/maps/TerraCave_End/scripts.pory"
-
-# 60 "data/maps/TerraCave_End/scripts.pory"
-TerraCave_End_EventScript_RanFromGroudon::
-# 61 "data/maps/TerraCave_End/scripts.pory"
-	setvar VAR_0x8004, SPECIES_GROUDON
-# 62 "data/maps/TerraCave_End/scripts.pory"
-	goto Common_EventScript_LegendaryFlewAway
-# 63 "data/maps/TerraCave_End/scripts.pory"
 	end
-# 64 "data/maps/TerraCave_End/scripts.pory"
+# 60 "data/maps/TerraCave_End/scripts.pory"
 
+# 61 "data/maps/TerraCave_End/scripts.pory"
+TerraCave_End_EventScript_RanFromGroudon::
+# 62 "data/maps/TerraCave_End/scripts.pory"
+	setvar VAR_0x8004, SPECIES_GROUDON
+# 63 "data/maps/TerraCave_End/scripts.pory"
+	goto Common_EventScript_LegendaryFlewAway
+# 64 "data/maps/TerraCave_End/scripts.pory"
+	end
 # 65 "data/maps/TerraCave_End/scripts.pory"
-TerraCave_End_Movement_GroudonApproach:
+
 # 66 "data/maps/TerraCave_End/scripts.pory"
-	init_affine_anim
+TerraCave_End_Movement_GroudonApproach:
 # 67 "data/maps/TerraCave_End/scripts.pory"
-	walk_down_start_affine
+	init_affine_anim
 # 68 "data/maps/TerraCave_End/scripts.pory"
-	delay_16
+	walk_down_start_affine
 # 69 "data/maps/TerraCave_End/scripts.pory"
 	delay_16
 # 70 "data/maps/TerraCave_End/scripts.pory"
-	walk_down_affine
-# 71 "data/maps/TerraCave_End/scripts.pory"
 	delay_16
+# 71 "data/maps/TerraCave_End/scripts.pory"
+	walk_down_affine
 # 72 "data/maps/TerraCave_End/scripts.pory"
 	delay_16
 # 73 "data/maps/TerraCave_End/scripts.pory"
-	walk_down_affine
+	delay_16
 # 74 "data/maps/TerraCave_End/scripts.pory"
+	walk_down_affine
+# 75 "data/maps/TerraCave_End/scripts.pory"
 	step_end

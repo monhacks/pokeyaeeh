@@ -96,7 +96,7 @@ EmberRidge_EventScript_Moltres::
 # 58 "data/maps/EmberRidge/scripts.pory"
 	waitmoncry
 # 59 "data/maps/EmberRidge/scripts.pory"
-	settotemboost 1, 1, 1, 1, 2, 1, 0, 0
+	settotemboost 1, 0, 2, 2, 2, 2, 0, 0
 # 60 "data/maps/EmberRidge/scripts.pory"
 	setwildbattle SPECIES_MOLTRES, 0, ITEM_LEFTOVERS, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_HEAT_WAVE, MOVE_JETSTREAM, MOVE_SOLAR_BEAM, MOVE_ROOST
 # 61 "data/maps/EmberRidge/scripts.pory"

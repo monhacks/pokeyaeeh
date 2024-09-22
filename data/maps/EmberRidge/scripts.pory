@@ -56,7 +56,7 @@ script EmberRidge_EventScript_Moltres{
 	playmoncry(SPECIES_MOLTRES, CRY_MODE_ENCOUNTER)
 	delay(40)
 	waitmoncry()
-    settotemboost(1, 1, 1, 1, 2, 1, 0, 0)
+    settotemboost(1, 0, 2, 2, 2, 2, 0, 0)
 	setwildbattle(SPECIES_MOLTRES, 0, ITEM_LEFTOVERS, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_HEAT_WAVE, MOVE_JETSTREAM, MOVE_SOLAR_BEAM, MOVE_ROOST)
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	special(BattleSetup_StartLegendaryBattle)

@@ -9615,7 +9615,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FIERY_DANCE] =
     {
         .effect = EFFECT_SP_ATTACK_UP_HIT,
-        .power = 80,
+        .power = 95,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 16,

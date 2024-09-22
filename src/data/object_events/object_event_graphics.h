@@ -399,6 +399,7 @@ const u16 gObjectEventPic_Registeel[] = INCBIN_U16("graphics/object_events/pics/
 const u16 gObjectEventPic_Regigigas[] = INCBIN_U16("graphics/object_events/pics/pokemon/custom/regigigas.4bpp");
 const u16 gObjectEventPic_Regidrago[] = INCBIN_U16("graphics/object_events/pics/pokemon/custom/regidrago.4bpp");
 const u16 gObjectEventPic_Regieleki[] = INCBIN_U16("graphics/object_events/pics/pokemon/custom/regieleki.4bpp");
+const u16 gObjectEventPic_Volcarona[] = INCBIN_U16("graphics/object_events/pics/pokemon/custom/volcarona.4bpp");
 const u32 gObjectEventPic_Kindler[] = INCBIN_U32("graphics/object_events/pics/people/custom/kindler.4bpp");
 const u32 gObjectEventPic_BirdKeeper[] = INCBIN_U32("graphics/object_events/pics/people/custom/bird_keeper.4bpp");
 const u32 gObjectEventPic_Guitarist[] = INCBIN_U32("graphics/object_events/pics/people/custom/guitarist.4bpp");

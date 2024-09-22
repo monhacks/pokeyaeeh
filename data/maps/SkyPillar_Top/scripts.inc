@@ -111,7 +111,7 @@ SkyPillar_Top_EventScript_Rayquaza::
 # 56 "data/maps/SkyPillar_Top/scripts.pory"
 	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_TAILWIND_OPPONENT
 # 57 "data/maps/SkyPillar_Top/scripts.pory"
-	settotemboost 1, 2, 1, 1, 2, 1, 0, 0
+	settotemboost 1, 2, 2, 2, 2, 2, 0, 0
 # 58 "data/maps/SkyPillar_Top/scripts.pory"
 	setwildbattle SPECIES_RAYQUAZA, 0, ITEM_ROSELI_BERRY, NATURE_HARDY, 0, 100, 152, 0, 156, 100, 0, 31, 31, 31, 31, 31, 31, MOVE_DRAGON_ASCENT, MOVE_DRACO_METEOR, MOVE_EARTHQUAKE, MOVE_V_CREATE, FALSE
 # 59 "data/maps/SkyPillar_Top/scripts.pory"

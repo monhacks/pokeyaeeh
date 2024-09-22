@@ -64,23 +64,33 @@ void ClearDailyHiddenItemFlags(void)
     }
 }
 
-void ShowLilycoveLanceOrCynthia(void)
+void ShowHideObjectsBasedOnDay(void)
 {
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         if (gLocalTime.dayOfWeek == DAY_FRIDAY)
-        {
+        {   // Battle Lance on Fridays
             FlagClear(FLAG_HIDE_LILYCOVE_DEPT_STORE_LANCE);
             if (FlagGet(TRAINER_FLAGS_START + TRAINER_LANCE))
                 FlagClear(TRAINER_FLAGS_START + TRAINER_LANCE);
             FlagSet(FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA);
         }
         else if (gLocalTime.dayOfWeek == DAY_SATURDAY)
-        {
+        {   // Battle Cynthia on Saturdays
             FlagClear(FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA);
             if (FlagGet(TRAINER_FLAGS_START + TRAINER_CYNTHIA))
                 FlagClear(TRAINER_FLAGS_START + TRAINER_CYNTHIA);
             FlagSet(FLAG_HIDE_LILYCOVE_DEPT_STORE_LANCE);
+        }
+        else if (gLocalTime.dayOfWeek == DAY_SUNDAY)
+            FlagSet(FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA);
+    }
+
+    if (FlagSet(FLAG_BADGE06_GET))
+    {
+        if (gLocalTime.dayOfWeek == DAY_SUNDAY)
+        {   // Volcarona respawns on Sundays
+            FlagClear(FLAG_DEFEATED_VOLCARONA);
         }
     }
 }

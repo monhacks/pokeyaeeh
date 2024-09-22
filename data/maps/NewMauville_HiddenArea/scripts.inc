@@ -61,7 +61,7 @@ NewMauvilleHiddenArea_EventScript_Zapdos::
 # 41 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	waitmoncry
 # 42 "data/maps/NewMauville_HiddenArea/scripts.pory"
-	settotemboost 1, 1, 1, 1, 2, 1, 0, 0
+	settotemboost 1, 0, 2, 2, 2, 2, 0, 0
 # 43 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	setwildbattle SPECIES_ZAPDOS, 0, ITEM_LEFTOVERS, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 30, 31, 31, MOVE_THUNDER, MOVE_HURRICANE, MOVE_HIDDEN_POWER, MOVE_ROOST
 # 44 "data/maps/NewMauville_HiddenArea/scripts.pory"
