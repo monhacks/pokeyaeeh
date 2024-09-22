@@ -7,13 +7,11 @@ mapscripts EverGrandeCity_PokemonLeagueRoom_MapScripts{
 
 script EverGrandeCity_PokemonLeagueRoom_EventScript_PlayerTurnNorth{
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-    return
 }
 
 script EverGrandeCity_PokemonLeagueRoom_EventScript_OpenDoors{
-	playse(SE_DOOR)
-    setmetatile(13, 5, METATILE_EliteFour_OpenDoorChampion_Frame, FALSE)
-	setmetatile(13, 6, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE)
+    setmetatile(13, 1, METATILE_EliteFour_OpenDoor_Frame, FALSE)
+	setmetatile(13, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE)
 	special(DrawWholeMapView)
     end
 }

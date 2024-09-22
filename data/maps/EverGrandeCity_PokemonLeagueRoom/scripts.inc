@@ -18,13 +18,11 @@ EverGrandeCity_PokemonLeagueRoom_EventScript_PlayerTurnNorth::
 
 
 EverGrandeCity_PokemonLeagueRoom_EventScript_OpenDoors::
+# 13 "data/maps/EverGrandeCity_PokemonLeagueRoom/scripts.pory"
+	setmetatile 13, 1, METATILE_EliteFour_OpenDoor_Frame, FALSE
 # 14 "data/maps/EverGrandeCity_PokemonLeagueRoom/scripts.pory"
-	playse SE_DOOR
+	setmetatile 13, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE
 # 15 "data/maps/EverGrandeCity_PokemonLeagueRoom/scripts.pory"
-	setmetatile 13, 5, METATILE_EliteFour_OpenDoorChampion_Frame, FALSE
-# 16 "data/maps/EverGrandeCity_PokemonLeagueRoom/scripts.pory"
-	setmetatile 13, 6, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE
-# 17 "data/maps/EverGrandeCity_PokemonLeagueRoom/scripts.pory"
 	special DrawWholeMapView
 	end
 

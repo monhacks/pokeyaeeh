@@ -4465,7 +4465,7 @@
       "id": "LAYOUT_EVER_GRANDE_CITY_POKEMON_LEAGUE_ROOM",
       "name": "EverGrandeCity_PokemonLeagueRoom_Layout",
       "width": 27,
-      "height": 25,
+      "height": 21,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/EverGrandeCity_PokemonLeagueRoom/border.bin",

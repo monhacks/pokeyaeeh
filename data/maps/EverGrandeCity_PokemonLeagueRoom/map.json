@@ -19,56 +19,56 @@
   "warp_events": [
     {
       "x": 12,
-      "y": 24,
+      "y": 20,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
       "dest_warp_id": "2"
     },
     {
       "x": 13,
-      "y": 24,
+      "y": 20,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
       "dest_warp_id": "2"
     },
     {
       "x": 14,
-      "y": 24,
+      "y": 20,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
       "dest_warp_id": "2"
     },
     {
       "x": 3,
-      "y": 9,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM",
       "dest_warp_id": "0"
     },
     {
       "x": 8,
-      "y": 9,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_PHOEBES_ROOM",
       "dest_warp_id": "0"
     },
     {
       "x": 18,
-      "y": 9,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_GLACIAS_ROOM",
       "dest_warp_id": "0"
     },
     {
       "x": 23,
-      "y": 9,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_DRAKES_ROOM",
       "dest_warp_id": "0"
     },
     {
       "x": 13,
-      "y": 6,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM",
       "dest_warp_id": "0"
