@@ -326,7 +326,7 @@ u8 ChooseWildMonLevel(void)
     if (wildMonLevel >= level)
         return level - 1;
     else if (wildMonLevel >= levelCap)
-        return levelCap = 1;
+        return levelCap - 1;
     else if (wildMonLevel < 3)
         return 3;
     else if ((wildMonLevel < 4) && (FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103)))
