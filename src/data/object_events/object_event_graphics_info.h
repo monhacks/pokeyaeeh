@@ -4724,7 +4724,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Articuno = {
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Following,
+    .anims = sAnimTable_Pokemon,
     .images = sPicTable_Articuno,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4743,7 +4743,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zapdos = {
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Following,
+    .anims = sAnimTable_Pokemon,
     .images = sPicTable_Zapdos,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -4762,7 +4762,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres = {
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Following,
+    .anims = sAnimTable_Pokemon,
     .images = sPicTable_Moltres,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5047,7 +5047,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volcarona = {
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Standard,
+    .anims = sAnimTable_Pokemon,
     .images = sPicTable_Volcarona,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -5066,7 +5066,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo = {
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Standard,
+    .anims = sAnimTable_Pokemon,
     .images = sPicTable_Mewtwo,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
