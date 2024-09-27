@@ -56,7 +56,15 @@ script ScorchedSlab_EventScript_Volcarona{
 	delay(40)
 	waitmoncry()
     settotemboost(1, 0, 2, 2, 2, 2, 0, 0)
-	setwildbattle(SPECIES_VOLCARONA, 0, ITEM_FIRE_GEM, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_JETSTREAM, MOVE_GIGA_DRAIN)
+	randompercentage(10)
+	if(var(VAR_RESULT) == TRUE){
+		# Shiny :D
+		setwildbattle(SPECIES_VOLCARONA, 0, ITEM_FIRE_GEM, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_JETSTREAM, MOVE_GIGA_DRAIN, TRUE)
+	}
+	else{
+		# Not shiny D:
+		setwildbattle(SPECIES_VOLCARONA, 0, ITEM_FIRE_GEM, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_JETSTREAM, MOVE_GIGA_DRAIN, FALSE)
+	}
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	special(BattleSetup_StartLegendaryBattle)
 	waitstate()

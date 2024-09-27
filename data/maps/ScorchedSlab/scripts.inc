@@ -93,46 +93,57 @@ ScorchedSlab_EventScript_Volcarona::
 # 58 "data/maps/ScorchedSlab/scripts.pory"
 	settotemboost 1, 0, 2, 2, 2, 2, 0, 0
 # 59 "data/maps/ScorchedSlab/scripts.pory"
-	setwildbattle SPECIES_VOLCARONA, 0, ITEM_FIRE_GEM, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_JETSTREAM, MOVE_GIGA_DRAIN
+	randompercentage 10
 # 60 "data/maps/ScorchedSlab/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 61 "data/maps/ScorchedSlab/scripts.pory"
-	special BattleSetup_StartLegendaryBattle
-# 62 "data/maps/ScorchedSlab/scripts.pory"
-	waitstate
-# 63 "data/maps/ScorchedSlab/scripts.pory"
-	resetweather
-# 64 "data/maps/ScorchedSlab/scripts.pory"
-	doweather
-# 65 "data/maps/ScorchedSlab/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	compare VAR_RESULT, TRUE
+	goto_if_eq ScorchedSlab_EventScript_Volcarona_2
 # 66 "data/maps/ScorchedSlab/scripts.pory"
-	setflag FLAG_DEFEATED_VOLCARONA
-# 67 "data/maps/ScorchedSlab/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_VOLCARONA, 0, ITEM_FIRE_GEM, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_JETSTREAM, MOVE_GIGA_DRAIN, FALSE
+ScorchedSlab_EventScript_Volcarona_1:
 # 68 "data/maps/ScorchedSlab/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ScorchedSlab_EventScript_RanFromVolcarona
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 69 "data/maps/ScorchedSlab/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ScorchedSlab_EventScript_RanFromVolcarona
+	special BattleSetup_StartLegendaryBattle
 # 70 "data/maps/ScorchedSlab/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, ScorchedSlab_EventScript_DefeatedVolcarona
+	waitstate
 # 71 "data/maps/ScorchedSlab/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ScorchedSlab_EventScript_RanFromVolcarona
+	resetweather
 # 72 "data/maps/ScorchedSlab/scripts.pory"
+	doweather
+# 73 "data/maps/ScorchedSlab/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 74 "data/maps/ScorchedSlab/scripts.pory"
+	setflag FLAG_DEFEATED_VOLCARONA
+# 75 "data/maps/ScorchedSlab/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 76 "data/maps/ScorchedSlab/scripts.pory"
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ScorchedSlab_EventScript_RanFromVolcarona
+# 77 "data/maps/ScorchedSlab/scripts.pory"
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ScorchedSlab_EventScript_RanFromVolcarona
+# 78 "data/maps/ScorchedSlab/scripts.pory"
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, ScorchedSlab_EventScript_DefeatedVolcarona
+# 79 "data/maps/ScorchedSlab/scripts.pory"
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ScorchedSlab_EventScript_RanFromVolcarona
+# 80 "data/maps/ScorchedSlab/scripts.pory"
 	release
 	end
 
+ScorchedSlab_EventScript_Volcarona_2:
+# 62 "data/maps/ScorchedSlab/scripts.pory"
+	setwildbattle SPECIES_VOLCARONA, 0, ITEM_FIRE_GEM, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_JETSTREAM, MOVE_GIGA_DRAIN, TRUE
+	goto ScorchedSlab_EventScript_Volcarona_1
+
 
 ScorchedSlab_EventScript_DefeatedVolcarona::
-# 77 "data/maps/ScorchedSlab/scripts.pory"
+# 85 "data/maps/ScorchedSlab/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 
 ScorchedSlab_EventScript_RanFromVolcarona::
-# 82 "data/maps/ScorchedSlab/scripts.pory"
+# 90 "data/maps/ScorchedSlab/scripts.pory"
 	setvar VAR_0x8004, SPECIES_VOLCARONA
-# 83 "data/maps/ScorchedSlab/scripts.pory"
+# 91 "data/maps/ScorchedSlab/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
