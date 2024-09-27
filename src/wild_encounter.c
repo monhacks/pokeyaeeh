@@ -307,52 +307,32 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
 
 u8 ChooseWildMonLevel(void)
 {
-    u8 min;
-    u8 max;
-    u8 range;
-    u8 rand;
     u8 level = GetHighestLevelInPlayerParty();
+    u8 range = 2;
+    u8 rand;
     u8 curveAmount;
+    u8 levelCap = GetLevelCap();
+    u8 wildMonLevel;
 
-    // In case the player tries to cheese by taking low level Pokémon
-    if ((FlagGet(FLAG_BADGE03_GET) == TRUE) && (level < 30)) // All wild encounters will be around Lv 30, after Gym 3
-        level = 30;
-    if ((FlagGet(FLAG_BADGE04_GET) == TRUE) && (level < 35)) // All wild encounters will be around Lv 35, after Gym 4
-        level = 35;
-    if ((FlagGet(FLAG_BADGE05_GET) == TRUE) && (level < 40)) // All wild encounters will be around Lv 40, after Gym 5
-        level = 40;
-    if ((FlagGet(FLAG_BADGE06_GET) == TRUE) && (level < 45)) // All wild encounters will be around Lv 45, after Gym 6
-        level = 45;
-    if ((FlagGet(FLAG_BADGE07_GET) == TRUE) && (level < 5)) // All wild encounters will be around Lv 50, after Gym 7
-        level = 50;
-    if ((FlagGet(FLAG_BADGE08_GET) == TRUE) && (level < 55)) // All wild encounters will be around Lv 55, after Gym 8
-        level = 55;
-    if ((FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE) && (level < 60)) // All wild encounters will be around Lv 60, after beating the League
-        level = 60;
+    curveAmount = (((Random() % 4) + range) * level) / 5;
 
-    if (max < level)
-        curveAmount = (((2 * level) + max) / 3) - max;
-    range = max - min + 1;
-        
     if (range < (curveAmount * 3) && (range != 0))
         range = curveAmount / 3;
 
     rand = Random() % range;
 
-    // check ability for max level mon
-    if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
-    {
-        u16 ability = GetMonAbility(&gPlayerParty[0]);
-        if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
-        {
-            if (Random() % 2 == 0)
-                return max + curveAmount;
+    wildMonLevel = (rand + curveAmount);
 
-            if (rand != 0)
-                rand--;
-        }
-    }
-    return min + rand + curveAmount;
+    if (wildMonLevel >= level)
+        return level - 1;
+    else if (wildMonLevel >= levelCap)
+        return levelCap = 1;
+    else if (wildMonLevel < 3)
+        return 3;
+    else if ((wildMonLevel < 4) && (FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103)))
+        return 4;
+    else
+        return wildMonLevel;
 }
 
 u8 ChooseStaticMonLevel(void)
