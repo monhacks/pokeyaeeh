@@ -11572,6 +11572,7 @@ extern const u16 gObjectEventPal_Regigigas[];
 extern const u16 gObjectEventPal_Regieleki[];
 extern const u16 gObjectEventPal_Regidrago[];
 extern const u16 gObjectEventPal_Volcarona[];
+extern const u16 gObjectEventPal_Mewtwo[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];

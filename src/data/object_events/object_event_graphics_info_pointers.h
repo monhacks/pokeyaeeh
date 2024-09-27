@@ -265,6 +265,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PkmnRangerF
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lance;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volcarona;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -528,6 +529,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LANCE] =                    &gObjectEventGraphicsInfo_Lance,
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
     [OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
+    [OBJ_EVENT_GFX_MEWTWO] =                   &gObjectEventGraphicsInfo_Mewtwo,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
