@@ -77,7 +77,7 @@ MarineCave_End_EventScript_Kyogre::
 # 39 "data/maps/MarineCave_End/scripts.pory"
     settotemboost 1, 0, 2, 2, 2, 2, 0, 0
 # 40 "data/maps/MarineCave_End/scripts.pory"
-	setwildbattle SPECIES_KYOGRE, 0
+	setwildbattle SPECIES_KYOGRE, 0, ITEM_BLUE_ORB, NATURE_TIMID, 0, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_ORIGIN_PULSE, MOVE_WATER_SPOUT, MOVE_ICE_BEAM, MOVE_THUNDER, FALSE
 # 41 "data/maps/MarineCave_End/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 42 "data/maps/MarineCave_End/scripts.pory"

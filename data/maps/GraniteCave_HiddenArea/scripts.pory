@@ -17,14 +17,8 @@ mapscripts GraniteCave_HiddenArea_MapScripts {
             }
         }
     }
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE {
-        if(flag(FLAG_DEFEATED_MEWTWO) == false){
-            setvar(B_VAR_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
-        }
-    }
     MAP_SCRIPT_ON_LOAD {
         if(flag(FLAG_DEFEATED_MEWTWO) == false){
-            setvar(B_VAR_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
             clearflag(FLAG_HIDE_MEWTWO)
         }
     }
@@ -39,7 +33,8 @@ script GraniteCave_HiddenArea_EventScript_Mewtwo{
 	waitmoncry
     settotemboost(1, 0, 2, 2, 2, 2, 0, 0)
     setwildbattle(SPECIES_MEWTWO, 0, ITEM_MEWTWONITE_Y, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYSTRIKE, MOVE_DAZZLING_GLEAM, MOVE_AURA_SPHERE, MOVE_ICE_BEAM)
-	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setvar(B_VAR_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	special(BattleSetup_StartLegendaryBattle)
 	waitstate
     setvar(B_VAR_STARTING_STATUS, 0)

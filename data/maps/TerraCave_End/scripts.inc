@@ -77,7 +77,7 @@ TerraCave_End_EventScript_Groudon::
 # 39 "data/maps/TerraCave_End/scripts.pory"
     settotemboost 1, 2, 2, 2, 0, 2, 0, 0
 # 40 "data/maps/TerraCave_End/scripts.pory"
-	setwildbattle SPECIES_GROUDON, 0
+	setwildbattle SPECIES_GROUDON, 0, ITEM_RED_ORB, NATURE_ADAMANT, 0, 4, 252, 0, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PRECIPICE_BLADES, MOVE_EARTHQUAKE, MOVE_HEAT_CRASH, MOVE_SOLAR_BLADE, FALSE
 # 41 "data/maps/TerraCave_End/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 42 "data/maps/TerraCave_End/scripts.pory"

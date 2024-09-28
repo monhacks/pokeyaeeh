@@ -37,7 +37,7 @@ TerraCave_End_EventScript_Groudon::
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_GROUDON
     settotemboost 1, 2, 2, 2, 0, 2, 0, 0
-	setwildbattle SPECIES_GROUDON, 0
+	setwildbattle SPECIES_GROUDON, 0, ITEM_RED_ORB, NATURE_ADAMANT, 0, 4, 252, 0, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PRECIPICE_BLADES, MOVE_EARTHQUAKE, MOVE_HEAT_CRASH, MOVE_SOLAR_BLADE, FALSE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
