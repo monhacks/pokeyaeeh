@@ -339,9 +339,10 @@
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
-#define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
-#define FLAG_WONDER_CARD_UNUSED_2            0x13E
-#define FLAG_WONDER_CARD_UNUSED_3            0x13F
+// Previously Wonder Card flags, but now used for more Mystery Gifts
+#define FLAG_RECEIVED_1ST_GIFT               0x13D
+#define FLAG_RECEIVED_2ND_GIFT               0x13E
+#define FLAG_RECEIVED_3RD_GIFT               0x13F
 #define FLAG_WONDER_CARD_UNUSED_4            0x140
 #define FLAG_WONDER_CARD_UNUSED_5            0x141
 #define FLAG_WONDER_CARD_UNUSED_6            0x142
@@ -506,7 +507,7 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_RECEIVED_1ST_GIFT               0x1DA
+#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
@@ -517,7 +518,7 @@
 #define FLAG_UNLOCK_CHEAT_MENU               0x1E0 // Cheat Scripts Menu
 #define FLAG_SYS_DISABLE_DAMAGE_DONE         0x1E1 // Damage Done display
 #define FLAG_TOXIC_POISON_TEAM               0x1E2 // Toxic Poisons player party when the battle starts
-#define FLAG_RECEIVED_2ND_GIFT               0x1E3
+#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4

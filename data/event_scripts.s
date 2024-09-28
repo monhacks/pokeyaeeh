@@ -1081,6 +1081,7 @@ Common_EventScript_MysteryGift::
 	lockall
 	goto_if_unset FLAG_RECEIVED_1ST_GIFT, MysteryGift_EventScript_RockruffOwnTempo
 	call_if_set FLAG_BADGE06_GET, MysteryGift_EventScript_FloetteEternalFlower
+	call_if_set FLAG_SYS_GAME_CLEAR, MysteryGift_EventScript_UrsalunaBloodmoon
 	goto_if_unset FLAG_SYS_GAME_CLEAR, MysteryGift_EventScript_CurrentlyUnavailable
 MysteryGift_EventScript_StartMysteryGift::
 	msgbox MysteryGift_Text_WelcomeToMysteryGiftSystem, MSGBOX_YESNO
@@ -1120,7 +1121,7 @@ MysteryGift_EventScript_RockruffOwnTempo::
 
 MysteryGift_EventScript_FloetteEternalFlower::
 	goto_if_set FLAG_RECEIVED_2ND_GIFT, MysteryGift_EventScript_Return
-	msgbox MysteryGift_Text_SecondTimeHere, MSGBOX_AUTOCLOSE
+	msgbox MysteryGift_Text_AnotherGiftForYou, MSGBOX_AUTOCLOSE
 	playfanfare MUS_OBTAIN_ITEM
 	message MysteryGift_Text_ReceivedSecondGiftMon
 	waitfanfare
@@ -1128,6 +1129,22 @@ MysteryGift_EventScript_FloetteEternalFlower::
 	bufferspeciesname STR_VAR_1, SPECIES_FLOETTE_ETERNAL_FLOWER
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FLOETTE_ETERNAL_FLOWER
 	givemon SPECIES_FLOETTE_ETERNAL_FLOWER, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_MODEST, 2, MON_FEMALE, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_LIGHT_OF_RUIN, MOVE_SOLAR_BEAM, MOVE_EARTH_POWER, MOVE_CELEBRATE, TRUE
+	call Common_EventScript_Nickname
+	goto_if_set FLAG_SYS_GAME_CLEAR, MysteryGift_EventScript_SystemOpened
+	msgbox MysteryGift_Text_GiftFromPCG, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MysteryGift_EventScript_UrsalunaBloodmoon::
+	goto_if_set FLAG_RECEIVED_3RD_GIFT, MysteryGift_EventScript_Return
+	msgbox MysteryGift_Text_AnotherGiftForYou, MSGBOX_AUTOCLOSE
+	playfanfare MUS_OBTAIN_ITEM
+	message MysteryGift_Text_ReceivedThirdGiftMon
+	waitfanfare
+	setflag FLAG_RECEIVED_3RD_GIFT
+	bufferspeciesname STR_VAR_1, SPECIES_URSALUNA_BLOODMOON
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_URSALUNA_BLOODMOON
+	givemon SPECIES_URSALUNA_BLOODMOON, 0, ITEM_LIFE_ORB, ITEM_CHERISH_BALL, NATURE_MODEST, 2, MON_MALE, 252, 0, 4, 0, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_BLOOD_MOON, MOVE_MOONBLAST, MOVE_EARTH_POWER, MOVE_CELEBRATE, TRUE
 	call Common_EventScript_Nickname
 	goto_if_set FLAG_SYS_GAME_CLEAR, MysteryGift_EventScript_SystemOpened
 	msgbox MysteryGift_Text_GiftFromPCG, MSGBOX_DEFAULT
@@ -1306,7 +1323,7 @@ MysteryGift_Text_FirstTimeHere:
 	.string "visiting the Mystery Gift System.\p"
 	.string "Please enjoy this special gift!$"
 
-MysteryGift_Text_SecondTimeHere:
+MysteryGift_Text_AnotherGiftForYou:
 	.string "Hello, {PLAYER}!\p"
 	.string "PCG has another gift for you!$"
 
@@ -1315,6 +1332,9 @@ MysteryGift_Text_ReceivedFirstGiftMon:
 
 MysteryGift_Text_ReceivedSecondGiftMon:
 	.string "{PLAYER} received a special Floette!$"
+
+MysteryGift_Text_ReceivedThirdGiftMon:
+	.string "{PLAYER} received a special Ursaluna!$"
 
 MysteryGift_Text_GiftFromPCG:
 	.string "Thank you for playing\n"
