@@ -1,3 +1,15 @@
 GraniteCave_B3F_MapScripts::
+# 2 "data/maps/GraniteCave_B3F/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, GraniteCave_B3F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
+
+GraniteCave_B3F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 3 "data/maps/GraniteCave_B3F/scripts.pory"
+	goto_if_set FLAG_SYS_GAME_CLEAR, GraniteCave_B3F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1
+	return
+
+GraniteCave_B3F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
+# 4 "data/maps/GraniteCave_B3F/scripts.pory"
+	setmetatile 23, 3, METATILE_Cave_GraniteCave3BF_DownstairsLadder, TRUE
+	return
 

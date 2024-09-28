@@ -1,1 +1,7 @@
-mapscripts GraniteCave_B3F_MapScripts {}
+mapscripts GraniteCave_B3F_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE {
+        if(flag(FLAG_SYS_GAME_CLEAR) == true){
+            setmetatile(23, 3, METATILE_Cave_GraniteCave3BF_DownstairsLadder, TRUE)
+        }
+    }
+}

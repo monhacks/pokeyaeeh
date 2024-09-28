@@ -17,6 +17,7 @@ script ScorchedSlab_SetHarshSunlight{
 		doweather
 	}
 }
+
 script ScorchedSlab_OnResume{
     call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, ScorchedSlab_EventScript_TryRemoveVolcarona)
 }
@@ -49,12 +50,12 @@ script ScorchedSlab_EventScript_ShowVolcarona{
 }
 
 script ScorchedSlab_EventScript_Volcarona{
-	lock()
-	faceplayer()
-	waitse()
+	lock
+	faceplayer
+	waitse
 	playmoncry(SPECIES_VOLCARONA, CRY_MODE_ENCOUNTER)
 	delay(40)
-	waitmoncry()
+	waitmoncry
     settotemboost(1, 0, 2, 2, 2, 2, 0, 0)
 	randompercentage(10)
 	if(var(VAR_RESULT) == TRUE){
@@ -67,7 +68,7 @@ script ScorchedSlab_EventScript_Volcarona{
 	}
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	special(BattleSetup_StartLegendaryBattle)
-	waitstate()
+	waitstate
 	resetweather
 	doweather
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)

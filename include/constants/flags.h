@@ -42,8 +42,6 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-
-// Battle config flags
 #define FLAG_INVERSE_BATTLE          0x20 // Type match-ups are inverted
 #define FLAG_FORCE_DOUBLE_BATTLE     0x21 // Wild battles will only be double
 #define FLAG_WILD_AI_BATTLE          0x22 // Smarter wild pokemon
@@ -53,11 +51,9 @@
 #define FLAG_DYNAMAX_BATTLE          0x26 // Battles will feature Dynamax
 #define FLAG_SKY_BATTLE              0x27 // Starts a Sky Battle
 #define FLAG_FORCED_SET_BATTLE       0x28 // Forced set battles.
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
+#define FLAG_DEFEATED_MEWTWO         0x29
+#define FLAG_HIDE_MEWTWO             0x2A
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-
-// Item config flags
 #define FLAG_GEN6EXP_SHARE           0x2C // Enables Gen6 EXP Share
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
@@ -69,8 +65,6 @@
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
-
-// OW config flags
 #define FLAG_NO_ENCOUNTER            0x37 // Disabled wild encounters
 #define FLAG_NO_TRAINER_SEE          0x38 // Disables trainer-see you
 #define FLAG_NO_COLLISION            0x39 // Disables collisions
@@ -81,11 +75,8 @@
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
-
-// Pokemon config flags
 #define FLAG_FORCE_SHINY     0x41 // Forces all encounters to be shiny
 #define FLAG_FORCE_NO_SHINY  0x42 // Forces all encounters to not be shiny
-
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
