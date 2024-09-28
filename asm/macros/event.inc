@@ -2350,9 +2350,29 @@
 			applymovement \localid, Common_Movement_Heart
 		.else
 			applymovement \localid, Common_Movement_ExclamationMark
+		.endif
 	.endif
 	waitmovement 0
 	applymovement \localid, Common_Movement_Delay48
+	waitmovement 0
+	.endm
+
+	@ The macro emote, but specifically for the player.
+	.macro emoteplayer emoteArg
+	playse SE_PIN
+	.ifb \emoteArg
+		applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	.else
+		.if \emoteArg == EMOTE_QUESTION
+			applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+		.elseif \emoteArg == EMOTE_HEART
+			applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Heart
+		.else
+			applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+		.endif
+	.endif
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	.endm
 

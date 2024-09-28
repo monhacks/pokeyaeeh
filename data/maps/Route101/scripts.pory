@@ -407,3 +407,22 @@ script EventScript_GetDayFromTime{
 			msgbox("I forgor!", MSGBOX_NPC)
 	}
 }
+
+script TryEmoting{
+	lock
+	random(3)
+	switch(var(VAR_RESULT))
+	{
+		case 1:
+			emoteplayer(EMOTE_EXCLAM)
+
+		case 2:
+			emoteplayer(EMOTE_QUESTION)
+
+		case 3:
+		default:
+			emoteplayer(EMOTE_HEART)
+	}
+	release
+	end
+}

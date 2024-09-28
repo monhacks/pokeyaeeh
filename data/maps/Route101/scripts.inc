@@ -802,6 +802,38 @@ EventScript_GetDayFromTime_8:
 	return
 
 
+TryEmoting::
+# 412 "data/maps/Route101/scripts.pory"
+	lock
+# 413 "data/maps/Route101/scripts.pory"
+	random 3
+# 414 "data/maps/Route101/scripts.pory"
+	switch VAR_RESULT
+# 416 "data/maps/Route101/scripts.pory"
+	case 1, TryEmoting_3
+# 419 "data/maps/Route101/scripts.pory"
+	case 2, TryEmoting_4
+# 422 "data/maps/Route101/scripts.pory"
+	case 3, TryEmoting_5
+TryEmoting_5:
+# 424 "data/maps/Route101/scripts.pory"
+	emoteplayer EMOTE_HEART
+TryEmoting_1:
+# 426 "data/maps/Route101/scripts.pory"
+	release
+	end
+
+TryEmoting_3:
+# 417 "data/maps/Route101/scripts.pory"
+	emoteplayer EMOTE_EXCLAM
+	goto TryEmoting_1
+
+TryEmoting_4:
+# 420 "data/maps/Route101/scripts.pory"
+	emoteplayer EMOTE_QUESTION
+	goto TryEmoting_1
+
+
 EventScript_GetCurrentTime_Text_0:
 # 342 "data/maps/Route101/scripts.pory"
 	.string "The time…\n$"
