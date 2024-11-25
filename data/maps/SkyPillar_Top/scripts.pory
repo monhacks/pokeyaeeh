@@ -47,56 +47,6 @@ SkyPillar_Top_EventScript_RayquazaFaceDown::
 	turnobject LOCALID_RAYQUAZA_SLEEPING, DIR_SOUTH
 	end
 
-SkyPillar_Top_EventScript_Rayquaza::
-	lockall
-	waitse
-	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_TAILWIND_OPPONENT
-	settotemboost 1, 2, 2, 2, 2, 2, 0, 0
-	setwildbattle SPECIES_RAYQUAZA, 0, ITEM_ROSELI_BERRY, NATURE_HARDY, 0, 100, 152, 0, 156, 100, 0, 31, 31, 31, 31, 31, 31, MOVE_DRAGON_ASCENT, MOVE_DRACO_METEOR, MOVE_EARTHQUAKE, MOVE_V_CREATE, FALSE
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	setflag FLAG_DEFEATED_RAYQUAZA
-	setvar B_VAR_STARTING_STATUS, 0
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Top_EventScript_RanFromRayquaza
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_Top_EventScript_RanFromRayquaza
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, SkyPillar_Top_EventScript_DefeatedRayquaza
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SkyPillar_Top_EventScript_RanFromRayquaza
-	releaseall
-	end
-
-SkyPillar_Top_EventScript_DefeatedRayquaza::
-	goto SkyPillar_Top_EventScript_DefeatedRayquaza2
-	end
-
-SkyPillar_Top_EventScript_RanFromRayquaza::
-	setvar VAR_0x8004, SPECIES_RAYQUAZA
-	goto SkyPillar_Top_EventScript_RanFromRayquaza2
-	end
-
-SkyPillar_Top_EventScript_DefeatedRayquaza2::
-	setvar B_VAR_STARTING_STATUS, 0
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
-	releaseall
-	end
-
-SkyPillar_Top_EventScript_RanFromRayquaza2::
-	setvar B_VAR_STARTING_STATUS, 0
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
-	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox gText_LegendaryEscaped, MSGBOX_DEFAULT
-	releaseall
-	end
-
 SkyPillar_Top_EventScript_AwakenRayquaza::
 	lockall
 	fadeoutbgm 1
@@ -194,3 +144,36 @@ SkyPillar_Top_Text_RayquazaFlewOff:
 	.string "The awakened Rayquaza flew off…$"
 
 `
+script SkyPillar_Top_EventScript_Rayquaza{
+	lockall
+	waitse
+	playmoncry(SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setvar(B_VAR_STARTING_STATUS, STARTING_STATUS_TAILWIND_OPPONENT)
+	settotemboost(1, 2, 2, 2, 2, 2, 0, 0)
+	setwildbattle(SPECIES_RAYQUAZA, 0, ITEM_ROSELI_BERRY, NATURE_HARDY, 0, 100, 152, 0, 156, 100, 0, 31, 31, 31, 31, 31, 31, MOVE_DRAGON_ASCENT, MOVE_DRACO_METEOR, MOVE_EARTHQUAKE, MOVE_V_CREATE, FALSE)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	special(BattleSetup_StartLegendaryBattle)
+	waitstate
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag(FLAG_DEFEATED_RAYQUAZA)
+	setvar(B_VAR_STARTING_STATUS, 0)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	goto_if_eq(VAR_RESULT, B_OUTCOME_CAUGHT, SkyPillar_Top_EventScript_DefeatedRayquaza)
+	goto(SkyPillar_Top_EventScript_RanFromRayquaza)
+	releaseall
+	end
+}
+
+script SkyPillar_Top_EventScript_DefeatedRayquaza{
+	goto(Common_EventScript_RemoveStaticPokemon)
+	releaseall
+	end
+}
+
+script SkyPillar_Top_EventScript_RanFromRayquaza{
+	setvar(VAR_0x8004, SPECIES_RAYQUAZA)
+	goto(Common_EventScript_LegendaryFlewAway)
+	end
+}

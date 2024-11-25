@@ -60,101 +60,89 @@ NavelRock_Bottom_EventScript_TryRemoveLugia::
 	removeobject LOCALID_LUGIA
 # 31 "data/maps/NavelRock_Bottom/scripts.pory"
 	return
-# 32 "data/maps/NavelRock_Bottom/scripts.pory"
 
-# 33 "data/maps/NavelRock_Bottom/scripts.pory"
 NavelRock_Bottom_EventScript_Lugia::
-# 34 "data/maps/NavelRock_Bottom/scripts.pory"
-	lock
 # 35 "data/maps/NavelRock_Bottom/scripts.pory"
-	faceplayer
+	lock
 # 36 "data/maps/NavelRock_Bottom/scripts.pory"
-	waitse
+	faceplayer
 # 37 "data/maps/NavelRock_Bottom/scripts.pory"
-	delay 20
-# 38 "data/maps/NavelRock_Bottom/scripts.pory"
-	playse SE_THUNDERSTORM_STOP
-# 39 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8004, 0  @ vertical pan
-# 40 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8005, 3  @ horizontal pan
-# 41 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8006, 4  @ num shakes
-# 42 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8007, 2  @ shake delay
-# 43 "data/maps/NavelRock_Bottom/scripts.pory"
-	special ShakeCamera
-# 44 "data/maps/NavelRock_Bottom/scripts.pory"
-	delay 30
-# 45 "data/maps/NavelRock_Bottom/scripts.pory"
-	playse SE_THUNDERSTORM_STOP
-# 46 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8004, 0  @ vertical pan
-# 47 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8005, 3  @ horizontal pan
-# 48 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8006, 4  @ num shakes
-# 49 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8007, 2  @ shake delay
-# 50 "data/maps/NavelRock_Bottom/scripts.pory"
-	special ShakeCamera
-# 51 "data/maps/NavelRock_Bottom/scripts.pory"
-	delay 30
-# 52 "data/maps/NavelRock_Bottom/scripts.pory"
-	delay 50
-# 53 "data/maps/NavelRock_Bottom/scripts.pory"
 	waitse
-# 54 "data/maps/NavelRock_Bottom/scripts.pory"
-	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
-# 55 "data/maps/NavelRock_Bottom/scripts.pory"
-	waitmoncry
-# 56 "data/maps/NavelRock_Bottom/scripts.pory"
+# 38 "data/maps/NavelRock_Bottom/scripts.pory"
 	delay 20
+# 39 "data/maps/NavelRock_Bottom/scripts.pory"
+	playse SE_THUNDERSTORM_STOP
+# 40 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8004, 0
+# 41 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8005, 3
+# 42 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8006, 4
+# 43 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8007, 2
+# 44 "data/maps/NavelRock_Bottom/scripts.pory"
+	special ShakeCamera
+# 45 "data/maps/NavelRock_Bottom/scripts.pory"
+	delay 30
+# 46 "data/maps/NavelRock_Bottom/scripts.pory"
+	playse SE_THUNDERSTORM_STOP
+# 47 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8004, 0
+# 48 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8005, 3
+# 49 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8006, 4
+# 50 "data/maps/NavelRock_Bottom/scripts.pory"
+	setvar VAR_0x8007, 2
+# 51 "data/maps/NavelRock_Bottom/scripts.pory"
+	special ShakeCamera
+# 52 "data/maps/NavelRock_Bottom/scripts.pory"
+	delay 30
+# 53 "data/maps/NavelRock_Bottom/scripts.pory"
+	delay 50
+# 54 "data/maps/NavelRock_Bottom/scripts.pory"
+	waitse
+# 55 "data/maps/NavelRock_Bottom/scripts.pory"
+	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
+# 56 "data/maps/NavelRock_Bottom/scripts.pory"
+	waitmoncry
 # 57 "data/maps/NavelRock_Bottom/scripts.pory"
-	seteventmon SPECIES_LUGIA, 70
+	delay 20
 # 58 "data/maps/NavelRock_Bottom/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	seteventmon SPECIES_LUGIA, 70
 # 59 "data/maps/NavelRock_Bottom/scripts.pory"
-	special BattleSetup_StartLegendaryBattle
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 60 "data/maps/NavelRock_Bottom/scripts.pory"
-	waitstate
+	special BattleSetup_StartLegendaryBattle
 # 61 "data/maps/NavelRock_Bottom/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitstate
 # 62 "data/maps/NavelRock_Bottom/scripts.pory"
-	setflag FLAG_DEFEATED_LUGIA
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 63 "data/maps/NavelRock_Bottom/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setflag FLAG_DEFEATED_LUGIA
 # 64 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Bottom_EventScript_RanFromLugia
+	specialvar VAR_RESULT, GetBattleOutcome
 # 65 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromLugia
-# 66 "data/maps/NavelRock_Bottom/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NavelRock_Bottom_EventScript_DefeatedLugia
+# 66 "data/maps/NavelRock_Bottom/scripts.pory"
+	goto NavelRock_Bottom_EventScript_RanFromLugia
 # 67 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Bottom_EventScript_RanFromLugia
-# 68 "data/maps/NavelRock_Bottom/scripts.pory"
 	setflag FLAG_CAUGHT_LUGIA
-# 69 "data/maps/NavelRock_Bottom/scripts.pory"
+# 68 "data/maps/NavelRock_Bottom/scripts.pory"
 	release
-# 70 "data/maps/NavelRock_Bottom/scripts.pory"
 	end
-# 71 "data/maps/NavelRock_Bottom/scripts.pory"
 
-# 72 "data/maps/NavelRock_Bottom/scripts.pory"
+
 NavelRock_Bottom_EventScript_DefeatedLugia::
 # 73 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8004, SPECIES_LUGIA
-# 74 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto Common_EventScript_LegendaryFlewAway
-# 75 "data/maps/NavelRock_Bottom/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
 	end
-# 76 "data/maps/NavelRock_Bottom/scripts.pory"
 
-# 77 "data/maps/NavelRock_Bottom/scripts.pory"
+
 NavelRock_Bottom_EventScript_RanFromLugia::
 # 78 "data/maps/NavelRock_Bottom/scripts.pory"
 	setvar VAR_0x8004, SPECIES_LUGIA
 # 79 "data/maps/NavelRock_Bottom/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
-# 80 "data/maps/NavelRock_Bottom/scripts.pory"
 	end
+
