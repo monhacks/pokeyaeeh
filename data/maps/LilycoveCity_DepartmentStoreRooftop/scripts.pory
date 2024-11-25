@@ -1,5 +1,4 @@
 raw `
-
 .set LOCALID_CYNTHIA, 5
 .set LOCALID_LANCE, 6
 
@@ -11,6 +10,7 @@ LilycoveCity_DepartmentStoreRooftop_OnTransition:
 	getpokenewsactive POKENEWS_LILYCOVE
 	call_if_eq VAR_RESULT, TRUE, LilycoveCity_DepartmentStoreRooftop_EventScript_ShowSaleWoman
 	call_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_HideSaleWoman
+	special ShowHideObjectsBasedOnDay
 	end
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ShowSaleWoman::

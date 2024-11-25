@@ -1,29 +1,29 @@
 # 1 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 
 # 2 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-
-# 3 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 .set LOCALID_CYNTHIA, 5
-# 4 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 3 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 .set LOCALID_LANCE, 6
+# 4 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+
 # 5 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-
-# 6 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 LilycoveCity_DepartmentStoreRooftop_MapScripts::
-# 7 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 6 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_DepartmentStoreRooftop_OnTransition
-# 8 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 7 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	.byte 0
-# 9 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 8 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 
-# 10 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 9 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 LilycoveCity_DepartmentStoreRooftop_OnTransition:
-# 11 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 10 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	getpokenewsactive POKENEWS_LILYCOVE
-# 12 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 11 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	call_if_eq VAR_RESULT, TRUE, LilycoveCity_DepartmentStoreRooftop_EventScript_ShowSaleWoman
-# 13 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+# 12 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	call_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_HideSaleWoman
+# 13 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	special ShowHideObjectsBasedOnDay
 # 14 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	end
 # 15 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
