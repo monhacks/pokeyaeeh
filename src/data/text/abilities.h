@@ -190,7 +190,7 @@ static const u8 sMercilessDescription[] = _("Criticals poisoned foes.");
 static const u8 sShieldsDownDescription[] = _("Shell breaks at half HP.");
 static const u8 sStakeoutDescription[] = _("Stronger as foes switch in.");
 static const u8 sWaterBubbleDescription[] = _("Guards from fire & boosts Water moves. (50%)");
-static const u8 sSteelworkerDescription[] = _("Powers up Steel moves. (50%)");
+static const u8 sSteelworkerDescription[] = _("Powers up Steel-type moves. (50%)");
 static const u8 sBerserkDescription[] = _("Raises Sp. Atk at low HP.");
 static const u8 sSlushRushDescription[] = _("Doubles Speed in snow.");
 static const u8 sLongReachDescription[] = _("Removes contact and boosts moves. (20%)");
@@ -248,8 +248,8 @@ static const u8 sHungerSwitchDescription[] = _("Changes form each turn.");;
 static const u8 sQuickDrawDescription[] = _("Moves first occasionally.");
 static const u8 sUnseenFistDescription[] = _("Contact evades protection.");
 static const u8 sCuriousMedicineDescription[] = _("Remove ally's stat changes.");
-static const u8 sTransistorDescription[] = _("Ups Electric-type moves. (50%)");
-static const u8 sDragonsMawDescription[] = _("Ups Dragon-type moves. (50%)");
+static const u8 sTransistorDescription[] = _("Powers up Electric-type moves. (50%)");
+static const u8 sDragonsMawDescription[] = _("Powers up Dragon-type moves. (50%)");
 static const u8 sChillingNeighDescription[] = _("KOs raise Attack by one stage.");
 static const u8 sGrimNeighDescription[] = _("KOs raise Sp. Atk by one stage.");
 static const u8 sAsOneIceRiderDescription[] = _("Unnerve and Chilling Neigh.");
@@ -326,6 +326,7 @@ static const u8 sDeadShotDescription[] = _("Prevents locking into moves.");
 static const u8 sDragonsFuryDescription[] = _("“Super effective” hits raise stat.");
 static const u8 sReboundDescription[] = _("Bounces back special damage. (25%)");
 static const u8 sJuggernautDescription[] = _("Boosts slamming moves. (50%)");
+static const u8 sIceColdDescription[] = _("Powers up Ice-type moves. (50%)");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -671,6 +672,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_DRAGONS_FURY] = _("Dragon's Fury"),
     [ABILITY_REBOUND] = _("Rebound"),
     [ABILITY_JUGGERNAUT] = _("Juggernaut"),
+    [ABILITY_ICE_COLD] = _("Ice Cold"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -1016,6 +1018,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_DRAGONS_FURY] = _("Dragons Fury"),
     [ABILITY_REBOUND] = _("Rebound"),
     [ABILITY_JUGGERNAUT] = _("Juggernaut"),
+    [ABILITY_ICE_COLD] = _("Ice Cold"),
 };
 #endif
 
@@ -1362,4 +1365,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_DRAGONS_FURY] = sDragonsFuryDescription,
     [ABILITY_REBOUND] = sReboundDescription,
     [ABILITY_JUGGERNAUT] = sJuggernautDescription,
+    [ABILITY_ICE_COLD] = sIceColdDescription,
 };

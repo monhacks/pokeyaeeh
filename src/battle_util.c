@@ -9776,6 +9776,10 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
+    case ABILITY_ICE_COLD:
+        if (moveType == TYPE_ICE)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     }
 
     // field abilities
