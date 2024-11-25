@@ -112,50 +112,46 @@ EmberRidge_EventScript_Moltres::
 # 66 "data/maps/EmberRidge/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 67 "data/maps/EmberRidge/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, EmberRidge_EventScript_RanFromMoltres
-# 68 "data/maps/EmberRidge/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, EmberRidge_EventScript_RanFromMoltres
-# 69 "data/maps/EmberRidge/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EmberRidge_EventScript_DefeatedMoltres
-# 70 "data/maps/EmberRidge/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, EmberRidge_EventScript_RanFromMoltres
-# 71 "data/maps/EmberRidge/scripts.pory"
+# 68 "data/maps/EmberRidge/scripts.pory"
+	goto EmberRidge_EventScript_RanFromMoltres
+# 69 "data/maps/EmberRidge/scripts.pory"
 	release
 	end
 
 
 EmberRidge_EventScript_DefeatedMoltres::
-# 76 "data/maps/EmberRidge/scripts.pory"
+# 74 "data/maps/EmberRidge/scripts.pory"
 	setvar VAR_EMBER_RIDGE_STATE, 2
-# 77 "data/maps/EmberRidge/scripts.pory"
+# 75 "data/maps/EmberRidge/scripts.pory"
 	goto EmberRidge_EventScript_RemoveMoltres
 	end
 
 
 EmberRidge_EventScript_RemoveMoltres::
-# 82 "data/maps/EmberRidge/scripts.pory"
+# 80 "data/maps/EmberRidge/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 83 "data/maps/EmberRidge/scripts.pory"
+# 81 "data/maps/EmberRidge/scripts.pory"
 	removeobject 1
-# 84 "data/maps/EmberRidge/scripts.pory"
+# 82 "data/maps/EmberRidge/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 85 "data/maps/EmberRidge/scripts.pory"
+# 83 "data/maps/EmberRidge/scripts.pory"
 	release
 	end
 
 
 EmberRidge_EventScript_RanFromMoltres::
-# 90 "data/maps/EmberRidge/scripts.pory"
+# 88 "data/maps/EmberRidge/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 91 "data/maps/EmberRidge/scripts.pory"
+# 89 "data/maps/EmberRidge/scripts.pory"
 	removeobject 1
-# 92 "data/maps/EmberRidge/scripts.pory"
+# 90 "data/maps/EmberRidge/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 93 "data/maps/EmberRidge/scripts.pory"
+# 91 "data/maps/EmberRidge/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_MOLTRES
-# 94 "data/maps/EmberRidge/scripts.pory"
+# 92 "data/maps/EmberRidge/scripts.pory"
 	msgbox gText_LegendaryEscaped, MSGBOX_DEFAULT
-# 95 "data/maps/EmberRidge/scripts.pory"
+# 93 "data/maps/EmberRidge/scripts.pory"
 	release
 	end
 

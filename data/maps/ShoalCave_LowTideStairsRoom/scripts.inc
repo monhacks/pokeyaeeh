@@ -130,28 +130,24 @@ ShoalCave_LowTideStairsRoom_EventScript_Articuno::
 # 75 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 76 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno
-# 77 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno
-# 78 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, ShoalCave_LowTideStairsRoom_EventScript_DefeatedArticuno
-# 79 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno
-# 80 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+# 77 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+	goto ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno
+# 78 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	release
 	end
 
 
 ShoalCave_LowTideStairsRoom_EventScript_DefeatedArticuno::
-# 85 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+# 83 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 
 ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno::
-# 90 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+# 88 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	setvar VAR_0x8004, SPECIES_ARTICUNO
-# 91 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
+# 89 "data/maps/ShoalCave_LowTideStairsRoom/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

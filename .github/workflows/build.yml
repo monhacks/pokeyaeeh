@@ -116,7 +116,6 @@ jobs:
       - name: Send patch creation notification to Discord
         if: success()
         run: |
-          echo "Artifact ID: ${{ env.artifact_id }}"
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "$(jq -n '{

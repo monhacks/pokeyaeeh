@@ -110,63 +110,53 @@ AncientTomb_EventScript_CaveEntranceSide::
 	releaseall
 # 56 "data/maps/AncientTomb/scripts.pory"
 	end
-# 57 "data/maps/AncientTomb/scripts.pory"
 
-# 58 "data/maps/AncientTomb/scripts.pory"
 AncientTomb_EventScript_Registeel::
-# 59 "data/maps/AncientTomb/scripts.pory"
-	lock
 # 60 "data/maps/AncientTomb/scripts.pory"
-	faceplayer
+	lock
 # 61 "data/maps/AncientTomb/scripts.pory"
-	waitse
+	faceplayer
 # 62 "data/maps/AncientTomb/scripts.pory"
-	playmoncry SPECIES_REGISTEEL, CRY_MODE_ENCOUNTER
+	waitse
 # 63 "data/maps/AncientTomb/scripts.pory"
-	delay 40
+	playmoncry SPECIES_REGISTEEL, CRY_MODE_ENCOUNTER
 # 64 "data/maps/AncientTomb/scripts.pory"
-	waitmoncry
+	delay 40
 # 65 "data/maps/AncientTomb/scripts.pory"
-	setwildbattle SPECIES_REGISTEEL, 0
+	waitmoncry
 # 66 "data/maps/AncientTomb/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setwildbattle SPECIES_REGISTEEL, 0
 # 67 "data/maps/AncientTomb/scripts.pory"
-	special StartRegiBattle
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 68 "data/maps/AncientTomb/scripts.pory"
-	waitstate
+	special StartRegiBattle
 # 69 "data/maps/AncientTomb/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitstate
 # 70 "data/maps/AncientTomb/scripts.pory"
-	setflag FLAG_DEFEATED_REGISTEEL
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 71 "data/maps/AncientTomb/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setflag FLAG_DEFEATED_REGISTEEL
 # 72 "data/maps/AncientTomb/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, AncientTomb_EventScript_RanFromRegisteel
+	specialvar VAR_RESULT, GetBattleOutcome
 # 73 "data/maps/AncientTomb/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, AncientTomb_EventScript_RanFromRegisteel
-# 74 "data/maps/AncientTomb/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, AncientTomb_EventScript_DefeatedRegisteel
+# 74 "data/maps/AncientTomb/scripts.pory"
+	goto AncientTomb_EventScript_RanFromRegisteel
 # 75 "data/maps/AncientTomb/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, AncientTomb_EventScript_RanFromRegisteel
-# 76 "data/maps/AncientTomb/scripts.pory"
 	release
-# 77 "data/maps/AncientTomb/scripts.pory"
 	end
-# 78 "data/maps/AncientTomb/scripts.pory"
 
-# 79 "data/maps/AncientTomb/scripts.pory"
+
 AncientTomb_EventScript_DefeatedRegisteel::
 # 80 "data/maps/AncientTomb/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-# 81 "data/maps/AncientTomb/scripts.pory"
 	end
-# 82 "data/maps/AncientTomb/scripts.pory"
 
-# 83 "data/maps/AncientTomb/scripts.pory"
+
 AncientTomb_EventScript_RanFromRegisteel::
-# 84 "data/maps/AncientTomb/scripts.pory"
-	setvar VAR_0x8004, SPECIES_REGISTEEL
 # 85 "data/maps/AncientTomb/scripts.pory"
-	goto Common_EventScript_LegendaryFlewAway
+	setvar VAR_0x8004, SPECIES_REGISTEEL
 # 86 "data/maps/AncientTomb/scripts.pory"
+	goto Common_EventScript_LegendaryFlewAway
 	end
+

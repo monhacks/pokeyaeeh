@@ -77,28 +77,24 @@ NewMauvilleHiddenArea_EventScript_Zapdos::
 # 49 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 50 "data/maps/NewMauville_HiddenArea/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauvilleHiddenArea_EventScript_RanFromZapdos
-# 51 "data/maps/NewMauville_HiddenArea/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauvilleHiddenArea_EventScript_RanFromZapdos
-# 52 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NewMauvilleHiddenArea_EventScript_DefeatedZapdos
-# 53 "data/maps/NewMauville_HiddenArea/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauvilleHiddenArea_EventScript_RanFromZapdos
-# 54 "data/maps/NewMauville_HiddenArea/scripts.pory"
+# 51 "data/maps/NewMauville_HiddenArea/scripts.pory"
+	goto NewMauvilleHiddenArea_EventScript_RanFromZapdos
+# 52 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	release
 	end
 
 
 NewMauvilleHiddenArea_EventScript_DefeatedZapdos::
-# 59 "data/maps/NewMauville_HiddenArea/scripts.pory"
+# 57 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 
 NewMauvilleHiddenArea_EventScript_RanFromZapdos::
-# 64 "data/maps/NewMauville_HiddenArea/scripts.pory"
+# 62 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	setvar VAR_0x8004, SPECIES_ZAPDOS
-# 65 "data/maps/NewMauville_HiddenArea/scripts.pory"
+# 63 "data/maps/NewMauville_HiddenArea/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

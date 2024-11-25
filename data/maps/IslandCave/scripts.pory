@@ -88,33 +88,34 @@ IslandCave_EventScript_ClearSteps::
 	clearflag FLAG_TEMP_REGICE_PUZZLE_FAILED
 	return
 
-IslandCave_EventScript_Regice::
+`
+script IslandCave_EventScript_Regice{
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_REGICE, CRY_MODE_ENCOUNTER
-	delay 40
+	playmoncry(SPECIES_REGICE, CRY_MODE_ENCOUNTER)
+	delay(40)
 	waitmoncry
-	setwildbattle SPECIES_REGICE, 0
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special StartRegiBattle
+	setwildbattle(SPECIES_REGICE, 0)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	special(StartRegiBattle)
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	setflag FLAG_DEFEATED_REGICE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, IslandCave_EventScript_RanFromRegice
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IslandCave_EventScript_RanFromRegice
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, IslandCave_EventScript_DefeatedRegice
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, IslandCave_EventScript_RanFromRegice
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag(FLAG_DEFEATED_REGICE)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	goto_if_eq(VAR_RESULT, B_OUTCOME_CAUGHT, IslandCave_EventScript_DefeatedRegice)
+	goto(IslandCave_EventScript_RanFromRegice)
 	release
 	end
+}
 
-IslandCave_EventScript_DefeatedRegice::
-	goto Common_EventScript_RemoveStaticPokemon
+script IslandCave_EventScript_DefeatedRegice{
+	goto(Common_EventScript_RemoveStaticPokemon)
 	end
+}
 
-IslandCave_EventScript_RanFromRegice::
-	setvar VAR_0x8004, SPECIES_REGICE
-	goto Common_EventScript_LegendaryFlewAway
+script IslandCave_EventScript_RanFromRegice{
+	setvar(VAR_0x8004, SPECIES_REGICE)
+	goto(Common_EventScript_LegendaryFlewAway)
 	end
-`
+}

@@ -73,10 +73,8 @@ script ShoalCave_LowTideStairsRoom_EventScript_Articuno{
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag(FLAG_DEFEATED_ARTICUNO)
 	specialvar(VAR_RESULT, GetBattleOutcome)
-	goto_if_eq(VAR_RESULT, B_OUTCOME_WON, ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno)
-	goto_if_eq(VAR_RESULT, B_OUTCOME_RAN, ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno)
 	goto_if_eq(VAR_RESULT, B_OUTCOME_CAUGHT, ShoalCave_LowTideStairsRoom_EventScript_DefeatedArticuno)
-	goto_if_eq(VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno)
+	goto(ShoalCave_LowTideStairsRoom_EventScript_RanFromArticuno)
 	release
 	end
 }

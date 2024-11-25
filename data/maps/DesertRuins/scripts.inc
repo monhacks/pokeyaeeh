@@ -110,63 +110,53 @@ DesertRuins_EventScript_CaveEntranceSide::
 	releaseall
 # 56 "data/maps/DesertRuins/scripts.pory"
 	end
-# 57 "data/maps/DesertRuins/scripts.pory"
 
-# 58 "data/maps/DesertRuins/scripts.pory"
 DesertRuins_EventScript_Regirock::
-# 59 "data/maps/DesertRuins/scripts.pory"
-	lock
 # 60 "data/maps/DesertRuins/scripts.pory"
-	faceplayer
+	lock
 # 61 "data/maps/DesertRuins/scripts.pory"
-	waitse
+	faceplayer
 # 62 "data/maps/DesertRuins/scripts.pory"
-	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
+	waitse
 # 63 "data/maps/DesertRuins/scripts.pory"
-	delay 40
+	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
 # 64 "data/maps/DesertRuins/scripts.pory"
-	waitmoncry
+	delay 40
 # 65 "data/maps/DesertRuins/scripts.pory"
-	setwildbattle SPECIES_REGIROCK, 0
+	waitmoncry
 # 66 "data/maps/DesertRuins/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setwildbattle SPECIES_REGIROCK, 0
 # 67 "data/maps/DesertRuins/scripts.pory"
-	special StartRegiBattle
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 68 "data/maps/DesertRuins/scripts.pory"
-	waitstate
+	special StartRegiBattle
 # 69 "data/maps/DesertRuins/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitstate
 # 70 "data/maps/DesertRuins/scripts.pory"
-	setflag FLAG_DEFEATED_REGIROCK
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 71 "data/maps/DesertRuins/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setflag FLAG_DEFEATED_REGIROCK
 # 72 "data/maps/DesertRuins/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DesertRuins_EventScript_RanFromRegirock
+	specialvar VAR_RESULT, GetBattleOutcome
 # 73 "data/maps/DesertRuins/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertRuins_EventScript_RanFromRegirock
-# 74 "data/maps/DesertRuins/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, DesertRuins_EventScript_DefeatedRegirock
+# 74 "data/maps/DesertRuins/scripts.pory"
+	goto DesertRuins_EventScript_RanFromRegirock
 # 75 "data/maps/DesertRuins/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DesertRuins_EventScript_RanFromRegirock
-# 76 "data/maps/DesertRuins/scripts.pory"
 	release
-# 77 "data/maps/DesertRuins/scripts.pory"
 	end
-# 78 "data/maps/DesertRuins/scripts.pory"
 
-# 79 "data/maps/DesertRuins/scripts.pory"
+
 DesertRuins_EventScript_DefeatedRegirock::
 # 80 "data/maps/DesertRuins/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-# 81 "data/maps/DesertRuins/scripts.pory"
 	end
-# 82 "data/maps/DesertRuins/scripts.pory"
 
-# 83 "data/maps/DesertRuins/scripts.pory"
+
 DesertRuins_EventScript_RanFromRegirock::
-# 84 "data/maps/DesertRuins/scripts.pory"
-	setvar VAR_0x8004, SPECIES_REGIROCK
 # 85 "data/maps/DesertRuins/scripts.pory"
-	goto Common_EventScript_LegendaryFlewAway
+	setvar VAR_0x8004, SPECIES_REGIROCK
 # 86 "data/maps/DesertRuins/scripts.pory"
+	goto Common_EventScript_LegendaryFlewAway
 	end
+

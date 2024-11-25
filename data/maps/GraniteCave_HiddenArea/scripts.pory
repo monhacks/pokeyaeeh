@@ -41,10 +41,8 @@ script GraniteCave_HiddenArea_EventScript_Mewtwo{
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag(FLAG_DEFEATED_MEWTWO)
 	specialvar(VAR_RESULT, GetBattleOutcome)
-	goto_if_eq(VAR_RESULT, B_OUTCOME_WON, GraniteCave_HiddenArea_EventScript_RanFromMewtwo)
-	goto_if_eq(VAR_RESULT, B_OUTCOME_RAN, GraniteCave_HiddenArea_EventScript_RanFromMewtwo)
 	goto_if_eq(VAR_RESULT, B_OUTCOME_CAUGHT, GraniteCave_HiddenArea_EventScript_DefeatedMewtwo)
-	goto_if_eq(VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, GraniteCave_HiddenArea_EventScript_RanFromMewtwo)
+	goto(GraniteCave_HiddenArea_EventScript_RanFromMewtwo)
 	release
 	end
 }

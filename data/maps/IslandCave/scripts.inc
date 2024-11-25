@@ -176,63 +176,53 @@ IslandCave_EventScript_ClearSteps::
 	clearflag FLAG_TEMP_REGICE_PUZZLE_FAILED
 # 89 "data/maps/IslandCave/scripts.pory"
 	return
-# 90 "data/maps/IslandCave/scripts.pory"
 
-# 91 "data/maps/IslandCave/scripts.pory"
 IslandCave_EventScript_Regice::
-# 92 "data/maps/IslandCave/scripts.pory"
-	lock
 # 93 "data/maps/IslandCave/scripts.pory"
-	faceplayer
+	lock
 # 94 "data/maps/IslandCave/scripts.pory"
-	waitse
+	faceplayer
 # 95 "data/maps/IslandCave/scripts.pory"
-	playmoncry SPECIES_REGICE, CRY_MODE_ENCOUNTER
+	waitse
 # 96 "data/maps/IslandCave/scripts.pory"
-	delay 40
+	playmoncry SPECIES_REGICE, CRY_MODE_ENCOUNTER
 # 97 "data/maps/IslandCave/scripts.pory"
-	waitmoncry
+	delay 40
 # 98 "data/maps/IslandCave/scripts.pory"
-	setwildbattle SPECIES_REGICE, 0
+	waitmoncry
 # 99 "data/maps/IslandCave/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setwildbattle SPECIES_REGICE, 0
 # 100 "data/maps/IslandCave/scripts.pory"
-	special StartRegiBattle
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 101 "data/maps/IslandCave/scripts.pory"
-	waitstate
+	special StartRegiBattle
 # 102 "data/maps/IslandCave/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitstate
 # 103 "data/maps/IslandCave/scripts.pory"
-	setflag FLAG_DEFEATED_REGICE
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 104 "data/maps/IslandCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setflag FLAG_DEFEATED_REGICE
 # 105 "data/maps/IslandCave/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, IslandCave_EventScript_RanFromRegice
+	specialvar VAR_RESULT, GetBattleOutcome
 # 106 "data/maps/IslandCave/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IslandCave_EventScript_RanFromRegice
-# 107 "data/maps/IslandCave/scripts.pory"
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, IslandCave_EventScript_DefeatedRegice
+# 107 "data/maps/IslandCave/scripts.pory"
+	goto IslandCave_EventScript_RanFromRegice
 # 108 "data/maps/IslandCave/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, IslandCave_EventScript_RanFromRegice
-# 109 "data/maps/IslandCave/scripts.pory"
 	release
-# 110 "data/maps/IslandCave/scripts.pory"
 	end
-# 111 "data/maps/IslandCave/scripts.pory"
 
-# 112 "data/maps/IslandCave/scripts.pory"
+
 IslandCave_EventScript_DefeatedRegice::
 # 113 "data/maps/IslandCave/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-# 114 "data/maps/IslandCave/scripts.pory"
 	end
-# 115 "data/maps/IslandCave/scripts.pory"
 
-# 116 "data/maps/IslandCave/scripts.pory"
+
 IslandCave_EventScript_RanFromRegice::
-# 117 "data/maps/IslandCave/scripts.pory"
-	setvar VAR_0x8004, SPECIES_REGICE
 # 118 "data/maps/IslandCave/scripts.pory"
-	goto Common_EventScript_LegendaryFlewAway
+	setvar VAR_0x8004, SPECIES_REGICE
 # 119 "data/maps/IslandCave/scripts.pory"
+	goto Common_EventScript_LegendaryFlewAway
 	end
+
