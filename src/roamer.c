@@ -180,42 +180,43 @@ void InitRoamer(void)
 {
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
-        // Roamer Lati@s 
+        // Roamer Lati@s
         if (gSpecialVar_0x8004 == 1)
-        {    TryAddRoamer(SPECIES_LATIOS, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
-             GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIOS), FLAG_SET_SEEN);
+        {    
+            TryAddRoamer(SPECIES_LATIOS, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
+            GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIOS), FLAG_SET_SEEN);
         }
         else
         {
-            TryAddRoamer(SPECIES_LATIAS, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+            TryAddRoamer(SPECIES_LATIAS, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIAS), FLAG_SET_SEEN);
         }
     }
     
     if (FlagGet(FLAG_BADGE07_GET))
     {
-        TryAddTerrestrialRoamer(SPECIES_RAIKOU, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_RAIKOU, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAIKOU), FLAG_SET_SEEN);
 
-        TryAddTerrestrialRoamer(SPECIES_ENTEI, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_ENTEI, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_ENTEI), FLAG_SET_SEEN);
 
-        TryAddRoamer(SPECIES_SUICUNE, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddRoamer(SPECIES_SUICUNE, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_SUICUNE), FLAG_SET_SEEN);
         
-        TryAddTerrestrialRoamer(SPECIES_COBALION, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_COBALION, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_COBALION), FLAG_SET_SEEN);
 
-        TryAddTerrestrialRoamer(SPECIES_TERRAKION, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_TERRAKION, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_TERRAKION), FLAG_SET_SEEN);
 
-        TryAddTerrestrialRoamer(SPECIES_VIRIZION, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddTerrestrialRoamer(SPECIES_VIRIZION, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_VIRIZION), FLAG_SET_SEEN);
 
-        TryAddRoamer(SPECIES_TORNADUS_INCARNATE, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddRoamer(SPECIES_TORNADUS_INCARNATE, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_TORNADUS), FLAG_SET_SEEN);
 
-        TryAddRoamer(SPECIES_THUNDURUS_INCARNATE, ChooseGiveMonLevel(), DOES_NOT_FLEE, POKEDEX_RESPAWN);
+        TryAddRoamer(SPECIES_THUNDURUS_INCARNATE, ChooseGiveMonLevel(), FLEES, POKEDEX_RESPAWN);
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_THUNDURUS), FLAG_SET_SEEN);
     }
 }
