@@ -2,7 +2,7 @@ static const struct TrainerMon sParty_WallyPartner[] = {
     {
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
-        .lvl = 50,
+        .lvl = 1,
         .ability = ABILITY_FLASH_FIRE,
         .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
@@ -12,7 +12,7 @@ static const struct TrainerMon sParty_WallyPartner[] = {
     {
         .species = SPECIES_GALLADE,
         .heldItem = ITEM_GALLADITE,
-        .lvl = 50,
+        .lvl = 1,
         .ability = ABILITY_SHARPNESS,
         .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
@@ -22,7 +22,7 @@ static const struct TrainerMon sParty_WallyPartner[] = {
     {
         .species = SPECIES_NIDOKING,
         .heldItem = ITEM_LIFE_ORB,
-        .lvl = 50,
+        .lvl = 1,
         .ability = ABILITY_SHEER_FORCE,
         .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),

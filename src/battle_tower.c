@@ -2966,6 +2966,7 @@ static void FillPartnerParty(u16 trainerId)
         {
             const struct TrainerMon *partyData = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].party;
             const u8 *partnerName = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName;
+            level = GetHighestLevelInPlayerParty();
 
             for (k = 0; partnerName[k] != EOS && k < 3; k++)
             {
@@ -3003,7 +3004,7 @@ static void FillPartnerParty(u16 trainerId)
             if (partyData[i].isShiny)
                 otID ^= GET_SHINY_VALUE(otID, personality) << 16;
 
-            CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
+            CreateMon(&gPlayerParty[i + 3], partyData[i].species, level, 0, TRUE, personality, OT_ID_PRESET, otID);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
             CustomTrainerPartyAssignMoves(&gPlayerParty[i + 3], &partyData[i]);
 
