@@ -38,6 +38,9 @@
 #include "constants/trainers.h"
 #include "constants/event_objects.h"
 #include "constants/moves.h"
+#include "constants/pokemon.h"
+#include "constants/species.h"
+#include "constants/battle_ai.h"
 
 // EWRAM vars.
 EWRAM_DATA const struct BattleFrontierTrainer *gFacilityTrainers = NULL;

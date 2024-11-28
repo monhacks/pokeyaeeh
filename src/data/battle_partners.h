@@ -15,7 +15,8 @@ const struct Trainer gBattlePartners[] = {
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_BACK_PIC_WALLY,
         .trainerName = _("Wally"),
-        .party = TRAINER_PARTY(sParty_WallyPartner)
+        .party = TRAINER_PARTY(sParty_WallyPartner),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES,
     },
 
 };
