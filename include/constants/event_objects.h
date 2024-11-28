@@ -265,6 +265,8 @@
 #define OBJ_EVENT_GFX_REGIDRAGO                  262
 #define OBJ_EVENT_GFX_VOLCARONA                  263
 #define OBJ_EVENT_GFX_MEWTWO                     264
+#define OBJ_EVENT_GFX_LANDORUS                   265
+#define OBJ_EVENT_GFX_KELDEO                     266
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

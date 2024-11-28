@@ -2312,3 +2312,11 @@ static const struct SpriteFrameImage sPicTable_Volcarona[] = {
 static const struct SpriteFrameImage sPicTable_Mewtwo[] = {
     overworld_ascending_frames(gObjectEventPic_Mewtwo, 4, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Landorus[] = {
+    overworld_ascending_frames(gObjectEventPic_Landorus, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Keldeo[] = {
+    overworld_ascending_frames(gObjectEventPic_Keldeo, 4, 4),
+};

@@ -457,6 +457,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_REGIDRAGO               0x1137
 #define OBJ_EVENT_PAL_TAG_VOLCARONA               0x1138
 #define OBJ_EVENT_PAL_TAG_MEWTWO                  0x1139
+#define OBJ_EVENT_PAL_TAG_LANDORUS                0x113A
+#define OBJ_EVENT_PAL_TAG_KELDEO                  0x113B
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -525,6 +527,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Regidrago,             OBJ_EVENT_PAL_TAG_REGIDRAGO},
     {gObjectEventPal_Volcarona,             OBJ_EVENT_PAL_TAG_VOLCARONA},
     {gObjectEventPal_Mewtwo,                OBJ_EVENT_PAL_TAG_MEWTWO},
+    {gObjectEventPal_Landorus,              OBJ_EVENT_PAL_TAG_LANDORUS},
+    {gObjectEventPal_Keldeo,                OBJ_EVENT_PAL_TAG_KELDEO},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
