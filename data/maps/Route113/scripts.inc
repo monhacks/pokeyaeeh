@@ -6,11 +6,13 @@ Route113_MapScripts::
 
 Route113_OnResume:
 	setstepcallback STEP_CB_ASH
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route113_EventScript_TryRemoveLandorus
 	end
 
 Route113_OnTransition:
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	call Route113_EventScript_CheckSetAshWeather
+	call Route113_EventScript_ShowLandorus
 	end
 
 Route113_EventScript_CheckSetAshWeather::
@@ -232,6 +234,79 @@ Route113_EventScript_Madeline_17:
 	checktrainerflag TRAINER_LAWRENCE
 	goto_if 1, Route113_EventScript_Madeline_16
 	goto Route113_EventScript_Madeline_3
+
+
+Route113_EventScript_ShowLandorus::
+	goto_if_set FLAG_SYS_GAME_CLEAR, Route113_EventScript_ShowLandorus_5
+Route113_EventScript_ShowLandorus_3:
+	setflag FLAG_HIDE_LANDORUS
+Route113_EventScript_ShowLandorus_1:
+	return
+
+Route113_EventScript_ShowLandorus_2:
+	clearflag FLAG_HIDE_LANDORUS
+	goto Route113_EventScript_ShowLandorus_1
+
+Route113_EventScript_ShowLandorus_4:
+	checkpartyspecies SPECIES_TORNADUS
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route113_EventScript_ShowLandorus_8
+	goto Route113_EventScript_ShowLandorus_3
+
+Route113_EventScript_ShowLandorus_5:
+	goto_if_unset FLAG_DEFEATED_LANDORUS, Route113_EventScript_ShowLandorus_4
+	goto Route113_EventScript_ShowLandorus_3
+
+Route113_EventScript_ShowLandorus_8:
+	checkpartyspecies SPECIES_THUNDURUS
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route113_EventScript_ShowLandorus_2
+	goto Route113_EventScript_ShowLandorus_3
+
+
+Route113_EventScript_TryRemoveLandorus::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq Route113_EventScript_TryRemoveLandorus_1
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Route113_EventScript_TryRemoveLandorus_1
+	return
+
+Route113_EventScript_TryRemoveLandorus_1:
+	removeobject VAR_LAST_TALKED
+	return
+
+
+Route113_EventScript_Landorus::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_LANDORUS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	settotemboost 1, 0, 2, 2, 2, 2, 0, 0
+	setwildbattle SPECIES_LANDORUS_INCARNATE, 0, ITEM_LIFE_ORB, NATURE_TIMID, 2, 0, 0, 4, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_SANDSEAR_STORM, MOVE_HURRICANE, MOVE_SLUDGE_BOMB, MOVE_PSYCHIC
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_DEFEATED_LANDORUS
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route113_EventScript_DefeatedLandorus
+	goto Route113_EventScript_RanFromLandorus
+	release
+	end
+
+
+Route113_EventScript_DefeatedLandorus::
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+
+Route113_EventScript_RanFromLandorus::
+	setvar VAR_0x8004, SPECIES_LANDORUS
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 
 Route113_EventScript_Madeline2_Text_0:

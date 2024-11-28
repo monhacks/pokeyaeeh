@@ -2383,3 +2383,10 @@
 	stringvar \stringVarId
 	.byte \dayOfWeek
 	.endm
+
+	@ Checks if party has specific species.
+	@ VAR_RESULT will be TRUE if yes, and FALSE if no
+	.macro checkpartyspecies species:req
+	setvar VAR_0x8000 \species
+	special HasSpecies
+	.endm

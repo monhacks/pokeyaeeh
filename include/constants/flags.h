@@ -51,32 +51,34 @@
 #define FLAG_DYNAMAX_BATTLE          0x26 // Battles will feature Dynamax
 #define FLAG_SKY_BATTLE              0x27 // Starts a Sky Battle
 #define FLAG_FORCED_SET_BATTLE       0x28 // Forced set battles.
-#define FLAG_DEFEATED_MEWTWO         0x29
-#define FLAG_HIDE_MEWTWO             0x2A
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_GEN6EXP_SHARE           0x2C // Enables Gen6 EXP Share
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_NO_ENCOUNTER            0x37 // Disabled wild encounters
-#define FLAG_NO_TRAINER_SEE          0x38 // Disables trainer-see you
-#define FLAG_NO_COLLISION            0x39 // Disables collisions
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
+#define FLAG_GEN6EXP_SHARE           0x29 // Enables Gen6 EXP Share
+#define FLAG_NO_ENCOUNTER            0x2A // Disabled wild encounters
+#define FLAG_NO_TRAINER_SEE          0x2B // Disables trainer-see you
+#define FLAG_NO_COLLISION            0x2C // Disables collisions
+#define FLAG_FORCE_SHINY             0x2D // Forces all encounters to be shiny
+#define FLAG_FORCE_NO_SHINY          0x2E // Forces all encounters to not be shiny
+
+#define FLAG_HIDE_ARTICUNO           0x2F
+#define FLAG_DEFEATED_ARTICUNO       0x30
+#define FLAG_HIDE_ZAPDOS             0x31
+#define FLAG_DEFEATED_ZAPDOS         0x32
+#define FLAG_HIDE_MOLTRES            0x33
+#define FLAG_DEFEATED_MOLTRES        0x34
+#define FLAG_HIDE_MEWTWO             0x35
+#define FLAG_DEFEATED_MEWTWO         0x36
+#define FLAG_HIDE_LANDORUS           0x37
+#define FLAG_DEFEATED_LANDORUS       0x38
+#define FLAG_HIDE_KELDEO             0x39
+#define FLAG_DEFEATED_KELDEO         0x3A
+
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_FORCE_SHINY     0x41 // Forces all encounters to be shiny
-#define FLAG_FORCE_NO_SHINY  0x42 // Forces all encounters to not be shiny
+#define FLAG_UNUSED_0x041    0x41 // Unused Flag
+#define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
@@ -86,6 +88,7 @@
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
+
 #define FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA  0x4C
 #define FLAG_DEFEATED_CYNTHIA                  0x4D
 #define FLAG_HIDE_LILYCOVE_DEPT_STORE_LANCE    0x4E
@@ -457,8 +460,8 @@
 #define FLAG_REMATCH_DRAKE                   0x1A8
 #define FLAG_REMATCH_WALLACE                 0x1A9
 
-#define FLAG_HIDE_ARTICUNO                   0x1AA
-#define FLAG_HIDE_ZAPDOS                     0x1AB
+#define FLAG_UNUSED_0x1AA                    0x1AA
+#define FLAG_UNUSED_0x1AB                    0x1AB
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -470,10 +473,10 @@
 #define FLAG_REMATCH_VICTORIA                0x1B3
 #define FLAG_REMATCH_VIVI                    0x1B4
 #define FLAG_REMATCH_VICKY                   0x1B5
-#define FLAG_HIDE_MOLTRES                    0x1B6
-#define FLAG_DEFEATED_ARTICUNO               0x1B7
-#define FLAG_DEFEATED_ZAPDOS                 0x1B8
-#define FLAG_DEFEATED_MOLTRES                0x1B9
+#define FLAG_UNUSED_0x1B6                    0x1B6 // Unused Flag
+#define FLAG_UNUSED_0x1B7                    0x1B7 // Unused Flag
+#define FLAG_UNUSED_0x1B8                    0x1B8 // Unused Flag
+#define FLAG_UNUSED_0x1B9                    0x1B9 // Unused Flag
 #define FLAG_HIDE_NEW_MAUVILLE_ROCK          0x1BA
 #define FLAG_DEFEATED_REGIROCK               0x1BB
 #define FLAG_DEFEATED_REGICE                 0x1BC

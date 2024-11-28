@@ -1440,12 +1440,13 @@ u8 TryUpdateRusturfTunnelState(void)
 
 void HasSpecies(void)
 {
-    u32 partyMon = 0;
+    u32 partyMon;
+    u32 species = gSpecialVar_0x8000;
     struct Pokemon *party = gPlayerParty;
 
-    for (; partyMon < gPlayerPartyCount; partyMon++)
+    for (partyMon = 0; partyMon < gPlayerPartyCount; partyMon++)
     {
-        if (GetMonData(&party[partyMon], MON_DATA_SPECIES) == gSpecialVar_0x8000)
+        if (GetMonData(&party[partyMon], MON_DATA_SPECIES) == GET_BASE_SPECIES_ID(species))
         {
             gSpecialVar_Result = TRUE;
             return;

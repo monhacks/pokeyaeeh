@@ -276,6 +276,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_MOLTRES
 	setflag FLAG_HIDE_MEWTWO
 	setflag FLAG_HIDE_VOLCARONA
+	setflag FLAG_HIDE_LANDORUS
+	setflag FLAG_HIDE_KELDEO
 	setflag FLAG_HIDE_LILYCOVE_DEPT_STORE_LANCE
 	setflag FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA
 	call EventScript_ResetAllBerries
