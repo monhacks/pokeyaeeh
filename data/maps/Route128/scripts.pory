@@ -191,11 +191,6 @@ Route128_EventScript_Alexa::
 	msgbox Route128_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route128_EventScript_Ruben::
-	trainerbattle_single TRAINER_RUBEN, Route128_Text_RubenIntro, Route128_Text_RubenDefeat
-	msgbox Route128_Text_RubenPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route128_EventScript_Wayne::
 	trainerbattle_single TRAINER_WAYNE, Route128_Text_WayneIntro, Route128_Text_WayneDefeat
 	msgbox Route128_Text_WaynePostBattle, MSGBOX_AUTOCLOSE
@@ -250,3 +245,40 @@ Route128_Text_MaxieThisDefiesBelief:
 	.string "They've upset the balance of nature…$"
 
 `
+script Route128_EventScript_Ruben2{
+	msgbox("That was brutal, yet elegant!\pI have some gifts for you.", MSGBOX_AUTOCLOSE)
+	givemon(SPECIES_COPPERAJAH, 0, ITEM_METAL_SEED, ITEM_CHERISH_BALL, 3, 1, MON_MALE, 252, 4, 252, 0, 0, 0, 31, 0, 31, 31, 31, 31, MOVE_BODY_PRESS, MOVE_HARD_PRESS, MOVE_HIGH_HORSEPOWER, MOVE_IRON_DEFENSE, TRUE)
+	bufferspeciesname(STR_VAR_1, SPECIES_COPPERAJAH)
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_COPPERAJAH)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received a Copperajah!")
+	waitmessage()
+	waitfanfare()
+	call(Common_EventScript_Nickname)
+	msgbox("Holding this would make it better.", MSGBOX_AUTOCLOSE)
+	giveitem(ITEM_COPPERAJAHITE, 1)
+	setflag(FLAG_ROUTE_127_BOSS_DEFEATED)
+	msgbox("Holding a Copperajahite,\nyour Copperajah can slam harder!", MSGBOX_AUTOCLOSE)
+}
+
+script Route128_EventScript_Ruben{
+	lock
+    faceplayer
+	if(defeated(TRAINER_ISAIAH_1) &&
+	   defeated(TRAINER_KATELYN_1) &&
+	   defeated(TRAINER_ALEXA) &&
+	   defeated(TRAINER_WAYNE) &&
+	   defeated(TRAINER_HARRISON) &&
+	   defeated(TRAINER_CARLEE)){
+		setflag(B_FLAG_NO_BAG_USE)
+		trainerbattle_single(TRAINER_ATHENA, Route128_Text_RubenIntro, Route128_Text_RubenDefeat, Route128_EventScript_Ruben2)
+		clearflag(B_FLAG_NO_BAG_USE)
+	    msgbox("Holding a Copperajahite,\nyour Copperajah can slam harder!", MSGBOX_AUTOCLOSE)
+	}
+	else{
+		// before defeating every trainer here
+		msgbox("Hello, Trainer.\pIf you want to battle me,\nyou'll have to beat all 6 Trainers here,\lfirst. Then I'll accept your challenge.", MSGBOX_NPC)
+	}
+    release
+    end
+}

@@ -191,11 +191,6 @@ Route128_EventScript_Alexa::
 	msgbox Route128_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route128_EventScript_Ruben::
-	trainerbattle_single TRAINER_RUBEN, Route128_Text_RubenIntro, Route128_Text_RubenDefeat
-	msgbox Route128_Text_RubenPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route128_EventScript_Wayne::
 	trainerbattle_single TRAINER_WAYNE, Route128_Text_WayneIntro, Route128_Text_WayneDefeat
 	msgbox Route128_Text_WaynePostBattle, MSGBOX_AUTOCLOSE
@@ -248,3 +243,79 @@ Route128_Text_MaxieThisDefiesBelief:
 	.string "Those super-ancient Pokémon…\p"
 	.string "Their power is unbelievable.\n"
 	.string "They've upset the balance of nature…$"
+
+Route128_EventScript_Ruben2::
+	msgbox Route128_EventScript_Ruben2_Text_0, MSGBOX_AUTOCLOSE
+	givemon SPECIES_COPPERAJAH, 0, ITEM_METAL_SEED, ITEM_CHERISH_BALL, 3, 1, MON_MALE, 252, 4, 252, 0, 0, 0, 31, 0, 31, 31, 31, 31, MOVE_BODY_PRESS, MOVE_HARD_PRESS, MOVE_HIGH_HORSEPOWER, MOVE_IRON_DEFENSE, TRUE
+	bufferspeciesname STR_VAR_1, SPECIES_COPPERAJAH
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_COPPERAJAH
+	playfanfare MUS_OBTAIN_ITEM
+	message Route128_EventScript_Ruben2_Text_1
+	waitmessage
+	waitfanfare
+	call Common_EventScript_Nickname
+	msgbox Route128_EventScript_Ruben2_Text_2, MSGBOX_AUTOCLOSE
+	giveitem ITEM_COPPERAJAHITE, 1
+	setflag FLAG_ROUTE_127_BOSS_DEFEATED
+	msgbox Route128_EventScript_Ruben2_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
+Route128_EventScript_Ruben::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_ISAIAH_1
+	goto_if 1, Route128_EventScript_Ruben_5
+Route128_EventScript_Ruben_3:
+	msgbox Route128_EventScript_Ruben_Text_0, MSGBOX_NPC
+Route128_EventScript_Ruben_1:
+	release
+	end
+
+Route128_EventScript_Ruben_2:
+	setflag B_FLAG_NO_BAG_USE
+	trainerbattle_single TRAINER_ATHENA, Route128_Text_RubenIntro, Route128_Text_RubenDefeat, Route128_EventScript_Ruben2
+	clearflag B_FLAG_NO_BAG_USE
+	msgbox Route128_EventScript_Ruben2_Text_3, MSGBOX_AUTOCLOSE
+	goto Route128_EventScript_Ruben_1
+
+Route128_EventScript_Ruben_4:
+	checktrainerflag TRAINER_ALEXA
+	goto_if 1, Route128_EventScript_Ruben_9
+	goto Route128_EventScript_Ruben_3
+
+Route128_EventScript_Ruben_5:
+	checktrainerflag TRAINER_KATELYN_1
+	goto_if 1, Route128_EventScript_Ruben_4
+	goto Route128_EventScript_Ruben_3
+
+Route128_EventScript_Ruben_8:
+	checktrainerflag TRAINER_HARRISON
+	goto_if 1, Route128_EventScript_Ruben_12
+	goto Route128_EventScript_Ruben_3
+
+Route128_EventScript_Ruben_9:
+	checktrainerflag TRAINER_WAYNE
+	goto_if 1, Route128_EventScript_Ruben_8
+	goto Route128_EventScript_Ruben_3
+
+Route128_EventScript_Ruben_12:
+	checktrainerflag TRAINER_CARLEE
+	goto_if 1, Route128_EventScript_Ruben_2
+	goto Route128_EventScript_Ruben_3
+
+
+Route128_EventScript_Ruben2_Text_0:
+	.string "That was brutal, yet elegant!\pI have some gifts for you.$"
+
+Route128_EventScript_Ruben2_Text_1:
+	.string "{PLAYER} received a Copperajah!$"
+
+Route128_EventScript_Ruben2_Text_2:
+	.string "Holding this would make it better.$"
+
+Route128_EventScript_Ruben2_Text_3:
+	.string "Holding a Copperajahite,\nyour Copperajah can slam harder!$"
+
+Route128_EventScript_Ruben_Text_0:
+	.string "Hello, Trainer.\pIf you want to battle me,\nyou'll have to beat all 6 Trainers here,\lfirst. Then I'll accept your challenge.$"
