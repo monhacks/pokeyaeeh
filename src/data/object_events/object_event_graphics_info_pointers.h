@@ -268,6 +268,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volcarona;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Landorus;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Keldeo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Whitney;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Koga;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chuck;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac_2;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -534,6 +540,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEWTWO] =                   &gObjectEventGraphicsInfo_Mewtwo,
     [OBJ_EVENT_GFX_LANDORUS] =                 &gObjectEventGraphicsInfo_Landorus,
     [OBJ_EVENT_GFX_KELDEO] =                   &gObjectEventGraphicsInfo_Keldeo,
+    [OBJ_EVENT_GFX_WHITNEY] =                  &gObjectEventGraphicsInfo_Whitney,
+    [OBJ_EVENT_GFX_BLAINE] =                   &gObjectEventGraphicsInfo_Blaine,
+    [OBJ_EVENT_GFX_BRUNO] =                    &gObjectEventGraphicsInfo_Bruno,
+    [OBJ_EVENT_GFX_KOGA] =                     &gObjectEventGraphicsInfo_Koga,
+    [OBJ_EVENT_GFX_CHUCK] =                    &gObjectEventGraphicsInfo_Chuck,
+    [OBJ_EVENT_GFX_HEX_MANIAC_2] =             &gObjectEventGraphicsInfo_HexManiac_2,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

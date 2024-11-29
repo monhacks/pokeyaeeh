@@ -446,8 +446,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_AROMA_LADY              0x112C
 #define OBJ_EVENT_PAL_TAG_POKEMANIAC              0x112D
 #define OBJ_EVENT_PAL_TAG_PKMN_RANGER             0x112E
-#define OBJ_EVENT_PAL_TAG_NPC_CYNTHIA             0x112F
-#define OBJ_EVENT_PAL_TAG_NPC_LANCE               0x1130
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                 0x112F
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE               0x1130
 #define OBJ_EVENT_PAL_TAG_ZAPDOS                  0x1131
 #define OBJ_EVENT_PAL_TAG_REGIROCK                0x1132
 #define OBJ_EVENT_PAL_TAG_REGICE                  0x1133
@@ -459,6 +459,10 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MEWTWO                  0x1139
 #define OBJ_EVENT_PAL_TAG_LANDORUS                0x113A
 #define OBJ_EVENT_PAL_TAG_KELDEO                  0x113B
+#define OBJ_EVENT_PAL_TAG_WHITNEY                 0x113C
+#define OBJ_EVENT_PAL_TAG_NPC_PINK                0x113D
+#define OBJ_EVENT_PAL_TAG_CHUCK                   0x113E
+#define OBJ_EVENT_PAL_TAG_HEX_MANIAC_2            0x113F
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -516,8 +520,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_AromaLady,             OBJ_EVENT_PAL_TAG_AROMA_LADY},
     {gObjectEventPal_Pokemaniac,            OBJ_EVENT_PAL_TAG_POKEMANIAC},
     {gObjectEventPal_PkmnRanger,            OBJ_EVENT_PAL_TAG_PKMN_RANGER},
-    {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_NPC_CYNTHIA},
-    {gObjectEventPal_Lance,                 OBJ_EVENT_PAL_TAG_NPC_LANCE},
+    {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_CYNTHIA},
+    {gObjectEventPal_Npc_White,             OBJ_EVENT_PAL_TAG_NPC_WHITE},
     {gObjectEventPal_Zapdos,                OBJ_EVENT_PAL_TAG_ZAPDOS},
     {gObjectEventPal_Regirock,              OBJ_EVENT_PAL_TAG_REGIROCK},
     {gObjectEventPal_Regice,                OBJ_EVENT_PAL_TAG_REGICE},
@@ -529,6 +533,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Mewtwo,                OBJ_EVENT_PAL_TAG_MEWTWO},
     {gObjectEventPal_Landorus,              OBJ_EVENT_PAL_TAG_LANDORUS},
     {gObjectEventPal_Keldeo,                OBJ_EVENT_PAL_TAG_KELDEO},
+    {gObjectEventPal_Whitney,               OBJ_EVENT_PAL_TAG_WHITNEY},
+    {gObjectEventPal_Npc_Pink,              OBJ_EVENT_PAL_TAG_NPC_PINK},
+    {gObjectEventPal_Chuck,                 OBJ_EVENT_PAL_TAG_CHUCK},
+    {gObjectEventPal_HexManiac_2,           OBJ_EVENT_PAL_TAG_HEX_MANIAC_2},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else

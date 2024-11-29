@@ -267,6 +267,12 @@
 #define OBJ_EVENT_GFX_MEWTWO                     264
 #define OBJ_EVENT_GFX_LANDORUS                   265
 #define OBJ_EVENT_GFX_KELDEO                     266
+#define OBJ_EVENT_GFX_WHITNEY                    267
+#define OBJ_EVENT_GFX_BLAINE                     268
+#define OBJ_EVENT_GFX_BRUNO                      269
+#define OBJ_EVENT_GFX_KOGA                       270
+#define OBJ_EVENT_GFX_CHUCK                      271
+#define OBJ_EVENT_GFX_HEX_MANIAC_2               272
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //

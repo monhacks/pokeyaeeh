@@ -937,7 +937,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CYNTHIA] =
     {
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
+        .trainerClass = TRAINER_CLASS_CHAMPION,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_CYNTHIA,
         .trainerName = _("Cynthia"),
@@ -950,7 +950,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_LANCE] =
     {
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
+        .trainerClass = TRAINER_CLASS_CHAMPION,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_LANCE,
         .trainerName = _("Lance"),
@@ -2879,7 +2879,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .trainerPic = TRAINER_PIC_ELITE_FOUR_SIDNEY, // Chuck?
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_CHUCK, // Chuck
         .trainerName = _("Bun"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
@@ -2892,7 +2892,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE, // ""that"" hex maniac
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_HEX_MANIAC_2, // ""that"" hex maniac
         .trainerName = _("Avis"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
@@ -2918,7 +2918,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .trainerPic = TRAINER_PIC_ASIAN_DAD, // Custom
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_ASIAN_DAD, // Custom
         .trainerName = _("Asian Dad"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
@@ -2931,7 +2931,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE, // Whitney
+        .trainerPic = TRAINER_PIC_LEADER_WHITNEY, // Whitney
         .trainerName = _("Dor"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
@@ -2957,7 +2957,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_WATTSON, // Blaine
+        .trainerPic = TRAINER_PIC_LEADER_BLAINE, // Blaine
         .trainerName = _("Ydarissep"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
@@ -2983,7 +2983,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_NORMAN, // Bruno
+        .trainerPic = TRAINER_PIC_LEADER_BRUNO, // Bruno
         .trainerName = _("Chrizz"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
@@ -3009,7 +3009,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA, // Koga
+        .trainerPic = TRAINER_PIC_LEADER_KOGA, // Koga
         .trainerName = _("Light"),
         .doubleBattle = TRUE,
         .mugshotEnabled = TRUE,
