@@ -479,6 +479,27 @@ bool8 ScrCmd_subvar(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_mulvar(struct ScriptContext *ctx)
+{
+    u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+    *ptr *= VarGet(ScriptReadHalfword(ctx));
+    return FALSE;
+}
+
+bool8 ScrCmd_divvar(struct ScriptContext *ctx)
+{
+    u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+    *ptr /= VarGet(ScriptReadHalfword(ctx));
+    return FALSE;
+}
+
+bool8 ScrCmd_modvar(struct ScriptContext *ctx)
+{
+    u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+    *ptr %= VarGet(ScriptReadHalfword(ctx));
+    return FALSE;
+}
+
 bool8 ScrCmd_random(struct ScriptContext *ctx)
 {
     u16 max = VarGet(ScriptReadHalfword(ctx));

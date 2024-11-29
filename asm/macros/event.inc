@@ -162,6 +162,27 @@
 	.2byte \value
 	.endm
 
+	@ Changes the value of destination by multiplying value to it. Overflow is not prevented (0xFFFF * 2 = 0xFFFF).
+	.macro mulvar destination:req, value:req
+	callnative ScrCmd_mulvar
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ Changes the value of destination by dividing value to it. Overflow is not prevented (0x0000 / 1 = ?????? idk).
+	.macro divvar destination:req, value:req
+	callnative ScrCmd_divvar
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ Changes the value of destination by applying modulo division value to it. Overflow is not prevented (0x0000 % 1 = 0xFFFF).
+	.macro modvar destination:req, value:req
+	callnative ScrCmd_modvar
+	.2byte \destination
+	.2byte \value
+	.endm
+
 	@ Copies the value of source into destination.
 	.macro copyvar destination:req, source:req
 	.byte 0x19
