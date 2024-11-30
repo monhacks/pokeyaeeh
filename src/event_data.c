@@ -87,7 +87,7 @@ void ShowHideObjectsBasedOnDay(void)
             FlagSet(FLAG_HIDE_LILYCOVE_DEPT_STORE_CYNTHIA);
     }
 
-    if (FlagSet(FLAG_BADGE06_GET))
+    if (FlagGet(FLAG_BADGE06_GET))
     {
         if (gLocalTime.dayOfWeek == DAY_SUNDAY)
         {   // Volcarona respawns on Sundays
