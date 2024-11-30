@@ -1218,7 +1218,7 @@ RustboroCity_Text_DevonCorpSign:
 RustboroCity_Text_GymSign:
 	.string "Rustboro City Pokémon Gym\n"
 	.string "Leader: Dor\p"
-	.string "“The pedophilic Gym Leader!”$"
+	.string "“The miner-liking Gym Leader!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "Devon Corp. Branch Office\p"

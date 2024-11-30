@@ -262,12 +262,12 @@ RustboroCity_Gym_Text_RoxanneNeedTwoMons:
 RustboroCity_Gym_Text_GymStatue:
 	.string "Rustboro City Pokémon Gym\p"
 	.string "Dor's certified Trainers:\n"
-	.string "Wally$"
+	.string "Le Malin, Wally$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
 	.string "Rustboro City Pokémon Gym\p"
 	.string "Dor's certified Trainers:\n"
-	.string "Wally and {PLAYER}$"
+	.string "Le Malin, Wally and {PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … …\n"
