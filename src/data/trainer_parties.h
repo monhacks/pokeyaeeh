@@ -6797,7 +6797,7 @@ static const struct TrainerMon sParty_Phoebe2[] = { // Avis rematch
     {
         .species = SPECIES_CALYREX_SHADOW_RIDER,
         .heldItem = ITEM_FOCUS_SASH,
-        .ability = ABILITY_AS_ONE_(SPECTRIER),
+        .ability = ABILITY_AS_ONE_SHADOW_RIDER,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
         .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
@@ -6806,7 +6806,7 @@ static const struct TrainerMon sParty_Phoebe2[] = { // Avis rematch
     },
     {
         .species = SPECIES_DARKRAI,
-        .heldItem = ITEM_DARKINIUM_Z,
+        .heldItem = ITEM_SITRUS_BERRY,
         .ability = ABILITY_BAD_DREAMS,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
@@ -6908,7 +6908,7 @@ static const struct TrainerMon sParty_Drake2[] = { // Asian Dad rematch
         .ability = ABILITY_INTIMIDATE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_DRAGON_DANCE, MOVE_DUAL_WINGBEAT, MOVE_EARTHQUAKE, MOVE_OUTRAGE},
+        .moves = {MOVE_DRAGON_DANCE, MOVE_DUAL_WINGBEAT, MOVE_STOMPING_TANTRUM, MOVE_OUTRAGE},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 1
     },
@@ -6928,7 +6928,7 @@ static const struct TrainerMon sParty_Drake2[] = { // Asian Dad rematch
         .ability = ABILITY_MOLD_BREAKER,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_OUTRAGE, MOVE_DRAGON_DANCE, MOVE_POISON_JAB, MOVE_EARTHQUAKE},
+        .moves = {MOVE_GLAIVE_RUSH, MOVE_DRAGON_DANCE, MOVE_POISON_JAB, MOVE_STOMPING_TANTRUM},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 1
     }
@@ -7157,7 +7157,7 @@ static const struct TrainerMon sParty_Drake1[] = { // Habibi Dad
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_EARTHQUAKE, MOVE_OUTRAGE, MOVE_POISON_JAB, MOVE_CLOSE_COMBAT},
+        .moves = {MOVE_STOMPING_TANTRUM, MOVE_GLAIVE_RUSH, MOVE_POISON_JAB, MOVE_CLOSE_COMBAT},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -7177,7 +7177,7 @@ static const struct TrainerMon sParty_Drake1[] = { // Habibi Dad
         .lvl = 1,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_OUTRAGE, MOVE_DRAGON_DANCE, MOVE_DUAL_WINGBEAT, MOVE_EARTHQUAKE},
+        .moves = {MOVE_OUTRAGE, MOVE_DRAGON_DANCE, MOVE_DUAL_WINGBEAT, MOVE_STOMPING_TANTRUM},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
@@ -7639,61 +7639,61 @@ static const struct TrainerMon sParty_Juan1[] = { // Chal
         .species = SPECIES_GRENINJA,
         .heldItem = ITEM_FLYING_GEM,
         .ability = ABILITY_BATTLE_BOND,
-        .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(0,4,0,252,252,0),
+        .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
-        .moves = {MOVE_DARK_PULSE,MOVE_EXTRASENSORY,MOVE_ACROBATICS,MOVE_WATER_SHURIKEN}
+        .moves = {MOVE_DARK_PULSE, MOVE_EXTRASENSORY, MOVE_ACROBATICS, MOVE_WATER_SHURIKEN},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
     },
     {
         .species = SPECIES_SPIRITOMB,
         .heldItem = ITEM_LEFTOVERS,
         .ability = ABILITY_INFILTRATOR,
-        .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(248,8,0,0,0,252),
+        .ev = TRAINER_PARTY_EVS(248, 8, 0, 0, 0, 252),
         .nature = TRAINER_PARTY_NATURE(NATURE_CAREFUL),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
-        .moves = {MOVE_PROTECT,MOVE_TOXIC,MOVE_WILL_O_WISP,MOVE_SUCKER_PUNCH}
+        .moves = {MOVE_PROTECT, MOVE_FOUL_PLAY, MOVE_WILL_O_WISP, MOVE_POLTERGEIST},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
     },
     {
         .species = SPECIES_KINGAMBIT,
         .heldItem = ITEM_EXPERT_BELT,
         .ability = ABILITY_SUPREME_OVERLORD,
-        .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(252,252,0,0,0,4),
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
-        .moves = {MOVE_SUCKER_PUNCH,MOVE_SWORDS_DANCE,MOVE_KOWTOW_CLEAVE,MOVE_IRON_DEFENSE}
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_SWORDS_DANCE, MOVE_KOWTOW_CLEAVE, MOVE_IRON_HEAD},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
     },
     {
         .species = SPECIES_HYDREIGON,
         .heldItem = ITEM_CHOICE_SPECS,
         .ability = ABILITY_LEVITATE,
-        .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(0,4,0,252,252,0),
+        .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
         .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
-        .moves = {MOVE_FOCUS_BLAST,MOVE_ZEN_HEADBUTT,MOVE_DARK_PULSE,MOVE_DRACO_METEOR}
+        .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+        .moves = {MOVE_FOCUS_BLAST, MOVE_FLASH_CANNON, MOVE_DARK_PULSE, MOVE_DRACO_METEOR},
+        .lvl = 1
     },
     {
         .species = SPECIES_URSHIFU,
         .heldItem = ITEM_BLACK_GLASSES,
         .ability = ABILITY_UNSEEN_FIST,
-        .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(0,252,0,252,0,4),
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
-        .moves = {MOVE_CLOSE_COMBAT,MOVE_POISON_JAB,MOVE_SWORDS_DANCE,MOVE_WICKED_BLOW}
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_POISON_JAB, MOVE_SWORDS_DANCE, MOVE_WICKED_BLOW},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
     },
     {
         .species = SPECIES_LOKIX,
-        .heldItem = ITEM_CHOICE_SCARF,
+        .heldItem = ITEM_LIFE_ORB,
         .ability = ABILITY_TINTED_LENS,
-        .lvl = 1,
-        .ev = TRAINER_PARTY_EVS(0,252,0,252,0,4),
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31), 
-        .moves = {MOVE_AXE_KICK,MOVE_X_SCISSOR,MOVE_BRICK_BREAK,MOVE_SUCKER_PUNCH}
+        .moves = {MOVE_AXE_KICK, MOVE_LEECH_LIFE, MOVE_FIRST_IMPRESSION, MOVE_SUCKER_PUNCH},
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 1
     }
 };
 
@@ -22506,7 +22506,7 @@ static const struct TrainerMon sParty_Flannery2[] = { // Qanak rematch
         .lvl = 1
     },
     {
-        .species = SPECIES_MAUSHOLD_FOUR,
+        .species = SPECIES_MAUSHOLD_FAMILY_OF_FOUR,
         .heldItem = ITEM_WIDE_LENS,
         .ability = ABILITY_TECHNICIAN,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
@@ -22702,7 +22702,7 @@ static const struct TrainerMon sParty_Norman2[] = { // Chrizz
         .heldItem = ITEM_LOADED_DICE,
         .ability = ABILITY_ORICHALCUM_PULSE,
         .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY)
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_COLLISION_COURSE, MOVE_DRAGON_RUSH, MOVE_SCALE_SHOT, MOVE_ARM_THRUST},
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 1,
@@ -22871,7 +22871,7 @@ static const struct TrainerMon sParty_Norman5[] = {
     }
 };
 
-static const struct TrainerMon sParty_sParty_Winona2[] = { // Krypto
+static const struct TrainerMon sParty_Winona2[] = { // Krypto
     {
         .species = SPECIES_DIALGA,
         .heldItem = ITEM_CHOPLE_BERRY,
