@@ -13,9 +13,11 @@ FortreeCity_Gym_OnTransition:
 	end
 
 FortreeCity_Gym_EventScript_Winona::
+	dotimebasedevents
     setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	setvar VAR_RESULT, TRAINER_WINONA_1
+	special ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
 	goto_if_unset FLAG_RECEIVED_TM_FLASH_CANNON, FortreeCity_Gym_EventScript_GiveFlashCannon2
 	msgbox FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT

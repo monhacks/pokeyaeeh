@@ -311,10 +311,12 @@ LavaridgeTown_Gym_1F_EventScript_Flannery_3:
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Flannery_2:
+	dotimebasedevents
 	setflag B_FLAG_NO_BAG_USE
 	setflag B_FLAG_INVERSE_BATTLE
 	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	setvar VAR_RESULT, TRAINER_FLANNERY_1
+	special ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	goto_if_unset FLAG_RECEIVED_TM_RETURN, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT

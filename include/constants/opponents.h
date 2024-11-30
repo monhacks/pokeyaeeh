@@ -860,12 +860,32 @@
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_STEVEN_GRANITE_CAVE         855
 
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
+// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 8 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
 #define TRAINERS_COUNT                      856
 #define MAX_TRAINERS_COUNT                  864
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
+
+// Rematch IDs
+#define REMATCH_WALLY_VR        0
+#define REMATCH_ROXANNE         1
+#define REMATCH_BRAWLY          2
+#define REMATCH_WATTSON         3
+#define REMATCH_FLANNERY        4
+#define REMATCH_NORMAN          5
+#define REMATCH_WINONA          6
+#define REMATCH_TATE_AND_LIZA   7
+#define REMATCH_JUAN            8
+#define REMATCH_SIDNEY          9
+#define REMATCH_PHOEBE          10
+#define REMATCH_GLACIA          11
+#define REMATCH_DRAKE           12
+#define REMATCH_WALLACE         13
+#define REMATCH_TABLE_ENTRIES   14
+
+#define REMATCH_SPECIAL_TRAINER_START   REMATCH_WALLY_VR
+#define REMATCH_ELITE_FOUR_ENTRIES      REMATCH_SIDNEY
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

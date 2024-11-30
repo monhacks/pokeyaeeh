@@ -203,38 +203,12 @@ Route103_EventScript_RouteSign::
 	end
 
 Route103_EventScript_Amy::
-	trainerbattle_single TRAINER_AMY_AND_LIV_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route102_EventScript_AmyRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_AmyRematch
-	msgbox Route103_Text_AmyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route102_EventScript_AmyRegisterMatchCallAfterBattle::
-	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_AMY_AND_LIV_1
-	release
-	end
-
-Route102_EventScript_AmyRematch::
-	trainerbattle_rematch TRAINER_AMY_AND_LIV_1, Route103_Text_AmyRematchIntro, Route103_Text_AmyRematchDefeated
+	trainerbattle_single TRAINER_AMY_AND_LIV_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated
 	msgbox Route103_Text_AmyRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Liv::
-	trainerbattle_single TRAINER_AMY_AND_LIV_1, Route103_Text_LivIntro, Route103_Text_LivDefeated, Route102_EventScript_LivRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_LivRematch
-	msgbox Route103_Text_LivPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route102_EventScript_LivRegisterMatchCallAfterBattle::
-	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_AMY_AND_LIV_1
-	release
-	end
-
-Route102_EventScript_LivRematch::
-	trainerbattle_rematch TRAINER_AMY_AND_LIV_1, Route103_Text_LivRematchIntro, Route103_Text_LivRematchDefeated
+	trainerbattle_single TRAINER_AMY_AND_LIV_1, Route103_Text_LivIntro, Route103_Text_LivDefeated
 	msgbox Route103_Text_LivRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -244,23 +218,7 @@ Route103_EventScript_Andrew::
 	end
 
 Route103_EventScript_Miguel::
-	trainerbattle_single TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated, Route102_EventScript_MiguelRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route103_EventScript_MiguelRematch
-	msgbox Route103_Text_MiguelPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route103_Text_MiguelRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_MIGUEL_1
-	release
-	end
-
-Route103_EventScript_MiguelRematch::
-	trainerbattle_rematch TRAINER_MIGUEL_1, Route103_Text_MiguelRematchIntro, Route103_Text_MiguelRematchDefeated
+	trainerbattle_single TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated
 	msgbox Route103_Text_MiguelRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 

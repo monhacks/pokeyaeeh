@@ -3,62 +3,21 @@ MeteorFalls_1F_2R_MapScripts::
 	.byte 0
 
 MeteorFalls_1F_2R_EventScript_Nicolas::
-	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_2R_EventScript_RematchNicolas
-	msgbox MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat
+	msgbox MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_AUTOCLOSE
 	release
-	end
-
-MeteorFalls_1F_2R_EventScript_RegisterNicolas::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox MeteorFalls_1F_2R_Text_NicolasRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_NICOLAS_1
-	release
-	end
-
-MeteorFalls_1F_2R_EventScript_RematchNicolas::
-	trainerbattle_rematch TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasRematchIntro, MeteorFalls_1F_2R_Text_NicolasRematchDefeat
-	msgbox MeteorFalls_1F_2R_Text_NicolasPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 MeteorFalls_1F_2R_EventScript_John::
-	trainerbattle_single TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnIntro, MeteorFalls_1F_2R_Text_JohnDefeat, MeteorFalls_1F_2R_EventScript_RegisterJohn
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_2R_EventScript_RematchJohn
-	msgbox MeteorFalls_1F_2R_Text_JohnPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnIntro, MeteorFalls_1F_2R_Text_JohnDefeat
+	msgbox MeteorFalls_1F_2R_Text_JohnPostBattle, MSGBOX_AUTOCLOSE
 	release
-	end
-
-MeteorFalls_1F_2R_EventScript_RegisterJohn::
-	msgbox MeteorFalls_1F_2R_Text_JohnRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JOHN_AND_JAY_1
-	release
-	end
-
-MeteorFalls_1F_2R_EventScript_RematchJohn::
-	trainerbattle_rematch TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnRematchIntro, MeteorFalls_1F_2R_Text_JohnRematchDefeat
-	msgbox MeteorFalls_1F_2R_Text_JohnPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 MeteorFalls_1F_2R_EventScript_Jay::
-	trainerbattle_single TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_EventScript_RegisterJay
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_2R_EventScript_RematchJay
-	msgbox MeteorFalls_1F_2R_Text_JayPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat
+	msgbox MeteorFalls_1F_2R_Text_JayPostBattle, MSGBOX_AUTOCLOSE
 	release
-	end
-
-MeteorFalls_1F_2R_EventScript_RegisterJay::
-	msgbox MeteorFalls_1F_2R_Text_JohnRegister, MSGBOX_DEFAULT  @ John speaks for both during register
-	register_matchcall TRAINER_JOHN_AND_JAY_1
-	release
-	end
-
-MeteorFalls_1F_2R_EventScript_RematchJay::
-	trainerbattle_rematch TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayRematchIntro, MeteorFalls_1F_2R_Text_JayRematchDefeat
-	msgbox MeteorFalls_1F_2R_Text_JayPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 MeteorFalls_1F_2R_Text_NicolasIntro:

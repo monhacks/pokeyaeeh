@@ -396,12 +396,14 @@ MossdeepCity_Gym_EventScript_TateAndLiza_1:
 	end
 
 MossdeepCity_Gym_EventScript_TateAndLiza_2:
+	dotimebasedevents
 	setflag B_FLAG_NO_BAG_USE
 	setflag FLAG_TOXIC_POISON_TEAM
 	trainerbattle_single TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
-	clearflag B_FLAG_NO_BAG_USE
-	goto_if_unset FLAG_RECEIVED_TM_VENOSHOCK, MossdeepCity_Gym_EventScript_TateAndLiza_20
-MossdeepCity_Gym_EventScript_TateAndLiza_19:
+	setvar VAR_RESULT, TRAINER_TATE_AND_LIZA_1
+	special ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch
+	goto_if_unset FLAG_RECEIVED_TM_VENOSHOCK, MossdeepCity_Gym_EventScript_GiveCalmMind2
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
 	goto MossdeepCity_Gym_EventScript_TateAndLiza_1
 
@@ -439,10 +441,6 @@ MossdeepCity_Gym_EventScript_TateAndLiza_16:
 	checktrainerflag TRAINER_KATHLEEN
 	goto_if 1, MossdeepCity_Gym_EventScript_TateAndLiza_2
 	goto MossdeepCity_Gym_EventScript_TateAndLiza_3
-
-MossdeepCity_Gym_EventScript_TateAndLiza_20:
-	goto MossdeepCity_Gym_EventScript_GiveCalmMind2
-	goto MossdeepCity_Gym_EventScript_TateAndLiza_19
 
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated_Text_0:

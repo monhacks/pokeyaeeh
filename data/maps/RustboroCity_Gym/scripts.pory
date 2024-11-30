@@ -3,9 +3,11 @@ RustboroCity_Gym_MapScripts::
 	.byte 0
 
 RustboroCity_Gym_EventScript_Roxanne::
+	dotimebasedevents
     setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	setvar VAR_RESULT, TRAINER_ROXANNE_1
+	special ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
 	goto_if_unset FLAG_RECEIVED_TM_CHARM, RustboroCity_Gym_EventScript_GiveRockTomb
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT

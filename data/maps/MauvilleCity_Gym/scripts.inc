@@ -7,9 +7,11 @@ MauvilleCity_Gym_OnLoad:
 	end
 
 MauvilleCity_Gym_EventScript_Wattson::
+	dotimebasedevents
     setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	setvar VAR_RESULT, TRAINER_WATTSON_1
+	special ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
 	goto_if_unset FLAG_RECEIVED_TM_FIRE_BLAST, MauvilleCity_Gym_EventScript_GiveShockWave2
 	goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, MauvilleCity_Gym_EventScript_CompletedNewMauville

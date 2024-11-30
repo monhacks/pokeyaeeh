@@ -63,6 +63,7 @@ void TryUpdateRandomTrainerRematches(u16 mapGroup, u16 mapNum);
 bool32 DoesSomeoneWantRematchIn(u16 mapGroup, u16 mapNum);
 bool32 IsRematchTrainerIn(u16 mapGroup, u16 mapNum);
 u16 GetLastBeatenRematchTrainerId(u16 trainerId);
+void ClearDailyRematchTrainerFlags(void);
 bool8 ShouldTryRematchBattle(void);
 bool8 IsTrainerReadyForRematch(void);
 void ShouldTryGetTrainerScript(void);

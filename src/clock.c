@@ -1,5 +1,6 @@
 #include "global.h"
 #include "event_data.h"
+#include "battle_setup.h"
 #include "rtc.h"
 #include "time_events.h"
 #include "field_specials.h"
@@ -46,6 +47,7 @@ static void UpdatePerDay(struct Time *localTime)
         daysSince = localTime->days - *days;
         ClearDailyFlags();
         ClearDailyHiddenItemFlags();
+        ClearDailyRematchTrainerFlags();
         ShowHideObjectsBasedOnDay();
         UpdateDewfordTrendPerDay(daysSince);
         UpdateTVShowsPerDay(daysSince);

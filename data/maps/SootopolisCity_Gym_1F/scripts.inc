@@ -34,9 +34,11 @@ SootopolisCity_Gym_1_BethanyPos::
 	return
 
 SootopolisCity_Gym_1F_EventScript_Juan::
+	dotimebasedevents
     setflag B_FLAG_NO_BAG_USE
 	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	setvar VAR_RESULT, TRAINER_JUAN_1
+	special ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
 	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge

@@ -4,19 +4,6 @@
 MtPyre_6F_MapScripts::
 	.byte 0
 
-MtPyre_6F_EventScript_RegisterValerie::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox MtPyre_6F_Text_ValerieRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_VALERIE_1
-	release
-	end
-
-MtPyre_6F_EventScript_RematchValerie::
-	trainerbattle_rematch TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieRematchIntro, MtPyre_6F_Text_ValerieRematchDefeat
-	msgbox MtPyre_6F_Text_ValeriePostRematch, MSGBOX_AUTOCLOSE
-	end
-
 MtPyre_6F_EventScript_Cedric::
 	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
@@ -48,7 +35,7 @@ MtPyre_6F_Text_ValerieRematchIntro:
 MtPyre_6F_Text_ValerieRematchDefeat:
 	.string "Something faded away…$"
 
-MtPyre_6F_Text_ValeriePostRematch:
+MtPyre_6F_Text_ValeriePostBattle:
 	.string "The Pokémon at rest here…\n"
 	.string "Sometimes, they play…$"
 

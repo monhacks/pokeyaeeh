@@ -3,41 +3,15 @@ AbandonedShip_Rooms2_1F_MapScripts::
 	.byte 0
 
 AbandonedShip_Rooms2_1F_EventScript_Dan::
-	trainerbattle_single TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_DanIntro, AbandonedShip_Rooms2_1F_Text_DanDefeat, AbandonedShip_Rooms2_1F_EventScript_RegisterDan
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, AbandonedShip_Rooms2_1F_EventScript_DanRematch
-	msgbox AbandonedShip_Rooms2_1F_Text_DanPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_DanIntro, AbandonedShip_Rooms2_1F_Text_DanDefeat
+	msgbox AbandonedShip_Rooms2_1F_Text_DanPostBattle, MSGBOX_AUTOCLOSE
 	release
-	end
-
-AbandonedShip_Rooms2_1F_EventScript_RegisterDan::
-	msgbox AbandonedShip_Rooms2_1F_Text_KiraRegister, MSGBOX_DEFAULT  @ Kira speaks for both when registering KiraAndDan
-	register_matchcall TRAINER_KIRA_AND_DAN_1
-	release
-	end
-
-AbandonedShip_Rooms2_1F_EventScript_DanRematch::
-	trainerbattle_rematch TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_DanRematchIntro, AbandonedShip_Rooms2_1F_Text_DanRematchDefeat
-	msgbox AbandonedShip_Rooms2_1F_Text_DanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Kira::
-	trainerbattle_single TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_KiraIntro, AbandonedShip_Rooms2_1F_Text_KiraDefeat, AbandonedShip_Rooms2_1F_EventScript_RegisterKira
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, AbandonedShip_Rooms2_1F_EventScript_KiraRematch
-	msgbox AbandonedShip_Rooms2_1F_Text_KiraPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_KiraIntro, AbandonedShip_Rooms2_1F_Text_KiraDefeat
+	msgbox AbandonedShip_Rooms2_1F_Text_KiraPostBattle, MSGBOX_AUTOCLOSE
 	release
-	end
-
-AbandonedShip_Rooms2_1F_EventScript_RegisterKira::
-	msgbox AbandonedShip_Rooms2_1F_Text_KiraRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_KIRA_AND_DAN_1
-	release
-	end
-
-AbandonedShip_Rooms2_1F_EventScript_KiraRematch::
-	trainerbattle_rematch TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_KiraRematchIntro, AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat
-	msgbox AbandonedShip_Rooms2_1F_Text_KiraPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Jani::
