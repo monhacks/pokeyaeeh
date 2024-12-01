@@ -3289,7 +3289,7 @@ static const struct TrainerMon sParty_Tammy[] = {
 
 static const struct TrainerMon sParty_Valerie1[] = {
     {
-        .species = SPECIES_AEGISLASH,
+        .species = SPECIES_AEGISLASH_SHIELD,
         .heldItem = ITEM_WEAKNESS_POLICY,
         .ability = ABILITY_STANCE_CHANGE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
@@ -7676,7 +7676,7 @@ static const struct TrainerMon sParty_Juan1[] = { // Chal
         .lvl = 1
     },
     {
-        .species = SPECIES_URSHIFU,
+        .species = SPECIES_URSHIFU_SINGLE_STRIKE_STYLE,
         .heldItem = ITEM_BLACK_GLASSES,
         .ability = ABILITY_UNSEEN_FIST,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
@@ -10696,7 +10696,7 @@ static const struct TrainerMon sParty_Humberto[] = {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31)
     },
     {
-        .species = SPECIES_AEGISLASH,
+        .species = SPECIES_AEGISLASH_SHIELD,
         .heldItem = ITEM_WEAKNESS_POLICY,
         .ability = ABILITY_STANCE_CHANGE,
         .lvl = 1,
@@ -21954,7 +21954,7 @@ static const struct TrainerMon sParty_Roxanne2[] = { // Dor rematch
         .lvl = 1
     },
     {
-        .species = SPECIES_ZACIAN,
+        .species = SPECIES_ZACIAN_HERO_OF_MANY_BATTLES,
         .heldItem = ITEM_RUSTED_SWORD,
         .ability = ABILITY_INTREPID_SWORD,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
@@ -21974,7 +21974,7 @@ static const struct TrainerMon sParty_Roxanne2[] = { // Dor rematch
         .lvl = 1
     },
     {
-        .species = SPECIES_XERNEAS,
+        .species = SPECIES_XERNEAS_NEUTRAL,
         .heldItem = ITEM_POWER_HERB,
         .ability = ABILITY_FAIRY_AURA,
         .ev = TRAINER_PARTY_EVS(248, 0, 0, 0, 252, 8),
@@ -22758,7 +22758,7 @@ static const struct TrainerMon sParty_Norman2[] = { // Chrizz rematch
         .lvl = 1,
     },
     {
-        .species = SPECIES_ZAMAZENTA,
+        .species = SPECIES_ZAMAZENTA_HERO_OF_MANY_BATTLES,
         .heldItem = ITEM_RUSTED_SHIELD,
         .ability = ABILITY_DAUNTLESS_SHIELD,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 4, 0),
