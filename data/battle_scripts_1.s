@@ -486,9 +486,10 @@ BattleScript_EffectFilletAway:
 	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_ButItFailed
 BattleScript_FilletAwayTryAttack::
 	halvehp BattleScript_ButItFailed
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	attackanimation
 	waitanimation
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsBellyDrumFilletAway
 	setbyte sSTAT_ANIM_PLAYED, FALSE
 	playstatchangeanimation BS_ATTACKER, BIT_ATK | BIT_SPATK | BIT_SPEED, STAT_CHANGE_BY_TWO
 	setstatchanger STAT_ATK, 2, FALSE
@@ -3625,6 +3626,12 @@ BattleScript_MetalTerrainPreventsAttackUpUserAlly::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_EffectAttackUpUserAlly_TryAlly
 
+BattleScript_MetalTerrainPreventsBellyDrumFilletAway::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_METALTERRAINPREVENTSATK
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_FilletAwayEnd
+
 BattleScript_MetalTerrainPreventsDefenseUpUserAlly::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_METALTERRAINPREVENTSDEF
@@ -5657,12 +5664,12 @@ BattleScript_EffectBellyDrum::
 	ppreduce
 	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_ATK, MAX_STAT_STAGE, BattleScript_ButItFailed
 	halvehp BattleScript_ButItFailed
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	attackanimation
 	waitanimation
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
-	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsMovesAtk
+	jumpifmetalterrainaffectedcontrary BS_ATTACKER, BattleScript_MetalTerrainPreventsBellyDrumFilletAway
 	playstatchangeanimation BS_ATTACKER, BIT_ATK, STAT_CHANGE_BY_TWO
 	setstatchanger STAT_ATK, MAX_STAT_STAGE, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_MoveEnd

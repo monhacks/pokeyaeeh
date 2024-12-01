@@ -10364,7 +10364,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_MYSTICAL_FIRE] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 75,
+            .power = 80,
         #else
             .power = 65,
         #endif
@@ -12413,7 +12413,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_SPIRIT_BREAK] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 85,
+        .power = 80,
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 24,
