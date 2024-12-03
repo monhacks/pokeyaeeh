@@ -69,7 +69,6 @@ gSpecials::
 	def_special GetTrainerFlag
 	def_special DoTrainerApproach
 	def_special PlayTrainerEncounterMusic
-	def_special ShouldTryRematchBattle
 	def_special IsTrainerReadyForRematch
 	def_special BattleSetup_StartRematchBattle
 	def_special ShowPokemonStorageSystemPC

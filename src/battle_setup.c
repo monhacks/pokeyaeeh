@@ -1732,55 +1732,32 @@ static bool8 IsTrainerReadyForRematch_(const struct RematchTrainer *table, u16 t
 
     if (tableId == -1)
         return FALSE;
-    if (tableId >= MAX_REMATCH_ENTRIES)
+    if (!FlagGet(FLAG_SYS_GAME_CLEAR))
         return FALSE;
-    if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
+    // Original Trainer not defeated
+    if (!HasTrainerBeenFought(table[tableId].trainerIds[0]))
+        return FALSE;
+    // Rematch Trainer defeated
+    if (HasTrainerBeenFought(table[tableId].trainerIds[1]))
         return FALSE;
 
     return TRUE;
 }
 
-static u16 GetRematchTrainerIdFromTable(const struct RematchTrainer *table, u16 firstBattleTrainerId)
-{
-    const struct RematchTrainer *trainerEntry;
-    s32 i;
-    s32 tableId = FirstBattleTrainerIdToRematchTableId(table, firstBattleTrainerId);
-
-    if (tableId == -1)
-        return FALSE;
-
-    trainerEntry = &table[tableId];
-    for (i = 1; i < REMATCHES_COUNT; i++)
-    {
-        if (trainerEntry->trainerIds[i] == 0) // previous entry was this trainer's last one
-            return trainerEntry->trainerIds[i - 1];
-        if (!HasTrainerBeenFought(trainerEntry->trainerIds[i]))
-            return trainerEntry->trainerIds[i];
-    }
-
-    return trainerEntry->trainerIds[REMATCHES_COUNT - 1]; // already beaten at max stage
-}
-
 static u16 GetLastBeatenRematchTrainerIdFromTable(const struct RematchTrainer *table, u16 firstBattleTrainerId)
 {
-    const struct RematchTrainer *trainerEntry;
-    s32 i;
     s32 tableId = FirstBattleTrainerIdToRematchTableId(table, firstBattleTrainerId);
+    const struct RematchTrainer *trainerEntry = &table[tableId];
 
     if (tableId == -1)
         return FALSE;
 
-    trainerEntry = &table[tableId];
-    for (i = 1; i < REMATCHES_COUNT; i++)
-    {
-        if (trainerEntry->trainerIds[i] == 0) // previous entry was this trainer's last one
-            return trainerEntry->trainerIds[i - 1];
-        if (!HasTrainerBeenFought(trainerEntry->trainerIds[i]))
-            return trainerEntry->trainerIds[i - 1];
-    }
+    if (!HasTrainerBeenFought(trainerEntry->trainerIds[1]))
+        return trainerEntry->trainerIds[0];
 
-    return trainerEntry->trainerIds[REMATCHES_COUNT - 1]; // already beaten at max stage
+    return trainerEntry->trainerIds[1];
 }
+
 
 static void ClearTrainerWantRematchState(const struct RematchTrainer *table, u16 firstBattleTrainerId)
 {
@@ -1880,7 +1857,15 @@ bool32 IsRematchTrainerIn(u16 mapGroup, u16 mapNum)
 
 static u16 GetRematchTrainerId(u16 trainerId)
 {
-    return GetRematchTrainerIdFromTable(gRematchTable, trainerId);
+    u32 i;
+
+    for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+    {
+        if (gRematchTable[i].trainerIds[0] == trainerId)
+            return gRematchTable[i].trainerIds[1];
+    }
+
+    return -1;
 }
 
 u16 GetLastBeatenRematchTrainerId(u16 trainerId)
@@ -1896,25 +1881,6 @@ void ClearDailyRematchTrainerFlags(void)
     {
         ClearTrainerFlag(gRematchTable[i].trainerIds[1]);
     }
-}
-
-bool8 ShouldTryRematchBattle(void)
-{
-    u8 trainerId = gSpecialVar_Result;
-
-    if (!(FlagGet(FLAG_SYS_GAME_CLEAR)))
-        gSpecialVar_Result = FALSE;
-    else
-    {
-        if (HasTrainerBeenFought(gRematchTable[trainerId].trainerIds[0]))
-        {
-            if (!(HasTrainerBeenFought(gRematchTable[trainerId].trainerIds[1])))
-                gSpecialVar_Result = TRUE;
-            else
-                gSpecialVar_Result = FALSE;
-        }
-    }
-    return FALSE;
 }
 
 bool8 IsTrainerReadyForRematch(void)

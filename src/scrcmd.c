@@ -2447,3 +2447,26 @@ bool8 ScrCmd_giveformchangeitems(struct ScriptContext *ctx)
     AddBagItem(ITEM_SCROLL_OF_WATERS, 1);
     AddBagItem(ITEM_REINS_OF_UNITY, 1);
 }
+
+bool8 ScrCmd_ShouldTryRematchBattle(struct ScriptContext *ctx)
+{
+    u16 trainerId = VarGet(ScriptReadHalfword(ctx));
+    const u8 *destination = (const u8 *)ScriptReadWord(ctx);
+    u16 i;
+
+    if (!(FlagGet(FLAG_SYS_GAME_CLEAR)))
+        gSpecialVar_Result = FALSE;
+    else
+    {
+        for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+        {
+            if ((gRematchTable[i].trainerIds[0] == trainerId) && HasTrainerBeenFought(gRematchTable[i].trainerIds[0]))
+            {
+                gSpecialVar_Result = TRUE;
+                ScriptJump(ctx, destination);
+                return FALSE;
+            }
+        }
+    }
+    return FALSE;
+}

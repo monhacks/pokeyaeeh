@@ -87,9 +87,7 @@ VictoryRoad_1F_EventScript_EntranceWally::
 VictoryRoad_1F_EventScript_ExitWally::
 	dotimebasedevents
 	trainerbattle_single TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
-	setvar VAR_RESULT, TRAINER_WALLY_VR_2
-	special ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, VictoryRoad_1F_EventScript_RematchWally
+	shouldtryrematchbattle TRAINER_WALLY_VR_2, VictoryRoad_1F_EventScript_RematchWally
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

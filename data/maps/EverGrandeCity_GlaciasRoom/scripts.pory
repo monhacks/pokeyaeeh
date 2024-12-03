@@ -19,10 +19,13 @@ EverGrandeCity_GlaciasRoom_EventScript_PlayerTurnNorth::
 EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	lock
 	faceplayer
+	dotimebasedevents
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
-	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GLACIA_1, EverGrandeCity_GlaciasRoom_Text_Defeat
+	setweather WEATHER_FOG_HORIZONTAL
+	doweather
+	trainerbattle_single TRAINER_GLACIA_1, EverGrandeCity_GlaciasRoom_Text_IntroSpeech, EverGrandeCity_GlaciasRoom_Text_Defeat
+	shouldtryrematchbattle TRAINER_GLACIA_1, EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
 
@@ -33,6 +36,8 @@ EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech::
 	end
 
 EverGrandeCity_GlaciasRoom_EventScript_Defeated::
+	resetweather
+	doweather
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	addvar VAR_ELITE_4_STATE, 1
 	goto_if_eq VAR_ELITE_4_STATE, 4, EverGrandeCity_GlaciasRoom_EventScript_EliteFourDefeated
@@ -43,6 +48,11 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 EverGrandeCity_GlaciasRoom_EventScript_EliteFourDefeated::
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
+	end
+
+EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch::
+	trainerbattle_rematch TRAINER_GLACIA_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 EverGrandeCity_GlaciasRoom_Text_IntroSpeech:

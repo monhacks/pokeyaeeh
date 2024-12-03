@@ -2400,7 +2400,7 @@
 	@ Writes the choosen day of the week string to the specified buffer (index 0 = Sunday).
 	@ Otherwise, if dayOfWeek eq 7 or is not specified, writes the current day of week string.
 	.macro bufferdayofweekstring stringVarId:req, dayOfWeek=DAY_CURRENT
-	.byte 0xe6
+	.byte 0x79
 	stringvar \stringVarId
 	.byte \dayOfWeek
 	.endm
@@ -2410,4 +2410,11 @@
 	.macro checkpartyspecies species:req
 	setvar VAR_0x8000 \species
 	special HasSpecies
+	.endm
+
+	@ Rematch macro
+	.macro shouldtryrematchbattle trainer:req, destination:req
+	.byte 0xe6
+	.2byte \trainer
+	.4byte \destination
 	.endm

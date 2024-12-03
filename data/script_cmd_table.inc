@@ -230,7 +230,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_showitemdesc                      @ 0xe3
 	.4byte ScrCmd_hideitemdesc                      @ 0xe4
 	.4byte ScrCmd_giveformchangeitems               @ 0xe5
-	.4byte ScrCmd_nop1                              @ 0xe6
+	.4byte ScrCmd_ShouldTryRematchBattle            @ 0xe6
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

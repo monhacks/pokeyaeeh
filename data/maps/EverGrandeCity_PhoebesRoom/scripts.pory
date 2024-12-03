@@ -19,10 +19,11 @@ EverGrandeCity_PhoebesRoom_EventScript_PlayerTurnNorth::
 EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 	lock
 	faceplayer
+	dotimebasedevents
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
-	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_PHOEBE_1, EverGrandeCity_PhoebesRoom_Text_Defeat
+	trainerbattle_single TRAINER_PHOEBE_1, EverGrandeCity_PhoebesRoom_Text_IntroSpeech, EverGrandeCity_PhoebesRoom_Text_Defeat
+	shouldtryrematchbattle TRAINER_PHOEBE_1, EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 	end
 
@@ -43,6 +44,11 @@ EverGrandeCity_PhoebesRoom_EventScript_Defeated::
 EverGrandeCity_PhoebesRoom_EventScript_EliteFourDefeated::
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch::
+	trainerbattle_rematch TRAINER_PHOEBE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 EverGrandeCity_PhoebesRoom_Text_IntroSpeech:

@@ -403,9 +403,7 @@ script MossdeepCity_Gym_EventScript_TateAndLiza{
 		setflag(B_FLAG_NO_BAG_USE)
 		setflag(FLAG_TOXIC_POISON_TEAM)
 		trainerbattle_single(TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC)
-		setvar(VAR_RESULT, TRAINER_TATE_AND_LIZA_1)
-		special(ShouldTryRematchBattle)
-		goto_if_eq(VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch)
+		shouldtryrematchbattle(TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_EventScript_TateAndLizaRematch)
 		goto_if_unset(FLAG_RECEIVED_TM_VENOSHOCK, MossdeepCity_Gym_EventScript_GiveCalmMind2)
 		msgbox(MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT)
 	}

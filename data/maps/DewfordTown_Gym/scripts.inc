@@ -15,9 +15,7 @@ DewfordTown_Gym_OnTransition:
 DewfordTown_Gym_EventScript_Brawly::
 	dotimebasedevents
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
-	setvar VAR_RESULT, TRAINER_BRAWLY_1
-	special ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
+	shouldtryrematchbattle TRAINER_BRAWLY_1, DewfordTown_Gym_EventScript_BrawlyRematch
 	goto_if_unset FLAG_RECEIVED_TM_SEED_BOMB, DewfordTown_Gym_EventScript_GiveBulkUp2
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
 	release
